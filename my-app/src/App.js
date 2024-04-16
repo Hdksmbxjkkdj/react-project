@@ -1,6 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
 import { Header } from './pages/Components/Header';
+import { Hero } from './pages/Home1/hero';
+import { Features } from './pages/Home1/features';
 // import './css/fontAwesome5Pro.css';
 import './css/bootstrap.min.css';
 import './css/animate.min.css';
@@ -18,23 +20,12 @@ import './css/style.css';
 
 function App() {
   return (
-    <Header></Header>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    
+    <>
+      <Header></Header>
+      <Hero></Hero>
+      <Features></Features>
+    </>
   );
 }
 

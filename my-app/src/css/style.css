@@ -2036,6 +2036,7 @@ p {
 /*  03. SLIDER CSS START
 /*----------------------------------------*/
 .slider__area {
+  background: url('../img/slider/slider-bg-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4235,7 +4236,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 
 .payment-method .btn-link {
-  -moz-user-select: none;
+  user-select: none;
   background: no-repeat;
   border: medium none;
   border-radius: 0;
