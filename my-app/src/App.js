@@ -3,6 +3,7 @@
 import { Header } from './pages/Components/Header';
 import { Hero } from './pages/Home1/hero';
 import { Features } from './pages/Home1/features';
+import { BestSelling } from './pages/Home1/best-selling';
 // import './css/fontAwesome5Pro.css';
 import './css/bootstrap.min.css';
 import './css/animate.min.css';
@@ -16,7 +17,7 @@ import './css/preloader.css';
 import './css/slick.css';
 // import './css/ui-range-slider.css';
 import './css/style.css';
-
+import {Adds} from './pages/Home1/adds';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
       <Header></Header>
       <Hero></Hero>
       <Features></Features>
+      <Adds></Adds>
+      <BestSelling></BestSelling>
     </>
   );
 }

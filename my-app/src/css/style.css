@@ -2036,7 +2036,7 @@ p {
 /*  03. SLIDER CSS START
 /*----------------------------------------*/
 .slider__area {
-  background: url('../img/slider/slider-bg-1.jpg');
+  background: url('../../public/img/slider/slider-bg-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

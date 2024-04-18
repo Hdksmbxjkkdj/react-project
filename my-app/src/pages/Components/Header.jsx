@@ -1,4 +1,4 @@
-import brand from '../../img/logo/logo-black.png';
+// import brand from '../../img/logo/logo-black.png';
 
 const Header = ()=> {
     return (
@@ -32,7 +32,7 @@ const Header = ()=> {
                             <div className="col-xl-4 col-lg-3">
                                 <div className="header__info-left d-flex justify-content-center justify-content-sm-between align-items-center">
                                     <div className="logo">
-                                        <a href="index.html"><img src={brand} alt="logo"/></a>
+                                        <a href="index.html"><img src={"./img/logo/logo-black.png"} alt="logo"/></a>
                                     </div>
                                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
                                         <div className="header__hotline-icon">
@@ -93,7 +93,7 @@ const Header = ()=> {
                                                   <div className="cart__inner d-flex">
                                                     <div className="cart__thumb">
                                                       <a href="product-details.html">
-                                                        <img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/>
+                                                        <img src="./img/shop/product/cart/cart-mini-1.jpg" alt=""/>
                                                       </a>
                                                     </div>
                                                     <div className="cart__details">
