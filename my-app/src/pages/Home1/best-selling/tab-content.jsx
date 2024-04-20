@@ -1,5 +1,4 @@
 import { ProductSlider } from "./product-slider";
-import { BestSellingHead } from "./best-selling-head";
 const TabContent = () => {
   return (
     <>

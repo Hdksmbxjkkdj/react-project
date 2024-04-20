@@ -1,0 +1,3 @@
+function te() {
+    alert('hello')    
+}

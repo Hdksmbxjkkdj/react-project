@@ -1,4 +1,4 @@
-const ProductContent = ()=> {
+const ProductContent = (type)=> {
     return (
         <>
             <div className="product__content text-center">

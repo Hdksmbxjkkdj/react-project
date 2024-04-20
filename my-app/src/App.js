@@ -1,9 +1,5 @@
 // import logo from './logo.svg';
 // import './App.css';
-import { Header } from './pages/Components/Header';
-import { Hero } from './pages/Home1/hero';
-import { Features } from './pages/Home1/features';
-import { BestSelling } from './pages/Home1/best-selling';
 // import './css/fontAwesome5Pro.css';
 import './css/bootstrap.min.css';
 import './css/animate.min.css';
@@ -17,17 +13,14 @@ import './css/preloader.css';
 import './css/slick.css';
 // import './css/ui-range-slider.css';
 import './css/style.css';
-import {Adds} from './pages/Home1/adds';
+
+import {Home1} from './pages/Home1/index';
 
 function App() {
+
   return (
-    
     <>
-      <Header></Header>
-      <Hero></Hero>
-      <Features></Features>
-      <Adds></Adds>
-      <BestSelling></BestSelling>
+      <Home1></Home1>
     </>
   );
 }
