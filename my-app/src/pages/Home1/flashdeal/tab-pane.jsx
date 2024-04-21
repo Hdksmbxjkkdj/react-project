@@ -1,4 +1,5 @@
 import { ProductItem } from "../best-selling/product-item/product-item";
+import { ProductItemlg } from "../best-selling/product-item/product-item-lg";
 const TabPane = () => {
   return (
     <div
@@ -26,7 +27,7 @@ const TabPane = () => {
         </div>
         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-12 col-sm-12">
           <div class="product__item-wrapper mb-20">
-            <ProductItem type="lg"></ProductItem>
+            <ProductItemlg></ProductItemlg>
           </div>
         </div>
         <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-6">

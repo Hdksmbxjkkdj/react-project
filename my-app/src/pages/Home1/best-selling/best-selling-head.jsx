@@ -1,12 +1,6 @@
 const BestSellingHead = () => {
   return (
     <>
-      <div className="section__head d-md-flex justify-content-between mb-40">
-        <div className="section__title">
-          <h3>
-            Best Selling<span>Products</span>
-          </h3>
-        </div>
         <div className="product__nav-tab mr-75">
           <ul className="nav nav-tabs" id="best-sell-tab" role="tablist">
             <li className="nav-item" role="presentation">
@@ -67,7 +61,6 @@ const BestSellingHead = () => {
             </li>
           </ul>
         </div>
-      </div>
     </>
   );
 };

@@ -14,4 +14,17 @@ const ProductThumb = ({item}) => {
   );
 };
 
-export { ProductThumb };
+const ProductThumbflex = ()=> {
+  return (
+    <>
+      <div className="product__thumb p-relative">
+        <a href="product-details.html" className="w-img">
+          <img src={Config.shop+"product-1.jpg"} alt="product" />
+          <img className="second-img" src={Config.shop+"product-2.jpg"} />
+        </a>
+      </div>
+    </>
+  )
+}
+
+export { ProductThumb,ProductThumbflex };

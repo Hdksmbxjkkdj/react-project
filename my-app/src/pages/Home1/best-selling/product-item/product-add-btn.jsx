@@ -1,4 +1,4 @@
-const ProductAddbtn = () => {
+const ProductAddbtn = (cond) => {
   return (
     <>
       <div className="product__add-btn">
@@ -8,4 +8,4 @@ const ProductAddbtn = () => {
   );
 };
 
-export {ProductAddbtn};
+export { ProductAddbtn };
