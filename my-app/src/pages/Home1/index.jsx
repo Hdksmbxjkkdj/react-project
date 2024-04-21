@@ -6,6 +6,7 @@ import { Adds } from "./adds";
 import { FlashDeal } from "./flashdeal";
 import { OnSell } from "./on-sell";
 import { FromTheBlog } from "./from-the-blog";
+import { ProgressWrap } from "../Components/Progress-wrap";
 var filename1 = [
     { pic: 'top/banner-top-1.jpg', name:'banner-1'},
     { pic: 'top/banner-top-2.jpg', name:'banner-2'},
@@ -28,6 +29,7 @@ const Home1 = () => {
   return (
     <>
       <Header></Header>
+      <ProgressWrap></ProgressWrap>
       <Hero></Hero>
       <Features></Features>
       <Adds img={filename2}></Adds>
