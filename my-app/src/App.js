@@ -13,14 +13,24 @@ import './css/preloader.css';
 import './css/slick.css';
 // import './css/ui-range-slider.css';
 import './css/style.css';
-
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
+import { Menu } from './pages/Components/Menu';
+import Footer from './pages/Components/Footer';
 
 function App() {
 
   return (
     <>
-      <Home1></Home1>
+      <BrowserRouter>
+      {/* <Home1></Home1> */}
+      <Routes>
+        <Route path="/" element={<Home1/>}/>
+        <Route path="/Footer" element={<Footer/>}/>
+      </Routes>
+      </BrowserRouter>
+      
+      
     </>
   );
 }

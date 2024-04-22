@@ -1,4 +1,4 @@
-import brand from '../../img/logo/logo-black.png';
+// import brand from '../../img/logo/logo-black.png';
 
 const Footer = ()=>{
     return(
@@ -19,7 +19,7 @@ const Footer = ()=>{
                                                     <div className="footer__logo">
                                                         {/* <a href="index.html"><img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/></a> */}
                                                         {/* <a href="index.html"><img src="../../img/logo/logo-black.png" alt=""/></a> */}
-                                                        <a href="index.html"><img src={brand} alt=""/></a>
+                                                        <a href="index.html"><img src='{brand}' alt=""/></a>
                                                     </div>
                                                 </div>
                                                 <div className="footer__widget-content">
