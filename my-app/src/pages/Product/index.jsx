@@ -1,8 +1,1 @@
-
-
-function Product(){
-    return<>
-
-    </>
-}
-export default Product;
+export * from 'Breadcrumb';

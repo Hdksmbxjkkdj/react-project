@@ -1,5 +1,4 @@
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+
 function Breadcrumb(){
    return<> <section className="breadcrumb__area box-plr-75">
    <div className="container-fluid">
