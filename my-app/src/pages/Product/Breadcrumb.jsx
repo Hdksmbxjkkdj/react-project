@@ -1,6 +1,7 @@
 
 function Breadcrumb(){
-   return<> <section className="breadcrumb__area box-plr-75">
+   return<>
+   <section className="breadcrumb__area box-plr-75">
    <div className="container-fluid">
        <div className="row">
            <div className="col-xxl-12">

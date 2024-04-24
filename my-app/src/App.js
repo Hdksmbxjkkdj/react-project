@@ -11,12 +11,17 @@ import './css/nice-select.css';
 // import './css/owl.carousel.min.css';
 import './css/preloader.css';
 import './css/slick.css';
+//import js
+// import './js/bootstrap.bundle.min'
+
 // import './css/ui-range-slider.css';
 import './css/style.css';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
+import Product from './pages/Product';
+// import Breadcrumb from './pages/Product/breadcrumb';
 
 function App() {
 
@@ -27,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home1/>}/>
         <Route path="/Footer" element={<Footer/>}/>
+        <Route path="/product" element={<Product/>}/>
       </Routes>
       </BrowserRouter>
       
