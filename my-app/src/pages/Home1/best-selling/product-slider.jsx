@@ -6,7 +6,8 @@ import owlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-const ProductSlider = ({type}) => {
+const ProductSlider = ({type,res}) => {
+  console.log(res?.item);
   useEffect(() => {
     window?.$(".product__slider").owlCarousel({
       loop: true,
@@ -14,33 +15,15 @@ const ProductSlider = ({type}) => {
       autoplay: false,
       autoplayTimeout: 3000,
       smartSpeed: 1500,
-      items: 6,
+      // علامت سوال یعنی اینکه اگر res وجود داشت مقدار آنرا قرار میدهد در غیراینصورت کاری نمیکند
+      items: res?.item,
       navText: [
-        '<button><i class="fa-angle-left"></i></button>',
-        '<button><i class="fa-angle-right"></i></button>',
+        '<button><i class="fa fa-angle-left"></i></button>',
+        '<button><i class="fa fa-angle-right"></i></button>',
       ],
       nav: true,
       dots: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        576: {
-          items: 2,
-        },
-        767: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-        1200: {
-          items: 5,
-        },
-        1600: {
-          items: 6,
-        },
-      },
+      responsive: res,
     });
   }, []);
   

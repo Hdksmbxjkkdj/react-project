@@ -3,12 +3,12 @@ const Sidebar = ()=> {
         <>
             <div class="cat__menu-wrapper">
                                 <div class="cat-toggle">
-                                    <button type="button" class="cat-toggle-btn"><i class="fas fa-bars"></i> Shop by department</button>
+                                    <button type="button" class="cat-toggle-btn"><i class="fa fa-bars"></i> Shop by department</button>
                                     <div class="cat__menu">
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <a href="product.html">All Categories <i class="far fa-angle-down"></i></a>
+                                                    <a href="product.html">All Categories <i class="fa fa-angle-down"></i></a>
                                                     <ul class="mega-menu">
                                                         <li><a href="product.html">Shop Pages</a>
                                                             <ul class="mega-item">
@@ -66,7 +66,7 @@ const Sidebar = ()=> {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="product.html">New Arrivals <i class="far fa-angle-down"></i></a>
+                                                    <a href="product.html">New Arrivals <i class="fa fa-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         <li><a href="product.html">Home Appliances</a></li>
                                                         <li><a href="product.html">Technology</a>

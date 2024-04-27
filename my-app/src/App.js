@@ -15,6 +15,8 @@ import './css/slick.css';
 import './css/style.css';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
+import {Home2} from './pages/Home2/index';
+import { Header } from './pages/Components/Header';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
 
@@ -24,10 +26,13 @@ function App() {
     <>
       <BrowserRouter>
       {/* <Home1></Home1> */}
+      <Header></Header>
       <Routes>
-        <Route path="/" element={<Home1/>}/>
+        <Route path="/Home1" element={<Home1/>}/>
+        <Route path='/Home2' element={<Home2/>}/>
         <Route path="/Footer" element={<Footer/>}/>
       </Routes>
+      <Footer></Footer>
       </BrowserRouter>
       
       

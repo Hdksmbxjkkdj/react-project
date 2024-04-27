@@ -38,7 +38,7 @@ const Header = ()=> {
                                     </div>
                                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
                                         <div className="header__hotline-icon">
-                                            <i className="fal fa-headset"></i>
+                                            <i className="fa fa-headset"></i>
                                         </div>
                                         <div className="header__hotline-info">
                                             <span>Hotline Free:</span>
@@ -82,7 +82,7 @@ const Header = ()=> {
                                             <span className="cart__total-price">$ 255.00</span>
                                         </span>
                                         <div className="cart__mini">
-                                          <div className="cart__close"><button type="button" className="cart__close-btn"><i className="fal fa-times"></i></button></div>
+                                          <div className="cart__close"><button type="button" className="cart__close-btn"><i className="fa fa-times"></i></button></div>
                                           <ul>
                                               <li>
                                                 <div className="cart__title">
@@ -106,7 +106,7 @@ const Header = ()=> {
                                                     </div>
                                                   </div>
                                                   <div className="cart__del">
-                                                      <a href="#"><i className="fal fa-trash-alt"></i></a>
+                                                      <a href="#"><i className="fa fa-trash-alt"></i></a>
                                                   </div>
                                                 </div>
                                               </li>
@@ -134,7 +134,7 @@ const Header = ()=> {
                             <div className="col-xl-9 col-lg-9 col-md-12 col-sm-6 col-6">
                               <div className="header__bottom-left d-flex d-xl-block align-items-center">
                                 <div className="side-menu d-xl-none mr-20">
-                                  <button type="button" className="side-menu-btn offcanvas-toggle-btn"><i className="fas fa-bars"></i></button>
+                                  <button type="button" className="side-menu-btn offcanvas-toggle-btn"><i className="fa fa-bars"></i></button>
                                 </div>
                                 <div className="main-menu d-none d-md-block">
                                     <Menu />
