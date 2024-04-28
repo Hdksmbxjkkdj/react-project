@@ -11,7 +11,7 @@ import './css/nice-select.css';
 // import './css/owl.carousel.min.css';
 import './css/preloader.css';
 import './css/slick.css';
-//import js
+
 // import './js/bootstrap.bundle.min'
 
 // import './css/ui-range-slider.css';
@@ -21,6 +21,7 @@ import {Home1} from './pages/Home1/index';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
 import Product from './pages/Product';
+import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
 
 function App() {
@@ -29,11 +30,13 @@ function App() {
     <>
       <BrowserRouter>
       {/* <Home1></Home1> */}
+      <Layout>
       <Routes>
         <Route path="/" element={<Home1/>}/>
         <Route path="/Footer" element={<Footer/>}/>
         <Route path="/product" element={<Product/>}/>
       </Routes>
+      </Layout>
       </BrowserRouter>
       
       

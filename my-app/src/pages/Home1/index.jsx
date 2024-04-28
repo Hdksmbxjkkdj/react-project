@@ -28,7 +28,6 @@ var filename1 = [
 const Home1 = () => {
   return (
     <>
-      <Header></Header>
       <ProgressWrap></ProgressWrap>
       <Hero></Hero>
       <Features></Features>

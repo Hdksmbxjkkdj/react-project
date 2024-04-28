@@ -1,6 +1,6 @@
-function sidebar(){
-    return
-    <>
+function Sidebar(){
+    return<>
+    
           <div  className="col-xxl-2 col-xl-3 col-lg-4">
                             <div  className="product__widget">
                                 <div  className="product__widget-item mb-15">
@@ -172,7 +172,7 @@ function sidebar(){
                                     </div>
                                 </div>
                             </div>
-                        </div>
+          </div>
     </>
 }
 export default Sidebar;

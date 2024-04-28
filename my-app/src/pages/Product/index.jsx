@@ -1,20 +1,17 @@
 import Breadcrumb from './breadcrumb';
 import Menu from '../Components/Menu'
-import { Header } from '../Components/Header';
-import Footer from '../Components/Footer';
 import Main from './Main';
-import Sidebar from './sidebar';
-import Container from './container';
+import Sidebar from './Sidebar';
+import PageContainer from './PageContainer';
 
-function Product () {
-    return<>
-    <Header></Header>
-    <Breadcrumb></Breadcrumb>
-    <Container></Container>
-    <Sidebar></Sidebar>
-
-    <Main></Main>
-    <Footer></Footer>
+function Product() {
+    return <>
+ 
+        <Breadcrumb></Breadcrumb>
+        <PageContainer>
+            <Sidebar></Sidebar>
+            <Main></Main>
+        </PageContainer>
     </>
 }
 
