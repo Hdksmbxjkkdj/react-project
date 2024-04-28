@@ -13,7 +13,7 @@ const Adds = ({img}) => {
             {img.map((e, index, length) => { 
               return (
                 <div className={(length.length>2)? "col-xl-4 col-lg-4 col-md-6" : "col-xl-6 col-lg-6 col-md-12"}>
-                  <Banner src={e.pic}></Banner>
+                  <Banner src={e.pic} alt={e.name}></Banner>
                 </div>
               );
             })}

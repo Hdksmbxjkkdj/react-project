@@ -17,6 +17,7 @@ const ProductSlider = ({type,res}) => {
       smartSpeed: 1500,
       // علامت سوال یعنی اینکه اگر res وجود داشت مقدار آنرا قرار میدهد در غیراینصورت کاری نمیکند
       items: res?.item,
+      items:6,
       navText: [
         '<button><i class="fa fa-angle-left"></i></button>',
         '<button><i class="fa fa-angle-right"></i></button>',
