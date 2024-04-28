@@ -37,9 +37,9 @@ const Home4 = () => {
   ];
   var product = [
     {
-      pic: "product/product-15.jpg",
+      pic: "product-15.jpg",
       alt: "product",
-      secpic: "product/product-24.jpg",
+      secpic: "product-24.jpg",
       offer: "34%",
       title: " Original Mobile Android Dual SIM Smart Phone G3 ",
       count: "$120.00",
@@ -48,9 +48,9 @@ const Home4 = () => {
       timetitle: "Hurry Up! Offer ends in:",
     },
     {
-      pic: "product/product-16.jpg",
+      pic: "product-16.jpg",
       alt: "product",
-      secpic: "product/product-25.jpg",
+      secpic: "product-23.jpg",
       offer: "20%",
       title: " Sunset analog watch pink color ",
       count: "$70.00",
@@ -59,9 +59,9 @@ const Home4 = () => {
       timetitle: "Hurry Up! Offer ends in:",
     },
     {
-      pic: "product/product-17.jpg",
+      pic: "product-17.jpg",
       alt: "product",
-      secpic: "product/product-26.jpg",
+      secpic: "product-22.jpg",
       offer: "12%",
       title: " Headphone for gaming, Black & Red Color",
       count: "$50.00",
