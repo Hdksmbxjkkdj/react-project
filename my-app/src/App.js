@@ -10,8 +10,13 @@ import {Home4} from './pages/Home4/index';
 import { Header } from './pages/Components/Header';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
+import Blog from "./pages/Blog";
+import BlogDetaile from "./pages/BlogDetailes"
 
 function App() {
+  window?.$(window).on('load',function() {
+		window?.$("#loading").fadeOut(500);
+	});
 
   return (
     <>
@@ -23,8 +28,17 @@ function App() {
         <Route path='/Home2' element={<Home2/>}/>
         <Route path='/Home3' element={<Home3/>}/>
         <Route path='/Home4' element={<Home4/>}/>
+        <Route path="/Blog" element={<Blog/>}/>
+        <Route path="/BlogDetaile" element={<BlogDetaile/>}/>
         <Route path="/Footer" element={<Footer/>}/>
       </Routes>
+      <div id="loading">
+            <div id="loading-center">
+                <div id="loading-center-absolute">
+                    <div id="object"></div>
+                </div>
+            </div>
+        </div>
       <Footer></Footer>
       </BrowserRouter>
       
