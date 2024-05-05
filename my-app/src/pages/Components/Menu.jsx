@@ -40,7 +40,7 @@ export const Menu = () => {
                 <li>
                     <a href="about.html">pages <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
-                        <li><a href="login.html">Login</a></li>
+                        <li><Link to="Login">Login</Link></li>
                         <li><a href="register.html">Register</a></li>
                         <li><a href="cart.html">Cart</a></li>
                         <li><a href="wishlist.html">Wishlist</a></li>

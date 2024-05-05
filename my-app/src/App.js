@@ -14,6 +14,7 @@ import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { AboutUs } from "./pages/AboutUs";
 import { Contact } from "./pages/Contact";
+import { Login } from "./pages/Auth/login";
 import { BackToTop } from "./pages/Components/backtotop";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/BlogDetaile" element={<BlogDetaile />} />
           <Route path="/About" element={<AboutUs />} />
+          <Route path="Login" element={<Login/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/Footer" element={<Footer />} />
         </Routes>
