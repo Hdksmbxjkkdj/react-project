@@ -5,7 +5,7 @@ const Pagination = (props) => {
         <ul>
           <li>
             <a href="blog.html">
-              <i class={(props.count.length)?"fa fa-chevron-left":"fa fa-chevron-left disabled"}></i>
+              <i className={(props.count.length)?"fa fa-chevron-left":"fa fa-chevron-left disabled"}></i>
             </a>
           </li>
           {props.count.map((item) => {
@@ -19,7 +19,7 @@ const Pagination = (props) => {
           })}
           <li>
             <a href="blog.html">
-              <i class={(props.count.length)?"fa fa-chevron-right":"fa fa-chevron-right disabled"}></i>
+              <i className={(props.count.length)?"fa fa-chevron-right":"fa fa-chevron-right disabled"}></i>
             </a>
           </li>
         </ul>

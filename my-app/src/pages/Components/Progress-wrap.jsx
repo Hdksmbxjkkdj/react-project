@@ -9,11 +9,8 @@ const ProgressWrap = () => {
         window?.$("#scroll").fadeOut(200);
       }
     });
-
-    //Animate the scroll to yop
     window?.$("#scroll").on("click", function (event) {
       event.preventDefault();
-
       window?.$("html, body").animate(
         {
           scrollTop: 0,
@@ -23,7 +20,7 @@ const ProgressWrap = () => {
     });
   }, []);
   return (
-    <div class="progress-wrap" id="scroll">
+    <div className="progress-wrap" id="scroll">
       <svg
         className="progress-circle svg-content"
         width="100%"

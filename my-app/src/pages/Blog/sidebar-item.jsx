@@ -1,9 +1,9 @@
 const SidebarItem = (props) => {
   return (
     <>
-      <div class="sidebar__widget-item mb-35">
-        <h3 class="sidebar__widget-title mb-10">Categories</h3>
-        <div class="sidebar__categories">
+      <div className="sidebar__widget-item mb-35">
+        <h3 className="sidebar__widget-title mb-10">Categories</h3>
+        <div className="sidebar__categories">
           <ul>
             {props.items.map((item) => {
               return (

@@ -9,23 +9,23 @@ const PostBox = (props) => {
   ];
   return (
     <>
-      <div class="postbox__wrapper">
-        <article class="postbox__item format-image mb-50 transition-3">
-          <div class="postbox__thumb w-img">
+      <div className="postbox__wrapper">
+        <article className="postbox__item format-image mb-50 transition-3">
+          <div className="postbox__thumb w-img">
             <a href="blog-details.html">
               <img src={Config.blog + "blog-1.jpg"} alt="" />
             </a>
           </div>
-          <div class="postbox__content">
-            <h3 class="postbox__title postbox__title-2">
+          <div className="postbox__content">
+            <h3 className="postbox__title postbox__title-2">
               <a href="blog-details.html">Curabitur Lobortis News</a>
             </h3>
-            <div class="postbox__meta">
+            <div className="postbox__meta">
               <p>
                 Post Date: <span>July 21, 2021 </span>
               </p>
             </div>
-            <div class="postbox__text">
+            <div className="postbox__text">
               <p>
                 Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra
                 nibh. In dignissim vitae lorem non mollis. Praesent pretium
@@ -34,7 +34,7 @@ const PostBox = (props) => {
                 quam vel turpis interdum sagittis et eget neque.
               </p>
             </div>
-            <div class="postbox__text">
+            <div className="postbox__text">
               <p>
                 Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra
                 nibh. In dignissim vitae lorem non mollis. Praesent pretium
@@ -43,7 +43,7 @@ const PostBox = (props) => {
                 quam vel turpis interdum sagittis et eget neque.
               </p>
             </div>
-            <div class="postbox__text">
+            <div className="postbox__text">
               <p>
                 Koma and Torus are two tea infusers, each with an original
                 design and a concealed function. Koma has a round base and a
@@ -56,7 +56,7 @@ const PostBox = (props) => {
                 of loose tea.
               </p>
             </div>
-            <div class="postbox__text">
+            <div className="postbox__text">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -69,18 +69,18 @@ const PostBox = (props) => {
             </div>
           </div>
         </article>
-        <div class="row">
-          <div class="col-xxl-8">
-            <div class="postbox__comments">
-              <div class="postbox__comment-title mb-30">
+        <div className="row">
+          <div className="col-xxl-8">
+            <div className="postbox__comments">
+              <div className="postbox__comment-title mb-30">
                 <h3>Comments (32)</h3>
               </div>
-              <div class="latest-comments mb-30">
+              <div className="latest-comments mb-30">
                 <ul>
                   {props.item.map((item) => {
                     return (
                       <>
-                        <li className={item.child ? "children" : ""}>
+                        <li classNameName={item.child ? "children" : ""}>
                           <Comment item={item}></Comment>
                         </li>
                       </>
@@ -89,25 +89,25 @@ const PostBox = (props) => {
                 </ul>
               </div>
             </div>
-            <div class="post-comments-form mb-100">
-              <div class="post-comments-title mb-30">
+            <div className="post-comments-form mb-100">
+              <div className="post-comments-title mb-30">
                 <h3>Leave A Reply</h3>
               </div>
-              <form id="contacts-form" class="conatct-post-form" action="#">
-                <div class="row">
+              <form id="contacts-form" className="conatct-post-form" action="#">
+                <div className="row">
                   {input.map((x) => {
                     return (
                       <>
-                        <div class={(x.placeholder!="Subject")?"col-xl-6 col-lg-6 col-md-6":"col-xl-12"}>
-                          <div class="contact-icon p-relative contacts-name">
+                        <div className={(x.placeholder!="Subject")?"col-xl-6 col-lg-6 col-md-6":"col-xl-12"}>
+                          <div className="contact-icon p-relative contacts-name">
                             <input type={x.type} placeholder={x.placeholder} />
                           </div>
                         </div>
                       </>
                     );
                   })}
-                  <div class="col-xl-12">
-                    <div class="contact-icon p-relative contacts-message">
+                  <div className="col-xl-12">
+                    <div className="contact-icon p-relative contacts-message">
                       <textarea
                         name="comments"
                         id="comments"
@@ -117,8 +117,8 @@ const PostBox = (props) => {
                       ></textarea>
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <button class="t-y-btn t-y-btn-grey" type="submit">
+                  <div className="col-xl-12">
+                    <button className="t-y-btn t-y-btn-grey" type="submit">
                       Post comment
                     </button>
                   </div>

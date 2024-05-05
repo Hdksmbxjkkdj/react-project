@@ -4,13 +4,13 @@ import { SidebarItem } from "./sidebar-item";
 const Sidebar = (props) => {
   return (
     <>
-      <div class="sidebar__widget">
-        <div class="sidebar__widget-item mb-35">
-          <div class="sidebar__search">
+      <div className="sidebar__widget">
+        <div className="sidebar__widget-item mb-35">
+          <div className="sidebar__search">
             <form action="#">
               <input type="text" placeholder="Search posts here" />
               <button type="submit">
-                <i class="fa fa-search"></i>
+                <i className="fa fa-search"></i>
               </button>
             </form>
           </div>

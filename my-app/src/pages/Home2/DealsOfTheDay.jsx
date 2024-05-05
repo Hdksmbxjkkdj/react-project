@@ -23,60 +23,60 @@ const DealsOfTheDay = ()=> {
       };
     return (
         <>
-            <section class="deal__area pb-40">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="section__head d-md-flex justify-content-between mb-40">
-                                <div class="section__title">
+            <section className="deal__area pb-40">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-6">
+                            <div className="section__head d-md-flex justify-content-between mb-40">
+                                <div className="section__title">
                                     <h3>Deals<span>Of The Day</span></h3>
                                 </div>
                             </div>
-                            <div class="product__deal owl-carousel">
-                                <div class="product__deal-item">
-                                    <div class="product__item product__item-2 product__sale mb-30">
-                                        <div class="row">
-                                            <div class="col-xl-6  col-lg-6 col-md-6 col-sm-6">
-                                                <div class="product__thumb product__thumb-big p-relative">
-                                                    <a href="product-details.html" class="w-img">
+                            <div className="product__deal owl-carousel">
+                                <div className="product__deal-item">
+                                    <div className="product__item product__item-2 product__sale mb-30">
+                                        <div className="row">
+                                            <div className="col-xl-6  col-lg-6 col-md-6 col-sm-6">
+                                                <div className="product__thumb product__thumb-big p-relative">
+                                                    <a href="product-details.html" className="w-img">
                                                         <img src="assets/img/shop/product/product-15.jpg" alt="product" />
-                                                        <img class="second-img" src="assets/img/shop/product/product-24.jpg" alt="product" />
+                                                        <img className="second-img" src="assets/img/shop/product/product-24.jpg" alt="product" />
                                                     </a>
-                                                    <div class="product__offer">
-                                                        <span class="discount">-34%</span>
+                                                    <div className="product__offer">
+                                                        <span className="discount">-34%</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <div class="product__content product__content-2">
-                                                    <h6 class="product-name product__deal-name">
-                                                        <a class="product-item-link" href="product-details.html"> Original Mobile Android Dual SIM Smart Phone G3 </a>
+                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                                <div className="product__content product__content-2">
+                                                    <h6 className="product-name product__deal-name">
+                                                        <a className="product-item-link" href="product-details.html"> Original Mobile Android Dual SIM Smart Phone G3 </a>
                                                     </h6>
-                                                    <div class="rating rating-2">
+                                                    <div className="rating rating-2">
                                                         <ul>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <span class="new mb-5">$120.00</span>
-                                                    <span class="price-old mb-5"> <del>$125.00</del> </span>
-                                                    <p class="mt-10">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                                                    <div class="product__countdown">
+                                                    <span className="new mb-5">$120.00</span>
+                                                    <span className="price-old mb-5"> <del>$125.00</del> </span>
+                                                    <p className="mt-10">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                                                    <div className="product__countdown">
                                                         <h4>Hurry Up! Offer ends in:</h4>
-                                                        <div class="countdown-wrapper">
+                                                        <div className="countdown-wrapper">
                                                             <div data-countdown data-date="Dec 02 2022 20:20:22">
                                                                 <ul>
                                                                     <li>
@@ -104,50 +104,50 @@ const DealsOfTheDay = ()=> {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product__deal-item">
-                                    <div class="product__item product__item-2 product__sale mb-30">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <div class="product__thumb product__thumb-big p-relative">
-                                                    <a href="product-details.html" class="w-img">
+                                <div className="product__deal-item">
+                                    <div className="product__item product__item-2 product__sale mb-30">
+                                        <div className="row">
+                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                                <div className="product__thumb product__thumb-big p-relative">
+                                                    <a href="product-details.html" className="w-img">
                                                         <img src="assets/img/shop/product/product-15.jpg" alt="product" />
-                                                        <img class="second-img" src="assets/img/shop/product/product-24.jpg" alt="product" />
+                                                        <img className="second-img" src="assets/img/shop/product/product-24.jpg" alt="product" />
                                                     </a>
-                                                    <div class="product__offer">
-                                                        <span class="discount">-34%</span>
+                                                    <div className="product__offer">
+                                                        <span className="discount">-34%</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                                <div class="product__content product__content-2">
-                                                    <h6 class="product-name product__deal-name">
-                                                        <a class="product-item-link" href="product-details.html"> Original Mobile Android Dual SIM Smart Phone G3 </a>
+                                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                                <div className="product__content product__content-2">
+                                                    <h6 className="product-name product__deal-name">
+                                                        <a className="product-item-link" href="product-details.html"> Original Mobile Android Dual SIM Smart Phone G3 </a>
                                                     </h6>
-                                                    <div class="rating rating-2">
+                                                    <div className="rating rating-2">
                                                         <ul>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                             <li>
-                                                                <a href="#"><i class="far fa-star"></i></a>
+                                                                <a href="#"><i className="far fa-star"></i></a>
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <span class="new mb-5">$120.00</span>
-                                                    <span class="price-old mb-5"> <del>$125.00</del> </span>
-                                                    <p class="mt-10">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
-                                                    <div class="product__countdown">
+                                                    <span className="new mb-5">$120.00</span>
+                                                    <span className="price-old mb-5"> <del>$125.00</del> </span>
+                                                    <p className="mt-10">Typi non habent claritatem insitam, est usus legentis in iis qui facit...</p>
+                                                    <div className="product__countdown">
                                                         <h4>Hurry Up! Offer ends in:</h4>
-                                                        <div class="countdown-wrapper">
+                                                        <div className="countdown-wrapper">
                                                             <div data-countdown data-date="Dec 02 2022 20:20:22">
                                                                 <ul>
                                                                     <li>
@@ -177,9 +177,9 @@ const DealsOfTheDay = ()=> {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="section__head d-md-flex justify-content-between mb-40">
-                                <div class="section__title">
+                        <div className="col-xl-6">
+                            <div className="section__head d-md-flex justify-content-between mb-40">
+                                <div className="section__title">
                                     <h3>Electronic & Digital<span>Products</span></h3>
                                 </div>
                             </div>

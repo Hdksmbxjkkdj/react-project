@@ -9,17 +9,17 @@ const BlogArea = (props) => {
   }, []);
   return (
     <>
-      <section class="blog__area box-plr-75 pb-70">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xxl-2 col-xl-3 col-lg-3">{props.children}</div>
-            <div class="col-xxl-10 col-xl-9 col-lg-9 order-first order-lg-last">
-              <div class="row">
+      <section className="blog__area box-plr-75 pb-70">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-xxl-2 col-xl-3 col-lg-3">{props.children}</div>
+            <div className="col-xxl-10 col-xl-9 col-lg-9 order-first order-lg-last">
+              <div className="row">
                 {props.items.map((item) => {
                   return (
-                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                      <article class="postbox__item format-image mb-50 transition-3">
-                        <div class="postbox__thumb w-img">
+                    <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                      <article className="postbox__item format-image mb-50 transition-3">
+                        <div className="postbox__thumb w-img">
                           <a href="#">
                             <img
                               src={Config.blog + "" + item.pic}
@@ -27,28 +27,28 @@ const BlogArea = (props) => {
                             />
                           </a>
                         </div>
-                        <div class="postbox__content">
-                          <h3 class="postbox__title">
+                        <div className="postbox__content">
+                          <h3 className="postbox__title">
                             <a href="blog-details.html">{item.title}</a>
                           </h3>
-                          <div class="postbox__meta">
+                          <div className="postbox__meta">
                             <p>
                               Post Date: <span>{item.date}</span>
                             </p>
                           </div>
-                          <div class="postbox__text">
+                          <div className="postbox__text">
                             <p>{item.text} </p>
                           </div>
-                          <div class="postbox__bottom d-flex justify-content-between align-items-center">
-                            <div class="postbox__more">
+                          <div className="postbox__bottom d-flex justify-content-between align-items-center">
+                            <div className="postbox__more">
                               <a
                                 href="blog-details.html"
-                                class="t-y-btn t-y-btn-grey"
+                                className="t-y-btn t-y-btn-grey"
                               >
                                 read more
                               </a>
                             </div>
-                            <div class="postbox__tag">
+                            <div className="postbox__tag">
                               <p>
                                 {" "}
                                 Categories:{" "}
@@ -61,8 +61,8 @@ const BlogArea = (props) => {
                     </div>
                   );
                 })}
-                <div class="col-xxl-12">
-                  <div class="basic-pagination basic-pagination-border pt-30 pb-30">
+                <div className="col-xxl-12">
+                  <div className="basic-pagination basic-pagination-border pt-30 pb-30">
                     {props.children[1]}
                   </div>
                 </div>
