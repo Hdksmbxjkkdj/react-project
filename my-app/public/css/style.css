@@ -3733,6 +3733,16 @@ p {
   font-size: 16px;
 }
 
+.table-content table td.product-subtotal::before
+{
+  content: "$";
+}
+
+.table-content table td.product-price::before
+{
+  content: "$";
+}
+
 .table-content table td .cart-plus-minus {
   float: none;
   margin: 0 auto;
@@ -3799,6 +3809,9 @@ p {
 
 .cart-page-total ul > li > span {
   float: right;
+}
+.cart-page-total ul > li > span::before {
+  content: "$";
 }
 
 .cart-page-total li:last-child {

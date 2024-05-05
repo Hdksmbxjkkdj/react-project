@@ -16,6 +16,7 @@ import { AboutUs } from "./pages/AboutUs";
 import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Auth/login";
 import { Register } from "./pages/Auth/register";
+import { Cart } from "./pages/Auth/cart";
 import { BackToTop } from "./pages/Components/backtotop";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="Login" element={<Login/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/Register" element={<Register/>}/>
+          <Route path="Cart" element={<Cart/>}/>
           <Route path="/Footer" element={<Footer />} />
         </Routes>
         <div id="loading">
