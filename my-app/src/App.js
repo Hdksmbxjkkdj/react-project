@@ -19,6 +19,7 @@ import { Register } from "./pages/Auth/register";
 import { Cart } from "./pages/Auth/cart";
 import { WishList } from "./pages/Auth/wishlist";
 import { Checkout } from "./pages/Auth/checkout";
+import { Error } from "./pages/Auth/404error";
 import { BackToTop } from "./pages/Components/backtotop";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="Cart" element={<Cart/>}/>
           <Route path="wishlist" element={<WishList/>}/>
           <Route path="checkout" element={<Checkout/>}/>
+          <Route path="error" element={<Error/>}/>
           <Route path="/Footer" element={<Footer />} />
         </Routes>
         <div id="loading">

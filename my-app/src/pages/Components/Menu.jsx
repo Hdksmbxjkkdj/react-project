@@ -45,7 +45,7 @@ export const Menu = () => {
                         <li><Link to="Cart">Cart</Link></li>
                         <li><Link to="wishlist">Wishlist</Link></li>
                         <li><Link to="checkout">Checkout</Link></li>
-                        <li><a href="error.html">404 Error</a></li>
+                        <li><Link to="error">404 Error</Link></li>
                     </ul>
                 </li>
             </ul>
