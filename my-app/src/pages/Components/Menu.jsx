@@ -41,7 +41,7 @@ export const Menu = () => {
                     <a href="about.html">pages <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
                         <li><Link to="Login">Login</Link></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><Link to="Register">Register</Link></li>
                         <li><a href="cart.html">Cart</a></li>
                         <li><a href="wishlist.html">Wishlist</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
