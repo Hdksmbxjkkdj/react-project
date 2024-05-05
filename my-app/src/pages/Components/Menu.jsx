@@ -43,7 +43,7 @@ export const Menu = () => {
                         <li><Link to="Login">Login</Link></li>
                         <li><Link to="Register">Register</Link></li>
                         <li><Link to="Cart">Cart</Link></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><Link to="wishlist">Wishlist</Link></li>
                         <li><a href="checkout.html">Checkout</a></li>
                         <li><a href="error.html">404 Error</a></li>
                     </ul>
