@@ -1,4 +1,4 @@
-import Breadcrumb from './breadcrumb';
+import Breadcrumb from './Breadcrumb';
 import Menu from '../Components/Menu'
 import Main from './Main';
 import Sidebar from './Sidebar';

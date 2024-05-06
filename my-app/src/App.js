@@ -23,22 +23,35 @@ import Footer from './pages/Components/Footer';
 import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
-
+import Shop from './pages/Shop/Shop'
+import { useState } from 'react';
+import {productData} from './pages/Shop/productData'
 function App() {
-
+  const[state, setstate] =useState(false);
+ 
   return (
     <>
+      {
+         state?(
+          console.log('hello')
+         ):
+         console.log('bye')
+        
+
+      }
+      <productData></productData>
       <BrowserRouter>
       {/* <Home1></Home1> */}
       <Layout>
       <Routes>
         <Route path="/" element={<Home1/>}/>
-        <Route path="/Footer" element={<Footer/>}/>
+        {/* <Route path="/Footer" element={<Footer/>}/> */}
         <Route path="/product" element={<Product/>}/>
+
       </Routes>
       </Layout>
       </BrowserRouter>
-      
+      <Shop/>
       
     </>
   );

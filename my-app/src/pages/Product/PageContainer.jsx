@@ -1,3 +1,6 @@
+// import chaman from '../imegs/chaman.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
+import { faBagShopping} from '@fortawesome/free-solid-svg-icons'
 function PageContainer(props){
     console.log(props)
     return <>
@@ -5,7 +8,8 @@ function PageContainer(props){
                 <div  className="container-fluid">
                     <div  className="row">
                          {props.children} 
-
+                         {/* <img src={chaman}/> */}
+                        <FontAwesomeIcon icon={faBagShopping}/>
                     </div>
                     </div>
             </section>
