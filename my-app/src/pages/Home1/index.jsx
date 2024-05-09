@@ -1,4 +1,3 @@
-// import { Header } from "../Components/Header";
 import { Hero } from "./hero";
 import { Banner } from "./hero/banner";
 import { Features } from "./features";

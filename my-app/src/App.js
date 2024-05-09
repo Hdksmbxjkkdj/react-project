@@ -30,7 +30,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Home1></Home1> */}
         <Header></Header>
         <Routes>
           <Route path="/Home1" element={<Home1 />} />

@@ -1113,6 +1113,16 @@ p {
   color: #222;
 }
 
+.sticky
+{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 0 5px 2px #555;
+}
+
 /*----------------------------------------*/
 /*  00. MODAL CSS START
 /*----------------------------------------*/
