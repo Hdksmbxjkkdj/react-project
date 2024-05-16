@@ -3832,6 +3832,10 @@ td.product-thumbnail img {
   width: 125px;
 }
 
+.product-remove a {
+  cursor: pointer;
+}
+
 /* 17. Checkout */
 .coupon-accordion h3 {
   background-color: #f6f6f6;

@@ -1,19 +1,23 @@
+import { Header } from "../Components/Header";
 import { Config } from "../../Utils/config";
+import { createContext, useEffect, useState,useContext } from "react";
+import { CartContext } from "../../context/CardContext";
+import { AddToCart } from "../Cart/AddToCart";
+import axios from "axios";
 const WishList = () => {
-  const row = [
-    {
-      pic: "product-2.jpg",
-      name: "Bakix Furniture",
-      unitprice: 130.0,
-      quantity: 1,
-    },
-    {
-      pic: "product-4.jpg",
-      name: "Sujon Chair Set",
-      unitprice: 120.5,
-      quantity: 1,
-    },
-  ];
+  const {cart,setCart}=useContext(CartContext);
+  const [row, setrow] = useState();
+  useEffect(() => {
+    return async function getusers() {
+      try {
+        const res = await axios.get("http://localhost:313/wishlist");
+        setrow(res.data);
+      } catch {
+        console.log("error");
+      }
+    };
+  }, []);
+  const eMessage = "error";
   function total() {
     var tot = 0;
     for (var i = 0; i < row.length; i++) {
@@ -44,14 +48,14 @@ const WishList = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {row.map((items) => {
+                        {row?.map((item) => {
                           return (
                             <>
                               <tr>
                                 <td class="product-thumbnail">
                                   <a href="product-details.html">
                                     <img
-                                      src={Config.shop + "" + items.pic}
+                                      src={Config.shop + "" + item.pic}
                                       alt=""
                                     />
                                   </a>
@@ -61,7 +65,7 @@ const WishList = () => {
                                     href="product-details.html"
                                     style={{ fontWeight: "600" }}
                                   >
-                                    {items.name}
+                                    {item.name}
                                   </a>
                                 </td>
                                 <td class="product-price">
@@ -69,12 +73,27 @@ const WishList = () => {
                                     class="amount"
                                     style={{ fontWeight: "600" }}
                                   >
-                                    {items.unitprice.toFixed(2)}
+                                    {item.unitprice?.toFixed(2)}
                                   </span>
                                 </td>
                                 <td class="product-quantity">
                                   <div class="cart-plus-minus">
-                                  <button class="t-y-btn t-y-btn-grey fw-bold"type="submit">Add TO Cart</button>
+                                    <button
+                                      class="t-y-btn t-y-btn-grey fw-bold"
+                                      type="submit"
+                                      onClick={() => AddToCart(
+                                        item.id,
+                                        item.pic,
+                                        item.name,
+                                        item.unitprice,
+                                        item.quantity,
+                                        setCart,
+                                        eMessage,
+                                        null
+                                      )}
+                                    >
+                                      Add TO Cart
+                                    </button>
                                   </div>
                                 </td>
                                 <td class="product-subtotal">
@@ -82,7 +101,7 @@ const WishList = () => {
                                     class="amount"
                                     style={{ fontWeight: "600" }}
                                   >
-                                    {(items.unitprice * items.quantity).toFixed(
+                                    {(item.unitprice * item.quantity).toFixed(
                                       2
                                     )}
                                   </span>

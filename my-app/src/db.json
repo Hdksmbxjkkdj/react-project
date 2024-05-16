@@ -1,0 +1,34 @@
+{
+  "row": [
+    {
+      "id": "1",
+      "pic": "product-3.jpg",
+      "name": "Bakix Furniture",
+      "unitprice": 130,
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "pic": "product-4.jpg",
+      "name": "Sujon Chair Set",
+      "unitprice": 120.5,
+      "quantity": 1
+    }
+  ],
+  "wishlist": [
+    {
+      "id": "3",
+      "pic": "product-2.jpg",
+      "name": "Bakix Furniture",
+      "unitprice": 130,
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "pic": "product-4.jpg",
+      "name": "Sujon Chair Set",
+      "unitprice": 120.5,
+      "quantity": 1
+    }
+  ]
+}

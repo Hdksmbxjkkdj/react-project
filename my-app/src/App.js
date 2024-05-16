@@ -16,19 +16,22 @@ import { AboutUs } from "./pages/AboutUs";
 import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Auth/login";
 import { Register } from "./pages/Auth/register";
-import { Cart } from "./pages/Auth/cart";
+import { Cart } from "./pages/Cart/cart";
 import { WishList } from "./pages/Auth/wishlist";
 import { Checkout } from "./pages/Auth/checkout";
 import { Error } from "./pages/Auth/404error";
 import { BackToTop } from "./pages/Components/backtotop";
+import { CartContext } from "./context/CardContext";
+import { useState } from "react";
 
 function App() {
   window?.$(window).on("load", function () {
     window?.$("#loading").fadeOut(500);
   });
-
+  const [cart,setCart] = useState([]);
   return (
     <>
+    <CartContext.Provider value={{cart ,setCart}}>
       <BrowserRouter>
         <Header></Header>
         <Routes>
@@ -58,6 +61,7 @@ function App() {
         <BackToTop></BackToTop>
         <Footer></Footer>
       </BrowserRouter>
+    </CartContext.Provider>
     </>
   );
 }
