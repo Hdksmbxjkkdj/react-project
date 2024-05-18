@@ -1,4 +1,13 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 const Checkout = () => {
+    const [item,setitem] = useState();
+    useEffect(()=>{
+        axios.get("http://localhost:313/row").then(()=>{
+            
+        })
+    },[])
   return (
     <>
       <section class="coupon-area pb-30">

@@ -4,7 +4,7 @@ const Pagination = (props) => {
       <nav>
         <ul>
           <li>
-            <a href="blog.html">
+            <a href="#">
               <i className={(props.count.length)?"fa fa-chevron-left":"fa fa-chevron-left disabled"}></i>
             </a>
           </li>
@@ -12,13 +12,13 @@ const Pagination = (props) => {
             return (
               <>
                 <li>
-                  <a href="blog.html">{item.number}</a>
+                  <a href="#">{item.number}</a>
                 </li>
               </>
             );
           })}
           <li>
-            <a href="blog.html">
+            <a href="#">
               <i className={(props.count.length)?"fa fa-chevron-right":"fa fa-chevron-right disabled"}></i>
             </a>
           </li>

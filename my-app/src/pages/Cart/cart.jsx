@@ -6,6 +6,7 @@ import { event } from "jquery";
 import { Notif } from "../../Utils/Notif";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
+import {Link} from "react-router-dom";
 const Cart = () => {
   const row = [
     {
@@ -156,9 +157,9 @@ const Cart = () => {
                           Total <span>{Total()}</span>
                         </li>
                       </ul>
-                      <a className="t-y-btn" href="checkout.html">
+                      <Link className="t-y-btn" to="/checkout">
                         Proceed to checkout
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

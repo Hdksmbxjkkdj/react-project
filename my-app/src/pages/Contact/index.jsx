@@ -1,3 +1,4 @@
+import { SendMessage } from "./SendMessage";
 const Contact = () => {
   const contact = [
     {
@@ -124,25 +125,25 @@ const Contact = () => {
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                       <div class="contact__input">
                         <span>{form[0].name}</span>
-                        <input type="text" />
+                        <input type="text" id="name" name="name"/>
                       </div>
                     </div>
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                       <div class="contact__input">
                         <span>{form[0].email}</span>
-                        <input type="email" />
+                        <input type="email" id="email" name="email"/>
                       </div>
                     </div>
                     <div class="col-xxl-12">
                       <div class="contact__input">
                         <span>{form[0].phonenumber}</span>
-                        <input type="tel" />
+                        <input type="tel" id="phone" name="phone"/>
                       </div>
                     </div>
                     <div class="col-xxl-12">
                       <div class="contact__input">
                         <span>{form[0].textarea}</span>
-                        <textarea></textarea>
+                        <textarea id="message" name="message"></textarea>
                       </div>
                     </div>
                     <div class="col-xxl-12">

@@ -11,7 +11,6 @@ export const RemoveCartItem = async(event, id, name, setCart, eMessage, all = fa
         await axios.delete(url).then((response) => {
             console.log(response);
             setCart(response)
-            
             if (response.data.status) status = response.data.status
             message = response.data.message
         })

@@ -1,48 +1,15 @@
 import { Config } from "../../Utils/config";
 import { Form } from "./subscript-form";
 import { ProgressWrap } from "../Components/Progress-wrap";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const AboutUs = () => {
-  const about = [
-    {
-      pic: "about-bg.jpg",
-      title: "About Topico Magento",
-      text: "Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit sceleri sque dui. Donec ornare massa vitae neque lobortis rutrum.",
-      explain:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultra trices, eu feugiat sapien commodo. Praesent vitae ipsum et risus.",
-      maintext:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
-    },
-  ];
-  const why_item = [
-    {
-      pic: "about-1.jpg",
-      title: "What Do We Do?",
-      text: "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis.",
-    },
-    {
-      pic: "about-2.jpg",
-      title: "Our Mission?",
-      text: "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis.",
-    },
-    {
-      pic: "about-3.jpg",
-      title: "History Of Us?",
-      text: "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis.",
-    },
-  ];
   const video = [
     {
       src: "https://www.youtube.com/embed/ZuzZXT3A1aQ",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
       video_title: "YouTube video player",
-    },
-  ];
-  const subscript = [
-    {
-      pic: "icon_email.png",
-      title: "Sign up to Newsletter",
-      text: "Get email updates about our latest shop...and receive$30 Coupon For First Shopping",
     },
   ];
   const team = [
@@ -67,6 +34,14 @@ const AboutUs = () => {
       job: "Story Teller",
     },
   ];
+
+  const [about,setabout]=useState();
+  useEffect(()=>{
+    axios.get("http://localhost:313/about").then((response)=>{
+      setabout(response);
+    })
+  },[])
+  // console.log(about.data[0]);
   return (
     <>
     <ProgressWrap></ProgressWrap>
@@ -75,7 +50,7 @@ const AboutUs = () => {
           <div className="row gx-0">
             <div className="col-xxl-12">
               <div className="about__banner w-img">
-                <img src={Config.about + "" + about[0].pic} alt="" />
+                <img src={Config.about + "" + about?.data[0].pic} alt="" />
               </div>
             </div>
           </div>
@@ -87,15 +62,15 @@ const AboutUs = () => {
             <div className="row">
               <div className="col-xxl-12">
                 <div className="about__wrapper">
-                  <h3>{about[0].title}</h3>
-                  <p className="about__text">{about[0].text}</p>
+                  <h3>{about?.data[0].title}</h3>
+                  <p className="about__text">{about?.data[0].text}</p>
 
                   <div className="about__quote">
                     <blockquote>
-                      <p>{about[0].explain}</p>
+                      <p>{about?.data[0].explain}</p>
                     </blockquote>
                   </div>
-                  <p className="about__text">{about[0].maintext}</p>
+                  <p className="about__text">{about?.data[0].maintext}</p>
                 </div>
               </div>
             </div>
@@ -115,7 +90,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="row">
-              {why_item.map((items) => {
+              {about?.data[0].why_item.map((items) => {
                 return (
                   <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                     <div className="why__item mb-30">
@@ -149,8 +124,8 @@ const AboutUs = () => {
             <div className="col-xxl-12">
               <div className="video__content">
                 <iframe
-                  src={video[0].src}
-                  title={video[0].video_title}
+                  src={about?.data[0].video[0].src}
+                  title={about?.data[0].video[0].video_title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
@@ -160,7 +135,7 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="video__text pl-155 pr-155 mt-30">
-                <p>{video[0].text}</p>
+                <p>{about?.data[0].video[0].text}</p>
               </div>
             </div>
           </div>
@@ -179,7 +154,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="row">
-              {team.map(function (items) {
+              {about?.data[0].team.map(function (items) {
                 return (
                   <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
                     <div className="team__item text-center mb-30">
@@ -208,13 +183,13 @@ const AboutUs = () => {
               <div className="subscribe__content d-sm-flex align-items-center">
                 <div className="subscribe__icon mr-25">
                   <img
-                    src={Config.icon + "" + subscript[0].pic}
+                    src={Config.icon + "icon_email.png"}
                     alt="subscript"
                   />
                 </div>
                 <div className="subscribe__text">
-                  <h4>{subscript[0].title}</h4>
-                  <p>{subscript[0].text}</p>
+                  <h4>Sign up to Newsletter</h4>
+                  <p>Get email updates about our latest shop...and receive$30 Coupon For First Shopping</p>
                 </div>
               </div>
             </div>

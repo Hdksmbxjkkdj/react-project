@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
 import { Comment } from "./commentbox";
+import axios from "axios";
 
 const PostBox = (props) => {
   const input = [
@@ -7,14 +9,22 @@ const PostBox = (props) => {
     { type: "text", placeholder: "Email" },
     { type: "text", placeholder: "Subject" },
   ];
+  const [item,setitem] = useState();
+  useEffect(()=>{
+    axios.get("http://localhost:313/blog").then((response)=>{
+      var myid = props.id;
+      myid = myid.slice(1);
+      myid=parseInt(myid)
+      setitem(response.data[myid-1])
+    })
+  },[])
+  console.log(item?.pic);
   return (
     <>
       <div className="postbox__wrapper">
         <article className="postbox__item format-image mb-50 transition-3">
           <div className="postbox__thumb w-img">
-            <a href="blog-details.html">
-              <img src={Config.blog + "blog-1.jpg"} alt="" />
-            </a>
+              <img src={Config.blog + "sidebar/"+item?.pic} alt="" />
           </div>
           <div className="postbox__content">
             <h3 className="postbox__title postbox__title-2">

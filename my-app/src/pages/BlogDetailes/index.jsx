@@ -2,8 +2,10 @@ import { Sidebar } from "../Blog/sidebar";
 import { SidebarItem } from "../Blog/sidebar-item";
 import { SidebarItem1 } from "../Blog/sidebar-item-1";
 import { PostBox } from "./postbox";
+import { useParams } from "react-router-dom";
 
 const BlogDetaile = (props) => {
+  let {id} = useParams();
   const items = [
     {
       pic: "blog-1.jpg",
@@ -151,7 +153,7 @@ const BlogDetaile = (props) => {
             <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
               <div className="row">
                 <div className="col-xxl-12">
-                  <PostBox item={comment}></PostBox>
+                  <PostBox item={comment} id={id}></PostBox>
                 </div>
               </div>
             </div>

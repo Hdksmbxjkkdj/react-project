@@ -4971,6 +4971,9 @@ p.checkout-coupon input[type=text]:focus {
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
+.why__inner {
+  margin-top: 3rem;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .why__inner {
     padding-left: 40px;
