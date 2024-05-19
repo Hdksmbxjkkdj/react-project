@@ -18,15 +18,6 @@ const WishList = () => {
     };
   }, []);
   const eMessage = "error";
-  function total() {
-    var tot = 0;
-    for (var i = 0; i < row.length; i++) {
-      tot += row[i].quantity * row[i].unitprice;
-      console.log(tot);
-    }
-    var totally = Math.round(tot) - 1;
-    return totally.toFixed(2);
-  }
   return (
     <>
       <main>

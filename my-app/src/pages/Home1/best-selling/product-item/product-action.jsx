@@ -1,10 +1,11 @@
-const ProductAction = ()=> {
+import { AddToWishlist } from "./AddToWishlist";
+const ProductAction = ({item})=> {
     return (
         <>
             <div className="product__action p-absolute">
             <ul>
               <li>
-                <a href="#" title="Add to Wishlist">
+                <a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="Add to Wishlist">
                   <i className="fa-regular fa-heart"></i>
                 </a>
               </li>

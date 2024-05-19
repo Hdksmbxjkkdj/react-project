@@ -26,7 +26,7 @@ const ProductSlider = ({ type, res, item }) => {
     margin: 20,
     autoplay: true,
     autoplayTimeout: 3000,
-    smartSpeed: 1500,
+    smartSpeed: 500,
     // items: 6,
     navText: [
       '<button><i class="fa fa-angle-left"></i></button>',
@@ -35,6 +35,7 @@ const ProductSlider = ({ type, res, item }) => {
     nav: true,
     dots: false,
     responsive: res,
+    autoplayHoverPause:true
   };
   // console.log(type);
   if (type == "flex") {

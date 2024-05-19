@@ -8,7 +8,7 @@ const ProductThumb = ({item}) => {
           <img src={Config.shop+""+item?.pic} alt="product" />
           <img className="second-img" src={Config.shop+""+item?.seccondpic} />
         </a>
-        <ProductAction></ProductAction>
+        <ProductAction item={item}></ProductAction>
       </div>
     </>
   );

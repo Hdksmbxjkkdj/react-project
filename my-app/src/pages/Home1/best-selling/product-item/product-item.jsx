@@ -51,8 +51,8 @@ const ProductItem = ({type, slider}) => {
     <>
       <div className="product__item white-bg">
         <ProductThumb item={slider}></ProductThumb>
-        <ProductContent></ProductContent>
-        <ProductAddbtn></ProductAddbtn>
+        <ProductContent item={slider}></ProductContent>
+        <ProductAddbtn item={slider}></ProductAddbtn>
       </div>
     </>
   );

@@ -14,6 +14,7 @@ export const AddToCart = async (
   let url = `http://localhost:313/row`;
   let quantity = count;
   let status = 200;
+  alert("hello")
 
   // window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
 
