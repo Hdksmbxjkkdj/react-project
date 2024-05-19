@@ -8,22 +8,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 import {Link} from "react-router-dom";
 const Cart = () => {
-  const row = [
-    {
-      id: 1,
-      pic: "product-2.jpg",
-      name: "Bakix Furniture",
-      unitprice: 130.00,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      pic: "product-4.jpg",
-      name: "Sujon Chair Set",
-      unitprice: 120.50,
-      quantity: 1,
-    },
-  ];
   function Total()
   {
     var tot=0;
@@ -35,9 +19,6 @@ const Cart = () => {
     return totally.toFixed(2);
   }
   const {cart ,setCart}= useContext(CartContext);
-  useEffect(()=>{
-    setCart(row);
-  },[])
   useEffect(()=>{
     return (
       async function getitem()

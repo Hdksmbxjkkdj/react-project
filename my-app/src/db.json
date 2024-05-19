@@ -211,5 +211,87 @@
         }
       ]
     }
+  ],
+  "best_selling" : [
+    {
+      "pic":"product-1.jpg",
+      "seccondpic":"product-2.jpg",
+      "text":"High Quality Glass Ultra-Thin Kitchen Scale",
+      "price":"$500.00"
+    },
+    {
+      "pic":"product-3.jpg",
+      "seccondpic":"product-4.jpg",
+      "text":"LG 27UD58: £347.21, Ebuyer.com",
+      "price":"$560.00"
+    },
+    {
+      "pic":"product-5.jpg",
+      "seccondpic":"product-6.jpg",
+      "text":"Samsung C49J89: £875, Debenhams Plus",
+      "price":"$450.00"
+    },
+    {
+      "pic":"product-7.jpg",
+      "seccondpic":"product-8.jpg",
+      "text":"Blink Home Security Camera System 01",
+      "price":"$720.00"
+    },
+    {
+      "pic":"product-9.jpg",
+      "seccondpic":"product-10.jpg",
+      "text":"Blue t-shir for men (X, M, XL, XXL)",
+      "price":"$720.00"
+    },
+    {
+      "pic":"product-11.jpg",
+      "seccondpic":"product-12.jpg",
+      "text":"Samsung A20 Pro Ultra CPU 4/64 GB",
+      "price":"$720.00"
+    },
+    {
+      "pic":"product-13.jpg",
+      "seccondpic":"product-14.jpg",
+      "text":"Blink Home Security Camera System 01",
+      "price":"$720.00"
+    }
+  ],
+  "blog_slider" : [
+    {
+      "pic":"blog-sm-1.jpg",
+      "title":"Curabitur Lobortis News",
+      "date":"01-Jul-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    },
+    {
+      "pic":"blog-sm-2.jpg",
+      "title":"The Brushed Steel",
+      "date":"05-Aug-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    },
+    {
+      "pic":"blog-sm-3.jpg",
+      "title":"Koma and Torus",
+      "date":"15-Aug-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    },
+    {
+      "pic":"blog-sm-4.jpg",
+      "title":"Grip and Allows",
+      "date":"20-Aug-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    },
+    {
+      "pic":"blog-sm-5.jpg",
+      "title":"Pitterarum Formas",
+      "date":"25-Aug-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    },
+    {
+      "pic":"blog-sm-6.jpg",
+      "title":"Shelving Burgundy",
+      "date":"02-Sep-2020",
+      "text":"Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis."
+    }
   ]
 }

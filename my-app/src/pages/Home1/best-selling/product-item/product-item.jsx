@@ -2,7 +2,7 @@ import { ProductThumb } from "./product-thumb";
 import { ProductThumbflex } from "./product-thumb";
 import { ProductContent } from "./product-content";
 import { ProductAddbtn } from "./product-add-btn";
-const ProductItem = (type) => {
+const ProductItem = ({type, slider}) => {
   const items = [
     {
       image: "product-1.jpg",
@@ -50,7 +50,7 @@ const ProductItem = (type) => {
   return (
     <>
       <div className="product__item white-bg">
-        <ProductThumb item={items}></ProductThumb>
+        <ProductThumb item={slider}></ProductThumb>
         <ProductContent></ProductContent>
         <ProductAddbtn></ProductAddbtn>
       </div>
@@ -58,7 +58,7 @@ const ProductItem = (type) => {
   );
 };
 
-const ProductItemflex = (type) => {
+const ProductItemflex = ({type, slider}) => {
   const items = [
     {
       image: "product-1.jpg",
@@ -106,7 +106,7 @@ const ProductItemflex = (type) => {
   return (
     <>
       <div className="product__item white-bg d-flex mb-4">
-        <ProductThumbflex item={items}></ProductThumbflex>
+        <ProductThumbflex item={slider}></ProductThumbflex>
         <ProductContent></ProductContent>
       </div>
     </>

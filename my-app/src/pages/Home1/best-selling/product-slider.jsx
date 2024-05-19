@@ -1,62 +1,87 @@
 import { ProductItem } from "./product-item/product-item";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ProductItemflex } from "./product-item/product-item";
 import { BlogItem } from "./product-item/blog-item";
-import owlCarousel from "react-owl-carousel";
+import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import axios from "axios";
 
-const ProductSlider = ({type,res}) => {
-  console.log(res?.item);
+const ProductSlider = ({ type, res, item }) => {
+  const [slider, setslider] = useState();
   useEffect(() => {
-    window?.$(".product__slider").owlCarousel({
-      loop: true,
-      margin: 20,
-      autoplay: false,
-      autoplayTimeout: 3000,
-      smartSpeed: 1500,
-      // علامت سوال یعنی اینکه اگر res وجود داشت مقدار آنرا قرار میدهد در غیراینصورت کاری نمیکند
-      items: res?.item,
-      items:6,
-      navText: [
-        '<button><i class="fa fa-angle-left"></i></button>',
-        '<button><i class="fa fa-angle-right"></i></button>',
-      ],
-      nav: true,
-      dots: false,
-      responsive: res,
+    axios.get("http://localhost:313/best_selling").then((res) => {
+      setslider(res);
     });
   }, []);
-  
+  const [blog, setblog] = useState();
+  useEffect(() => {
+    axios.get("http://localhost:313/blog_slider").then((res) => {
+      setblog(res);
+    });
+  }, []);
+
+  const Option = {
+    loop: true,
+    margin: 20,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    smartSpeed: 1500,
+    // items: 6,
+    navText: [
+      '<button><i class="fa fa-angle-left"></i></button>',
+      '<button><i class="fa fa-angle-right"></i></button>',
+    ],
+    nav: true,
+    dots: false,
+    responsive: res,
+  };
+  // console.log(type);
   if (type == "flex") {
     return (
       <>
-        <div className="product__slider owl-carousel">
-          <div className="product__item-wrapper">
-            <ProductItemflex></ProductItemflex>
-            <ProductItemflex></ProductItemflex>
-          </div>
-        </div>
+        <OwlCarousel
+          loop
+          items={4}
+          className="owl-carousel owl-theme"
+          nav
+          {...Option}
+          key={Math.random()}
+        >
+          {slider?.data?.map((item) => {
+            return (
+              <div className="product__item-wrapper">
+                <ProductItemflex slider={item}></ProductItemflex>
+                <ProductItemflex slider={item}></ProductItemflex>
+              </div>
+            );
+          })}
+        </OwlCarousel>
       </>
     );
   }
-  if (type== "blog")
-  {
+  if (type == "blog") {
     return (
       <>
-        <div className="product__slider owl-carousel">
-          <div className="product__item-wrapper">
-            <BlogItem></BlogItem>
-          </div>
-        </div>
+        <OwlCarousel className="owl-carousel owl-theme" items={5} nav {...Option} key={Math.random()}>
+        {blog?.data?.map((item) => {
+          return (
+            <div className="product__item-wrapper">
+              <BlogItem blog={item}></BlogItem>
+            </div>
+          );
+        })}
+        </OwlCarousel>
       </>
-    )
+    );
   }
   return (
     <>
-      <div className="product__slider owl-carousel">
-        <ProductItem type={"flex"}></ProductItem>
-      </div>
+      <OwlCarousel className="owl-carousel owl-theme" loop nav {...Option} key={Math.random()}>
+        {slider?.data?.map((item) => {
+          return <ProductItem slider={item} type={"flex"}></ProductItem>;
+        })}
+      </OwlCarousel>
     </>
   );
 };

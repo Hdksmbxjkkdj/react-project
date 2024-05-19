@@ -440,7 +440,7 @@ p {
   }
 }
 /* common nav */
-.t-nav .owl-nav {
+.owl-nav {
   display: flex;
   position: absolute;
   top: -77px;

@@ -3,6 +3,8 @@ import { SidebarItem } from "../Blog/sidebar-item";
 import { SidebarItem1 } from "../Blog/sidebar-item-1";
 import { PostBox } from "./postbox";
 import { useParams } from "react-router-dom";
+import { useState , useEffect } from "react";
+import axios from "axios";
 
 const BlogDetaile = (props) => {
   let {id} = useParams();
@@ -138,6 +140,12 @@ const BlogDetaile = (props) => {
       text: "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for “lorem ipsum” will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.",
     },
   ];
+  const [item,setitem] = useState();
+  useEffect(()=>{
+    axios.get("http://localhost:313/blog").then((response)=>{
+      setitem(response);
+    })
+  },[])
   return (
     <>
       <section className="blog__area box-plr-75 pb-70">
@@ -146,7 +154,7 @@ const BlogDetaile = (props) => {
             <div className="col-xxl-2 col-xl-3 col-lg-4">
               <Sidebar>
                 <SidebarItem items={sidebar}></SidebarItem>
-                <SidebarItem1 items={sidebarItem}></SidebarItem1>
+                <SidebarItem1 items={item?.data}></SidebarItem1>
                 <sidebarItem items={sidebar1}></sidebarItem>
               </Sidebar>
             </div>

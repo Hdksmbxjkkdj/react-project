@@ -5,8 +5,8 @@ const ProductThumb = ({item}) => {
     <>
       <div className="product__thumb p-relative">
         <a href="product-details.html" className="w-img">
-          <img src={Config.shop+"product-1.jpg"} alt="product" />
-          <img className="second-img" src={Config.shop+"product-2.jpg"} />
+          <img src={Config.shop+""+item?.pic} alt="product" />
+          <img className="second-img" src={Config.shop+""+item?.seccondpic} />
         </a>
         <ProductAction></ProductAction>
       </div>
@@ -14,13 +14,13 @@ const ProductThumb = ({item}) => {
   );
 };
 
-const ProductThumbflex = ()=> {
+const ProductThumbflex = ({item})=> {
   return (
     <>
       <div className="product__thumb p-relative">
         <a href="product-details.html" className="w-img">
-          <img src={Config.shop+"product-1.jpg"} alt="product" />
-          <img className="second-img" src={Config.shop+"product-2.jpg"} />
+          <img src={Config.shop+""+item.pic} alt="product" />
+          <img className="second-img" src={Config.shop+""+item.seccondpic} />
         </a>
       </div>
     </>

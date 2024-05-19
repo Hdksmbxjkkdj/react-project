@@ -1,4 +1,4 @@
-import { SendMessage } from "./SendMessage";
+// import { SendMessage } from "./SendMessage";
 const Contact = () => {
   const contact = [
     {

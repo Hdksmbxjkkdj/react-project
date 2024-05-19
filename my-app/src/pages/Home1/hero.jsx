@@ -5,7 +5,6 @@ import {Banner} from './hero/banner';
 import {Slider} from './hero/slider';
 
 function Hero(props) {
-    console.log(props);
     return (
         <>
             <section className="slider__area pt-50 pb-50">
