@@ -24,34 +24,42 @@ import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
 import Shop from './pages/Shop/Shop'
-import { useState } from 'react';
 import {productData} from './pages/Shop/productData'
+
+import { useState } from 'react';
+
 function App() {
+  const [products,setproducts]=useState(productData);
   const[state, setstate] =useState(false);
  
   return (
     <>
-      {
+       <div className='container'>
+          <div className='row'>
+             
+          </div>
+       </div>
+      {/* {
          state?(
-          console.log('hello')
+          <Home1 />
          ):
          console.log('bye')
         
 
-      }
-      <productData></productData>
+      } */}
       <BrowserRouter>
       {/* <Home1></Home1> */}
       <Layout>
       <Routes>
-        <Route path="/" element={<Home1/>}/>
+        {/* <Route path="/" element={<Shop products = {products}/>}/> */}
         {/* <Route path="/Footer" element={<Footer/>}/> */}
         <Route path="/product" element={<Product/>}/>
 
       </Routes>
+      <Shop products = {products}/> 
       </Layout>
       </BrowserRouter>
-      <Shop/>
+    
       
     </>
   );
