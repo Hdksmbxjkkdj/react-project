@@ -1,3 +1,5 @@
+import { ProductAddbtn } from "./product-add-btn";
+
 const ProductContentlg = () => {
   return (
     <div className="product__content text-center">
@@ -46,9 +48,7 @@ const ProductContentlg = () => {
         eorum claritatem. Investigationes demonstraverunt lectores legere me
         lius quod
       </p>
-      <div className="add-cart">
-        <button className="t-y-btn t-y-btn-2">add to cart</button>
-      </div>
+      <ProductAddbtn type="show"></ProductAddbtn>
     </div>
   );
 };

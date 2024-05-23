@@ -15,9 +15,9 @@
       "quantity": 1
     },
     {
-      "id": "9",
-      "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
+      "id": "10",
+      "pic": "product-11.jpg",
+      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
       "unitprice": 720,
       "quantity": 1
     }
@@ -35,13 +35,6 @@
       "pic": "product-4.jpg",
       "name": "Sujon Chair Set",
       "unitprice": 120.5,
-      "quantity": 1
-    },
-    {
-      "id": "9",
-      "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
-      "unitprice": 720,
       "quantity": 1
     }
   ],

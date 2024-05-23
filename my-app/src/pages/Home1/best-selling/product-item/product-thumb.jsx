@@ -1,5 +1,6 @@
 import { ProductAction } from "./product-action";
 import { Config } from "../../../../Utils/config";
+import { useEffect } from "react";
 const ProductThumb = ({item}) => {
   return (
     <>

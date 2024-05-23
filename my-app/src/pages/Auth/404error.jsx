@@ -1,4 +1,4 @@
-const Error = () => {
+const   Error = () => {
   return (
     <>
       <section class="error__area pt-60 pb-100">

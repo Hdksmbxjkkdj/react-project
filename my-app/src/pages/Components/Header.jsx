@@ -1,9 +1,8 @@
-// import brand from '../../img/logo/logo-black.png';
-
 import { CartContext } from "../../context/CardContext";
 import { useContext } from "react";
 import { Menu } from "./Menu";
 import { Config } from "../../Utils/config";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   window?.$("document").ready(function () {
@@ -46,8 +45,7 @@ const Header = () => {
       window?.$(".body-overlay").removeClass("opened");
     });
   });
-  const { cart, setCart } = useContext(CartContext);
-  const eMessage="error"
+  const { cart } = useContext(CartContext);
   return (
     <>
       <header>
@@ -64,7 +62,7 @@ const Header = () => {
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
                       <li>
-                        <a href="#">My Account</a>
+                        <Link to="/profile">My Account</Link>
                       </li>
                       <li>
                         <a href="#">My Wishlist</a>
@@ -133,9 +131,9 @@ const Header = () => {
                         </div>
                       </form>
                     </div>
-                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative">
+                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" >
                       <a href="javascript:void(0);" className="cart__toggle">
-                        <span className="cart__total-item">{cart?.length}</span>
+                        <span className="cart__total-item">{cart.length}</span>
                       </a>
                       <span className="cart__content">
                         <span className="cart__my">My Cart:</span>
@@ -179,11 +177,6 @@ const Header = () => {
                                           <span>{item.unitprice}$</span>
                                         </div>
                                       </div>
-                                    </div>
-                                    <div className="cart__del">
-                                      <a href="#">
-                                        <i className="fa fa-trash-alt"></i>
-                                      </a>
                                     </div>
                                   </div>
                                 </li>
