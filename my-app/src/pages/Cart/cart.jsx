@@ -3,8 +3,6 @@ import { CartContext } from "../../context/CardContext";
 import { useContext, useEffect, useState } from "react";
 import { RemoveCartItem } from "./RemoveCartItem";
 import { event } from "jquery";
-import { Notif } from "../../Utils/Notif";
-import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 import {Link} from "react-router-dom";
 const Cart = () => {
@@ -26,7 +24,7 @@ const Cart = () => {
         try
         {
           const res = await axios.get("http://localhost:313/row");
-          setCart(res.data)
+          setCart(res?.data);
         }
         catch
         {
@@ -35,7 +33,7 @@ const Cart = () => {
       }
     )
   },[])
-  const eMessage="error"
+  const eMessage="error";
   return (
     <>
       <section className="cart-area pt-100 pb-100">
@@ -56,41 +54,42 @@ const Cart = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {cart?.map((items) => {
-                        return (
-                          <>
-                            <tr>
-                              <td className="product-thumbnail">
-                                <a href="product-details.html">
-                                  <img
-                                    src={Config.shop + "" +items.pic}
-                                    alt=""
-                                  />
-                                </a>
-                              </td>
-                              <td className="product-name">
-                                <a href="product-details.html" style={{fontWeight:"600"}}>{items.name}</a>
-                              </td>
-                              <td className="product-price">
-                                <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice).toFixed(2)}</span>
-                              </td>
-                              <td className="product-quantity">
-                                <div className="cart-plus-minus">
-                                  <input type="text" value={items.quantity} />
-                                </div>
-                              </td>
-                              <td className="product-subtotal">
-                                <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice*items.quantity).toFixed(2)}</span>
-                              </td>
-                              <td className="product-remove">
-                                <a onClick={() => RemoveCartItem(event, items.id, null, setCart, eMessage, true)}>
-                                  <i className="fa fa-times"></i>
-                                </a>
-                              </td>
-                            </tr>
-                          </>
-                        );
-                      })}
+                      {
+                        (cart.length>0) && cart?.map((items) => {
+                            return (
+                              <>
+                                <tr>
+                                  <td className="product-thumbnail">
+                                    <a href="product-details.html">
+                                      <img
+                                        src={Config.shop + "" +items.pic}
+                                        alt=""
+                                      />
+                                    </a>
+                                  </td>
+                                  <td className="product-name">
+                                    <a href="product-details.html" style={{fontWeight:"600"}}>{items.name}</a>
+                                  </td>
+                                  <td className="product-price">
+                                    <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice).toFixed(2)}</span>
+                                  </td>
+                                  <td className="product-quantity">
+                                    <div className="cart-plus-minus">
+                                      <input type="text" value={items.quantity} />
+                                    </div>
+                                  </td>
+                                  <td className="product-subtotal">
+                                    <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice*items.quantity).toFixed(2)}</span>
+                                  </td>
+                                  <td className="product-remove">
+                                    <a onClick={() => RemoveCartItem(event, items.id, null, setCart, eMessage, true)}>
+                                      <i className="fa fa-times"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </>
+                            );
+                          })}
                     </tbody>
                   </table>
                 </div>

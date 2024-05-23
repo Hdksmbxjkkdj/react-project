@@ -8,7 +8,7 @@ export const Menu = () => {
                 <li>
                     <a href="index.html">Home <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
-                        <li><Link to="Home1">Home Style 1</Link></li>
+                        <li><Link to="/">Home Style 1</Link></li>
                         <li><Link to="Home2">Home Style 2</Link></li>
                         <li><Link to="Home3">Home Style 3</Link></li>
                         <li><Link to="Home4">Home Style 4</Link></li>

@@ -1,11 +1,12 @@
-import { Header } from "../Components/Header";
 import { Config } from "../../Utils/config";
-import { createContext, useEffect, useState,useContext } from "react";
-import { CartContext } from "../../context/CardContext";
+import {useContext, useEffect, useState} from "react"
 import { AddToCart } from "../Cart/AddToCart";
 import axios from "axios";
+import { RemoveWishList } from "./RemoveWishList";
+import { event } from "jquery";
+import { CartContext } from "../../context/CardContext";
 const WishList = () => {
-  const {cart,setCart}=useContext(CartContext);
+  const {setCart} = useContext(CartContext);
   const [row, setrow] = useState();
   useEffect(() => {
     return async function getusers() {
@@ -98,7 +99,7 @@ const WishList = () => {
                                   </span>
                                 </td>
                                 <td class="product-remove">
-                                  <a href="#">
+                                  <a href="#" onClick={()=> RemoveWishList(event,item.id,item.name,setrow,"error",false)}>
                                     <i class="fa fa-times"></i>
                                   </a>
                                 </td>

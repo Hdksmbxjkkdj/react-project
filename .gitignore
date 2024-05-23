@@ -4,6 +4,7 @@
 /my-app/node_modules
 /my-app/.pnp
 /my-app/.pnp.js
+theme
 
 # testing
 /my-app/coverage

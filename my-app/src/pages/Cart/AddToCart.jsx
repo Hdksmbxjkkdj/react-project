@@ -1,50 +1,22 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
+import { useContext } from "react";
+import { CartContext } from "../../context/CardContext";
 
-export const AddToCart = async (
-  id,
-  pic,
-  name,
-  unitprice,
-  count = 1,
-  setCart,
-  eMessage,
-  returnPrevCount = null
-) => {
+export const AddToCart = async ( event, id, pic, name, unitprice, count = 1, setCart, eMessage, returnPrevCount = null) => {
   let url = `http://localhost:313/row`;
+
   let quantity = count;
   let status = 200;
-  alert("hello")
-
-  // window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
-
-  try {
-    let message;
-
-    await axios
-      .post(url, {
-        id: id,
-        pic: pic,
-        name: name,
-        unitprice: unitprice,
-        quantity: count,
-      })
-      .then((response) => {
-        console.log('response=>' , response);
-        setCart(response.data)
-        if (response.data.status) status = response.data.status
-        message = response.data.message
-      });
-
-    if (status == 200) {
-      Notif("success", message);
+  window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
+  let message;
+  let response = await axios.post(url, {id: id,pic: pic,name: name,unitprice: unitprice,quantity: count,});
+          setCart(response?.data);
+           (response.data.status) && (status = response.data.status)
+      if (status == 200) {
+      Notif("success", "added successfully !");
     } else {
-      Notif("error", message);
-      // returnPrevCount(event)
+      Notif("error", "there was an error here !");
     }
-  } catch (error) {
-    Notif("error", eMessage);
-  }
-
-//   window?.$(".spinner-container").fadeOut(300);
+  window?.$(".spinner-container").fadeOut(300);
 };
