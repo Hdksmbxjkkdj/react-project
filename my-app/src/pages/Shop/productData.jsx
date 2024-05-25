@@ -10,7 +10,7 @@ for(let i=1;i <= 8;i++){
                 //  price:200+i,
                  img:`https://picsum.photos/20${i}`,
                  id:i,
-                 title:`book ${i}`,
+                 title:`Blue t-shir for men  ${i}`,
                  price:300+i,
                  qty:1,
 

@@ -24,10 +24,11 @@ import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
 import Shop from './pages/Shop/Shop'
-import {productData} from './pages/Shop/productData'
+import {productData} from './pages/Shop/productData';
+import {Sidebar} from './pages/Sidebar/index';
+import {Color} from './pages/Sidebar/Color';
 
 import { useState } from 'react';
-
 function App() {
   const [products,setproducts]=useState(productData);
   const[state, setstate] =useState(false);
@@ -36,7 +37,7 @@ function App() {
     <>
        <div className='container'>
           <div className='row'>
-             
+           <Sidebar></Sidebar>
           </div>
        </div>
       {/* {
@@ -45,9 +46,10 @@ function App() {
          ):
          console.log('bye')
         
-
+      
       } */}
       <BrowserRouter>
+      
       {/* <Home1></Home1> */}
       <Layout>
       <Routes>

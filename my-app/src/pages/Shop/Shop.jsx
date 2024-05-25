@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {Product} from './Product';
 const Shop = ({products}) => {
-    // console.log(products)
+    console.log(products)
     return<>
         <div className="container">
             <div className="row">

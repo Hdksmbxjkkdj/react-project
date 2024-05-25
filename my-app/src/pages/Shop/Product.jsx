@@ -1,4 +1,8 @@
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ({items})=>{
     console.log('items');
     console.log(items);
@@ -13,9 +17,9 @@ export const Product = ({items})=>{
                                 </a>
                                 <div class="product__action p-absolute">
                                     <ul>
-                                        <li><a href="#" title="Add to Wishlist"><i class="fal fa-heart"></i></a></li>
-                                        <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><i class="fal fa-search"></i></a></li>
-                                        <li><a href="#" title="Compare"><i class="far fa-sliders-h"></i></a></li>
+                                        <li><a href="#" title="Add to Wishlist"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
+                                        <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
+                                        <li><a href="#" title="Compare"><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -25,14 +29,18 @@ export const Product = ({items})=>{
                                 </h6>
                                 <div class="rating">
                                     <ul>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        {/* <li><a href="#"><i class="far fa-star"></i></a></li>
                                         <li><a href="#"><i class="far fa-star"></i></a></li>
                                         <li><a href="#"><i class="far fa-star"></i></a></li>
-                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                        <li><a href="#"><i class="far fa-star"></i></a></li>
-                                        <li><a href="#"><i class="far fa-star"></i></a></li>
+                                        <li><a href="#"><i class="far fa-star"></i></a></li> */}
                                     </ul>
                                 </div>
-                                <span class="price">{item.price}</span>
+                                <span class="price">${item.price}</span>
                             </div>
                             <div class="product__add-btn">
                                 <button type="button">Add to Cart</button>
