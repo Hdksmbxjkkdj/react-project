@@ -4,8 +4,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ({items})=>{
-    console.log('items');
-    console.log(items);
+   
     return<>
         {items.map((item, i)=>{
             return  <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
@@ -51,15 +50,4 @@ export const Product = ({items})=>{
         }
         )}
         </>
-                    
-
-                //     <div className="">
-                //         <img src={item.img} alt=""/>
-                //         <h2>{item.title}</h2>
-                //         <p>{item.price}</p>
-                //         <button>Add</button>
-
-                //     </div>
-                // alert('h')
-                // console.log('1234567898')
             }

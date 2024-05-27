@@ -11,7 +11,6 @@ import './css/nice-select.css';
 // import './css/owl.carousel.min.css';
 import './css/preloader.css';
 import './css/slick.css';
-
 // import './js/bootstrap.bundle.min'
 
 // import './css/ui-range-slider.css';
@@ -26,20 +25,29 @@ import Layout from './pages/Layout';
 import Shop from './pages/Shop/Shop'
 import {productData} from './pages/Shop/productData';
 import {Sidebar} from './pages/Sidebar/index';
-import {Color} from './pages/Sidebar/Color';
 
 import { useState } from 'react';
+import { SidebarData } from './pages/Sidebar/SidebarData';
+
+
 function App() {
   const [products,setproducts]=useState(productData);
+  const [sidebars,setSidebars]=useState(SidebarData);
   const[state, setstate] =useState(false);
- 
+ console.log(sidebars,'dksk',SidebarData)
+console.log("object");
   return (
     <>
-       <div className='container'>
-          <div className='row'>
-           <Sidebar></Sidebar>
+        <section class="product__area box-plr-75 pb-70">
+
+          <div className='container-fluid'>
+              <div className='row'>
+                <Shop products = {products}/> 
+                <Sidebar sidebars = {sidebars}/> 
+              </div>
           </div>
-       </div>
+
+       </section>
       {/* {
          state?(
           <Home1 />
@@ -58,7 +66,8 @@ function App() {
         <Route path="/product" element={<Product/>}/>
 
       </Routes>
-      <Shop products = {products}/> 
+      
+      
       </Layout>
       </BrowserRouter>
     
