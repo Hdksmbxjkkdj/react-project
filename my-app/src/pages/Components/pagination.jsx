@@ -1,0 +1,31 @@
+const Pagination = (props) => {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <i className={(props.count.length)?"fa fa-chevron-left":"fa fa-chevron-left disabled"}></i>
+            </a>
+          </li>
+          {props.count.map((item) => {
+            return (
+              <>
+                <li>
+                  <a href="#">{item.number}</a>
+                </li>
+              </>
+            );
+          })}
+          <li>
+            <a href="#">
+              <i className={(props.count.length)?"fa fa-chevron-right":"fa fa-chevron-right disabled"}></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
+};
+
+export { Pagination };

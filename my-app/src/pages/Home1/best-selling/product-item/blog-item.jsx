@@ -1,23 +1,22 @@
-const BlogItem = () => {
+import { Config } from "../../../../Utils/config";
+import { Link } from "react-router-dom";
+const BlogItem = ({blog}) => {
   return (
     <>
-      <div class="blog__item mb-30">
-        <div class="blog__thumb fix">
-          <a href="blog-details.html">
-            <img src={"./img/blog/blog-1.jpg"} alt="" />
-          </a>
+      <div className="blog__item mb-30">
+        <div className="blog__thumb fix">
+            <img src={Config.blog+"sidebar/"+blog?.pic} alt="" />
         </div>
-        <div class="blog__content white-bg">
+        <div className="blog__content white-bg">
           <h3>
-            <a href="blog-details.html">Curabitur Lobortis News</a>
+            <Link to={"/BlogDetaile/:"+blog?.id}>{blog?.title}</Link>
           </h3>
-          <div class="blog__meta">
+          <div className="blog__meta">
             <span>Post Date:</span>
-            <span class="date"> 01-Jul-2020</span>
+            <span className="date"> {blog?.date}</span>
           </div>
           <p>
-            Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh.
-            In dignissim vitae lorem non mollis.{" "}
+            {blog?.text}
           </p>
         </div>
       </div>

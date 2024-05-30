@@ -72,7 +72,7 @@ const Features = () => {
                   <div className="col">
                     <div className="features__item features__item-last d-flex white-bg">
                       <div className="features__icon mr-15">
-                        <i className="fal fa-badge-dollar"></i>
+                        <i className="fa fa-badge-dollar"></i>
                       </div>
                       <div className="features__content">
                         <h6>{e.title}</h6>

@@ -4,7 +4,7 @@ import {Sidebar} from './hero/sidebar';
 import {Banner} from './hero/banner';
 import {Slider} from './hero/slider';
 
-function Hero() {
+function Hero(props) {
     return (
         <>
             <section className="slider__area pt-50 pb-50">
@@ -23,7 +23,7 @@ function Hero() {
                                         <div className="banner__item mb-20 w-img">
                                             <a href="product-details.html"><img src={"./img/banner/top/banner-top-1.jpg"} alt=""/></a>
                                         </div>
-                                        {/* <Banner props={banner1}></Banner> */}
+                                        {/* <Banner props={banner1}></Banner>  */}
                                         <div className="banner__item w-img">
                                             <a href="product-details.html"><img src={"./img/banner/top/banner-top-2.jpg"} alt=""/></a>
                                         </div>
