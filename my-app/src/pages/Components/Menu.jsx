@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 // import {Footer} from '../Components/Footer';
 import {Footer} from '../Components/Footer';
-import {} from '../Product/index';
+// import {} from '../Product/index';
 export const Menu = () => {
     return <>
         <nav>

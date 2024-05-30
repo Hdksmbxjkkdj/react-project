@@ -11,7 +11,6 @@ import './css/nice-select.css';
 // import './css/owl.carousel.min.css';
 import './css/preloader.css';
 import './css/slick.css';
-
 // import './js/bootstrap.bundle.min'
 
 // import './css/ui-range-slider.css';
@@ -20,7 +19,7 @@ import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
-import Product from './pages/Product';
+// import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -48,6 +47,16 @@ import { CartContext } from "./context/CardContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
+import Shop from './pages/Shop/Shop'
+import {productData} from './pages/Shop/productData';
+import {Sidebar} from './pages/Sidebar/index';
+import { Productpage } from './pages/Productpage';
+import { useState } from 'react';
+import { SidebarData } from './pages/Sidebar/SidebarData';
+
+
+
 function App() {
   window?.$(window).on("load", function () {
     window?.$("#loading").fadeOut(500);
@@ -58,7 +67,12 @@ function App() {
     setCart(response.data);
   })
   },[])
+
+  // const [products,setproducts]=useState(productData);
+  // const [sidebars,setSidebars]=useState(SidebarData);
+ 
   return (
+  
     <>
     <CartContext.Provider value={{cart ,setCart}}>
       <BrowserRouter>
@@ -80,6 +94,8 @@ function App() {
           <Route path="checkout" element={<Checkout/>}/>
           <Route path="/Footer" element={<Footer />} />
           <Route path="*" element={<Error/>}/>
+          <Route path="/Footer" element={<Footer/>}/> 
+          <Route path="/product" element={<Productpage/>}/> 
         </Routes>
         <div id="loading">
           <div id="loading-center">
@@ -93,6 +109,33 @@ function App() {
         <ToastContainer/>
       </BrowserRouter>
     </CartContext.Provider>
+      
+      {/* <Home1></Home1> */}
+     
+ 
+           {/* <section class="product__area box-plr-75 pb-70">
+          <div className='container-fluid'>
+                <div className='row'>
+                     <Sidebar sidebars = {sidebars}/> 
+                     <Shop products = {products}/> 
+               
+                </div>
+          </div>
+          </section>  */}
+    
+     
+      {/* {
+         state?(
+          <Home1 />
+         ):
+        
+        
+      
+      } */}
+  
+   
+    
+      
     </>
   );
 }
