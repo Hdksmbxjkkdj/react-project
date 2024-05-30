@@ -3,9 +3,8 @@ import {Color} from './Color';
 import {Rate} from './TopRate';
 export const Sidebar = ({sidebars}) =>{
     return<>
-    <section className="product__area box-plr-75 pb-70">
-        <div className="container-fluid">
-            <div className="row">
+
+         
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
                     <Color></Color>
@@ -20,11 +19,10 @@ export const Sidebar = ({sidebars}) =>{
                     </div>
                 
                 </div>
-                </div>
+                
                  
             </div> 
-        </div>
-    </section>
+       
  </>
       
         
