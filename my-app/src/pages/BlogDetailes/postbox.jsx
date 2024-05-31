@@ -11,14 +11,10 @@ const PostBox = (props) => {
   ];
   const [item,setitem] = useState();
   useEffect(()=>{
-    axios.get("http://localhost:313/blog").then((response)=>{
-      var myid = props.id;
-      myid = myid.slice(1);
-      myid=parseInt(myid)
-      setitem(response.data[myid-1])
+    axios.get(`http://localhost:313/blog/${props.id}`).then((response)=>{
+      setitem(response.data)
     })
   },[])
-  console.log(item?.pic);
   return (
     <>
       <div className="postbox__wrapper">

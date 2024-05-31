@@ -1,7 +1,48 @@
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Box } from "./box";
 import ApexCharts from "apexcharts"
+import { CartContext } from "../../../context/CardContext";
+import axios from "axios";
+import {Link} from "react-router-dom";
+import { event } from "jquery";
+import { Show } from "./show";
 export const Profile = ()=> {
+
+	'use strict';
+
+	const {cart} = useContext(CartContext);
+	var tot=0;
+	function total()
+	{
+		for(var i=0;i<cart.length;i++)
+		{
+			tot+=(cart[i].quantity*cart[i].unitprice)
+		}
+		return tot;
+	}
+	const [wishlist,setwishlist] = useState();
+	useEffect(()=>{
+		axios.get("http://localhost:313/wishlist").then((res)=>{
+			setwishlist(res);
+		})
+	},[])
+	const [buy,setbuy] = useState();
+	useEffect(()=>{
+		axios.get("http://localhost:313/buy").then((res)=>{
+			setbuy(res);
+		})
+	},[])
+	var array=new Array();
+	for(var i=0;i<buy?.data.length;i++)
+	{
+		array[i]=buy?.data[i].count.toFixed(1);
+	}
+	var array2 = new Array(5)
+	array2[0]=cart.length;
+	array2[1]=wishlist?.data.length;
+	array2[2]=1
+	array2[3]=1
+	array2[4]=1
           useEffect(()=>{
             window?.$(".knob").knob({
                 draw: function () {
@@ -51,129 +92,141 @@ export const Profile = ()=> {
           },[])
           /* END JQUERY KNOB */ 
           var options1 = {
-                series: [{
-                name: 'Last Year',
-                data: [44, 55, 57, 56, 61, 58, 63]
-              }, {
-                name: 'Running Year',
-                data: [76, 85, 101, 98, 87, 105, 91]
-              }],
-                chart: {
-                type: 'bar',
-                foreColor:"#bac0c7",
-                height: 260,
-                    toolbar: {
-                      show: false,
-                    }
-              },
-              plotOptions: {
-                bar: {
-                  horizontal: false,
-                  columnWidth: '50%',
-                },
-              },
-              dataLabels: {
-                enabled: false,
-              },
-              grid: {
-                  show: false,			
-              },
-              stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-              },
-              colors: ['#00D0FF', '#3246D3'],
-              xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
-                  
-              },
-              yaxis: {
-                
-              },
-               legend: {
-                    show: false,
-               },
-              fill: {
-                opacity: 1
-              },
-              tooltip: {
-                y: {
-                  formatter: function (val) {
-                    return "$ " + val + " thousands"
-                  }
-                },
-                  marker: {
-                    show: false,
-                },
-              }
-              };
+			series: [{
+			name: 'Net Profit',
+			data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+		  }, {
+			name: 'Revenue',
+			data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+		  }, {
+			name: 'Free Cash Flow',
+			data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+		  }],
+			chart: {
+			type: 'bar',
+			height: 350
+		  },
+		  plotOptions: {
+			bar: {
+			  horizontal: false,
+			  columnWidth: '55%',
+			  endingShape: 'rounded'
+			},
+		  },
+		  stroke: {
+			show: true,
+			width: 2,
+			colors: ['transparent']
+		  },
+		  xaxis: {
+			categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+		  },
+		  yaxis: {
+			title: {
+			  text: '$ (thousands)'
+			}
+		  },
+		  fill: {
+			opacity: 1
+		  },
+		  tooltip: {
+			y: {
+			  formatter: function (val) {
+				return "$ " + val + " thousands"
+			  }
+			}
+		  }
+		  };
               useEffect(()=>{
                 var chart = new ApexCharts(window?.$("#recent_trend"), options1);
                 chart.render();
               },[])
-          var options2 = {
-                series: [
-                {
-                  name: "Rented",
-                  data: [12, 22, 14, 18, 22 , 13, 17]
-                },
-                {
-                  name: "Sold",            
-                  data: [28, 39, 23, 36, 45, 32, 43]
-                }
-              ],
-                chart: {
-                height: 280,
-                type: 'line',
-                dropShadow: {
-                  enabled: true,
-                  color: '#000',
-                  top: 18,
-                  left: 7,
-                  blur: 10,
-                  opacity: 0.2
-                },
-                toolbar: {
-                  show: false
-                }
-              },
-              colors: ['#77B6EA', '#545454'],
-              dataLabels: {
-                enabled: false,
-              },
-              stroke: {
-                curve: 'smooth'
-              },
-              colors: ['#37d159', '#3246D3'],
-              grid: {
-                borderColor: '#e7e7e7',
-              },
-              xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-              },
-              legend: {
-                show: false,
-              }
-              };
+			  var options2 = {
+				series: [{
+				name: 'item/items',
+				data: array
+				// data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+			  }],
+				chart: {
+				height: 350,
+				type: 'bar',
+			  },
+			  plotOptions: {
+				bar: {
+				  borderRadius: 10,
+				  dataLabels: {
+					position: 'top', // top, center, bottom
+				  },
+				}
+			  },
+			  dataLabels: {
+				enabled: true,
+				formatter: function (val) {
+				  return val;
+				},
+				offsetY: -20,
+				style: {
+				  fontSize: '12px',
+				  colors: ["#304758"]
+				}
+			  },
+			  
+			  xaxis: {
+				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				position: 'bottom',
+				axisBorder: {
+				  show: false
+				},
+				axisTicks: {
+				  show: false
+				},
+				crosshairs: {
+				  fill: {
+					type: 'gradient',
+					gradient: {
+					  colorFrom: '#D8E3F0',
+					  colorTo: '#BED1E6',
+					  stops: [0, 100],
+					  opacityFrom: 0.4,
+					  opacityTo: 0.5,
+					}
+				  }
+				}
+			  },
+			  yaxis: {
+				axisBorder: {
+				  show: false
+				},
+				axisTicks: {
+				  show: false,
+				},
+				labels: {
+				  show: false,
+				  formatter: function (val) {
+					return val;
+				  }
+				}
+			  
+			  },
+			  };
       
               useEffect(()=>{
                 var chart = new ApexCharts(document.querySelector("#overview_trend"), options2);
               chart.render();
               },[])
           var options3 = {
-                series: [42, 47, 52, 58, 65],
+                series: array2,
                 chart: {
                 height: 360,
                 type: 'polarArea'
               },
-              labels: ['Sale', 'Rented', 'Booked', 'Not ready', 'UnSold'],
+              labels: ['in cart', 'in wishlist', 'reserved', 'Not ready', 'coming soon'],
               fill: {
                 opacity: 1
               },
               stroke: {
                 width: 1,
-                colors: undefined
+                colors: "#eeeeee"
               },
               yaxis: {
                 show: false
@@ -220,79 +273,81 @@ export const Profile = ()=> {
 					<i data-feather="maximize"></i>
 			    </a>
 			</li>
-		  <li className="dropdown notifications-menu">
-			<a href="#" className="waves-effect waves-light dropdown-toggle btn-info-light" data-bs-toggle="dropdown" title="Notifications">
+		  <li class="dropdown notifications-menu">
+			<a href="#" class="waves-effect waves-light dropdown-toggle btn-info-light" data-bs-toggle="dropdown" title="Notifications" onClick={()=>Show("notifications")}>
 			  <i data-feather="bell"></i>
 			</a>
-			<ul className="dropdown-menu animated bounceIn">
-			  <li className="header">
-				<div className="p-20">
-					<div className="flexbox">
+			<ul class="dropdown-menu animated bounceIn" id="notifications">
+
+			  <li class="header">
+				<div class="p-20">
+					<div class="flexbox">
 						<div>
-							<h4 className="mb-0 mt-0">Notifications</h4>
+							<h4 class="mb-0 mt-0">Notifications</h4>
 						</div>
 						<div>
-							<a href="#" className="text-danger">Clear All</a>
+							<a href="#" class="text-danger">Clear All</a>
 						</div>
 					</div>
 				</div>
 			  </li>
 
 			  <li>
-				<ul className="menu sm-scrol">
+
+				<ul class="menu sm-scrol">
 				  <li>
 					<a href="#">
-					  <i className="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
+					  <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
+					  <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
+					  <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
+					  <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
+					  <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-user text-primary"></i> Nunc fringilla lorem 
+					  <i class="fa fa-user text-primary"></i> Nunc fringilla lorem 
 					</a>
 				  </li>
 				  <li>
 					<a href="#">
-					  <i className="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
+					  <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
 					</a>
 				  </li>
 				</ul>
 			  </li>
-			  <li className="footer">
+			  <li class="footer">
 				  <a href="#">View all</a>
 			  </li>
 			</ul>
 		  </li>	
           <li className="dropdown user user-menu">
-            <a href="#" className="waves-effect waves-light dropdown-toggle btn-success-light" data-bs-toggle="dropdown" title="User">
+            <a href="#" className="waves-effect waves-light dropdown-toggle btn-success-light" data-bs-toggle="dropdown" title="User" onClick={()=>Show("user")}>
 				<i data-feather="user"></i>
             </a>
-            <ul className="dropdown-menu animated flipInX">
+            <ul className="dropdown-menu animated flipInX" id="user">
               <li className="user-body">
-				 <a className="dropdown-item" href="#"><i className="ti-user text-muted me-2"></i> Profile</a>
-				 <a className="dropdown-item" href="#"><i className="ti-wallet text-muted me-2"></i> My Wallet</a>
-				 <a className="dropdown-item" href="#"><i className="ti-settings text-muted me-2"></i> Settings</a>
+				 <Link className="dropdown-item" to="/profile"><i className="ti-user text-muted me-2"></i> Profile</Link>
+				 <Link className="dropdown-item" to="/checkout"><i className="ti-wallet text-muted me-2"></i>Check Out</Link>
+				 <Link className="dropdown-item" to="#"><i className="ti-settings text-muted me-2"></i> Settings</Link>
 				 <div className="dropdown-divider"></div>
-				 <a className="dropdown-item" href="#"><i className="ti-lock text-muted me-2"></i> Logout</a>
+				 <Link className="dropdown-item" to="/Login"><i className="ti-lock text-muted me-2"></i> Logout</Link>
               </li>
             </ul>
           </li>
@@ -311,10 +366,10 @@ export const Profile = ()=> {
 		<section className="content">
 			<div className="row">
 				<div className="col-xl-3 col-lg-6 col-12">
-                    <Box item={{title:"Propeties for Sale",number:425,val:85,clr:"#3246D3"}}/>
+                    <Box item={{title:"items in my cart",number:cart.length,val:cart.length,clr:"#3246D3"}}/>
 				</div>
 				<div className="col-xl-3 col-lg-6 col-12">
-					<Box item={{title:"Propeties for Rent",number:259,val:25,clr:"#37d159"}}/>
+					<Box item={{title:"my items in wishlist",number:wishlist?.data.length,val:wishlist?.data.length,clr:"#37d159"}}/>
 				</div>
 				<div className="col-xl-3 col-lg-6 col-12">
 					<Box item={{title:"Total Customer",number:4258,val:65,clr:"#ffa800"}}/>
@@ -326,7 +381,7 @@ export const Profile = ()=> {
 				<div className="col-xl-8 col-12">
 					<div className="box">
 						<div className="box-header">
-							<h4 className="box-title">Sales</h4>
+							<h4 className="box-title">buying</h4>
 						</div>
 						<div className="box-body">
 							<div className="row align-items-center">
@@ -347,11 +402,11 @@ export const Profile = ()=> {
 							<div className="box">
 								<div className="box-body">
 									<div className="d-flex align-items-center justify-content-start">
-										<img src="../images/compass.png" className="max-w-120" alt=""/>
+										<img src="./img/images/compass.png" className="max-w-120" alt=""/>
 										<div className="ps-20">
-											<span className="badge badge-danger badge-xl">180 New</span>
-											<h2>24,000 +</h2>
-											<p className="mb-0"><i className="fa fa-line-chart text-success"></i> <span className="text-success">+20%</span> than last month</p>
+											<span className="badge bg-danger badge-md" style={{color:"#eee"}}>0 New</span>
+											<h2>7+</h2>
+											<p className="mb-0"><i className="fa fa-line-chart text-success"></i> <span className="text-success">0%</span> than last month</p>
 										</div>
 									</div>
 								</div>
@@ -363,16 +418,16 @@ export const Profile = ()=> {
 									<div className="row align-items-center justify-content-start g-0">										
 										<div className="col-6 bg-info">
 											<div className="p-25">
-												<i className="fs-32 mb-5 fa fa-home"></i>
-												<h2 className="mb-0">7,000+</h2>
-												<p className="fs-18 mb-0">Active Pro.</p>
+												<i className="fs-32 mb-5 fa fa-user text-light"></i>
+												<h2 className="mb-0">1</h2>
+												<p className="fs-18 mb-0 text-light">users</p>
 											</div>
 										</div>										
 										<div className="col-6 bg-primary">
 											<div className="p-25">
-												<i className="fs-32 mb-5 fa fa-user"></i>
-												<h2 className="mb-0">4,000+</h2>
-												<p className="fs-18 mb-0">Corporate Pro.</p>
+												<i className="fs-32 mb-5 fa fa-cart-shopping text-light"></i>
+												<h2 className="mb-0">7+</h2>
+												<p className="fs-18 mb-0 text-light">Corporate Pro.</p>
 											</div>
 										</div>
 									</div>
@@ -382,22 +437,23 @@ export const Profile = ()=> {
 						<div className="col-xl-7 col-12">							
 							<div className="box">
 								<div className="box-header">
-									<h4 className="box-title">Overview</h4>
+									<h4 className="box-title">my buying items in 2024</h4>
 								</div>
 								<div className="box-body">
 									<div className="d-flex align-items-center">
 										<div className="d-flex align-items-center me-30">
 											<div className="bg-gradient-success overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-home"></i></div>
 											<div>
-												<p className="fs-16 text-fade mb-0">Total Sale</p>
-												<h4 className="mb-0">2,212 units</h4>
+												<p className="fs-16 text-fade mb-0">Total buying</p>
+												<h4 className="mb-0">{cart.length} units</h4>
 											</div>
 										</div>
 										<div className="d-flex align-items-center">
 											<div className="bg-gradient-primary overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-building"></i></div>
 											<div>
-												<p className="fs-16 text-fade mb-0">Total Rent</p>
-												<h4 className="mb-0">212 units</h4>
+												<p className="fs-16 text-fade mb-0">Total price</p>
+												<h4 className="mb-0">
+													{total()} $</h4>
 											</div>
 										</div>
 									</div>
@@ -452,7 +508,7 @@ export const Profile = ()=> {
 							  <div className="media-list bb-1 bb-dashed border-light">
 								<div className="media align-items-center">
 								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="../images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
+									<img src="./img/images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
@@ -477,7 +533,7 @@ export const Profile = ()=> {
 							  <div className="media-list bb-1 bb-dashed border-light">
 								<div className="media align-items-center">
 								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="../images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
+									<img src="./img/images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
@@ -502,7 +558,7 @@ export const Profile = ()=> {
 							  <div className="media-list">
 								<div className="media align-items-center">
 								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="../images/avatar/avatar-4.png" className="bg-success-light" alt="..."/>
+									<img src="./img/images/avatar/avatar-4.png" className="bg-success-light" alt="..."/>
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
@@ -527,7 +583,7 @@ export const Profile = ()=> {
 							  <div className="media-list bb-1 bb-dashed border-light">
 								<div className="media align-items-center">
 								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="../images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
+									<img src="./img/images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
@@ -552,7 +608,7 @@ export const Profile = ()=> {
 							  <div className="media-list bb-1 bb-dashed border-light">
 								<div className="media align-items-center">
 								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="../images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
+									<img src="./img/images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
@@ -598,7 +654,7 @@ export const Profile = ()=> {
     </div>
 	  &copy; 2022 <a href="https://www.multipurposethemes.com/">Multipurpose Themes</a>. All Rights Reserved.
   </footer>
-  <aside className="control-sidebar">
+  <aside className="control-sidebar" id="aside">
 	  
 	<div className="rpanel-title"><span className="pull-right btn btn-circle btn-danger"><i className="ion ion-close text-white" data-toggle="control-sidebar"></i></span> </div>
     <ul className="nav nav-tabs control-sidebar-tabs">
@@ -620,7 +676,7 @@ export const Profile = ()=> {
           <div className="media-list media-list-hover mt-20">
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-success" href="#">
-				<img src="../images/avatar/1.jpg" alt="..."/>
+				<img src="./img/images/avatar/1.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -633,7 +689,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-danger" href="#">
-				<img src="../images/avatar/2.jpg" alt="..."/>
+				<img src="./img/images/avatar/2.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -646,7 +702,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-warning" href="#">
-				<img src="../images/avatar/3.jpg" alt="..."/>
+				<img src="./img/images/avatar/3.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -659,7 +715,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-primary" href="#">
-				<img src="../images/avatar/4.jpg" alt="..."/>
+				<img src="./img/images/avatar/4.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -672,7 +728,7 @@ export const Profile = ()=> {
 			
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-success" href="#">
-				<img src="../images/avatar/1.jpg" alt="..."/>
+				<img src="./img/images/avatar/1.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -685,7 +741,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-danger" href="#">
-				<img src="../images/avatar/2.jpg" alt="..."/>
+				<img src="./img/images/avatar/2.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -698,7 +754,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-warning" href="#">
-				<img src="../images/avatar/3.jpg" alt="..."/>
+				<img src="./img/images/avatar/3.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -711,7 +767,7 @@ export const Profile = ()=> {
 
 			<div className="media py-10 px-0">
 			  <a className="avatar avatar-lg status-primary" href="#">
-				<img src="../images/avatar/4.jpg" alt="..."/>
+				<img src="./img/images/avatar/4.jpg" alt="..."/>
 			  </a>
 			  <div className="media-body">
 				<p className="fs-16">
@@ -841,30 +897,19 @@ export const Profile = ()=> {
   <div className="control-sidebar-bg"></div>
   
 </div>
-	<div className="sticky-toolbar">	    
-	    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now" className="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
-			<span className="icon-Money"><span className="path1"></span><span className="path2"></span></span>
-		</a>
-	    <a href="https://themeforest.net/user/multipurposethemes/portfolio" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" className="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
-			<span className="icon-Image"></span>
-		</a>
-	    <a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" className="waves-effect waves-light btn btn-warning btn-flat btn-sm">
-			<span className="icon-Group-chat"><span className="path1"></span><span className="path2"></span></span>
-		</a>
-	</div>
 	<div id="chat-box-body">
-		<div id="chat-circle" className="waves-effect waves-circle btn btn-circle btn-lg btn-warning l-h-70">
-            <div id="chat-overlay"></div>
-            <span className="icon-Group-chat fs-30"><span className="path1"></span><span className="path2"></span></span>
+		<div id="chat-circle" className="waves-effect waves-circle btn btn-circle btn-lg btn-warning l-h-70" onClick={()=>Show("chat-box-body")}>
+            {/* <div id="chat-overlay"></div> */}
+            <i className="fa fa-message text-light fs-3"></i>
 		</div>
 
 		<div className="chat-box">
             <div className="chat-box-header p-15 d-flex justify-content-between align-items-center">
                 <div className="btn-group">
-                  <button className="waves-effect waves-circle btn btn-circle btn-primary-light h-40 w-40 rounded-circle l-h-45" type="button" data-bs-toggle="dropdown">
-                      <span className="icon-Add-user fs-22"><span className="path1"></span><span className="path2"></span></span>
+                  <button onClick={()=>Show("dropdown-menu")} className="waves-effect waves-circle btn btn-circle btn-primary-light h-40 w-40 rounded-circle" type="button" data-bs-toggle="dropdown">
+                      <i className="fa fa-user"></i>
                   </button>
-                  <div className="dropdown-menu min-w-200">
+                  <div id="dropdown-menu" className="dropdown-menu min-w-200">
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Color me-15"></span>
                         New Group</a>
@@ -897,8 +942,8 @@ export const Profile = ()=> {
                     </div>
                 </div>
                 <div className="chat-box-toggle">
-                    <button id="chat-box-toggle" className="waves-effect waves-circle btn btn-circle btn-danger-light h-40 w-40 rounded-circle l-h-45" type="button">
-                      <span className="icon-Close fs-22"><span className="path1"></span><span className="path2"></span></span>
+                    <button id="chat-box-toggle" className="waves-effect waves-circle btn btn-danger-light btn-circle h-40 w-40 rounded-circle" type="button" onClick={()=>{window?.$("#chat-box-body").removeClass("show")}}>
+                      <i className="fa fa-times fs-4"></i>
                     </button>                    
                 </div>
             </div>
@@ -909,7 +954,7 @@ export const Profile = ()=> {
                     <div className="chat-msg user">
                         <div className="d-flex align-items-center">
                             <span className="msg-avatar">
-                                <img src="../images/avatar/2.jpg" className="avatar avatar-lg"/>
+                                <img src="./img/images/avatar/2.jpg" className="avatar avatar-lg"/>
                             </span>
                             <div className="mx-10">
                                 <a href="#" className="text-dark hover-primary fw-bold">Mayra Sibley</a>
@@ -927,7 +972,7 @@ export const Profile = ()=> {
                                 <p className="text-muted fs-12 mb-0">3 minutes</p>
                             </div>
                             <span className="msg-avatar">
-                                <img src="../images/avatar/3.jpg" className="avatar avatar-lg"/>
+                                <img src="./img/images/avatar/3.jpg" className="avatar avatar-lg"/>
                             </span>
                         </div>
                         <div className="cm-msg-text">
@@ -937,7 +982,7 @@ export const Profile = ()=> {
                     <div className="chat-msg user">
                         <div className="d-flex align-items-center">
                             <span className="msg-avatar">
-                                <img src="../images/avatar/2.jpg" className="avatar avatar-lg"/>
+                                <img src="./img/images/avatar/2.jpg" className="avatar avatar-lg"/>
                             </span>
                             <div className="mx-10">
                                 <a href="#" className="text-dark hover-primary fw-bold">Mayra Sibley</a>

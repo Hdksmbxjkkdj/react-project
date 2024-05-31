@@ -1,8 +1,10 @@
 import { CartContext } from "../../context/CardContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Menu } from "./Menu";
 import { Config } from "../../Utils/config";
 import { Link } from "react-router-dom";
+import { ItemsSearch } from "./Search";
+// import { SearchModal } from "./SearchModal";
 
 const Header = () => {
   window?.$("document").ready(function () {
@@ -46,6 +48,9 @@ const Header = () => {
     });
   });
   const { cart } = useContext(CartContext);
+  const { searching } = ItemsSearch();
+  const [reslut, setResult] = useState();
+  console.log(reslut);
   return (
     <>
       <header>
@@ -110,7 +115,81 @@ const Header = () => {
                           <input
                             type="text"
                             placeholder="Search For Products..."
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
                           />
+                          <div
+                            className="modal fade"
+                            id="exampleModal"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div className="modal-dialog modal-lg">
+                              <div className="modal-content rounded-2">
+                                <div className="modal-header">
+                                  <h1
+                                    className="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                  >
+                                    Modal title
+                                  </h1>
+                                </div>
+                                <div className="modal-body">
+                                  <input
+                                    type="text"
+                                    onChange={(e) =>
+                                      searching(e.target.value, setResult)
+                                    }
+                                  />
+                                  <div key={Math.random()}>
+                                    {(reslut != undefined || reslut != null) &&
+                                      reslut.map((item) => {
+                                        return (
+                                          <div className="card my-3 search-card">
+                                            <Link>
+                                              <div className="row g-0">
+                                                <div className="col-md-2">
+                                                  <img
+                                                    src={`${Config.shop}${item.pic}`}
+                                                    className="img-fluid rounded-circle"
+                                                    alt={item.name}
+                                                    style={{ width: "10rem" }}
+                                                  />
+                                                </div>
+                                                <div className="col-md-8">
+                                                  <div className="card-body">
+                                                    <p className="card-text">
+                                                      {item.text}
+                                                    </p>
+                                                    <p className="card-text">
+                                                      <small class="text-body-secondary">
+                                                        ${" "}
+                                                        {item.price.toFixed(2)}
+                                                      </small>
+                                                    </p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </Link>
+                                          </div>
+                                        );
+                                      })}
+                                  </div>
+                                </div>
+                                <div className="modal-footer">
+                                  <button
+                                    type="button"
+                                    className="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    <i className="fa fa-times"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                           <button type="submit">Search</button>
                         </div>
                         <div className="header__search-cat">
@@ -131,7 +210,7 @@ const Header = () => {
                         </div>
                       </form>
                     </div>
-                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" >
+                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative">
                       <a href="javascript:void(0);" className="cart__toggle">
                         <span className="cart__total-item">{cart.length}</span>
                       </a>
@@ -152,37 +231,38 @@ const Header = () => {
                               <span>({cart?.length} Item in Cart)</span>
                             </div>
                           </li>
-                          {cart?.length > 0 && cart.map((item) => {
-                            return (
-                              <>
-                                <li>
-                                  <div className="cart__item d-flex justify-content-between align-items-center">
-                                    <div className="cart__inner d-flex">
-                                      <div className="cart__thumb">
-                                        <a href="product-details.html">
-                                          <img
-                                            src={Config.shop+""+item.pic}
-                                            alt=""
-                                          />
-                                        </a>
-                                      </div>
-                                      <div className="cart__details">
-                                        <h6>
+                          {cart?.length > 0 &&
+                            cart.map((item) => {
+                              return (
+                                <>
+                                  <li>
+                                    <div className="cart__item d-flex justify-content-between align-items-center">
+                                      <div className="cart__inner d-flex">
+                                        <div className="cart__thumb">
                                           <a href="product-details.html">
-                                            {" "}
-                                            {item.name}
+                                            <img
+                                              src={Config.shop + "" + item.pic}
+                                              alt=""
+                                            />
                                           </a>
-                                        </h6>
-                                        <div className="cart__price">
-                                          <span>{item.unitprice}$</span>
+                                        </div>
+                                        <div className="cart__details">
+                                          <h6>
+                                            <a href="product-details.html">
+                                              {" "}
+                                              {item.name}
+                                            </a>
+                                          </h6>
+                                          <div className="cart__price">
+                                            <span>{item.unitprice}$</span>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </li>
-                              </>
-                            );
-                          })}
+                                  </li>
+                                </>
+                              );
+                            })}
 
                           <li>
                             <div className="cart__sub d-flex justify-content-between align-items-center">

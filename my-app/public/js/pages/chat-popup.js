@@ -42,7 +42,7 @@ $(function() {
     str += "          <\/p>";
     str += "          <\/div>";
     str += "          <span class=\"msg-avatar\">";
-    str += "            <img src=\"../images/avatar/3.jpg\"  class=\"avatar avatar-lg\">";
+    str += "            <img src=\"./img/images/avatar/3.jpg\"  class=\"avatar avatar-lg\">";
     str += "          <\/span>"; 
     str += "          <\/div>"; 
     str += "          <div class=\"cm-msg-text\">";
@@ -64,7 +64,7 @@ $(function() {
 	str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";    
     str += "          <div class=\"d-flex align-items-center\">";  
     str += "          <span class=\"msg-avatar\">";
-    str += "            <img src=\"../images/avatar/2.jpg\"  class=\"avatar avatar-lg\">";
+    str += "            <img src=\"./img/images/avatar/2.jpg\"  class=\"avatar avatar-lg\">";
     str += "          <\/span>";
     str += "          <div class=\"mx-10\">"; 
     str += "          <a href=\"#\" class=\"text-dark hover-primary font-weight-bold\">Mayra Sibley";
@@ -79,6 +79,7 @@ $(function() {
     str += "        <\/div>";
     $(".chat-logs").append(str);
     $("#cm-msg-"+INDEX).hide().fadeIn(300);
+    var type="";
     if(type == 'user'){
      $("#chat-input").val(''); 
     }    

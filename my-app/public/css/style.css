@@ -3932,7 +3932,6 @@ td.product-thumbnail img {
   border: medium none;
   color: #fff;
   display: inline-block;
-  float: left;
   font-size: 12px;
   font-weight: 700;
   height: 40px;
@@ -5618,5 +5617,17 @@ p.checkout-coupon input[type=text]:focus {
 }
 .yellow-footer .footer__copyright-text-2 p a {
   color: #fcb700;
+}
+.search-card
+{
+  transition: all ease 300ms;
+}
+.search-card:hover
+{
+  box-shadow: 0 0 5px 4px #ddd;
+}
+.search-card:hover p
+{
+  color: #0066c0;
 }
 /*# sourceMappingURL=style.css.map */

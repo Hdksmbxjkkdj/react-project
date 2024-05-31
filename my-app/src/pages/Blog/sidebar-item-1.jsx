@@ -20,7 +20,7 @@ const SidebarItem1 = (props) => {
                     </div>
                     <div className="rc__post-content">
                       <h3 className="rc__post-title">
-                        <Link to={"/BlogDetaile/:"+item.id}>{item.title}</Link>
+                        <Link to={"/BlogDetaile/"+item.id}>{item.title}</Link>
                       </h3>
                       <div className="rc__meta">
                         <span>{item.date}</span>

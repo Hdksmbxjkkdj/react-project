@@ -1552,10 +1552,13 @@ function w3_close() {
 		if (opacity <= 0) {
 			displayContent();
 		} else {
-			loader.style.opacity = opacity;
+			if(loader!=null)
+      {
+        loader.style.opacity = opacity;
 			window.setTimeout(function() {
 				loadNow(opacity - 0.05);
 			}, 50);
+      }
 		}
 	}
 

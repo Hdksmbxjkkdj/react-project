@@ -161,7 +161,7 @@ const BlogDetaile = (props) => {
             <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
               <div className="row">
                 <div className="col-xxl-12">
-                  <PostBox item={comment} id={id}></PostBox>
+                  <PostBox item={comment} id={id} key={Math.random()}></PostBox>
                 </div>
               </div>
             </div>
