@@ -16,16 +16,16 @@ export const Menu = () => {
                         <li><Link href="index-4.html">Home Style 4</Link></li>
                     </ul>
                 </li>
-                <li><Link to="product">Features <i className="far fa-angle-down"></i></Link>
+                {/* <li><Link to="product">Features <i className="far fa-angle-down"></i></Link>
                     <ul className="submenu">
                         <li><Link to="">Product Type</Link></li>
-                        <li><a href="product.html">Product Features <i className="far fa-angle-down"></i></a>
+                        <li><a href="product.html">Product Features <i className="far fa-angle-down"></i></a></li>
                         <li><Link to="/">Home Style 1</Link></li>
                         <li><Link to="Home2">Home Style 2</Link></li>
                         <li><Link to="Home3">Home Style 3</Link></li>
                         <li><Link to="Home4">Home Style 4</Link></li>
                     </ul>
-                </li>
+                </li> */}
                 <li><a href="product.html">Features <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
                         <li><a href="product.html">Product Type</a></li>

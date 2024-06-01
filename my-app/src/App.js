@@ -1,20 +1,20 @@
 // import logo from './logo.svg';
 // import './App.css';
 // import './css/fontAwesome5Pro.css';
-import './css/bootstrap.min.css';
-import './css/animate.min.css';
-import './css/backToTop.css';
-import './css/default.css';
-import './css/jquery.fancybox.min.css';
-import './css/meanmenu.css';
-import './css/nice-select.css';
+// import './css/bootstrap.min.css';
+// import './css/animate.min.css';
+// import './css/backToTop.css';
+// import './css/default.css';
+// import './css/jquery.fancybox.min.css';
+// import './css/meanmenu.css';
+// import './css/nice-select.css';
 // import './css/owl.carousel.min.css';
-import './css/preloader.css';
-import './css/slick.css';
+// import './css/preloader.css';
+// import './css/slick.css';
 // import './js/bootstrap.bundle.min'
 
 // import './css/ui-range-slider.css';
-import './css/style.css';
+// import './css/style.css';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
 import { Menu } from './pages/Components/Menu';
@@ -22,15 +22,15 @@ import Footer from './pages/Components/Footer';
 // import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Home1 } from "./pages/Home1/index";
+// import { Home1 } from "./pages/Home1/index";
 import { Home2 } from "./pages/Home2/index";
 import { Home3 } from "./pages/Home3/index";
 import { Home4 } from "./pages/Home4/index";
 import { Header } from "./pages/Components/Header";
-import Footer from "./pages/Components/Footer";
+// import Footer from "./pages/Components/Footer";
 import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { AboutUs } from "./pages/AboutUs";
@@ -52,7 +52,7 @@ import Shop from './pages/Shop/Shop'
 import {productData} from './pages/Shop/productData';
 import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { SidebarData } from './pages/Sidebar/SidebarData';
 
 
@@ -63,6 +63,7 @@ function App() {
   });
   const [cart,setCart] = useState([]);
   useEffect(()=>{
+    
   axios.get("http://localhost:313/row").then((response)=>{
     setCart(response.data);
   })
