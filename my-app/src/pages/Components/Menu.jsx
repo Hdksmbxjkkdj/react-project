@@ -7,7 +7,7 @@ export const Menu = () => {
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Home <i className="far fa-angle-down"></i></a>
+                    <a href="index.html">Home <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
                         <li><Link href="index.html">Home Style 1</Link></li>
                         <li><Link  href="index-2.html">Home Style 2</Link></li>
@@ -16,10 +16,20 @@ export const Menu = () => {
                         <li><Link href="index-4.html">Home Style 4</Link></li>
                     </ul>
                 </li>
-                <li><Link to="product">Features <i className="far fa-angle-down"></i></Link>
+                {/* <li><Link to="product">Features <i className="far fa-angle-down"></i></Link>
                     <ul className="submenu">
                         <li><Link to="">Product Type</Link></li>
-                        <li><a href="product.html">Product Features <i className="far fa-angle-down"></i></a>
+                        <li><a href="product.html">Product Features <i className="far fa-angle-down"></i></a></li>
+                        <li><Link to="/">Home Style 1</Link></li>
+                        <li><Link to="Home2">Home Style 2</Link></li>
+                        <li><Link to="Home3">Home Style 3</Link></li>
+                        <li><Link to="Home4">Home Style 4</Link></li>
+                    </ul>
+                </li> */}
+                <li><a href="product.html">Features <i className="fa fa-angle-down"></i></a>
+                    <ul className="submenu">
+                        <li><a href="product.html">Product Type</a></li>
+                        <li><a href="product.html">Product Features <i className="fa fa-angle-down"></i></a>
                             <ul className="submenu">
                                 <li><a href="product-details.html">Simple Product</a></li>
                                 <li><a href="product-details-config.html">Configurable Product</a></li>
@@ -31,23 +41,23 @@ export const Menu = () => {
                     </ul>
                 </li>
                 <li>
-                    <a href="blog.html">Blog <i className="far fa-angle-down"></i></a>
+                    <a href="blog.html">Blog <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><Link to="Blog">Blog</Link></li>
+                        <li><Link to="BlogDetaile">Blog Details</Link></li>
                     </ul>
                 </li>
-                <li><a href="about.html">about us</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><Link to="About">about us</Link></li>
+                <li><Link to="Contact">contact</Link></li>
                 <li>
-                    <a href="about.html">pages <i className="far fa-angle-down"></i></a>
+                    <a href="about.html">pages <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="error.html">404 Error</a></li>
+                        <li><Link to="Login">Login</Link></li>
+                        <li><Link to="Register">Register</Link></li>
+                        <li><Link to="Cart">Cart</Link></li>
+                        <li><Link to="wishlist">Wishlist</Link></li>
+                        <li><Link to="checkout">Checkout</Link></li>
+                        <li><Link to="error">404 Error</Link></li>
                     </ul>
                 </li>
             </ul>

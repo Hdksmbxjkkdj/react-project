@@ -25,7 +25,7 @@ const Footer = ()=>{
                                                 <div className="footer__widget-content">
                                                     <div className="footer__hotline footer__hotline-4 d-flex align-items-center mb-30">
                                                         <div className="icon mr-15">
-                                                            <i className="fal fa-headset"></i>
+                                                            <i className="fa fa-headset"></i>
                                                         </div>
                                                         <div className="text">
                                                             <h4>Hotline Free 24/24:</h4>

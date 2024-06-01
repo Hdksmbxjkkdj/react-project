@@ -1,0 +1,325 @@
+{
+  "row": [
+    {
+      "id": "1",
+      "pic": "product-3.jpg",
+      "name": "Bakix Furniture",
+      "unitprice": 130,
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "pic": "product-4.jpg",
+      "name": "Sujon Chair Set",
+      "unitprice": 120.5,
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "pic": "product-11.jpg",
+      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
+      "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1
+    }
+  ],
+  "wishlist": [
+    {
+      "id": "3",
+      "pic": "product-2.jpg",
+      "name": "Bakix Furniture",
+      "unitprice": 130,
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "pic": "product-4.jpg",
+      "name": "Sujon Chair Set",
+      "unitprice": 120.5,
+      "quantity": 1
+    }
+  ],
+  "blog": [
+    {
+      "id": "1",
+      "pic": "blog-sm-1.jpg",
+      "alt": "blog",
+      "title": "Koma and Torus",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21, 2021",
+      "category": "Videos"
+    },
+    {
+      "id": "2",
+      "pic": "blog-sm-2.jpg",
+      "alt": "blog",
+      "title": "Grip and Allows",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21, 2021",
+      "category": "Uncategorized"
+    },
+    {
+      "id": "3",
+      "pic": "blog-sm-3.jpg",
+      "alt": "blog",
+      "title": "Pitterarum Formas",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21, 2021",
+      "category": "Travel"
+    },
+    {
+      "id": "4",
+      "pic": "blog-sm-4.jpg",
+      "alt": "blog",
+      "title": "Shelving Burgundy",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21, 2021",
+      "category": "Music"
+    },
+    {
+      "id": "5",
+      "pic": "blog-sm-5.jpg",
+      "alt": "blog",
+      "title": "Pitterarum Formas",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Photography"
+    },
+    {
+      "id": "6",
+      "pic": "blog-sm-6.jpg",
+      "alt": "blog",
+      "title": "Shelving Burgundy",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Images"
+    },
+    {
+      "id": "7",
+      "pic": "blog-sm-7.jpg",
+      "alt": "blog",
+      "title": "Anteposue Rarum Formas",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Creative"
+    },
+    {
+      "id": "8",
+      "pic": "blog-sm-8.jpg",
+      "alt": "blog",
+      "title": "Posuerit Litterarum Formas",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Azone Post"
+    },
+    {
+      "id": "9",
+      "pic": "blog-sm-9.jpg",
+      "alt": "blog",
+      "title": "KAnteposuerit Litterarum Formas",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Travel"
+    },
+    {
+      "id": "10",
+      "pic": "blog-sm-10.jpg",
+      "alt": "blog",
+      "title": "Curabitur Lobortis",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel.",
+      "date": "July 21 2021",
+      "category": "Azone Post"
+    }
+  ],
+  "blog-category": [
+    {
+      "id": "1",
+      "category": "Videos"
+    },
+    {
+      "id": "2",
+      "category": "Uncategorized"
+    },
+    {
+      "id": "3",
+      "category": "Travel"
+    },
+    {
+      "id": "4",
+      "category": "Music"
+    },
+    {
+      "id": "5",
+      "category": "Photography"
+    },
+    {
+      "id": "6",
+      "category": "Images"
+    },
+    {
+      "id": "7",
+      "category": "Creative"
+    },
+    {
+      "id": "8",
+      "category": "Azone Post"
+    }
+  ],
+  "about": [
+    {
+      "pic": "about-bg.jpg",
+      "title": "About Topico Magento",
+      "text": "Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit sceleri sque dui. Donec ornare massa vitae neque lobortis rutrum.",
+      "explain": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultra trices, eu feugiat sapien commodo. Praesent vitae ipsum et risus.",
+      "maintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
+      "team": [
+        {
+          "pic": "as1.jpg",
+          "name": "John Doe",
+          "job": "Web Designer"
+        },
+        {
+          "pic": "as2.jpg",
+          "name": "Shahnewaz Sakil",
+          "job": "Business Man"
+        },
+        {
+          "pic": "as3.jpg",
+          "name": "Salim Rana",
+          "job": "CEO Themepure"
+        },
+        {
+          "pic": "as4.jpg",
+          "name": "Pavilion Dyne",
+          "job": "Story Teller"
+        }
+      ],
+      "video": [
+        {
+          "src": "https://www.youtube.com/embed/ZuzZXT3A1aQ",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
+          "video_title": "YouTube video player"
+        }
+      ],
+      "why_item": [
+        {
+          "pic": "about-1.jpg",
+          "title": "What Do We Do?",
+          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+        },
+        {
+          "pic": "about-2.jpg",
+          "title": "Our Mission?",
+          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+        },
+        {
+          "pic": "about-3.jpg",
+          "title": "History Of Us?",
+          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+        }
+      ],
+      "id": "b9ff"
+    }
+  ],
+  "best_selling": [
+    {
+      "pic": "product-1.jpg",
+      "seccondpic": "product-2.jpg",
+      "text": "High Quality Glass Ultra-Thin Kitchen Scale",
+      "price": 500,
+      "id": "5"
+    },
+    {
+      "pic": "product-3.jpg",
+      "seccondpic": "product-4.jpg",
+      "text": "LG 27UD58: £347.21, Ebuyer.com",
+      "price": 560,
+      "id": "6"
+    },
+    {
+      "pic": "product-5.jpg",
+      "seccondpic": "product-6.jpg",
+      "text": "Samsung C49J89: £875, Debenhams Plus",
+      "price": 450,
+      "id": "7"
+    },
+    {
+      "pic": "product-7.jpg",
+      "seccondpic": "product-8.jpg",
+      "text": "Blink Home Security Camera System 01",
+      "price": 720,
+      "id": "8"
+    },
+    {
+      "pic": "product-9.jpg",
+      "seccondpic": "product-10.jpg",
+      "text": "Blue t-shir for men (X, M, XL, XXL)",
+      "price": 720,
+      "id": "9"
+    },
+    {
+      "pic": "product-11.jpg",
+      "seccondpic": "product-12.jpg",
+      "text": "Samsung A20 Pro Ultra CPU 4/64 GB",
+      "price": 720,
+      "id": "10"
+    },
+    {
+      "pic": "product-13.jpg",
+      "seccondpic": "product-14.jpg",
+      "text": "Blink Home Security Camera System 01",
+      "price": 720,
+      "id": "11"
+    }
+  ],
+  "blog_slider": [
+    {
+      "pic": "blog-sm-1.jpg",
+      "title": "Curabitur Lobortis News",
+      "date": "01-Jul-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "1"
+    },
+    {
+      "pic": "blog-sm-2.jpg",
+      "title": "The Brushed Steel",
+      "date": "05-Aug-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "2"
+    },
+    {
+      "pic": "blog-sm-3.jpg",
+      "title": "Koma and Torus",
+      "date": "15-Aug-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "3"
+    },
+    {
+      "pic": "blog-sm-4.jpg",
+      "title": "Grip and Allows",
+      "date": "20-Aug-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "4"
+    },
+    {
+      "pic": "blog-sm-5.jpg",
+      "title": "Pitterarum Formas",
+      "date": "25-Aug-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "5"
+    },
+    {
+      "pic": "blog-sm-6.jpg",
+      "title": "Shelving Burgundy",
+      "date": "02-Sep-2020",
+      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "id": "6"
+    }
+  ]
+}
