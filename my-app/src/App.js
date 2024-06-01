@@ -46,7 +46,7 @@ import { BackToTop } from "./pages/Components/backtotop";
 import { CartContext } from "./context/CardContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import {ProducDetails} from './pages/Product-Details/index'
 
 import Shop from './pages/Shop/Shop'
 import {productData} from './pages/Shop/productData';
@@ -97,6 +97,7 @@ function App() {
           <Route path="*" element={<Error/>}/>
           <Route path="/Footer" element={<Footer/>}/> 
           <Route path="/product" element={<Productpage/>}/> 
+          <Route path="/product-details" element={<ProducDetails />}/> 
         </Routes>
         <div id="loading">
           <div id="loading-center">
@@ -109,6 +110,7 @@ function App() {
         <Footer></Footer>
         <ToastContainer/>
       </BrowserRouter>
+   
     </CartContext.Provider>
       
       {/* <Home1></Home1> */}

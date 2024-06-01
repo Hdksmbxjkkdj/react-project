@@ -31,7 +31,7 @@ export const Menu = () => {
                         <li><a href="product.html">Product Type</a></li>
                         <li><a href="product.html">Product Features <i className="fa fa-angle-down"></i></a>
                             <ul className="submenu">
-                                <li><a href="product-details.html">Simple Product</a></li>
+                                <li><Link to="product-details">Simple Product</Link></li>
                                 <li><a href="product-details-config.html">Configurable Product</a></li>
                                 <li><a href="product-details-group.html">Group Product</a></li>
                                 <li><a href="product-details-download.html">Downloadable Product</a></li>
