@@ -440,7 +440,7 @@ p {
   }
 }
 /* common nav */
-.t-nav .owl-nav {
+.owl-nav {
   display: flex;
   position: absolute;
   top: -77px;
@@ -1111,6 +1111,16 @@ p {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   color: #222;
+}
+
+.sticky
+{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 0 5px 2px #555;
 }
 
 /*----------------------------------------*/
@@ -2036,7 +2046,7 @@ p {
 /*  03. SLIDER CSS START
 /*----------------------------------------*/
 .slider__area {
-  background: url('../../public/img/slider/slider-bg-1.jpg');
+  background: url('../img/slider/slider-bg-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3410,7 +3420,7 @@ p {
 }
 .cart__toggle::after {
   content: "\f290";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5";
   font-size: 18px;
   color: #222;
   position: absolute;
@@ -3445,6 +3455,8 @@ p {
 }
 .cart__mini {
   position: absolute;
+  overflow-y: auto;
+  max-height: 70vh;
   top: 120%;
   right: 0;
   width: 350px;
@@ -3733,6 +3745,16 @@ p {
   font-size: 16px;
 }
 
+.table-content table td.product-subtotal::before
+{
+  content: "$";
+}
+
+.table-content table td.product-price::before
+{
+  content: "$";
+}
+
 .table-content table td .cart-plus-minus {
   float: none;
   margin: 0 auto;
@@ -3800,6 +3822,9 @@ p {
 .cart-page-total ul > li > span {
   float: right;
 }
+.cart-page-total ul > li > span::before {
+  content: "$";
+}
 
 .cart-page-total li:last-child {
   border-bottom: 0;
@@ -3807,6 +3832,10 @@ p {
 
 td.product-thumbnail img {
   width: 125px;
+}
+
+.product-remove a {
+  cursor: pointer;
 }
 
 /* 17. Checkout */
@@ -4943,6 +4972,9 @@ p.checkout-coupon input[type=text]:focus {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+.why__inner {
+  margin-top: 3rem;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .why__inner {
