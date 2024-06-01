@@ -37,7 +37,7 @@ const BlogArea = (props) => {
                           <div className="postbox__bottom d-flex justify-content-between align-items-center">
                             <div className="postbox__more">
                               <Link
-                                to={"/BlogDetaile/:"+item.id}
+                                to={"/BlogDetaile/"+item.id}
                                 className="t-y-btn t-y-btn-grey"
                               >
                                 read more

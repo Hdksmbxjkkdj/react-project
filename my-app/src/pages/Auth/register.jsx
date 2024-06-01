@@ -1,3 +1,4 @@
+import { AddUser } from "./AddUser";
 const Register = () => {
   return (
     <>
@@ -30,7 +31,7 @@ const Register = () => {
                       placeholder="Enter password..."
                     />
                     <div class="mt-10"></div>
-                    <button class="t-y-btn w-100">Register Now</button>
+                    <button class="t-y-btn w-100" onClick={()=>AddUser()}>Register Now</button>
                     <div class="or-divide">
                       <span>or</span>
                     </div>

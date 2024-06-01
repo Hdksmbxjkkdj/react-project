@@ -2,25 +2,42 @@ import { useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
 import { Comment } from "./commentbox";
 import axios from "axios";
+import {Notif} from "../../Utils/Notif";
+import {useForm} from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 const PostBox = (props) => {
-  const input = [
-    { type: "text", placeholder: "Name" },
-    { type: "text", placeholder: "Email" },
-    { type: "text", placeholder: "Subject" },
-  ];
-  const [item,setitem] = useState();
-  useEffect(()=>{
-    axios.get(`http://localhost:313/blog/${props.id}`).then((response)=>{
-      setitem(response.data)
-    })
-  },[])
+  const {id} = useParams();
+  const { data, setData, reset } = useForm({
+    name: '',
+    email: '',
+    comment: '',
+    blog_id: id
+});
+  const [item, setitem] = useState();
+  useEffect(() => {
+    axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
+      setitem(response.data);
+    });
+  }, []);
+const submit = async (e) => {
+  e.preventDefault();
+      await axios.post("http://localhost:313/comments/", data).then((response) => {
+          if (response.data.status == 200) {
+              Notif('success', response.data.message)
+              reset()
+              return
+          }
+      })
+};
+
+
   return (
     <>
       <div className="postbox__wrapper">
         <article className="postbox__item format-image mb-50 transition-3">
           <div className="postbox__thumb w-img">
-              <img src={Config.blog + "sidebar/"+item?.pic} alt="" />
+            <img src={Config.blog + "sidebar/" + item?.pic} alt="" />
           </div>
           <div className="postbox__content">
             <h3 className="postbox__title postbox__title-2">
@@ -99,32 +116,32 @@ const PostBox = (props) => {
               <div className="post-comments-title mb-30">
                 <h3>Leave A Reply</h3>
               </div>
-              <form id="contacts-form" className="conatct-post-form" action="#">
-                <div className="row">
-                  {input.map((x) => {
-                    return (
-                      <>
-                        <div className={(x.placeholder!="Subject")?"col-xl-6 col-lg-6 col-md-6":"col-xl-12"}>
-                          <div className="contact-icon p-relative contacts-name">
-                            <input type={x.type} placeholder={x.placeholder} />
-                          </div>
-                        </div>
-                      </>
-                    );
-                  })}
-                  <div className="col-xl-12">
-                    <div className="contact-icon p-relative contacts-message">
+              <form id="contacts-form" class="conatct-post-form" action="#" onSubmit={(event)=>submit(event)}>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="contact-icon p-relative contacts-name">
+                      <input id="name" name="name" type="text" placeholder="Name" onChange={(e) => setData('name',e.target.value)} />
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="contact-icon p-relative contacts-name">
+                      <input id="email" name="email" type="email" placeholder="Email" onChange={(e) => setData('email',e.target.value)} />
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="contact-icon p-relative contacts-message">
                       <textarea
-                        name="comments"
-                        id="comments"
+                        name="comment"
+                        id="comment"
                         cols="30"
                         rows="10"
                         placeholder="Comments"
+                        onChange={(e) => setData('comment',e.target.value)}
                       ></textarea>
                     </div>
                   </div>
-                  <div className="col-xl-12">
-                    <button className="t-y-btn t-y-btn-grey" type="submit">
+                  <div class="col-xl-12">
+                    <button class="t-y-btn t-y-btn-grey" type="submit">
                       Post comment
                     </button>
                   </div>
