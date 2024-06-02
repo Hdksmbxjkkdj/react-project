@@ -1,6 +1,6 @@
 import { BestSellingHead } from "./best-selling/best-selling-head";
 import { TabContent } from "./best-selling/tab-content";
-const BestSelling = ({type,res}) => {
+const BestSelling = ({type,res,item}) => {
   return (
     <section className="best__sell pt-15 pb-40 grey-bg-2">
       <div className="container">
@@ -18,7 +18,7 @@ const BestSelling = ({type,res}) => {
         </div>
         <div className="row">
           <div className="col-xl-12">
-            <TabContent type={type} res={res}></TabContent>
+            <TabContent type={type} res={res} item={item}></TabContent>
           </div>
         </div>
       </div>

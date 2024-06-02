@@ -376,5 +376,32 @@
       "id": "6"
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "name": "ali",
+      "email": "gurbaniali97@gmail.com",
+      "comment": "hello this is Ali Ghorbani",
+      "blog_id": "1",
+      "date": "2024/5/2",
+      "id": 1
+    }
+  ],
+  "aboutus": [
+    {
+      "email": "gurbaniali97@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "gurbaniali97@gmail.com",
+      "id": 2
+    },
+    {
+      "email": "ghorbaniali97@gmail.com",
+      "id": 3
+    },
+    {
+      "email": "ghorbaniali97@gmail.com",
+      "id": 4
+    }
+  ]
 }

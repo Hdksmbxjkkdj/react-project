@@ -1168,6 +1168,12 @@ p {
 }
 .product__modal-box .nav-tabs {
   border-bottom: 0;
+  flex-wrap: nowrap;
+}
+.product__modal-box .nav-tabs .nav-item{
+  flex-basis: 25%;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 .product__modal-box .nav-link {
   padding: 0;
@@ -1179,6 +1185,7 @@ p {
 .product__modal-links ul li {
   display: inline-block;
   margin-right: 4px;
+  
 }
 .product__modal-links ul li a {
   display: block;

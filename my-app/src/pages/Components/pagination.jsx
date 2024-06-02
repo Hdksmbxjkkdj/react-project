@@ -1,29 +1,17 @@
-const Pagination = (props) => {
+const Pagination = ({ count }) => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">
-              <i className={(props.count.length)?"fa fa-chevron-left":"fa fa-chevron-left disabled"}></i>
-            </a>
-          </li>
-          {props.count.map((item) => {
-            return (
-              <>
-                <li>
-                  <a href="#">{item.number}</a>
-                </li>
-              </>
-            );
-          })}
-          <li>
-            <a href="#">
-              <i className={(props.count.length)?"fa fa-chevron-right":"fa fa-chevron-right disabled"}></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>  
+      {count?.paginationLength &&
+        [...Array(count.paginationLength)].map((item, index) => {
+          console.log()
+          return <li>
+              <a href="#" onClick={()=>count.setStart(index*4)}>{index+1}</a>
+            </li>
+        })}
+       </ul>
+     </nav>
     </>
   );
 };
