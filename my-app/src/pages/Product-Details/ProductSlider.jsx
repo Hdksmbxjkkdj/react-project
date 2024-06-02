@@ -234,6 +234,6 @@ export const ProductSlider = () =>{
                                 </div>
                             </div>
                         </div>
-                    </div>
+            </div>
     </>
 }
