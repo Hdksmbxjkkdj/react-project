@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
 export const Rate = ({items}) =>{
     return<>
            
@@ -16,13 +16,13 @@ export const Rate = ({items}) =>{
                                 <a href="#">{item.title}</a>
                             </h3>
                             <div class="rating">
-                                <ul>
+                                {/* <ul>
                                     <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                     <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                     <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                     <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                     <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                </ul>
+                                </ul> */}
                             </div>
                             <div class="product__sm-price">
                                 <span class="price">{item.price}</span>

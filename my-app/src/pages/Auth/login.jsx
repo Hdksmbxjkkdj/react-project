@@ -1,4 +1,29 @@
+import { useState } from "react";
+import {Notif} from "../../Utils/Notif";
+import axios from "axios";
+
 const Login = () => {
+  const [login,setLogin] = useState({
+    email:"",
+    password:""
+  })
+  function loginUser()
+  {
+    if(login.email=="" || login.password=="")
+    {
+      Notif('error',"please fill out the form ")
+      return
+    }
+    axios.get(`http://localhost:313/register?email=${login.email}`).then((e)=>{
+      console.log(e);
+      if(e?.data[0].pass!=login.password)
+      {
+        Notif('error',"invalid email or password !")
+        return
+      }
+      Notif('success',"welcome :)");
+    })
+  }
   return (
     <>
       <main>
@@ -8,7 +33,7 @@ const Login = () => {
               <div class="col-lg-8 offset-lg-2">
                 <div class="basic-login">
                   <h3 class="text-center mb-60">Login From Here</h3>
-                  <form action="#">
+                  <form action="#" onSubmit={loginUser}>
                     <label for="name">
                       Email Address <span>**</span>
                     </label>
@@ -16,6 +41,7 @@ const Login = () => {
                       id="name"
                       type="text"
                       placeholder="Email address..."
+                      onChange={(e)=>setLogin({...login,email:e.target.value})}
                     />
                     <label for="pass">
                       Password <span>**</span>
@@ -24,6 +50,7 @@ const Login = () => {
                       id="pass"
                       type="password"
                       placeholder="Enter password..."
+                      onChange={(e)=>setLogin({...login,password:e.target.value})}
                     />
                     <div class="login-action mb-20 fix">
                       <span class="log-rem f-left">
@@ -34,7 +61,7 @@ const Login = () => {
                         <a href="#">Lost your password?</a>
                       </span>
                     </div>
-                    <button class="t-y-btn w-100">Login Now</button>
+                    <button class="t-y-btn w-100" type="submit">Login Now</button>
                     <div class="or-divide">
                       <span>or</span>
                     </div>

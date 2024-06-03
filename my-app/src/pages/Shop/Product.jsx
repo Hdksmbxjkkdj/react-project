@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { faHeart } from "@fortawesome/free-solid-svg-icons";
+// import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ({items})=>{
    
     return<>
@@ -15,11 +15,11 @@ export const Product = ({items})=>{
                                     
                                 </a>
                                 <div className="product__action p-absolute">
-                                    <ul>
+                                    {/* <ul>
                                         <li><a href="#" title="Add to Wishlist"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
                                         <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
                                         <li><a href="#" title="Compare"><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
-                                    </ul>
+                                    </ul> */}
                                 </div>
                             </div>
                             <div className="product__content text-center">
@@ -28,11 +28,11 @@ export const Product = ({items})=>{
                                 </h6>
                                 <div className="rating">
                                     <ul>
+                                        {/* <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                         <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                         <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
                                         <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li> */}
                                         {/* <li><a href="#"><i className="far fa-star"></i></a></li>
                                         <li><a href="#"><i className="far fa-star"></i></a></li>
                                         <li><a href="#"><i className="far fa-star"></i></a></li>
