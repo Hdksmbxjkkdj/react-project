@@ -1,25 +1,8 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import './css/fontAwesome5Pro.css';
-// import './css/bootstrap.min.css';
-// import './css/animate.min.css';
-// import './css/backToTop.css';
-// import './css/default.css';
-// import './css/jquery.fancybox.min.css';
-// import './css/meanmenu.css';
-// import './css/nice-select.css';
-// import './css/owl.carousel.min.css';
-// import './css/preloader.css';
-// import './css/slick.css';
-// import './js/bootstrap.bundle.min'
 
-// import './css/ui-range-slider.css';
-// import './css/style.css';
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home1} from './pages/Home1/index';
 import { Menu } from './pages/Components/Menu';
 import Footer from './pages/Components/Footer';
-// import Product from './pages/Product';
 import Layout from './pages/Layout';
 // import Breadcrumb from './pages/Product/breadcrumb';
 // import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -54,7 +37,7 @@ import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
 // import { useState } from 'react';
 import { SidebarData } from './pages/Sidebar/SidebarData';
-
+import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 
 
 function App() {
@@ -106,13 +89,14 @@ function App() {
             </div>
           </div>
         </div>
+        
         <BackToTop></BackToTop>
         <Footer></Footer>
         <ToastContainer/>
       </BrowserRouter>
    
     </CartContext.Provider>
-      
+  
       {/* <Home1></Home1> */}
      
  

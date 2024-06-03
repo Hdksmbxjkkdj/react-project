@@ -32,7 +32,7 @@ export const ProducDetails= () =>{
                 <div className="row">
                     <SectionHead />
                 </div>
-                <div classNameName="row">
+                <div className="row">
                     <ProductSlider />
                 </div>
             </div>
@@ -47,10 +47,10 @@ export const ProducDetails= () =>{
          </section>
 
 
-        <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered product__modal" role="document">
-                    <ModalContent
-                     />
+                   
+        <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">
+                <div className="modal-dialog modal-dialog-centered product__modal" role="document">
+                    <ModalContent  />
                 </div>
         </div>
     </main>
