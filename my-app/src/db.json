@@ -5,7 +5,14 @@
       "pic": "product-3.jpg",
       "name": "Bakix Furniture",
       "unitprice": 130,
-      "quantity": 1
+      "quantity": 1,
+      "gallery": [
+        {"name":"product-3.jpg"},
+        {"name":"product-4.jpg"},
+        {"name":"product-5.jpg"},
+        {"name":"product-5.jpg"},
+        {"name":"product-5.jpg"}
+      ]
     },
     {
       "id": "2",
@@ -76,6 +83,55 @@
       "name": "Blink Home Security Camera System 01",
       "unitprice": 720,
       "quantity": 1
+    },
+    {
+      "id": "11",
+      "pic": "product-13.jpg",
+      "name": "Blink Home Security Camera System 01",
+      "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "pic": "product-3.jpg",
+      "name": "LG 27UD58: £347.21, Ebuyer.com",
+      "unitprice": 560,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "Blink Home Security Camera System 01",
+      "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "Blink Home Security Camera System 01",
+      "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "9",
+      "pic": "product-9.jpg",
+      "name": "Blue t-shir for men (X, M, XL, XXL)",
+      "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "Blink Home Security Camera System 01",
+      "unitprice": 720,
+      "quantity": 1
     }
   ],
   "wishlist": [
@@ -98,6 +154,20 @@
       "pic": "product-11.jpg",
       "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
       "unitprice": 720,
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "pic": "product-3.jpg",
+      "name": "LG 27UD58: £347.21, Ebuyer.com",
+      "unitprice": 560,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "unitprice": 450,
       "quantity": 1
     }
   ],
@@ -378,4 +448,5 @@
       "id": "6"
     }
   ]
+  
 }
