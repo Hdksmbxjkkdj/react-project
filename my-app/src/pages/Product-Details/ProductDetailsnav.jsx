@@ -1,38 +1,21 @@
-export const ProducDetailsImg = () =>{
+import { Config } from "../../Utils/config";
+export const ProducDetailsImg = ({item,picturs}) =>{
+  console.log(picturs);
+    
     return<>
+  
     <div className="col-xxl-5 col-xl-5 col-lg-5">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between" id="productThumbTab" role="tablist">
-            <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-                      <img src="assets/img/shop/product/details/product-nav-1.jpg" alt=""/>
-                  </button>
-            </li>
-            <li className="nav-item" role="presentation">
-                <button className="nav-link" id="thumbTwo-tab" data-bs-toggle="tab" data-bs-target="#thumbTwo" type="button" role="tab" aria-controls="thumbTwo" aria-selected="false">
-                    <img src="assets/img/shop/product/details/product-nav-2.jpg" alt=""/>
-                  </button>
-            </li>
-            <li className="nav-item" role="presentation">
-                <button className="nav-link" id="thumbThree-tab" data-bs-toggle="tab" data-bs-target="#thumbThree" type="button" role="tab" aria-controls="thumbThree" aria-selected="false">
-                    <img src="assets/img/shop/product/details/product-nav-3.jpg" alt="" />
-                  </button>
-            </li>
-            <li className="nav-item" role="presentation">
-                <button className="nav-link" id="thumbFour-tab" data-bs-toggle="tab" data-bs-target="#thumbFour" type="button" role="tab" aria-controls="thumbFour" aria-selected="false">
-                    <img src="assets/img/shop/product/details/product-nav-4.jpg" alt="" />
-                  </button>
-            </li>
-            <li className="nav-item" role="presentation">
-                <button className="nav-link" id="thumbFive-tab" data-bs-toggle="tab" data-bs-target="#thumbFive" type="button" role="tab" aria-controls="thumbFive" aria-selected="false">
-                    <img src="assets/img/shop/product/details/product-nav-5.jpg" alt="" />
-                  </button>
-            </li>
-            <li className="nav-item" role="presentation">
-                <button className="nav-link" id="thumbSix-tab" data-bs-toggle="tab" data-bs-target="#thumbSix" type="button" role="tab" aria-controls="thumbSix" aria-selected="false">
-                    <img src="assets/img/shop/product/details/product-nav-6.jpg" alt="" />
-                  </button>
-            </li>
+        {picturs?.map((g)=>{
+                return <li className="nav-item" role="presentation">
+                    <button className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                        <img src={Config.shop+ "" + g?.name} alt=""/>  
+                    </button>
+                </li>
+            }
+        )}
+           
         </ul>
         <div className="product__details-thumb">
             <div className="tab-content" id="productThumbContent">

@@ -8,10 +8,12 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
 const ProductSlider = ({ type, res, item }) => {
+ 
   const [slider, setslider] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
       setslider(res);
+    
     });
   }, []);
   const [blog, setblog] = useState();

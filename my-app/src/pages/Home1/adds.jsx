@@ -1,10 +1,6 @@
 import { Banner } from "./hero/banner";
 const Adds = ({img}) => {
-  var filename = [
-    { pic: 'banner-1.jpg', name:'banner-1'},
-    { pic: 'banner-2.jpg', name:'banner-2'},
-    { pic: 'banner-3.jpg', name:'banner-3'},
-  ];
+ 
   return (
     <>
       <section className="banner__area pt-20 pb-10 grey-bg-2">

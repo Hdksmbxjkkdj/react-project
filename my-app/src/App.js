@@ -56,7 +56,7 @@ function App() {
   // const [sidebars,setSidebars]=useState(SidebarData);
  
   return (
-  
+      
     <>
     <CartContext.Provider value={{cart ,setCart}}>
       <BrowserRouter>
@@ -96,7 +96,7 @@ function App() {
       </BrowserRouter>
    
     </CartContext.Provider>
-  
+    
       {/* <Home1></Home1> */}
      
  
