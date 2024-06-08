@@ -1,15 +1,21 @@
+import { event } from "jquery";
 import { Config } from "../../Utils/config";
+import { useEffect } from "react";
+
 export const ProducDetailsImg = ({item,picturs}) =>{
-  console.log(picturs);
-    
+     
+    const handleImg = (event) => {
+        
+        window?.$('.product__details-nav-thumb img').attr('src', window?.$(event.target).parent().find('img').attr('src'))
+    }
     return<>
-  
+   
     <div className="col-xxl-5 col-xl-5 col-lg-5">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between" id="productThumbTab" role="tablist">
         {picturs?.map((g)=>{
                 return <li className="nav-item" role="presentation">
-                    <button className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button onClick={(event) => handleImg(event)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
                         <img src={Config.shop+ "" + g?.name} alt=""/>  
                     </button>
                 </li>
@@ -21,7 +27,8 @@ export const ProducDetailsImg = ({item,picturs}) =>{
             <div className="tab-content" id="productThumbContent">
                 <div className="tab-pane fade show active" id="thumbOne" role="tabpanel" aria-labelledby="thumbOne-tab">
                     <div className="product__details-nav-thumb">
-                        <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/>
+                        {/* <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/> */}
+                        <img src={Config.shop+ "" +item} alt=""/>  
                     </div>
                 </div>
                 <div className="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
