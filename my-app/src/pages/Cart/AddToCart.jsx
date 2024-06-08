@@ -14,13 +14,20 @@ today = dd + '/' + mm + '/' + yyyy;
   let status = 200;
   window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
   let message;
-  let response = await axios.post(url, {id: id,pic: pic,name: name,unitprice: unitprice,quantity: count,date:today});
+  try
+  {
+    let response = await axios.post(url, {id: id,pic: pic,name: name,unitprice: unitprice,quantity: count,date:today});
           setCart(response?.data);
            (response.data.status) && (status = response.data.status)
       if (status == 200) {
       Notif("success", "added successfully !");
     } else {
-      Notif("error", "there was an error here !");
+      Notif("error", "there is an error here !");
     }
+  }
+  catch(error)
+  {
+    Notif('error',"there is an error !")
+  }
   window?.$(".spinner-container").fadeOut(300);
 };

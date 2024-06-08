@@ -5,28 +5,23 @@ import axios from "axios";
 import { RemoveWishList } from "./RemoveWishList";
 import { event } from "jquery";
 import { CartContext } from "../../context/CardContext";
+import { Link } from "react-router-dom";
 const WishList = () => {
   const {setCart} = useContext(CartContext);
   const [row, setrow] = useState();
   useEffect(() => {
-    return async function getusers() {
-      try {
-        const res = await axios.get("http://localhost:313/wishlist");
-        setrow(res.data);
-      } catch {
-        console.log("error");
-      }
-    };
-  }, []);
+        axios.get("http://localhost:313/wishlist").then((res)=>{
+          setrow(res);
+        })
+  }, row);
   const eMessage = "error";
   return (
     <>
-      <main>
+      <main key={Math.random()}>
         <section class="cart-area pb-100">
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <form action="#">
                   <div class="table-content table-responsive">
                     <table class="table">
                       <thead>
@@ -40,25 +35,24 @@ const WishList = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        {row?.map((item) => {
-                          return (
-                            <>
+                        {
+                        row?.data.map((item) => {
+                          return <>
                               <tr>
                                 <td class="product-thumbnail">
-                                  <a href="product-details.html">
+                                  <Link to={"/product-details"+item.id}>
                                     <img
                                       src={Config.shop + "" + item.pic}
                                       alt=""
                                     />
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td class="product-name">
-                                  <a
-                                    href="product-details.html"
+                                  <Link to={"/product-details/:"+item.id}
                                     style={{ fontWeight: "600" }}
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td class="product-price">
                                   <span
@@ -73,7 +67,8 @@ const WishList = () => {
                                     <button
                                       class="t-y-btn t-y-btn-grey fw-bold"
                                       type="submit"
-                                      onClick={() => AddToCart(
+                                      onClick={(event) => AddToCart(
+                                        event,
                                         item.id,
                                         item.pic,
                                         item.name,
@@ -99,18 +94,16 @@ const WishList = () => {
                                   </span>
                                 </td>
                                 <td class="product-remove">
-                                  <a href="#" onClick={()=> RemoveWishList(event,item.id,item.name,setrow,"error",false)}>
+                                  <a href="#" onClick={()=> RemoveWishList(event,item.id,setrow,false)}>
                                     <i class="fa fa-times"></i>
                                   </a>
                                 </td>
                               </tr>
                             </>
-                          );
                         })}
                       </tbody>
                     </table>
                   </div>
-                </form>
               </div>
             </div>
           </div>

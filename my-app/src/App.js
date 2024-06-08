@@ -80,7 +80,7 @@ function App() {
           <Route path="*" element={<Error/>}/>
           <Route path="/Footer" element={<Footer/>}/> 
           <Route path="/product" element={<Productpage/>}/> 
-          <Route path="/product-details" element={<ProducDetails />}/> 
+          <Route path="product-details/:id" element={<ProducDetails />}/> 
         </Routes>
         <div id="loading">
           <div id="loading-center">

@@ -13,7 +13,9 @@ const Form = () => {
       Notif('error',"you should enter your email !")
       return
     }
-    axios.post("http://localhost:313/aboutus",{email:email}).then((res)=>{
+    try
+    {
+      axios.post("http://localhost:313/aboutus",{email:email}).then((res)=>{
       status=res.status;
     })
     if(status==201)
@@ -23,6 +25,11 @@ const Form = () => {
     else
     {
       Notif('error',"there is a problem !");
+    }
+    }
+    catch(error)
+    {
+      Notif('error',"your email does not added !")
     }
   }
   return (

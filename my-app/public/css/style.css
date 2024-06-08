@@ -3425,17 +3425,7 @@ p {
   border-radius: 100%;
   margin-right: 25px;
 }
-.cart__toggle::after {
-  content: "\f290";
-  font-family: "Font Awesome 5";
-  font-size: 18px;
-  color: #222;
-  position: absolute;
-  top: 0;
-  margin-right: 2px;
-  line-height: 46px;
-  right: 12px;
-}
+
 .cart__toggle:hover {
   background: #fcb700;
   color: #ffffff;

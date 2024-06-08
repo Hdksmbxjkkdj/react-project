@@ -3,7 +3,7 @@ const ProductContent = (type)=> {
         <>
             <div className="product__content text-center">
           <h6 className="product-name">
-            <a className="product-item-link" href="product-details.html">
+            <a className="product-item-link">
               {" "}
               High Quality Glass Ultra-Thin Kitchen Scale
             </a>

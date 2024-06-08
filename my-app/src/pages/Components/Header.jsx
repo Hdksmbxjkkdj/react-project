@@ -50,7 +50,6 @@ const Header = () => {
   const { cart } = useContext(CartContext);
   const { searching } = ItemsSearch();
   const [reslut, setResult] = useState();
-  console.log(reslut);
   return (
     <>
       <header>
@@ -70,13 +69,13 @@ const Header = () => {
                         <Link to="/profile">My Account</Link>
                       </li>
                       <li>
-                        <a href="#">My Wishlist</a>
+                        <Link to="wishlist">My Wishlist</Link>
                       </li>
                       <li>
-                        <a href="#">Sign In</a>
+                        <Link to="register">Sign In</Link>
                       </li>
                       <li>
-                        <a href="#">Compare</a>
+                        <a style={{color:"#ccc"}} disabled={true}>Compare</a>
                       </li>
                     </ul>
                   </div>
@@ -90,9 +89,9 @@ const Header = () => {
                 <div className="col-xl-4 col-lg-3">
                   <div className="header__info-left d-flex justify-content-center justify-content-sm-between align-items-center">
                     <div className="logo">
-                      <a href="index.html">
+                      <Link to="/">
                         <img src={"./img/logo/logo-black.png"} alt="logo" />
-                      </a>
+                      </Link>
                     </div>
                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
                       <div className="header__hotline-icon">
@@ -211,7 +210,8 @@ const Header = () => {
                       </form>
                     </div>
                     <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative">
-                      <a href="javascript:void(0);" className="cart__toggle">
+                      <a href="javascript:void(0);" className="cart__toggle text-center" style={{lineHeight:"3rem"}}>
+                        <i className="fa fa-cart-shopping fs-5"></i>
                         <span className="cart__total-item">{cart.length}</span>
                       </a>
                       <span className="cart__content">
@@ -324,10 +324,10 @@ const Header = () => {
                     <div className="header__lang d-md-none d-lg-block">
                       <select>
                         <option>English</option>
-                        <option>Bangla</option>
-                        <option>Arabic</option>
-                        <option>Hindi</option>
-                        <option>Urdu</option>
+                        <option disabled={true}>Bangla</option>
+                        <option disabled={true}>Arabic</option>
+                        <option disabled={true}>Hindi</option>
+                        <option disabled={true}>Urdu</option>
                       </select>
                     </div>
                   </div>
