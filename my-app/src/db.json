@@ -1,19 +1,12 @@
 {
   "row": [
     {
-      "id": "9",
-      "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
-      "unitprice": 720,
+      "id": "1",
+      "pic": "product-12.jpg",
+      "name": "Bakix Furniture",
+      "unitprice": 130,
       "quantity": 1,
-      "date": "01-03-2024",
-      "gallery": [
-        {"name":"product-3.jpg"},
-        {"name":"product-4.jpg"},
-        {"name":"product-5.jpg"},
-        {"name":"product-5.jpg"},
-        {"name":"product-5.jpg"}
-      ]
+      "date": "01-03-2024"
     },
     {
       "id": "6",
@@ -25,10 +18,17 @@
     },
     {
       "id": "10",
-      "pic": "product-11.jpg",
+      "pic": "product-12.jpg",
       "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
       "unitprice": 720,
-      "quantity": 1
+      "quantity": 1,
+      "gallery": [
+        {"name":"product-12.jpg"},
+        {"name":"product-11.jpg"},
+        {"name":"product-20.jpg"},
+        {"name":"product-21.jpg"},
+        {"name":"product-12.jpg"}
+      ]
     },
     {
       "id": "7",
@@ -468,6 +468,25 @@
       "pass": "123456789",
       "id": 1
     }
+  ],
+  "product-details":[
+    {
+      "id": "10",
+      "pic": "product-12.jpg",
+      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
+      "unitprice": 720,
+      "quantity": 1,
+      "NewPrice":150000,
+      "OldPrice":320000,
+      "sku":"Samsung C49J89: £875, Debenhams Plus",
+      "gallery": [
+        {"name":"product-12.jpg"},
+        {"name":"product-11.jpg"},
+        {"name":"product-20.jpg"},
+        {"name":"product-21.jpg"},
+        {"name":"product-12.jpg"}
+      ]
+    }
   ]
-  
+
 }

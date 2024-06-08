@@ -6,6 +6,9 @@ const Config = {
     about:"/img/about/",
     icon:"/img/icon/",
     team:"/img/team/",
+    //
+     
+    //
 }
 
 export {Config};
