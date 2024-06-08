@@ -9,7 +9,7 @@ const BlogItem = ({blog}) => {
         </div>
         <div className="blog__content white-bg">
           <h3>
-            <Link to={"/BlogDetaile/:"+blog?.id}>{blog?.title}</Link>
+            <Link to={"/BlogDetaile/"+blog?.id}>{blog?.title}</Link>
           </h3>
           <div className="blog__meta">
             <span>Post Date:</span>

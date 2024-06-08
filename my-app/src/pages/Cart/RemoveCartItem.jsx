@@ -6,13 +6,12 @@ export const RemoveCartItem = async(event, id, name, setCart, eMessage, all = fa
     window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
     try {
         let message;
-        await axios.delete(url).then((response) => {
-            console.log(response);
+        await axios.delete(url);
+        axios.get("http://localhost:313/row").then((response)=>{
             setCart(response);
             if (response.data.status) status = response.data.status
             message = response.data.message
         })
-
         if (status == 200) {
             Notif('success', "deleted successfully")
         } else {

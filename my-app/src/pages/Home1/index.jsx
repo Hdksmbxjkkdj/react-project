@@ -59,6 +59,7 @@ const Home1 = () => {
     img:"quick-view/quick-view-1.jpg",
     seccondimg:"quick-view/quick-view-2.jpg"
   });
+  console.log(modal);
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>
@@ -72,7 +73,7 @@ const Home1 = () => {
       <Adds img={filename4}></Adds>
       <OnSell res={res1}></OnSell>
       <FromTheBlog res={res1}></FromTheBlog>
-      <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true" key={Math.random()}>
         <div class="modal-dialog modal-dialog-centered product__modal" role="document">
           <div class="modal-content">
             <div class="product__modal-wrapper p-relative">

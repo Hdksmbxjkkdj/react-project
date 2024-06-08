@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Sidebar = ()=> {
     return (
         <>
@@ -8,75 +10,75 @@ const Sidebar = ()=> {
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <a href="product.html">All Categories <i className="fa fa-angle-down"></i></a>
+                                                    <Link to="product">All Categories <i className="fa fa-angle-down"></i></Link>
                                                     <ul className="mega-menu">
-                                                        <li><a href="product.html">Shop Pages</a>
+                                                        <li><Link to="product">Shop Pages</Link>
                                                             <ul className="mega-item">
-                                                                <li><a href="product-details.html">Standard SHop Page</a></li>
-                                                                <li><a href="product-details.html">Shop Right Sidebar</a></li>
-                                                                <li><a href="product-details.html">Shop Left Sidebar</a></li>
-                                                                <li><a href="product-details.html">Shop 3 Column</a></li>
-                                                                <li><a href="product-details.html">Shop 4 Column</a></li>
+                                                                <li><Link to="product">Standard SHop Page</Link></li>
+                                                                <li><Link to="product">Shop Right Sidebar</Link></li>
+                                                                <li><Link to="product">Shop Left Sidebar</Link></li>
+                                                                <li><Link to="product">Shop 3 Column</Link></li>
+                                                                <li><Link to="product">Shop 4 Column</Link></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="product.html">Product Pages</a>
                                                             <ul className="mega-item">
-                                                                <li><a href="product-details.html">Product Details</a></li>
-                                                                <li><a href="product-details.html">Product V2</a></li>
-                                                                <li><a href="product-details.html">Product V3</a></li>
-                                                                <li><a href="product-details.html">Varriable Product</a></li>
-                                                                <li><a href="product-details.html">External Product</a></li>
+                                                                <li><Link to="product">Product Details</Link></li>
+                                                                <li><Link to="product">Product V2</Link></li>
+                                                                <li><Link to="product">Product V3</Link></li>
+                                                                <li><Link to="product">Varriable Product</Link></li>
+                                                                <li><Link to="product">External Product</Link></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="product.html">Other Pages</a>
                                                             <ul className="mega-item">
-                                                                <li><a href="product-details.html">wishlist</a></li>
-                                                                <li><a href="product-details.html">Shopping Cart</a></li>
-                                                                <li><a href="product-details.html">Checkout</a></li>
-                                                                <li><a href="product-details.html">Login</a></li>
-                                                                <li><a href="product-details.html">Register</a></li>
+                                                                <li><Link to="product">wishlist</Link></li>
+                                                                <li><Link to="product">Shopping Cart</Link></li>
+                                                                <li><Link to="product">Checkout</Link></li>
+                                                                <li><Link to="product">Login</Link></li>
+                                                                <li><Link to="product">Register</Link></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="product.html">Phone & Tablets</a>
                                                             <ul className="mega-item">
-                                                                <li><a href="product-details.html">Catagory 1</a></li>
-                                                                <li><a href="product-details.html">Catagory 2</a></li>
-                                                                <li><a href="product-details.html">Catagory 3</a></li>
-                                                                <li><a href="product-details.html">Catagory 4</a></li>
+                                                                <li><Link to="product">Catagory 1</Link></li>
+                                                                <li><Link to="product">Catagory 2</Link></li>
+                                                                <li><Link to="product">Catagory 3</Link></li>
+                                                                <li><Link to="product">Catagory 4</Link></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="product.html">Phone & Tablets</a>
                                                             <ul className="mega-item">
-                                                                <li><a href="product-details.html">Catagory 1</a></li>
-                                                                <li><a href="product-details.html">Catagory 2</a></li>
-                                                                <li><a href="product-details.html">Catagory 3</a></li>
-                                                                <li><a href="product-details.html">Catagory 4</a></li>
+                                                                <li><Link to="product">Catagory 1</Link></li>
+                                                                <li><Link to="product">Catagory 2</Link></li>
+                                                                <li><Link to="product">Catagory 3</Link></li>
+                                                                <li><Link to="product">Catagory 4</Link></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="product.html">Best Seller Products
+                                                    <Link to="product">Best Seller Products
                                                         <span className="cat-label">hot!</span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="product.html">Top 10 Offers
+                                                    <Link to="product">Top 10 Offers
                                                         <span className="cat-label green">new!</span>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="product.html">New Arrivals <i className="fa fa-angle-down"></i></a>
+                                                    <Link to="product.html">New Arrivals <i className="fa fa-angle-down"></i></Link>
                                                     <ul className="submenu">
-                                                        <li><a href="product.html">Home Appliances</a></li>
-                                                        <li><a href="product.html">Technology</a>
+                                                        <li><Link to="product">Home Appliances</Link></li>
+                                                        <li><Link to="product">Technology</Link>
                                                             <ul className="submenu">
-                                                                <li><a href="product.html">Storage Devices</a></li>
-                                                                <li><a href="product.html">Monitors</a></li>
-                                                                <li><a href="product.html">Laptops</a></li>
+                                                                <li><Link to="product">Storage Devices</Link></li>
+                                                                <li><Link to="product">Monitors</Link></li>
+                                                                <li><Link to="product">Laptops</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="product.html">Office Equipments</a></li>
+                                                        <li><Link to="product">Office Equipments</Link></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="product.html">Phones & Tablets</a></li>

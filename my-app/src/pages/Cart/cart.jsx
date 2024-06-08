@@ -24,7 +24,7 @@ const Cart = () => {
         try
         {
           const res = await axios.get("http://localhost:313/row");
-          setCart(res?.data);
+          setCart(res);
         }
         catch
         {
@@ -33,6 +33,7 @@ const Cart = () => {
       }
     )
   },[])
+  console.log(cart);
   const eMessage="error";
   return (
     <>
@@ -42,7 +43,7 @@ const Cart = () => {
             <div className="col-12">
               <form action="#">
                 <div className="table-content table-responsive">
-                  <table className="table">
+                  <table className="table" key={Math.random()}>
                     <thead>
                       <tr>
                         <th className="product-thumbnail">Images</th>
@@ -55,20 +56,20 @@ const Cart = () => {
                     </thead>
                     <tbody>
                       {
-                        (cart.length>0) && cart?.map((items) => {
+                        cart?.map((items) => {
                             return (
                               <>
                                 <tr>
                                   <td className="product-thumbnail">
-                                    <a href="product-details.html">
+                                    <Link to={"/product-details/:"+items.id}>
                                       <img
                                         src={Config.shop + "" +items.pic}
                                         alt=""
                                       />
-                                    </a>
+                                    </Link>
                                   </td>
                                   <td className="product-name">
-                                    <a href="product-details.html" style={{fontWeight:"600"}}>{items.name}</a>
+                                    <Link to={"/product-details/:"+items.id} style={{fontWeight:"600"}}>{items.name}</Link>
                                   </td>
                                   <td className="product-price">
                                     <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice).toFixed(2)}</span>

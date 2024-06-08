@@ -4,11 +4,9 @@ import { ModalContext } from "../../../../context/modal";
 const ProductAction = ({item})=> {
   function Set()
   {
+    const {modal,setModal} = useContext(ModalContext)
     console.log("hello");
-    const {setModal} = useContext(ModalContext)
-    setModal('text',item.text);
-    setModal('img',item.pic);
-    setModal('price',item.price);
+    setModal({...modal,'text':item.text,'img':item.pic,'price':item.price,'seccondimg':item.seccondpic})
   }
     return (
         <>
@@ -26,7 +24,7 @@ const ProductAction = ({item})=> {
               </li>
               <li>
                 <a href="#" title="Compare">
-                  <i className="fa fa-sliders-h"></i>
+                  <i className="fa fa-sliders-h" onClick={()=>alert("هنوز این مورد وجود ندارد !")}></i>
                 </a>
               </li>
             </ul>
