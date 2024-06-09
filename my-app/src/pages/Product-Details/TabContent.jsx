@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
+
 export const TabContent = () =>{
     return<>
     <div class="col-xxl-12">
@@ -5,18 +9,12 @@ export const TabContent = () =>{
         <div class="tab-pane fade show active" id="des" role="tabpanel" aria-labelledby="des-tab">
             <div class="product__details-des-wrapper">
                 <div class="product__details-des mb-20">
-                    <h3>The standard Lorem Ipsum passage, used since the 1500s</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum."</p>
+                    <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h3>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
                 </div>
                 <div class="product__details-des mb-20">
-                    <h3>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h3>
-                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-                        sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                        nulla pariatur?"</p>
+                    <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</h3>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
                 </div>
                 <div class="product__details-des-banner w-img">
                     <img src="assets/img/shop/product/details/product-details-banner.jpg" alt="" />
@@ -28,147 +26,147 @@ export const TabContent = () =>{
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6">
                         <div class="review-wrapper">
-                            <h3 class="block-title">Customer Reviews</h3>
+                            <h3 class="block-title">نظرات مشتریان</h3>
                             <div class="review-item">
-                                <h3 class="review-title">Awesome product</h3>
+                                <h3 class="review-title">محصول فوق العاده</h3>
                                 <div class="review-ratings mb-10">
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Quality</span>
+                                        <span>کیفیت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar}/></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Price</span>
+                                        <span>قیمت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Value</span>
+                                        <span>ارزش</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="review-text">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti quia eligendi molestias illum libero et.</p>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک</p>
                                 </div>
                                 <div class="review-meta">
                                     <div class="review-author">
-                                        <span>Review By </span>
-                                        <span>Shahnewaz Sakil</span>
+                                        <span>بررسی توسط</span>
+                                        <span>شهنواز ساکیل</span>
                                     </div>
                                     <div class="review-date">
-                                        <span>Posted on</span>
+                                        <span>نوشته شده در</span>
                                         <span>1/21/20</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="review-item">
-                                <h3 class="review-title">Nice</h3>
+                                <h3 class="review-title">خوب</h3>
                                 <div class="review-ratings mb-10">
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Quality</span>
+                                        <span>کیفیت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Price</span>
+                                        <span>قیمت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Value</span>
+                                        <span>ارزش</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="review-text">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti quia eligendi molestias illum libero et.</p>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک </p>
                                 </div>
                                 <div class="review-meta">
                                     <div class="review-author">
-                                        <span>Review By </span>
-                                        <span>Selena Gomz</span>
+                                        <span>بررسی توسط </span>
+                                        <span>مایکل</span>
                                     </div>
                                     <div class="review-date">
-                                        <span>Posted on</span>
+                                        <span>نوشته شده در</span>
                                         <span>1/21/20</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="review-item">
-                                <h3 class="review-title">Best product</h3>
+                                <h3 class="review-title">بهترین محصولات</h3>
                                 <div class="review-ratings mb-10">
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Quality</span>
+                                        <span>کیفیت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Price</span>
+                                        <span>قیمت</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
-                                        <span>Value</span>
+                                        <span>ارزش</span>
                                         <ul>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fal fa-star"></i></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="review-text">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti quia eligendi molestias illum libero et.</p>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک </p>
                                 </div>
                                 <div class="review-meta">
                                     <div class="review-author">
-                                        <span>Review By </span>
-                                        <span>Jonson</span>
+                                        <span>بررسی توسط </span>
+                                        <span>جانسون</span>
                                     </div>
                                     <div class="review-date">
-                                        <span>Posted on</span>
+                                        <span>نوشته شده در</span>
                                         <span>1/21/20</span>
                                     </div>
                                 </div>
@@ -177,15 +175,15 @@ export const TabContent = () =>{
                     </div>
                     <div class="col-xxl-4 col-xl-4 col-lg-4">
                         <div class="review-form">
-                            <h3>Your Reviewing</h3>
-                            <p>Australian Certified Organic Royal Gala Apples</p>
+                            <h3>بررسی شما</h3>
+                            <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
                             <form action="#">
                                 <div class="review-input-box mb-15 d-flex align-items-start">
-                                    <h4 class="review-input-title">Your Rating</h4>
+                                    <h4 class="review-input-title">امتیاز شما</h4>
                                     <div class="review-input">
                                         <div class="review-ratings mb-10">
                                             <div class="review-ratings-single d-flex align-items-center">
-                                                <span>Quality</span>
+                                                <span>کیفیت</span>
                                                 <ul>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -195,7 +193,7 @@ export const TabContent = () =>{
                                                 </ul>
                                             </div>
                                             <div class="review-ratings-single d-flex align-items-center">
-                                                <span>Price</span>
+                                                <span>قیمت</span>
                                                 <ul>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -205,7 +203,7 @@ export const TabContent = () =>{
                                                 </ul>
                                             </div>
                                             <div class="review-ratings-single d-flex align-items-center">
-                                                <span>Value</span>
+                                                <span>ارزش</span>
                                                 <ul>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -218,25 +216,25 @@ export const TabContent = () =>{
                                     </div>
                                 </div>
                                 <div class="review-input-box d-flex align-items-start">
-                                    <h4 class="review-input-title">Nickname</h4>
+                                    <h4 class="review-input-title">نام مستعار</h4>
                                     <div class="review-input">
                                         <input type="text" required />
                                     </div>
                                 </div>
                                 <div class="review-input-box d-flex align-items-start">
-                                    <h4 class="review-input-title">Summary</h4>
+                                    <h4 class="review-input-title">خلاصه</h4>
                                     <div class="review-input">
                                         <input type="text" required/>
                                     </div>
                                 </div>
                                 <div class="review-input-box d-flex align-items-start">
-                                    <h4 class="review-input-title">Review</h4>
+                                    <h4 class="review-input-title">مرور</h4>
                                     <div class="review-input">
                                         <textarea></textarea>
                                     </div>
                                 </div>
                                 <div class="review-sub-btn">
-                                    <button type="submit" class="t-y-btn t-y-btn-grey">submit review</button>
+                                    <button type="submit" class="t-y-btn t-y-btn-grey">ارسال بررسی</button>
                                 </div>
                             </form>
                         </div>

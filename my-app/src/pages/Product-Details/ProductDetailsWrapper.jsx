@@ -77,10 +77,10 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
               </div>
               <div class="product__add-review mb-15">
                 <span>
-                  <a href="#">1 Review</a>
+                  <a href="#">1 نظر</a>
                 </span>
                 <span>
-                  <a href="#">Add Review</a>
+                  <a href="#">افزودن نظر</a>
                 </span>
               </div>
             </div>
@@ -89,8 +89,8 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
               <span class="old">${oldprice}</span>
             </div>
             <div class="product__stock">
-              <span>Availability :</span>
-              <span>In Stock</span>
+              <span>دسترسی :</span>
+              <span>در انبار</span>
             </div>
             <div class="product__stock sku mb-30">
               <span>SKU:</span>
@@ -98,19 +98,14 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
             </div>
             <div class="product__details-des mb-30">
               <p>
-                Typi non habent claritatem insitam, est usus legentis in iis qui
-                facit eorum claritatem. Investigationes demonstraverunt lectores
-                legere me lius quod ii legunt saepius. Claritas est etiam
-                processus. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when anunknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. 
               </p>
             </div>
             <div class="product__details-stock">
               <h3>
-                <span>Hurry Up!</span> Only 98 products left in stock.
+                <span>عجله کن!</span> فقط 98 محصول در انبار باقی مانده است.
               </h3>
-              <div class="progress">
+              <div class="progress d-flex">
                 <div
                   class="progress-bar progress-bar-striped progress-bar-animated"
                   role="progressbar"
@@ -131,7 +126,7 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
                   </div>
                   <div class="pro-cart-btn mb-25">
                     <button class="t-y-btn" type="submit">
-                      Add to cart
+                    به سبد خرید اضافه کنید
                     </button>
                   </div>
                 </div>
@@ -140,12 +135,12 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
             <div class="product__details-action">
               <ul>
                 <li>
-                  <a href="#" title="Add to Wishlist">
+                  <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Compare">
+                  <a href="#"  title="مقایسه کنید">
                     <FontAwesomeIcon icon={faSliders}></FontAwesomeIcon>
                   </a>
                 </li>

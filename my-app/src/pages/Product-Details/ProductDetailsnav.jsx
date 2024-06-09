@@ -5,8 +5,11 @@ import { useEffect } from "react";
 export const ProducDetailsImg = ({item,picturs}) =>{
      
     const handleImg = (event) => {
+        let preview = window?.$('.product__details-nav-thumb img')
+        preview.fadeOut(100)
         
-        window?.$('.product__details-nav-thumb img').attr('src', window?.$(event.target).parent().find('img').attr('src'))
+        preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
+        preview.fadeIn(300)
     }
     return<>
    
