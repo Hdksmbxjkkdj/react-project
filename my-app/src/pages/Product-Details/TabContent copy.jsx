@@ -1,60 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { useForm } from "react-hook-form";
-import { Input, Textarea } from "../../Compont/Forms";
-import { Lang, Local, Notif, User } from "../../Utils/"
-//test
-let local = Local()
-let auth = User()
-let loginMessage = Lang('first_login');
-let eMessage = Lang('error_message');
-let sMessage = Lang('success_message');
-
-const { data, setData, post, processing, errors, setError, clearErrors, reset } = useForm({
-    sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
-    sender_email: auth ? auth.email : '',
-    comment: '',
-    blog_id: blog.id
-});
-
-useEffect(() => {
-    return () => {
-        reset();
-    };
-}, []);
-let url = `/${local}/send-comment/`
-
-const submit = async (e) => {
-    e.preventDefault();
-
-    if (auth) {
-        clearErrors()
-        
-        await axios.post(url, data).then((response) => {
-            if (response.data.status == 200) {
-                Notif('success', response.data.message)
-                reset()
-                return
-            }
-        }).catch((errors) => {
-            setError(errors.response.data.errors)
-        })
-
-        errors.length > 0 ? Notif('error', eMessage) : ''
-
-        return
-    }
-
-    Notif('error', loginMessage)
-};
-
-//test
-
-
-
-
-
-
 
 
 export const TabContent = ({comment}) =>{
@@ -85,7 +30,8 @@ export const TabContent = ({comment}) =>{
                         <div class="review-wrapper">
                             <h3 class="block-title">نظرات مشتریان</h3>
                             {comment?.map((g)=>{
-                              
+                                // console.log("g");
+                                // console.log(g);
                                     return <>
                                             <div class="review-item">
                                                 <h3 class="review-title">محصول فوق العاده</h3>
@@ -333,22 +279,19 @@ export const TabContent = ({comment}) =>{
                                 <div class="review-input-box d-flex align-items-start">
                                     <h4 class="review-input-title">نام مستعار</h4>
                                     <div class="review-input">
-                                    <Input id="sender_name" label={Lang('name')} name="sender_name" value={data.sender_name} error={errors.sender_name}
-                                            autoComplete="username" onChange={(e) => setData('sender_name', e.target.value)} />
+                                        <input type="text" required />
                                     </div>
                                 </div>
                                 <div class="review-input-box d-flex align-items-start">
                                     <h4 class="review-input-title">خلاصه</h4>
                                     <div class="review-input">
-                                    <Input id="sender_email" label={Lang('email')} name="sender_email" value={data.sender_email} error={errors.sender_email}
-                                        autoComplete="useremail" onChange={(e) => setData('sender_email', e.target.value)} />
+                                        <input type="text" required/>
                                     </div>
                                 </div>
                                 <div class="review-input-box d-flex align-items-start">
                                     <h4 class="review-input-title">مرور</h4>
                                     <div class="review-input">
-                                    <Textarea id="comment" label={Lang('comment')} name="comment" value={data.comment} error={errors.comment} placeholder={Lang('your_comment')}
-                                         autoComplete="username" onChange={(e) => setData('comment', e.target.value)} />
+                                        <textarea></textarea>
                                     </div>
                                 </div>
                                 <div class="review-sub-btn">

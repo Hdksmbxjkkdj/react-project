@@ -12,29 +12,31 @@ import { SectionHead } from './SectionHead';
 import { TabContent } from './TabContent';
 import { BestSelling } from '../Home1/best-selling';
 export const ProducDetails= ({id=10}) =>{
+   
     const [info, setInfo] = useState();
     useEffect(() => {
-        axios.get(`http://localhost:313/product-details/${id}`).then((res) => {
+        axios.get(`http://localhost:313/row/${id}`).then((res) => {
             setInfo(res);
-           
+
 
         });
     }, []);
-      
+   console.log(info?.data);
+
     return<>
         <main>
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
                           <ProducDetailsImg item={info?.data.pic} picturs={info?.data?.gallery} />
-                        <ProductDetailsWrapper item={info?.data.name} price={info?.data?.unitprice} newprice={info?.data.NewPrice} oldprice={info?.data.OldPrice} sku={info?.data.sku}/>
+                        <ProductDetailsWrapper item={info?.data.name} price={info?.data?.unitprice} newprice={info?.data.NewPrice} oldprice={info?.data.OldPrice} sku={info?.data.sku} />
                     </div>
                     <div className="row">
                         <ProductDetailsDesTab />
                     </div>
                     
                     <div className="row">
-                        <TabContent /> 
+                        <TabContent  comment={info?.data?.comment} /> 
                     </div>
                 </div>
             </section>
