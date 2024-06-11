@@ -1,5 +1,5 @@
 import React from 'react';
-import {Lang} from '../index';
+// import {Lang} from '../../Utils';
 
 export const Button = (props) => {
   let {label, onClick, className, disabled} = props;
@@ -13,7 +13,8 @@ export const Button = (props) => {
         className={className} 
         onClick={(event)=> onClick(event)}
       >
-        {Lang('public.'+label)}
+        {label}
+        {/* {Lang('public.'+label)} */}
       </button>
   );
 }

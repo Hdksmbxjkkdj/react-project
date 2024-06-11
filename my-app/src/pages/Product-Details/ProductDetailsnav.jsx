@@ -1,5 +1,5 @@
 import { event } from "jquery";
-import { Config } from "../../Utils/config";
+import { Config } from "../../Utils";
 import { useEffect } from "react";
 
 export const ProducDetailsImg = ({item,picturs}) =>{

@@ -1,13 +1,14 @@
-import { usePage } from "@inertiajs/react"
+// import { usePage } from "@inertiajs/react"
 
 const Local = () => {
-    let local = usePage().props.local.lang
+    // let local = usePage().props.local.lang
 
-    if (local == undefined || local == '') {
-        local = 'fa'
-    }
+    // if (local == undefined || local == '') {
+    //     local = 'fa'
+    // }
 
-    return local;
+    // return local;
+    return 'fa';
 }
 
 export { Local };

@@ -1,45 +1,30 @@
-import React from 'react';
-// import {Tools} from '../Utils';
-import {useFormElement} from './';
-import {useState} from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 
-const Textarea = (props)=>{
-    let {refItem, className, options, disabled, row} = props;
-    let Element = useFormElement(props);
-    let {id, rand, label, helpDiv, divError, requiredDiv, placeholder, defaultValue} = Element.init();
+export const Textarea = forwardRef(function Textarea({ className = '', isFocused = false, ...props }, ref) {
+    const textarea = ref;
 
-    let [state, setState] = useState({
-        value: defaultValue,
-    });
+    useEffect(() => {
+        if (isFocused) {
+            textarea.current.focus();
+        }
+    }, []);
 
-    useEffect(()=>{
-        let { defaultValue } = Element.init();
-        setState({...state, value: defaultValue});
-    }, [refItem[0].state.info])
-
-    if (!row) row = 5;
-    return(
-        <div className={className?className:" mb-3"} >
-            <label htmlFor={id} className="form-label font-bold">{label} {requiredDiv} {helpDiv}</label>
+    return (
+        <div class="form-group">
+            <label>{props.label} {props.required && <span className="require">*</span>}</label>
             <textarea
-                id = {id}
-                ref={Element.createRef(refItem)}
-                key={"textarea-"+rand}
-                placeholder = {placeholder}
-                defaultValue = {state.value}                
-                rows = {row}
-                className = "form-control"
-                disabled = {disabled?true:false}
-                onFocus = {()=>Element.removeError()}
-                onChange={function(e){
-                    state.value = e.target.value;
-                }}
-                {...options}>
-            </textarea>
-            {helpDiv}
-            {divError}
+                {...props}
+                className={
+                    'form-control' +
+                    className
+                }
+                ref={textarea}
+            >{props.value}</textarea>
+           {
+            props.error && <p  className={props.classNameError ? props.classNameError : 'text-danger'}>
+                {props.error}
+            </p>
+            }
         </div>
     );
-}
-
-export {Textarea};
+});

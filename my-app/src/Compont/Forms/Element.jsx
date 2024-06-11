@@ -1,5 +1,5 @@
 import isEqual from "react-fast-compare";
-import {Tools, Lang} from '../Utils';
+import {Tools} from '../../Utils';
 
 export const useFormElement = (props)=>{
     let rand = (new Date()).getTime() + Math.ceil(Math.random()*10000);
@@ -79,7 +79,7 @@ export const useFormElement = (props)=>{
         },
     
         checkError: function(){
-            let {errors} = this.props.refItem[0].state,
+            let {errors} = this.props.refItem[0]?.state,
                 {refItem} = this.props,
                 {errorRand} = this.state,
                 divError = [];
@@ -134,12 +134,12 @@ export const useFormElement = (props)=>{
     
             let {errorRand} = this.state;
             let id = this.getId();
-            if(($('#error-'+errorRand)).length > 0){
-                $('#error-'+errorRand).slideUp(400, ()=>{
+            if((window?.$('#error-'+errorRand)).length > 0){
+                window?.$('#error-'+errorRand).slideUp(400, ()=>{
                     this.state.errorRand = this.createRand();
                 });
             }
-            $("#"+id).parent().children("span").children("div").slideUp(400, function(){
+            window?.$("#"+id).parent().children("span").children("div").slideUp(400, function(){
                 this.state.errorRand = this.createRand();
             });
         },
@@ -194,12 +194,12 @@ export const useFormElement = (props)=>{
     
         getLabel: function(){
             let {label, refItem} = this.props;
-            return Lang('public.'+(label?label:refItem[1]));
+            return label?label:refItem[1];
         },
     
         getPlaceHolder: function(props){
             let {placeholder} = this.props;
-            return (placeholder)?Lang('public.'+placeholder, {title: this.getLabel()}) : "";
+            return (placeholder)?placeholder : "";
         },
 
         init: function(){
