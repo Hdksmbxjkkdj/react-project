@@ -9,9 +9,10 @@ import { ProductDetailsDesTab } from './ProductDetailsDesTab';
 import { ProductDetailsWrapper } from './ProductDetailsWrapper';
 import {ProducDetailsImg} from './ProductDetailsnav';
 import { SectionHead } from './SectionHead';
-import {SendComment } from './TabContent';
+import {SendComment } from './SendComment';
 import { BestSelling } from '../Home1/best-selling';
 export const ProducDetails= ({id=10}) =>{
+    
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -21,7 +22,7 @@ export const ProducDetails= ({id=10}) =>{
 
         });
     }, []);
-   console.log(info?.data);
+   console.log(info?.data.id);
 
     return<>
         <main>
@@ -36,7 +37,7 @@ export const ProducDetails= ({id=10}) =>{
                     </div>
                     
                     <div className="row">
-                        <SendComment  comment={info?.data?.comment} /> 
+                        <SendComment  comment={info?.data?.comment} id={info?.data.id} /> 
                     </div>
                 </div>
             </section>
