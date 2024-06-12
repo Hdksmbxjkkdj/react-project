@@ -38,7 +38,6 @@ import { Productpage } from './pages/Productpage';
 // import { useState } from 'react';
 import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
-import Show from "./pages/Show";
 
 
 function App() {
@@ -63,9 +62,8 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Routes>
-          <Route path="product/:id" element={<ProducDetails />}/> 
-          
-          <Route path="/" element={<Home1 />} />
+          <Route path="produc/:id" element={<ProducDetails />}/> 
+          {/* <Route path="/" element={<Home1 />} />
           <Route path="/Home2" element={<Home2 />} />
           <Route path="/Home3" element={<Home3 />} />
           <Route path="/Home4" element={<Home4 />} />
@@ -82,8 +80,7 @@ function App() {
           <Route path="/Footer" element={<Footer />} />
           <Route path="*" element={<Error/>}/>
           <Route path="/Footer" element={<Footer/>}/> 
-          <Route path="/product" element={<Productpage/>} exact={true}/> 
-          {/* <Route path="product/:id" element={<Show />}/>  */}
+          <Route path="/product" element={<Productpage/>} exact={true}/>  */}
         </Routes>
         <div id="loading">
           <div id="loading-center">

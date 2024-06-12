@@ -8,7 +8,7 @@ import { ItemsSearch } from "./Search";
 
 const Header = () => {
   window?.$("document").ready(function () {
-    window?.$("select").niceSelect();
+    // window?.$("select").niceSelect();
     window?.$(window).on("scroll", function () {
       var scroll = window?.$(window).scrollTop();
       if (scroll < 100) {

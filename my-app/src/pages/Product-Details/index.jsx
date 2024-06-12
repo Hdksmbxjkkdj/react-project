@@ -11,8 +11,10 @@ import {ProducDetailsImg} from './ProductDetailsnav';
 import { SectionHead } from './SectionHead';
 import {SendComment } from './SendComment';
 import { BestSelling } from '../Home1/best-selling';
-export const ProducDetails= ({id=10}) =>{
+import { useParams } from "react-router-dom";
+export const ProducDetails= () =>{
     
+    const {id} = useParams()
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -46,9 +48,6 @@ export const ProducDetails= ({id=10}) =>{
                     <div className="row">
                         <SectionHead />
                     </div>
-                    {/* <div className="row"> */}
-                    
-                    {/* </div> */}
                 </div>
             </section>
             <ProductSlider />
