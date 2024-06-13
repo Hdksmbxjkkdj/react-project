@@ -1169,6 +1169,8 @@ p {
 .product__modal-box .nav-tabs {
   border-bottom: 0;
   flex-wrap: nowrap;
+  justify-content: start !important;
+  gap: 1rem;
 }
 .product__modal-box .nav-tabs .nav-item{
   flex-basis: 25%;

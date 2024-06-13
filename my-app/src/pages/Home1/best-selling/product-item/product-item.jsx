@@ -22,7 +22,7 @@ const ProductItemflex = ({type, slider}) => {
     <>
       <div className="product__item white-bg d-flex mb-4">
         <ProductThumbflex item={slider}></ProductThumbflex>
-        <ProductContent></ProductContent>
+        <ProductContent item={slider}></ProductContent>
       </div>
     </>
   );

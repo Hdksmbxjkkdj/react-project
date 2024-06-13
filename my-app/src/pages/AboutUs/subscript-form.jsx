@@ -10,7 +10,7 @@ const Form = () => {
     console.log(email);
     if(email==""||email==null||email==undefined)
     {
-      Notif('error',"you should enter your email !")
+      Notif('error',"باید ایمیلتان را وارد کنید !")
       return
     }
     try
@@ -20,16 +20,16 @@ const Form = () => {
     })
     if(status==201)
     {
-      Notif('success',"your email confirmed successfully :)");
+      Notif('success',"ایمیلتان با موفقیت ثبت گردید :)");
     }
     else
     {
-      Notif('error',"there is a problem !");
+      Notif('error',"در اینجا یک مشکلی وجود دارد !");
     }
     }
     catch(error)
     {
-      Notif('error',"your email does not added !")
+      Notif('error',"ایمیلتان ثبت نشد !")
     }
   }
   return (

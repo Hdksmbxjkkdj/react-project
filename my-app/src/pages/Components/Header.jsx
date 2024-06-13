@@ -59,23 +59,23 @@ const Header = () => {
               <div className="row align-items-center">
                 <div className="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
                   <div className="header__welcome">
-                    <span>Welcome to Worldwide Electronics Store</span>
+                    <span>به سایت ما خوش آمدید</span>
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-7">
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
                       <li>
-                        <Link to="/profile">My Account</Link>
+                        <Link to="/profile">پروفایل</Link>
                       </li>
                       <li>
-                        <Link to="wishlist">My Wishlist</Link>
+                        <Link to="wishlist">علاقه مندی ها</Link>
                       </li>
                       <li>
-                        <Link to="register">Sign In</Link>
+                        <Link to="register">ورود</Link>
                       </li>
                       <li>
-                        <a style={{color:"#ccc"}} disabled={true}>Compare</a>
+                        <a style={{color:"#ccc"}} disabled={true}>مقایسه</a>
                       </li>
                     </ul>
                   </div>
@@ -98,7 +98,7 @@ const Header = () => {
                         <i className="fa fa-headset"></i>
                       </div>
                       <div className="header__hotline-info">
-                        <span>Hotline Free:</span>
+                        <span>پشتیبانی رایگان:</span>
                         <h6>
                           <a href="tel:06-900-6789-00">06-900-6789-00</a>
                         </h6>
@@ -131,7 +131,7 @@ const Header = () => {
                                     className="modal-title fs-5"
                                     id="exampleModalLabel"
                                   >
-                                    Modal title
+                                    جست و جو کنید
                                   </h1>
                                 </div>
                                 <div className="modal-body">
@@ -146,7 +146,7 @@ const Header = () => {
                                       reslut.map((item) => {
                                         return (
                                           <div className="card my-3 search-card">
-                                            <Link>
+                                            <Link to={`/product-details/${item.id}`}>
                                               <div className="row g-0">
                                                 <div className="col-md-2">
                                                   <img
@@ -193,29 +193,29 @@ const Header = () => {
                         </div>
                         <div className="header__search-cat">
                           <select>
-                            <option>All Categories</option>
-                            <option>Best Seller Products</option>
-                            <option>Top 10 Offers</option>
-                            <option>New Arrivals</option>
-                            <option>Phones & Tablets</option>
-                            <option>Electronics & Digital</option>
-                            <option>Fashion & Clothings</option>
-                            <option>Jewelry & Watches</option>
-                            <option>Health & Beauty</option>
-                            <option>Sound & Speakers</option>
-                            <option>TV & Audio</option>
-                            <option>Computers</option>
+                            <option>دسته بندی ها</option>
+                            <option>بهترین محصولات فروخته شده</option>
+                            <option>10 پیشنهاد برتر</option>
+                            <option>جدید ترین ها</option>
+                            <option>گوشی و تبلت</option>
+                            <option>الکترونیک و دیجیتال</option>
+                            <option>مد و لباس</option>
+                            <option>ساعت و جواهرات</option>
+                            <option>زیبایی و سلامتی</option>
+                            <option>صدا و صوت</option>
+                            <option>تلوزیون</option>
+                            <option>کامپیوتر</option>
                           </select>
                         </div>
                       </form>
                     </div>
-                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative">
+                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" key={Math.random()}>
                       <a href="javascript:void(0);" className="cart__toggle text-center" style={{lineHeight:"3rem"}}>
                         <i className="fa fa-cart-shopping fs-5"></i>
-                        <span className="cart__total-item">{cart.length}</span>
+                        <span className="cart__total-item">{cart?.length}</span>
                       </a>
                       <span className="cart__content">
-                        <span className="cart__my">My Cart:</span>
+                        <span className="cart__my">سبد خرید من:</span>
                         <span className="cart__total-price">$ 255.00</span>
                       </span>
                       <div className="cart__mini">
@@ -227,8 +227,8 @@ const Header = () => {
                         <ul>
                           <li>
                             <div className="cart__title">
-                              <h4>My Cart</h4>
-                              <span>({cart?.length} Item in Cart)</span>
+                              <h4>سبد خرید من</h4>
+                              <span>({cart?.length} محصول)</span>
                             </div>
                           </li>
                           {cart?.length > 0 &&
@@ -266,23 +266,23 @@ const Header = () => {
 
                           <li>
                             <div className="cart__sub d-flex justify-content-between align-items-center">
-                              <h6>Cart Subtotal</h6>
+                              <h6>جمع</h6>
                               <span className="cart__sub-total">$250.50</span>
                             </div>
                           </li>
                           <li>
-                            <a
-                              href="checkout.html"
+                            <Link
+                              to="/checkout"
                               className="t-y-btn w-100 mb-10"
                             >
-                              Proceed to checkout
-                            </a>
-                            <a
-                              href="cart?.html"
+                              رفتن به checkout
+                            </Link>
+                            <Link
+                              to="/cart"
                               className="t-y-btn t-y-btn-border w-100 mb-10"
                             >
-                              view add edit cart
-                            </a>
+                              دیدن لیست خرید
+                            </Link>
                           </li>
                         </ul>
                       </div>

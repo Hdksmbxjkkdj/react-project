@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {Notif} from "../../Utils/Notif";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const Login = () => {
   const [login,setLogin] = useState({
@@ -11,17 +12,16 @@ const Login = () => {
   {
     if(login.email=="" || login.password=="")
     {
-      Notif('error',"please fill out the form ")
+      Notif('error',"لطفا اطلاعاتتان را تکمیل نمایید ")
       return
     }
     axios.get(`http://localhost:313/register?email=${login.email}`).then((e)=>{
-      console.log(e);
-      if(e?.data[0].pass!=login.password)
+      if(e.data[0]==undefined || e?.data[0].pass!=login.password)
       {
-        Notif('error',"invalid email or password !")
+        Notif('error',"نام کاربری یا ایمیل تعریف نشده !")
         return
       }
-      Notif('success',"welcome :)");
+      Notif('success',"خوش آمدید :)");
     })
   }
   return (
@@ -32,42 +32,42 @@ const Login = () => {
             <div class="row">
               <div class="col-lg-8 offset-lg-2">
                 <div class="basic-login">
-                  <h3 class="text-center mb-60">Login From Here</h3>
+                  <h3 class="text-center mb-60">فرم ورود</h3>
                   <form action="#" onSubmit={loginUser}>
                     <label for="name">
-                      Email Address <span>**</span>
+                      آدرس ایمیل <span>**</span>
                     </label>
                     <input
                       id="name"
                       type="text"
-                      placeholder="Email address..."
+                      placeholder="آدرس ایمیل"
                       onChange={(e)=>setLogin({...login,email:e.target.value})}
                     />
                     <label for="pass">
-                      Password <span>**</span>
+                      کلمه عبور <span>**</span>
                     </label>
                     <input
                       id="pass"
                       type="password"
-                      placeholder="Enter password..."
+                      placeholder="وارد کردن کلمه عبور"
                       onChange={(e)=>setLogin({...login,password:e.target.value})}
                     />
                     <div class="login-action mb-20 fix">
                       <span class="log-rem f-left">
                         <input id="remember" type="checkbox" />
-                        <label for="remember">Remember me!</label>
+                        <label for="remember">مرا به خاطر داشته باش</label>
                       </span>
                       <span class="forgot-login f-right">
-                        <a href="#">Lost your password?</a>
+                        <a href="#" onClick={()=>alert("متاسفانه کاری نمیتوان برای شما انجام داد")}>فراموشی رمز عبور</a>
                       </span>
                     </div>
-                    <button class="t-y-btn w-100" type="submit">Login Now</button>
+                    <button class="t-y-btn w-100" type="submit">ورود</button>
                     <div class="or-divide">
-                      <span>or</span>
+                      <span>یا</span>
                     </div>
-                    <a href="register.html" class="t-y-btn t-y-btn-grey w-100">
-                      Register Now
-                    </a>
+                    <Link to="/register" class="t-y-btn t-y-btn-grey w-100">
+                      ثبت نام
+                    </Link>
                   </form>
                 </div>
               </div>

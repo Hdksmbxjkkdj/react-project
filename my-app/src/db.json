@@ -1,175 +1,87 @@
 {
   "row": [
     {
-      "id": "9",
-      "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
-      "unitprice": 720,
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
+      "unitprice": 450,
       "quantity": 1,
-      "date": "01-03-2024",
-      "gallery": [
-        {"name":"product-3.jpg"},
-        {"name":"product-4.jpg"},
-        {"name":"product-5.jpg"},
-        {"name":"product-5.jpg"},
-        {"name":"product-5.jpg"}
-      ]
+      "date": "13/06/2024"
     },
     {
       "id": "6",
       "pic": "product-3.jpg",
-      "name": "LG 27UD58: £347.21, Ebuyer.com",
+      "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
       "unitprice": 560,
       "quantity": 1,
-      "date": "05-04-2024"
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "11",
-      "pic": "product-13.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
+      "date": "13/06/2024"
     },
     {
       "id": "8",
       "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
       "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "11",
-      "pic": "product-13.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "6",
-      "pic": "product-3.jpg",
-      "name": "LG 27UD58: £347.21, Ebuyer.com",
-      "unitprice": 560,
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1
+      "quantity": 1,
+      "date": "13/06/2024"
     },
     {
       "id": "9",
       "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
+      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
       "unitprice": 720,
-      "quantity": 1
+      "quantity": 1,
+      "date": "13/06/2024"
     },
     {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
+      "id": "10",
+      "pic": "product-11.jpg",
+      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
       "unitprice": 720,
-      "quantity": 1
+      "quantity": 1,
+      "date": "13/06/2024"
     }
   ],
   "wishlist": [
     {
       "id": "7",
       "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "name": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
       "unitprice": 450,
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "pic": "product-1.jpg",
+      "name": "ترازوی آشپزخانه فوق نازک شیشه ای با کیفیت بالا",
+      "unitprice": 500,
       "quantity": 1
     },
     {
       "id": "6",
       "pic": "product-3.jpg",
-      "name": "LG 27UD58: £347.21, Ebuyer.com",
+      "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
       "unitprice": 560,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "unitprice": 720,
       "quantity": 1
     },
     {
       "id": "9",
       "pic": "product-9.jpg",
-      "name": "Blue t-shir for men (X, M, XL, XXL)",
+      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
       "unitprice": 720,
       "quantity": 1
     },
     {
-      "id": "6",
-      "pic": "product-3.jpg",
-      "name": "LG 27UD58: £347.21, Ebuyer.com",
-      "unitprice": 560,
-      "quantity": 1
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
+      "id": "10",
+      "pic": "product-11.jpg",
+      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
+      "unitprice": 720,
       "quantity": 1
     }
   ],
@@ -268,185 +180,198 @@
   "blog-category": [
     {
       "id": "1",
-      "category": "Videos"
+      "category": "ویدیو"
     },
     {
       "id": "2",
-      "category": "Uncategorized"
+      "category": "نا مشخص"
     },
     {
       "id": "3",
-      "category": "Travel"
+      "category": "سفر"
     },
     {
       "id": "4",
-      "category": "Music"
+      "category": "موسیقی"
     },
     {
       "id": "5",
-      "category": "Photography"
+      "category": "عکاسی"
     },
     {
       "id": "6",
-      "category": "Images"
+      "category": "تصاویر"
     },
     {
       "id": "7",
-      "category": "Creative"
+      "category": "خلاقانه"
     },
     {
       "id": "8",
-      "category": "Azone Post"
+      "category": "پست آزون"
     }
   ],
   "about": [
     {
       "pic": "about-bg.jpg",
-      "title": "About Topico Magento",
-      "text": "Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit sceleri sque dui. Donec ornare massa vitae neque lobortis rutrum.",
-      "explain": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultra trices, eu feugiat sapien commodo. Praesent vitae ipsum et risus.",
-      "maintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
+      "title": "درباره تاپیکو مانگیتو",
+      "text": "ما در Lacinia زندگی می کنیم. در واقع به روشی عاقلانه. Hendrerit از زندگی Aenean جز، به عنوان او را دریافت عدالت. Duis hendrerit برای جرم و جنایت. تا زمانی که انبوه زندگی را زینت دهد و نه آرایش سیاست را.",
+      "explain": "مشتری بسیار مهم است، مشتری توسط مشتری دنبال خواهد شد. حالا hendrerit telus et nisi ultra trice، eu feugiat sapien commodo. این خود زندگی و خنده است.",
+      "maintext": "مشتری بسیار مهم است، مشتری توسط مشتری دنبال خواهد شد. در حال حاضر hendrerit telus et nisi ultrices، eu feugiat sapien com modo فقط زمان زندگی و خنده است. حالا نتیجه خواهد گرفت که عاقلانه نیست. Curabitur id nibh eu felis pellentesque pellentesque quis یا nola. ما در Lacinia زندگی می کنیم. در واقع به روشی عاقلانه. Hendrerit از زندگی Aenean جز، به عنوان او را دریافت عدالت. Duis hendrerit scelerisque dui. تا زمانی که انبوه زندگی را زینت نکنید، آرایش خود را نمی کنید.",
       "team": [
         {
           "pic": "as1.jpg",
-          "name": "John Doe",
-          "job": "Web Designer"
+          "name": "جان دو",
+          "job": "طراح وب"
         },
         {
           "pic": "as2.jpg",
-          "name": "Shahnewaz Sakil",
-          "job": "Business Man"
+          "name": "شانواز شکیل",
+          "job": "مرد تاجر"
         },
         {
           "pic": "as3.jpg",
-          "name": "Salim Rana",
-          "job": "CEO Themepure"
+          "name": "سلیم رانا",
+          "job": "مدیر سیو"
         },
         {
           "pic": "as4.jpg",
-          "name": "Pavilion Dyne",
-          "job": "Story Teller"
+          "name": "پاویلون داین",
+          "job": "قصه گو"
         }
       ],
       "video": [
         {
           "src": "https://www.youtube.com/embed/ZuzZXT3A1aQ",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
-          "video_title": "YouTube video player"
+          "text": "مشتری بسیار مهم است، مشتری توسط مشتری دنبال خواهد شد. در حال حاضر hendrerit telus et nisi ultrices، eu feugiat sapien com modo فقط زمان زندگی و خنده است. حالا نتیجه خواهد گرفت که عاقلانه نیست. Curabitur id nibh eu felis pellentesque pellentesque quis یا nola. ما در Lacinia زندگی می کنیم. در واقع به روشی عاقلانه. Hendrerit از زندگی Aenean جز، به عنوان او را دریافت عدالت. Duis hendrerit scelerisque dui. تا زمانی که انبوه زندگی را زینت نکنید، آرایش خود را نمی کنید.",
+          "video_title": "فیلم یوتیوب"
         }
       ],
       "why_item": [
         {
           "pic": "about-1.jpg",
-          "title": "What Do We Do?",
-          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+          "title": "ما چه کار انجام میدهیم ؟",
+          "text": "این مدرسه بسیار دبیرستانی است، زمانی در فوتبال نیست، posuerepharetra nibh. در شبکه زندگی دارایی نرم نیست."
         },
         {
           "pic": "about-2.jpg",
-          "title": "Our Mission?",
-          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+          "title": "هدف ما",
+          "text": "این مدرسه بسیار دبیرستانی است، زمانی در فوتبال نیست، posuerepharetra nibh. در شبکه زندگی دارایی نرم نیست."
         },
         {
           "pic": "about-3.jpg",
-          "title": "History Of Us?",
-          "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuerepharetra nibh. In dignissim vitae lorem non mollis."
+          "title": "تاریخچه ما",
+          "text": "این مدرسه بسیار دبیرستانی است، زمانی در فوتبال نیست، posuerepharetra nibh. در شبکه زندگی دارایی نرم نیست."
         }
-      ],
-      "id": "b9ff"
+      ]
     }
   ],
   "best_selling": [
     {
       "pic": "product-1.jpg",
       "seccondpic": "product-2.jpg",
-      "text": "High Quality Glass Ultra-Thin Kitchen Scale",
+      "text": "ترازوی آشپزخانه فوق نازک شیشه ای با کیفیت بالا",
       "price": 500,
-      "id": "5"
+      "id": "5",
+      "title": "ترازو",
+      "isAdd": false
     },
     {
       "pic": "product-3.jpg",
       "seccondpic": "product-4.jpg",
-      "text": "LG 27UD58: £347.21, Ebuyer.com",
+      "text": "LG 27UD58: 347.21 پوند، Ebuyer.com",
       "price": 560,
-      "id": "6"
+      "id": "6",
+      "title": "تلوزیون",
+      "isAdd": false
     },
     {
       "pic": "product-5.jpg",
       "seccondpic": "product-6.jpg",
-      "text": "Samsung C49J89: £875, Debenhams Plus",
+      "text": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
       "price": 450,
-      "id": "7"
+      "id": "7",
+      "title": "گوشی",
+      "isAdd": false
     },
     {
       "pic": "product-7.jpg",
       "seccondpic": "product-8.jpg",
-      "text": "Blink Home Security Camera System 01",
+      "text": "سیستم دوربین امنیتی خانه چشمک زدن 01",
       "price": 720,
-      "id": "8"
+      "id": "8",
+      "title": "دوربین امنیتی",
+      "isAdd": false
     },
     {
       "pic": "product-9.jpg",
       "seccondpic": "product-10.jpg",
-      "text": "Blue t-shir for men (X, M, XL, XXL)",
+      "text": "تی شرت آبی مردانه (S, M, XL, XXL)",
       "price": 720,
-      "id": "9"
+      "id": "9",
+      "title": "تی شرت",
+      "isAdd": false
     },
     {
       "pic": "product-11.jpg",
       "seccondpic": "product-12.jpg",
-      "text": "Samsung A20 Pro Ultra CPU 4/64 GB",
+      "text": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
       "price": 720,
-      "id": "10"
+      "id": "10",
+      "title": "پردازنده",
+      "isAdd": false
     },
     {
       "pic": "product-13.jpg",
       "seccondpic": "product-14.jpg",
-      "text": "Blink Home Security Camera System 01",
+      "text": "سیستم دوربین امنیتی خانه چشمک زدن 01",
       "price": 720,
-      "id": "11"
+      "id": "11",
+      "title": "دوربین",
+      "isAdd": false
     }
   ],
   "blog_slider": [
     {
       "pic": "blog-sm-1.jpg",
-      "title": "Curabitur Lobortis News",
+      "title": "اخبار کورابیتور لوبورتیس",
       "date": "01-Jul-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "1"
     },
     {
       "pic": "blog-sm-2.jpg",
-      "title": "The Brushed Steel",
+      "title": "فولاد برس خورده",
       "date": "05-Aug-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "2"
     },
     {
       "pic": "blog-sm-3.jpg",
-      "title": "Koma and Torus",
+      "title": "کوما و توروس",
       "date": "15-Aug-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "3"
     },
     {
       "pic": "blog-sm-4.jpg",
-      "title": "Grip and Allows",
+      "title": "گرفتن و اجازه می دهد",
       "date": "20-Aug-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "4"
     },
     {
       "pic": "blog-sm-5.jpg",
       "title": "Pitterarum Formas",
       "date": "25-Aug-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "5"
     },
     {
       "pic": "blog-sm-6.jpg",
-      "title": "Shelving Burgundy",
+      "title": "قفسه بندی بورگوندی",
       "date": "02-Sep-2020",
-      "text": "Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis.",
+      "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است",
       "id": "6"
     }
   ],
@@ -458,16 +383,119 @@
       "blog_id": "1",
       "date": "2024/5/2",
       "id": 1
+    },
+    {
+      "name": "ali",
+      "email": "gurbaniali97@gmail.com",
+      "comment": "i cant understand this blog , what is it about ? ",
+      "blog_id": "3",
+      "date": "2024/5/8",
+      "id": 2
     }
   ],
-  "aboutus": [],
+  "aboutus": [
+    {
+      "email": "a@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "m@gmail.com",
+      "id": 2
+    },
+    {
+      "email": "m@gmail.com",
+      "id": 3
+    }
+  ],
   "register": [
     {
       "username": "mohammad",
       "email": "mohammad@gmail.com",
       "pass": "123456789",
       "id": 1
+    },
+    {
+      "username": "ali",
+      "email": "ali@gmail.com",
+      "pass": "aliali",
+      "id": 2
+    }
+  ],
+  "features": [
+    {
+      "icon": "fa-rocket",
+      "title": "ارسال رایگان",
+      "text": "ارسال رایگان در تمامی سفارشات"
+    },
+    {
+      "icon": "fa-sync",
+      "title": "تضمین قیمت",
+      "text": "با ضمانت برگشت 30 روزه پول"
+    },
+    {
+      "icon": "fa-headset",
+      "title": "پشتیبانی برخط 24/7",
+      "text": "پشتیبانی فنی استند بای"
+    },
+    {
+      "icon": "fa-thumbs-up",
+      "title": "پرداخت امن",
+      "text": "تمام روش های پرداخت پذیرفته می شود"
+    },
+    {
+      "icon": "fa-dollar",
+      "title": "تخفیف اعضا",
+      "text": "تا 40% تخفیف همه محصولات"
+    }
+  ],
+  "buy": [
+    {
+      "month": "jan",
+      "count": 3
+    },
+    {
+      "month": "feb",
+      "count": 1
+    },
+    {
+      "month": "mar",
+      "count": 0
+    },
+    {
+      "month": "apr",
+      "count": 4
+    },
+    {
+      "month": "may",
+      "count": 2
+    },
+    {
+      "month": "jon",
+      "count": 14
+    },
+    {
+      "month": "jol",
+      "count": 0
+    },
+    {
+      "month": "aug",
+      "count": 0
+    },
+    {
+      "month": "sep",
+      "count": 8
+    },
+    {
+      "month": "oct",
+      "count": 2
+    },
+    {
+      "month": "nov",
+      "count": 0
+    },
+    {
+      "month": "dec",
+      "count": 3
     }
   ]
-  
 }

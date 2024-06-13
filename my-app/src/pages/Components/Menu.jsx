@@ -7,57 +7,47 @@ export const Menu = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Home <i className="fa fa-angle-down"></i></Link>
+                    <Link to="/">خانه <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
-                        <li><Link to="/">Home Style 1</Link></li>
-                        <li><Link  href="Home2">Home Style 2</Link></li>
+                        <li><Link to="/">خانه طرح 1</Link></li>
+                        <li><Link  to="Home2">خانه طرح 2</Link></li>
                        
-                        <li><Link href="Home3">Home Style 3</Link></li>
-                        <li><Link href="Home4">Home Style 4</Link></li>
+                        <li><Link to="Home3">خانه طرح 3</Link></li>
+                        <li><Link to="Home4">خانه طرح 4</Link></li>
                     </ul>
                 </li>
-                {/* <li><Link to="product">Features <i className="far fa-angle-down"></i></Link>
+                <li><Link to="product">ویژگی ها <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
-                        <li><Link to="">Product Type</Link></li>
-                        <li><a href="product.html">Product Features <i className="far fa-angle-down"></i></a></li>
-                        <li><Link to="/">Home Style 1</Link></li>
-                        <li><Link to="Home2">Home Style 2</Link></li>
-                        <li><Link to="Home3">Home Style 3</Link></li>
-                        <li><Link to="Home4">Home Style 4</Link></li>
-                    </ul>
-                </li> */}
-                <li><a href="product.html">Features <i className="fa fa-angle-down"></i></a>
-                    <ul className="submenu">
-                        <li><a href="product.html">Product Type</a></li>
-                        <li><a href="product.html">Product Features <i className="fa fa-angle-down"></i></a>
+                        <li><Link to="product">نوع محصول</Link></li>
+                        <li><Link to="product">ویژگی محصول <i className="fa fa-angle-down"></i></Link>
                             <ul className="submenu">
-                                <li><Link to="product-details">Simple Product</Link></li>
-                                <li><a href="product-details-config.html">Configurable Product</a></li>
-                                <li><a href="product-details-group.html">Group Product</a></li>
-                                <li><a href="product-details-download.html">Downloadable Product</a></li>
+                                <li><Link to="product-details">محصول ساده</Link></li>
+                                <li><Link to="product-details-config">محصولات مرتبط</Link></li>
+                                <li><Link to="product-details-group">گروه محصولات</Link></li>
+                                <li><Link to="product-details-download">محصولات قابل دانلود</Link></li>
                             </ul>
                         </li>
-                        <li><a href="product.html">Shop By Brand</a></li>
+                        <li><Link فخ="product">خرید بر اساس برند</Link></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="blog.html">Blog <i className="fa fa-angle-down"></i></a>
+                    <Link href="blog">وبلاگ <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
-                        <li><Link to="Blog">Blog</Link></li>
-                        <li><Link to="BlogDetaile">Blog Details</Link></li>
+                        <li><Link to="Blog">وبلاگ</Link></li>
+                        <li><Link to="BlogDetaile">جزییات وبلاگ</Link></li>
                     </ul>
                 </li>
-                <li><Link to="About">about us</Link></li>
-                <li><Link to="Contact">contact</Link></li>
+                <li><Link to="About">درباره ما</Link></li>
+                <li><Link to="Contact">ارتباط با ما</Link></li>
                 <li>
-                    <a href="about.html">pages <i className="fa fa-angle-down"></i></a>
+                    <Link href="about">صفحات <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
-                        <li><Link to="Login">Login</Link></li>
-                        <li><Link to="Register">Register</Link></li>
-                        <li><Link to="Cart">Cart</Link></li>
-                        <li><Link to="wishlist">Wishlist</Link></li>
+                        <li><Link to="Login">ورود</Link></li>
+                        <li><Link to="Register">ثبت نام</Link></li>
+                        <li><Link to="Cart">لیست خرید</Link></li>
+                        <li><Link to="wishlist">علاقه مندی ها</Link></li>
                         <li><Link to="checkout">Checkout</Link></li>
-                        <li><Link to="error">404 Error</Link></li>
+                        <li><Link to="error">404 ارور</Link></li>
                     </ul>
                 </li>
             </ul>

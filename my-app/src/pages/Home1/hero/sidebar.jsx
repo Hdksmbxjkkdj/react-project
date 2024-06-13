@@ -10,83 +10,83 @@ const Sidebar = ()=> {
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <Link to="product">All Categories <i className="fa fa-angle-down"></i></Link>
+                                                    <Link to="product">همه محصولات<i className="fa fa-angle-down"></i></Link>
                                                     <ul className="mega-menu">
-                                                        <li><Link to="product">Shop Pages</Link>
+                                                        <li><Link to="product">صفحات فروشگاهی</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">Standard SHop Page</Link></li>
-                                                                <li><Link to="product">Shop Right Sidebar</Link></li>
-                                                                <li><Link to="product">Shop Left Sidebar</Link></li>
-                                                                <li><Link to="product">Shop 3 Column</Link></li>
-                                                                <li><Link to="product">Shop 4 Column</Link></li>
+                                                                <li><Link to="product">استاندارد</Link></li>
+                                                                <li><Link to="product">سایدبار سمت راست</Link></li>
+                                                                <li><Link to="product">سایدبار سمت چپ</Link></li>
+                                                                <li><Link to="product">سه ستون</Link></li>
+                                                                <li><Link to="product">چهار ستون</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="product.html">Product Pages</a>
+                                                        <li><Link to="product">صفحه محصولات</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">Product Details</Link></li>
-                                                                <li><Link to="product">Product V2</Link></li>
-                                                                <li><Link to="product">Product V3</Link></li>
-                                                                <li><Link to="product">Varriable Product</Link></li>
-                                                                <li><Link to="product">External Product</Link></li>
+                                                                <li><Link to="product">تک محصول</Link></li>
+                                                                <li><Link to="product">محصول V2</Link></li>
+                                                                <li><Link to="product">محصول V3</Link></li>
+                                                                <li><Link to="product">محصولات متغییر</Link></li>
+                                                                <li><Link to="product">محصولات متغییر</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="product.html">Other Pages</a>
+                                                        <li><Link to="product">دیگر صفحات</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">wishlist</Link></li>
-                                                                <li><Link to="product">Shopping Cart</Link></li>
+                                                                <li><Link to="product">علاقه مندی ها</Link></li>
+                                                                <li><Link to="product">سبد خرید</Link></li>
                                                                 <li><Link to="product">Checkout</Link></li>
-                                                                <li><Link to="product">Login</Link></li>
-                                                                <li><Link to="product">Register</Link></li>
+                                                                <li><Link to="product">ورود</Link></li>
+                                                                <li><Link to="product">ثبت نام</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="product.html">Phone & Tablets</a>
+                                                        <li><Link to="product">گوشی و تبلت</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">Catagory 1</Link></li>
-                                                                <li><Link to="product">Catagory 2</Link></li>
-                                                                <li><Link to="product">Catagory 3</Link></li>
-                                                                <li><Link to="product">Catagory 4</Link></li>
+                                                                <li><Link to="product">دسته بندی 1</Link></li>
+                                                                <li><Link to="product">دسته بندی 2</Link></li>
+                                                                <li><Link to="product">دسته بندی 3</Link></li>
+                                                                <li><Link to="product">دسته بندی 4</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="product.html">Phone & Tablets</a>
+                                                        <li><Link to="product">گوشی و تبلت</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">Catagory 1</Link></li>
-                                                                <li><Link to="product">Catagory 2</Link></li>
-                                                                <li><Link to="product">Catagory 3</Link></li>
-                                                                <li><Link to="product">Catagory 4</Link></li>
+                                                                <li><Link to="product">دسته بندی 1</Link></li>
+                                                                <li><Link to="product">دسته بندی 2</Link></li>
+                                                                <li><Link to="product">دسته بندی 3</Link></li>
+                                                                <li><Link to="product">دسته بندی 4</Link></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">Best Seller Products
-                                                        <span className="cat-label">hot!</span>
+                                                    <Link to="product">بیشترین فروش
+                                                        <span className="cat-label">hot</span>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">Top 10 Offers
-                                                        <span className="cat-label green">new!</span>
+                                                    <Link to="product">ده محصول برتر
+                                                        <span className="cat-label green">new</span>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="product.html">New Arrivals <i className="fa fa-angle-down"></i></Link>
+                                                    <Link to="product">ورودی های جدید <i className="fa fa-angle-down"></i></Link>
                                                     <ul className="submenu">
-                                                        <li><Link to="product">Home Appliances</Link></li>
-                                                        <li><Link to="product">Technology</Link>
+                                                        <li><Link to="product">لوازم خانگی</Link></li>
+                                                        <li><Link to="product">تکنولوژی</Link>
                                                             <ul className="submenu">
-                                                                <li><Link to="product">Storage Devices</Link></li>
-                                                                <li><Link to="product">Monitors</Link></li>
-                                                                <li><Link to="product">Laptops</Link></li>
+                                                                <li><Link to="product">دستگاه های ذخیره سازی</Link></li>
+                                                                <li><Link to="product">مانیتور ها</Link></li>
+                                                                <li><Link to="product">لپتاپ ها</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">Office Equipments</Link></li>
+                                                        <li><Link to="product">تجهیزات اداری</Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="product.html">Phones & Tablets</a></li>
-                                                <li><a href="product.html">Electronics & Digital</a></li>
-                                                <li className="d-laptop-none"><a href="product.html">Fashion & Clothings</a></li>
-                                                <li className="d-laptop-none"><a href="product.html">Jewelry & Watches</a></li>
-                                                <li><a href="product.html">Health & Beauty</a></li>
-                                                <li><a href="product.html">TV & Audio</a></li>
+                                                <li><Link to="product">گوشی و تبلت</Link></li>
+                                                <li><Link to="product">الکترونیک و دیجیتال</Link></li>
+                                                <li className="d-laptop-none"><Link to="product">مد و لباس</Link></li>
+                                                <li className="d-laptop-none"><Link to="product">ساعت و جواهرات</Link></li>
+                                                <li><Link to="product">زیبایی و سلامتی</Link></li>
+                                                <li><Link to="product">تلوزیون</Link></li>
                                             </ul>
                                         </nav>
                                     </div>

@@ -14,7 +14,7 @@ const BestSellingHead = () => {
                 aria-controls="new"
                 aria-selected="true"
               >
-                New Arrival
+                تازه
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -28,7 +28,7 @@ const BestSellingHead = () => {
                 aria-controls="featured"
                 aria-selected="false"
               >
-                Featured
+                ویژگی ها
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -42,7 +42,7 @@ const BestSellingHead = () => {
                 aria-controls="hot"
                 aria-selected="false"
               >
-                Hot Sale
+                داغ ترین ها
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -56,7 +56,7 @@ const BestSellingHead = () => {
                 aria-controls="random"
                 aria-selected="false"
               >
-                Random
+                رندوم
               </button>
             </li>
           </ul>

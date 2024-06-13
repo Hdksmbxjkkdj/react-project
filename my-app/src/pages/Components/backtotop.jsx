@@ -11,7 +11,7 @@ function BackToTop() {
           <div className="row gx-0">
             <div className="col-xl-12">
               <div id="scroll" className="back-to-top-btn text-center">
-                <a href="javascript:void(0);">back to top</a>
+                <a href="javascript:void(0);">رفتن به بالا</a>
               </div>
             </div>
           </div>

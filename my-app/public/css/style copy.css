@@ -31984,4 +31984,9 @@ img.away, img.busy, img.offline, img.online {
   {
     flex-direction: column;
   }
+  .box
+  {
+    background-color: #dddeee;
+    box-shadow: 0 0 8px #ddddee;
+  }
 /*# sourceMappingURL=style.css.map */

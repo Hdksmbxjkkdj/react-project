@@ -8,7 +8,6 @@ import { OnSell } from "./on-sell";
 import { FromTheBlog } from "./from-the-blog";
 import { ProgressWrap } from "../Components/Progress-wrap";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Config } from "../../Utils/config";
 import { ModalContext } from "../../context/modal";
 var filename1 = [
@@ -53,13 +52,18 @@ var res1 = {
 
 const Home1 = () => {
   const [modal,setModal] = useState({
-    title:"Samsung C49J89: £875, Debenhams Plus",
-    text:"Typi non habent claritatem insitam, est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt",
-    price:560,
-    img:"quick-view/quick-view-1.jpg",
-    seccondimg:"quick-view/quick-view-2.jpg"
+    title:"",
+    text:"",
+    price:0,
+    img:"",
+    seccondimg:"",
+    id:"111111111",
+    show:false
   });
-  console.log(modal);
+  var rand = Math.random();
+  useEffect(()=>{
+    (modal.show) && window?.$(`#${modal.id}`).modal("show");
+  },[modal])
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>
@@ -73,7 +77,7 @@ const Home1 = () => {
       <Adds img={filename4}></Adds>
       <OnSell res={res1}></OnSell>
       <FromTheBlog res={res1}></FromTheBlog>
-      <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true" key={Math.random()}>
+      <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={modal.id} tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered product__modal" role="document">
           <div class="modal-content">
             <div class="product__modal-wrapper p-relative">
@@ -97,16 +101,6 @@ const Home1 = () => {
                             <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
                           </div>
                         </div>
-                        <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
-                          <div class="product__modal-img w-img">
-                            <img src="./img/shop/product/quick-view/quick-view-3.jpg" alt=""/>
-                          </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav4" role="tabpanel" aria-labelledby="nav4-tab" >
-                          <div class="product__modal-img w-img">
-                            <img src="./img/shop/product/quick-view/quick-view-4.jpg"alt=""/>
-                          </div>
-                        </div>
                       </div>
                       <ul class="nav nav-tabs" id="modalTab" role="tablist">
                         <li class="nav-item" role="presentation">
@@ -117,16 +111,6 @@ const Home1 = () => {
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
                             <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
-                          </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="nav3-tab" data-bs-toggle="tab" data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3" aria-selected="false">
-                            <img src="./img/shop/product/quick-view/nav/quick-nav-3.jpg" alt=""/>
-                          </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="nav4-tab" data-bs-toggle="tab" data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4" aria-selected="false">
-                            <img src="./img/shop/product/quick-view/nav/quick-nav-4.jpg" alt=""/>
                           </button>
                         </li>
                       </ul>
@@ -145,11 +129,11 @@ const Home1 = () => {
                         </p>
                       </div>
                       <div class="product__stock">
-                        <span>Availability :</span>
-                        <span>In Stock</span>
+                        <span>وضعیت :</span>
+                        <span>موجود</span>
                       </div>
                       <div class="product__stock sku mb-30">
-                        <span>SKU:</span>
+                        <span>عنوان:</span>
                         <span>{modal.title}</span>
                       </div>
                       <div class="product__review d-sm-flex">
@@ -196,7 +180,7 @@ const Home1 = () => {
                             </div>
                             <div class="pro-cart-btn mb-25">
                               <button class="t-y-btn" type="submit">
-                                Add to cart
+                                لیست خرید +
                               </button>
                             </div>
                           </div>
