@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-export const  CustomerComment=({comment })=>{
+export const  CustomerComment=({comment,id })=>{
     return<>
             <div class="col-xxl-6 col-xl-6 col-lg-6">
                 <div class="review-wrapper">
@@ -13,21 +13,21 @@ export const  CustomerComment=({comment })=>{
                                 <div class="review-ratings-single d-flex align-items-center">
                                     <span>کیفیت</span>
                                     <ul>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar}/></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                    </ul>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar}/></a></li>
+                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                        </ul>
                                 </div>
                                     <div class="review-ratings-single d-flex align-items-center">
                                         <span>قیمت</span>
                                         <ul>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                                                                <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                             <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                             <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
+                                            <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
                                         </ul>
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
@@ -48,12 +48,12 @@ export const  CustomerComment=({comment })=>{
                                 <div class="review-meta">
                                 <div class="review-author">
                                     <span>بررسی توسط</span>
-                                    <span>{g?.name}</span>
+                                    <span>{g?.sender_name}</span>
                                 </div>
-                                <div class="review-date">
-                                    <span>نوشته شده در</span>
-                                    <span>{g?.date}</span>
-                                </div>
+                                // <div class="review-date">
+                                //     <span>نوشته شده در</span>
+                                //     <span>{g?.date}</span>
+                                // </div>
                             </div>
                         </div>
                     </>

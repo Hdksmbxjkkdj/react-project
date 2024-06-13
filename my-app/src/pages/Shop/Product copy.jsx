@@ -1,6 +1,5 @@
 
 export const Product = ()=>{
-    console.log('123456')
     return<>
          <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
                                                      <div class="product__item white-bg mb-30">
