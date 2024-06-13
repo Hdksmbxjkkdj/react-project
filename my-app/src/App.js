@@ -38,6 +38,7 @@ import { Productpage } from './pages/Productpage';
 import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 import Show from "./pages/Show";
+import { Product } from "./pages/Shop/Product";
 
 
 function App() {
@@ -91,7 +92,6 @@ function App() {
             </div>
           </div>
         </div>
-        
         <BackToTop></BackToTop>
         <Footer></Footer>
         <ToastContainer/>

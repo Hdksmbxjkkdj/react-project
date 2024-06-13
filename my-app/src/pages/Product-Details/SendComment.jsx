@@ -32,24 +32,23 @@ export const SendComment = ({id}) => {
         product_id: id,
 
     })
-    
     const [error, setError] = useState();
 
     useEffect(() => {
         return () => {
-            // reset();
+            //  reset();
         };
     }, []);
     let url = `http://localhost:313/product_comments`
-
     const submit = async (e) => {
         e.preventDefault();
-        // console.log(data);
 
         if (auth) {
             // clearErrors()
             
             await axios.post(url, data).then((response) => {
+                // console.log(data,'data')
+
                 if (response.data?.status == 201) {
                     Notif('success', response.data?.message)
                     // reset()
@@ -71,6 +70,22 @@ export const SendComment = ({id}) => {
 
 //test
 
+//CustomerCommen
+const [info, setInfo] = useState();
+useEffect(() => {
+    // axios.get(`http://localhost:313/row/${id}`).then((res) => {
+        axios.get(`http://localhost:313/product_comments`).then((res) => {
+
+        setInfo(res);
+
+
+    });
+}, []);
+ 
+
+//CustomerCommen
+
+
     return<>
     <div class="col-xxl-12">
         <div class="tab-content" id="prodductDesTaContent">
@@ -78,7 +93,7 @@ export const SendComment = ({id}) => {
             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                 <div class="product__details-review">
                     <div class="row">
-                       <CustomerComment></CustomerComment>
+                       <CustomerComment comment={info?.data}></CustomerComment>
                         <div class="col-xxl-4 col-xl-4 col-lg-4">
                             <div class="review-form">
                                 <h3>بررسی شما</h3>

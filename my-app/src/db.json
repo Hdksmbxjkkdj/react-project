@@ -1165,5 +1165,69 @@
         }
       ]
     }
+  ],
+  "product_comments": [
+    {
+      "id": "06ae",
+      "sender_name": "qwe",
+      "sender_email": "werty",
+      "comment": "fds"
+    },
+    {
+      "id": "c32b",
+      "sender_name": "bnbn",
+      "comment": ""
+    },
+    {
+      "id": "a1ac",
+      "sender_name": "bnbn",
+      "comment": ""
+    },
+    {
+      "id": "8598",
+      "sender_name": "bnbn",
+      "comment": ""
+    },
+    {
+      "id": "1622",
+      "sender_name": "bnbn",
+      "comment": ""
+    },
+    {
+      "id": "84d7",
+      "sender_name": "ghgghgjkkgkjgkjgkj",
+      "comment": "jgkjgguggi"
+    },
+    {
+      "id": "f996",
+      "sender_name": "ghgghgjkkgkjgkjgkj",
+      "comment": "jgkjgguggi"
+    },
+    {
+      "id": "f357",
+      "sender_name": "q",
+      "sender_email": "qqq",
+      "comment": "q"
+    },
+    {
+      "id": "7a3a",
+      "sender_name": "././.>",
+      "comment": ""
+    },
+    {
+      "id": "bfdd",
+      "sender_name": "././.>",
+      "comment": ""
+    },
+    {
+      "id": "ae66",
+      "sender_name": "././.>",
+      "comment": ""
+    },
+    {
+      "id": "a4a8",
+      "sender_name": "././.>",
+      "comment": ""
+    }
   ]
 }

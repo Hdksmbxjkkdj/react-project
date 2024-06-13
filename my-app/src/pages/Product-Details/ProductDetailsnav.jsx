@@ -3,7 +3,7 @@ import { Config } from "../../Utils";
 import { useEffect } from "react";
 
 export const ProducDetailsImg = ({item,picturs}) =>{
-     
+    
     const handleImg = (event) => {
         let preview = window?.$('.product__details-nav-thumb img')
         preview.fadeOut(100)
