@@ -13,19 +13,17 @@ import {SendComment } from './SendComment';
 import { BestSelling } from '../Home1/best-selling';
 import { useParams } from "react-router-dom";
 export const ProducDetails= () =>{
-    
-    const {id} = useParams()
-   
+    // let {id} = useParams();
+    // id=id.slice(1);
+    var id=7;
     const [info, setInfo] = useState();
     useEffect(() => {
-        axios.get(`http://localhost:313/row/${id}`).then((res) => {
+        axios.get(`http://localhost:313/best_selling/${id}`).then((res) => {
+            console.log(res);
             setInfo(res);
-
-
         });
-    }, []);
-   console.log(info?.data.id);
-
+    },[]);
+    console.log(info);
     return<>
         <main>
             <section className="product__area box-plr-75 pb-70">

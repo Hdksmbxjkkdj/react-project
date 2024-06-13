@@ -26,12 +26,12 @@ const WishList = () => {
                     <table class="table">
                       <thead>
                         <tr>
-                          <th class="product-thumbnail">Images</th>
-                          <th class="cart-product-name">Product</th>
-                          <th class="product-price">Unit Price</th>
-                          <th class="product-quantity">Quantity</th>
-                          <th class="product-subtotal">Total</th>
-                          <th class="product-remove">Remove</th>
+                          <th class="product-thumbnail">تصویر</th>
+                          <th class="cart-product-name">محصول</th>
+                          <th class="product-price">قیمت واحد</th>
+                          <th class="product-quantity">تعداد</th>
+                          <th class="product-subtotal">مجموع</th>
+                          <th class="product-remove">حذف</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -79,7 +79,7 @@ const WishList = () => {
                                         null
                                       )}
                                     >
-                                      Add TO Cart
+                                      سبد خرید +
                                     </button>
                                   </div>
                                 </td>

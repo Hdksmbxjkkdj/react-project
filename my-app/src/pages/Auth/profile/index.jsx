@@ -4,8 +4,9 @@ import ApexCharts from "apexcharts"
 import { CartContext } from "../../../context/CardContext";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import { event } from "jquery";
+import { data, event } from "jquery";
 import { Show } from "./show";
+import { Config } from "../../../Utils/config";
 export const Profile = ()=> {
 
 	'use strict';
@@ -25,13 +26,20 @@ export const Profile = ()=> {
 		axios.get("http://localhost:313/wishlist").then((res)=>{
 			setwishlist(res);
 		})
-	},[])
+	},wishlist)
+	const [wishlist1,setwishlist1] = useState();
+	useEffect(()=>{
+		axios.get(`http://localhost:313/wishlist?_start=0&_limit=4`).then((res)=>{
+			
+			setwishlist1(res);
+		})
+	},wishlist1)
 	const [buy,setbuy] = useState();
 	useEffect(()=>{
 		axios.get("http://localhost:313/buy").then((res)=>{
 			setbuy(res);
 		})
-	},[])
+	},buy)
 	var array=new Array();
 	for(var i=0;i<buy?.data.length;i++)
 	{
@@ -91,168 +99,6 @@ export const Profile = ()=> {
               });
           },[])
           /* END JQUERY KNOB */ 
-          var options1 = {
-			series: [{
-			name: 'Net Profit',
-			data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-		  }, {
-			name: 'Revenue',
-			data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
-		  }, {
-			name: 'Free Cash Flow',
-			data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
-		  }],
-			chart: {
-			type: 'bar',
-			height: 350
-		  },
-		  plotOptions: {
-			bar: {
-			  horizontal: false,
-			  columnWidth: '55%',
-			  endingShape: 'rounded'
-			},
-		  },
-		  stroke: {
-			show: true,
-			width: 2,
-			colors: ['transparent']
-		  },
-		  xaxis: {
-			categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-		  },
-		  yaxis: {
-			title: {
-			  text: '$ (thousands)'
-			}
-		  },
-		  fill: {
-			opacity: 1
-		  },
-		  tooltip: {
-			y: {
-			  formatter: function (val) {
-				return "$ " + val + " thousands"
-			  }
-			}
-		  }
-		  };
-              useEffect(()=>{
-                var chart = new ApexCharts(window?.$("#recent_trend"), options1);
-                chart.render();
-              },[])
-			  var options2 = {
-				series: [{
-				name: 'item/items',
-				data: array
-				// data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
-			  }],
-				chart: {
-				height: 350,
-				type: 'bar',
-			  },
-			  plotOptions: {
-				bar: {
-				  borderRadius: 10,
-				  dataLabels: {
-					position: 'top', // top, center, bottom
-				  },
-				}
-			  },
-			  dataLabels: {
-				enabled: true,
-				formatter: function (val) {
-				  return val;
-				},
-				offsetY: -20,
-				style: {
-				  fontSize: '12px',
-				  colors: ["#304758"]
-				}
-			  },
-			  
-			  xaxis: {
-				categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-				position: 'bottom',
-				axisBorder: {
-				  show: false
-				},
-				axisTicks: {
-				  show: false
-				},
-				crosshairs: {
-				  fill: {
-					type: 'gradient',
-					gradient: {
-					  colorFrom: '#D8E3F0',
-					  colorTo: '#BED1E6',
-					  stops: [0, 100],
-					  opacityFrom: 0.4,
-					  opacityTo: 0.5,
-					}
-				  }
-				}
-			  },
-			  yaxis: {
-				axisBorder: {
-				  show: false
-				},
-				axisTicks: {
-				  show: false,
-				},
-				labels: {
-				  show: false,
-				  formatter: function (val) {
-					return val;
-				  }
-				}
-			  
-			  },
-			  };
-      
-              useEffect(()=>{
-                var chart = new ApexCharts(document.querySelector("#overview_trend"), options2);
-              chart.render();
-              },[])
-          var options3 = {
-                series: array2,
-                chart: {
-                height: 360,
-                type: 'polarArea'
-              },
-              labels: ['in cart', 'in wishlist', 'reserved', 'Not ready', 'coming soon'],
-              fill: {
-                opacity: 1
-              },
-              stroke: {
-                width: 1,
-                colors: "#eeeeee"
-              },
-              yaxis: {
-                show: false
-              },
-              legend: {
-                position: 'bottom'
-              },
-              colors: ['#3246D3', '#00D0FF', '#37d159', '#ffa800', '#ee3158'],
-              plotOptions: {
-                polarArea: {
-                  rings: {
-                    strokeWidth: 0
-                  },
-                  spokes: {
-                    strokeWidth: 0
-                  },
-                }
-              },
-              };
-      
-              useEffect(()=>{
-                var chart = new ApexCharts(document.querySelector("#chart432"), options3);
-              chart.render();
-              },[])
-          // Slim scrolling
-        
             window?.$('.inner-user-div').slimScroll({
               height: '550px'
             });
@@ -343,11 +189,11 @@ export const Profile = ()=> {
             </a>
             <ul className="dropdown-menu animated flipInX" id="user">
               <li className="user-body">
-				 <Link className="dropdown-item" to="/profile"><i className="ti-user text-muted me-2"></i> Profile</Link>
+				 <Link className="dropdown-item" to="/profile"><i className="ti-user text-muted me-2"></i> پروفایل</Link>
 				 <Link className="dropdown-item" to="/checkout"><i className="ti-wallet text-muted me-2"></i>Check Out</Link>
-				 <Link className="dropdown-item" to="#"><i className="ti-settings text-muted me-2"></i> Settings</Link>
+				 <Link className="dropdown-item" to="#"><i className="ti-settings text-muted me-2"></i> تنظیمات</Link>
 				 <div className="dropdown-divider"></div>
-				 <Link className="dropdown-item" to="/Login"><i className="ti-lock text-muted me-2"></i> Logout</Link>
+				 <Link className="dropdown-item" to="/Login"><i className="ti-lock text-muted me-2"></i> خروج</Link>
               </li>
             </ul>
           </li>
@@ -379,24 +225,23 @@ export const Profile = ()=> {
 				</div>	
 				
 				<div className="col-xl-8 col-12">
-					<div className="box">
+					{/* <div className="box">
 						<div className="box-header">
-							<h4 className="box-title">buying</h4>
+							<h4 className="box-title">خرید</h4>
 						</div>
 						<div className="box-body">
 							<div className="row align-items-center">
 								<div className="col-lg-3 col-12">
-									<h2>$32,485/=</h2>
-									<p className="mb-15"><i className="fa fa-line-chart text-success"></i> <span className="text-success">+20%</span> than last month</p>
-									<p className="fs-18 mb-0"><span className="badge badge-pill badge-primary"></span> Last Year</p>
-									<p className="fs-18"><span className="badge badge-pill badge-info"></span> Last Running Year</p>
+									<p className="mb-15"><i className="fa fa-line-chart text-success"></i> <span className="text-success">+20%</span> از ماه قبل</p>
+									<p className="fs-18 mb-0"><span className="badge badge-pill badge-primary"></span> سال قبل</p>
+									<p className="fs-18"><span className="badge badge-pill badge-info"></span> سال جاری گذشته</p>
 								</div>
 								<div className="col-lg-9 col-12">
 									<div id="recent_trend"></div>
 								</div>
 							</div>							
 						</div>
-					</div>
+					</div> */}
 					<div className="row">
 						<div className="col-lg-6 col-12">							
 							<div className="box">
@@ -404,9 +249,9 @@ export const Profile = ()=> {
 									<div className="d-flex align-items-center justify-content-start">
 										<img src="./img/images/compass.png" className="max-w-120" alt=""/>
 										<div className="ps-20">
-											<span className="badge bg-danger badge-md" style={{color:"#eee"}}>0 New</span>
+											<span className="badge bg-danger badge-md" style={{color:"#eee"}}>0 جدید</span>
 											<h2>7+</h2>
-											<p className="mb-0"><i className="fa fa-line-chart text-success"></i> <span className="text-success">0%</span> than last month</p>
+											<p className="mb-0"><i className="fa fa-line-chart text-success"></i> <span className="text-success">0%</span> از ماه قبل</p>
 										</div>
 									</div>
 								</div>
@@ -420,38 +265,38 @@ export const Profile = ()=> {
 											<div className="p-25">
 												<i className="fs-32 mb-5 fa fa-user text-light"></i>
 												<h2 className="mb-0">1</h2>
-												<p className="fs-18 mb-0 text-light">users</p>
+												<p className="fs-18 mb-0 text-light">کاربران</p>
 											</div>
 										</div>										
 										<div className="col-6 bg-primary">
 											<div className="p-25">
 												<i className="fs-32 mb-5 fa fa-cart-shopping text-light"></i>
 												<h2 className="mb-0">7+</h2>
-												<p className="fs-18 mb-0 text-light">Corporate Pro.</p>
+												<p className="fs-18 mb-0 text-light">محصول</p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="col-xl-7 col-12">							
+						{/* <div className="col-xl-7 col-12" key={Math.random()}>							
 							<div className="box">
 								<div className="box-header">
-									<h4 className="box-title">my buying items in 2024</h4>
+									<h4 className="box-title">لیست خرید های من در سال 1403</h4>
 								</div>
 								<div className="box-body">
 									<div className="d-flex align-items-center">
 										<div className="d-flex align-items-center me-30">
 											<div className="bg-gradient-success overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-home"></i></div>
 											<div>
-												<p className="fs-16 text-fade mb-0">Total buying</p>
-												<h4 className="mb-0">{cart.length} units</h4>
+												<p className="fs-16 text-fade mb-0">مجموع خرید</p>
+												<h4 className="mb-0">{cart.length} کالا</h4>
 											</div>
 										</div>
 										<div className="d-flex align-items-center">
 											<div className="bg-gradient-primary overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-building"></i></div>
 											<div>
-												<p className="fs-16 text-fade mb-0">Total price</p>
+												<p className="fs-16 text-fade mb-0">قیمت کل</p>
 												<h4 className="mb-0">
 													{total()} $</h4>
 											</div>
@@ -460,8 +305,8 @@ export const Profile = ()=> {
 									<div id="overview_trend"></div>						
 								</div>
 							</div>
-						</div>
-						<div className="col-xl-5 col-12">
+						</div> */}
+						{/* <div className="col-xl-5 col-12">
 							<div className="box" style={{height:"450px"}}>		
 								<div className="box-header no-border">
 									<h4 className="box-title">Overview</h4>
@@ -470,6 +315,36 @@ export const Profile = ()=> {
 									<div id="chart432"></div>
 								</div>																		
 							</div>
+						</div> */}
+						<div className="col-xl-12 col-12" key={Math.random}>
+							<div className="box">
+								<div className="box-header" style={{display:"flex",justifyContent:"space-between"}}>
+									<Link to="/wishlist">برو به علاقه مندی ها</Link>
+									<h4 className="box-title">
+										خلاصه علاقه مندی ها
+									</h4>
+								</div>
+								<div className="box-body">
+									<div className="row">
+										{
+											wishlist1?.data.map((item)=>{
+												return <div className="col-lg-3 col-sm-6 col-12">
+													<div className="card">
+														<div className="card-body">
+															<img src={`${Config.shop}${item.pic}`} alt=""/>
+															<p className="card-text" style={{textAlign:"right"}}>
+																{
+																	item.name
+																}
+															</p>
+														</div>
+													</div>
+												</div>
+											})
+										}
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -477,7 +352,7 @@ export const Profile = ()=> {
 					<div className="box">
 						<div className="box-body">
 							<div className="mb-30">
-								 <div className="d-flex align-items-center justify-content-between mb-15"><h4>Property Viewed</h4><h4>245/Days</h4></div>
+								 <div className="d-flex align-items-center justify-content-between mb-15"><h4>محصولات موجود</h4></div>
 								 <div className="progress active">
 									<div className="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style={{width:"45%"}}>
 									</div>
@@ -491,7 +366,7 @@ export const Profile = ()=> {
 								 </div>
 							</div>
 							<div>
-								 <div className="d-flex align-items-center justify-content-between mb-15"><h4>Reviews</h4><h4>345 Comments</h4></div>
+								 <div className="d-flex align-items-center justify-content-between mb-15"><h4>کامنت ها</h4><h4>345 کامنت</h4></div>
 								 <div className="progress active mb-0">
 									<div className="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style={{width:"30%"}}>
 									</div>
@@ -501,7 +376,7 @@ export const Profile = ()=> {
 					</div>	
 					<div className="box">
 						<div className="box-header with-border">
-							<h4 className="box-title">Customer Review</h4>
+							<h4 className="box-title">پاسخ مشتریان</h4>
 						</div>
 						<div className="box-body p-0">
 							<div className="inner-user-div">

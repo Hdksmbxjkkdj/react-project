@@ -6,8 +6,12 @@
       : (s("body").addClass("light"), s(".switch").addClass("switched"));
   }),
     s(document).ready(function () {
-      var e = document.querySelector(".progress-wrap path"),
-        t = e.getTotalLength();
+      var e = document.querySelector(".progress-wrap path")
+      if(e==null)
+      {
+        return
+      }
+      var t = e.getTotalLength();
       (e.style.transition = e.style.WebkitTransition = "none"),
         (e.style.strokeDasharray = t + " " + t),
         (e.style.strokeDashoffset = t),
@@ -34,4 +38,4 @@
           );
         });
     });
-})(jQuery,e);
+})(jQuery);

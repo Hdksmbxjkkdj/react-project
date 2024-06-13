@@ -10,7 +10,7 @@ const FromTheBlog = () => {
               <div className="section__head d-md-flex justify-content-between mb-40">
                 <div className="section__title">
                   <h3>
-                    From The<span>Blog</span>
+                    از <span>وبلاگ</span>
                   </h3>
                 </div>
               </div>

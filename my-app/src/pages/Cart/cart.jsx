@@ -17,22 +17,6 @@ const Cart = () => {
     return totally.toFixed(2);
   }
   const {cart ,setCart}= useContext(CartContext);
-  useEffect(()=>{
-    return (
-      async function getitem()
-      {
-        try
-        {
-          const res = await axios.get("http://localhost:313/row");
-          setCart(res);
-        }
-        catch
-        {
-          console.log("error");
-        }
-      }
-    )
-  },[])
   console.log(cart);
   const eMessage="error";
   return (
@@ -46,12 +30,12 @@ const Cart = () => {
                   <table className="table" key={Math.random()}>
                     <thead>
                       <tr>
-                        <th className="product-thumbnail">Images</th>
-                        <th className="cart-product-name">Product</th>
-                        <th className="product-price">Unit Price</th>
-                        <th className="product-quantity">Quantity</th>
-                        <th className="product-subtotal">Total</th>
-                        <th className="product-remove">Remove</th>
+                        <th className="product-thumbnail">تصاویر</th>
+                        <th className="cart-product-name">محصولات</th>
+                        <th className="product-price">قیمت پایه</th>
+                        <th className="product-quantity">تعداد</th>
+                        <th className="product-subtotal">مجموع</th>
+                        <th className="product-remove">حذف</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -91,6 +75,7 @@ const Cart = () => {
                               </>
                             );
                           })}
+
                     </tbody>
                   </table>
                 </div>
@@ -111,7 +96,7 @@ const Cart = () => {
                           name="apply_coupon"
                           type="submit"
                         >
-                          Apply coupon
+                          اعمال کد تخفیف
                         </button>
                       </div>
                       <div className="coupon2">
@@ -120,7 +105,7 @@ const Cart = () => {
                           name="update_cart"
                           type="submit"
                         >
-                          Update cart
+                          بروزرسانی لیست خرید
                         </button>
                       </div>
                     </div>
@@ -129,17 +114,17 @@ const Cart = () => {
                 <div className="row">
                   <div className="col-md-5 ml-auto">
                     <div className="cart-page-total">
-                      <h2>Cart totals</h2>
+                      <h2>قیمت کل</h2>
                       <ul className="mb-20">
                         <li>
-                          Subtotal <span>{Total()}</span>
+                          کل <span>{Total()}</span>
                         </li>
                         <li>
-                          Total <span>{Total()}</span>
+                          کل <span>{Total()}</span>
                         </li>
                       </ul>
                       <Link className="t-y-btn" to="/checkout">
-                        Proceed to checkout
+                        رفتن به check out
                       </Link>
                     </div>
                   </div>

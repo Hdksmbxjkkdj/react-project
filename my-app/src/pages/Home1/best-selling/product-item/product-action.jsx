@@ -2,11 +2,10 @@ import { useContext } from "react";
 import { AddToWishlist } from "./AddToWishlist";
 import { ModalContext } from "../../../../context/modal";
 const ProductAction = ({item})=> {
+  const {modal,setModal} = useContext(ModalContext)
   function Set()
   {
-    const {modal,setModal} = useContext(ModalContext)
-    console.log("hello");
-    setModal({...modal,'text':item.text,'img':item.pic,'price':item.price,'seccondimg':item.seccondpic})
+    setModal({...modal,'title':item.title,'text':item.text,'img':item.pic,'price':item.price,'seccondimg':item.seccondpic,'id':item.id,'show':true})
   }
     return (
         <>
@@ -18,7 +17,7 @@ const ProductAction = ({item})=> {
                 </a>
               </li>
               <li>
-                <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId" onClick={Set}>
+                <a href="#" title="Quick View" onClick={Set}>
                   <i className="fa fa-search"></i>
                 </a>
               </li>

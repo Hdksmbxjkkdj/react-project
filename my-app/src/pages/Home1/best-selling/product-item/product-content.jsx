@@ -1,11 +1,13 @@
-const ProductContent = (type)=> {
+const ProductContent = ({type,item})=> {
+  // console.log(item);
     return (
         <>
             <div className="product__content text-center">
           <h6 className="product-name">
             <a className="product-item-link">
-              {" "}
-              High Quality Glass Ultra-Thin Kitchen Scale
+              {
+                item?.text
+              }
             </a>
           </h6>
           <div className="rating">
@@ -37,7 +39,7 @@ const ProductContent = (type)=> {
               </li>
             </ul>
           </div>
-          <span className="price">$500.00</span>
+          <span className="price">تومان {item?.price}</span>
         </div>
         </>
     )
