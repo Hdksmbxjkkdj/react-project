@@ -30,8 +30,7 @@ export const TabContent = ({comment}) =>{
                         <div class="review-wrapper">
                             <h3 class="block-title">نظرات مشتریان</h3>
                             {comment?.map((g)=>{
-                                // console.log("g");
-                                // console.log(g);
+                               
                                     return <>
                                             <div class="review-item">
                                                 <h3 class="review-title">محصول فوق العاده</h3>

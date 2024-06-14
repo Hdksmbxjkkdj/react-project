@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { ProductSlider } from '../Home1/best-selling/product-slider';
+// import { ProductSlider } from './ProductSlider';
 import { BrandSlider } from './BrandSlider';
 import { ModalContent } from './ModalContent';
 import { ProductDetailsDesTab } from './ProductDetailsDesTab';
@@ -11,33 +12,27 @@ import { SectionHead } from './SectionHead';
 import {SendComment } from './SendComment';
 import { BestSelling } from '../Home1/best-selling';
 import { useParams } from "react-router-dom";
-import { TabContent } from "../Home1/best-selling/tab-content";
-
 export const ProducDetails= () =>{
     
     const {id} = useParams()
-    const [img,setImag] = useState();
-    useEffect(() => {
-        axios.get(`http://localhost:313/row/${id}`).then((res) => {
-            setImag(res);
-        });
-    }, []);
+   
     const [info, setInfo] = useState();
     useEffect(() => {
-        // axios.get(`http://localhost:313/row/${id}`).then((res) => {
-            axios.get(`http://localhost:313/product_comments`).then((res) => {
-
+        axios.get(`http://localhost:313/row/${id}`).then((res) => {
             setInfo(res);
+
+
         });
     }, []);
+   console.log(info?.data.id);
 
     return<>
         <main>
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
-                          <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} />
-                        <ProductDetailsWrapper item={img?.data?.name} price={img?.data?.unitprice} newprice={img?.data?.NewPrice} oldprice={img?.data?.OldPrice} sku={img?.data?.sku} />
+                          <ProducDetailsImg item={info?.data?.pic} picturs={info?.data?.gallery} />
+                        <ProductDetailsWrapper item={info?.data?.name} price={info?.data?.unitprice} newprice={info?.data?.NewPrice} oldprice={info?.data?.OldPrice} sku={info?.data?.sku} />
                     </div>
                     <div className="row">
                         <ProductDetailsDesTab />
@@ -48,18 +43,14 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <section className="best__sell pt-15 pb-40 grey-bg-2">
-                <div className="container">
+            <section className="product__area box-plr-75 pb-20">
+                <div className="container-fluid">
                     <div className="row">
                         <SectionHead />
                     </div>
-                   <div className="row">
-                    <div className="col-xl-12">
-                           <TabContent ></TabContent>  
-                    </div>
-                   </div>
-                 </div>
+                </div>
             </section>
+            <ProductSlider />
             <section className="brand__area">
                 <div className="container custom-container">
                     <div className="row align-items-center">

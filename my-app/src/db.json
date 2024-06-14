@@ -686,6 +686,38 @@
       "sender_name": "a",
       "sender_email": "b",
       "comment": "abcdef"
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1,
+      "date": "13/06/2024"
+    },
+    {
+      "id": "10",
+      "pic": "product-11.jpg",
+      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
+      "unitprice": 720,
+      "quantity": 1,
+      "date": "14/06/2024"
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "Samsung C49J89: £875, Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1,
+      "date": "14/06/2024"
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "Blink Home Security Camera System 01",
+      "unitprice": 720,
+      "quantity": 1,
+      "date": "14/06/2024"
     }
   ],
   "wishlist": [
@@ -1054,6 +1086,21 @@
           "name": "product-12.jpg"
         }
       ]
+    }
+  ],
+  "product_comments": [
+    {
+      "id": "7025",
+      "sender_name": "jbbb",
+      "sender_email": "jkkkkjkjh",
+      "comment": "knnnmn"
+    },
+    
+    {
+      "id": "b06f",
+      "sender_name": "e",
+      "comment": "",
+      "date": "14/06/2024"
     }
   ]
 }

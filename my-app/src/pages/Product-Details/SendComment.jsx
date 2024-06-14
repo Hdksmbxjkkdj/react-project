@@ -15,7 +15,12 @@ export const SendComment = ({id}) => {
     let loginMessage = 'first_login';
     let eMessage = 'error_message';
     let sMessage = 'success_message';
-    
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+   
 
     const [errors, setErrors] = useState();
 
@@ -30,26 +35,25 @@ export const SendComment = ({id}) => {
         sender_email: auth ? auth.email : '',
         comment: '',
         product_id: id,
+        date:today,
 
     })
-    
     const [error, setError] = useState();
 
     useEffect(() => {
         return () => {
-            // reset();
+            //  reset();
         };
     }, []);
     let url = `http://localhost:313/product_comments`
-
     const submit = async (e) => {
         e.preventDefault();
-        // console.log(data);
 
         if (auth) {
             // clearErrors()
             
             await axios.post(url, data).then((response) => {
+               
                 if (response.data?.status == 201) {
                     Notif('success', response.data?.message)
                     // reset()
@@ -65,11 +69,27 @@ export const SendComment = ({id}) => {
         }
 
         Notif('error', loginMessage)
+
     };
 
    
 
 //test
+
+//CustomerCommen
+const [info, setInfo] = useState();
+useEffect(() => {
+    // axios.get(`http://localhost:313/row/${id}`).then((res) => {
+        axios.get(`http://localhost:313/product_comments`).then((res) => {
+
+        setInfo(res);
+
+
+    });
+}, []);
+ 
+
+//CustomerCommen
 
     return<>
     <div class="col-xxl-12">
@@ -78,7 +98,7 @@ export const SendComment = ({id}) => {
             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                 <div class="product__details-review">
                     <div class="row">
-                       <CustomerComment></CustomerComment>
+                       <CustomerComment comment={info?.data}></CustomerComment>
                         <div class="col-xxl-4 col-xl-4 col-lg-4">
                             <div class="review-form">
                                 <h3>بررسی شما</h3>
@@ -122,22 +142,17 @@ export const SendComment = ({id}) => {
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                      
-                                   
-
-
                                     <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">نام مستعار</h4>
+                                        <h4 class="review-input-title">نام و نام خانوادگی</h4>
                                         <div class="review-input">
                                         <Input id="sender_name" label='name' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
                                                 autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} />
                                         </div>
                                     </div>
                                     <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">خلاصه</h4>
+                                        <h4 class="review-input-title">ایمیل</h4>
                                         <div class="review-input">
-                                        <Input id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
+                                        <Input type="email" id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
                                             autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} />
                                         </div>
                                     </div>

@@ -17,7 +17,7 @@ import { Header } from "./pages/Components/Header";
 import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { AboutUs } from "./pages/AboutUs";
-import { Contact } from "./pages/Contact";
+// import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Auth/login";
 import { Profile } from "./pages/Auth/profile";
 import { Register } from "./pages/Auth/register";
@@ -35,11 +35,11 @@ import Shop from './pages/Shop/Shop'
 import {productData} from './pages/Shop/productData';
 import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
-// import { useState } from 'react';
 import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 import Show from "./pages/Show";
-
+import { Product } from "./pages/Shop/Product";
+import {Contact} from "./pages/ContactUs/index";
 
 function App() {
   window?.$(window).on("load", function () {
@@ -75,6 +75,7 @@ function App() {
           <Route path="Login" element={<Login/>}/>
           <Route path="profile" element={<Profile/>}/>
           <Route path="/Contact" element={<Contact/>}/>
+
           <Route path="/Register" element={<Register/>}/>
           <Route path="Cart" element={<Cart/>}/>
           <Route path="wishlist" element={<WishList/>}/>
@@ -84,6 +85,7 @@ function App() {
           <Route path="/Footer" element={<Footer/>}/> 
           <Route path="/product" element={<Productpage/>} exact={true}/> 
           {/* <Route path="product/:id" element={<Show />}/>  */}
+          {/* <Route path="/Contact" element={<Contact/>}/> */}
         </Routes>
         <div id="loading">
           <div id="loading-center">
@@ -92,7 +94,6 @@ function App() {
             </div>
           </div>
         </div>
-        
         <BackToTop></BackToTop>
         <Footer></Footer>
         <ToastContainer/>
