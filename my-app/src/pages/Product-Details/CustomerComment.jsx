@@ -50,6 +50,10 @@ export const  CustomerComment=({comment,id })=>{
                                     <span>بررسی توسط</span>
                                     <span>{g?.sender_name}</span>
                                 </div>
+                                 <div class="review-date">
+                                     <span>نوشته شده در</span>
+                                     <span>{g?.date}</span>
+                                </div>
                                 // <div class="review-date">
                                 //     <span>نوشته شده در</span>
                                 //     <span>{g?.date}</span>

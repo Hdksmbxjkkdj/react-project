@@ -15,21 +15,20 @@ export const SendComment = ({id}) => {
     let loginMessage = 'first_login';
     let eMessage = 'error_message';
     let sMessage = 'success_message';
-    
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+   
 
     const [errors, setErrors] = useState();
-
-    // const { data, setData, post, processing, errors, setError, clearErrors, reset } = useForm({
-    //     sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
-    //     sender_email: auth ? auth.email : '',
-    //     comment: '',
-    //     // blog_id: blog.id
-    // });
     const [data, setData ] = useState({
         sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
         sender_email: auth ? auth.email : '',
         comment: '',
         product_id: id,
+        date:today,
 
     })
     const [error, setError] = useState();
@@ -47,10 +46,11 @@ export const SendComment = ({id}) => {
             // clearErrors()
             
             await axios.post(url, data).then((response) => {
-                // console.log(data,'data')
-
-                if (response.data?.status == 201) {
-                    Notif('success', response.data?.message)
+            //    let message = response.data?.message;
+               let message = "Insert";
+                
+               if (response.data?.status == 201) {
+                    Notif('success', message)
                     // reset()
                     return
                 }
@@ -64,6 +64,7 @@ export const SendComment = ({id}) => {
         }
 
         Notif('error', loginMessage)
+
     };
 
    
@@ -84,7 +85,6 @@ useEffect(() => {
  
 
 //CustomerCommen
-
 
     return<>
     <div class="col-xxl-12">
@@ -137,22 +137,17 @@ useEffect(() => {
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                      
-                                   
-
-
                                     <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">نام مستعار</h4>
+                                        <h4 class="review-input-title">نام و نام خانوادگی</h4>
                                         <div class="review-input">
                                         <Input id="sender_name" label='name' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
                                                 autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} />
                                         </div>
                                     </div>
                                     <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">خلاصه</h4>
+                                        <h4 class="review-input-title">ایمیل</h4>
                                         <div class="review-input">
-                                        <Input id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
+                                        <Input type="email" id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
                                             autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} />
                                         </div>
                                     </div>

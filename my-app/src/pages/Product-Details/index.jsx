@@ -18,12 +18,8 @@ export const ProducDetails= () =>{
     const {id} = useParams()
     const [img,setImag] = useState();
     useEffect(() => {
-        axios.get(`http://localhost:313/best_selling/${id}`).then((res) => {
-            
-
+        axios.get(`http://localhost:313/row/${id}`).then((res) => {
             setImag(res);
-
-
         });
     }, []);
     const [info, setInfo] = useState();
@@ -34,8 +30,6 @@ export const ProducDetails= () =>{
             setInfo(res);
         });
     }, []);
- 
-      
 
     return<>
         <main>
@@ -54,14 +48,18 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <section className="product__area box-plr-75 pb-20">
-                <div className="container-fluid">
+            <section className="best__sell pt-15 pb-40 grey-bg-2">
+                <div className="container">
                     <div className="row">
                         <SectionHead />
                     </div>
-                </div>
+                   <div className="row">
+                    <div className="col-xl-12">
+                           <TabContent ></TabContent>  
+                    </div>
+                   </div>
+                 </div>
             </section>
-            <ProductSlider></ProductSlider>
             <section className="brand__area">
                 <div className="container custom-container">
                     <div className="row align-items-center">

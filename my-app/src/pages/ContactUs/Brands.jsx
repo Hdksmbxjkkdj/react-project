@@ -1,8 +1,12 @@
-import {Config} from '../../Utils';
-export const BrandSlider = () =>{
+import {Config} from '../../Utils'
+
+export const BrandSlider = ()=>{
     return<>
-           <div className="col-xl-12">
-                        <div className="brand__slider owl-carousel">
+          <section className="brand__area">
+            <div className="container custom-container">
+                <div className="row align-items-center">
+                    <div className="col-xl-12">
+                    <div className="brand__slider owl-carousel">
                             <div className="brand__item">
                                 <img src={Config.banner + "brand-1"} alt="" />
                             </div>
@@ -16,6 +20,10 @@ export const BrandSlider = () =>{
                                 <img src={Config.brand+"brand-4"} alt="" />
                             </div>
                         </div>
+                       
                     </div>
+                </div>
+            </div>
+        </section>
     </>
 }

@@ -6,9 +6,8 @@ const Config = {
     about:"/img/about/",
     icon:"/img/icon/",
     team:"/img/team/",
-    //
-     
-    //
+    brand:"/img/brand",
+  
 }
 
 export {Config};

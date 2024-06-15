@@ -16,7 +16,7 @@ import { Header } from "./pages/Components/Header";
 import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { AboutUs } from "./pages/AboutUs";
-import { Contact } from "./pages/Contact";
+// import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Auth/login";
 import { Profile } from "./pages/Auth/profile";
 import { Register } from "./pages/Auth/register";
@@ -34,11 +34,11 @@ import Shop from './pages/Shop/Shop'
 import {productData} from './pages/Shop/productData';
 import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
-// import { useState } from 'react';
 import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 import Show from "./pages/Show";
 import { Product } from "./pages/Shop/Product";
+import { ContactUs } from "./pages/ContactUs";
 
 
 function App() {
@@ -74,7 +74,8 @@ function App() {
           <Route path="/About" element={<AboutUs />} />
           <Route path="Login" element={<Login/>}/>
           <Route path="profile" element={<Profile/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
+          <Route path="/Contact" element={<ContactUs/>}/>
+
           <Route path="/Register" element={<Register/>}/>
           <Route path="Cart" element={<Cart/>}/>
           <Route path="wishlist" element={<WishList/>}/>
@@ -84,6 +85,8 @@ function App() {
           <Route path="/Footer" element={<Footer/>}/> 
           <Route path="/product-details/:id" element={<ProducDetails />}/> 
           <Route path="/product" element={<Productpage/>} exact={true}/> 
+          {/* <Route path="product/:id" element={<Show />}/>  */}
+          {/* <Route path="/Contact" element={<Contact/>}/> */}
         </Routes>
         <div id="loading">
           <div id="loading-center">
@@ -98,29 +101,7 @@ function App() {
       </BrowserRouter>
    
     </CartContext.Provider>
-    
-      {/* <Home1></Home1> */}
      
- 
-           {/* <section class="product__area box-plr-75 pb-70">
-          <div className='container-fluid'>
-                <div className='row'>
-                     <Sidebar sidebars = {sidebars}/> 
-                     <Shop products = {products}/> 
-               
-                </div>
-          </div>
-          </section>  */}
-    
-     
-      {/* {
-         state?(
-          <Home1 />
-         ):
-        
-        
-      
-      } */}
   
    
     
