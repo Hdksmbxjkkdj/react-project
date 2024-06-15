@@ -48,7 +48,7 @@ export const Menu = () => {
                     </ul>
                 </li>
                 <li><Link to="About">about us</Link></li>
-                <li><Link to="Contact">contact</Link></li>
+                <li><Link to="/Contact">contact</Link></li>
                 <li>
                     <a href="about.html">pages <i className="fa fa-angle-down"></i></a>
                     <ul className="submenu">

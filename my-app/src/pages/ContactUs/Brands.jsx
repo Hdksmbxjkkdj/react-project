@@ -2,10 +2,10 @@ import {Config} from '../../Utils'
 
 export const BrandSlider = ()=>{
     return<>
-          <section class="brand__area">
-            <div class="container custom-container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12">
+          <section className="brand__area">
+            <div className="container custom-container">
+                <div className="row align-items-center">
+                    <div className="col-xl-12">
                     <div className="brand__slider owl-carousel">
                             <div className="brand__item">
                                 <img src={Config.banner + "brand-1"} alt="" />

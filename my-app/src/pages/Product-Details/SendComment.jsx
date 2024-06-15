@@ -23,13 +23,6 @@ export const SendComment = ({id}) => {
    
 
     const [errors, setErrors] = useState();
-
-    // const { data, setData, post, processing, errors, setError, clearErrors, reset } = useForm({
-    //     sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
-    //     sender_email: auth ? auth.email : '',
-    //     comment: '',
-    //     // blog_id: blog.id
-    // });
     const [data, setData ] = useState({
         sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
         sender_email: auth ? auth.email : '',
@@ -45,7 +38,7 @@ export const SendComment = ({id}) => {
             //  reset();
         };
     }, []);
-    let url = `http://localhost:313/product_comments`
+    let url = `http://localhost:313/ContactUs`
     const submit = async (e) => {
         e.preventDefault();
 
@@ -53,9 +46,11 @@ export const SendComment = ({id}) => {
             // clearErrors()
             
             await axios.post(url, data).then((response) => {
-               
-                if (response.data?.status == 201) {
-                    Notif('success', response.data?.message)
+            //    let message = response.data?.message;
+               let message = "Insert";
+                
+               if (response.data?.status == 201) {
+                    Notif('success', message)
                     // reset()
                     return
                 }

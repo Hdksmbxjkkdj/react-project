@@ -39,7 +39,8 @@ import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 import Show from "./pages/Show";
 import { Product } from "./pages/Shop/Product";
-import {Contact} from "./pages/ContactUs/index";
+import { ContactUs } from "./pages/ContactUs";
+
 
 function App() {
   window?.$(window).on("load", function () {
@@ -74,7 +75,7 @@ function App() {
           <Route path="/About" element={<AboutUs />} />
           <Route path="Login" element={<Login/>}/>
           <Route path="profile" element={<Profile/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
+          <Route path="/Contact" element={<ContactUs/>}/>
 
           <Route path="/Register" element={<Register/>}/>
           <Route path="Cart" element={<Cart/>}/>
@@ -100,29 +101,7 @@ function App() {
       </BrowserRouter>
    
     </CartContext.Provider>
-    
-      {/* <Home1></Home1> */}
      
- 
-           {/* <section class="product__area box-plr-75 pb-70">
-          <div className='container-fluid'>
-                <div className='row'>
-                     <Sidebar sidebars = {sidebars}/> 
-                     <Shop products = {products}/> 
-               
-                </div>
-          </div>
-          </section>  */}
-    
-     
-      {/* {
-         state?(
-          <Home1 />
-         ):
-        
-        
-      
-      } */}
   
    
     
