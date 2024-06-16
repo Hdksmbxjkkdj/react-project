@@ -12,9 +12,11 @@ import { Home2 } from "./pages/Home2/index";
 import { Home3 } from "./pages/Home3/index";
 import { Home4 } from "./pages/Home4/index";
 import { Header } from "./pages/Components/Header";
+// import Footer from "./pages/Components/Footer";
 import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { AboutUs } from "./pages/AboutUs";
+// import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Auth/login";
 import { Profile } from "./pages/Auth/profile";
 import { Register } from "./pages/Auth/register";
@@ -29,13 +31,15 @@ import axios from "axios";
 import {ProducDetails} from './pages/Product-Details/index'
 
 import Shop from './pages/Shop/Shop'
+import {productData} from './pages/Shop/productData';
 import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
+import { SidebarData } from './pages/Sidebar/SidebarData';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";
 import Show from "./pages/Show";
 import { Product } from "./pages/Shop/Product";
 import { ContactUs } from "./pages/ContactUs";
-import{Products} from "./pages/Shop/index"
+
 
 function App() {
   window?.$(window).on("load", function () {
@@ -49,6 +53,9 @@ function App() {
   })
   },[])
 
+  // const [products,setproducts]=useState(productData);
+  // const [sidebars,setSidebars]=useState(SidebarData);
+ 
   return (
     
     <>
@@ -76,12 +83,10 @@ function App() {
           <Route path="/Footer" element={<Footer />} />
           {/* <Route path="*" element={<Error/>}/> */}
           <Route path="/Footer" element={<Footer/>}/> 
-          {/* <Route path="/product-details/:id" element={<ProducDetails />}/>  */}
+          <Route path="/product-details/:id" element={<ProducDetails />}/> 
           <Route path="/product" element={<Productpage/>} exact={true}/> 
           {/* <Route path="product/:id" element={<Show />}/>  */}
           {/* <Route path="/Contact" element={<Contact/>}/> */}
-          <Route path="/products" element={<Products/>}/> 
-
         </Routes>
         <div id="loading">
           <div id="loading-center">

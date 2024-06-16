@@ -1,5 +1,6 @@
+import {Config} from '../../Utils'
 export const P= ()=> {
-    const img = "https://picsum.photos/291";
+    // const img = "https://picsum.photos/291";
     return <>
        <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion2">
@@ -41,7 +42,7 @@ export const P= ()=> {
         <div className="product__widget-item mb-45">
             <div className="banner__item mb-20 w-img">
                 <a href="product-details.html">
-                    <img src={img} alt="" />
+                    <img src={Config.banner +"banner-sm-4.jpg"} alt="" />
                 </a>
             </div>
         </div>

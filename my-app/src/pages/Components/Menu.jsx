@@ -18,8 +18,8 @@ export const Menu = () => {
                 </li>
                 <li><Link to="product">ویژگی ها <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
-                        <li><Link to="product">نوع محصول</Link></li>
-                        <li><Link to="product">ویژگی محصول <i className="fa fa-angle-down"></i></Link>
+                        <li><Link to="/products">نوع محصول</Link></li>
+                        <li><Link to="/product">ویژگی محصول <i className="fa fa-angle-down"></i></Link>
                             <ul className="submenu">
                                 <li><Link to="product-details">محصول ساده</Link></li>
                                 <li><Link to="product-details-config">محصولات مرتبط</Link></li>

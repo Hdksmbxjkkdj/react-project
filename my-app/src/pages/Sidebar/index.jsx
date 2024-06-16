@@ -1,10 +1,13 @@
 import {P} from './P';
 import {Color} from './Color';
 import {Rate} from './TopRate';
+import { BreadCrumb } from './BreadCrumb';
 export const Sidebar = ({sidebars}) =>{
     return<>
 
-         
+
+                
+
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
                     <Color></Color>
@@ -19,9 +22,8 @@ export const Sidebar = ({sidebars}) =>{
                     </div>
                 
                 </div>
-                
-                 
-            </div> 
+                </div>
+               
        
  </>
       

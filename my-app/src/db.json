@@ -7,7 +7,6 @@
       "unitprice": 130,
       "quantity": 1,
       "date": "13/06/2024",
-      
       "NewPrice": 150000,
       "OldPrice": 320000,
       "sku": "Samsung C49J89: £875, Debenhams Plus",
@@ -43,7 +42,6 @@
       "unitprice": 560,
       "quantity": 1,
       "date": "13/06/2024",
-      "date": "05-04-2024",
       "NewPrice": 150000,
       "OldPrice": 320000,
       "sku": "Samsung C49J89: £875, Debenhams Plus",
@@ -81,14 +79,15 @@
     {
       "id": "8",
       "pic": "product-7.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01"
+    },
+    {
       "id": "10",
       "pic": "product-12.jpg",
       "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
       "unitprice": 720,
       "quantity": 1,
-      "date": "13/06/2024"
-      "quantity": 1,
+      "date": "13/06/2024",
       "NewPrice": 150000,
       "OldPrice": 320000,
       "sku": "Samsung C49J89: £875, Debenhams Plus",
@@ -124,6 +123,8 @@
       "unitprice": 720,
       "quantity": 1,
       "date": "13/06/2024"
+    },
+    {
       "id": "7",
       "pic": "product-5.jpg",
       "name": "Samsung C49J89: £875, Debenhams Plus",
@@ -181,7 +182,8 @@
       "date": "13/06/2024"
     }
   ],
-  "wishlist":[ {
+  "wishlist": [
+    {
       "quantity": 1,
       "NewPrice": 150000,
       "OldPrice": 320000,
@@ -209,7 +211,8 @@
           "name": "ali",
           "date": "2024/2/2"
         }
-      ]
+      ],
+      "id": "9b43"
     },
     {
       "id": "11",
@@ -319,6 +322,8 @@
       "name": "ترازوی آشپزخانه فوق نازک شیشه ای با کیفیت بالا",
       "unitprice": 500,
       "quantity": 1
+    },
+    {
       "id": "8",
       "pic": "product-7.jpg",
       "name": "Blink Home Security Camera System 01",
@@ -526,7 +531,6 @@
       "id": "8",
       "pic": "product-7.jpg",
       "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "name": "Blink Home Security Camera System 01",
       "unitprice": 720,
       "quantity": 1,
       "NewPrice": 150000,
@@ -928,7 +932,8 @@
           "title": "تاریخچه ما",
           "text": "این مدرسه بسیار دبیرستانی است، زمانی در فوتبال نیست، posuerepharetra nibh. در شبکه زندگی دارایی نرم نیست."
         }
-      ]
+      ],
+      "id": "6279"
     }
   ],
   "best_selling": [
@@ -1047,7 +1052,7 @@
       "comment": "hello this is Ali Ghorbani",
       "blog_id": "1",
       "date": "2024/5/2",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "ali",
@@ -1055,8 +1060,7 @@
       "comment": "i cant understand this blog , what is it about ? ",
       "blog_id": "3",
       "date": "2024/5/8",
-      "id": 2
-     
+      "id": "2"
     },
     {
       "id": "d274",
@@ -1068,15 +1072,15 @@
   "aboutus": [
     {
       "email": "a@gmail.com",
-      "id": 1
+      "id": "1"
     },
     {
       "email": "m@gmail.com",
-      "id": 2
+      "id": "2"
     },
     {
       "email": "m@gmail.com",
-      "id": 3
+      "id": "3"
     }
   ],
   "register": [
@@ -1084,93 +1088,109 @@
       "username": "mohammad",
       "email": "mohammad@gmail.com",
       "pass": "123456789",
-      "id": 1
+      "id": "1"
     },
     {
       "username": "ali",
       "email": "ali@gmail.com",
       "pass": "aliali",
-      "id": 2
+      "id": "2"
     }
   ],
   "features": [
     {
       "icon": "fa-rocket",
       "title": "ارسال رایگان",
-      "text": "ارسال رایگان در تمامی سفارشات"
+      "text": "ارسال رایگان در تمامی سفارشات",
+      "id": "55e9"
     },
     {
       "icon": "fa-sync",
       "title": "تضمین قیمت",
-      "text": "با ضمانت برگشت 30 روزه پول"
+      "text": "با ضمانت برگشت 30 روزه پول",
+      "id": "5bc4"
     },
     {
       "icon": "fa-headset",
       "title": "پشتیبانی برخط 24/7",
-      "text": "پشتیبانی فنی استند بای"
+      "text": "پشتیبانی فنی استند بای",
+      "id": "0a1d"
     },
     {
       "icon": "fa-thumbs-up",
       "title": "پرداخت امن",
-      "text": "تمام روش های پرداخت پذیرفته می شود"
+      "text": "تمام روش های پرداخت پذیرفته می شود",
+      "id": "2379"
     },
     {
       "icon": "fa-dollar",
       "title": "تخفیف اعضا",
-      "text": "تا 40% تخفیف همه محصولات"
+      "text": "تا 40% تخفیف همه محصولات",
+      "id": "a91c"
     }
   ],
   "buy": [
     {
       "month": "jan",
-      "count": 3
+      "count": 3,
+      "id": "cce9"
     },
     {
       "month": "feb",
-      "count": 1
+      "count": 1,
+      "id": "8cfe"
     },
     {
       "month": "mar",
-      "count": 0
+      "count": 0,
+      "id": "669c"
     },
     {
       "month": "apr",
-      "count": 4
+      "count": 4,
+      "id": "7971"
     },
     {
       "month": "may",
-      "count": 2
+      "count": 2,
+      "id": "6ce9"
     },
     {
       "month": "jon",
-      "count": 14
+      "count": 14,
+      "id": "39e9"
     },
     {
       "month": "jol",
-      "count": 0
+      "count": 0,
+      "id": "4faf"
     },
     {
       "month": "aug",
-      "count": 0
+      "count": 0,
+      "id": "d26d"
     },
     {
       "month": "sep",
-      "count": 8
+      "count": 8,
+      "id": "55ac"
     },
     {
       "month": "oct",
-      "count": 2
+      "count": 2,
+      "id": "96ee"
     },
     {
       "month": "nov",
-      "count": 0
+      "count": 0,
+      "id": "2e36"
     },
     {
       "month": "dec",
-      "count": 3
+      "count": 3,
+      "id": "4f48"
     }
-  ]
-  ,
+  ],
   "product-details": [
     {
       "id": "10",
@@ -1254,23 +1274,18 @@
       "comment": ""
     },
     {
-      "id": "ae66",
-      "sender_name": "././.>",
-      "comment": ""
-    },
-   
-    {
-      "id": "b06f",
-      "sender_name": "e",
-      "comment": "",
-      "date": "14/06/2024"
+      "id": "ae09",
+      "sender_name": "rrr",
+      "sender_email": "r",
+      "comment": "r",
+      "date": "16/06/2024"
     },
     {
-      "id": "5e20",
-      "sender_name": "p",
-      "sender_email": "p",
-      "comment": "lll",
-      "date": "15/06/2024"
+      "id": "2800",
+      "sender_name": "y",
+      "sender_email": "y",
+      "comment": "y",
+      "date": "16/06/2024"
     }
   ],
   "ContactUs": [

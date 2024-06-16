@@ -36,26 +36,26 @@ export const ProducDetails= () =>{
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
-                          <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} />
-                        <ProductDetailsWrapper item={img?.data?.name} price={img?.data?.unitprice} newprice={img?.data?.NewPrice} oldprice={img?.data?.OldPrice} sku={img?.data?.sku} />
+                           <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} /> 
+                        <ProductDetailsWrapper item={img?.data?.name} price={img?.data?.unitprice} newprice={img?.data?.NewPrice} oldprice={img?.data?.OldPrice} sku={img?.data?.sku} /> 
                     </div>
                     <div className="row">
-                        <ProductDetailsDesTab />
+                        <ProductDetailsDesTab /> 
                     </div>
                     
                     <div className="row">
-                        <SendComment  comment={info?.data?.comment} id={info?.data.id} /> 
+                        {<SendComment  comment={info?.data?.comment} id={info?.data.id} /> }
                     </div>
                 </div>
             </section>
             <section className="best__sell pt-15 pb-40 grey-bg-2">
                 <div className="container">
                     <div className="row">
-                        <SectionHead />
+                        <SectionHead /> 
                     </div>
                    <div className="row">
                     <div className="col-xl-12">
-                           <TabContent ></TabContent>  
+                           {/* <TabContent ></TabContent>    */}
                     </div>
                    </div>
                  </div>
@@ -63,7 +63,7 @@ export const ProducDetails= () =>{
             <section className="brand__area">
                 <div className="container custom-container">
                     <div className="row align-items-center">
-                        <BrandSlider />
+                         <BrandSlider /> 
                     </div>
                 </div>
             </section>         
