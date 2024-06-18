@@ -1,9 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 export const Rate = ({items}) =>{
-    return<>
-           
-                                    
+    return<>                            
          {items.map((item,i)=>{
                 return<div class="product__widget-item">
                                         <h3 class="product__widget-title mb-25">Top Rate</h3>

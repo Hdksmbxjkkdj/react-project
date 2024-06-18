@@ -1,5 +1,5 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faStar } from "@fortawesome/free-solid-svg-icons";
+ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 // import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState,useEffect } from "react";
@@ -15,9 +15,6 @@ export const Product = ()=>{
             setInfo(res);
         });
     }, []);
-   
-    // let info?.datas=info?.data
-    console.log(info?.datas,"info")
     return<>
       
         {info?.data.map((item, i)=>{
@@ -38,10 +35,16 @@ export const Product = ()=>{
                                 </h6>
                                 <div className="rating">
                                     <ul>
-                                  
+                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                                     </ul>
                                 </div>
-                                <span className="price">${item.unitprice}</span>
+                                <div class="product__sm-price">
+                                    <span className="price">${item.unitprice}</span>
+                                </div>
                             </div>
                             <div className="product__add-btn">
                                 <button type="button">Add to Cart</button>

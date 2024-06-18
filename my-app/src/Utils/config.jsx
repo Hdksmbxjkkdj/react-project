@@ -7,6 +7,7 @@ const Config = {
     icon:"/img/icon/",
     team:"/img/team/",
     brand:"/img/brand",
+    sidebar:"/img/sidebar/",
   
 }
 

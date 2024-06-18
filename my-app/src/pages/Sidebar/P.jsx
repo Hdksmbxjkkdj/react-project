@@ -1,6 +1,5 @@
 import {Config} from '../../Utils'
 export const P= ()=> {
-    // const img = "https://picsum.photos/291";
     return <>
        <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion2">
