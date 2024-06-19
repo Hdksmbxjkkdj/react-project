@@ -13,7 +13,7 @@ export const Sidebar = ({sidebars}) =>{
                         <h3 className="product__widget-title mb-25">Top Rate</h3>
                             <div className="product__sm">
                             <ul>            
-                                <Rate items ={sidebars}/>
+                                <Rate items ={sidebars} />
                             </ul>
                         </div>
                     </div>
