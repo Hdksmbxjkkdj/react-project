@@ -96,11 +96,6 @@ function App() {
       </BrowserRouter>
    
     </CartContext.Provider>
-     
-  
-   
-    
-      
     </>
   );
 }

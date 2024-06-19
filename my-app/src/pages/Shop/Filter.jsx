@@ -4,7 +4,6 @@ import { faTh } from "@fortawesome/free-solid-svg-icons"
 import { faList } from "@fortawesome/free-solid-svg-icons"
 import{Select} from "./Select"
 export const Filter=()=>{
-    console.log('filter')
     return<>
        <div className="product__filter mb-50">
                                     <div className="row align-items-center">

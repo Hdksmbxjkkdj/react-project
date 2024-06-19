@@ -5,6 +5,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { Config } from "../../Utils"
+import { Rank } from "../Components/Rank";
 
 // import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ()=>{
@@ -34,13 +35,7 @@ export const Product = ()=>{
                                     <a className="product-item-link" href="product-details.html">{item.name}</a>
                                 </h6>
                                 <div className="rating">
-                                    <ul>
-                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                                    </ul>
+                                   <Rank></Rank>
                                 </div>
                                 <div class="product__sm-price">
                                     <span className="price">${item.unitprice}</span>

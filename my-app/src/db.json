@@ -181,8 +181,6 @@
       "quantity": 1,
       "date": "13/06/2024"
     }
-
-
   ],
   "wishlist": [
     {
@@ -1228,9 +1226,13 @@
       "sender_name": "qwe",
       "sender_email": "werty",
       "comment": "fds"
+    },
+    {
+      "id": "c18d",
+      "sender_name": "q",
+      "comment": "",
+      "date": "18/06/2024"
     }
-    
-
   ],
   "ContactUs": [
     {
@@ -1246,12 +1248,14 @@
     {
       "name": "Organic Greenhouse Tomatoes New 18kg",
       "pic": "product-sm-1.jpg",
-      "price": "$300.00"
+      "price": "$300.00",
+      "id": "feab"
     },
     {
       "name": "Australian Large Granny Smith Apples",
       "pic": "product-sm-2.jpg",
-      "price": "$120.00"
+      "price": "$120.00",
+      "id": "d74f"
     }
   ]
 }
