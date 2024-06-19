@@ -4,17 +4,33 @@ import {Filter} from "./Filter"
 import {Product} from "./Product"
 import { SidebarData } from "../Sidebar/SidebarData"
 import { Sidebar } from "../Sidebar"
-import { useState } from "react"
-export const Products = ({sidebars,allItems,categories,brands,domain_price}) =>{
-    const [items,setItems]=useState(allItems)
-    console.log('test ',items)
+import { useEffect, useState } from "react"
+import axios from "axios"
+export const Products = ({sidebars}) =>{
+   
+    const[category,setCategory]=useState()
+    useEffect(()=>{
+        axios.get(`http://localhost:313/product-category`).then((res)=>{
+            setCategory(res);
+        });
+        console.log(items?.length)
+    },[]);
+    //allitems
+    const[items,setItems]=useState()
+    useEffect(()=>{
+        axios.get(`http://localhost:313/best_selling`).then((res)=>{
+            setItems(res);
+        });
+        
+    },[]);
+    
     return<>
         <main>
         <BreadCrumb></BreadCrumb>
         <section class="product__area box-plr-75 pb-70">
             <div class="container-fluid">
                 <div class="row">
-                    <Sidebar categories={categories} brands={brands} domain_price={domain_price} setItems={setItems} productLength={items?.length}></Sidebar>
+                    <Sidebar  productLength={items?.length}></Sidebar>
                 <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
                     <div class="product__grid-wrapper">
                        <ProductGraidWrapper></ProductGraidWrapper> 
@@ -24,7 +40,7 @@ export const Products = ({sidebars,allItems,categories,brands,domain_price}) =>{
                         <div class="tab-content" id="productGridTabContent">
                             <div class="tab-pane fade  show active" id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
                                 <div class="row">
-                                    <Product items={items} setItems={setItems} key={Math.random()}></Product>
+                                    <Product key={Math.random()}></Product>
                                 </div>
                             </div>
                         </div>

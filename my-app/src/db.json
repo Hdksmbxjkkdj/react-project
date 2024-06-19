@@ -1232,6 +1232,13 @@
       "sender_name": "q",
       "comment": "",
       "date": "18/06/2024"
+    },
+    {
+      "id": "e181",
+      "sender_name": "ali",
+      "sender_email": "ali@gmail.com",
+      "comment": "nice",
+      "date": "19/06/2024"
     }
   ],
   "ContactUs": [
@@ -1257,5 +1264,28 @@
       "price": "$120.00",
       "id": "d74f"
     }
-  ]
+  ],
+  "product-category":[
+    {
+        "id":"1",
+        "category":"سامسونگ"
+    },
+    {
+      "id":"2",
+      "category":"اپل"
+    },
+    {
+      "id":"3",
+      "category":"هوآوی"
+    },
+    {
+      "id":"4",
+      "category":"شیائومی"
+    },
+    {
+      "id":"5",
+      "category":"موتورولا"
+    }
+  ],
+  "product-color":[]
 }

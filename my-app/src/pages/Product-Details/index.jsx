@@ -18,13 +18,14 @@ export const ProducDetails= () =>{
     const {id} = useParams()
     const [img,setImag] = useState();
     useEffect(() => {
-        axios.get(`http://localhost:313/row/${id}`).then((res) => {
+        // axios.get(`http://localhost:313/row/${id}`).then((res) => {
+            axios.get(`http://localhost:313/best_selling/${id}`).then((res) => {
+
             setImag(res);
         });
     }, []);
     const [info, setInfo] = useState();
     useEffect(() => {
-        // axios.get(`http://localhost:313/row/${id}`).then((res) => {
             axios.get(`http://localhost:313/product_comments`).then((res) => {
 
             setInfo(res);

@@ -1,6 +1,6 @@
 export const Color = () =>{
     return<>
-          <div className="product__widget-item mb-15">
+                           <div className="product__widget-item mb-15">
                                 <div className="accordion" id="productWidgetAccordion">
                                     <div className="accordion-item">
                                         <h2 className="accordion-header" id="headingOne">
@@ -45,29 +45,5 @@ export const Color = () =>{
                                     </div>
                                 </div>
                             </div>
-                            <div className="product__widget-item mb-15">
-                                <div className="accordion" id="productWidgetAccordion1">
-                                    <div className="accordion-item">
-                                        <h2 className="accordion-header" id="headingTwo">
-                                            <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                Price
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
-                                            <div className="accordion-body">
-                                                <div className="product__widget-content">
-                                                    <div className="product__price-slider">
-                                                        <div>
-                                                            <form action="#">
-                                                                <input type="text" id="amount" readonly />
-                                                            </form>
-                                                        </div>
-                                                        <div id="slider-range"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
     </>}
