@@ -1287,5 +1287,8 @@
       "category":"موتورولا"
     }
   ],
-  "product-color":[]
+  "product-color":[],
+  "domain-price":[
+    {"min": "1000", "max": "5000"}
+  ]
 }
