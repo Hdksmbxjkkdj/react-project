@@ -12,7 +12,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
               max: 500,
               values: [75, 300],
              slide: function (event, ui) {
-                window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                 window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
             }, 
             stop: function (event, ui) {
                 rangeIsChanged(ui)
@@ -34,7 +34,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     )
     const rangeIsChanged=(ui)=>{
         const val=window?.$("#amount").val()
-       
+          console.log(val)
         // window?.$("#amount").val()=useParams()
         // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
         // Filter(setItems, productLength, 'min', ui.values[0], eMessage, 'domain', 'max', ui.values[1])
@@ -48,7 +48,8 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     return<>
          <div className="product__widget-item mb-15">
                                 <div className="accordion" id="productWidgetAccordion1">
-                                    <div className="accordion-item">                              <h2 className="accordion-header" id="headingTwo">
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingTwo">
                                             <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                                 Price
                                             </button>
