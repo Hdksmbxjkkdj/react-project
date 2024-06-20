@@ -55,7 +55,7 @@ export const ProducDetails= () =>{
                     </div>
                    <div className="row">
                     <div className="col-xl-12">
-                           {/* <TabContent ></TabContent>    */}
+                           {/* <TabContent ></TabContent>     */}
                     </div>
                    </div>
                  </div>

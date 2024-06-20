@@ -23,6 +23,14 @@ export const Products = ({sidebars}) =>{
         });
         
     },[]);
+    //price
+    const[price,setPrice]=useState()
+    useEffect(()=>{
+        axios.get(`http://localhost:313/domain-price`).then((res)=>{
+            setPrice(res);
+        });
+        console.log(price)
+    },[]);
     
     return<>
         <main>
@@ -30,7 +38,7 @@ export const Products = ({sidebars}) =>{
         <section class="product__area box-plr-75 pb-70">
             <div class="container-fluid">
                 <div class="row">
-                    <Sidebar  productLength={items?.length}></Sidebar>
+                    <Sidebar  productLength={items?.length} setItems={setItems} domain_price={price}></Sidebar>
                 <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
                     <div class="product__grid-wrapper">
                        <ProductGraidWrapper></ProductGraidWrapper> 
