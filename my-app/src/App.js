@@ -79,10 +79,9 @@ function App() {
           <Route path="wishlist" element={<WishList/>}/>
           <Route path="checkout" element={<Checkout/>}/>
           <Route path="/Footer" element={<Footer />} />
-          {/* <Route path="*" element={<Error/>}/> */}
-          <Route path="/Footer" element={<Footer/>}/> 
           <Route path="/product-details/:id" element={<ProducDetails />}/> 
           <Route path="/product" element={<Productpage/>} exact={true}/> 
+          {/* <Route path="*" element={<Error/>}/> */}
         </Routes>
         <div id="loading">
           <div id="loading-center">

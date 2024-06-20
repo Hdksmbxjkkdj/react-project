@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AddToWishlist } from "./AddToWishlist";
 import { ModalContext } from "../../../../context/modal";
 const ProductAction = ({item})=> {
+  "use srict";
   const {modal,setModal} = useContext(ModalContext)
   function Set()
   {

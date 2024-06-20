@@ -10,12 +10,10 @@ import { ProductDetailsWrapper } from './ProductDetailsWrapper';
 import {ProducDetailsImg} from './ProductDetailsnav';
 import { SectionHead } from './SectionHead';
 import {SendComment } from './SendComment';
-import { BestSelling } from '../Home1/best-selling';
 import { useParams } from "react-router-dom";
 export const ProducDetails= () =>{
-    // let {id} = useParams();
-    // id=id.slice(1);
-    var id=7;
+    let {id} = useParams();
+    id=id.slice(1);
     const [info, setInfo] = useState();
     useEffect(() => {
         axios.get(`http://localhost:313/best_selling/${id}`).then((res) => {
