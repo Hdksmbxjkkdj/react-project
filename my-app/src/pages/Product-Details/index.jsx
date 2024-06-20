@@ -9,7 +9,6 @@ import { ProductDetailsWrapper } from './ProductDetailsWrapper';
 import {ProducDetailsImg} from './ProductDetailsnav';
 import { SectionHead } from './SectionHead';
 import {SendComment } from './SendComment';
-import { BestSelling } from '../Home1/best-selling';
 import { useParams } from "react-router-dom";
 import { TabContent } from "../Home1/best-selling/tab-content";
 

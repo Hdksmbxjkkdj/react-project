@@ -26,6 +26,7 @@ const submit = async (e) => {
   console.log(d);
   let status =201;
   e.preventDefault();
+  // if(name==""||email)
   await axios.post("http://localhost:313/comments",{name:name,email:email,comment:comment,blog_id:id,date:d}).then((e)=>{
     status=e.status;
     if(e.status==201)
@@ -127,12 +128,12 @@ const submit = async (e) => {
                 <div class="row">
                   <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="contact-icon p-relative contacts-name">
-                      <input id="name" name="name" type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                      <input id="name" name="name" type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} required/>
                     </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="contact-icon p-relative contacts-name">
-                      <input id="email" name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                      <input id="email" name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
                   </div>
                   <div class="col-xl-12">
@@ -144,6 +145,7 @@ const submit = async (e) => {
                         rows="10"
                         placeholder="Comments"
                         onChange={(e) => setCommnet(e.target.value)}
+                        required
                       ></textarea>
                     </div>
                   </div>

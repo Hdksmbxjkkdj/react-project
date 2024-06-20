@@ -50,6 +50,7 @@ var res1 = {
   },
 };
 
+
 const Home1 = () => {
   const [modal,setModal] = useState({
     title:"",

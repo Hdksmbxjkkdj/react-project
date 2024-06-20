@@ -82,6 +82,9 @@ function App() {
           {/* <Route path="/Contact" element={<Contact/>}/> */}
           <Route path="/products" element={<Products/>}/> 
 
+          <Route path="/product-details/:id" element={<ProducDetails />}/> 
+          <Route path="/product" element={<Productpage/>} exact={true}/> 
+          {/* <Route path="*" element={<Error/>}/> */}
         </Routes>
         <div id="loading">
           <div id="loading-center">

@@ -329,7 +329,7 @@ export const Profile = ()=> {
 										{
 											wishlist1?.data.map((item)=>{
 												return <div className="col-lg-3 col-sm-6 col-12">
-													<div className="card">
+													<div className="card prof-card">
 														<div className="card-body">
 															<img src={`${Config.shop}${item.pic}`} alt=""/>
 															<p className="card-text" style={{textAlign:"right"}}>

@@ -41,7 +41,7 @@
       "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
       "unitprice": 560,
       "quantity": 1,
-      "date": "13/06/2024",
+      "date": "05-04-2024",
       "NewPrice": 150000,
       "OldPrice": 320000,
       "sku": "Samsung C49J89: £875, Debenhams Plus",
@@ -130,6 +130,7 @@
       "name": "Samsung C49J89: £875, Debenhams Plus",
       "unitprice": 450,
       "quantity": 1,
+      "date": "13/06/2024",
       "NewPrice": 150000,
       "OldPrice": 320000,
       "sku": "Samsung C49J89: £875, Debenhams Plus",
@@ -184,574 +185,24 @@
   ],
   "wishlist": [
     {
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ],
-      "id": "9b43"
-    },
-    {
-      "id": "11",
-      "pic": "product-13.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
+      "id": "6",
+      "pic": "product-3.jpg",
+      "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
+      "unitprice": 560,
+      "quantity": 1
     },
     {
       "id": "7",
       "pic": "product-5.jpg",
       "name": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
       "unitprice": 450,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "pic": "product-1.jpg",
-      "name": "ترازوی آشپزخانه فوق نازک شیشه ای با کیفیت بالا",
-      "unitprice": 500,
       "quantity": 1
     },
     {
       "id": "8",
       "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "pic": "product-13.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "pic": "product-3.jpg",
-      "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
-      "unitprice": 560,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
       "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "pic": "product-9.jpg",
-      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "NewPrice": 150000,
-      "OldPrice": 320000,
-      "sku": "Samsung C49J89: £875, Debenhams Plus",
-      "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
-        },
-        {
-          "name": "product-20.jpg"
-        },
-        {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
-        }
-      ],
-      "comment": [
-        {
-          "comment": "hello this is Ali Ghorbani",
-          "name": "ali",
-          "date": "2024/2/2"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "10/06/2024"
-    },
-    {
-      "id": "6",
-      "pic": "product-3.jpg",
-      "name": "LG 27UD58: £347.21, Ebuyer.com",
-      "unitprice": 560,
-      "quantity": 1,
-      "date": "10/06/2024"
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1,
-      "date": "10/06/2024"
-    },
-    {
-      "id": "469a",
-      "comment": "dfghj"
-    },
-    {
-      "id": "53b0",
-      "sender_name": "+562",
-      "comment": "dfghj"
-    },
-    {
-      "id": "2ad5",
-      "sender_name": "+5623",
-      "sender_email": "yiujkl@tyyhjkl",
-      "comment": "dfghj"
-    },
-    {
-      "id": "d5b3",
-      "sender_name": "526787775623",
-      "sender_email": "edrtfyguhji@ertfgyhujklkktyuhjik",
-      "comment": "dfghj"
-    },
-    {
-      "id": "c3ca",
-      "sender_name": "m",
-      "sender_email": "b",
-      "comment": "nn,n"
-    },
-    {
-      "id": "db63",
-      "pro": 6,
-      "sender_name": "a",
-      "sender_email": "b",
-      "comment": "abcdef"
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "13/06/2024"
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "Samsung A20 Pro Ultra CPU 4/64 GB",
-      "unitprice": 720,
-      "quantity": 1,
-      "date": "14/06/2024"
-    },
-    {
-      "id": "7",
-      "pic": "product-5.jpg",
-      "name": "Samsung C49J89: £875, Debenhams Plus",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "14/06/2024"
-    },
-    {
-      "id": "8",
-      "pic": "product-7.jpg",
-      "name": "Blink Home Security Camera System 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "date": "14/06/2024"
+      "unitprice": 720
     }
   ],
   "blog": [
@@ -1060,13 +511,23 @@
       "comment": "i cant understand this blog , what is it about ? ",
       "blog_id": "3",
       "date": "2024/5/8",
-      "id": "2"
+      "id": 2
     },
     {
-      "id": "d274",
-      "name": "jhjhjhj",
-      "blog_id": "2",
-      "date": "2024/5/12"
+      "name": "ali",
+      "email": "gurbaniali97@gmail.com",
+      "comment": "hello !",
+      "blog_id": "1",
+      "date": "2024/5/18",
+      "id": 3
+    },
+    {
+      "name": "ali",
+      "email": "g@gmail.com",
+      "comment": "welldone !",
+      "blog_id": "4",
+      "date": "2024/5/20",
+      "id": 4
     }
   ],
   "aboutus": [

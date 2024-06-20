@@ -5633,5 +5633,17 @@ p.checkout-coupon input[type=text]:focus {
 /* star */
 .active-star{
   color:yellow;
- 
+}
+
+/* product details */
+.effect{
+  transition: all 0.3s ease-out 0s;
+  background-color: red;
+}
+
+.prof-card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

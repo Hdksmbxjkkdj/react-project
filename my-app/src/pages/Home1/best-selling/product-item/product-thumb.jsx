@@ -5,7 +5,7 @@ const ProductThumb = ({item}) => {
   return (
     <>
       <div className="product__thumb p-relative">
-        <Link to={"/product-details/:"+item?.id} className="w-img">
+        <Link to={"/product-details/"+item?.id} className="w-img">
           <img src={Config.shop+""+item?.pic} alt="product" />
           <img className="second-img" src={Config.shop+""+item?.seccondpic} />
         </Link>
