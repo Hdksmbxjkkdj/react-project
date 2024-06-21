@@ -28,15 +28,13 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
 
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
-        
+        console.log(searchParams)
         let oldParam = searchParams.get('category');
-
         switch (type) {
             case 'array':
                 if (oldParam != null) {
                     oldParam = [...new Set(oldParam.split(','))]
                     let index = oldParam.indexOf(filterValue.toString());
-
                     if (index > -1) {
                         oldParam.splice(index, 1);
                         filterValue = oldParam
@@ -61,11 +59,11 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
                 }
                 break;
         }
-
+        
         var query = '?' + searchParams.toString();
         var newRelativePathQuery = window.location.pathname + query;
-        window?.history.pushState(null, '', newRelativePathQuery);
-
+         var t=window?.history.pushState(null, '', newRelativePathQuery);
+         
         getResultFilter(query, setItems, eMessage, local);
 
     } else {
