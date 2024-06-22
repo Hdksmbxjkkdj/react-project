@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { Filter,removeFilter } from "../Components/Filter";
-// import{Local,lang} from "../../Utils"
+import{Local,lang} from "../../Utils"
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 export const DomainPrice =({setItems,productLength,domain_price})=>{
@@ -24,7 +24,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
    
     //css
     const eMessage="errore_message"
-    // const local=Local()
+     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
     useEffect(()=>{
         SideOffcanvasToggle('.filter-toggle','product__widget')
@@ -36,7 +36,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
         const val=window?.$("#amount").val()
           console.log(val)
         // window?.$("#amount").val()=useParams()
-        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+         Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
         // Filter(setItems, productLength, 'min', ui.values[0], eMessage, 'domain', 'max', ui.values[1])
 
     } 

@@ -4,7 +4,7 @@ import { Notif } from "../../Utils";
 const getResultFilter = async (query, setItems, eMessage, local) => {
     let url = '/' + local + '/products/filter' + query
     let status = null
-
+     
     try {
         let message;
 
