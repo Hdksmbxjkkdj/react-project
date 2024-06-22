@@ -13,7 +13,6 @@ export const Products = ({sidebars}) =>{
         axios.get(`http://localhost:313/product-category`).then((res)=>{
             setCategory(res);
         });
-        console.log(items?.length)
     },[]);
     //allitems
     const[items,setItems]=useState()
