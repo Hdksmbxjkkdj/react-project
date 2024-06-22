@@ -3,8 +3,8 @@ import { Notif } from "../../Utils";
 
 const getResultFilter = async (query, setItems, eMessage, local) => {
     let url = '/' + local + '/products/filter' + query
+    
     let status = null
-
     try {
         let message;
 
@@ -23,18 +23,20 @@ const getResultFilter = async (query, setItems, eMessage, local) => {
     }
 }
 
-export const Filter = (setItems, length, filterItem, filterValue, eMessage, local, type = 'str', secondFilterItem = null, secendFilterValue = null) => {
+export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
+   
     if (filterItem == null || filterItem == undefined) return
-
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
-        console.log(searchParams)
         let oldParam = searchParams.get('category');
         switch (type) {
+
             case 'array':
                 if (oldParam != null) {
                     oldParam = [...new Set(oldParam.split(','))]
+                    
                     let index = oldParam.indexOf(filterValue.toString());
+                 
                     if (index > -1) {
                         oldParam.splice(index, 1);
                         filterValue = oldParam
@@ -43,12 +45,16 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
                             filterValue = [...oldParam, filterValue]
                         }
                     }
+                   
+
 
                 }
-                searchParams.set(filterItem, filterValue);
+                 searchParams.set(filterItem, filterValue);
                 break;
+
             case 'domain':
                 searchParams.set(filterItem, filterValue);
+
                 searchParams.set(secondFilterItem, secendFilterValue);
                 break;
             default:
@@ -62,7 +68,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
         
         var query = '?' + searchParams.toString();
         var newRelativePathQuery = window.location.pathname + query;
-         var t=window?.history.pushState(null, '', newRelativePathQuery);
+        window?.history.pushState(null, '', newRelativePathQuery);
          
         getResultFilter(query, setItems, eMessage, local);
 
