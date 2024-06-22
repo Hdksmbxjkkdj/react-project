@@ -1,5 +1,5 @@
 import { useEffect,useState } from "react"
-import {Local} from "../../Utils";
+ import {Local} from "../../Utils";
 import { Filter,removeFilter } from "../Components/Filter";
 import{Local,lang} from "../../Utils"
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
@@ -13,31 +13,35 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
               min: 0,
               max: 500,
               values: [75, 300],
-             slide: function (event, ui) {
-                 window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-               
-            }, 
+            slide: function (event, ui) {
+            window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            
+             
+             }, 
             stop: function (event, ui) {
-                rangeIsChanged(ui)
+               rangeIsChanged(ui)
             }
         });
-              window?.$("#amount").val("$" +window?.$("#slider-range").slider("values", 0) +
-             " - $" + window?.$("#slider-range").slider("values", 1));
+           window?.$("#amount").val("$" +window?.$("#slider-range").slider("values", 0) +
+          " - $" + window?.$("#slider-range").slider("values", 1));
     },[])
    
     //css
     const eMessage="errore_message"
-     const local=Local()
+    const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
     useEffect(()=>{
         SideOffcanvasToggle('.filter-toggle','product__widget')
-        // window?.$("#amount").val()
+        
      
     }
     )
     const rangeIsChanged=(ui)=>{
+       
+         var limit=ui.values
+         console.log(limit)
         // window?.$("#amount").val()=useParams()
-        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, 'domain', 'max', ui.values[1])
         Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
 
     } 
@@ -62,10 +66,10 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
                                                         <div>
                                                             <form action="#">
                                                                 <input type="text" id="amount" readonly 
-                                                                //  iniMin={domain_price?.min}
-                                                                //  iniMax={domain_price?.max}
-                                                                 min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
-                                                                 max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
+                                                                 iniMin={domain_price?.min}
+                                                                iniMax={domain_price?.max}
+                                                                  min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
+                                                                  max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
                                                                  />
                                                                
                                                             </form>
