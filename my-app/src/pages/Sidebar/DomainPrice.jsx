@@ -1,4 +1,5 @@
 import { useEffect,useState } from "react"
+import {Local} from "../../Utils";
 import { Filter,removeFilter } from "../Components/Filter";
 import{Local,lang} from "../../Utils"
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
@@ -6,6 +7,7 @@ import { useParams } from "react-router-dom";
 export const DomainPrice =({setItems,productLength,domain_price})=>{
     //css
     useEffect(() => {
+        let amount = window?.$('#amount')
         window?.$("#slider-range").slider({
              range: true,
               min: 0,
@@ -13,12 +15,13 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
               values: [75, 300],
              slide: function (event, ui) {
                  window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+               
             }, 
             stop: function (event, ui) {
                 rangeIsChanged(ui)
             }
         });
-         window?.$("#amount").val("$" +window?.$("#slider-range").slider("values", 0) +
+              window?.$("#amount").val("$" +window?.$("#slider-range").slider("values", 0) +
              " - $" + window?.$("#slider-range").slider("values", 1));
     },[])
    
@@ -33,11 +36,9 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     }
     )
     const rangeIsChanged=(ui)=>{
-        const val=window?.$("#amount").val()
-          console.log(val)
         // window?.$("#amount").val()=useParams()
-         Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
-        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, 'domain', 'max', ui.values[1])
+        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+        Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
 
     } 
     
@@ -61,12 +62,14 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
                                                         <div>
                                                             <form action="#">
                                                                 <input type="text" id="amount" readonly 
-                                                                 iniMin={domain_price?.min}
-                                                                 iniMax={domain_price?.max}
-                                                                 min={searchParam?.get('min') ? searchParam.get('min'):domain_price?.min}
+                                                                //  iniMin={domain_price?.min}
+                                                                //  iniMax={domain_price?.max}
+                                                                 min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
                                                                  max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
                                                                  />
+                                                               
                                                             </form>
+                                                        
                                                         </div>
                                                         <div id="slider-range"></div>
                                                     </div>
@@ -77,6 +80,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
                                 </div>
                             </div>
     </>
+    
 
 }
 
