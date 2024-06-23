@@ -6,7 +6,7 @@ const ProductItemlg = (props)=> {
         <>
       <div className="product__item white-bg">
         <ProductThumb item={props?.slider}></ProductThumb>
-        <ProductContentlg></ProductContentlg>
+        <ProductContentlg item={props?.slider}></ProductContentlg>
       </div>
     </>
     )

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Notif} from "../../Utils/Notif";
 import axios from "axios";
 import {Link} from "react-router-dom";
@@ -10,11 +10,6 @@ const Login = () => {
   })
   function loginUser()
   {
-    if(login.email=="" || login.password=="")
-    {
-      Notif('error',"لطفا اطلاعاتتان را تکمیل نمایید ")
-      return
-    }
     axios.get(`http://localhost:313/register?email=${login.email}`).then((e)=>{
       if(e.data[0]==undefined || e?.data[0].pass!=login.password)
       {
@@ -42,6 +37,7 @@ const Login = () => {
                       type="text"
                       placeholder="آدرس ایمیل"
                       onChange={(e)=>setLogin({...login,email:e.target.value})}
+                      required
                     />
                     <label for="pass">
                       کلمه عبور <span>**</span>
@@ -51,14 +47,15 @@ const Login = () => {
                       type="password"
                       placeholder="وارد کردن کلمه عبور"
                       onChange={(e)=>setLogin({...login,password:e.target.value})}
+                      required
                     />
                     <div class="login-action mb-20 fix">
                       <span class="log-rem f-left">
-                        <input id="remember" type="checkbox" />
+                        <input id="remember" type="checkbox"/>
                         <label for="remember">مرا به خاطر داشته باش</label>
                       </span>
                       <span class="forgot-login f-right">
-                        <a href="#" onClick={()=>alert("متاسفانه کاری نمیتوان برای شما انجام داد")}>فراموشی رمز عبور</a>
+                        <a onClick={()=>alert("متاسفانه کاری نمیتوان برای شما انجام داد")}>فراموشی رمز عبور</a>
                       </span>
                     </div>
                     <button class="t-y-btn w-100" type="submit">ورود</button>

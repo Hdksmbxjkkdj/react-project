@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AddToWishlist } from "./AddToWishlist";
 import { ModalContext } from "../../../../context/modal";
+import axios from "axios";
+import { Notif } from "../../../../Utils/Notif";
 const ProductAction = ({item})=> {
-  "use srict";
   const {modal,setModal} = useContext(ModalContext)
   function Set()
   {

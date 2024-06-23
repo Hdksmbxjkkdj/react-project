@@ -60,7 +60,7 @@ const Cart = () => {
                                   </td>
                                   <td className="product-quantity">
                                     <div className="cart-plus-minus">
-                                      <input type="text" value={items.quantity} />
+                                      <input type="text" value={items.quantity}/>
                                     </div>
                                   </td>
                                   <td className="product-subtotal">

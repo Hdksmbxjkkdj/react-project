@@ -1,15 +1,17 @@
-import { Hero } from "./hero";
-import { Banner } from "./hero/banner";
-import { Features } from "./features";
-import { BestSelling } from "./best-selling";
-import { Adds } from "./adds";
-import { FlashDeal } from "./flashdeal";
-import { OnSell } from "./on-sell";
-import { FromTheBlog } from "./from-the-blog";
-import { ProgressWrap } from "../Components/Progress-wrap";
-import { useEffect, useState } from "react";
+import { event } from "jquery";
+import { useContext, useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
+import { CartContext } from "../../context/CardContext";
 import { ModalContext } from "../../context/modal";
+import { AddToCart } from "../Cart/AddToCart";
+import { ProgressWrap } from "../Components/Progress-wrap";
+import { Adds } from "./adds";
+import { BestSelling } from "./best-selling";
+import { Features } from "./features";
+import { FlashDeal } from "./flashdeal";
+import { FromTheBlog } from "./from-the-blog";
+import { Hero } from "./hero";
+import { OnSell } from "./on-sell";
 var filename1 = [
   { pic: "top/banner-top-1.jpg", name: "banner-1" },
   { pic: "top/banner-top-2.jpg", name: "banner-2" },
@@ -65,6 +67,8 @@ const Home1 = () => {
   useEffect(()=>{
     (modal.show) && window?.$(`#${modal.id}`).modal("show");
   },[modal])
+  const [value,setValue] = useState(0);
+  const {cart,setCart} = useContext(CartContext)
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>
@@ -176,11 +180,11 @@ const Home1 = () => {
                           <div class="pro-quan-area d-lg-flex align-items-center">
                             <div class="product-quantity mr-20 mb-25">
                               <div class="cart-plus-minus p-relative">
-                                <input type="text" value="1" />
+                                <input type="text" value={value} onChange={(e)=>setValue(e.target.value)}/>
                               </div>
                             </div>
                             <div class="pro-cart-btn mb-25">
-                              <button class="t-y-btn" type="submit">
+                              <button class="t-y-btn" type="submit" onClick={()=>AddToCart(event,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,"error",null)}>
                                 لیست خرید +
                               </button>
                             </div>
@@ -201,3 +205,4 @@ const Home1 = () => {
 };
 
 export { Home1 };
+

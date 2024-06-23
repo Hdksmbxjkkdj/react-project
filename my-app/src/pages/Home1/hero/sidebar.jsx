@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 
 const Sidebar = ()=> {
+    function toggling()
+    {
+        window?.$(".cat__menu").slideToggle("slow")
+    }
     return (
         <>
             <div className="cat__menu-wrapper">
                                 <div className="cat-toggle">
-                                    <button type="button" className="cat-toggle-btn"><i className="fa fa-bars"></i> Shop by department</button>
+                                    <button type="button" className="cat-toggle-btn" onClick={toggling}><i className="fa fa-bars"></i> خرید براساس دپارتمان</button>
                                     <div className="cat__menu">
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <Link to="product">همه محصولات<i className="fa fa-angle-down"></i></Link>
+                                                    <Link to="product">همه محصولات<i className="fa fa-angle-up"></i></Link>
                                                     <ul className="mega-menu">
                                                         <li><Link to="product">صفحات فروشگاهی</Link>
                                                             <ul className="mega-item">
@@ -59,16 +63,16 @@ const Sidebar = ()=> {
                                                 </li>
                                                 <li>
                                                     <Link to="product">بیشترین فروش
-                                                        <span className="cat-label">hot</span>
+                                                        <span className="cat-label">داغ</span>
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link to="product">ده محصول برتر
-                                                        <span className="cat-label green">new</span>
+                                                        <span className="cat-label green">جدید</span>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">ورودی های جدید <i className="fa fa-angle-down"></i></Link>
+                                                    <Link to="product">ورودی های جدید <i className="fa fa-angle-up"></i></Link>
                                                     <ul className="submenu">
                                                         <li><Link to="product">لوازم خانگی</Link></li>
                                                         <li><Link to="product">تکنولوژی</Link>

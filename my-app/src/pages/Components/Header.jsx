@@ -1,14 +1,14 @@
-import { CartContext } from "../../context/CardContext";
+import { Event as event } from "jquery";
 import { useContext, useState } from "react";
-import { Menu } from "./Menu";
-import { Config } from "../../Utils/config";
 import { Link } from "react-router-dom";
+import { Config } from "../../Utils/config";
+import { CartContext } from "../../context/CardContext";
+import { RemoveCartItem } from "../Cart/RemoveCartItem";
+import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
-// import { SearchModal } from "./SearchModal";
 
 const Header = () => {
   window?.$("document").ready(function () {
-    // window?.$("select").niceSelect();
     window?.$(window).on("scroll", function () {
       var scroll = window?.$(window).scrollTop();
       if (scroll < 100) {
@@ -47,12 +47,21 @@ const Header = () => {
       window?.$(".body-overlay").removeClass("opened");
     });
   });
-  const { cart } = useContext(CartContext);
+  const { cart,setCart } = useContext(CartContext);
   const { searching } = ItemsSearch();
   const [reslut, setResult] = useState();
+  const param = window.location.pathname.split("/").pop();
+  function tot()
+  {
+    var total=0;
+    cart.forEach(element => {
+      total+=element.unitprice;
+      return total;
+    });
+  }
   return (
     <>
-      <header>
+      <header className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>
         <div className="header__area">
           <div className="header__top d-none d-sm-block">
             <div className="container">
@@ -93,6 +102,81 @@ const Header = () => {
                         <img src={"./img/logo/logo-black.png"} alt="logo" />
                       </Link>
                     </div>
+                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" key={Math.random()}>
+                      <a href="javascript:void(0);" className="cart__toggle text-center" style={{lineHeight:"3rem"}}>
+                        <i className="fa fa-cart-shopping fs-5"></i>
+                        <span className="cart__total-item">{cart?.length}</span>
+                      </a>
+                      <div className="cart__mini">
+                        <div className="cart__close">
+                          <button type="button" className="cart__close-btn">
+                            <i className="fa fa-times"></i>
+                          </button>
+                        </div>
+                            <div className="cart__title">
+                              <h4>سبد خرید من</h4>
+                              <span>({cart?.length} محصول)</span>
+                            </div>
+                        <ul className="cart__item-container px-2">
+                          {cart?.length > 0 &&
+                            cart.map((item) => {
+                              return (
+                                <>
+                                  <li>
+                                    <div className="cart__item d-flex justify-content-between align-items-center">
+                                      <div className="cart__inner d-flex">
+                                        <div className="cart__thumb">
+                                          <Link to={`product-details/${item.id}`}>
+                                            <img
+                                              src={Config.shop + "" + item.pic}
+                                              alt=""
+                                            />
+                                          </Link>
+                                        </div>
+                                        <div className="cart__details">
+                                          <h6>
+                                            <Link to={`product-details/${item.id}`}>
+                                              {" "}
+                                              {item.name}
+                                            </Link>
+                                          </h6>
+                                          <div className="cart__price">
+                                            <span>{item.unitprice}$</span>
+                                          </div>
+                                        </div>
+                                          <div className="mx-2">
+                                            <button onClick={()=>RemoveCartItem(event, item.id, null, setCart, "error", true)}>
+                                              <i className="fa fa-times fs-6 fw-bold"></i>
+                                            </button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </>
+                              );
+                            })}
+
+                            </ul>
+                            <div className="cart__sub d-flex justify-content-between align-items-center">
+                              <h6>جمع</h6>
+                              <span className="cart__sub-total">
+                                {console.log(tot)}
+                                </span>
+                            </div>
+                            <Link
+                              to="/checkout"
+                              className="t-y-btn w-100 mb-10"
+                            >
+                              رفتن به checkout
+                            </Link>
+                            <Link
+                              to="/cart"
+                              className="t-y-btn t-y-btn-border w-100 mb-10"
+                            >
+                              دیدن لیست خرید
+                            </Link>
+                      </div>
+                    </div>
                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
                       <div className="header__hotline-icon">
                         <i className="fa fa-headset"></i>
@@ -108,7 +192,7 @@ const Header = () => {
                 </div>
                 <div className="col-xl-8 col-lg-9">
                   <div className="header__info-right">
-                    <div className="header__search f-left d-none d-sm-block">
+                    <div className="header__search f-right d-none d-sm-block">
                       <form action="#">
                         <div className="header__search-box">
                           <input
@@ -179,7 +263,7 @@ const Header = () => {
                                 <div className="modal-footer">
                                   <button
                                     type="button"
-                                    className="btn btn-danger"
+                                    className="close-modal"
                                     data-bs-dismiss="modal"
                                   >
                                     <i className="fa fa-times"></i>
@@ -189,7 +273,7 @@ const Header = () => {
                             </div>
                           </div>
 
-                          <button type="submit">Search</button>
+                          <button type="submit"><i className="fa fa-search"></i></button>
                         </div>
                         <div className="header__search-cat">
                           <select>
@@ -208,84 +292,6 @@ const Header = () => {
                           </select>
                         </div>
                       </form>
-                    </div>
-                    <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" key={Math.random()}>
-                      <a href="javascript:void(0);" className="cart__toggle text-center" style={{lineHeight:"3rem"}}>
-                        <i className="fa fa-cart-shopping fs-5"></i>
-                        <span className="cart__total-item">{cart?.length}</span>
-                      </a>
-                      <span className="cart__content">
-                        <span className="cart__my">سبد خرید من:</span>
-                        <span className="cart__total-price">$ 255.00</span>
-                      </span>
-                      <div className="cart__mini">
-                        <div className="cart__close">
-                          <button type="button" className="cart__close-btn">
-                            <i className="fa fa-times"></i>
-                          </button>
-                        </div>
-                        <ul>
-                          <li>
-                            <div className="cart__title">
-                              <h4>سبد خرید من</h4>
-                              <span>({cart?.length} محصول)</span>
-                            </div>
-                          </li>
-                          {cart?.length > 0 &&
-                            cart.map((item) => {
-                              return (
-                                <>
-                                  <li>
-                                    <div className="cart__item d-flex justify-content-between align-items-center">
-                                      <div className="cart__inner d-flex">
-                                        <div className="cart__thumb">
-                                          <a href="product-details.html">
-                                            <img
-                                              src={Config.shop + "" + item.pic}
-                                              alt=""
-                                            />
-                                          </a>
-                                        </div>
-                                        <div className="cart__details">
-                                          <h6>
-                                            <a href="product-details.html">
-                                              {" "}
-                                              {item.name}
-                                            </a>
-                                          </h6>
-                                          <div className="cart__price">
-                                            <span>{item.unitprice}$</span>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </li>
-                                </>
-                              );
-                            })}
-
-                          <li>
-                            <div className="cart__sub d-flex justify-content-between align-items-center">
-                              <h6>جمع</h6>
-                              <span className="cart__sub-total">$250.50</span>
-                            </div>
-                          </li>
-                          <li>
-                            <Link
-                              to="/checkout"
-                              className="t-y-btn w-100 mb-10"
-                            >
-                              رفتن به checkout
-                            </Link>
-                            <Link
-                              to="/cart"
-                              className="t-y-btn t-y-btn-border w-100 mb-10"
-                            >
-                              دیدن لیست خرید
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -369,3 +375,4 @@ const Header = () => {
 };
 
 export { Header };
+

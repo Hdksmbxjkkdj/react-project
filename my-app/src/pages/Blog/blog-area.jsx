@@ -28,7 +28,7 @@ const BlogArea = (props) => {
                           </h3>
                           <div className="postbox__meta">
                             <p>
-                              Post Date: <span>{item.date}</span>
+                              تاریخ: <span>{item.date}</span>
                             </p>
                           </div>
                           <div className="postbox__text">
@@ -40,13 +40,13 @@ const BlogArea = (props) => {
                                 to={"/BlogDetaile/"+item.id}
                                 className="t-y-btn t-y-btn-grey"
                               >
-                                read more
+                                بیشتر...
                               </Link>
                             </div>
                             <div className="postbox__tag">
                               <p>
                                 {" "}
-                                Categories:{" "}
+                                عنوان:{" "}
                                 <a href="blog.html">{item.category}</a>
                               </p>
                             </div>

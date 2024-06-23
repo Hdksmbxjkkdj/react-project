@@ -21,7 +21,6 @@ throw new Error('template requires jQuery')
 //  to the body tag.
 
 
-
 +function ($) {
   'use strict'
 
@@ -1579,5 +1578,3 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
-
