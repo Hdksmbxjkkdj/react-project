@@ -8,11 +8,10 @@ const Checkout = () => {
       setitem(res);
     });
   }, []);
-  function total(){
-    var tot=0;
-    for(var i=0;i<item?.data.length;i++)
-    {
-        tot=tot+item?.data[i].unitprice;
+  function total() {
+    var tot = 0;
+    for (var i = 0; i < item?.data.length; i++) {
+      tot = tot + item?.data[i].unitprice;
     }
     return tot.toFixed(2);
   }
@@ -25,39 +24,39 @@ const Checkout = () => {
             <div class="col-md-6">
               <div class="coupon-accordion">
                 <h3>
-                  Returning customer?{" "}
-                  <span id="showlogin">Click here to login</span>
+                  مشتری بازگشتی هستید ؟{" "}
+                  <span id="showlogin">اینجا را کلیک کنید تا وارد شوید</span>
                 </h3>
                 <div id="checkout-login" class="coupon-content">
                   <div class="coupon-info">
                     <p class="coupon-text">
                       Quisque gravida turpis sit amet nulla posuere lacinia.
-                      Cras sed est sit amet ipsum luctus.
+                      Cras sed est sit amet ipsum luctus. سلام
                     </p>
                     <form action="#">
                       <p class="form-row-first">
                         <label>
-                          Username or email <span class="required">*</span>
+                          نام کاربری یا ایمیل <span class="required">*</span>
                         </label>
                         <input type="text" />
                       </p>
                       <p class="form-row-last">
                         <label>
-                          Password <span class="required">*</span>
+                          گذرواژه <span class="required">*</span>
                         </label>
                         <input type="text" />
                       </p>
                       <p class="form-row">
                         <button class="t-y-btn t-y-btn-grey" type="submit">
-                          Login
+                          ورود
                         </button>
                         <label>
                           <input type="checkbox" />
-                          Remember me
+                          مرا به خاطر داشته باش
                         </label>
                       </p>
                       <p class="lost-password">
-                        <a href="#">Lost your password?</a>
+                        <a href="#">فراموشی گذرواژه</a>
                       </p>
                     </form>
                   </div>
@@ -67,8 +66,8 @@ const Checkout = () => {
             <div class="col-md-6">
               <div class="coupon-accordion">
                 <h3>
-                  Have a coupon?{" "}
-                  <span id="showcoupon">Click here to enter your code</span>
+                  آیا کد تخفیف دارید ؟
+                  <span id="showcoupon">کد تخفیف را در اینجا وارد نمایید</span>
                 </h3>
                 <div id="checkout_coupon" class="coupon-checkout-content">
                   <div class="coupon-info">
@@ -76,7 +75,7 @@ const Checkout = () => {
                       <p class="checkout-coupon">
                         <input type="text" placeholder="Coupon Code" />
                         <button class="t-y-btn t-y-btn-grey" type="submit">
-                          Apply Coupon
+                          اعمال کد تخفیف
                         </button>
                       </p>
                     </form>
@@ -93,29 +92,29 @@ const Checkout = () => {
             <div class="row">
               <div class="col-lg-6">
                 <div class="checkbox-form">
-                  <h3>Billing Details</h3>
+                  <h3>جزییات صورتحصاب</h3>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="country-select">
                         <label>
-                          Country <span class="required">*</span>
+                          کشور <span class="required">*</span>
                         </label>
                         <select>
-                          <option value="volvo">bangladesh</option>
-                          <option value="saab">Algeria</option>
-                          <option value="mercedes">Afghanistan</option>
-                          <option value="audi">Ghana</option>
-                          <option value="audi2">Albania</option>
-                          <option value="audi3">Bahrain</option>
-                          <option value="audi4">Colombia</option>
-                          <option value="audi5">Dominican Republic</option>
+                          <option value="volvo">بنگلادش</option>
+                          <option value="saab">الجزایر</option>
+                          <option value="mercedes">افغانستان</option>
+                          <option value="audi">غنا</option>
+                          <option value="audi2">آلبانی</option>
+                          <option value="audi3">بحرین</option>
+                          <option value="audi4">کلمبیا</option>
+                          <option value="audi5">جمهوری چک</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          First Name <span class="required">*</span>
+                          نام <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="" />
                       </div>
@@ -123,21 +122,21 @@ const Checkout = () => {
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          Last Name <span class="required">*</span>
+                          نام خانوادگی <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="" />
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="checkout-form-list">
-                        <label>Company Name</label>
+                        <label>نام شرکت</label>
                         <input type="text" placeholder="" />
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="checkout-form-list">
                         <label>
-                          Address <span class="required">*</span>
+                          آدرس <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="Street address" />
                       </div>
@@ -153,7 +152,7 @@ const Checkout = () => {
                     <div class="col-md-12">
                       <div class="checkout-form-list">
                         <label>
-                          Town / City <span class="required">*</span>
+                          شهر <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="Town / City" />
                       </div>
@@ -161,7 +160,7 @@ const Checkout = () => {
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          State / County <span class="required">*</span>
+                          ایالت <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="" />
                       </div>
@@ -169,7 +168,7 @@ const Checkout = () => {
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          Postcode / Zip <span class="required">*</span>
+                          کد پستی <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="Postcode / Zip" />
                       </div>
@@ -177,7 +176,7 @@ const Checkout = () => {
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          Email Address <span class="required">*</span>
+                          آدرس ایمیل <span class="required">*</span>
                         </label>
                         <input type="email" placeholder="" />
                       </div>
@@ -185,7 +184,7 @@ const Checkout = () => {
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          Phone <span class="required">*</span>
+                          شماره همراه <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="Postcode / Zip" />
                       </div>
@@ -193,19 +192,18 @@ const Checkout = () => {
                     <div class="col-md-12">
                       <div class="checkout-form-list create-acc">
                         <input id="cbox" type="checkbox" />
-                        <label>Create an account?</label>
+                        <label>ایجاد حساب کاربری</label>
                       </div>
                       <div
                         id="cbox_info"
                         class="checkout-form-list create-account"
                       >
                         <p>
-                          Create an account by entering the information below.
-                          If you are a returning customer please login at the
-                          top of the page.
+                          ساخت یک حساب کاربری با اطلاعات بالا اگر شما یک مشتری
+                          بازگشتی هستید لطفا از طریق لینک بالا وارد شوید
                         </p>
                         <label>
-                          Account password <span class="required">*</span>
+                          گذرواژه حساب کاربری <span class="required">*</span>
                         </label>
                         <input type="password" placeholder="password" />
                       </div>
@@ -214,7 +212,7 @@ const Checkout = () => {
                   <div class="different-address">
                     <div class="ship-different-title">
                       <h3>
-                        <label>Ship to a different address?</label>
+                        <label>ارسال به یک آدرس متفاوت ؟</label>
                         <input id="ship-box" type="checkbox" />
                       </h3>
                     </div>
@@ -223,24 +221,24 @@ const Checkout = () => {
                         <div class="col-md-12">
                           <div class="country-select">
                             <label>
-                              Country <span class="required">*</span>
+                              کشور <span class="required">*</span>
                             </label>
                             <select>
-                              <option value="volvo">bangladesh</option>
-                              <option value="saab">Algeria</option>
-                              <option value="mercedes">Afghanistan</option>
-                              <option value="audi">Ghana</option>
-                              <option value="audi2">Albania</option>
-                              <option value="audi3">Bahrain</option>
-                              <option value="audi4">Colombia</option>
-                              <option value="audi5">Dominican Republic</option>
+                              <option value="volvo">بنگلادش</option>
+                              <option value="saab">الجزایر</option>
+                              <option value="mercedes">افغانستان</option>
+                              <option value="audi">غنا</option>
+                              <option value="audi2">آلبانی</option>
+                              <option value="audi3">بحرین</option>
+                              <option value="audi4">کلمبیا</option>
+                              <option value="audi5">جمهوری چک</option>
                             </select>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              First Name <span class="required">*</span>
+                              نام <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="" />
                           </div>
@@ -248,21 +246,21 @@ const Checkout = () => {
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              Last Name <span class="required">*</span>
+                              نام خانوادگی <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="" />
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="checkout-form-list">
-                            <label>Company Name</label>
+                            <label>نام شرکت</label>
                             <input type="text" placeholder="" />
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="checkout-form-list">
                             <label>
-                              Address <span class="required">*</span>
+                              آدرس <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="Street address" />
                           </div>
@@ -278,7 +276,7 @@ const Checkout = () => {
                         <div class="col-md-12">
                           <div class="checkout-form-list">
                             <label>
-                              Town / City <span class="required">*</span>
+                              شهر <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="Town / City" />
                           </div>
@@ -286,7 +284,7 @@ const Checkout = () => {
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              State / County <span class="required">*</span>
+                              ایالت <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="" />
                           </div>
@@ -294,7 +292,7 @@ const Checkout = () => {
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              Postcode / Zip <span class="required">*</span>
+                              کد پستی <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="Postcode / Zip" />
                           </div>
@@ -302,7 +300,7 @@ const Checkout = () => {
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              Email Address <span class="required">*</span>
+                              آدرس ایمیل <span class="required">*</span>
                             </label>
                             <input type="email" placeholder="" />
                           </div>
@@ -310,7 +308,7 @@ const Checkout = () => {
                         <div class="col-md-6">
                           <div class="checkout-form-list">
                             <label>
-                              Phone <span class="required">*</span>
+                              تلفن <span class="required">*</span>
                             </label>
                             <input type="text" placeholder="Postcode / Zip" />
                           </div>
@@ -319,12 +317,12 @@ const Checkout = () => {
                     </div>
                     <div class="order-notes">
                       <div class="checkout-form-list">
-                        <label>Order Notes</label>
+                        <label>دیگر یادداشت ها</label>
                         <textarea
                           id="checkout-mess"
                           cols="30"
                           rows="10"
-                          placeholder="Notes about your order, e.g. special notes for delivery."
+                          placeholder="نکاتی در مورد سفارش شما، به عنوان مثال یادداشت های ویژه برای تحویل."
                         ></textarea>
                       </div>
                     </div>
@@ -333,13 +331,13 @@ const Checkout = () => {
               </div>
               <div class="col-lg-6">
                 <div class="your-order mb-30 ">
-                  <h3>Your order</h3>
+                  <h3>سفارش شما</h3>
                   <div class="your-order-table table-responsive">
                     <table>
                       <thead>
                         <tr>
-                          <th class="product-name">Product</th>
-                          <th class="product-total">Total</th>
+                          <th class="product-name">محصول</th>
+                          <th class="product-total">کل</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -354,7 +352,9 @@ const Checkout = () => {
                                 </strong>
                               </td>
                               <td class="product-total">
-                                <span class="amount">${(item.unitprice.toFixed(2))}</span>
+                                <span class="amount">
+                                  ${item.unitprice.toFixed(2)}
+                                </span>
                               </td>
                             </tr>
                           );
@@ -362,32 +362,30 @@ const Checkout = () => {
                       </tbody>
                       <tfoot>
                         <tr class="cart-subtotal">
-                          <th>Cart Subtotal</th>
+                          <th>جمع کل</th>
                           <td>
-                            <span class="amount">
-                                ${total()}
-                            </span>
+                            <span class="amount">${total()}</span>
                           </td>
                         </tr>
                         <tr class="shipping">
-                          <th>Shipping</th>
+                          <th>ارسال</th>
                           <td>
                             <ul>
                               <li>
                                 <input type="radio" name="shipping" />
                                 <label>
-                                  Flat Rate: <span class="amount">$7.00</span>
+                                  نرخ ثابت: <span class="amount">$7.00</span>
                                 </label>
                               </li>
                               <li>
                                 <input type="radio" name="shipping" />
-                                <label>Free Shipping:</label>
+                                <label>ارسال رایگان:</label>
                               </li>
                             </ul>
                           </td>
                         </tr>
                         <tr class="order-total">
-                          <th>Order Total</th>
+                          <th>هزینه سفارش</th>
                           <td>
                             <strong>
                               <span class="amount">$215.00</span>
@@ -410,7 +408,7 @@ const Checkout = () => {
                             aria-expanded="true"
                             aria-controls="bankOne"
                           >
-                            Direct Bank Transfer
+                            انقال مستقیم بانکی
                           </button>
                         </h2>
                         <div
@@ -420,10 +418,10 @@ const Checkout = () => {
                           data-bs-parent="#checkoutAccordion"
                         >
                           <div class="accordion-body">
-                            Make your payment directly into our bank account.
-                            Please use your Order ID as the payment reference.
-                            Your order won’t be shipped until the funds have
-                            cleared in our account.
+                            پرداخت خود را مستقیماً به حساب بانکی ما انجام دهید.
+                            لطفا از شناسه سفارش خود به عنوان مرجع پرداخت استفاده
+                            کنید. سفارش شما تا زمانی که وجوه ارسال نشود ارسال
+                            نخواهد شد در حساب ما پاک شد.
                           </div>
                         </div>
                       </div>
@@ -437,7 +435,7 @@ const Checkout = () => {
                             aria-expanded="false"
                             aria-controls="payment"
                           >
-                            Cheque Payment
+                            پرداخت را چک کنید
                           </button>
                         </h2>
                         <div
@@ -447,8 +445,8 @@ const Checkout = () => {
                           data-bs-parent="#checkoutAccordion"
                         >
                           <div class="accordion-body">
-                            Please send your cheque to Store Name, Store Street,
-                            Store Town, Store State / County, Store Postcode.
+                            لطفا چک خود را به نام فروشگاه، خیابان فروشگاه، شهر
+                            فروشگاه، ایالت فروشگاه / شهرستان، کدپستی فروشگاه.
                           </div>
                         </div>
                       </div>
@@ -462,7 +460,7 @@ const Checkout = () => {
                             aria-expanded="false"
                             aria-controls="paypal"
                           >
-                            PayPal
+                            پی پال
                           </button>
                         </h2>
                         <div
@@ -472,15 +470,15 @@ const Checkout = () => {
                           data-bs-parent="#checkoutAccordion"
                         >
                           <div class="accordion-body">
-                            Pay via PayPal; you can pay with your credit card if
-                            you don’t have a PayPal account.
+                            پرداخت از طریق پی پال؛ اگر می توانید با کارت اعتباری
+                            خود پرداخت کنید شما یک حساب پی پال ندارید.
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="order-button-payment mt-20">
                       <button type="submit" class="t-y-btn t-y-btn-grey">
-                        Place order
+                      ثبت سفارش
                       </button>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -61,7 +61,7 @@
     <script src="./test.js"></script>
     <script src="./backToTop.js"></script>
     <script src="./meanmenu.js"></script>
-    <script src="./nice-select.min.js"></script>
+    <script src="/nice-select.min.js"></script>
     <script src="./js/template.js"></script>
     <script src="./js/pages/chat-popup.js"></script>
     <script src="./assets/icons/feather-icons/feather.min.js"></script>
@@ -69,5 +69,10 @@
     <script src="./assets/vendor_components/dist/apexcharts.js"></script>
     <script src="./js/jquery-ui-slider-range.js"></script>
     <script src="./js/template.js"></script>
+    <script>
+      $("document").ready(function(){
+        $("select").niceSelect();
+      })
+    </script>
   </body>
 </html>

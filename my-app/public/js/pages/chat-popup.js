@@ -23,7 +23,7 @@ $(function() {
     setTimeout(function() {
 		
 	var fake = [
-	  'Did you purchase the template?'
+	  'آیا قالب هارا خریداری کرده اید ؟'
 	];
       generate_button_message(fake, 'user');  
     }, 1000)

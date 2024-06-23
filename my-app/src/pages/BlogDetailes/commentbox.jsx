@@ -11,10 +11,10 @@ const Comment = (props) => {
             <h5>{props.item.name}</h5>
             <span> {props.item.date} </span>
             <a className="reply" href="#">
-              Leave Reply
+              ارسال پاسخ
             </a>
           </div>
-          <p>{props.item.text}</p>
+          <p>{props.item.comment}</p>
         </div>
       </div>
     </>

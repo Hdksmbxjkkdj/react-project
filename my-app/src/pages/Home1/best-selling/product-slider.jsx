@@ -50,6 +50,7 @@ const ProductSlider = ({ type, res, item }) => {
           nav
           {...Option}
           key={Math.random()}
+          style={{direction:"ltr"}}
         >
           {slider?.data?.map((item) => {
             return (
@@ -66,7 +67,7 @@ const ProductSlider = ({ type, res, item }) => {
   if (type == "blog") {
     return (
       <>
-        <OwlCarousel className="owl-carousel owl-theme" items={5} nav {...Option} key={Math.random()}>
+        <OwlCarousel className="owl-carousel owl-theme" items={5} nav {...Option} key={Math.random()} style={{direction:"ltr"}}>
         {blog?.data?.map((item) => {
           return (
             <div className="product__item-wrapper">
@@ -80,7 +81,7 @@ const ProductSlider = ({ type, res, item }) => {
   }
   return (
     <>
-      <OwlCarousel className="owl-carousel owl-theme" loop nav {...Option} key={Math.random()}>
+      <OwlCarousel className="owl-carousel owl-theme" loop nav {...Option} key={Math.random()} style={{direction:"ltr"}}>
         {slider?.data?.map((item) => {
           return <ProductItem slider={item} type={"flex"}></ProductItem>;
         })}

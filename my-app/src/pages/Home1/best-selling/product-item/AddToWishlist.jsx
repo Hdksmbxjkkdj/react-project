@@ -16,11 +16,11 @@ export const AddToWishlist = async (id, pic, name, unitprice, quantity) => {
     })
     .then((response) => {
       console.log(response.data);
-      Notif('success',"added successfully")
+      Notif('success',"با موفقیت اضافه شد :)")
     });
   }
   catch(error)
   {
-    Notif('error',"there is an error")
+    Notif('error',"قبلا به علاقه مندی ها اضافه شده است !")
   }
 };

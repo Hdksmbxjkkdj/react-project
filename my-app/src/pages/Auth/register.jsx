@@ -24,6 +24,9 @@ const Register = () => {
         if(status==201)
         {
           Notif('success',"خوش آمدید !");
+          setTimeout(() => {
+            window.location.assign("/");
+          }, 500);
         }
         else
         {

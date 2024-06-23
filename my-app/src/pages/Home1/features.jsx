@@ -18,7 +18,7 @@ const Features = () => {
                 <>
                   <div className="col">
                     <div className="features__item features__item-last d-flex white-bg">
-                      <div className="features__icon mr-15">
+                      <div className="features__icon ml-15">
                         <i className={`fa ${item.icon}`}></i>
                       </div>
                       <div className="features__content">

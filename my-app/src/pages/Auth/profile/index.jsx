@@ -9,6 +9,7 @@ import { Show } from "./show";
 import { Config } from "../../../Utils/config";
 export const Profile = ()=> {
 
+	
 	'use strict';
 
 	const {cart} = useContext(CartContext);
@@ -104,7 +105,6 @@ export const Profile = ()=> {
             });
     return <div classNameName="hold-transition light-skin sidebar-mini theme-primary fixed">
         <div className="wrapper">
-	<div id="loader"></div>
 	
   <header className="main-header">
 	<div>	
@@ -387,9 +387,9 @@ export const Profile = ()=> {
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>Theron Trump</strong></a>
+									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
 									</p>
-									  2 day ago
+									  2 روز قبل
 								  </div>
 								  <div className="media-right">
 									  <div className="d-flex">
@@ -402,7 +402,7 @@ export const Profile = ()=> {
 								  </div>
 								</div>					
 								<div className="media pt-0">
-									<p>Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.</p>
+									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
 								</div>
 							  </div>
 							  <div className="media-list bb-1 bb-dashed border-light">
@@ -427,7 +427,7 @@ export const Profile = ()=> {
 								  </div>
 								</div>					
 								<div className="media pt-0">
-									<p>Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.</p>
+									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
 								</div>
 							  </div>
 							  <div className="media-list">
@@ -437,9 +437,9 @@ export const Profile = ()=> {
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>Tyler Mark</strong></a>
+									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
 									</p>
-									  7 day ago
+									  7 روز قبل
 								  </div>
 								  <div className="media-right">
 									  <div className="d-flex">
@@ -452,7 +452,7 @@ export const Profile = ()=> {
 								  </div>
 								</div>					
 								<div className="media pt-0">
-									<p>Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet.</p>
+									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
 								</div>
 							  </div>
 							  <div className="media-list bb-1 bb-dashed border-light">
@@ -462,9 +462,9 @@ export const Profile = ()=> {
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>Theron Trump</strong></a>
+									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
 									</p>
-									  2 day ago
+									  2 روز قبل
 								  </div>
 								  <div className="media-right">
 									  <div className="d-flex">
@@ -477,7 +477,7 @@ export const Profile = ()=> {
 								  </div>
 								</div>					
 								<div className="media pt-0">
-									<p>Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.</p>
+									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
 								</div>
 							  </div>
 							  <div className="media-list bb-1 bb-dashed border-light">
@@ -487,9 +487,9 @@ export const Profile = ()=> {
 								  </a>
 								  <div className="media-body">
 									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>Johen Doe</strong></a>
+									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
 									</p>
-									  5 day ago
+									  5 روز قبل
 								  </div>
 								  <div className="media-right">
 									  <div className="d-flex">
@@ -502,13 +502,13 @@ export const Profile = ()=> {
 								  </div>
 								</div>					
 								<div className="media pt-0">
-									<p>Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.</p>
+									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
 								</div>
 							  </div>
 							</div>
 						</div>
 						<div className="box-footer">
-							<a href="#" className="waves-effect waves-light d-block w-p100 btn btn-primary">See More Reviews</a>
+							<a href="#" className="waves-effect waves-light d-block w-p100 btn btn-primary">دیدن پاسخ های بیشتر</a>
 						</div>
 					</div>
 				</div>
@@ -787,33 +787,33 @@ export const Profile = ()=> {
                   <div id="dropdown-menu" className="dropdown-menu min-w-200">
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Color me-15"></span>
-                        New Group</a>
+                        گروه جدید</a>
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Clipboard me-15"><span className="path1"></span><span className="path2"></span><span className="path3"></span><span className="path4"></span></span>
-                        Contacts</a>
+                        اطلاعات</a>
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Group me-15"><span className="path1"></span><span className="path2"></span></span>
-                        Groups</a>
+                        گروه ها</a>
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Active-call me-15"><span className="path1"></span><span className="path2"></span></span>
-                        Calls</a>
+                        تماس ها</a>
                     <a className="dropdown-item fs-16" href="#">
                         <span className="icon-Settings1 me-15"><span className="path1"></span><span className="path2"></span></span>
-                        Settings</a>
+                        تنظیمات</a>
                     <div className="dropdown-divider"></div>
 					<a className="dropdown-item fs-16" href="#">
                         <span className="icon-Question-circle me-15"><span className="path1"></span><span className="path2"></span></span>
-                        Help</a>
+                        پشتیبانی</a>
 					<a className="dropdown-item fs-16" href="#">
                         <span className="icon-Notifications me-15"><span className="path1"></span><span className="path2"></span></span> 
-                        Privacy</a>
+                        خصوصی</a>
                   </div>
                 </div>
                 <div className="text-center flex-grow-1">
-                    <div className="text-dark fs-18">Mayra Sibley</div>
+                    <div className="text-dark fs-18">کاربر</div>
                     <div>
                         <span className="badge badge-sm badge-dot badge-primary"></span>
-                        <span className="text-muted fs-12">Active</span>
+                        <span className="text-muted fs-12">فعال</span>
                     </div>
                 </div>
                 <div className="chat-box-toggle">
@@ -832,26 +832,26 @@ export const Profile = ()=> {
                                 <img src="./img/images/avatar/2.jpg" className="avatar avatar-lg"/>
                             </span>
                             <div className="mx-10">
-                                <a href="#" className="text-dark hover-primary fw-bold">Mayra Sibley</a>
-                                <p className="text-muted fs-12 mb-0">2 Hours</p>
+                                <a href="#" className="text-dark hover-primary fw-bold">مایرا سیبلی</a>
+                                <p className="text-muted fs-12 mb-0">2 ساعت</p>
                             </div>
                         </div>
                         <div className="cm-msg-text">
-                            Hi there, I'm Jesse and you?
+                            سلام من جسی هستم 
                         </div>
                     </div>
                     <div className="chat-msg self">
                         <div className="d-flex align-items-center justify-content-end">
                             <div className="mx-10">
-                                <a href="#" className="text-dark hover-primary fw-bold">You</a>
-                                <p className="text-muted fs-12 mb-0">3 minutes</p>
+                                <a href="#" className="text-dark hover-primary fw-bold">شما</a>
+                                <p className="text-muted fs-12 mb-0">3 دقیقه</p>
                             </div>
                             <span className="msg-avatar">
                                 <img src="./img/images/avatar/3.jpg" className="avatar avatar-lg"/>
                             </span>
                         </div>
                         <div className="cm-msg-text">
-                           My name is Anne Clarc.         
+                           منم کاربر هستم         
                         </div>        
                     </div>
                     <div className="chat-msg user">
@@ -860,19 +860,19 @@ export const Profile = ()=> {
                                 <img src="./img/images/avatar/2.jpg" className="avatar avatar-lg"/>
                             </span>
                             <div className="mx-10">
-                                <a href="#" className="text-dark hover-primary fw-bold">Mayra Sibley</a>
-                                <p className="text-muted fs-12 mb-0">40 seconds</p>
+                                <a href="#" className="text-dark hover-primary fw-bold">ماریا سیبلی</a>
+                                <p className="text-muted fs-12 mb-0">40 ثانیه</p>
                             </div>
                         </div>
                         <div className="cm-msg-text">
-                            Nice to meet you Anne.<br/>How can i help you?
+                            خوشبختم کابر<br/>چطور میتونم بهت کمک کنم?
                         </div>
                     </div>
                 </div>
             </div>
             <div className="chat-input">      
                 <form>
-                    <input type="text" id="chat-input" placeholder="Send a message..."/>
+                    <input type="text" id="chat-input" placeholder="پیام شما"/>
                     <button type="submit" className="chat-submit" id="chat-submit">
                         <span className="icon-Send fs-22"></span>
                     </button>

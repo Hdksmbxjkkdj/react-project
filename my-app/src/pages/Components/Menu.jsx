@@ -7,14 +7,7 @@ export const Menu = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">خانه <i className="fa fa-angle-down"></i></Link>
-                    <ul className="submenu">
-                        <li><Link to="/">خانه طرح 1</Link></li>
-                        <li><Link  to="Home2">خانه طرح 2</Link></li>
-                       
-                        <li><Link to="Home3">خانه طرح 3</Link></li>
-                        <li><Link to="Home4">خانه طرح 4</Link></li>
-                    </ul>
+                    <Link to="/">خانه <i className="fa fa-home"></i></Link>
                 </li>
                 <li><Link to="product">ویژگی ها <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
@@ -31,15 +24,11 @@ export const Menu = () => {
                     </ul>
                 </li>
                 <li>
-                    <Link href="blog">وبلاگ <i className="fa fa-angle-down"></i></Link>
-                    <ul className="submenu">
-                        <li><Link to="Blog">وبلاگ</Link></li>
-                        <li><Link to="BlogDetaile">جزییات وبلاگ</Link></li>
-                    </ul>
+                    <Link to="/blog">وبلاگ <i className="fa fa-blog"></i></Link>
                 </li>
-                <li><Link to="About">درباره ما</Link></li>
-                <li><Link to="Contact">ارتباط با ما</Link></li>
-                <li>
+                <li><Link to="About">درباره ما <i className='fa fa-eject'></i></Link></li>
+                <li><Link to="Contact">ارتباط با ما <i className='fa fa-globe'></i></Link></li>
+                {/* <li>
                     <Link href="about">صفحات <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
                         <li><Link to="Login">ورود</Link></li>
@@ -49,7 +38,7 @@ export const Menu = () => {
                         <li><Link to="checkout">Checkout</Link></li>
                         <li><Link to="error">404 ارور</Link></li>
                     </ul>
-                </li>
+                </li> */}
             </ul>
         </nav>
     </>
