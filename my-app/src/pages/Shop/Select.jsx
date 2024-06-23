@@ -2,7 +2,6 @@
 
 export const Select =({items,setItems})=>{
     let searchParam=new URLSearchParams(window.location.search)
-    console.log(searchParam,'b')
     return<>
         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
             <div className="product__filter-right d-flex align-items-center justify-content-md-end">

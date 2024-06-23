@@ -28,7 +28,7 @@ export const Products = ({sidebars}) =>{
         axios.get(`http://localhost:313/domain-price`).then((res)=>{
             setPrice(res);
         });
-        console.log(price)
+      
     },[]);
     
     return<>

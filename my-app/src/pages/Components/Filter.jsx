@@ -1,15 +1,21 @@
 import axios from "axios";
 import { Notif } from "../../Utils";
-
+import { useEffect,useState } from "react";
 const getResultFilter = async (query, setItems, eMessage, local) => {
-    let url = '/' + local + '/products/filter' + query
     
+    // let url = '/' + local + '/products/filter' + query
+    let url='http://localhost:313/best_selling?price_like=500'
+     
+    
+
     let status = null
     try {
         let message;
 
         await axios.get(url).then((response) => {
+            console.log(response)
             setItems(response.data.items)
+
             if (response.data.status) status = response.data.status
             message = response.data.message
         })
@@ -23,12 +29,17 @@ const getResultFilter = async (query, setItems, eMessage, local) => {
     }
 }
 
+
+
+ 
+
 export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
-   
+    
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
         let oldParam = searchParams.get('category');
+       
         switch (type) {
 
             case 'array':
@@ -65,7 +76,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
                 }
                 break;
         }
-        
+
         var query = '?' + searchParams.toString();
         var newRelativePathQuery = window.location.pathname + query;
         window?.history.pushState(null, '', newRelativePathQuery);

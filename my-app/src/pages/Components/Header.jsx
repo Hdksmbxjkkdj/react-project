@@ -49,6 +49,7 @@ const Header = () => {
   });
   const { cart } = useContext(CartContext);
   const { searching } = ItemsSearch();
+ console.log();
   const [reslut, setResult] = useState();
   return (
     <>

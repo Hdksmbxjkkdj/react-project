@@ -12,7 +12,6 @@ export const Product = ()=>{
     const [info, setInfo] = useState();
     useEffect(() => {
             axios.get(`http://localhost:313/row`).then((res) => {
-
             setInfo(res);
         });
     }, []);

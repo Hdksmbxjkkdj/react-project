@@ -36,8 +36,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     }
     )
     const rangeIsChanged=(ui)=>{
-        // window?.$("#amount").val()=useParams()
-        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+        var limit= ui.values
         Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
 
     } 
@@ -62,8 +61,8 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
                                                         <div>
                                                             <form action="#">
                                                                 <input type="text" id="amount" readonly 
-                                                                //  iniMin={domain_price?.min}
-                                                                //  iniMax={domain_price?.max}
+                                                                iniMin={domain_price?.min}
+                                                                iniMax={domain_price?.max}
                                                                  min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
                                                                  max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
                                                                  />
