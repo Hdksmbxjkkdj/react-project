@@ -1,40 +1,51 @@
 import axios from "axios";
 import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
 const getResultFilter = async (query, setItems, eMessage, local) => {
-    
     // let url = '/' + local + '/products/filter' + query
-    let url='http://localhost:313/best_selling?price_like=500'
-     
-    
+    // let url='http://localhost:313/best_selling?price?min=720'
+     let url='http://localhost:313/best_selling?price=720'
+   
 
     let status = null
     try {
         let message;
 
         await axios.get(url).then((response) => {
-            console.log(response)
-            setItems(response.data.items)
-
+            
+          
+            // setItems(response.data.items)
+            setItems(response?.data)
+             
             if (response.data.status) status = response.data.status
             message = response.data.message
+          
         })
+        
+        
+
 
         if (status != null) {
             Notif('error', message)
-        }
+             console.log('3')
+         }
 
-    } catch (error) {
+     }
+     catch (error) {
         Notif('error', eMessage)
-    }
+        console.log('4')
+
+ }
+   
 }
 
 
 
  
 
+
 export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
-    
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
@@ -78,9 +89,11 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
         }
 
         var query = '?' + searchParams.toString();
+        // var newRelativePathQuery = window.location.pathname + query;
         var newRelativePathQuery = window.location.pathname + query;
+
         window?.history.pushState(null, '', newRelativePathQuery);
-         
+         console.log(query)
         getResultFilter(query, setItems, eMessage, local);
 
     } else {
@@ -88,11 +101,11 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
     }
 }
 
-// export const removeFilter = (setItems, eMessage, local) => {
-//     try {
-//         history.pushState(null, '', window.location.href.split('?')[0] + '?');
-//         getResultFilter('', setItems, eMessage, local)
-//     } catch (error) {
-//         Notif('error', 'your browser is oldest, please update it')
-//     }
-// }
+export const removeFilter = (setItems, eMessage, local) => {
+    try {
+        window?.history.pushState(null, '', window.location.href.split('?')[0] + '?');
+        getResultFilter('', setItems, eMessage, local)
+    } catch (error) {
+        Notif('error', 'your browser is oldest, please update it')
+    }
+}

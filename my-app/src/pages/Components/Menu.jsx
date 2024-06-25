@@ -27,7 +27,7 @@ export const Menu = () => {
                                 <li><Link to="product-details-download">محصولات قابل دانلود</Link></li>
                             </ul>
                         </li>
-                        <li><Link فخ="product">خرید بر اساس برند</Link></li>
+                        <li><Link to="product">خرید بر اساس برند</Link></li>
                     </ul>
                 </li>
                 <li>

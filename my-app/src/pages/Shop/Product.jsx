@@ -8,18 +8,12 @@ import { Config } from "../../Utils"
 import { Rank } from "../Components/Rank";
 
 // import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
-export const Product = ()=>{
-    const [info, setInfo] = useState();
-    useEffect(() => {
-            axios.get(`http://localhost:313/row`).then((res) => {
-            setInfo(res);
-        });
-    }, []);
+export const Product = ({items,setItems})=>{
+    console.log(items)
     return<>
-      
-        {info?.data.map((item, i)=>{
-           
-            return <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
+        {items?.map((item) =>{
+            return<>
+                <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
                         <div className="product__item white-bg mb-30">
                             <div className="product__thumb p-relative">
                                 <a href={"/product/" + item.id} className="w-img">
@@ -31,21 +25,21 @@ export const Product = ()=>{
                             </div>
                             <div className="product__content text-center">
                                 <h6 className="product-name">
-                                    <a className="product-item-link" href="product-details.html">{item.name}</a>
+                                    <a className="product-item-link" href="product-details.html">{item.text}</a>
                                 </h6>
                                 <div className="rating">
                                    <Rank></Rank>
                                 </div>
                                 <div class="product__sm-price">
-                                    <span className="price">${item.unitprice}</span>
+                                    <span className="price">${item.price}</span>
                                 </div>
                             </div>
                             <div className="product__add-btn">
                                 <button type="button">Add to Cart</button>
-                            </div>
                         </div>
-            </div>
-
+                        </div>
+                </div>
+             </>
         }
         )}
         </>

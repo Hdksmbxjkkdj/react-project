@@ -1,7 +1,7 @@
 export const Color = () =>{
     return<>
-                           <div className="product__widget-item mb-15">
-                                <div className="accordion" id="productWidgetAccordion">
+        <div className="product__widget-item mb-15">
+            <div className="accordion" id="productWidgetAccordion">
                                     <div className="accordion-item">
                                         <h2 className="accordion-header" id="headingOne">
                                             <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -43,7 +43,7 @@ export const Color = () =>{
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+            </div>
+        </div>
                            
     </>}

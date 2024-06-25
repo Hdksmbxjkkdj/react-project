@@ -15,6 +15,7 @@ const Blog = () => {
   useEffect(()=>{
     axios.get(`http://localhost:313/blog?_start=${start}&_limit=4`).then((response)=>{
       setitems(response);
+     
     })
   },[start])
   const [category,setcategory] = useState();
