@@ -11,7 +11,7 @@ import { Rank } from "../Components/Rank";
 export const Product = ({items,setItems})=>{
     console.log(items)
     return<>
-        {items?.map((item) =>{
+        {items?.data?.map((item) =>{
             return<>
                 <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
                         <div className="product__item white-bg mb-30">

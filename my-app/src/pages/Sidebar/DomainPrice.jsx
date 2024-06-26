@@ -6,23 +6,19 @@ import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 export const DomainPrice =({setItems,productLength,domain_price})=>{
-    //test
-  
-    //test
 
-    //css
     useEffect(() => {
         let amount = window?.$('#amount')
         window?.$("#slider-range").slider({
              range: true,
               min: 0,
-              max: 500,
-              values: [75, 300],
+              max: 720,
+              values: [75, 720],
              slide: function (event, ui) {
                  window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
                
             }, 
-            stop: function (event, ui) {
+            stop: function (event, ui) {// نمیرود.اurlگر این قطعه نباشد ماکسیمم و مینیمم به 
                 rangeIsChanged(ui)
             }
         });
@@ -36,14 +32,12 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     let searchParam=new URLSearchParams(window.location.search)
     useEffect(()=>{
         SideOffcanvasToggle('.filter-toggle','product__widget')
-        // window?.$("#amount").val()
      
     }
     )
     const rangeIsChanged=(ui)=>{
         var limit= ui.values
         Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
-        // Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain')
          
 
     } 
