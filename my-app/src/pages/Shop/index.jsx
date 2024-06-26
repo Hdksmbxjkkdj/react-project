@@ -24,13 +24,14 @@ export const Products = ({sidebars}) =>{
             
         },[]);
     //price
-    const[price,setPrice]=useState()
+    const[price,setPrice]=useState()//برای پایگاه داده اصلی است
     useEffect(()=>{
         axios.get(`http://localhost:313/domain-price`).then((res)=>{
             setPrice(res);
         });
       
     },[]);
+    
     
     return<>
         <main>
