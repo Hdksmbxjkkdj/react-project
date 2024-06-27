@@ -36,7 +36,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
     }
     )
     const rangeIsChanged=(ui)=>{//فقط مربوط به رنج قیمت است
-        Filter(setItems, productLength, 'min', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+        Filter(setItems, productLength, 'price', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
          
 
     } 

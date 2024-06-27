@@ -395,7 +395,8 @@
       "price": 500,
       "id": "5",
       "title": "ترازو",
-      "isAdd": false
+      "isAdd": false,
+      "color-id":"1"
     },
     {
       "pic": "product-3.jpg",
@@ -404,7 +405,8 @@
       "price": 560,
       "id": "6",
       "title": "تلوزیون",
-      "isAdd": false
+      "isAdd": false,
+      "color-id":"2"
     },
     {
       "pic": "product-5.jpg",
@@ -413,7 +415,8 @@
       "price": 450,
       "id": "7",
       "title": "گوشی",
-      "isAdd": false
+      "isAdd": false,
+       "color-id":"2"
     },
     {
       "pic": "product-7.jpg",
@@ -422,7 +425,8 @@
       "price": 720,
       "id": "8",
       "title": "دوربین امنیتی",
-      "isAdd": false
+      "isAdd": false,
+       "color-id":"4"
     },
     {
       "pic": "product-9.jpg",
@@ -431,7 +435,8 @@
       "price": 720,
       "id": "9",
       "title": "تی شرت",
-      "isAdd": false
+      "isAdd": false,
+      "color-id":"2"
     },
     {
       "pic": "product-11.jpg",
@@ -440,7 +445,8 @@
       "price": 720,
       "id": "10",
       "title": "پردازنده",
-      "isAdd": false
+      "isAdd": false,
+       "color-id":"3"
     },
     {
       "pic": "product-13.jpg",
@@ -449,7 +455,8 @@
       "price": 720,
       "id": "11",
       "title": "دوربین",
-      "isAdd": false
+      "isAdd": false,
+       "color-id":"1"
     }
   ],
   "blog_slider": [
@@ -751,5 +758,40 @@
   "product-color":[],
   "domain-price":[
     {"min": "1000", "max": "5000"}
+  ],
+  "colors":[
+   {
+    "color":"black",
+     "id":"1"
+   },
+   {
+    "color":"blue",
+     "id":"2"
+   },
+   {
+    "color":"red",
+     "id":"3"
+   },
+   {
+    "color":"yellow",
+     "id":"4"
+   },
+   {
+    "color":"pink",
+     "id":"5"
+   },
+   {
+    "color":"brown",
+     "id":"6"
+   },
+   {
+    "color":"green",
+     "id":"7"
+   },
+   {
+    "color":"orange",
+     "id":"8"
+   }
   ]
 }
+

@@ -9,7 +9,7 @@ import { Rank } from "../Components/Rank";
 
 // import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ({items,setItems})=>{
- 
+  console.log(items,'u')
     return<>
         {items?.data?.map((item) =>{
             return<>

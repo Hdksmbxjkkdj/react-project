@@ -2,12 +2,12 @@ import {P} from './P';
 import {Color} from './Color';
 import {Rate} from './TopRate';
 import { DomainPrice } from './DomainPrice';
-export const Sidebar = ({setItems,sidebars,domain_price}) =>{
+export const Sidebar = ({domain_price,colors,productLength,setItems}) =>{
 
     return<>
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
-                    <Color></Color>
+                    <Color colors={colors} productLength={productLength} setItems={setItems} ></Color>
                       <DomainPrice domain_price={domain_price} setItems={setItems}></DomainPrice>  
                     <P></P>
                     <div className="product__widget-item">
