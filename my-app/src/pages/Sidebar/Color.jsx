@@ -33,8 +33,7 @@ export const Color = ({colors,productLength, setItems}) =>{
                                                                     let filterItem=false;
                                                                     if (searchParam?.get("color")?.indexOf(childItem.id)>-1){
                                                                         filterItem=true
-                                                                        // console.log( filterItem,childItem.id)
-                                                                        // console.log(filterItem,'filterItem')
+                                                
                                                                     }
                                                                     return<>
                                                                     <li>

@@ -1,4 +1,4 @@
-import Shop from "./Shop/Shop"
+// import Shop from "./Shop/Shop"
 import { Sidebar } from "./Sidebar"
 import { useEffect, useState } from 'react';
 import { SidebarData } from "./Sidebar/SidebarData";
@@ -24,7 +24,7 @@ export const Productpage = ({}) =>{
                      
                      
                      <Sidebar sidebars = {sidebars}/> 
-                      <Shop products = {products}/> 
+                      {/* <Shop products = {products}/>  */}
                       <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
                         <div class="product__grid-wrapper">
                                 <ProductGraidBanners/>

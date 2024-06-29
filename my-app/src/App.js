@@ -28,7 +28,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {ProducDetails} from './pages/Product-Details/index'
 
-import Shop from './pages/Shop/Shop'
+// import Shop from './pages/Shop/Shop'
 import {Sidebar} from './pages/Sidebar/index';
 import { Productpage } from './pages/Productpage';
 import { BlogItem } from "./pages/Home1/best-selling/product-item/blog-item";

@@ -49,7 +49,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Price
+                          قیمت
                         </button>
                     </h2>
                 <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">

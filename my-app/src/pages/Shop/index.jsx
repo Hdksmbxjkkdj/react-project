@@ -40,14 +40,22 @@ export const Products = ({sidebars}) =>{
       
     },[]);
     
-    
+    //size
+    //colors
+    const[size,setSize]=useState()
+    useEffect(()=>{
+        axios.get(`http://localhost:313/sizing`).then((res)=>{
+        setSize(res);
+        });
+      
+    },[]);
     return<>
         <main>
         {/* <BreadCrumb></BreadCrumb> */}
         <section class="product__area box-plr-75 pb-70">
             <div class="container-fluid">
                 <div class="row">
-                   <Sidebar domain_price={price} colors={colors}  productLength={items?.length} setItems={setItems} ></Sidebar> 
+                   <Sidebar domain_price={price} colors={colors} size={size} productLength={items?.length} setItems={setItems} ></Sidebar> 
                 <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
                     <div class="product__grid-wrapper">
                        <ProductGraidWrapper></ProductGraidWrapper>  
