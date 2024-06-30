@@ -1,6 +1,6 @@
 import { BreadCrumb } from "./BreadCrumb"
  import{ProductGraidWrapper} from "./ProductGraidWrapper"
-import {Filter} from "./Filter"
+import {Tab} from "./Tab"
 import {Product} from "./Product"
 import { SidebarData } from "../Sidebar/SidebarData"
 import { Sidebar } from "../Sidebar"
@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 export const Products = ({sidebars}) =>{
+  
     const[category,setCategory]=useState()
     useEffect(()=>{
         axios.get(`http://localhost:313/product-category`).then((res)=>{
@@ -61,14 +62,8 @@ export const Products = ({sidebars}) =>{
                        <ProductGraidWrapper></ProductGraidWrapper>  
                     </div>
                     <div class="product__grid-item-wrapper pt-70">
-                        <Filter></Filter> 
-                        <div class="tab-content" id="productGridTabContent">
-                            <div class="tab-pane fade  show active" id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
-                                <div class="row">
-                                    <Product key={Math.random()} setItems={setItems} items={items}></Product>
-                                </div>
-                            </div>
-                        </div>
+                        <Tab  key={Math.random()} setItems={setItems} items={items}></Tab> 
+                       
                     </div>
                 </div>
                 </div>
