@@ -1,6 +1,6 @@
 import { BreadCrumb } from "./BreadCrumb"
  import{ProductGraidWrapper} from "./ProductGraidWrapper"
-import {Tab} from "./Tab"
+import {Tab } from "./Tab"
 import {Product} from "./Product"
 import { SidebarData } from "../Sidebar/SidebarData"
 import { Sidebar } from "../Sidebar"
