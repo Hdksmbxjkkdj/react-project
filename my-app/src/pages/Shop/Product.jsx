@@ -6,7 +6,6 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { Config } from "../../Utils"
 import { Rank } from "../Components/Rank";
-
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 export const Product = ({items,setItems})=>{
  

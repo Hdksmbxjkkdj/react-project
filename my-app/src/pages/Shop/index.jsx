@@ -53,17 +53,16 @@ export const Products = ({sidebars}) =>{
     return<>
         <main>
         {/* <BreadCrumb></BreadCrumb> */}
-        <section class="product__area box-plr-75 pb-70">
-            <div class="container-fluid">
-                <div class="row">
+        <section className="product__area box-plr-75 pb-70">
+            <div className="container-fluid">
+                <div className="row">
                    <Sidebar domain_price={price} colors={colors} size={size} productLength={items?.length} setItems={setItems} ></Sidebar> 
-                <div class="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
-                    <div class="product__grid-wrapper">
+                <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
+                    <div className="product__grid-wrapper">
                        <ProductGraidWrapper></ProductGraidWrapper>  
                     </div>
-                    <div class="product__grid-item-wrapper pt-70">
+                    <div className="product__grid-item-wrapper pt-70">
                         <Tab  key={Math.random()} setItems={setItems} items={items}></Tab> 
-                       
                     </div>
                 </div>
                 </div>

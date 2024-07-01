@@ -7,8 +7,9 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
+import { Rank } from "../Components/Rank";
 //test
-export const SendComment = ({id}) => {
+export const SendComment = ({id,tab,setTab,change}) => {
      
     // let local = Local()
     let auth = User()
@@ -87,83 +88,65 @@ useEffect(() => {
 //CustomerCommen
 
     return<>
-    <div class="col-xxl-12">
-        <div class="tab-content" id="prodductDesTaContent">
-            <TapContent></TapContent>
-            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                <div class="product__details-review">
-                    <div class="row">
+    <div className="col-xxl-12">
+        <div className="tab-content" id="prodductDesTaContent">
+             <TapContent tab={tab}></TapContent>
+            <div className={tab === 2 ? "tab-pane fade" :"tab-pane fade show active"} id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div className="product__details-review">
+                    <div className="row">
                        <CustomerComment comment={info?.data}></CustomerComment>
-                        <div class="col-xxl-4 col-xl-4 col-lg-4">
-                            <div class="review-form">
+                         <div className="col-xxl-4 col-xl-4 col-lg-4">
+                            <div className="review-form">
                                 <h3>بررسی شما</h3>
                                 <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
                                 <form action="#" > 
                             
-                                    <div class="review-input-box mb-15 d-flex align-items-start">
-                                        <h4 class="review-input-title">امتیاز شما</h4>
-                                        <div class="review-input">
-                                            <div class="review-ratings mb-10">
-                                                <div class="review-ratings-single d-flex align-items-center">
+                                    <div className="review-input-box mb-15 d-flex align-items-start">
+                                        <h4 className="review-input-title">امتیاز شما</h4>
+                                        <div className="review-input">
+                                            <div className="review-ratings mb-10">
+                                                <div className="review-ratings-single d-flex align-items-center">
                                                     <span>کیفیت</span>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    </ul>
+                                                    <Rank></Rank>
                                                 </div>
-                                                <div class="review-ratings-single d-flex align-items-center">
+                                                <div className="review-ratings-single d-flex align-items-center">
                                                     <span>قیمت</span>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    </ul>
+                                                     <Rank></Rank>
                                                 </div>
-                                                <div class="review-ratings-single d-flex align-items-center">
+                                                <div className="review-ratings-single d-flex align-items-center">
                                                     <span>ارزش</span>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    </ul>
+                                                      <Rank></Rank>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">نام و نام خانوادگی</h4>
-                                        <div class="review-input">
+                                    <div className="review-input-box d-flex align-items-start">
+                                        <h4 className="review-input-title">نام و نام خانوادگی</h4>
+                                        <div className="review-input">
                                         <Input id="sender_name" label='name' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
                                                 autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} />
                                         </div>
                                     </div>
-                                    <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">ایمیل</h4>
-                                        <div class="review-input">
+                                    <div className="review-input-box d-flex align-items-start">
+                                        <h4 className="review-input-title">ایمیل</h4>
+                                        <div className="review-input">
                                         <Input type="email" id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
                                             autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} />
                                         </div>
                                     </div>
-                                    <div class="review-input-box d-flex align-items-start">
-                                        <h4 class="review-input-title">مرور</h4>
-                                        <div class="review-input">
+                                    <div className="review-input-box d-flex align-items-start">
+                                        <h4 className="review-input-title">مرور</h4>
+                                        <div className="review-input">
                                         <Textarea id="comment" label='comment' name="comment" value={data?.comment} error={errors?.comment} placeholder='your_comment'
                                             autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} />
                                         </div>
                                     </div>
-                                    <div class="review-sub-btn">
-                                        <button type="submit" class="t-y-btn t-y-btn-grey" onClick={(event) => submit(event)}>ارسال بررسی</button>
+                                    <div className="review-sub-btn">
+                                        <button type="submit" className="t-y-btn t-y-btn-grey" onClick={(event) => submit(event)}>ارسال بررسی</button>
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

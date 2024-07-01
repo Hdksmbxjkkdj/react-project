@@ -35,7 +35,7 @@ export const Tab=({items,setItems})=>{
                                                         </li> */}
                                                         <li className="nav-item" role="presentation">
                                                             <button className={toggleState === 2 ? "nav-link" : "nav-link active"} id="list-tab" data-bs-toggle="tab" data-bs-target="#list" 
-                                                            type="button" role="tab" aria-controls="list" aria-selected="false" onClick={() => toggleTab(3)}>
+                                                            type="button" role="tab" aria-controls="list" aria-selected="false" onClick={() => toggleTab(2)}>
                                                             <FontAwesomeIcon icon={faList} className="fal fa-list"></FontAwesomeIcon>
                                                               </button>
                                                         </li>

@@ -4,7 +4,6 @@ import { Filter} from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
 export const Sizing= ({size,productLength,setItems})=> {
-    console.log(size,"p")
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)

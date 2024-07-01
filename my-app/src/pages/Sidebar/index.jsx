@@ -14,7 +14,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems}) =>{
                         <h3 className="product__widget-title mb-25">Top Rate</h3>
                             <div className="product__sm">
                             <ul>            
-                                {/* <Rate items ={sidebars} /> */}
+                                <Rate/> 
                             </ul>
                         </div>
                     </div>
