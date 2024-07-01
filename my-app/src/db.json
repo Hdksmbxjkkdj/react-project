@@ -181,6 +181,14 @@
       "unitprice": 720,
       "quantity": 1,
       "date": "13/06/2024"
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1,
+      "date": "30/06/2024"
     }
   ],
   "wishlist": [
@@ -203,6 +211,13 @@
       "pic": "product-7.jpg",
       "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
       "unitprice": 720
+    },
+    {
+      "id": "7",
+      "pic": "product-5.jpg",
+      "name": "سامسونگ C49J89: 875 پوند، Debenhams Plus",
+      "unitprice": 450,
+      "quantity": 1
     }
   ],
   "blog": [
@@ -396,8 +411,7 @@
       "id": "5",
       "title": "ترازو",
       "isAdd": false,
-      "color-id":"1"
-
+      "color-id": "1"
     },
     {
       "pic": "product-3.jpg",
@@ -407,7 +421,7 @@
       "id": "6",
       "title": "تلوزیون",
       "isAdd": false,
-      "color-id":"2"
+      "color-id": "2"
     },
     {
       "pic": "product-5.jpg",
@@ -417,7 +431,7 @@
       "id": "7",
       "title": "گوشی",
       "isAdd": false,
-       "color-id":"2"
+      "color-id": "2"
     },
     {
       "pic": "product-7.jpg",
@@ -427,7 +441,7 @@
       "id": "8",
       "title": "دوربین امنیتی",
       "isAdd": false,
-       "color-id":"4"
+      "color-id": "4"
     },
     {
       "pic": "product-9.jpg",
@@ -437,8 +451,8 @@
       "id": "9",
       "title": "تی شرت",
       "isAdd": false,
-      "color-id":"2",
-      "Size-Id":"XXL"
+      "color-id": "2",
+      "Size-Id": "XXL"
     },
     {
       "pic": "product-11.jpg",
@@ -448,7 +462,7 @@
       "id": "10",
       "title": "پردازنده",
       "isAdd": false,
-       "color-id":"3"
+      "color-id": "3"
     },
     {
       "pic": "product-13.jpg",
@@ -458,7 +472,7 @@
       "id": "11",
       "title": "دوربین",
       "isAdd": false,
-       "color-id":"1"
+      "color-id": "1"
     }
   ],
   "blog_slider": [
@@ -520,7 +534,7 @@
       "comment": "i cant understand this blog , what is it about ? ",
       "blog_id": "3",
       "date": "2024/5/8",
-      "id": 2
+      "id": "2"
     },
     {
       "name": "ali",
@@ -528,7 +542,7 @@
       "comment": "hello !",
       "blog_id": "1",
       "date": "2024/5/18",
-      "id": 3
+      "id": "3"
     },
     {
       "name": "ali",
@@ -536,7 +550,7 @@
       "comment": "welldone !",
       "blog_id": "4",
       "date": "2024/5/20",
-      "id": 4
+      "id": "4"
     }
   ],
   "aboutus": [
@@ -709,6 +723,13 @@
       "sender_email": "ali@gmail.com",
       "comment": "nice",
       "date": "19/06/2024"
+    },
+    {
+      "id": "9cfb",
+      "sender_name": "l",
+      "sender_email": "ll",
+      "comment": "",
+      "date": "30/06/2024"
     }
   ],
   "ContactUs": [
@@ -719,6 +740,22 @@
       "comment": "abc",
       "sender_phone": "abc",
       "date": "15/06/2024"
+    },
+    {
+      "id": "0c81",
+      "user_name": "h",
+      "sender_email": "h",
+      "comment": "g",
+      "sender_phone": "h",
+      "date": "30/06/2024"
+    },
+    {
+      "id": "f51c",
+      "user_name": "h",
+      "sender_email": "h",
+      "comment": "g",
+      "sender_phone": "h",
+      "date": "30/06/2024"
     }
   ],
   "FoodProducts": [
@@ -735,92 +772,90 @@
       "id": "d74f"
     }
   ],
-  "product-category":[
+  "product-category": [
     {
-        "id":"1",
-        "category":"سامسونگ"
+      "id": "1",
+      "category": "سامسونگ"
     },
     {
-      "id":"2",
-      "category":"اپل"
+      "id": "2",
+      "category": "اپل"
     },
     {
-      "id":"3",
-      "category":"هوآوی"
+      "id": "3",
+      "category": "هوآوی"
     },
     {
-      "id":"4",
-      "category":"شیائومی"
+      "id": "4",
+      "category": "شیائومی"
     },
     {
-      "id":"5",
-      "category":"موتورولا"
+      "id": "5",
+      "category": "موتورولا"
     }
   ],
-  "product-color":[],
-  "domain-price":[
-    {"min": "1000", "max": "5000"}
-  ],
-  "colors":[
-   {
-    "color":"black",
-     "id":"1"
-   },
-   {
-    "color":"blue",
-     "id":"2"
-   },
-   {
-    "color":"red",
-     "id":"3"
-   },
-   {
-    "color":"yellow",
-     "id":"4"
-   },
-   {
-    "color":"pink",
-     "id":"5"
-   },
-   {
-    "color":"brown",
-     "id":"6"
-   },
-   {
-    "color":"green",
-     "id":"7"
-   },
-   {
-    "color":"orange",
-     "id":"8"
-   }
-  ],
-  "sizing":[
+  "product-color": [],
+  "domain-price": [
     {
-      "size":"small",
-       "id":"S"
-       
+      "min": "1000",
+      "max": "5000",
+      "id": "b068"
+    }
+  ],
+  "colors": [
+    {
+      "color": "black",
+      "id": "1"
     },
-      {
-        "size":"medium",
-         "id":"M"
-         
-      },
-      {
-        "size":"large",
-         "id":"L"
-      },
-      {
-        "size":"x-large",
-         "id":"XL"
-         
-      },
-      {
-        "size":"xx-large",
-         "id":"XXL"
-         
-      }
+    {
+      "color": "blue",
+      "id": "2"
+    },
+    {
+      "color": "red",
+      "id": "3"
+    },
+    {
+      "color": "yellow",
+      "id": "4"
+    },
+    {
+      "color": "pink",
+      "id": "5"
+    },
+    {
+      "color": "brown",
+      "id": "6"
+    },
+    {
+      "color": "green",
+      "id": "7"
+    },
+    {
+      "color": "orange",
+      "id": "8"
+    }
+  ],
+  "sizing": [
+    {
+      "size": "small",
+      "id": "S"
+    },
+    {
+      "size": "medium",
+      "id": "M"
+    },
+    {
+      "size": "large",
+      "id": "L"
+    },
+    {
+      "size": "x-large",
+      "id": "XL"
+    },
+    {
+      "size": "xx-large",
+      "id": "XXL"
+    }
   ]
-
 }
-

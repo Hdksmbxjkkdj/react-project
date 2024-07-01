@@ -12,8 +12,8 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
         window?.$("#slider-range").slider({
              range: true,
               min: 0,
-              max: 720,
-              values: [75, 720],
+              max: 500,
+              values: [75, 500],
              slide: function (event, ui) {
                  window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
                
@@ -75,7 +75,7 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
             </div>
         </div>
  </div>
- </div>
+         </div>
     </>
     
 

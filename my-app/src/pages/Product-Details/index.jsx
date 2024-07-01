@@ -13,6 +13,14 @@ import { useParams } from "react-router-dom";
 import { TabContent } from "../Home1/best-selling/tab-content";
 
 export const ProducDetails= () =>{
+    //tab
+    const[tab,setTab]=useState(1)
+    const change =(index) => {
+       setTab(index)
+       console.log(tab)
+    }
+
+    //tab
     
     const {id} = useParams()
     const [img,setImag] = useState();
@@ -36,15 +44,15 @@ export const ProducDetails= () =>{
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
-                           <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} /> 
+                        <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} /> 
                         <ProductDetailsWrapper item={img?.data?.name} price={img?.data?.unitprice} newprice={img?.data?.NewPrice} oldprice={img?.data?.OldPrice} sku={img?.data?.sku} /> 
                     </div>
                     <div className="row">
-                        <ProductDetailsDesTab /> 
+                        <ProductDetailsDesTab tab={tab} setTab={setTab} change={change}/> 
                     </div>
                     
                     <div className="row">
-                        {<SendComment  comment={info?.data?.comment} id={info?.data.id} /> }
+                        {<SendComment  comment={info?.data?.comment} id={info?.data.id} tab={tab} setTab={setTab} change={change} /> }
                     </div>
                 </div>
             </section>
@@ -55,7 +63,7 @@ export const ProducDetails= () =>{
                     </div>
                    <div className="row">
                     <div className="col-xl-12">
-                           {/* <TabContent ></TabContent>     */}
+                          {/* <TabContent ></TabContent>    */}
                     </div>
                    </div>
                  </div>
