@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import {BrandSlider} from "./BrandSlider";
 import { ProductSlider } from '../Home1/best-selling/product-slider';
-import { BrandSlider } from './BrandSlider';
 import { ModalContent } from './ModalContent';
 import { ProductDetailsDesTab } from './ProductDetailsDesTab';
 import { ProductDetailsWrapper } from './ProductDetailsWrapper';
@@ -68,13 +67,8 @@ export const ProducDetails= () =>{
                    </div>
                  </div>
             </section>
-            <section className="brand__area">
-                <div className="container custom-container">
-                    <div className="row align-items-center">
-                         <BrandSlider /> 
-                    </div>
-                </div>
-            </section>         
+            <BrandSlider/> 
+                      
             <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">
                     <div className="modal-dialog modal-dialog-centered product__modal" role="document">
                         <ModalContent  />

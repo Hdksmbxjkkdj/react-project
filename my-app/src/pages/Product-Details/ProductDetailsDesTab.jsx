@@ -1,11 +1,7 @@
 import { useState } from "react"
 
 export const  ProductDetailsDesTab= ({tab,setTab,change}) =>{
-    // const[tab,setTab]=useState(1)
-    // const change =(index) => {
-    //    setTab(index)
-    //    console.log(tab)
-    // }
+
 return<>
 <div className="col-xxl-12">
 <div className="product__details-des-tab mb-40 mt-110">
