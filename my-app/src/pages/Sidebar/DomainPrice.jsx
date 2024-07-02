@@ -5,7 +5,7 @@ import { Filter,removeFilter } from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
-export const DomainPrice =({setItems,productLength,domain_price})=>{
+export const DomainPrice =({setItems,productLength,domain_price,handelClick,selected})=>{
 
     useEffect(() => {
         let amount = window?.$('#amount')
@@ -48,33 +48,40 @@ export const DomainPrice =({setItems,productLength,domain_price})=>{
             <div className="accordion" id="productWidgetAccordion1">
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" onClick={()=>handelClick(2)}>
                           قیمت
                         </button>
                     </h2>
-                <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
-                    <div className="accordion-body">
-                      <div className="product__widget-content">
-                            <div className="product__price-slider">
-                                <div>
-                                    <form action="#">
-                                        <input type="text" id="amount" readonly 
-                                            iniMin={domain_price?.min}
-                                            iniMax={domain_price?.max}
-                                            min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
-                                            max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
-                                        />
-                                                               
-                                    </form>
-                                                        
-                                </div>
-                                <div id="slider-range"></div>
-                        </div>
-                    </div>
+                    {selected.includes(2) ?(
+                           <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
+                           <div className="accordion-body">
+                             <div className="product__widget-content">
+                                   <div className="product__price-slider">
+                                       <div>
+                                           <form action="#">
+                                               <input type="text" id="amount" readonly 
+                                                   iniMin={domain_price?.min}
+                                                   iniMax={domain_price?.max}
+                                                   min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
+                                                   max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
+                                               />
+                                           </form>
+
+                                       </div>
+                                       <div id="slider-range"></div>
+                               </div>
+                           </div>
+                       </div>
+                      </div>
+                       
+                    ): null}
+
+
+
+
+             
                 </div>
-            </div>
-        </div>
- </div>
+             </div>
          </div>
     </>
     
