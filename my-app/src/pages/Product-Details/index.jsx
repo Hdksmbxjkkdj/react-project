@@ -13,7 +13,7 @@ import { TabContent } from "../Home1/best-selling/tab-content";
 
 export const ProducDetails= () =>{
     //tab
-    const[tab,setTab]=useState(1)
+    const[tab,setTab]=useState(2)
     const change =(index) => {
        setTab(index)
        console.log(tab)
@@ -24,7 +24,7 @@ export const ProducDetails= () =>{
     const {id} = useParams()
     const [img,setImag] = useState();
     useEffect(() => {
-        // axios.get(`http://localhost:313/row/${id}`).then((res) => {
+       
             axios.get(`http://localhost:313/best_selling/${id}`).then((res) => {
 
             setImag(res);
@@ -37,6 +37,7 @@ export const ProducDetails= () =>{
             setInfo(res);
         });
     }, []);
+  
 
     return<>
         <main>
@@ -55,18 +56,8 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <section className="best__sell pt-15 pb-40 grey-bg-2">
-                <div className="container">
-                    <div className="row">
-                        <SectionHead /> 
-                    </div>
-                   <div className="row">
-                    <div className="col-xl-12">
-                          {/* <TabContent ></TabContent>    */}
-                    </div>
-                   </div>
-                 </div>
-            </section>
+          
+            <SectionHead />    
             <BrandSlider/> 
                       
             <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">

@@ -8,6 +8,7 @@ import axios from "axios";
 export const DomainPrice =({setItems,productLength,domain_price,handelClick,selected})=>{
 
     useEffect(() => {
+        
         let amount = window?.$('#amount')
         window?.$("#slider-range").slider({
              range: true,
@@ -53,6 +54,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                         </button>
                     </h2>
                     {selected.includes(2) ?(
+                        
                            <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
                            <div className="accordion-body">
                              <div className="product__widget-content">
@@ -68,7 +70,9 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                                            </form>
 
                                        </div>
-                                       <div id="slider-range"></div>
+                                       <div id="slider-range">
+                                      
+                                       </div>
                                </div>
                            </div>
                        </div>

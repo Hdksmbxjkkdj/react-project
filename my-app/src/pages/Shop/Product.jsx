@@ -7,6 +7,9 @@ import axios from "axios";
 import { Config } from "../../Utils"
 import { Rank } from "../Components/Rank";
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
+import {AddToCart} from "../Cart/AddToCart"
+import { ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btn"
+
 export const Product = ({items,setItems})=>{
  
     return<>
@@ -34,9 +37,11 @@ export const Product = ({items,setItems})=>{
                                     <span className="price">${item.price}</span>
                                 </div>
                             </div>
-                            <div className="product__add-btn">
+                             {/* <div className="product__add-btn">
                                 <button type="button">Add to Cart</button>
-                        </div>
+                             </div>  */}
+                             <ProductAddbtn></ProductAddbtn>
+                       
                         </div>
                 </div>
              </>
@@ -82,7 +87,8 @@ export const Product = ({items,setItems})=>{
                                                             </ul>
                                                         </div>
                                                         <div className="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
-                                                            <button className="t-y-btn mr-10">add to cart</button>
+                                                             <button className="t-y-btn mr-10">add to cart</button> 
+                                                            {/* <button className="t-y-btn mr-10" type="button" onClick={()=>AddToCart(event,props.item?.id,props.item?.pic,props.item?.text,props.item?.price,1,setCart,cart)}>سبد خرید +</button> */}
                                                             <ul>
                                                                 <li><a href="#" title="Add to Wishlist"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
                                                                 <li><a href="#" title="Compare"><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>

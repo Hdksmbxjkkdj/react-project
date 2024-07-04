@@ -34,7 +34,7 @@ export const Tab=({items,setItems})=>{
                                                               </button>
                                                         </li> */}
                                                         <li className="nav-item" role="presentation">
-                                                            <button className={toggleState === 2 ? "nav-link" : "nav-link active"} id="list-tab" data-bs-toggle="tab" data-bs-target="#list" 
+                                                            <button className={toggleState === 2? "nav-link" : "nav-link active"} id="list-tab" data-bs-toggle="tab" data-bs-target="#list" 
                                                             type="button" role="tab" aria-controls="list" aria-selected="false" onClick={() => toggleTab(2)}>
                                                             <FontAwesomeIcon icon={faList} className="fal fa-list"></FontAwesomeIcon>
                                                               </button>
@@ -46,7 +46,7 @@ export const Tab=({items,setItems})=>{
                                                 </div>
                                             </div>
                                         </div>
-                                        <Select></Select>
+                                        <Select setItems={setItems} items={items} ></Select>
                                     </div>
                             </div>
                       <div className="tab-content" id="productGridTabContent">

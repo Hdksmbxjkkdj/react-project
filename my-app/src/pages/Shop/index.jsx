@@ -7,6 +7,7 @@ import { Sidebar } from "../Sidebar"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
+import {BrandSlider} from "../Product-Details/BrandSlider"
 export const Products = ({sidebars}) =>{
   
     const[category,setCategory]=useState()
@@ -52,7 +53,7 @@ export const Products = ({sidebars}) =>{
     },[]);
     return<>
         <main>
-        {/* <BreadCrumb></BreadCrumb> */}
+        <BreadCrumb></BreadCrumb> 
         <section className="product__area box-plr-75 pb-70">
             <div className="container-fluid">
                 <div className="row">
@@ -68,6 +69,7 @@ export const Products = ({sidebars}) =>{
                 </div>
             </div>
         </section>
+        <BrandSlider></BrandSlider>
         </main>
     </>
 }
