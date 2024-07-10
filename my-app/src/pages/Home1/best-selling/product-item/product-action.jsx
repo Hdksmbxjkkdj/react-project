@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AddToWishlist } from "./AddToWishlist";
 import { ModalContext } from "../../../../context/modal";
 import axios from "axios";

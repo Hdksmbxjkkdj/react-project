@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Notif } from "../../../../Utils/Notif";
 export const AddToWishlist = async (id, pic, name, unitprice, quantity) => {
+  console.log(id);
   const url = "http://localhost:313/wishlist";
   let status = 200;
   (quantity==undefined || quantity==null) ? quantity=1 : quantity=quantity;
@@ -15,7 +16,6 @@ export const AddToWishlist = async (id, pic, name, unitprice, quantity) => {
       quantity: quantity,
     })
     .then((response) => {
-      console.log(response.data);
       Notif('success',"با موفقیت اضافه شد :)")
     });
   }

@@ -46,7 +46,6 @@ function App() {
 
   useEffect(() => {
     var name = window.location.pathname.split("/").pop();
-    console.log("name : " + name);
     if (name == "") {
       name = "Home";
     } else {

@@ -160,7 +160,7 @@ const Header = () => {
                             <div className="cart__sub d-flex justify-content-between align-items-center">
                               <h6>جمع</h6>
                               <span className="cart__sub-total">
-                                {console.log(tot)}
+                                {/* {console.log(tot)} */}
                                 </span>
                             </div>
                             <Link
