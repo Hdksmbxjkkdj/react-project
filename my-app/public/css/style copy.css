@@ -91,6 +91,18 @@ Waves
 @import url(../../assets/icons/iconsmind/style.css);
 @import url(../../assets/icons/icomoon/style.css);
 @import url(../../assets/vendor_components/animate/animate.css);
+:root
+{
+    --bg-1:rgb(6, 53, 70);
+    --bg-2:rgb(9, 66, 87);
+    --bg-3:#caca1c;
+    --bg-4:#685ad6;
+    --bg-5:#ff5555;
+    --clr-1:#eee;
+    --clr-2:#cccccc;
+    --clr-3:#555;
+    --transition: all ease 300ms;
+}
 html {
   height: 100%;
   font-size: 14px; }
@@ -22337,7 +22349,8 @@ body .main-header .navbar .nav > li.search-box > a:hover, body .main-header .nav
   border-right: 1px solid #f3f6f9;
   background-color: white; }
   .left-block .left-content-area > .box {
-    background-color: rgba(255, 255, 255, 0) !important; }
+    background-color: rgba(255, 255, 255, 0) !important;
+   }
   .left-block .left-content-area > .card {
     background-color: rgba(255, 255, 255, 0) !important; }
   .left-block .open-left-block {
@@ -31988,5 +32001,191 @@ img.away, img.busy, img.offline, img.online {
   {
     background-color: #dddeee;
     box-shadow: 0 0 8px #ddddee;
+    cursor: pointer;
   }
+
+/* ----- custom background ----- */
+.bg-1
+{
+    background-color: var(--bg-2);
+}
+
+.bg-2
+{
+    background-color: var(--bg-3);
+}
+
+.bg-3
+{
+    background-color: var(--bg-4);
+}
+
+.bg-4
+{
+    background-color: var(--bg-5);
+}
+
+.side-pannel
+{
+    background-color:var(--bg-1);
+    padding: 2rem;
+    height: 100vh;
+}
+
+.side-pannel .side-pannel-header
+{
+    text-align: center;
+    color: var(--clr-1);
+}
+
+.side-pannel .side-pannel-header h4
+{
+    font-size: 20px;
+    text-shadow: 0 4px 15px 0 rgba(7, 10, 43, 0.7);
+}
+
+.side-pannel .side-pannel-header .user .user-image img
+{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 3px solid var(--clr-1);
+    box-shadow: 0 4px 15px 0 rgba(7, 10, 43, 0.4),inset 0 8px 32px 0 rgba(225, 225, 225, .2);
+}
+
+.side-pannel .side-pannel-header .user .user-text .email
+{
+    color: var(--clr-2);
+}
+
+.side-pannel .side-pannel-body
+{
+    border-bottom: 1px dotted var(--bg-2);
+}
+
+.side-pannel .side-pannel-body .side-pannel-title,
+.side-pannel .side-pannel-footer .side-pannel-title
+{
+    color: var(--clr-2);
+    font-size: 13px;
+}
+
+.side-pannel .side-pannel-body .list li,
+.side-pannel .side-pannel-footer .list li
+{
+    color: var(--clr-2);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.side-pannel .side-pannel-body .list li:hover,
+.side-pannel .side-pannel-footer .list li:hover
+{
+    color: var(--clr-1);
+}
+
+.side-pannel .side-pannel-footer .list li:last-child:hover
+{
+    color: var(--clr-2);
+}
+
+.side-pannel .side-pannel-body .list .active,
+.side-pannel .side-pannel-footer .list .active
+{
+    font-weight: 700;
+    color: var(--clr-1);
+}
+
+.side-pannel .side-pannel-footer .list .log-out a
+{
+    background-color: var(--bg-2);
+    border-radius: 50px;
+    color: var(--clr-2);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.side-pannel .side-pannel-footer .list .log-out a:hover
+{
+    box-shadow: inset 0 0 5px var(--bg-1);
+    color: var(--clr-1 );
+}
+
+.pic
+{
+    width: 100%;
+}
+
+/* ----- show-cart ----- */
+
+.show-cart:hover
+{
+    box-shadow: 0 0 15px 5px #aaa;
+}
+
+.show-cart .date
+{
+    padding: .2rem .75rem;
+    border-radius: 50px;
+    background-color: rgba(225, 225, 225, 0);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 4px 15px 0 rgba(57, 65, 176, 0.1),inset 0 8px 32px 0 rgba(225, 225, 225, .1);
+    overflow: hidden;
+}
+
+.show-cart:hover .date p
+{
+    animation-name: scrolldown;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scrolldown {
+    from
+    {
+        transform: translateY(-70px);
+    }    
+    to
+    {
+        transform: translateY(0);
+    }
+}
+
+.user-order table,
+.user-order table td a
+{
+    color: var(--clr-3);
+    text-align: center;
+}
+
+.user-order table th
+{
+    padding: 1.5rem 0;
+}
+
+.user-order table td
+{
+    padding: 1rem 0;
+    transition:var(--transition)
+}
+
+.user-order table tr
+{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.user-order table tr:hover
+{
+    transform: translateX(-5px);
+}
+
+.user-order table tr:first-child:hover
+{
+    transform: translateX(0);
+}
 /*# sourceMappingURL=style.css.map */

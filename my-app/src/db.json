@@ -2,58 +2,16 @@
   "row": [],
   "wishlist": [
     {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
       "unitprice": 720,
       "quantity": 1
     },
     {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 720,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
+      "id": "9",
+      "pic": "product-9.jpg",
+      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
       "unitprice": 720,
       "quantity": 1
     }
@@ -448,9 +406,21 @@
   "register": [
     {
       "id": "57d2",
-      "username": "li@gmail.com",
+      "username": "علی",
       "email": "li@gmail.com",
       "pass": "123456"
+    },
+    {
+      "id": "e562",
+      "username": "محمد",
+      "email": "mohammad@gmail.com",
+      "pass": "12345"
+    },
+    {
+      "username": "کاظم",
+      "email": "kazem@gmail.com",
+      "pass": "123456",
+      "id": "joN6i4j"
     }
   ],
   "features": [

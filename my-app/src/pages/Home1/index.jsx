@@ -67,7 +67,7 @@ const Home1 = () => {
   useEffect(()=>{
     (modal.show) && window?.$(`#${modal.id}`).modal("show");
   },[modal])
-  const [value,setValue] = useState(0);
+  const [value,setValue] = useState(1);
   const {cart,setCart} = useContext(CartContext)
   return (
     <>

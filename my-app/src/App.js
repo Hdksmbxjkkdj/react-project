@@ -61,31 +61,21 @@ function App() {
           <Header></Header>
           <Routes>
             <Route path="product/:id" element={<ProducDetails />} />
-
             <Route path="/" element={<Home1 />} />
             <Route path="/Blog" element={<Blog />} />
             <Route path="/BlogDetaile/:id" element={<BlogDetaile />} />
             <Route path="/About" element={<AboutUs />} />
-            <Route path="Login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="profile" element={<Profile />} />
             <Route path="/Contact" element={<ContactUs />} />
-
-            <Route path="/Register" element={<Register />} />
+            <Route path="Register" element={<Register />} />
             <Route path="Cart" element={<Cart />} />
             <Route path="wishlist" element={<WishList />} />
             <Route path="checkout" element={<Checkout />} />
-            <Route path="/Footer" element={<Footer />} />
-            {/* <Route path="*" element={<Error/>}/> */}
-            <Route path="/Footer" element={<Footer />} />
-            {/* <Route path="/product-details/:id" element={<ProducDetails />}/>  */}
-            <Route path="/product" element={<Productpage />} exact={true} />
-            {/* <Route path="product/:id" element={<Show />}/>  */}
-            {/* <Route path="/Contact" element={<Contact/>}/> */}
-            <Route path="/products" element={<Products />} />
-
+            {/* <Route path="/product" element={<Productpage />} exact={true} /> */}
+            {/* <Route path="/products" element={<Products />} /> */}
             <Route path="/product-details/:id" element={<ProducDetails />} />
             <Route path="/product" element={<Productpage />} exact={true} />
-            {/* <Route path="*" element={<Error/>}/> */}
           </Routes>
           <div id="loading">
             <div id="loading-center">

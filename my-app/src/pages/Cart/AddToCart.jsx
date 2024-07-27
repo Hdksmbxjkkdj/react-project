@@ -1,9 +1,9 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
-import { useContext } from "react";
-import { CartContext } from "../../context/CardContext";
+import { Check } from "./Checkcart";
 
 export const AddToCart = async ( event, id, pic, name, unitprice, count = 1, setCart, cart, eMessage, returnPrevCount = null) => {
+  // Check(id,cart);
   let url = `http://localhost:313/row`;
   var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -11,6 +11,11 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 today = dd + '/' + mm + '/' + yyyy;
   let quantity = count;
+  if(quantity<1)
+  {
+    Notif("warning","تعداد نمیتواند کمتر از 1 باشد")
+    return false;
+  }
   let status = 201;
   window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
   let message;

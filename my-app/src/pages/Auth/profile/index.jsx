@@ -40,7 +40,7 @@ export const Profile = ()=> {
 		axios.get("http://localhost:313/buy").then((res)=>{
 			setbuy(res);
 		})
-	},buy)
+	},[buy])
 	var array=new Array();
 	for(var i=0;i<buy?.data.length;i++)
 	{
@@ -98,7 +98,7 @@ export const Profile = ()=> {
                   }
                 }
               });
-          },[])
+          },[wishlist1])
           /* END JQUERY KNOB */ 
             window?.$('.inner-user-div').slimScroll({
               height: '550px'
@@ -107,8 +107,6 @@ export const Profile = ()=> {
         <div className="wrapper">
 	
   <header className="main-header">
-	<div>	
-	</div>  
     <nav className="navbar navbar-static-top">
       <div className="navbar-custom-menu r-side">
         <ul className="nav navbar-nav">		  
@@ -212,36 +210,19 @@ export const Profile = ()=> {
 		<section className="content">
 			<div className="row">
 				<div className="col-xl-3 col-lg-6 col-12">
-                    <Box item={{title:"items in my cart",number:cart.length,val:cart.length,clr:"#3246D3"}}/>
+                    <Box item={{title:"محصول در سبد خرید",number:cart.length,val:cart.length,clr:"#3246D3",bg:"bg-1"}}/>
 				</div>
 				<div className="col-xl-3 col-lg-6 col-12">
-					<Box item={{title:"my items in wishlist",number:wishlist?.data.length,val:wishlist?.data.length,clr:"#37d159"}}/>
+					<Box item={{title:"محصول در علاقه مندی ها",number:wishlist?.data.length,val:wishlist?.data?.length,clr:"#37d159",bg:"bg-2"}}/>
 				</div>
 				<div className="col-xl-3 col-lg-6 col-12">
-					<Box item={{title:"Total Customer",number:4258,val:65,clr:"#ffa800"}}/>
+					<Box item={{title:"Total Customer",number:4258,val:65,clr:"#ffa800",bg:"bg-3"}}/>
 				</div>
 				<div className="col-xl-3 col-lg-6 col-12">
-					<Box item={{title:"Total Projects",number:734,val:35,clr:"#00d0ff"}}/>
+					<Box item={{title:"Total Projects",number:734,val:35,clr:"#00d0ff",bg:"bg-4"}}/>
 				</div>	
 				
 				<div className="col-xl-8 col-12">
-					{/* <div className="box">
-						<div className="box-header">
-							<h4 className="box-title">خرید</h4>
-						</div>
-						<div className="box-body">
-							<div className="row align-items-center">
-								<div className="col-lg-3 col-12">
-									<p className="mb-15"><i className="fa fa-line-chart text-success"></i> <span className="text-success">+20%</span> از ماه قبل</p>
-									<p className="fs-18 mb-0"><span className="badge badge-pill badge-primary"></span> سال قبل</p>
-									<p className="fs-18"><span className="badge badge-pill badge-info"></span> سال جاری گذشته</p>
-								</div>
-								<div className="col-lg-9 col-12">
-									<div id="recent_trend"></div>
-								</div>
-							</div>							
-						</div>
-					</div> */}
 					<div className="row">
 						<div className="col-lg-6 col-12">							
 							<div className="box">
@@ -279,55 +260,18 @@ export const Profile = ()=> {
 								</div>
 							</div>
 						</div>
-						{/* <div className="col-xl-7 col-12" key={Math.random()}>							
-							<div className="box">
-								<div className="box-header">
-									<h4 className="box-title">لیست خرید های من در سال 1403</h4>
-								</div>
-								<div className="box-body">
-									<div className="d-flex align-items-center">
-										<div className="d-flex align-items-center me-30">
-											<div className="bg-gradient-success overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-home"></i></div>
-											<div>
-												<p className="fs-16 text-fade mb-0">مجموع خرید</p>
-												<h4 className="mb-0">{cart.length} کالا</h4>
-											</div>
-										</div>
-										<div className="d-flex align-items-center">
-											<div className="bg-gradient-primary overflow-h me-10 rounded10 w-50 h-50 l-h-50 fs-18 text-center text-white"><i className="fa fa-building"></i></div>
-											<div>
-												<p className="fs-16 text-fade mb-0">قیمت کل</p>
-												<h4 className="mb-0">
-													{total()} $</h4>
-											</div>
-										</div>
-									</div>
-									<div id="overview_trend"></div>						
-								</div>
-							</div>
-						</div> */}
-						{/* <div className="col-xl-5 col-12">
-							<div className="box" style={{height:"450px"}}>		
-								<div className="box-header no-border">
-									<h4 className="box-title">Overview</h4>
-								</div>
-								<div className="box-body">	
-									<div id="chart432"></div>
-								</div>																		
-							</div>
-						</div> */}
 						<div className="col-xl-12 col-12" key={Math.random}>
 							<div className="box">
 								<div className="box-header" style={{display:"flex",justifyContent:"space-between"}}>
-									<Link to="/wishlist">برو به علاقه مندی ها</Link>
 									<h4 className="box-title">
 										خلاصه علاقه مندی ها
 									</h4>
+									<Link to="/wishlist">برو به علاقه مندی ها</Link>
 								</div>
 								<div className="box-body">
 									<div className="row">
 										{
-											wishlist1?.data.map((item)=>{
+											(wishlist?.data?.length>0) ? wishlist1?.data.map((item)=>{
 												return <div className="col-lg-3 col-sm-6 col-12">
 													<div className="card prof-card">
 														<div className="card-body">
@@ -340,7 +284,10 @@ export const Profile = ()=> {
 														</div>
 													</div>
 												</div>
-											})
+											}):
+											<div>
+												<h4 className="text-danger text-center">محتوایی جهت نمایش وجود ندارد !</h4>
+											</div>
 										}
 									</div>
 								</div>
@@ -372,143 +319,6 @@ export const Profile = ()=> {
 									</div>
 								 </div>
 							</div>							
-						</div>
-					</div>	
-					<div className="box">
-						<div className="box-header with-border">
-							<h4 className="box-title">پاسخ مشتریان</h4>
-						</div>
-						<div className="box-body p-0">
-							<div className="inner-user-div">
-							  <div className="media-list bb-1 bb-dashed border-light">
-								<div className="media align-items-center">
-								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="./img/images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
-								  </a>
-								  <div className="media-body">
-									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
-									</p>
-									  2 روز قبل
-								  </div>
-								  <div className="media-right">
-									  <div className="d-flex">
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star-half"></i>
-									  </div>
-								  </div>
-								</div>					
-								<div className="media pt-0">
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-								</div>
-							  </div>
-							  <div className="media-list bb-1 bb-dashed border-light">
-								<div className="media align-items-center">
-								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="./img/images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
-								  </a>
-								  <div className="media-body">
-									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>Johen Doe</strong></a>
-									</p>
-									  5 day ago
-								  </div>
-								  <div className="media-right">
-									  <div className="d-flex">
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star-half"></i>
-									  </div>
-								  </div>
-								</div>					
-								<div className="media pt-0">
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-								</div>
-							  </div>
-							  <div className="media-list">
-								<div className="media align-items-center">
-								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="./img/images/avatar/avatar-4.png" className="bg-success-light" alt="..."/>
-								  </a>
-								  <div className="media-body">
-									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
-									</p>
-									  7 روز قبل
-								  </div>
-								  <div className="media-right">
-									  <div className="d-flex">
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star-half"></i>
-									  </div>
-								  </div>
-								</div>					
-								<div className="media pt-0">
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-								</div>
-							  </div>
-							  <div className="media-list bb-1 bb-dashed border-light">
-								<div className="media align-items-center">
-								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="./img/images/avatar/avatar-10.png" className="bg-success-light" alt="..."/>
-								  </a>
-								  <div className="media-body">
-									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
-									</p>
-									  2 روز قبل
-								  </div>
-								  <div className="media-right">
-									  <div className="d-flex">
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star-half"></i>
-									  </div>
-								  </div>
-								</div>					
-								<div className="media pt-0">
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-								</div>
-							  </div>
-							  <div className="media-list bb-1 bb-dashed border-light">
-								<div className="media align-items-center">
-								  <a className="avatar avatar-lg status-success" href="#">
-									<img src="./img/images/avatar/avatar-3.png" className="bg-success-light" alt="..."/>
-								  </a>
-								  <div className="media-body">
-									<p className="fs-16">
-									  <a className="hover-primary" href="#"><strong>کاربر پیش فرض</strong></a>
-									</p>
-									  5 روز قبل
-								  </div>
-								  <div className="media-right">
-									  <div className="d-flex">
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star"></i>
-										  <i className="text-warning fa fa-star-half"></i>
-									  </div>
-								  </div>
-								</div>					
-								<div className="media pt-0">
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-								</div>
-							  </div>
-							</div>
-						</div>
-						<div className="box-footer">
-							<a href="#" className="waves-effect waves-light d-block w-p100 btn btn-primary">دیدن پاسخ های بیشتر</a>
 						</div>
 					</div>
 				</div>

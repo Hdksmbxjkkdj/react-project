@@ -24,7 +24,8 @@ const Cart = () => {
       <section className="cart-area pt-100 pb-100">
         <div className="container">
           <div className="row">
-            <div className="col-12">
+            {
+              (cart.length>0)?<div className="col-12">
               <form action="#">
                 <div className="table-content table-responsive">
                   <table className="table" key={Math.random()}>
@@ -130,7 +131,15 @@ const Cart = () => {
                   </div>
                 </div>
               </form>
+            </div>:<div className="col-12">
+              <div>
+                <h4 className="text-center text-danger">
+                  لیست سبد خرید شما خالی است !
+                </h4>
+              </div>
             </div>
+            }
+            
           </div>
         </div>
       </section>

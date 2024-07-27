@@ -1,11 +1,13 @@
 import { Event as event } from "jquery";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "../Cart/RemoveCartItem";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
+import { LogOut } from "../Auth/Logout";
+import { Notif } from "../../Utils/Notif";
 
 const Header = () => {
   window?.$("document").ready(function () {
@@ -59,29 +61,43 @@ const Header = () => {
       return total;
     });
   }
+  const user = localStorage.getItem("user");
+  function CheckUser()
+  {
+    if(user!="" || user!=null || user!=undefined)
+    {
+      return
+    }
+    else
+    {
+      Notif("warning","ابتدا باید وارد سایت شوید !")
+    }
+  }
   return (
     <>
-      <header className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>
+      <header id="header" className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>
         <div className="header__area">
           <div className="header__top d-none d-sm-block">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
-                  <div className="header__welcome">
-                    <span>به سایت ما خوش آمدید</span>
+                  {
+                    (user)&&<div className="header__welcome">
+                    <span>{user} عزیز به سایت ما خوش آمدید</span>
                   </div>
+                  }
                 </div>
                 <div className="col-xl-6 col-lg-6 col-md-7">
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
                       <li>
-                        <Link to="/profile">پروفایل</Link>
+                        <Link to={(user!="")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
                       </li>
                       <li>
-                        <Link to="wishlist">علاقه مندی ها</Link>
+                        <Link to={(user!="")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
                       </li>
                       <li>
-                        <Link to="register">ورود</Link>
+                          <Link to="/register">ثبت نام/ورود</Link>
                       </li>
                       <li>
                         <a style={{color:"#ccc"}} disabled={true}>مقایسه</a>
@@ -226,7 +242,7 @@ const Header = () => {
                                     }
                                   />
                                   <div key={Math.random()}>
-                                    {(reslut != undefined || reslut != null) &&
+                                    {(reslut != undefined || reslut != null) ?
                                       reslut.map((item) => {
                                         return (
                                           <div className="card my-3 search-card">
@@ -257,7 +273,7 @@ const Header = () => {
                                             </Link>
                                           </div>
                                         );
-                                      })}
+                                      }):<div className="mt-3"><p className="text-danger text-center">مورد مطابقی یافت نشد</p></div>}
                                   </div>
                                 </div>
                                 <div className="modal-footer">
@@ -275,7 +291,7 @@ const Header = () => {
 
                           <button type="submit"><i className="fa fa-search"></i></button>
                         </div>
-                        <div className="header__search-cat">
+                        {/* <div className="header__search-cat">
                           <select>
                             <option>دسته بندی ها</option>
                             <option>بهترین محصولات فروخته شده</option>
@@ -290,7 +306,7 @@ const Header = () => {
                             <option>تلوزیون</option>
                             <option>کامپیوتر</option>
                           </select>
-                        </div>
+                        </div> */}
                       </form>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ export const Menu = () => {
                 <li><Link to="product">ویژگی ها <i className="fa fa-angle-down"></i></Link>
                     <ul className="submenu">
                         <li><Link to="/products">نوع محصول</Link></li>
-                        <li><Link to="/product">ویژگی محصول <i className="fa fa-angle-down"></i></Link>
+                        <li><Link to="/product">ویژگی محصول <i className="fa fa-angle-up"></i></Link>
                             <ul className="submenu">
                                 <li><Link to="product-details">محصول ساده</Link></li>
                                 <li><Link to="product-details-config">محصولات مرتبط</Link></li>
