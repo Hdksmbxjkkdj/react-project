@@ -1,19 +1,23 @@
-import { Config } from "../../Utils/config";
-import {useContext, useEffect, useState} from "react"
-import { AddToCart } from "../Cart/AddToCart";
 import axios from "axios";
-import { RemoveWishList } from "./RemoveWishList";
-import { event } from "jquery";
-import { CartContext } from "../../context/CardContext";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Config } from "../../Utils/config";
+import { CartContext } from "../../context/CardContext";
+import { AddToCart } from "../Cart/AddToCart";
+import { RemoveWishList } from "./RemoveWishList";
 const WishList = () => {
   const {setCart} = useContext(CartContext);
   const [row, setrow] = useState();
+  const [use,setUser] = useState()
   useEffect(() => {
-        axios.get("http://localhost:313/wishlist").then((res)=>{
+    const u = localStorage.getItem("user");
+    axios.get(`http://localhost:313/register?username=${u}`).then((response)=>{
+      setUser(response.data[0].id)
+    })
+        axios.get(`http://localhost:313/wishlist?Uid=${use}`).then((res)=>{
           setrow(res);
         })
-  }, row);
+  }, [use]);
   const eMessage = "error";
   return (
     <>
@@ -21,90 +25,99 @@ const WishList = () => {
         <section class="cart-area pb-100">
           <div class="container">
             <div class="row">
-              <div class="col-12">
-                  <div class="table-content table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th class="product-thumbnail">تصویر</th>
-                          <th class="cart-product-name">محصول</th>
-                          <th class="product-price">قیمت واحد</th>
-                          <th class="product-quantity">تعداد</th>
-                          <th class="product-subtotal">مجموع</th>
-                          <th class="product-remove">حذف</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {
-                        row?.data.map((item) => {
-                          return <>
-                              <tr>
-                                <td class="product-thumbnail">
-                                  <Link to={"/product-details"+item.id}>
-                                    <img
-                                      src={Config.shop + "" + item.pic}
-                                      alt=""
-                                    />
-                                  </Link>
-                                </td>
-                                <td class="product-name">
-                                  <Link to={"/product-details/:"+item.id}
-                                    style={{ fontWeight: "600" }}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </td>
-                                <td class="product-price">
-                                  <span
-                                    class="amount"
-                                    style={{ fontWeight: "600" }}
-                                  >
-                                    {item.unitprice?.toFixed(2)}
-                                  </span>
-                                </td>
-                                <td class="product-quantity">
-                                  <div class="cart-plus-minus">
-                                    <button
-                                      class="t-y-btn t-y-btn-grey fw-bold"
-                                      type="submit"
-                                      onClick={(event) => AddToCart(
-                                        event,
-                                        item.id,
-                                        item.pic,
-                                        item.name,
-                                        item.unitprice,
-                                        item.quantity,
-                                        setCart,
-                                        eMessage,
-                                        null
-                                      )}
-                                    >
-                                      سبد خرید +
-                                    </button>
-                                  </div>
-                                </td>
-                                <td class="product-subtotal">
-                                  <span
-                                    class="amount"
-                                    style={{ fontWeight: "600" }}
-                                  >
-                                    {(item.unitprice * item.quantity).toFixed(
-                                      2
+              {
+                (row?.data.length>0)?<div class="col-12">
+                <div class="table-content table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="product-thumbnail">تصویر</th>
+                        <th class="cart-product-name">محصول</th>
+                        <th class="product-price">قیمت واحد</th>
+                        <th class="product-quantity">تعداد</th>
+                        <th class="product-subtotal">مجموع</th>
+                        <th class="product-remove">حذف</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {
+                      row?.data.map((item) => {
+                        return <>
+                            <tr>
+                              <td class="product-thumbnail">
+                                <Link to={"/product-details"+item.id}>
+                                  <img
+                                    src={Config.shop + "" + item.pic}
+                                    alt=""
+                                  />
+                                </Link>
+                              </td>
+                              <td class="product-name">
+                                <Link to={"/product-details/:"+item.id}
+                                  style={{ fontWeight: "600" }}
+                                >
+                                  {item.name}
+                                </Link>
+                              </td>
+                              <td class="product-price">
+                                <span
+                                  class="amount"
+                                  style={{ fontWeight: "600" }}
+                                >
+                                  {item.unitprice?.toFixed(2)}
+                                </span>
+                              </td>
+                              <td class="product-quantity">
+                                <div class="cart-plus-minus">
+                                  <button
+                                    class="t-y-btn t-y-btn-grey fw-bold"
+                                    type="submit"
+                                    onClick={(event) => AddToCart(
+                                      event,
+                                      item.id,
+                                      item.pic,
+                                      item.name,
+                                      item.unitprice,
+                                      item.quantity,
+                                      setCart,
+                                      eMessage,
+                                      null
                                     )}
-                                  </span>
-                                </td>
-                                <td class="product-remove">
-                                  <a href="#" onClick={()=> RemoveWishList(event,item.id,setrow,false)}>
-                                    <i class="fa fa-times"></i>
-                                  </a>
-                                </td>
-                              </tr>
-                            </>
-                        })}
-                      </tbody>
-                    </table>
-                  </div>
+                                  >
+                                    سبد خرید +
+                                  </button>
+                                </div>
+                              </td>
+                              <td class="product-subtotal">
+                                <span
+                                  class="amount"
+                                  style={{ fontWeight: "600" }}
+                                >
+                                  {(item.unitprice * item.quantity).toFixed(
+                                    2
+                                  )}
+                                </span>
+                              </td>
+                              <td class="product-remove" key={Math.random()}>
+                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false)}>
+                                  <i class="fa fa-times"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          </>
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+            </div>:<div className="col-12">
+              <div className="mt-5">
+                <h4 className="text-danger text-center">
+                  لیست علاقه مندی های شما خالی می باشد !
+                </h4>
               </div>
+            </div>
+              }
+              
             </div>
           </div>
         </section>
@@ -113,3 +126,4 @@ const WishList = () => {
   );
 };
 export { WishList };
+

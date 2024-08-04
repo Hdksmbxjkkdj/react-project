@@ -1,7 +1,5 @@
-import { Sidebar } from "./sidebar";
-import { Config } from "../../Utils/config";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Config } from "../../Utils/config";
 
 const BlogArea = (props) => {
   return (
@@ -71,3 +69,4 @@ const BlogArea = (props) => {
 };
 
 export { BlogArea };
+

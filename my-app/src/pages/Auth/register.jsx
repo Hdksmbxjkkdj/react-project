@@ -25,8 +25,8 @@ const Register = () => {
         {
           Notif('success',"خوش آمدید !");
           setTimeout(() => {
-            window.location.assign("/");
-          }, 500);
+            window.location.assign("/login");
+          }, 1000);
         }
         else
         {
@@ -52,7 +52,7 @@ const Register = () => {
               <div class="col-lg-8 offset-lg-2">
                 <div class="basic-login">
                   <h3 class="text-center mb-60">فرم ثبت نام</h3>
-                  <form action="#" onSubmit={()=>registering()}>
+                  <div>
                     <label for="name">
                       نام کاربری <span>**</span>
                     </label>
@@ -66,14 +66,14 @@ const Register = () => {
                     </label>
                     <input id="pass" type="password" placeholder="کلمه عبورتان را وارد کنید" onChange={(e)=>setregister({...register,passowrd:e.target.value})}/>
                     <div class="mt-10"></div>
-                    <button class="t-y-btn w-100" type="submit" >ثبت نام</button>
+                    <button class="t-y-btn w-100" type="button" onClick={registering}>ثبت نام</button>
                     <div class="or-divide">
                       <span>یا</span>
                     </div>
                     <Link to="/login" class="t-y-btn t-y-btn-grey w-100">
                       ورود
                     </Link>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>

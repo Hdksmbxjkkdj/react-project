@@ -28,21 +28,21 @@ const Footer = ()=>{
                                                             <i className="fa fa-headset"></i>
                                                         </div>
                                                         <div className="text">
-                                                            <h4>Hotline Free 24/24:</h4>
+                                                            <h4>پشتیبانی رایگان 24/24:</h4>
                                                             <span>(+100) 123 456 7890</span>
                                                         </div>
                                                     </div>
                                                     <div className="footer__info footer__info-4">
                                                         <ul>
                                                             <li>
-                                                                <span>Add:  
-                                                                        <a target="_blank" href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">Walls Street 68, Mahattan, New York, USA</a>
+                                                                <span>آدرس:  
+                                                                        <a target="_blank" href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">آمریکا ، نیویورک ، منهتن ، خیابان والز استریت ، پلاک 68</a>
                                                                     </span>
                                                             </li>
-                                                            <li><span>Email: <a href="/cdn-cgi/l/email-protection#e881868e87a89c808d8a9d8d9b8391c68b8785"><span className="__cf_email__" data-cfemail="e28b8c848da2968a8780978791899bcc818d8f">[email&#160;protected]</span></a>
+                                                            <li><span>ایمیل: <a href="/cdn-cgi/l/email-protection#e881868e87a89c808d8a9d8d9b8391c68b8785"><span className="__cf_email__" data-cfemail="e28b8c848da2968a8780978791899bcc818d8f">[info@gmail.com]</span></a>
                                                                 </span>
                                                             </li>
-                                                            <li><span>Fax: <a href="tel:123-456-7890">(+100) 123 456 7890</a> - <a href="tel:-100-123-456-7891">(+100) 123 456 7891</a> </span></li>
+                                                            <li><span>فکس: <a href="tel:123-456-7890">(+100) 123 456 7890</a> - <a href="tel:-100-123-456-7891">(+100) 123 456 7891</a> </span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -53,17 +53,17 @@ const Footer = ()=>{
                                                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                                     <div className="footer__widget">
                                                         <div className="footer__widget-title footer__widget-title-4">
-                                                            <h4>Information</h4>
+                                                            <h4>اطلاعات</h4>
                                                         </div>
                                                         <div className="footer__widget-content">
                                                             <div className="footer__link footer__link-4">
                                                                 <ul>
-                                                                    <li><a href="#"> Custom Service </a></li>
+                                                                    <li><a href="#"> سرویس مشتریان </a></li>
                                                                     <li><a href="#">F.A.Q.’s</a></li>
-                                                                    <li><a href="#">Ordering Tracking</a></li>
-                                                                    <li><a href="#"> Contacts</a></li>
-                                                                    <li><a href="#">Events</a></li>
-                                                                    <li><a href="#">Popular</a></li>
+                                                                    <li><a href="#">ثبت سفارشات</a></li>
+                                                                    <li><a href="#"> ارتباط</a></li>
+                                                                    <li><a href="#">رویداد ها</a></li>
+                                                                    <li><a href="#">محبوب</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -72,17 +72,17 @@ const Footer = ()=>{
                                                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                                     <div className="footer__widget">
                                                         <div className="footer__widget-title footer__widget-title-4">
-                                                            <h4>Our Services</h4>
+                                                            <h4>خدمات ما</h4>
                                                         </div>
                                                         <div className="footer__widget-content">
                                                             <div className="footer__link footer__link-4">
                                                                 <ul>
-                                                                    <li><a href="#">Sitemap</a></li>
-                                                                    <li><a href="#">Privacy Policy</a></li>
-                                                                    <li><a href="#">Your Account</a></li>
-                                                                    <li><a href="#">Advanced Search</a></li>
-                                                                    <li><a href="#">Terms & Condition</a></li>
-                                                                    <li><a href="#"> Contact Us</a></li>
+                                                                    <li><a href="#">نقشه ها</a></li>
+                                                                    <li><a href="#">شرایط خصوصی</a></li>
+                                                                    <li><a href="#">حساب شما</a></li>
+                                                                    <li><a href="#">جستجو پیشرفته</a></li>
+                                                                    <li><a href="#">شرایط و وضعیت</a></li>
+                                                                    <li><a href="#"> ارتباط با ما</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -100,17 +100,17 @@ const Footer = ()=>{
                                             <div className="col-xl-6 col-lg-6">
                                                 <div className="footer__widget">
                                                     <div className="footer__widget-title footer__widget-title-4">
-                                                        <h4>My Account</h4>
+                                                        <h4>حساب من</h4>
                                                     </div>
                                                     <div className="footer__widget-content">
                                                         <div className="footer__link footer__link-4">
                                                             <ul>
-                                                                <li><a href="#"> About us </a></li>
-                                                                <li><a href="#">Delivery Information</a></li>
-                                                                <li><a href="#">Privacy Policy</a></li>
-                                                                <li><a href="#">Discount</a></li>
-                                                                <li><a href="#">Custom Service</a></li>
-                                                                <li><a href="#">Terms & Condition</a></li>
+                                                                <li><a href="#"> درباره ما </a></li>
+                                                                <li><a href="#">اطلاعات تکمیلی</a></li>
+                                                                <li><a href="#">شرایط خصوصی</a></li>
+                                                                <li><a href="#">تخفیف</a></li>
+                                                                <li><a href="#">سرویس مشتریان</a></li>
+                                                                <li><a href="#">شرایط و وضعیت</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -119,17 +119,17 @@ const Footer = ()=>{
                                             <div className="col-xl-6 col-lg-6">
                                                 <div className="footer__widget">
                                                     <div className="footer__widget-title footer__widget-title-4">
-                                                        <h4>Payment & Shipping</h4>
+                                                        <h4>پرداخت و ارسال</h4>
                                                     </div>
                                                     <div className="footer__widget-content">
                                                         <div className="footer__link footer__link-4">
                                                             <ul>
-                                                                <li><a href="#">Terms Of Use</a></li>
-                                                                <li><a href="#">Payment Methods</a></li>
-                                                                <li><a href="#">Shipping Guide</a></li>
-                                                                <li><a href="#">Locations We Ship To</a></li>
-                                                                <li><a href="#">Estimated Delivery Time</a></li>
-                                                                <li><a href="#">Express</a></li>
+                                                                <li><a href="#">شرایط استفاده</a></li>
+                                                                <li><a href="#">روش های پرداخت</a></li>
+                                                                <li><a href="#">راهنمای ارسال</a></li>
+                                                                <li><a href="#">موقیتی که ما ارسال میکنیم</a></li>
+                                                                <li><a href="#">زمان دریافت محصول</a></li>
+                                                                <li><a href="#">سریع السیر</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -140,15 +140,15 @@ const Footer = ()=>{
                                     <div className="col-xl-5 col-lg-6 col-md-6 col-sm-6">
                                         <div className="footer__widget">
                                             <div className="footer__widget-title">
-                                                <h4>Sign Up For Newsletter</h4>
+                                                <h4>عضویت در خبرنامه</h4>
                                             </div>
                                             <div className="footer__widget-content">
                                                 <div className="footer__subscribe">
-                                                    <p> <span>Join 40.00+ Subscribers</span> and get a new discount coupon on every Saturday.</p>
+                                                    <p> <span>بپیوندید 40.00+ دنبال کننده</span> وهر آخر هفته کد های تخفیف دریافت کنید.</p>
                                                     <div className="footer__subscribe-form">
                                                         <form action="#">
-                                                            <input type="email" placeholder="Your Email Address..."/>
-                                                            <button type="submit">subscribe</button>
+                                                            <input type="email" placeholder="آدرس ایمیل خود را وارد کنید ..."/>
+                                                            <button type="submit">دنبال کردن</button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -165,7 +165,7 @@ const Footer = ()=>{
                         <div className="row align-items-center">
                             <div className="col-xl-6 col-lg-6">
                                 <div className="footer__copyright-text footer__copyright-text-2">
-                                    <p>Copyright © <a href="index.html">Topico.</a> All Rights Reserved. <a href="#">ThemePure.</a></p>
+                                    <p>کپی رایت © <a href="index.html">توپیکو.</a> همه رزرو شده است. <a href="#">تمپور.</a></p>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6">

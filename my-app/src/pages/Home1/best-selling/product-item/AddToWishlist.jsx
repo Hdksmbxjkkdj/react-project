@@ -1,26 +1,38 @@
 import axios from "axios";
-import { useState } from "react";
 import { Notif } from "../../../../Utils/Notif";
-export const AddToWishlist = async (id, pic, name, unitprice, quantity) => {
+import { User } from "./User";
+export const AddToWishlist = async (PID, pic, name, unitprice, UID, quantity) => {
+  console.log(UID);
   const url = "http://localhost:313/wishlist";
   let status = 200;
+  let auth = User();
+  const id = PID + UID;
   (quantity==undefined || quantity==null) ? quantity=1 : quantity=quantity;
-  try{
-    await axios
-    .post(url, {
-      id: id,
-      pic: pic,
-      name: name,
-      unitprice: unitprice,
-      quantity: quantity,
-    })
-    .then((response) => {
-      console.log(response.data);
-      Notif('success',"با موفقیت اضافه شد :)")
-    });
-  }
-  catch(error)
+  if(auth)
   {
-    Notif('error',"قبلا به علاقه مندی ها اضافه شده است !")
+    try{
+      await axios
+      .post(url, {
+        id: id,
+        Pid: PID,
+        pic: pic,
+        name: name,
+        unitprice: unitprice,
+        quantity: quantity,
+        Uid : UID,
+      })
+      .then((response) => {
+        Notif('success',"با موفقیت اضافه شد :)")
+      });
+    }
+    catch(error)
+    {
+      await axios.delete(`${url}/${id}`)
+      Notif('success',"با موفقیت از علاقه مندی ها پاک شد !")
+    }
+  }
+  else
+  {
+    Notif('error', "ابتدا وارد سایت شوید !")
   }
 };
