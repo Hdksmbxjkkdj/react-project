@@ -5659,15 +5659,8 @@ p.checkout-coupon input[type=text]:focus {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-.close-modal
-{
-  background-color: transparent !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
+/* filter test */
+.product__color ul li a:focus {
+  box-shadow: 0 0 0 1px #222, inset 0 0 0 2px #fff;
 }
-
-.owl-carousel
-{
-  z-index: 0 !important;
-}
+/* filter test */

@@ -1,5 +1,5 @@
 import { CustomerComment } from '../Product-Details/CustomerComment'
-import { BrandSlider } from './Brands';
+import { BrandSlider } from '../Product-Details/BrandSlider';
 import { ContactArea } from './ContactArea';
 import {Map} from './Map';
 export const ContactUs = () =>{

@@ -24,7 +24,7 @@ export const ProducDetails= () =>{
 
         });
     }, []);
-   console.log(info?.data.id);
+   
 
     return<>
         <main>

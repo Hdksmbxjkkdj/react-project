@@ -6,38 +6,35 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 export const BrandSlider = () =>{
     
     return<>
-     {/* <OwlCarousel
-          loopProductItemflex
-          items={4}
-          className="owl-carousel owl-theme"
-          nav
-          {...Option}
-          key={Math.random()}
-        >
-          {slider?.data?.map((item) => {
-            return (
-              <div className="product__item-wrapper">
-                < slider={item}></ProductItemflex>
-                <ProductItemflex slider={item}></ProductItemflex>
-              </div>
-            );
-          })}
-        </OwlCarousel> */}
-           <div className="col-xl-12">
-                        <div className="brand__slider owl-carousel">
-                            <div className="brand__item">
-                                <img src={Config.banner + "brand-1"} alt="" />
-                            </div>
-                            <div className="brand__item">
-                                <img src={Config.brand+"brand-2"} alt="" />
-                            </div>
-                            <div className="brand__item">
-                                <img src={Config.brand+"brand-3"} alt="" />
-                            </div>
-                            <div className="brand__item">
-                                <img src={Config.brand+"brand-4"} alt="" />
-                            </div>
-                        </div>
+          <section className="brand__area">
+                <div className="container custom-container">
+                    <div className="row align-items-center">
+                          <div className="col-xl-12">
+                          <OwlCarousel
+                              items="6"
+                              loop
+                              autoPlay
+                          >
+                            
+                                    <div className='item brand__item'>
+                                        <img src={Config.banner +"" +"brand-1.jpg"} alt="" />
+                                    </div>
+                                    <div className='item brand__item'>
+                                        <img src={Config.banner +"brand-2.jpg"} alt="" />
+                                    </div>
+                                    <div className='item brand__item'>
+                                        <img src={Config.banner +"brand-3.jpg"} alt="" />
+                                    </div>
+                                    <div className='item brand__item'>
+                                        <img src={Config.banner +"brand-4.jpg"} alt="" />
+                                    </div>
+                            
+                          </OwlCarousel>
+                                      
+                          </div>
                     </div>
+               </div>
+          </section>
+          
     </>
 }

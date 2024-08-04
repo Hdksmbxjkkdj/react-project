@@ -1,6 +1,5 @@
 export const Map = () =>{
-       return
-       <>
+       return <>
          <section className="contact__area">
             <div className="container-fluid p-0">
                 <div className="row gx-0">
