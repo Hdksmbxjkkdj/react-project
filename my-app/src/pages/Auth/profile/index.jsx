@@ -11,6 +11,7 @@ export const Profile = ()=> {
 
 	
 	'use strict';
+	const u = localStorage.getItem("user"); 
 
 	const {cart} = useContext(CartContext);
 	var tot=0;
@@ -23,8 +24,12 @@ export const Profile = ()=> {
 		return tot;
 	}
 	const [wishlist,setwishlist] = useState();
+	const [user,setUser] = useState();
 	useEffect(()=>{
-		axios.get("http://localhost:313/wishlist").then((res)=>{
+		axios.get(`http://localhost:313/register?username=${u}`).then((response)=>{
+			setUser(response?.data[0].id)
+		})
+		axios.get(`http://localhost:313/wishlist?Uid=${user}`).then((res)=>{
 			setwishlist(res);
 		})
 	},wishlist)

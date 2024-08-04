@@ -1,19 +1,23 @@
-import { Config } from "../../Utils/config";
-import {useContext, useEffect, useState} from "react"
-import { AddToCart } from "../Cart/AddToCart";
 import axios from "axios";
-import { RemoveWishList } from "./RemoveWishList";
-import { event } from "jquery";
-import { CartContext } from "../../context/CardContext";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Config } from "../../Utils/config";
+import { CartContext } from "../../context/CardContext";
+import { AddToCart } from "../Cart/AddToCart";
+import { RemoveWishList } from "./RemoveWishList";
 const WishList = () => {
   const {setCart} = useContext(CartContext);
   const [row, setrow] = useState();
+  const [use,setUser] = useState()
   useEffect(() => {
-        axios.get("http://localhost:313/wishlist").then((res)=>{
+    const u = localStorage.getItem("user");
+    axios.get(`http://localhost:313/register?username=${u}`).then((response)=>{
+      setUser(response.data[0].id)
+    })
+        axios.get(`http://localhost:313/wishlist?Uid=${use}`).then((res)=>{
           setrow(res);
         })
-  }, row);
+  }, [use]);
   const eMessage = "error";
   return (
     <>
@@ -94,8 +98,8 @@ const WishList = () => {
                                   )}
                                 </span>
                               </td>
-                              <td class="product-remove">
-                                <a href="#" onClick={()=> RemoveWishList(event,item.id,setrow,false)}>
+                              <td class="product-remove" key={Math.random()}>
+                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false)}>
                                   <i class="fa fa-times"></i>
                                 </a>
                               </td>
@@ -122,3 +126,4 @@ const WishList = () => {
   );
 };
 export { WishList };
+

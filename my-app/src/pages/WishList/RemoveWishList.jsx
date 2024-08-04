@@ -1,28 +1,25 @@
 // import axios from "axios";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { useState } from "react";
 import { Notif } from "../../Utils/Notif";
-export const RemoveWishList = async(event, id, setrow, all = false) => {
-    let url = `http://localhost:313/wishlist/${id}`
+export const RemoveWishList = async(event, PID, UID, setrow, all = false) => {
+    const url = "http://localhost:313/wishlist";
     let status = 200
     window?.$(event.target).parent().find('.spinner-container').css('display', 'flex')
     try {
-        let message;
-        await axios.delete(url)
-            axios.get("http://localhost:313/wishlist").then((res)=>{
-                console.log(res);
+        await axios.delete(`${url}/${PID}`)
+            await axios.get(`http://localhost:313/wishlist?Uid=${UID}`).then((res)=>{
                 setrow(res);
                 if (res.data.status) status = res.data.status
-                message = res.data.message
             })
         if (status == 200) {
-            Notif('success', "removed successfully :)")
+            Notif('success', "با موفقیت از علاقه مندی ها پاک شد :)")
         } else {
-            Notif('error', "there is an error with your connection")
+            Notif('error', "در اینجا یک خطا وجود دارد !")
         }
 
     } catch (error) {
-        Notif('error', "error")
+        Notif('error', "در اینجا یک خطا وجود دارد")
     }
 
     window?.$('.spinner-container').fadeOut(1500)

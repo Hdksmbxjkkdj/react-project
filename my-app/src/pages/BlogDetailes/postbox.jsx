@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
 import { Comment } from "./commentbox";
 import axios from "axios";
-import {Notif} from "../../Utils/Notif";
-import {useForm} from "react-hook-form";
-import { Form, useParams } from "react-router-dom";
+import {Notif} from "../../Utils/Notif";  
+import { useParams } from "react-router-dom";
 
 const PostBox = (props) => {
   const {id} = useParams();
@@ -23,10 +22,8 @@ const submit = async (e) => {
   var month=date.getMonth()
   var day=date.getDate()
   var d = year+"/"+month+"/"+day;
-  console.log(d);
   let status =201;
   e.preventDefault();
-  // if(name==""||email)
   await axios.post("http://localhost:313/comments",{name:name,email:email,comment:comment,blog_id:id,date:d}).then((e)=>{
     status=e.status;
     if(e.status==201)
@@ -39,7 +36,6 @@ const submit = async (e) => {
     }
   })
 };
-console.log(props?.item);
 
   return (
     <>
