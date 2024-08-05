@@ -51,7 +51,6 @@ const Header = () => {
   });
   const { cart,setCart } = useContext(CartContext);
   const { searching } = ItemsSearch();
- console.log();
   const [reslut, setResult] = useState();
   const param = window.location.pathname.split("/").pop();
   function tot()
