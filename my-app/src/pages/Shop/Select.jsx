@@ -3,21 +3,7 @@ import {Filter} from "../Components/Filter"
 import { useEffect } from 'react'
 import 'jquery';
 export const Select =({items,setItems})=>{
-    useEffect(() => {
-        (function($) {
-            $.fn.niceSelect = function(method) {
-            create_nice_select('lkjhg')
-        function create_nice_select($select){
-            window?.$select.after(window?.$('<div></div>')
-              .addClass('nice-select')
-              .addClass(window?.$select.attr('class') || '')
-              .addClass(window?.$select.attr('disabled') ? 'disabled' : '')
-              .attr('tabindex', $select.attr('disabled') ? null : '0')
-              .html('<span class="current"></span><ul class="list"></ul>')
-            );}}})
-              
-          
-        },[])
+
     const eMessage = 'error_message'
     const local = Local()
     let searchParam = new URLSearchParams(window.location.search);
@@ -27,7 +13,7 @@ export const Select =({items,setItems})=>{
         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
             <div className="product__filter-right d-flex align-items-center justify-content-md-end">
                 <div className="product__sorting product__show-no">
-                    <select>
+                    <select className='selectlist'>
                         <option selected={searchParam?.get('Number')?.indexOf('10')>-1? true:false} onClick={() =>Filter(setItems,items.length,'Number','10',eMessage)}>10</option>
                         <option selected={searchParam?.get('Number')?.indexOf('20')>-1? true:false} onClick={() =>Filter(setItems,items.length,'Number','20',eMessage)}>20</option>
                         <option selected={searchParam?.get('Number')?.indexOf('30')>-1? true:false} onClick={() =>Filter(setItems,items.length,'Number','30',eMessage)}>30</option>
@@ -35,7 +21,7 @@ export const Select =({items,setItems})=>{
                     </select>
                 </div>
                 <div className="product__sorting product__show-position ml-20">
-                    <select>
+                    <select className='selectlist'>
                             
                             <option selected={searchParam?.get('sort')?.indexOf('desc')>-1? true:false} onClick={() =>Filter(setItems,items.length,'sort','desc',eMessage)}>position</option>
                             <option selected={searchParam?.get('sort')?.indexOf('popular') > -1 ? true : false} onClick={() => Filter(setItems, items.length, 'sort', 'popular', eMessage)}>product name</option>
