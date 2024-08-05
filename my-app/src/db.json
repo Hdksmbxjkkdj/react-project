@@ -305,7 +305,8 @@
       "id": "5",
       "title": "ترازو",
       "isAdd": false,
-      "color-id": "1"
+      "color-id": "1",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
     },
     {
       "pic": "product-3.jpg",
@@ -315,7 +316,9 @@
       "id": "6",
       "title": "تلوزیون",
       "isAdd": false,
-      "color-id": "2"
+      "color-id": "2",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     },
     {
       "pic": "product-5.jpg",
@@ -325,7 +328,9 @@
       "id": "7",
       "title": "گوشی",
       "isAdd": false,
-      "color-id": "2"
+      "color-id": "2",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     },
     {
       "pic": "product-7.jpg",
@@ -335,7 +340,9 @@
       "id": "8",
       "title": "دوربین امنیتی",
       "isAdd": false,
-      "color-id": "4"
+      "color-id": "4",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     },
     {
       "pic": "product-9.jpg",
@@ -346,7 +353,9 @@
       "title": "تی شرت",
       "isAdd": false,
       "color-id": "2",
-      "Size-Id": "XXL"
+      "Size-Id": "XXL",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     },
     {
       "pic": "product-11.jpg",
@@ -356,7 +365,9 @@
       "id": "10",
       "title": "پردازنده",
       "isAdd": false,
-      "color-id": "3"
+      "color-id": "3",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     },
     {
       "pic": "product-13.jpg",
@@ -366,7 +377,9 @@
       "id": "11",
       "title": "دوربین",
       "isAdd": false,
-      "color-id": "1"
+      "color-id": "1",
+      "des":"اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
+
     }
   ],
   "blog_slider": [
@@ -693,6 +706,76 @@
       "sender_email": "u",
       "comment": "u",
       "date": "01/07/2024"
+    },
+    {
+      "id": "4b37",
+      "sender_name": ";;;;;;;;",
+      "comment": "",
+      "date": "11/07/2024"
+    },
+    {
+      "id": "7ec4",
+      "comment": "",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "db3f",
+      "comment": "",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "a6a4",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "0eb7",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "98ac",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "20a1",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "b874",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "9fe6",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "5613",
+      "sender_name": "ljhkugjytrsedvbv",
+      "sender_email": ".lkjhgfdzs\\a",
+      "comment": "/l.khjghgfxdzsbnhm,,",
+      "date": "04/08/2024"
+    },
+    {
+      "id": "d4d0",
+      "comment": "",
+      "date": "04/08/2024"
     }
   ],
   "ContactUs": [

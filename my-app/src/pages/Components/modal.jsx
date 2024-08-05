@@ -1,0 +1,177 @@
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSlidersH, faTimes,fasearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Config } from "../../Utils"; 
+import { Rank } from "./Rank";
+export const Modal = ({index})=>{
+  //number product
+  useEffect(() => {
+    window
+      ?.$(".cart-plus-minus")
+      .append(
+        '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
+      );
+    window?.$(".qtybutton").on("click", function () {
+      var $button = window?.$(this);
+      var oldValue = $button.parent().find("input").val();
+      if ($button.text() == "+") {
+        var newVal = parseFloat(oldValue) + 1;
+      } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 0) {
+          var newVal = parseFloat(oldValue) - 1;
+        } else {
+          newVal = 0;
+        }
+      }
+      $button.parent().find("input").val(newVal);
+    });
+  }, []);
+
+
+
+  //number product
+  console.log(index)
+    const [modal,setModal]=useState({
+        id:"1",
+        show:false
+    })
+    useEffect(()=>{
+      (modal.show) && window?.$(`#${modal.id}`).modal("show");
+    },[modal])
+    function handleModal()
+    {
+      setModal({'id':index.id,'show':true})
+    }
+    console.log('kjkj')
+    return (
+        <>
+        {/* <Quick handleModal={handleModal}></Quick> */}
+
+        <div className="product__action p-absolute">
+            <ul>
+              <li> 
+               <a href="#"  title="Add to Wishlist">
+                  <i className="fa-regular fa-heart"></i>
+                </a> 
+              </li>
+              <li> 
+                <a href="#" title="Quick View" onClick={handleModal}>
+                <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+                </a> 
+              </li>
+              <li>
+                <a href="#" title="Compare">
+                  {/* <i className="fa fa-sliders-h" onClick={()=>alert("هنوز این مورد وجود ندارد !")}></i> */}
+                  <FontAwesomeIcon icon={faSlidersH} onClick={()=>alert("هنوز این مورد وجود ندارد !")}></FontAwesomeIcon>
+                </a>
+              </li>
+            </ul>
+                                </div> 
+        {/* <button onClick={handleModal}>click</button> */}
+        <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={index.id} tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+          <div class="modal-content">
+            <div class="product__modal-wrapper p-relative">
+              <div class="product__modal-close p-absolute">
+                <button data-bs-dismiss="modal">
+                  {/* <i class="fa fa-times"></i> */}
+                  <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                </button>
+              </div>
+              <div class="product__modal-inner">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="product__modal-box">
+                      <div class="tab-content" id="modalTabContent">
+                        <div class="tab-pane fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                          <div class="product__modal-img w-img">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                          <div class="product__modal-img w-img">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </div>
+                        </div>
+                      </div>
+                      <ul class="nav nav-tabs" id="modalTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab"data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={Config.shop+""+index.pic} alt=""/>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="product__modal-content">
+                      <h4>
+                        <a href="product-details.html">
+                         {index.text}
+                        </a>
+                      </h4>
+                      <div class="product__modal-des mb-40">
+                        <p>
+                          {index.des}
+                        </p>
+                      </div>
+                      <div class="product__stock">
+                        <span>وضعیت :</span>
+                        <span>موجود</span>
+                      </div>
+                      <div class="product__stock sku mb-30">
+                        <span>عنوان:</span>
+                        <span></span>
+                      </div>
+                      <div class="product__review d-sm-flex">
+                        <div class="rating rating__shop mb-15 mr-35">
+                         <Rank></Rank>
+                        </div>
+                      </div>
+                      <div class="product__price">
+                        <span></span>
+                      </div>
+                      <div class="product__modal-form mb-30">
+                        <form action="#">
+                          <div class="pro-quan-area d-lg-flex align-items-center">
+                            <div class="product-quantity mr-20 mb-25">
+                              <div class="cart-plus-minus p-relative">
+                                <input type="text" value="1" />
+                              </div>
+                            </div>
+                            <div class="pro-cart-btn mb-25">
+                              <button class="t-y-btn" type="submit">
+                                لیست خرید +
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </>
+    )
+}
