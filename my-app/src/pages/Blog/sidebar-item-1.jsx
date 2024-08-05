@@ -1,4 +1,4 @@
-import { Link , useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
 
 const SidebarItem1 = (props) => {
@@ -38,3 +38,4 @@ const SidebarItem1 = (props) => {
 };
 
 export { SidebarItem1 };
+
