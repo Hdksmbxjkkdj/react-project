@@ -20,7 +20,7 @@ import { Header } from "./pages/Components/Header";
 import { BackToTop } from "./pages/Components/backtotop";
 import { ProducDetails } from "./pages/Product-Details/index";
 import { WishList } from "./pages/WishList/wishlist";
-
+import {Products} from "./pages/Shop/index"
 // import Shop from './pages/Shop/Shop'
 import { ContactUs } from "./pages/ContactUs";
 import { Productpage } from './pages/Productpage';
@@ -64,6 +64,7 @@ function App() {
             <Route path="Cart" element={<Cart />} />
             <Route path="wishlist" element={<WishList />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="/products" element={<Products />} />
             {/* <Route path="/product" element={<Productpage />} exact={true} /> */}
             {/* <Route path="/products" element={<Products />} /> */}
             <Route path="/product-details/:id" element={<ProducDetails />} />

@@ -28,11 +28,7 @@ export const Modal = ({index})=>{
       $button.parent().find("input").val(newVal);
     });
   }, []);
-
-
-
   //number product
-  console.log(index)
     const [modal,setModal]=useState({
         id:"1",
         show:false
@@ -44,7 +40,7 @@ export const Modal = ({index})=>{
     {
       setModal({'id':index.id,'show':true})
     }
-    console.log('kjkj')
+  
     return (
         <>
         {/* <Quick handleModal={handleModal}></Quick> */}
