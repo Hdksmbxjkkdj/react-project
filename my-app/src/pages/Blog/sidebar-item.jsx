@@ -1,3 +1,13 @@
+import axios from "axios";
+import { useState } from "react";
+
+function setFilter(item) {
+  const URL = "http://localhost:313/blog/filter";
+  axios.get(URL).then(response=>{
+    response.filter()
+  })
+}
+
 const SidebarItem = ({items}) => {
   return (items?.length > 0 && <>
       <div className="sidebar__widget-item mb-35">
@@ -6,7 +16,7 @@ const SidebarItem = ({items}) => {
           <ul>
             {
               items.map(item=>{
-                return <li key={item.id}>
+                return <li key={item.id} onClick={()=>setFilter(item.category)}>
                   <a href="#">{item.category}</a>
                 </li>
               })
