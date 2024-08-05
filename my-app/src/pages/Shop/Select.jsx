@@ -3,21 +3,21 @@ import {Filter} from "../Components/Filter"
 import { useEffect } from 'react'
 import 'jquery';
 export const Select =({items,setItems})=>{
-    useEffect(() => {
-        (function($) {
-            $.fn.niceSelect = function(method) {
-            create_nice_select('lkjhg')
-        function create_nice_select($select){
-            window?.$select.after(window?.$('<div></div>')
-              .addClass('nice-select')
-              .addClass(window?.$select.attr('class') || '')
-              .addClass(window?.$select.attr('disabled') ? 'disabled' : '')
-              .attr('tabindex', $select.attr('disabled') ? null : '0')
-              .html('<span class="current"></span><ul class="list"></ul>')
-            );}}})
+    // useEffect(() => {
+    //     (function($) {
+    //         $.fn.niceSelect = function(method) {
+    //         create_nice_select('lkjhg')
+    //     function create_nice_select($select){
+    //         window?.$select.after(window?.$('<div></div>')
+    //           .addClass('nice-select')
+    //           .addClass(window?.$select.attr('class') || '')
+    //           .addClass(window?.$select.attr('disabled') ? 'disabled' : '')
+    //           .attr('tabindex', $select.attr('disabled') ? null : '0')
+    //           .html('<span class="current"></span><ul class="list"></ul>')
+    //         );}}})
               
           
-        },[])
+    //     },[])
     const eMessage = 'error_message'
     const local = Local()
     let searchParam = new URLSearchParams(window.location.search);
