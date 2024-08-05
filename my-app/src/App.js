@@ -20,7 +20,7 @@ import { Header } from "./pages/Components/Header";
 import { BackToTop } from "./pages/Components/backtotop";
 import { ProducDetails } from "./pages/Product-Details/index";
 import { WishList } from "./pages/WishList/wishlist";
-import {Products} from "./pages/Shop/index"
+import {Products} from "./pages/Shop"
 // import Shop from './pages/Shop/Shop'
 import { ContactUs } from "./pages/ContactUs";
 import { Productpage } from './pages/Productpage';

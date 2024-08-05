@@ -15,23 +15,7 @@ import {ProductAction} from '../Home1/best-selling/product-item/product-action'
 // import{ModalContent} from '../Product-Details/ModalContent'
 import { useContext } from "react";
 import { Modal } from "../Components/modal";
-// export const Product = ({items,setItems,showmodal,setshowmodal,closebtn,item})=>{
     export const Product = ({items,setItems,showmodal,setshowmodal,closebtn,item})=>{
-    // const [item,setItem]=useState();
-    // useEffect(()=>{
-    //   axios.get("http://localhost:313/best_selling").then((res)=>{
-    //     setItem(res);
-        
-    //   })
-    // },[])
-    //  "use srict";
-    // const {modal,setModal} = useContext(ModalContext)
-
-    // function Set()
-    // {
-
-    //   setModal({...modal,'title':item.title,'text':item.text,'img':item.pic,'price':item.price,'seccondimg':item.seccondpic,'id':item.id,'show':true})
-    // }
     return<>
             {items?.data?.map((index) =>{
             return<>
@@ -41,8 +25,8 @@ import { Modal } from "../Components/modal";
                                 <a href={"/product/" + index.id} className="w-img">
                                     <img src={Config.shop+""+index.pic} alt="product"/>
                                 </a>
-                              {/* <ProductAction></ProductAction>  */}
- <div className="product__action p-absolute">
+                           
+                            <div className="product__action p-absolute">
             <ul>
               <li> 
                <a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="Add to Wishlist">
