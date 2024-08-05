@@ -5,14 +5,13 @@ import { faList } from "@fortawesome/free-solid-svg-icons"
 import{Select} from "./Select"
 import { useState } from "react"
 import { Product, ProductList } from "./Product"
-export const Tab=({items,setItems})=>{
+export const Tab=({items,setItems,showmodal,setshowmodal,closebtn,modal,item})=>{
       //tab
-      const [toggleState,setToggleStata]=useState(1)
+      const [toggleState,setToggleStata]=useState(2)
   
       //tab
     const toggleTab =(index) =>{
         setToggleStata(index)
-        console.log(toggleState)
 }
     return<>
        <div className="product__filter mb-50">
@@ -52,7 +51,7 @@ export const Tab=({items,setItems})=>{
                       <div className="tab-content" id="productGridTabContent">
                            <div className={toggleState === 1 ? "tab-pane fade" : "tab-pane fade show active"}  id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
                                 <div className="row">
-                                    <Product key={Math.random()} setItems={setItems} items={items}></Product>
+                                    <Product key={Math.random()} setItems={setItems} items={items} showmodal={showmodal} setshowmodal={setshowmodal} closebtn={closebtn} modal={modal} item={item} ></Product>
                                 </div>
                             </div>
                            

@@ -1,11 +1,29 @@
 import {Local} from '../../Utils/Local'
 import {Filter} from "../Components/Filter"
+import { useEffect } from 'react'
+import 'jquery';
 export const Select =({items,setItems})=>{
+    useEffect(() => {
+        (function($) {
+            $.fn.niceSelect = function(method) {
+            create_nice_select('lkjhg')
+        function create_nice_select($select){
+            window?.$select.after(window?.$('<div></div>')
+              .addClass('nice-select')
+              .addClass(window?.$select.attr('class') || '')
+              .addClass(window?.$select.attr('disabled') ? 'disabled' : '')
+              .attr('tabindex', $select.attr('disabled') ? null : '0')
+              .html('<span class="current"></span><ul class="list"></ul>')
+            );}}})
+              
+          
+        },[])
     const eMessage = 'error_message'
     const local = Local()
     let searchParam = new URLSearchParams(window.location.search);
-
+ 
     return<>
+
         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
             <div className="product__filter-right d-flex align-items-center justify-content-md-end">
                 <div className="product__sorting product__show-no">

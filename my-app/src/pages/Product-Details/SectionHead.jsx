@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {  faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
+import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 export const SectionHead = () =>{
     const [items,setItems] = useState();
     useEffect(() => {
@@ -28,7 +29,7 @@ export const SectionHead = () =>{
                            <h3>پرفروش ترین<span>محصولات</span></h3>
                         </div>
                     </div>
-                </div>   
+                </div>  
                 <div className="row">
                             <div className="col-xl-12">
                                 <OwlCarousel 
@@ -38,6 +39,8 @@ export const SectionHead = () =>{
                                     autoPlay
                                     key={Math.random()}
                                     nav
+                                    fs-1
+
                                 >
                                     {items?.data?.map((item)=>{
                                       return<> 
@@ -49,9 +52,9 @@ export const SectionHead = () =>{
                                         </a>
                                     <div className="product__action p-absolute">
                                         <ul>
-                                            <li><a href="#" title="Add to Wishlist"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
-                                            <li><a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
-                                            <li><a href="#" title="Compare"><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
+                                            <li><a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
+                                            <li><a href="#" title="نمایش سریع" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
+                                            <li><a href="#" title="مقایسه" onClick={()=>alert("هنوز این مورد وجود ندارد !")}><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
                                         </ul>
                                     </div>
                                             </div>
