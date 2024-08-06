@@ -1071,5 +1071,65 @@
       "max": "5000",
       "id": "c6fc"
     }
+  ],
+  "colors":[
+   {
+    "color":"black",
+     "id":"1"
+   },
+   {
+    "color":"blue",
+     "id":"2"
+   },
+   {
+    "color":"red",
+     "id":"3"
+   },
+   {
+    "color":"yellow",
+     "id":"4"
+   },
+   {
+    "color":"pink",
+     "id":"5"
+   },
+   {
+    "color":"brown",
+     "id":"6"
+   },
+   {
+    "color":"green",
+     "id":"7"
+   },
+   {
+    "color":"orange",
+     "id":"8"
+   }
+  ],
+  "sizing":[
+    {
+      "size":"small",
+       "id":"S"
+       
+    },
+      {
+        "size":"medium",
+         "id":"M"
+         
+      },
+      {
+        "size":"large",
+         "id":"L"
+      },
+      {
+        "size":"x-large",
+         "id":"XL"
+         
+      },
+      {
+        "size":"xx-large",
+         "id":"XXL"
+         
+      }
   ]
 }
