@@ -20,8 +20,8 @@ export const SectionHead = () =>{
     }, []);
   
     return<>
-    <section className="product__area box-plr-75 pb-20">
-        <div className="container-fluid"  style={{"direction":"ltr"}}>
+    <section className="product__area box-plr-75 pb-20"  style={{"direction":"ltr"}}>
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-xxl-12">
                     <div className="section__head mb-40">
