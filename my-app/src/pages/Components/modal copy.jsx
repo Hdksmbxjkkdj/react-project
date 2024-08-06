@@ -5,13 +5,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Config } from "../../Utils"; 
 import { Rank } from "./Rank";
 export const Modal = ({index})=>{
-   window?.$(document).ready(() => {
-    //  setBackgroundColor();
-})
-  //test
-  const[backgroundColor,setBackgroundColor]=useState()
-  //test
-  //number product
+ 
+
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -53,9 +48,8 @@ export const Modal = ({index})=>{
 
         <div className="product__action p-absolute">
             <ul>
-              <li > 
-               <a href="#"  title="Add to Wishlist" id={"t-"+index.id}  onClick={()=>setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")} style={{backgroundColor:backgroundColor}}>
-              
+              <li> 
+               <a href="#"  title="Add to Wishlist" className="Add-to-Wishlist" >
                   <i className="fa-regular fa-heart"></i>
                 </a> 
               </li>
