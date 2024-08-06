@@ -1,10 +1,9 @@
+import { event } from "jquery";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
-import { useContext, useEffect, useState } from "react";
 import { RemoveCartItem } from "./RemoveCartItem";
-import { event } from "jquery";
-import axios from "axios";
-import {Link} from "react-router-dom";
 const Cart = () => {
   function Total()
   {
@@ -17,7 +16,7 @@ const Cart = () => {
     return totally.toFixed(2);
   }
   const {cart ,setCart}= useContext(CartContext);
-  console.log(cart);
+  const {count,setCount} = useState()
   const eMessage="error";
   return (
     <>
@@ -61,7 +60,7 @@ const Cart = () => {
                                   </td>
                                   <td className="product-quantity">
                                     <div className="cart-plus-minus">
-                                      <input type="text" value={items.quantity}/>
+                                      <input type="text" value={items.quantity} onChange={}/>
                                     </div>
                                   </td>
                                   <td className="product-subtotal">
@@ -147,3 +146,4 @@ const Cart = () => {
   );
 };
 export { Cart };
+
