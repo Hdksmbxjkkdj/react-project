@@ -16,7 +16,6 @@ const Cart = () => {
     return totally.toFixed(2);
   }
   const {cart ,setCart}= useContext(CartContext);
-  const {count,setCount} = useState()
   const eMessage="error";
   return (
     <>
@@ -40,7 +39,7 @@ const Cart = () => {
                     </thead>
                     <tbody>
                       {
-                        cart?.map((items) => {
+                        cart?.map((items,index) => {
                             return (
                               <>
                                 <tr>
@@ -60,7 +59,7 @@ const Cart = () => {
                                   </td>
                                   <td className="product-quantity">
                                     <div className="cart-plus-minus">
-                                      <input type="text" value={items.quantity} />
+                                      <input type="text" value={items?.quantity}/>
                                     </div>
                                   </td>
                                   <td className="product-subtotal">
