@@ -179,12 +179,12 @@ const Header = () => {
                                 {/* {console.log(tot)} */}
                                 </span>
                             </div>
-                            <Link
+                            {(cart?.length>0)&&<Link
                               to="/checkout"
                               className="t-y-btn w-100 mb-10"
                             >
                               رفتن به checkout
-                            </Link>
+                            </Link>}
                             <Link
                               to="/cart"
                               className="t-y-btn t-y-btn-border w-100 mb-10"

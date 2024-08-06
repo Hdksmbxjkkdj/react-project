@@ -36,7 +36,7 @@ const ProductAction = ({ item }) => {
     const u = localStorage.getItem("user");
   useEffect(() => {
      axios.get(`http://localhost:313/register/?username=${u}`).then((res) => {
-        setUser(res?.data[0].id)
+        setUser(res?.data[0]?.id)
       });
   }, []);
   return (
