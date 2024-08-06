@@ -6,7 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 export const BrandSlider = () =>{
     
     return<>
-          <section className="brand__area">
+          <section className="brand__area" style={{"direction":"ltr"}}>
                 <div className="container custom-container">
                     <div className="row align-items-center">
                           <div className="col-xl-12">
@@ -15,7 +15,6 @@ export const BrandSlider = () =>{
                               loop
                               autoPlay
                           >
-                            
                                     <div className='item brand__item'>
                                         <img src={Config.banner +"" +"brand-1.jpg"} alt="" />
                                     </div>

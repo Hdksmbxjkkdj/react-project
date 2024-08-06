@@ -22,7 +22,25 @@
       "name": "سامسونگ C49J89: 875 پوند، Debenhams ",
       "unitprice": 450,
       "quantity": 1,
-      "date": "06/08/2024"
+      "date": "04/08/2024"
+    },
+    {
+      "id": "8",
+      "pic": "product-7.jpg",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "unitprice": 720,
+      "quantity": 1,
+      "date": "04/08/2024"
+    },
+    {
+      "id": "0263",
+      "quantity": 1,
+      "date": "05/08/2024"
+    },
+    {
+      "id": "3267",
+      "quantity": 1,
+      "date": "05/08/2024"
     }
   ],
   "wishlist": [
@@ -1042,64 +1060,60 @@
       "id": "c6fc"
     }
   ],
-  "colors":[
-   {
-    "color":"black",
-     "id":"1"
-   },
-   {
-    "color":"blue",
-     "id":"2"
-   },
-   {
-    "color":"red",
-     "id":"3"
-   },
-   {
-    "color":"yellow",
-     "id":"4"
-   },
-   {
-    "color":"pink",
-     "id":"5"
-   },
-   {
-    "color":"brown",
-     "id":"6"
-   },
-   {
-    "color":"green",
-     "id":"7"
-   },
-   {
-    "color":"orange",
-     "id":"8"
-   }
-  ],
-  "sizing":[
+  "colors": [
     {
-      "size":"small",
-       "id":"S"
-       
+      "color": "black",
+      "id": "1"
     },
-      {
-        "size":"medium",
-         "id":"M"
-         
-      },
-      {
-        "size":"large",
-         "id":"L"
-      },
-      {
-        "size":"x-large",
-         "id":"XL"
-         
-      },
-      {
-        "size":"xx-large",
-         "id":"XXL"
-         
-      }
+    {
+      "color": "blue",
+      "id": "2"
+    },
+    {
+      "color": "red",
+      "id": "3"
+    },
+    {
+      "color": "yellow",
+      "id": "4"
+    },
+    {
+      "color": "pink",
+      "id": "5"
+    },
+    {
+      "color": "brown",
+      "id": "6"
+    },
+    {
+      "color": "green",
+      "id": "7"
+    },
+    {
+      "color": "orange",
+      "id": "8"
+    }
+  ],
+  "sizing": [
+    {
+      "size": "small",
+      "id": "S"
+    },
+    {
+      "size": "medium",
+      "id": "M"
+    },
+    {
+      "size": "large",
+      "id": "L"
+    },
+    {
+      "size": "x-large",
+      "id": "XL"
+    },
+    {
+      "size": "xx-large",
+      "id": "XXL"
+    }
   ]
 }

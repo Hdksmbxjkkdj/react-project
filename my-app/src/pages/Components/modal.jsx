@@ -48,7 +48,7 @@ export const Modal = ({index})=>{
         <div className="product__action p-absolute">
             <ul>
               <li> 
-               <a href="#"  title="Add to Wishlist">
+               <a href="#"  title="Add to Wishlist" className="Add-to-Wishlist">
                   <i className="fa-regular fa-heart"></i>
                 </a> 
               </li>
@@ -64,7 +64,7 @@ export const Modal = ({index})=>{
                 </a>
               </li>
             </ul>
-                                </div> 
+        </div> 
         {/* <button onClick={handleModal}>click</button> */}
         <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={index.id} tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered product__modal" role="document">
