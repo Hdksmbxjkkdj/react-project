@@ -53,7 +53,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                           قیمت
                         </button>
                     </h2>
-                    {selected.includes(2) ?(
+                    {/* {selected.includes(2) ?( */}
                         
                            <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
                            <div className="accordion-body">
@@ -78,7 +78,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                        </div>
                       </div>
                        
-                    ): null}
+                    {/* ): null} */}
 
 
 

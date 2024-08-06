@@ -1,5 +1,5 @@
 import { BreadCrumb } from "./BreadCrumb"
- import{ProductGraidWrapper} from "./ProductGraidWrapper"
+import{ProductGraidWrapper} from "./ProductGraidWrapper"
 import {Tab } from "./Tab"
 import { Config } from "../../Utils"
 import { useContext } from "react";
@@ -11,8 +11,6 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import {BrandSlider} from "../Product-Details/BrandSlider"
 import { ModalContext } from "../../context/modal";
-import { modal } from "./modal"
-// import { createContext } from "react";
 export const Products = ({sidebars}) =>{
   
     const[category,setCategory]=useState()

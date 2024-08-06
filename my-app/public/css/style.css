@@ -2851,7 +2851,7 @@ p {
 }
 .product__widget-item .accordion-button::after {
   background-image: none;
-  border-bottom: 1px solid #222;
+  border-top: 1px solid #222;
   border-left: 1px solid #222;
   content: "";
   display: block;
@@ -2871,6 +2871,7 @@ p {
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
+
 .product__widget-item .accordion-button.collapsed::after {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -5664,3 +5665,7 @@ p.checkout-coupon input[type=text]:focus {
   box-shadow: 0 0 0 1px #222, inset 0 0 0 2px #fff;
 }
 /* filter test */
+.Add-to-Wishlist:focus{
+   
+  background-color: red !important;
+}
