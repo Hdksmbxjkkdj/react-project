@@ -45,7 +45,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
     
 
     return<>
-         <div className="product__widget-item mb-15">
+         <div className="product__widget-item mb-15" style={{"direction":"ltr"}}>
             <div className="accordion" id="productWidgetAccordion1">
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">

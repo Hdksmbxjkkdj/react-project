@@ -2503,7 +2503,7 @@ p {
   }
 }
 .product__add-btn button:hover {
-  background: #222;
+  /* background: #222; */
   color: #ffffff;
 }
 .product__add-btn-4 button {
@@ -5711,7 +5711,7 @@ p.checkout-coupon input[type=text]:focus {
   box-shadow: 0 0 0 1px #222, inset 0 0 0 2px #fff;
 }
 /* filter test */
-.Add-to-Wishlist{
+.Add-to-Wishlist .rr:focus{
    
   background-color: red !important;
 }
