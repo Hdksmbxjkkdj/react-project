@@ -6,6 +6,8 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
   
     // let url = '/' + local + '/products/filter' + query
      let url='http://localhost:313/best_selling?'+ query
+        //  let url='http://localhost:313/best_selling?'+ query
+
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
     
 

@@ -4,7 +4,25 @@ import { faSlidersH, faTimes,fasearch } from "@fortawesome/free-solid-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Config } from "../../Utils"; 
 import { Rank } from "./Rank";
+import { Link } from "react-router-dom";
+import{AddToWishlist} from "../Home1/best-selling/product-item/AddToWishlist"
+import axios from "axios"
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+
+// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export const Modal = ({index})=>{
+  //
+  const[item,setItem]=useState()
+  
+  useEffect(()=>{
+          axios.get(`http://localhost:313/best_selling`).then((response)=>{
+             setItem(response);
+
+         });
+
+      },[]);
+  //
    window?.$(document).ready(() => {
     //  setBackgroundColor();
 })
@@ -46,7 +64,7 @@ export const Modal = ({index})=>{
     {
       setModal({'id':index.id,'show':true})
     }
-  
+   
     return (
         <>
         {/* <Quick handleModal={handleModal}></Quick> */}
@@ -54,10 +72,10 @@ export const Modal = ({index})=>{
         <div className="product__action p-absolute">
             <ul>
               <li > 
-               <a href="#"  title="Add to Wishlist" id={"t-"+index.id}  onClick={()=>setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")} style={{backgroundColor:backgroundColor}}>
-              
-                  <i className="fa-regular fa-heart"></i>
-                </a> 
+               {/* <Link to="#"  title="Add to Wishlist" onClick={()=>setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")} style={{backgroundColor:backgroundColor}}> */}
+                {/* <a onClick={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")}} href="#" title="افزودن به علاقه مندی ها" style={{backgroundColor:backgroundColor}}><FontAwesomeIcon icon={faHeart} onclick={}></FontAwesomeIcon></a> */}
+                <a className="Add-to-Wishlist" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="red"?"white":"red")}}   style={{backgroundColor:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a>
+
               </li>
               <li> 
                 <a href="#" title="Quick View" onClick={handleModal}>
@@ -160,10 +178,12 @@ export const Modal = ({index})=>{
                               </div>
                             </div>
                             <div class="pro-cart-btn mb-25">
-                              <button class="t-y-btn" type="submit">
+                                <ProductAddbtn></ProductAddbtn>
+                              {/* <button class="t-y-btn" type="submit" >
                                 لیست خرید +
-                              </button>
+                              </button> */}
                             </div>
+                        
                           </div>
                         </form>
                       </div>

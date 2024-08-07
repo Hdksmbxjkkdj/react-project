@@ -26,25 +26,6 @@ import { Modal } from "../Components/modal";
                                     <img src={Config.shop+""+index.pic} alt="product"/>
                                 </a>
                            
-                            <div className="product__action p-absolute">
-            <ul>
-              <li> 
-               <a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="Add to Wishlist">
-                  <i className="fa-regular fa-heart"></i>
-                </a> 
-              </li>
-              <li> 
-                <a href="#" title="Quick View" onClick={()=>setshowmodal(true)}>
-                  <i className="fa fa-search"></i>
-                </a> 
-              </li>
-              <li>
-                <a href="#" title="Compare">
-                  <i className="fa fa-sliders-h" onClick={()=>alert("هنوز این مورد وجود ندارد !")}></i>
-                </a>
-              </li>
-            </ul>
-                                </div> 
                                 <Modal index={index}></Modal>
                             </div> 
                             <div className="product__content text-center">
