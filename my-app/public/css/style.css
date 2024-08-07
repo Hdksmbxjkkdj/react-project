@@ -5711,7 +5711,7 @@ p.checkout-coupon input[type=text]:focus {
   box-shadow: 0 0 0 1px #222, inset 0 0 0 2px #fff;
 }
 /* filter test */
-.Add-to-Wishlist:focus{
+.Add-to-Wishlist{
    
   background-color: red !important;
 }
