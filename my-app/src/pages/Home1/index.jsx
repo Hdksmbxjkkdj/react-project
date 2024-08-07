@@ -176,7 +176,7 @@ const Home1 = () => {
                         <span>${modal.price.toFixed(2)}</span>
                       </div>
                       <div class="product__modal-form mb-30">
-                        <form action="#">
+                        <form onSubmit={(event)=>AddToCart(event,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,"error",null)}>
                           <div class="pro-quan-area d-lg-flex align-items-center">
                             <div class="product-quantity mr-20 mb-25">
                               <div class="cart-plus-minus p-relative">
@@ -184,7 +184,7 @@ const Home1 = () => {
                               </div>
                             </div>
                             <div class="pro-cart-btn mb-25">
-                              <button class="t-y-btn" type="submit" onClick={()=>AddToCart(event,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,"error",null)}>
+                              <button class="t-y-btn" type="submit">
                                 لیست خرید +
                               </button>
                             </div>

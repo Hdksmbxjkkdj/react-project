@@ -8,27 +8,23 @@ import { SidebarItem1 } from "./sidebar-item-1";
 const Blog = () => {
   const [start, setStart] = useState(0);
   const [items, setItems] = useState();
+  const params = new URLSearchParams(window.location.search);
   useEffect(() => {
     axios
-      .get(`http://localhost:313/blog?_start=${start}&_limit=4`)
+      .get(`http://localhost:313/blog?_start=${start}&_limit=4&${params}`)
       .then((response) => {
         setItems(response);
       });
-    }, [start]);
-    console.log(items);
+  }, [start]);
   const [category, setcategory] = useState();
   useEffect(() => {
-    axios
-    .get("http://localhost:313/blog-category")
-    .then((response) => {
+    axios.get("http://localhost:313/blog-category").then((response) => {
       setcategory(response);
     });
   }, []);
   const [length, setLength] = useState();
   useEffect(() => {
-    axios
-    .get("http://localhost:313/blog")
-    .then((response) => {
+    axios.get("http://localhost:313/blog").then((response) => {
       setLength(response);
     });
   }, []);
@@ -38,7 +34,11 @@ const Blog = () => {
     <>
       <BlogArea items={items?.data}>
         <Sidebar>
-          <SidebarItem items={category?.data} setItems={setItems}></SidebarItem>
+          <SidebarItem
+            items={category?.data}
+            setItems={setItems}
+            start={start}
+          ></SidebarItem>
           <SidebarItem1 items={items?.data}></SidebarItem1>
         </Sidebar>
         <Pagination count={{ paginationLength, setStart }}></Pagination>

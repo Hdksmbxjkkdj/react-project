@@ -6,27 +6,28 @@ async function setFilter(item, setItems) {
   const oldParam = searchParams.get("category");
   if (oldParam == item) searchParams.delete("category");
   else searchParams.set("category", item);
-  var query = "?" + searchParams;
+  var query = "?" + searchParams.toString();
   var newRelativePathQuery = window.location.pathname + query;
   window.history.pushState(null, "", newRelativePathQuery);
   var url = "http://localhost:313/blog" + query;
   let status = null;
-  try{
+  try {
     await axios.get(url).then((response) => {
-      setItems(response)
+      setItems(response);
       if (response.status) status = response.status;
       if (status == null) {
         Notif("error", "status خالی میباشد");
       }
     });
-  }
-  catch(error)
-  {
-    Notif("error" ,"ارور یافت شد")
+  } catch (error) {
+    Notif("error", "ارور یافت شد");
   }
 }
 
 const SidebarItem = ({ items, setItems }) => {
+  const params = new URLSearchParams(window.location.search);
+  const data = params.get("category");
+  console.log(data);
   return (
     items?.length > 0 && (
       <>
@@ -40,7 +41,14 @@ const SidebarItem = ({ items, setItems }) => {
                     key={item.id}
                     onClick={() => setFilter(item.category, setItems)}
                   >
-                    <a href="#">{item.category}</a>
+                    <a
+                      href="#"
+                      className={
+                        data == item.category && "text-danger fw-bold fs-5"
+                      }
+                    >
+                      {item.category}
+                    </a>
                   </li>
                 );
               })}

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import {Notif} from "../../Utils/Notif";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
   const [register,setregister] = useState({
     username:"",
@@ -9,7 +9,7 @@ const Register = () => {
     passowrd:""
   });
 
-  function registering() {
+  function Registering() {
     let status=201;
     if(register.username=="" || register.emailAddres=="" || register.emailAddres=="")
     {
@@ -19,14 +19,12 @@ const Register = () => {
     else {
       try
       {
-        axios.post("http://localhost:313/register",{username:register.username,email:register.emailAddres,pass:register.passowrd}).then((e)=>{
+        axios.post("http://localhost:313/register",{username:register.username,id:register.emailAddres,pass:register.passowrd}).then((e)=>{
         status=e.status;
+        console.log(status);
         if(status==201)
         {
-          Notif('success',"خوش آمدید !");
-          setTimeout(() => {
-            window.location.assign("/login");
-          }, 1000);
+          Notif('success',"ثبت نام با موفقیت انجام شد ، لطفا وارد شوید");
         }
         else
         {
@@ -66,7 +64,7 @@ const Register = () => {
                     </label>
                     <input id="pass" type="password" placeholder="کلمه عبورتان را وارد کنید" onChange={(e)=>setregister({...register,passowrd:e.target.value})}/>
                     <div class="mt-10"></div>
-                    <button class="t-y-btn w-100" type="button" onClick={registering}>ثبت نام</button>
+                    <button class="t-y-btn w-100" type="button" onClick={Registering}>ثبت نام</button>
                     <div class="or-divide">
                       <span>یا</span>
                     </div>

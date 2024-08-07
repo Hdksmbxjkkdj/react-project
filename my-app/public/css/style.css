@@ -524,11 +524,15 @@ p {
   text-transform: uppercase;
   border: 2px solid transparent;
   text-align: center;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
 }
 .t-y-btn:hover {
-  border-color: #fcb700;
-  color: #222;
-  background: #ffffff;
+  color: #fff;
+  background: #222;
 }
 .t-y-btn-sub {
   height: 50px;
@@ -2282,6 +2286,11 @@ p {
   visibility: visible;
   opacity: 1;
 }
+.product__item:hover .product__added-btn {
+  bottom: 35px;
+  visibility: visible;
+  opacity: 1;
+}
 .product__item:hover .product__add-btn-4 {
   bottom: 10px;
 }
@@ -2424,6 +2433,40 @@ p {
 .product__content-4 span.new {
   color: #d01418;
 }
+.product__added-btn {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.product__added-btn button {
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #fc3200;
+  line-height: 45px;
+  padding: 0 50px;
+  color: #ffffff;
+  border-radius: 30px;
+  text-transform: initial;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.product__added-btn button::before
+{
+  content: '';
+  color: #fff;
+}
+
 .product__add-btn {
   position: absolute;
   bottom: -40px;
@@ -2453,6 +2496,9 @@ p {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .product__add-btn button {
+    padding: 0 30px;
+  }
+  .product__added-btn button {
     padding: 0 30px;
   }
 }

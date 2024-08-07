@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./pages/Components/Footer";
 import { Home1 } from "./pages/Home1/index";
 // import Breadcrumb from './pages/Product/breadcrumb';
@@ -19,8 +19,8 @@ import { Cart } from "./pages/Cart/cart";
 import { Header } from "./pages/Components/Header";
 import { BackToTop } from "./pages/Components/backtotop";
 import { ProducDetails } from "./pages/Product-Details/index";
+import { Products } from "./pages/Shop";
 import { WishList } from "./pages/WishList/wishlist";
-import {Products} from "./pages/Shop"
 // import Shop from './pages/Shop/Shop'
 import { ContactUs } from "./pages/ContactUs";
 import { Productpage } from './pages/Productpage';
@@ -30,12 +30,12 @@ function App() {
     window?.$("#loading").fadeOut(500);
   });
   const [cart, setCart] = useState([]);
+  const [check, setCheck] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:313/row").then((response) => {
       setCart(response.data);
     });
   }, []);
-
   useEffect(() => {
     var name = window.location.pathname.split("/").pop();
     if (name == "") {
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <>
-      <CartContext.Provider value={{ cart, setCart }}>
+      <CartContext.Provider value={{ cart, setCart,check,setCheck }}>
         <BrowserRouter>
           <Header></Header>
           <Routes>

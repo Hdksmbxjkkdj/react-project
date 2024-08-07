@@ -14,83 +14,83 @@ const Sidebar = ()=> {
                                         <nav id="mobile-menu">
                                             <ul>
                                                 <li>
-                                                    <Link to="product">همه محصولات<i className="fa fa-angle-up"></i></Link>
+                                                    <Link to="products">همه محصولات<i className="fa fa-angle-up"></i></Link>
                                                     <ul className="mega-menu">
-                                                        <li><Link to="product">صفحات فروشگاهی</Link>
+                                                        <li><Link to="products">صفحات فروشگاهی</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">استاندارد</Link></li>
-                                                                <li><Link to="product">سایدبار سمت راست</Link></li>
-                                                                <li><Link to="product">سایدبار سمت چپ</Link></li>
-                                                                <li><Link to="product">سه ستون</Link></li>
-                                                                <li><Link to="product">چهار ستون</Link></li>
+                                                                <li><Link to="products">استاندارد</Link></li>
+                                                                <li><Link to="products">سایدبار سمت راست</Link></li>
+                                                                <li><Link to="products">سایدبار سمت چپ</Link></li>
+                                                                <li><Link to="products">سه ستون</Link></li>
+                                                                <li><Link to="products">چهار ستون</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">صفحه محصولات</Link>
+                                                        <li><Link to="products">صفحه محصولات</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">تک محصول</Link></li>
-                                                                <li><Link to="product">محصول V2</Link></li>
-                                                                <li><Link to="product">محصول V3</Link></li>
-                                                                <li><Link to="product">محصولات متغییر</Link></li>
-                                                                <li><Link to="product">محصولات متغییر</Link></li>
+                                                                <li><Link to="products">تک محصول</Link></li>
+                                                                <li><Link to="products">محصول V2</Link></li>
+                                                                <li><Link to="products">محصول V3</Link></li>
+                                                                <li><Link to="products">محصولات متغییر</Link></li>
+                                                                <li><Link to="products">محصولات متغییر</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">دیگر صفحات</Link>
+                                                        <li><Link to="products">دیگر صفحات</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">علاقه مندی ها</Link></li>
-                                                                <li><Link to="product">سبد خرید</Link></li>
-                                                                <li><Link to="product">Checkout</Link></li>
-                                                                <li><Link to="product">ورود</Link></li>
-                                                                <li><Link to="product">ثبت نام</Link></li>
+                                                                <li><Link to="products">علاقه مندی ها</Link></li>
+                                                                <li><Link to="products">سبد خرید</Link></li>
+                                                                <li><Link to="products">Checkout</Link></li>
+                                                                <li><Link to="products">ورود</Link></li>
+                                                                <li><Link to="products">ثبت نام</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">گوشی و تبلت</Link>
+                                                        <li><Link to="products">گوشی و تبلت</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">دسته بندی 1</Link></li>
-                                                                <li><Link to="product">دسته بندی 2</Link></li>
-                                                                <li><Link to="product">دسته بندی 3</Link></li>
-                                                                <li><Link to="product">دسته بندی 4</Link></li>
+                                                                <li><Link to="products">دسته بندی 1</Link></li>
+                                                                <li><Link to="products">دسته بندی 2</Link></li>
+                                                                <li><Link to="products">دسته بندی 3</Link></li>
+                                                                <li><Link to="products">دسته بندی 4</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">گوشی و تبلت</Link>
+                                                        <li><Link to="products">گوشی و تبلت</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="product">دسته بندی 1</Link></li>
-                                                                <li><Link to="product">دسته بندی 2</Link></li>
-                                                                <li><Link to="product">دسته بندی 3</Link></li>
-                                                                <li><Link to="product">دسته بندی 4</Link></li>
+                                                                <li><Link to="products">دسته بندی 1</Link></li>
+                                                                <li><Link to="products">دسته بندی 2</Link></li>
+                                                                <li><Link to="products">دسته بندی 3</Link></li>
+                                                                <li><Link to="products">دسته بندی 4</Link></li>
                                                             </ul>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">بیشترین فروش
+                                                    <Link to="products">بیشترین فروش
                                                         <span className="cat-label">داغ</span>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">ده محصول برتر
+                                                    <Link to="products">ده محصول برتر
                                                         <span className="cat-label green">جدید</span>
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="product">ورودی های جدید <i className="fa fa-angle-up"></i></Link>
+                                                    <Link to="products">ورودی های جدید <i className="fa fa-angle-up"></i></Link>
                                                     <ul className="submenu">
-                                                        <li><Link to="product">لوازم خانگی</Link></li>
-                                                        <li><Link to="product">تکنولوژی</Link>
+                                                        <li><Link to="products">لوازم خانگی</Link></li>
+                                                        <li><Link to="products">تکنولوژی</Link>
                                                             <ul className="submenu">
-                                                                <li><Link to="product">دستگاه های ذخیره سازی</Link></li>
-                                                                <li><Link to="product">مانیتور ها</Link></li>
-                                                                <li><Link to="product">لپتاپ ها</Link></li>
+                                                                <li><Link to="products">دستگاه های ذخیره سازی</Link></li>
+                                                                <li><Link to="products">مانیتور ها</Link></li>
+                                                                <li><Link to="products">لپتاپ ها</Link></li>
                                                             </ul>
                                                         </li>
-                                                        <li><Link to="product">تجهیزات اداری</Link></li>
+                                                        <li><Link to="products">تجهیزات اداری</Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><Link to="product">گوشی و تبلت</Link></li>
-                                                <li><Link to="product">الکترونیک و دیجیتال</Link></li>
-                                                <li className="d-laptop-none"><Link to="product">مد و لباس</Link></li>
-                                                <li className="d-laptop-none"><Link to="product">ساعت و جواهرات</Link></li>
-                                                <li><Link to="product">زیبایی و سلامتی</Link></li>
-                                                <li><Link to="product">تلوزیون</Link></li>
+                                                <li><Link to="products">گوشی و تبلت</Link></li>
+                                                <li><Link to="products">الکترونیک و دیجیتال</Link></li>
+                                                <li className="d-laptop-none"><Link to="products">مد و لباس</Link></li>
+                                                <li className="d-laptop-none"><Link to="products">ساعت و جواهرات</Link></li>
+                                                <li><Link to="products">زیبایی و سلامتی</Link></li>
+                                                <li><Link to="products">تلوزیون</Link></li>
                                             </ul>
                                         </nav>
                                     </div>

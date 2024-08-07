@@ -1,13 +1,12 @@
 import { Event as event } from "jquery";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { Notif } from "../../Utils/Notif";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "../Cart/RemoveCartItem";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
-import { LogOut } from "../Auth/Logout";
-import { Notif } from "../../Utils/Notif";
 
 const Header = () => {
   window?.$("document").ready(function () {
@@ -119,16 +118,17 @@ const Header = () => {
                       </Link>
                     </div>
                     <div className="cart__mini-wrapper d-none d-md-flex f-right p-relative" key={Math.random()}>
-                      <a href="javascript:void(0);" className="cart__toggle text-center" style={{lineHeight:"3rem"}}>
+                      <span className="cart__toggle text-center" style={{lineHeight:"3rem",cursor:"pointer"}}>
                         <i className="fa fa-cart-shopping fs-5"></i>
                         <span className="cart__total-item">{cart?.length}</span>
-                      </a>
+                      </span>
                       <div className="cart__mini">
                         <div className="cart__close">
                           <button type="button" className="cart__close-btn">
                             <i className="fa fa-times"></i>
                           </button>
                         </div>
+                            {(cart.length>0)?<div>
                             <div className="cart__title">
                               <h4>سبد خرید من</h4>
                               <span>({cart?.length} محصول)</span>
@@ -179,18 +179,19 @@ const Header = () => {
                                 {/* {console.log(tot)} */}
                                 </span>
                             </div>
-                            {(cart?.length>0)&&<Link
+                            <Link
                               to="/checkout"
                               className="t-y-btn w-100 mb-10"
                             >
                               رفتن به checkout
-                            </Link>}
+                            </Link>
                             <Link
                               to="/cart"
                               className="t-y-btn t-y-btn-border w-100 mb-10"
                             >
                               دیدن لیست خرید
                             </Link>
+                            </div>:<div><p className="text-danger">سبد خرید شما خالی می باشد</p></div>}
                       </div>
                     </div>
                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
