@@ -74,7 +74,7 @@ export const Modal = ({index})=>{
               <li > 
                {/* <Link to="#"  title="Add to Wishlist" onClick={()=>setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")} style={{backgroundColor:backgroundColor}}> */}
                 {/* <a onClick={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")}} href="#" title="افزودن به علاقه مندی ها" style={{backgroundColor:backgroundColor}}><FontAwesomeIcon icon={faHeart} onclick={}></FontAwesomeIcon></a> */}
-                <a className="Add-to-Wishlist" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="red"?"white":"red")}}   style={{backgroundColor:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a>
+                <a className="Add-to-Wishlist" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="red"?"white":"red")}}   style={{color:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a>
 
               </li>
               <li> 

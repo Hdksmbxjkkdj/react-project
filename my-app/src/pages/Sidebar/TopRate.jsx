@@ -6,34 +6,41 @@ import axios from "axios";
 
 export const Rate = () =>{
     const [product,setProduct]=useState()
-    useEffect(()=>{
-        axios.get(`http://localhost:313/FoodProducts`).then((res)=>{
-            setProduct(res);
-        });
-    },[]);
-    return<>                           
-        {product?.data.map((item,i)=>{
+   
+    // useEffect(()=>{
+    //     axios.get(`http://localhost:313/FoodProducts`).then((res)=>{
+    //         setProduct(res);
+    //     });
+    // },[]);
+    //  allitems
+     const[items,setItems]=useState()
+  
+     useEffect(()=>{
+             axios.get(`http://localhost:313/best_selling?price_gt=500&price_lte=500`).then((response)=>{
+                setItems(response);
+ 
+            });
+            },[]);
+        console.log(items,'y')  
+    return<>    
+                            
+        {items?.data.map((item,i)=>{
+            
             return <li class="product__sm-item d-flex align-items-center">
                         <div class="product__sm-thumb mr-20">
-                            <a href="product-details.html">
-                                    <img src={Config.sidebar + "" +item.pic} alt=""/>
+                            <a href={"/product/"+item.id}>
+                                    <img src={Config.sidebar +""+item.pic} alt=""/>
                                 </a>
                         </div>
                         <div class="product__sm-content">
                             <h3 class="product__sm-title">
-                                <a href="#">{item.name}</a>
+                                <a href="product-details.html">{item.text}</a>
                             </h3>
                             <div class="rating">
-                                 {/* <ul>
-                                    <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-                                </ul>  */}
+                                
                             </div>
                             <div class="product__sm-price">
-                                <span class="price">{item.price}</span>
+                                <span class="price">{item.price}/000تومان</span>
                             </div>
                         </div>
                     </li>

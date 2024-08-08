@@ -13,7 +13,7 @@ import {BrandSlider} from "../Product-Details/BrandSlider"
 import { ModalContext } from "../../context/modal";
 import {Favorite} from "../Components/Like"
 export const Products = ({sidebars}) =>{
-  
+      
     const[category,setCategory]=useState()
     useEffect(()=>{
         axios.get(`http://localhost:313/product-category`).then((res)=>{
@@ -30,7 +30,7 @@ export const Products = ({sidebars}) =>{
            });
 
         },[]);
-        console.log(items)
+        
 
     //price
     const[price,setPrice]=useState()//برای پایگاه داده اصلی است
@@ -67,7 +67,7 @@ export const Products = ({sidebars}) =>{
                 <section className="product__area box-plr-75 pb-70">
                     <div className="container-fluid">
                         <div className="row">
-                        <Sidebar domain_price={price} colors={colors} size={size} productLength={items?.length} setItems={setItems} ></Sidebar> 
+                        <Sidebar domain_price={price} colors={colors} size={size} productLength={items?.length} setItems={setItems} items={items}></Sidebar> 
                         <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
                             <div className="product__grid-wrapper">
                             <ProductGraidWrapper></ProductGraidWrapper>  

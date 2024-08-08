@@ -2,8 +2,11 @@ import {Sizing} from './Sizing';
 import {Color} from './Color';
 import {Rate} from './TopRate';
 import { DomainPrice } from './DomainPrice';
-import { useState } from 'react';
-export const Sidebar = ({domain_price,colors,size,productLength,setItems}) =>{
+import { useState ,useEffect} from 'react';
+export const Sidebar = ({domain_price,colors,size,productLength,setItems,items}) =>{
+    useEffect(()=>{
+        window?.$("select").niceSelect()
+     },[])
     //accordion
         const[selected,setSelected]=useState([]);
         const handelClick =(id) =>{
@@ -26,7 +29,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems}) =>{
                         <h3 className="product__widget-title mb-25">Top Rate</h3>
                             <div className="product__sm">
                             <ul>            
-                                <Rate/> 
+                                <Rate items={items}/> 
                             </ul>
                         </div>
                     </div>

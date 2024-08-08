@@ -4,7 +4,7 @@ export const Select =()=>{
             <div className="product__filter-right d-flex align-items-center justify-content-md-end">
                 <div className="product__sorting product__show-no">
                     <select>
-                        <option>10</option>
+                        <option  onClick={()=>Filter(setItems,items.length,'Number','10',eMessage)}>10</option>
                         <option>20</option>
                         <option>30</option>
                         <option>40</option>
