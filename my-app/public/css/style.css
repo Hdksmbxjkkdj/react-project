@@ -570,11 +570,6 @@ p {
   background: #d01418;
   color: #ffffff;
 }
-.t-y-btn-red:hover {
-  border-color: #d01418;
-  color: #222;
-  background: #ffffff;
-}
 .t-y-btn-grey {
   background: #f6f6f6;
   border-color: #e6e6e6;

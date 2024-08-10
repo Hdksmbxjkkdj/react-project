@@ -5,10 +5,11 @@ import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { AddToCart } from "../Cart/AddToCart";
 import { RemoveWishList } from "./RemoveWishList";
+import { RemoveCartItem } from "../Cart/RemoveCartItem";
 const WishList = () => {
-  const {setCart} = useContext(CartContext);
+  const {cart,setCart} = useContext(CartContext);
   const [row, setrow] = useState();
-  const [use,setUser] = useState()
+  const [use,setUser] = useState();
   useEffect(() => {
     const u = localStorage.getItem("user");
     axios.get(`http://localhost:313/register?username=${u}`).then((response)=>{
@@ -34,7 +35,6 @@ const WishList = () => {
                         <th class="product-thumbnail">تصویر</th>
                         <th class="cart-product-name">محصول</th>
                         <th class="product-price">قیمت واحد</th>
-                        <th class="product-quantity">تعداد</th>
                         <th class="product-subtotal">مجموع</th>
                         <th class="product-remove">حذف</th>
                       </tr>
@@ -66,27 +66,6 @@ const WishList = () => {
                                 >
                                   {item.unitprice?.toFixed(2)}
                                 </span>
-                              </td>
-                              <td class="product-quantity">
-                                <div class="cart-plus-minus">
-                                  <button
-                                    class="t-y-btn t-y-btn-grey fw-bold"
-                                    type="submit"
-                                    onClick={(event) => AddToCart(
-                                      event,
-                                      item.id,
-                                      item.pic,
-                                      item.name,
-                                      item.unitprice,
-                                      item.quantity,
-                                      setCart,
-                                      eMessage,
-                                      null
-                                    )}
-                                  >
-                                    سبد خرید +
-                                  </button>
-                                </div>
                               </td>
                               <td class="product-subtotal">
                                 <span

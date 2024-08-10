@@ -2,7 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { ModalContext } from "../../../../context/modal";
 import { AddToWishlist } from "./AddToWishlist";
 import axios from "axios";
+import { CartContext } from "../../../../context/CardContext";
 const ProductAction = ({ item }) => {
+  const {cart} = useContext(CartContext);
+  function Checking() {
+    let check = false;
+    cart.filter(el=>{
+      if(el.id == item.id)
+      {
+        console.log(5421);
+        check =  true
+      }
+    })
+    return check
+  }
   const [check, setCheck] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:313/wishlist").then((response) => {
@@ -11,6 +24,8 @@ const ProductAction = ({ item }) => {
   }, []);
   const { modal, setModal } = useContext(ModalContext);
   function Set() {
+    let incart = Checking()
+    console.log(incart);
     setModal({
       ...modal,
       title: item.title,
@@ -20,6 +35,7 @@ const ProductAction = ({ item }) => {
       seccondimg: item.seccondpic,
       id: item.id,
       show: true,
+      inCart: incart
     });
   }
 

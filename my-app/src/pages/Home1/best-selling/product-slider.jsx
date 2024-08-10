@@ -13,7 +13,6 @@ const ProductSlider = ({ type, res, item }) => {
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
       setslider(res);
-    
     });
   }, []);
   const [blog, setblog] = useState();
