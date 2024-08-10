@@ -36,7 +36,7 @@ const ProductAddbtn = (props) => {
               )
             }
           >
-            + سبد خرید
+            افزودن به سبد
           </button>
         </div>
       </>
@@ -52,6 +52,8 @@ const ProductAddbtn = (props) => {
         >
           <button
             type="button"
+            className="bg-danger"
+            style={{textDecoration:"line-throught"}}
             onClick={(event) =>
               RemoveCartItem(
                 event,
@@ -63,7 +65,7 @@ const ProductAddbtn = (props) => {
               )
             }
           >
-            - سبد خرید
+            حذف از سبد 
           </button>
         </div>
       </>

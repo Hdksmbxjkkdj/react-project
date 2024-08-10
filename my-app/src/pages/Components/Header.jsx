@@ -138,30 +138,30 @@ const Header = () => {
                             cart.map((item) => {
                               return (
                                 <>
-                                  <li>
+                                  <li key={Math.random()}>
                                     <div className="cart__item d-flex justify-content-between align-items-center">
                                       <div className="cart__inner d-flex">
                                         <div className="cart__thumb">
-                                          <Link to={`product-details/${item.id}`}>
+                                          <Link to={`product-details/${item?.id}`}>
                                             <img
-                                              src={Config.shop + "" + item.pic}
+                                              src={Config.shop + "" + item?.pic}
                                               alt=""
                                             />
                                           </Link>
                                         </div>
                                         <div className="cart__details">
                                           <h6>
-                                            <Link to={`product-details/${item.id}`}>
+                                            <Link to={`product-details/${item?.id}`}>
                                               {" "}
-                                              {item.name}
+                                              {item?.name}
                                             </Link>
                                           </h6>
                                           <div className="cart__price">
-                                            <span>{item.unitprice}$</span>
+                                            <span>{item?.unitprice}$</span>
                                           </div>
                                         </div>
                                           <div className="mx-2">
-                                            <button onClick={()=>RemoveCartItem(event, item.id, null, setCart, "error", true)}>
+                                            <button onClick={()=>RemoveCartItem(event, item?.id, null, setCart, "error", true)}>
                                               <i className="fa fa-times fs-6 fw-bold"></i>
                                             </button>
                                           </div>
@@ -334,7 +334,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-3  col-sm-6  col-6 d-md-none d-lg-block">
-                  <div className="header__bottom-right d-flex justify-content-end">
+                  {/* <div className="header__bottom-right d-flex justify-content-end">
                     <div className="header__currency">
                       <select>
                         <option>USD</option>
@@ -353,7 +353,7 @@ const Header = () => {
                         <option disabled={true}>Urdu</option>
                       </select>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
