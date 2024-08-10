@@ -46,8 +46,8 @@ const Register = () => {
       <main>
         <section class="login-area pb-100">
           <div class="container">
-            <div class="row">
-              <div class="col-lg-8 offset-lg-2">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
                 <div class="basic-login">
                   <h3 class="text-center mb-60">فرم ثبت نام</h3>
                   <div>
