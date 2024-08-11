@@ -70,13 +70,13 @@ function App() {
             <Route path="/product-details/:id" element={<ProducDetails />} />
             <Route path="/product" element={<Productpage />} exact={true} />
           </Routes>
-          <div id="loading">
+          {/* <div id="loading">
             <div id="loading-center">
               <div id="loading-center-absolute">
                 <div id="object"></div>
               </div>
             </div>
-          </div>
+          </div> */}
           <BackToTop></BackToTop>
           <Footer></Footer>
           <ToastContainer />

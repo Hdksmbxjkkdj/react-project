@@ -5,23 +5,29 @@ import axios from "axios";
 import { CartContext } from "../../../../context/CardContext";
 const ProductAction = ({ item }) => {
   const {cart} = useContext(CartContext);
+  const {wish} = useContext(CartContext);
+  const [checker,setChecker] = useState([]);
+  useEffect(()=>{
+    const user = localStorage.getItem('user');
+    const use = JSON.parse(user)
+    axios.get(`http://localhost:313/wishlist?Uid=${use.id}`).then((res)=>{
+      res?.data.filter(el=>{
+        (el.Pid==item?.id) && setChecker([...checker,item])
+      })
+    })
+    console.log(wish);
+},[wish])
   function Checking() {
     let check = false;
     cart.filter(el=>{
       if(el.id == item.id)
       {
-        console.log(5421);
         check =  true
       }
     })
     return check
   }
   const [check, setCheck] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:313/wishlist").then((response) => {
-      setCheck(response.data);
-    });
-  }, []);
   const { modal, setModal } = useContext(ModalContext);
   function Set() {
     let incart = Checking()
@@ -38,20 +44,11 @@ const ProductAction = ({ item }) => {
       inCart: incart
     });
   }
-
-  const checking = (item) => {
-    for (var i = 0; i < check.length; i++) {
-      if (check[i].id == item?.id) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  };
   const [user,setUser] = useState()
     const u = localStorage.getItem("user");
+    const use = JSON.parse(u);
   useEffect(() => {
-     axios.get(`http://localhost:313/register/?username=${u}`).then((res) => {
+     axios.get(`http://localhost:313/register/?id=${use.id}`).then((res) => {
         setUser(res?.data[0]?.id)
       });
   }, []);
@@ -62,16 +59,15 @@ const ProductAction = ({ item }) => {
           <li>
             <a
               href="#"
-              onClick={() =>
-                AddToWishlist(item?.id, item?.pic, item?.text, item?.price, user)
+              onClick={()=>{AddToWishlist(item.id, item?.pic, item?.text, item?.price, user)}
               }
               title="Add to Wishlist"
             >
-              <i
+              <i key={Math.random}
                 className={
-                  checking(item)
-                    ? "text-danger fa-regular fa-heart"
-                    : "fa-regular fa-heart"
+                  checker.includes(item)
+                    ? "fa-solid fa-heart-circle-xmark text-success"
+                    : "fa-solid fa-heart-circle-check text-success"
                 }
               ></i>
             </a>

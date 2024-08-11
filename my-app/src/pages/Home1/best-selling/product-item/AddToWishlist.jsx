@@ -2,7 +2,6 @@ import axios from "axios";
 import { Notif } from "../../../../Utils/Notif";
 import { User } from "./User";
 export const AddToWishlist = async (PID, pic, name, unitprice, UID, quantity) => {
-  console.log(UID);
   const url = "http://localhost:313/wishlist";
   let status = 200;
   let auth = User();

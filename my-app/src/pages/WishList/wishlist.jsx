@@ -3,16 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
-import { AddToCart } from "../Cart/AddToCart";
-import { RemoveWishList } from "./RemoveWishList";
-import { RemoveCartItem } from "../Cart/RemoveCartItem";
+import { RemoveWishList } from "./RemoveWishList"
 const WishList = () => {
-  const {cart,setCart} = useContext(CartContext);
+  const {wish,setWish} = useContext(CartContext);
   const [row, setrow] = useState();
   const [use,setUser] = useState();
   useEffect(() => {
     const u = localStorage.getItem("user");
-    axios.get(`http://localhost:313/register?username=${u}`).then((response)=>{
+    const user = JSON.parse(u);
+    axios.get(`http://localhost:313/register?username=${user.username}`).then((response)=>{
       setUser(response.data[0].id)
     })
         axios.get(`http://localhost:313/wishlist?Uid=${use}`).then((res)=>{
@@ -78,7 +77,7 @@ const WishList = () => {
                                 </span>
                               </td>
                               <td class="product-remove" key={Math.random()}>
-                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false)}>
+                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false,wish,setWish)}>
                                   <i class="fa fa-times"></i>
                                 </a>
                               </td>

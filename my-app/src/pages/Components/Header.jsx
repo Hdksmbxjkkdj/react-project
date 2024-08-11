@@ -61,6 +61,7 @@ const Header = () => {
     });
   }
   const user = localStorage.getItem("user");
+  const use  = JSON.parse(user)
   function CheckUser()
   {
     if(user!="" || user!=null || user!=undefined)
@@ -82,7 +83,7 @@ const Header = () => {
                 <div className="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
                   {
                     (user)&&<div className="header__welcome">
-                    <span>{user} عزیز به سایت ما خوش آمدید</span>
+                    <span>{use.username} عزیز به سایت ما خوش آمدید</span>
                   </div>
                   }
                 </div>
@@ -122,7 +123,7 @@ const Header = () => {
                         <i className="fa fa-cart-shopping fs-5"></i>
                         <span className="cart__total-item">{cart?.length}</span>
                       </span>
-                      <div className="cart__mini">
+                      <div className="cart__mini cart__opened">
                         <div className="cart__close">
                           <button type="button" className="cart__close-btn">
                             <i className="fa fa-times"></i>
