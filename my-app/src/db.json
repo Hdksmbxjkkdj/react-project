@@ -989,6 +989,14 @@
       "blog_id": "6",
       "date": "2024/6/28",
       "id": "Py9sLvW"
+    },
+    {
+      "name": "قاسم",
+      "email": "ghasem@gmail.com",
+      "comment": "لورم ایپسوم",
+      "blog_id": "6",
+      "date": "2024/7/11",
+      "id": "bNJIuqg"
     }
   ],
   "aboutus": [
@@ -1022,6 +1030,11 @@
     }
   ],
   "register": [
+    {
+      "username": "مهمان",
+      "id": "مهمان",
+      "pass": "123456"
+    },
     {
       "username": "علی",
       "id": "li@gmail.com",

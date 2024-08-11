@@ -13,7 +13,7 @@ export const RemoveCartItem = async(event, id, name, setCart, eMessage, all = fa
             message = response.data.message
         })
         if (status == 200) {
-            Notif('success', "با موفقیت حذف شد")
+            Notif('success', `${name} با موفقیت  از علاقه مندی ها پاک شد`)
         } else {
             Notif('error', "در این جا یک خطا وجود دارد  !")
         }

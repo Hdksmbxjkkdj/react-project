@@ -36,11 +36,11 @@ const Sidebar = ()=> {
                                                         </li>
                                                         <li><Link to="products">دیگر صفحات</Link>
                                                             <ul className="mega-item">
-                                                                <li><Link to="products">علاقه مندی ها</Link></li>
-                                                                <li><Link to="products">سبد خرید</Link></li>
-                                                                <li><Link to="products">Checkout</Link></li>
-                                                                <li><Link to="products">ورود</Link></li>
-                                                                <li><Link to="products">ثبت نام</Link></li>
+                                                                <li><Link to="wishlist">علاقه مندی ها</Link></li>
+                                                                <li><Link to="cart">سبد خرید</Link></li>
+                                                                <li><Link to="checkout">Checkout</Link></li>
+                                                                <li><Link to="login">ورود</Link></li>
+                                                                <li><Link to="register">ثبت نام</Link></li>
                                                             </ul>
                                                         </li>
                                                         <li><Link to="products">گوشی و تبلت</Link>

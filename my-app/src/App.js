@@ -1,10 +1,6 @@
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import Footer from "./pages/Components/Footer";
-import { Home1 } from "./pages/Home1/index";
-// import Breadcrumb from './pages/Product/breadcrumb';
-// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartContext } from "./context/CardContext";
@@ -16,14 +12,15 @@ import { Register } from "./pages/Auth/register";
 import Blog from "./pages/Blog";
 import BlogDetaile from "./pages/BlogDetailes";
 import { Cart } from "./pages/Cart/cart";
+import Footer from "./pages/Components/Footer";
 import { Header } from "./pages/Components/Header";
 import { BackToTop } from "./pages/Components/backtotop";
+import { ContactUs } from "./pages/ContactUs";
+import { Home1 } from "./pages/Home1/index";
 import { ProducDetails } from "./pages/Product-Details/index";
+import { Productpage } from './pages/Productpage';
 import { Products } from "./pages/Shop";
 import { WishList } from "./pages/WishList/wishlist";
-// import Shop from './pages/Shop/Shop'
-import { ContactUs } from "./pages/ContactUs";
-import { Productpage } from './pages/Productpage';
 
 function App() {
   window?.$(window).on("load", function () {
