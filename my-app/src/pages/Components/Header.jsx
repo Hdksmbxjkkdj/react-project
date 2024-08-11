@@ -64,7 +64,7 @@ const Header = () => {
   const use  = JSON.parse(user)
   function CheckUser()
   {
-    if(use.username!="مهمان" || user!=null || user!=undefined)
+    if(use?.username!="مهمان" || user!=null || user!=undefined)
     {
       return
     }
@@ -83,7 +83,7 @@ const Header = () => {
                 <div className="col-xl-6 col-lg-6 col-md-5 d-none d-md-block">
                   {
                     (user)&&<div className="header__welcome">
-                    <span>{use.username} عزیز به سایت ما خوش آمدید</span>
+                    <span>{use?.username} عزیز به سایت ما خوش آمدید</span>
                   </div>
                   }
                 </div>
@@ -91,10 +91,10 @@ const Header = () => {
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
                       <li>
-                        <Link to={(use.username!="مهمان")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
+                        <Link to={(use?.username!="مهمان")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
                       </li>
                       <li>
-                        <Link to={(use.username!="مهمان")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
+                        <Link to={(use?.username!="مهمان")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
                       </li>
                       <li>
                           <Link to="/register">ثبت نام/ورود</Link>
