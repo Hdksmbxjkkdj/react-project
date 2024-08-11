@@ -5,19 +5,8 @@ import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveWishList } from "./RemoveWishList"
 const WishList = () => {
-  const {wish,setWish} = useContext(CartContext);
-  const [row, setrow] = useState();
-  const [use,setUser] = useState();
-  useEffect(() => {
-    const u = localStorage.getItem("user");
-    const user = JSON.parse(u);
-    axios.get(`http://localhost:313/register?username=${user.username}`).then((response)=>{
-      setUser(response.data[0].id)
-    })
-        axios.get(`http://localhost:313/wishlist?Uid=${use}`).then((res)=>{
-          setrow(res);
-        })
-  }, [use]);
+  const {row, setrow} = useContext(CartContext);
+  const {use} = useContext(CartContext);
   const eMessage = "error";
   return (
     <>
@@ -77,7 +66,7 @@ const WishList = () => {
                                 </span>
                               </td>
                               <td class="product-remove" key={Math.random()}>
-                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false,wish,setWish)}>
+                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false)}>
                                   <i class="fa fa-times"></i>
                                 </a>
                               </td>
@@ -104,4 +93,3 @@ const WishList = () => {
   );
 };
 export { WishList };
-

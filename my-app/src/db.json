@@ -1,42 +1,6 @@
 {
-  "row": [
-    {
-      "id": "8",
-      "pic": "product-13.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "date": "10/08/2024"
-    },
-    {
-      "id": "4",
-      "pic": "product-7.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "date": "10/08/2024"
-    }
-  ],
-  "wishlist": [
-    {
-      "id": "4javad@gmail.com",
-      "Pid": "4",
-      "pic": "product-7.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 720,
-      "quantity": 1,
-      "Uid": "javad@gmail.com"
-    },
-    {
-      "id": "3javad@gmail.com",
-      "Pid": "3",
-      "pic": "product-5.jpg",
-      "name": "سامسونگ C49J89: 875 پوند، Debenhams ",
-      "unitprice": 450,
-      "quantity": 1,
-      "Uid": "javad@gmail.com"
-    }
-  ],
+  "row": [],
+  "wishlist": [],
   "blog": [
     {
       "id": "1",

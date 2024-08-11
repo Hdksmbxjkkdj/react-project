@@ -209,4 +209,3 @@ const Home1 = () => {
 };
 
 export { Home1 };
-

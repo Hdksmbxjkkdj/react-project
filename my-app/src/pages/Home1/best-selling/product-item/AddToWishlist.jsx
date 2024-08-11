@@ -1,12 +1,11 @@
 import axios from "axios";
 import { Notif } from "../../../../Utils/Notif";
 import { User } from "./User";
-export const AddToWishlist = async (PID, pic, name, unitprice, UID, quantity) => {
+export const AddToWishlist = async (PID, pic, name, unitprice, UID,setrow) => {
   const url = "http://localhost:313/wishlist";
-  let status = 200;
+  let status = 201;
   let auth = User();
   const id = PID + UID;
-  (quantity==undefined || quantity==null) ? quantity=1 : quantity=quantity;
   if(auth)
   {
     try{
@@ -17,7 +16,6 @@ export const AddToWishlist = async (PID, pic, name, unitprice, UID, quantity) =>
         pic: pic,
         name: name,
         unitprice: unitprice,
-        quantity: quantity,
         Uid : UID,
       })
       .then((response) => {
@@ -26,10 +24,14 @@ export const AddToWishlist = async (PID, pic, name, unitprice, UID, quantity) =>
     }
     catch(error)
     {
-      await axios.delete(`${url}/${id}`)
-      Notif('success',"با موفقیت از علاقه مندی ها پاک شد !")
+      Notif('error',"خطای ناشناخته ای رخ داده است !")
     }
+    finally {
+      axios.get(`${url}?Uid=${UID}`).then((res) => {
+        setrow(res);
+      })
   }
+}
   else
   {
     Notif('error', "ابتدا وارد سایت شوید !")
