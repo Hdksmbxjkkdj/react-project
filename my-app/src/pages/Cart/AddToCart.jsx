@@ -48,7 +48,7 @@ export const AddToCart = async (
         response.data.status && (status = response.data.status);
       });
     if (status == 201) {
-      Notif("success", "با موفقیت اضافه گردید");
+      Notif("success", `${name} با موفقیت به سبد خرید اضافه شد`);
     } else {
       Notif("error", "آیتم اضافه نشد !");
     }

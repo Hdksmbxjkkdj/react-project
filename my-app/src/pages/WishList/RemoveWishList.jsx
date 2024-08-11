@@ -1,7 +1,7 @@
 // import axios from "axios";
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
-export const RemoveWishList = async(event, PID, UID, setrow, all = false) => {
+export const RemoveWishList = async(event, PID,name, UID, setrow, all = false) => {
     event.preventDefault();
     const url = "http://localhost:313/wishlist";
     let status = 200
@@ -15,7 +15,7 @@ export const RemoveWishList = async(event, PID, UID, setrow, all = false) => {
                 if (res.data.status) status = res.data.status
             })
         if (status == 200) {
-            Notif('success', "با موفقیت از علاقه مندی ها پاک شد :)")
+            Notif('success', `${name} با موفقیت از علاقه مندی ها پاک شد`)
         } else {
             Notif('warning', "در اینجا یک خطا وجود دارد !")
         }

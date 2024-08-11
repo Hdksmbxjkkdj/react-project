@@ -19,7 +19,7 @@ export const AddToWishlist = async (PID, pic, name, unitprice, UID,setrow) => {
         Uid : UID,
       })
       .then((response) => {
-        Notif('success',"با موفقیت اضافه شد :)")
+        Notif('success',`${name} با موفقیت به علاقه مندی ها اضافه شد`)
       });
     }
     catch(error)

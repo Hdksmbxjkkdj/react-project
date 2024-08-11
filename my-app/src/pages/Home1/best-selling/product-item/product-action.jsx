@@ -80,7 +80,7 @@ const ProductAction = ({ item }) => {
             <li>
               <a
                 href="#"
-                onClick={(event) => RemoveWishList(event,item.id,user,setrow,false)}
+                onClick={(event) => RemoveWishList(event,item.id,item.text,user,setrow,false)}
                 title="Remove From Wishlist"
               >
                 <i className="fa-solid fa-heart-circle-xmark text-danger"></i>

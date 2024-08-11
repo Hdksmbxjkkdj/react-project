@@ -2,17 +2,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Notif } from "../../Utils/Notif";
-import { LogOut } from "./Logout";
 
 const Login = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    LogOut();
-  }, []);
   const [login, setLogin] = useState({
     email: "",
     password: "",
   });
+  useEffect(()=>{
+    const theUser = {'username':"مهمان",'id':"مهمان"}
+    localStorage.setItem("user", JSON.stringify(theUser));
+  },[])
   const [check, setCheck] = useState(false);
   function loginUser() {
     try {
@@ -111,3 +111,4 @@ const Login = () => {
   );
 };
 export { Login };
+

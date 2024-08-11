@@ -64,7 +64,7 @@ const Header = () => {
   const use  = JSON.parse(user)
   function CheckUser()
   {
-    if(user!="" || user!=null || user!=undefined)
+    if(use.username!="مهمان" || user!=null || user!=undefined)
     {
       return
     }
@@ -91,10 +91,10 @@ const Header = () => {
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
                       <li>
-                        <Link to={(user!="")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
+                        <Link to={(use.username!="مهمان")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
                       </li>
                       <li>
-                        <Link to={(user!="")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
+                        <Link to={(use.username!="مهمان")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
                       </li>
                       <li>
                           <Link to="/register">ثبت نام/ورود</Link>
@@ -162,7 +162,7 @@ const Header = () => {
                                           </div>
                                         </div>
                                           <div className="mx-2">
-                                            <button onClick={()=>RemoveCartItem(event, item?.id, null, setCart, "error", true)}>
+                                            <button onClick={()=>RemoveCartItem(event, item?.id, item?.name, setCart, "error", true)}>
                                               <i className="fa fa-times fs-6 fw-bold"></i>
                                             </button>
                                           </div>
@@ -177,7 +177,6 @@ const Header = () => {
                             <div className="cart__sub d-flex justify-content-between align-items-center">
                               <h6>جمع</h6>
                               <span className="cart__sub-total">
-                                {/* {console.log(tot)} */}
                                 </span>
                             </div>
                             <Link
@@ -293,22 +292,6 @@ const Header = () => {
 
                           <button type="submit"><i className="fa fa-search"></i></button>
                         </div>
-                        {/* <div className="header__search-cat">
-                          <select>
-                            <option>دسته بندی ها</option>
-                            <option>بهترین محصولات فروخته شده</option>
-                            <option>10 پیشنهاد برتر</option>
-                            <option>جدید ترین ها</option>
-                            <option>گوشی و تبلت</option>
-                            <option>الکترونیک و دیجیتال</option>
-                            <option>مد و لباس</option>
-                            <option>ساعت و جواهرات</option>
-                            <option>زیبایی و سلامتی</option>
-                            <option>صدا و صوت</option>
-                            <option>تلوزیون</option>
-                            <option>کامپیوتر</option>
-                          </select>
-                        </div> */}
                       </form>
                     </div>
                   </div>
@@ -335,26 +318,6 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-3  col-sm-6  col-6 d-md-none d-lg-block">
-                  {/* <div className="header__bottom-right d-flex justify-content-end">
-                    <div className="header__currency">
-                      <select>
-                        <option>USD</option>
-                        <option>USD</option>
-                        <option>USD</option>
-                        <option>USD</option>
-                        <option>USD</option>
-                      </select>
-                    </div>
-                    <div className="header__lang d-md-none d-lg-block">
-                      <select>
-                        <option>English</option>
-                        <option disabled={true}>Bangla</option>
-                        <option disabled={true}>Arabic</option>
-                        <option disabled={true}>Hindi</option>
-                        <option disabled={true}>Urdu</option>
-                      </select>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
