@@ -1,28 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Rank } from "../Components/Rank";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import {ProductList} from "../Shop/Product"
-export const  CustomerComment=({comment,id,productId })=>{
-   //comments
-   let url=`http://localhost:313/product_comments?product_id=`+ productId
-   const [ProductComment, setProductComment] = useState();
- 
-          axios.get(url).then((res) => {
-
-                setProductComment(res);
-        });
-       //comments
-
- 
-
-    console.log(ProductComment?.data?.length)
+export const  CustomerComment=({comment,id })=>{
     return<>
             <div class="col-xxl-6 col-xl-6 col-lg-6">
                 <div class="review-wrapper">
                     <h3 class="block-title">نظرات مشتریان</h3>
-                        {ProductComment?.data?.map((g)=>{
+                        {comment?.map((g)=>{
                         return <>
                         <div class="review-item">
                             <h3 class="review-title">محصول فوق العاده</h3>

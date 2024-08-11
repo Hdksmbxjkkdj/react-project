@@ -5,7 +5,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons"
 import{Select} from "./Select"
 import { useState } from "react"
 import { Product, ProductList } from "./Product"
-export const Tab=({items,setItems,showmodal,setshowmodal,closebtn,modal,item})=>{
+export const Tab=({items,setItems,productLength})=>{
       //tab
       const [toggleState,setToggleStata]=useState(2)
   
@@ -41,7 +41,9 @@ export const Tab=({items,setItems,showmodal,setshowmodal,closebtn,modal,item})=>
                                                     </ul>
                                                 </div>
                                                 <div className="product__result pl-60">
-                                                    <p>Showing 1-20 of 29 relults</p>
+                                                    {/* <p>Showing 1-20 of 29 relults</p> */}
+                                                    <p className="me-4">نتیجه نمایش 9 محصول از 9</p>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -51,13 +53,13 @@ export const Tab=({items,setItems,showmodal,setshowmodal,closebtn,modal,item})=>
                       <div className="tab-content" id="productGridTabContent">
                            <div className={toggleState === 1 ? "tab-pane fade" : "tab-pane fade show active"}  id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
                                 <div className="row">
-                                    <Product key={Math.random()} setItems={setItems} items={items} showmodal={showmodal} setshowmodal={setshowmodal} closebtn={closebtn} modal={modal} item={item} ></Product>
+                                    <Product key={Math.random()} setItems={setItems} items={items} ></Product>
                                 </div>
                             </div>
                            
                             <div className={toggleState === 2 ? "tab-pane fade" : "tab-pane fade show active"} id="list" role="tabpanel" aria-labelledby="list-tab">
                                 <div className="row">
-                                    <ProductList key={Math.random()} setItems={setItems} items={items}></ProductList>
+                                    <ProductList key={Math.random()} setItems={setItems} items={items}productLength={productLength}></ProductList>
                                 </div>
                             </div>
                         </div>

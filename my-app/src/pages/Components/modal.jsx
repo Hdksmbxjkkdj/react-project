@@ -26,9 +26,9 @@ export const Modal = ({index})=>{
    window?.$(document).ready(() => {
     //  setBackgroundColor();
 })
-  //test
+  //BTNCOLOR
   const[backgroundColor,setBackgroundColor]=useState()
-  //test
+  //BTNCOLOR
   //number product
   useEffect(() => {
     window
@@ -85,7 +85,9 @@ export const Modal = ({index})=>{
               <li>
                 <a href="#" title="Compare">
                   {/* <i className="fa fa-sliders-h" onClick={()=>alert("هنوز این مورد وجود ندارد !")}></i> */}
-                  <FontAwesomeIcon icon={faSlidersH} onClick={()=>alert("هنوز این مورد وجود ندارد !")}></FontAwesomeIcon>
+                  {/* <FontAwesomeIcon icon={faSlidersH} onClick={()=>alert("هنوز این مورد وجود ندارد !")}></FontAwesomeIcon> */}
+                 <FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon>
+
                 </a>
               </li>
             </ul>
@@ -178,10 +180,10 @@ export const Modal = ({index})=>{
                               </div>
                             </div>
                             <div class="pro-cart-btn mb-25">
-                                <ProductAddbtn></ProductAddbtn>
-                              {/* <button class="t-y-btn" type="submit" >
+                                {/* <ProductAddbtn></ProductAddbtn> */}
+                              <button class="t-y-btn" type="submit" >
                                 لیست خرید +
-                              </button> */}
+                              </button>
                             </div>
                         
                           </div>

@@ -530,10 +530,7 @@ p {
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
 }
-.t-y-btn:hover {
-  color: #fff;
-  background: #222;
-}
+
 .t-y-btn-sub {
   height: 50px;
   line-height: 50px;
@@ -5714,4 +5711,8 @@ p.checkout-coupon input[type=text]:focus {
 .Add-to-Wishlist .rr:focus{
    
   background-color: red !important;
+}
+.t-y-btn:focus {
+  color: #fff;
+  /* background: #222; */
 }

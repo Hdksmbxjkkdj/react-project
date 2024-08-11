@@ -45,7 +45,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
     
 
     return<>
-         <div className="product__widget-item mb-15" style={{"direction":"ltr"}}>
+         <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion1">
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">
@@ -55,7 +55,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                     </h2>
                     {/* {selected.includes(2) ?( */}
                         
-                           <div id="collapseTwo" className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
+                           <div id="collapseTwo"  style={{"direction":"ltr"}} className="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#productWidgetAccordion1">
                            <div className="accordion-body">
                              <div className="product__widget-content">
                                    <div className="product__price-slider">

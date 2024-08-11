@@ -9,7 +9,7 @@ import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 //test
-export const SendComment = ({id,tab,setTab,change}) => {
+export const SendComment = ({id,tab,productId}) => {
      
     // let local = Local()
     let auth = User()
@@ -94,7 +94,7 @@ useEffect(() => {
             <div className={tab === 2 ? "tab-pane fade" :"tab-pane fade show active"} id="review" role="tabpanel" aria-labelledby="review-tab">
                 <div className="product__details-review">
                     <div className="row">
-                       <CustomerComment comment={info?.data}></CustomerComment>
+                       <CustomerComment comment={info?.data} productId={productId}></CustomerComment>
                          <div className="col-xxl-4 col-xl-4 col-lg-4">
                             <div className="review-form">
                                 <h3>بررسی شما</h3>
