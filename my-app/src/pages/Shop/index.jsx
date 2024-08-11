@@ -57,7 +57,20 @@ export const Products = ({sidebars}) =>{
         });
       
     },[]);
- 
+ //
+    //allcomment
+    const[productComment,setProductComment]=useState()
+  
+    useEffect(()=>{
+            axios.get(`http://localhost:313/product_comments`).then((response)=>{
+              setProductComment(response);
+
+           });
+
+        },[]);
+  //allcomment
+  //
+  //
     return<>
               
                 <main>
@@ -73,7 +86,7 @@ export const Products = ({sidebars}) =>{
                             <ProductGraidWrapper></ProductGraidWrapper>  
                             </div>
                             <div className="product__grid-item-wrapper pt-70">
-                                <Tab  key={Math.random()} setItems={setItems} items={items} ></Tab> 
+                                <Tab  key={Math.random()} setItems={setItems} items={items} productLength={productComment?.length} ></Tab> 
                             </div>
                         </div>
                         </div>

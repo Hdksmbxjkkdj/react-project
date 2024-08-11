@@ -57,6 +57,7 @@ function App() {
     }
     document.getElementsByTagName("title")[0].innerHTML = name;
   },[]);
+  
   return (
     <>
       <CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser }}>

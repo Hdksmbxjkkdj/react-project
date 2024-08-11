@@ -22,7 +22,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
              <div className="accordion-item">
                  <h2 className="accordion-header" id="headingfive">
                      <button className="accordion-button product__widget-title:" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive" onClick={()=>handelClick(1)}>
-                        سایز
+                        رنگ
                      </button>
                  </h2>
                     {selected.includes(1) ?(

@@ -6,6 +6,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
   
     // let url = '/' + local + '/products/filter' + query
      let url='http://localhost:313/best_selling?'+ query
+     console.log(url,';;;;;;')
         //  let url='http://localhost:313/best_selling?'+ query
 
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
@@ -47,7 +48,6 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
 
 
 export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
-    console.log('type')
   
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {

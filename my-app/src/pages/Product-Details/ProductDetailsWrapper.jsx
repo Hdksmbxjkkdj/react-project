@@ -4,9 +4,12 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+import axios from "axios";
+import { Rank } from "../Components/Rank";
+export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNumber}) => {
 
-export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
+   console.log(newprice,'lll')
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -30,7 +33,16 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
     });
   }, []);
 
+ //comments
+//  let url=`http://localhost:313/product_comments?product_id=`+ productId
+//  const [ProductComment, setProductComment] = useState();
 
+//         axios.get(url).then((res) => {
+
+//               setProductComment(res);
+//            console.log(ProductComment.data.length)
+//       });
+     //comments
   
 
   
@@ -47,37 +59,11 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku }) => {
             </h3>
             <div class="product__review d-sm-flex">
               <div class="rating rating__shop mb-15 mr-35">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </a>
-                  </li>
-                </ul>
+               <Rank></Rank>
               </div>
               <div class="product__add-review mb-15">
                 <span>
-                  <a href="#">1 نظر</a>
+                  <a href="#">نظر{commentNumber}</a>
                 </span>
                 <span>
                   <a href="#">افزودن نظر</a>
