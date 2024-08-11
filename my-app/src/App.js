@@ -35,10 +35,11 @@ function App() {
   const [use,setUser] = useState();
   useEffect(() => {
     const u = localStorage.getItem("user");
-    const user = JSON.parse(u);
-    axios.get(`http://localhost:313/register?username=${user.username}`).then((response)=>{
-      setUser(response.data[0].id)
-      axios.get(`http://localhost:313/wishlist?Uid=${response.data[0].id}`).then((res)=>{
+    const user = JSON.parse(u)
+    console.log(u);
+    axios.get(`http://localhost:313/register?username=${user?.username}`).then((response)=>{
+      setUser(response.data[0]?.id)
+      axios.get(`http://localhost:313/wishlist?Uid=${response.data[0]?.id}`).then((res)=>{
       setrow(res)
   })
     })
@@ -61,7 +62,7 @@ function App() {
   return (
     <>
       <CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser }}>
-        <BrowserRouter>
+      <BrowserRouter>
           <Header></Header>
           <Routes>
             <Route path="product/:id" element={<ProducDetails />} />

@@ -12,7 +12,7 @@ const ProductAction = ({ item }) => {
   useEffect(() => {
     const user = localStorage.getItem("user");
     const use = JSON.parse(user);
-    axios.get(`http://localhost:313/wishlist?Uid=${use.id}`).then((res) => {
+    axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
       res?.data.filter((el) => {
         el.Pid == item?.id && setChecker([...checker, item]);
       });
@@ -47,7 +47,7 @@ const ProductAction = ({ item }) => {
   const u = localStorage.getItem("user");
   const use = JSON.parse(u);
   useEffect(() => {
-    axios.get(`http://localhost:313/register/?id=${use.id}`).then((res) => {
+    axios.get(`http://localhost:313/register/?id=${use?.id}`).then((res) => {
       setUser(res?.data[0]?.id);
     });
   }, []);
