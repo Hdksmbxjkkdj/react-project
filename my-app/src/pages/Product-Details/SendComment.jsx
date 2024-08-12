@@ -34,11 +34,11 @@ export const SendComment = ({id,tab,productId}) => {
     })
     const [error, setError] = useState();
 
-    useEffect(() => {
-        return () => {
-            //  reset();
-        };
-    }, []);
+    // useEffect(() => {
+    //     return () => {
+          
+    //     };
+    // }, []);
     let url = `http://localhost:313/product_comments`
     const submit = async (e) => {
         e.preventDefault();

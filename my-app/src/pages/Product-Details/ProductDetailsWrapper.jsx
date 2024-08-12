@@ -9,7 +9,7 @@ import axios from "axios";
 import { Rank } from "../Components/Rank";
 export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNumber}) => {
 
-   console.log(newprice,'lll')
+   
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")

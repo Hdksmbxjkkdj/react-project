@@ -74,30 +74,19 @@ export const Product = ({
 };
 export const ProductList = ({ items, setItems }) => {
   //comments
-  const [id, setId] = useState();
-  const btnid = (e) => {
-    setId(e);
-    // let url=`http://localhost:313/product_comments?product_id=`+id
-  };
-
-  // }, []);
-
   let url = `http://localhost:313/product_comments`;
-
   const [ProductComment, setProductComment] = useState();
 
   useEffect(() => {
     fetch();
   }, []);
-  //comments
-
   const fetch = async () => {
     await axios.get(url).then((res) => {
       setProductComment(res.data);
     });
   };
 
-  console.log(ProductComment);
+  // console.log(ProductComment);
 
   var comments_count = [];
 
@@ -111,16 +100,15 @@ export const ProductList = ({ items, setItems }) => {
     comments_count[comment.product_id] = newCount;
   });
 
-  console.log(comments_count[1]);
-  const eMessage = "errore_message";
-  const local = Local();
+  // console.log(comments_count[1]);
+    //comments
+
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
   //BTNCOLOR
   //BTNCOLOR
   const [Color, setColor] = useState();
   //BTNCOLOR
-  const e = () => {};
   return (
     <>
       {items?.data?.map((index) => {
@@ -132,7 +120,7 @@ export const ProductList = ({ items, setItems }) => {
                   <a
                     href={"/product/" + index.id}
                     className="w-img"
-                    onClick={() => btnid(index.id)}
+                    
                   >
                     <img src={Config.shop + "" + index.pic} alt="product" />
                     <img
@@ -162,7 +150,6 @@ export const ProductList = ({ items, setItems }) => {
                           href={"/product/" + index.id}
                           onClick={() => {
                             setColor(Color === "red" ? "inherit" : "red");
-                            id(index.id);
                           }}
                           style={{ Color: Color }}
                         >
@@ -174,11 +161,12 @@ export const ProductList = ({ items, setItems }) => {
                           href={"/product/" + index.id}
                           onClick={() => {
                             setColor(Color === "#fcb700" ? "red" : "#fcb700");
-                            id(index.id);
+                            
                           }}
                           style={{ Color: Color }}
                         >
                           نظر خود را اضافه کنید
+
                         </a>
                       </span>
                     </div>
@@ -215,7 +203,7 @@ export const ProductList = ({ items, setItems }) => {
                     <ul>
                       {/* <li><a  onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li> */}
 
-                      <li>
+                      <li className="me-3">
                         <a href="#" title="مقایسه کنید">
                           <FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon>
                         </a>

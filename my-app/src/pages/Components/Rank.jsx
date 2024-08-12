@@ -1,20 +1,34 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
-import { Children } from "react"
+import { Children, useState } from "react"
 export const Rank =()=>{
-    const Rank=(event)=>{
-        window?.$(event.target).prevAll(event.target).addClass('active-star')
-        window?.$(event.target).nextAll().removeClass('active-star')
-        
-    }
+    const[Rate,SetRate]=useState()
+    const[Hover,SetHover]=useState()
+    const[Animate,SetAnimate]=useState()
+    const ClassN =(index)=>{
+        let TempClass
+        // Animate === index +1 ? (TempClass= "active animate" ): (TempClass= "active animate" )
+        index < (Hover || Rate) ? TempClass= "actives" : TempClass=""
+        return TempClass
 
+    }
     return<>
-        <ul>
-            <FontAwesomeIcon icon={faStar} onclick={(event) => Rank(event)}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar} onclick={(event) => Rank(event)}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar} onclick={(event) => Rank(event)}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar} onclick={(event) => Rank(event)}></FontAwesomeIcon>
-            <FontAwesomeIcon icon={faStar} onclick={(event) => Rank(event)}></FontAwesomeIcon>
+        <ul> 
+            {[...Array(5)].map((item,index)=>{
+                return<>
+                <FontAwesomeIcon icon={faStar}
+                 key={index}
+                  size={35} 
+                  style={{margin:"3px"}}
+                   className={ClassN(index)}
+                   onClick={() => {SetRate(index+1)
+                    SetAnimate(index+1)
+                   }}
+                   onMouseOver={()=>{SetHover(index+1)}}
+                   onMouseLeave={()=>{SetHover(Rate)}}
+                   ></FontAwesomeIcon>
+                </> 
+            })}
         </ul>
 
     </>

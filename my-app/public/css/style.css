@@ -5684,6 +5684,7 @@ p.checkout-coupon input[type=text]:focus {
 /* star */
 .active-star{
   color:yellow;
+  background-color:red;
 }
 
 /* product details */
@@ -5711,3 +5712,27 @@ p.checkout-coupon input[type=text]:focus {
   color: #fff;
   /* background: #222; */
 }
+  /* rating star */
+
+.actives{
+  color:yellow;
+}
+/* .animate{
+  animation-name: star;
+  animation-duration: 0.5s;
+}
+@keyframes star{
+  0%{
+    transform: translateY(0);
+  }
+  40%{
+    transform:translateY(-10px);
+  }
+  80%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+} */
+ /* rating star */
