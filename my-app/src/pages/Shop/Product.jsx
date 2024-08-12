@@ -16,6 +16,7 @@ import { Modal } from "../Components/modal";
 
 import { Local } from "../../Utils";
 import { useParams } from "react-router-dom";
+import { Pagination } from "../Components/pagination";
 export const Product = ({
   items,
   setItems,
@@ -217,6 +218,7 @@ export const ProductList = ({ items, setItems }) => {
           </>
         );
       })}
+      <Pagination></Pagination>
     </>
   );
 };

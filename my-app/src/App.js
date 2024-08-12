@@ -33,7 +33,6 @@ function App() {
   useEffect(() => {
     const u = localStorage.getItem("user");
     const user = JSON.parse(u)
-    console.log(u);
     axios.get(`http://localhost:313/register?username=${user?.username}`).then((response)=>{
       setUser(response.data[0]?.id)
       axios.get(`http://localhost:313/wishlist?Uid=${response.data[0]?.id}`).then((res)=>{
