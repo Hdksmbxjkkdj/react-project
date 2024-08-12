@@ -35,6 +35,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                         {/* <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/> */}
                         <img src={Config.shop+ "" +item} alt=""/>  
                     </div>
+                   
                 </div>
                 <div className="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
                     <div className="product__details-nav-thumb">
@@ -43,7 +44,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                 </div>
                 <div className="tab-pane fade" id="thumbThree" role="tabpanel" aria-labelledby="thumbThree-tab">
                     <div className="product__details-nav-thumb">
-                        <img src="assets/img/shop/product/details/big/product-nav-big-3.jpg" alt="" />
+                        <img src={Config.shop+ "" +item} alt="" />
                     </div>
                 </div>
                 <div className="tab-pane fade" id="thumbFour" role="tabpanel" aria-labelledby="thumbFour-tab">
