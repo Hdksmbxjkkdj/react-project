@@ -26,7 +26,7 @@ export const SectionHead = () =>{
                 <div className="col-xxl-12">
                     <div className="section__head mb-40">
                         <div className="section__title" >
-                           <h3>پرفروش ترین<span>محصولات</span></h3>
+                           <h3 className="text-end">پرفروش ترین<span>محصولات</span></h3>
                         </div>
                     </div>
                 </div>  
@@ -37,13 +37,15 @@ export const SectionHead = () =>{
                                     items={5}
                                     loop
                                     autoPlay
-                                    key={Math.random()}
-                                    nav
+                                    // key={Math.random()}
+                                    // nav
                                     fs-1
 
                                 >
                                     {items?.data?.map((item)=>{
+                                      
                                       return<> 
+
                                          <div className="product__item white-bg mb-30 item">
                                             <div className="product__thumb p-relative">
                                     <a href="product-details.html" className="w-img">
@@ -54,7 +56,7 @@ export const SectionHead = () =>{
                                         <ul>
                                             <li><a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
                                             <li><a href="#" title="نمایش سریع" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
-                                            <li><a href="#" title="مقایسه" onClick={()=>alert("هنوز این مورد وجود ندارد !")}><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
+                                            <li><a href="#" title="مقایسه" ><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
                                         </ul>
                                     </div>
                                             </div>
@@ -63,9 +65,9 @@ export const SectionHead = () =>{
                                         <a className="product-item-link" href="product-details.html">{item.text}</a>
                                     </h6>
                                     <div className="rating">
-                                       <Rank></Rank>
+                                      <Rank></Rank>
                                     </div>
-                                    <span className="price">${item.price}.000</span>
+                                    <span className="price">{item.price}.000 تومان</span>
                                 </div>
                                 <div className="product__add-btn">
                                      <button type="button">Add to Cart</button> 

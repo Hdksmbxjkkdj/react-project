@@ -7,9 +7,7 @@ import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
-export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNumber}) => {
-
-   
+export const ProductDetailsWrapper = ({ item,commentNumber}) => {
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -32,22 +30,6 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNum
       $button.parent().find("input").val(newVal);
     });
   }, []);
-
- //comments
-//  let url=`http://localhost:313/product_comments?product_id=`+ productId
-//  const [ProductComment, setProductComment] = useState();
-
-//         axios.get(url).then((res) => {
-
-//               setProductComment(res);
-//            console.log(ProductComment.data.length)
-//       });
-     //comments
-  
-
-  
-
-
   return (
     <>
       <div class="col-xxl-7 col-xl-7 col-lg-7">
@@ -55,7 +37,7 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNum
           <div class="product__details">
             <h3 class="product__details-title">
               {/* <a href="product-details.html">Smart Mobile Phone 7/7plus/8/8plus/X/Xr W 32 to 128GB</a> */}
-              <a href="product-details.html">{item}</a>
+              <a href="product-details.html">{item?.data.text}</a>
             </h3>
             <div class="product__review d-sm-flex">
               <div class="rating rating__shop mb-15 mr-35">
@@ -71,16 +53,16 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNum
               </div>
             </div>
             <div class="product__price">
-              <span class="new">${newprice}</span>
-              <span class="old">${oldprice}</span>
+              <span class="new">{item?.data.price}/000تومان</span>
+              <span class="old">{item?.data.oldprice}/000تومان</span>
             </div>
             <div class="product__stock">
               <span>دسترسی :</span>
               <span>در انبار</span>
             </div>
             <div class="product__stock sku mb-30">
-              <span>SKU:</span>
-              <span>{sku}</span>
+              <span>برند:</span>
+              <span>{item?.data.SKU}</span>
             </div>
             <div class="product__details-des mb-30">
               <p>
@@ -110,7 +92,7 @@ export const ProductDetailsWrapper = ({ item, newprice, oldprice, sku,commentNum
                       <input type="text" value="1" />
                     </div>
                   </div>
-                  <div class="pro-cart-btn mb-25">
+                  <div class="pro-cart-btn mb-25 me-3">
                     <button class="t-y-btn" type="submit">
                     به سبد خرید اضافه کنید
                     </button>

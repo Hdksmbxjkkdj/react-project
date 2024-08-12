@@ -32,6 +32,7 @@ export const ProducDetails= () =>{
             setImag(res);
         });
     }, []);
+    console.log(img?.data?.NewPrice,'asas')
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -58,7 +59,7 @@ export const ProducDetails= () =>{
                 <div className="container-fluid">
                     <div className="row">
                         <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} /> 
-                        <ProductDetailsWrapper item={img?.data?.name} price={img?.data?.unitprice} newprice={img?.data?.NewPrice} oldprice={img?.data?.OldPrice} sku={img?.data?.sku} commentNumber={ProductComment?.data?.length}  /> 
+                        <ProductDetailsWrapper item={img} price={img?.data?.unitprice}  /> 
                     </div>
                     <div className="row">
                         <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} /> 
@@ -73,11 +74,11 @@ export const ProducDetails= () =>{
             <SectionHead />    
             <BrandSlider/> 
                       
-            <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">
+            {/* <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">
                     <div className="modal-dialog modal-dialog-centered product__modal" role="document">
                         <ModalContent  />
                     </div>
-            </div>
+            </div> */}
         </main>
     </>
 }
