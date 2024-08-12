@@ -7,7 +7,6 @@ import { RemoveWishList } from "../../../WishList/RemoveWishList";
 const ProductAction = ({ item }) => {
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
-  // const {use,setUser} = useContext(CartContext);
   const [checker, setChecker] = useState([]);
   useEffect(() => {
     const user = localStorage.getItem("user");

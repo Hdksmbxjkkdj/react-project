@@ -30,13 +30,10 @@ const ProductItemflex = ({type, slider}) => {
 //test
 
 const  ProducDetailsImgs= ({type, slider}) => {
-  console.log(slider);
-
   return (
     <>
       <ProducDetailsImg item={slider}></ProducDetailsImg>
     </>
   );
 };
-//test
 export { ProductItem,ProductItemflex,ProducDetailsImgs };

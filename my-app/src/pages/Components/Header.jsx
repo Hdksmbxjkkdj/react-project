@@ -1,12 +1,11 @@
-import { Event as event } from "jquery";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Notif } from "../../Utils/Notif";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
-import { RemoveCartItem } from "../Cart/RemoveCartItem";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
+import { ModalContainer } from "./modalContainer";
 
 const Header = () => {
   window?.$("document").ready(function () {
@@ -73,6 +72,11 @@ const Header = () => {
       Notif("warning","ابتدا باید وارد سایت شوید !")
     }
   }
+  const navigate = useNavigate()
+  if(navigate)
+  {
+    window?.$(".cart__mini").addClass("cart__opened");
+  }
   return (
     <>
       <header id="header" className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>
@@ -123,75 +127,15 @@ const Header = () => {
                         <i className="fa fa-cart-shopping fs-5"></i>
                         <span className="cart__total-item">{cart?.length}</span>
                       </span>
-                      <div className="cart__mini cart__opened">
+                      <div className="cart__mini">
                         <div className="cart__close">
                           <button type="button" className="cart__close-btn">
                             <i className="fa fa-times"></i>
                           </button>
                         </div>
-                            {(cart.length>0)?<div>
-                            <div className="cart__title">
-                              <h4>سبد خرید من</h4>
-                              <span>({cart?.length} محصول)</span>
-                            </div>
-                        <ul className="cart__item-container px-2">
-                          {cart?.length > 0 &&
-                            cart.map((item) => {
-                              return (
-                                <>
-                                  <li key={Math.random()}>
-                                    <div className="cart__item d-flex justify-content-between align-items-center">
-                                      <div className="cart__inner d-flex">
-                                        <div className="cart__thumb">
-                                          <Link to={`product-details/${item?.id}`}>
-                                            <img
-                                              src={Config.shop + "" + item?.pic}
-                                              alt=""
-                                            />
-                                          </Link>
-                                        </div>
-                                        <div className="cart__details">
-                                          <h6>
-                                            <Link to={`product-details/${item?.id}`}>
-                                              {" "}
-                                              {item?.name}
-                                            </Link>
-                                          </h6>
-                                          <div className="cart__price">
-                                            <span>{item?.unitprice}$</span>
-                                          </div>
-                                        </div>
-                                          <div className="mx-2">
-                                            <button onClick={()=>RemoveCartItem(event, item?.id, item?.name, setCart, "error", true)}>
-                                              <i className="fa fa-times fs-6 fw-bold"></i>
-                                            </button>
-                                          </div>
-                                      </div>
-                                    </div>
-                                  </li>
-                                </>
-                              );
-                            })}
-
-                            </ul>
-                            <div className="cart__sub d-flex justify-content-between align-items-center">
-                              <h6>جمع</h6>
-                              <span className="cart__sub-total">
-                                </span>
-                            </div>
-                            <Link
-                              to="/checkout"
-                              className="t-y-btn w-100 mb-10"
-                            >
-                              رفتن به checkout
-                            </Link>
-                            <Link
-                              to="/cart"
-                              className="t-y-btn t-y-btn-border w-100 mb-10"
-                            >
-                              دیدن لیست خرید
-                            </Link>
-                            </div>:<div><p className="text-danger">سبد خرید شما خالی می باشد</p></div>}
+                             {(cart.length>0)?
+                            <ModalContainer/>
+                            :<div><p className="text-danger">سبد خرید شما خالی می باشد</p></div>}
                       </div>
                     </div>
                     <div className="header__hotline align-items-center d-none d-sm-flex  d-lg-none d-xl-flex">
@@ -289,7 +233,6 @@ const Header = () => {
                               </div>
                             </div>
                           </div>
-
                           <button type="submit"><i className="fa fa-search"></i></button>
                         </div>
                       </form>

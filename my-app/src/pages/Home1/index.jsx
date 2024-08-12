@@ -175,7 +175,7 @@ const Home1 = () => {
                       <div className="product__price">
                         <span>${modal.price.toFixed(2)}</span>
                       </div>
-                      <div className="product__modal-form mb-30">
+                      <div className="product__modal-form mb-30" key={Math.random()}>
                         {(!modal.inCart)?<form onSubmit={(event)=>AddToCart(event,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,"error",null)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity mr-20 mb-25">
