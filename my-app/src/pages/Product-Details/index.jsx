@@ -32,7 +32,7 @@ export const ProducDetails= () =>{
             setImag(res);
         });
     }, []);
-    console.log(img?.data?.NewPrice,'asas')
+   
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -45,28 +45,30 @@ export const ProducDetails= () =>{
     }, []);
       //Number of comments
    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
+//    let url=`http://localhost:313/product_comments?product_id=`+ id
+
    const [ProductComment, setProductComment] = useState();
- 
+   useEffect(() => {
           axios.get(url).then((res) => {
 
                 setProductComment(res);
         });
-       //Number of comments
-    
+    }, []);
+//        //Number of comments
     return<>
         <main>
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
-                        <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} /> 
-                        <ProductDetailsWrapper item={img} price={img?.data?.unitprice}  /> 
+                        <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} />  
+                       <ProductDetailsWrapper item={img} commentNumber={ProductComment?.data?.length} /> 
                     </div>
                     <div className="row">
                         <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} /> 
                     </div>
                     
                     <div className="row">
-                        {<SendComment  comment={info?.data?.comment} id={info?.data.id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment  comment={info?.data?.comment} id={info?.data.id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
                     </div>
                 </div>
             </section>

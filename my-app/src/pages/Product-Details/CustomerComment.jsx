@@ -17,7 +17,6 @@ export const  CustomerComment=({comment,id,productId })=>{
 
  
 
-    console.log(ProductComment?.data?.length)
     return<>
             <div class="col-xxl-6 col-xl-6 col-lg-6">
                 <div class="review-wrapper">
