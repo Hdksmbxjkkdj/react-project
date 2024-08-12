@@ -1,5 +1,4 @@
 const ProductContent = ({type,item})=> {
-  // console.log(item);
     return (
         <>
             <div className="product__content text-center">

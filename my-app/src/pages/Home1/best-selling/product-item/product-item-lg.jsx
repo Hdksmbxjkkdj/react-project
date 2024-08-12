@@ -1,6 +1,5 @@
+import { ProductContentlg } from "./product-content-lg";
 import { ProductThumb } from "./product-thumb";
-import {ProductContentlg} from "./product-content-lg";
-import { ProductAddbtn } from "./product-add-btn";
 const ProductItemlg = (props)=> {
     return (
         <>
@@ -11,5 +10,4 @@ const ProductItemlg = (props)=> {
     </>
     )
 }
-
-export {ProductItemlg};
+export { ProductItemlg };
