@@ -38,14 +38,14 @@ const BlogDetaile = (props) => {
     <>
       <section className="blog__area box-plr-75 pb-70">
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-xxl-2 col-xl-3 col-lg-4">
+          <div className="row justify-content-center">
+            {/* <div className="col-xxl-2 col-xl-3 col-lg-4">
               <Sidebar>
                 <SidebarItem items={sidebar}></SidebarItem>
                 <SidebarItem1 items={item?.data}></SidebarItem1>
                 <sidebarItem items={sidebar1}></sidebarItem>
               </Sidebar>
-            </div>
+            </div> */}
             <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">
               <div className="row">
                 <div className="col-xxl-12">

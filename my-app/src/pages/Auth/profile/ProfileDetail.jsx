@@ -6,8 +6,8 @@ export const ProfileDetail = ()=> {
     user = JSON.parse(user);
     console.log(user);
     const [form,setForm] = useState({
-        name:user.username,
-        email:user.id,
+        name:user?.username,
+        email:user?.id,
         phone:"",
         pass:""
     })

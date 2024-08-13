@@ -5,6 +5,7 @@ import axios from "axios";
 import { CartContext } from "../../../../context/CardContext";
 import { RemoveWishList } from "../../../WishList/RemoveWishList";
 const ProductAction = ({ item }) => {
+  console.log('item',item);
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
   const [checker, setChecker] = useState([]);
