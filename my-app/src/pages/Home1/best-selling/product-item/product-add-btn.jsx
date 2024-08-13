@@ -13,6 +13,12 @@ const ProductAddbtn = (props) => {
       }
     })
   },[cart]);
+  //BTNCOLOR
+  const [backgroundColor, setBackgroundColor] = useState();
+  //BTNCOLOR
+  const e =()=>{
+    console.log('sasasas',backgroundColor)
+   }
   const NotInCart = () => {
     return (
       <>
@@ -22,6 +28,9 @@ const ProductAddbtn = (props) => {
           }
         >
           <button
+            //  onMouseMove={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}
+            // onMouseLeave={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}} 
+            onFocus={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}  style={{ backgroundColor: backgroundColor }}
             type="button"
             onClick={(event) =>
               AddToCart(

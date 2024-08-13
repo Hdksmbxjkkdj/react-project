@@ -25,6 +25,7 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+ 
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
   //BTNCOLOR
@@ -33,8 +34,8 @@ export const Product = ({
       {items?.data?.map((index) => {
         return (
           <>
-            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
-              <div className="product__item white-bg mb-30">
+            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
+              <div className="product__item white-bg mb-30 k">
                 <div className="product__thumb p-relative">
                   <a href={"/product/" + index.id} className="w-img">
                     <img src={Config.shop + "" + index.pic} alt="product" />
@@ -102,7 +103,7 @@ export const ProductList = ({ items, setItems }) => {
   });
 
   // console.log(comments_count[1]);
-    //comments
+    //COMMENT
 
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
@@ -110,6 +111,10 @@ export const ProductList = ({ items, setItems }) => {
   //BTNCOLOR
   const [Color, setColor] = useState();
   //BTNCOLOR
+ const e =()=>{
+  console.log('sasasas',backgroundColor)
+ }
+ 
   return (
     <>
       {items?.data?.map((index) => {
@@ -190,14 +195,9 @@ export const ProductList = ({ items, setItems }) => {
                     <button
                       className="t-y-btn mr-10"
                       type="button"
-                      onClick={() => {
-                        setBackgroundColor(
-                          backgroundColor === "#fcb700" ? "red" : "#fcb700"
-                        );
-                      }}
-                      style={{ backgroundColor: backgroundColor }}
+                      onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}style={{ backgroundColor: backgroundColor }}
                     >
-                      سبد خرید +
+                      سبد خرید 
                     </button>
                     {/* <button className="t-y-btn mr-10" onFocus={()=>{setBackgroundColor(backgroundColor==="#fcb700"?"red":"#fcb700")}}   style={{color:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"></button> */}
 

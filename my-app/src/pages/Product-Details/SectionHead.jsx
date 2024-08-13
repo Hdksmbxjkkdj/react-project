@@ -11,6 +11,8 @@ import {  faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+import { Modal } from "../Components/modal";
 export const SectionHead = () =>{
     const [items,setItems] = useState();
     useEffect(() => {
@@ -18,6 +20,10 @@ export const SectionHead = () =>{
             setItems(res);
         });
     }, []);
+ //BTNCOLOR
+ const [backgroundColor, setBackgroundColor] = useState();
+ //BTNCOLOR
+ 
   
     return<>
     <section className="product__area box-plr-75 pb-20"  style={{"direction":"ltr"}}>
@@ -52,13 +58,14 @@ export const SectionHead = () =>{
                                             <img src={Config.shop+""+item.pic} alt="product"/>
                                             <img className="second-img" src={Config.shop+""+item.seccondpic} alt="product"/>
                                         </a>
-                                    <div className="product__action p-absolute">
+                                      <Modal index={item}></Modal>
+                                    {/* <div className="product__action p-absolute">
                                         <ul>
                                             <li><a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
                                             <li><a href="#" title="نمایش سریع" data-bs-toggle="modal" data-bs-target="#productModalId"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></a></li>
                                             <li><a href="#" title="مقایسه" ><FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon></a></li>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                             </div>
                                  <div className="product__content text-center">
                                     <h6 className="product-name">
@@ -70,7 +77,7 @@ export const SectionHead = () =>{
                                     <span className="price">{item.price}.000 تومان</span>
                                 </div>
                                 <div className="product__add-btn">
-                                     <button type="button">Add to Cart</button> 
+                                     <button type="button" onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700")}}style={{ backgroundColor: backgroundColor }}>افزودن به سبد خرید</button> 
                                      
                                 </div> 
                                 {/* <AddToCart></AddToCart> */}

@@ -15,6 +15,61 @@
       "unitprice": 720,
       "quantity": 1,
       "date": "12/08/2024"
+    },
+    {
+      "id": "b169",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "dd56",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "ec2a",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "2ac3",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "a429",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "49eb",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "7982",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "c24a",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "5863",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "de48",
+      "quantity": 1,
+      "date": "13/08/2024"
+    },
+    {
+      "id": "5b00",
+      "quantity": 1,
+      "date": "13/08/2024"
     }
   ],
   "wishlist": [],
@@ -210,8 +265,8 @@
       "title": "ترازو",
       "isAdd": false,
       "color-id": "1",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -240,7 +295,7 @@
       "title": "تلوزیون",
       "isAdd": false,
       "color-id": "2",
-      "oldprice":325,
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -258,7 +313,7 @@
           "name": "product-12.jpg"
         }
       ],
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
       "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
     },
     {
@@ -270,8 +325,8 @@
       "title": "گوشی",
       "isAdd": false,
       "color-id": "2",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -300,8 +355,8 @@
       "title": "دوربین امنیتی",
       "isAdd": false,
       "color-id": "4",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -331,8 +386,8 @@
       "isAdd": false,
       "color-id": "2",
       "Size-Id": "XXL",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -361,8 +416,8 @@
       "title": "پردازنده",
       "isAdd": false,
       "color-id": "3",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -391,8 +446,8 @@
       "title": "دوربین",
       "isAdd": false,
       "color-id": "1",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -421,8 +476,8 @@
       "title": "دوربین",
       "isAdd": false,
       "color-id": "1",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -451,8 +506,8 @@
       "title": "دوربین",
       "isAdd": false,
       "color-id": "1",
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
-      "oldprice":325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
+      "oldprice": 325,
       "gallery": [
         {
           "name": "product-12.jpg"
@@ -481,8 +536,8 @@
       "title": "دوربین",
       "isAdd": false,
       "color-id": "1",
-      "oldprice":325,
-      "SKU":"Samsung C49J89: £875, Debenhams Plus " ,
+      "oldprice": 325,
+      "SKU": "Samsung C49J89: £875, Debenhams Plus ",
       "gallery": [
         {
           "name": "product-12.jpg"

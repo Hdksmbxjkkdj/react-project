@@ -53,7 +53,16 @@ export const Tab=({items,setItems,productLength})=>{
                       <div className="tab-content" id="productGridTabContent">
                            <div className={toggleState === 1 ? "tab-pane fade" : "tab-pane fade show active"}  id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
                                 <div className="row">
-                                    <Product key={Math.random()} setItems={setItems} items={items} ></Product>
+                                {items?.data.length > 0 ? (
+                     <Product key={Math.random()} setItems={setItems} items={items} ></Product>
+                  ) : (
+                    <div class="bg-gradient text-center justify-content-center p-3 Larger shadow rounded" style={{"backgroundColor":"#e0e0e0"}}>
+                      <h2 class="d-flex text-center justify-content-center text-warning  bg-warning.bg-gradient">
+                        سبد خرید شما خالی است
+                      </h2>
+                    </div>
+                  )}
+                                   
                                 </div>
                             </div>
                            

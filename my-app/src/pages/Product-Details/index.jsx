@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {BrandSlider} from "./BrandSlider";
-import { ProductSlider } from '../Home1/best-selling/product-slider';
 import { ModalContent } from './ModalContent';
 import { ProductDetailsDesTab } from './ProductDetailsDesTab';
 import { ProductDetailsWrapper } from './ProductDetailsWrapper';
@@ -44,8 +43,8 @@ export const ProducDetails= () =>{
         });
     }, []);
       //Number of comments
-   let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
-//    let url=`http://localhost:313/product_comments?product_id=`+ id
+//    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
+  let url=`http://localhost:313/product_comments?product_id=`+ id
 
    const [ProductComment, setProductComment] = useState();
    useEffect(() => {
