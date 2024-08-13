@@ -102,7 +102,7 @@ export const ProductList = ({ items, setItems }) => {
   });
 
   // console.log(comments_count[1]);
-    //comments
+    //COMMENT
 
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
@@ -110,6 +110,10 @@ export const ProductList = ({ items, setItems }) => {
   //BTNCOLOR
   const [Color, setColor] = useState();
   //BTNCOLOR
+ const e =()=>{
+  console.log('sasasas',backgroundColor)
+ }
+ 
   return (
     <>
       {items?.data?.map((index) => {
@@ -190,14 +194,9 @@ export const ProductList = ({ items, setItems }) => {
                     <button
                       className="t-y-btn mr-10"
                       type="button"
-                      onClick={() => {
-                        setBackgroundColor(
-                          backgroundColor === "#fcb700" ? "red" : "#fcb700"
-                        );
-                      }}
-                      style={{ backgroundColor: backgroundColor }}
+                      onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}style={{ backgroundColor: backgroundColor }}
                     >
-                      سبد خرید +
+                      سبد خرید 
                     </button>
                     {/* <button className="t-y-btn mr-10" onFocus={()=>{setBackgroundColor(backgroundColor==="#fcb700"?"red":"#fcb700")}}   style={{color:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"></button> */}
 
