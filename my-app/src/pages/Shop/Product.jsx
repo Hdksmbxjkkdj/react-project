@@ -25,6 +25,7 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+ 
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
   //BTNCOLOR
@@ -33,8 +34,8 @@ export const Product = ({
       {items?.data?.map((index) => {
         return (
           <>
-            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4">
-              <div className="product__item white-bg mb-30">
+            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
+              <div className="product__item white-bg mb-30 k">
                 <div className="product__thumb p-relative">
                   <a href={"/product/" + index.id} className="w-img">
                     <img src={Config.shop + "" + index.pic} alt="product" />

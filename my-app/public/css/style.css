@@ -5717,22 +5717,7 @@ p.checkout-coupon input[type=text]:focus {
 .actives{
   color:yellow;
 }
-/* .animate{
-  animation-name: star;
-  animation-duration: 0.5s;
+
+.breadcrumb-item + .breadcrumb-item::before{
+  float:right
 }
-@keyframes star{
-  0%{
-    transform: translateY(0);
-  }
-  40%{
-    transform:translateY(-10px);
-  }
-  80%{
-    transform: translateY(10px);
-  }
-  100%{
-    transform: translateY(0);
-  }
-} */
- /* rating star */

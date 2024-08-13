@@ -9,7 +9,7 @@ import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 export const ProductDetailsWrapper = ({ item,commentNumber}) => {
-  console.log(commentNumber)
+ 
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")

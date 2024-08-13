@@ -54,7 +54,6 @@ export const ProducDetails= () =>{
         });
     }, []);
 //        //Number of comments
-console.log(ProductComment?.data?.length,'ccc')
     return<>
         <main>
             <section className="product__area box-plr-75 pb-70">

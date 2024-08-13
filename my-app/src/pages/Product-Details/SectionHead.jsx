@@ -23,9 +23,7 @@ export const SectionHead = () =>{
  //BTNCOLOR
  const [backgroundColor, setBackgroundColor] = useState();
  //BTNCOLOR
- const e =()=>{
-    console.log('oioioi',backgroundColor)
- }
+ 
   
     return<>
     <section className="product__area box-plr-75 pb-20"  style={{"direction":"ltr"}}>
@@ -79,7 +77,7 @@ export const SectionHead = () =>{
                                     <span className="price">{item.price}.000 تومان</span>
                                 </div>
                                 <div className="product__add-btn">
-                                     <button type="button" onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}style={{ backgroundColor: backgroundColor }}>افزودن به سبد خرید</button> 
+                                     <button type="button" onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700")}}style={{ backgroundColor: backgroundColor }}>افزودن به سبد خرید</button> 
                                      
                                 </div> 
                                 {/* <AddToCart></AddToCart> */}
