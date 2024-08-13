@@ -1,10 +1,8 @@
 import React from 'react';
-// import {Lang} from '../../Utils';
-
 export const Button = (props) => {
   let {label, onClick, className, disabled} = props;
 
-  className = className?className:"btn btn-primary w-20";
+  className = className?className:"btn btn-primary";
   if(disabled) className += " disabled";
 
   return(
