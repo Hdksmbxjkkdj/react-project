@@ -41,7 +41,7 @@ const Blog = () => {
           ></SidebarItem>
           <SidebarItem1 items={items?.data}></SidebarItem1>
         </Sidebar>
-        <Pagination count={{ paginationLength, setStart }}></Pagination>
+        <Pagination count={{ paginationLength, setStart }}/>
       </BlogArea>
     </>
   );

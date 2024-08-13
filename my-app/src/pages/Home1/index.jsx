@@ -11,6 +11,7 @@ import { FlashDeal } from "./flashdeal";
 import { FromTheBlog } from "./from-the-blog";
 import { Hero } from "./hero";
 import { OnSell } from "./on-sell";
+import { Rank } from "../Components/Rank";
 var filename1 = [
   { pic: "top/banner-top-1.jpg", name: "banner-1" },
   { pic: "top/banner-top-2.jpg", name: "banner-2" },
@@ -143,33 +144,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__review d-sm-flex">
                         <div className="rating rating__shop mb-15 mr-35">
-                          <ul>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-star"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-star"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-star"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-star"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-star"></i>
-                              </a>
-                            </li>
-                          </ul>
+                          <Rank/>
                         </div>
                       </div>
                       <div className="product__price">

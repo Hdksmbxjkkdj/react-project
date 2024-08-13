@@ -10,7 +10,6 @@ export const SideBar = ({tab,setTab})=>{
         setImg(value)
         
     }
-    console.log(img);
     return <>
         <div className="sidebar__nav  ">
     <span className="bars d-none padding-0-18"></span>
@@ -21,7 +20,7 @@ export const SideBar = ({tab,setTab})=>{
             <div className="v-dialog__container" style={{display:"block"}}></div>
             <div className="box__camera default__avatar"></div>
         </div>
-        <span className="profile__name">{user.username}</span>
+        <span className="profile__name">{user?.username}</span>
     </div>
 
     <ul>

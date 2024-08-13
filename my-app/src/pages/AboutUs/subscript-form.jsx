@@ -4,8 +4,9 @@ import axios from "axios";
 
 const Form = () => {
   const [email,setEmail] = useState();
-  function submit()
+  function submit(e)
   {
+    e.preventDefault();
     let status =201;
     console.log(email);
     if(email==""||email==null||email==undefined)
@@ -16,11 +17,12 @@ const Form = () => {
     try
     {
       axios.post("http://localhost:313/aboutus",{email:email}).then((res)=>{
-      status=res.status;
-    })
-    if(status==201)
-    {
-      Notif('success',"ایمیلتان با موفقیت ثبت گردید :)");
+        status=res.status;
+      })
+      if(status==201)
+      {
+        Notif('success',"ایمیلتان با موفقیت ثبت گردید :)");
+        setEmail("");
     }
     else
     {
@@ -34,7 +36,7 @@ const Form = () => {
   }
   return (
     <>
-      <form action="#" onSubmit={()=>submit()}>
+      <form onSubmit={(e)=>submit(e)}>
         <input type="email" placeholder="Enter your email here..." onChange={(e)=>setEmail(e.target.value)}/>
         <button className="t-y-btn t-y-btn-sub" type="submit">subscribe</button>
       </form>

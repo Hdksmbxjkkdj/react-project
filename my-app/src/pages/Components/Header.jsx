@@ -61,22 +61,13 @@ const Header = () => {
   }
   const user = localStorage.getItem("user");
   const use  = JSON.parse(user)
-  function CheckUser()
-  {
-    if(use?.username!="مهمان" || user!=null || user!=undefined)
-    {
-      return
-    }
-    else
-    {
-      Notif("warning","ابتدا باید وارد سایت شوید !")
-    }
-  }
   const navigate = useNavigate()
-  if(navigate)
-  {
-    window?.$(".cart__mini").addClass("cart__opened");
-  }
+  useEffect(()=>{
+    window?.$(".cart__mini").removeClass("cart__opened");
+    window?.$("#exampleModal").removeClass("show");
+    window?.$(".modal-backdrop").removeClass("show")
+  },[navigate])
+  console.log(reslut);
   return (
     <>
       <header id="header" className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>
@@ -94,12 +85,12 @@ const Header = () => {
                 <div className="col-xl-6 col-lg-6 col-md-7">
                   <div className="header__action d-flex justify-content-center justify-content-md-end">
                     <ul>
-                      <li>
-                        <Link to={(use?.username!="مهمان")?"/profile":"/"} onClick={CheckUser}>پروفایل</Link>
-                      </li>
-                      <li>
-                        <Link to={(use?.username!="مهمان")?"wishlist":"/"} onClick={CheckUser}>علاقه مندی ها</Link>
-                      </li>
+                      {(user)&&<li>
+                        <Link to="/profile">پروفایل</Link>
+                      </li>}
+                      {(user)&&<li>
+                        <Link to="wishlist">علاقه مندی ها</Link>
+                      </li>}
                       <li>
                           <Link to="/register">ثبت نام/ورود</Link>
                       </li>
@@ -187,7 +178,7 @@ const Header = () => {
                                     }
                                   />
                                   <div key={Math.random()}>
-                                    {(reslut != undefined || reslut != null) ?
+                                    {(reslut?.length >0) ?
                                       reslut.map((item) => {
                                         return (
                                           <div className="card my-3 search-card">

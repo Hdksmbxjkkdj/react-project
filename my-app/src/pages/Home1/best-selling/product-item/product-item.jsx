@@ -7,7 +7,7 @@ const ProductItem = ({type, slider}) => {
  
   return (
     <>
-      <div className="product__item white-bg">
+      <div className="product__item white-bg" key={Math.random()}>
         <ProductThumb item={slider}></ProductThumb>
         <ProductContent item={slider}></ProductContent>
         <ProductAddbtn item={slider}></ProductAddbtn>

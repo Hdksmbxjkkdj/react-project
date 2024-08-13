@@ -15,7 +15,7 @@ const PostBox = (props) => {
     axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
       setitem(response.data);
     });
-  }, []);
+  },[item]);
 const submit = async (e) => {
   var date = new Date();
   var year=date.getFullYear()
@@ -28,11 +28,10 @@ const submit = async (e) => {
     status=e.status;
     if(e.status==201)
     {
-      Notif('success',"your commnet posted successfully :)")
-      window.location.reload()
+      Notif('success',"نظر شما با موفقیت ارسال شد")
     }
     else {
-      Notif('error',"there was an error !")
+      Notif('error',"در اینجا یک خطا وجود دارد !")
     }
   })
 };
@@ -88,7 +87,7 @@ const submit = async (e) => {
             <div className="postbox__comments">
               <div className="postbox__comment-title mb-30">
                 <h3>نظرات (
-                  {(props?.item)  && props?.item.length}
+                  {(props?.item) && props?.item.length}
                   )</h3>
               </div>
               <div className="latest-comments mb-30">
@@ -111,7 +110,7 @@ const submit = async (e) => {
               <div className="post-comments-title mb-30">
                 <h3>ارسال نظر</h3>
               </div>
-              <form id="contacts-form" class="conatct-post-form" name="contact-form" action="#" onSubmit={(event)=>submit(event)}>
+              <form id="contacts-form" class="conatct-post-form" name="contact-form" onSubmit={(event)=>submit(event)}>
                 <div class="row">
                   <div class="col-xl-6 col-lg-6 col-md-6">
                     <div class="contact-icon p-relative contacts-name">
