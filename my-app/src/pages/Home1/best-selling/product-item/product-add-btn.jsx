@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
+import { event } from "jquery";
 const ProductAddbtn = (props) => {
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);

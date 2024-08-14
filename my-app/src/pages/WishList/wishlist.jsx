@@ -6,7 +6,8 @@ import { CartContext } from "../../context/CardContext";
 import { RemoveWishList } from "./RemoveWishList"
 const WishList = () => {
   const {row, setrow} = useContext(CartContext);
-  const {use} = useContext(CartContext);
+  const u = localStorage.getItem("user");
+  const use = JSON.parse(u);
   const eMessage = "error";
   return (
     <>
@@ -20,18 +21,21 @@ const WishList = () => {
                   <table class="table">
                     <thead>
                       <tr>
+                        <th className="product-thumbnail">ردیف</th>
                         <th class="product-thumbnail">تصویر</th>
                         <th class="cart-product-name">محصول</th>
                         <th class="product-price">قیمت واحد</th>
-                        <th class="product-subtotal">مجموع</th>
                         <th class="product-remove">حذف</th>
                       </tr>
                     </thead>
                     <tbody>
                       {
-                      row?.data.map((item) => {
+                      row?.data.map((item,index) => {
                         return <>
                             <tr>
+                              <td class="product-thumbnail">
+                                  <p>{index+1}-</p>
+                              </td>
                               <td class="product-thumbnail">
                                 <Link to={"/product-details"+item.id}>
                                   <img
@@ -55,18 +59,9 @@ const WishList = () => {
                                   {item.unitprice?.toFixed(2)}
                                 </span>
                               </td>
-                              <td class="product-subtotal">
-                                <span
-                                  class="amount"
-                                  style={{ fontWeight: "600" }}
-                                >
-                                  {(item.unitprice * item.quantity).toFixed(
-                                    2
-                                  )}
-                                </span>
-                              </td>
+                              
                               <td class="product-remove" key={Math.random()}>
-                                <a href="#" onClick={(event)=> RemoveWishList(event,item.id, use,setrow,false)}>
+                                <a href="#" onClick={(event)=> RemoveWishList(event,item.Pid,item.name, use.id,setrow,false)}>
                                   <i class="fa fa-times"></i>
                                 </a>
                               </td>

@@ -1,6 +1,6 @@
 import { TabContent } from "./best-selling/tab-content";
 import { BestSellingHead } from "./best-selling/best-selling-head";
-const OnSell = () => {
+const OnSell = ({res}) => {
   return (
     <section className="best__sell pt-15 pb-40 grey-bg-2">
       <div className="container">
@@ -17,7 +17,7 @@ const OnSell = () => {
         </div>
         <div className="row">
           <div className="col-xl-12">
-            <TabContent type={"flex"}></TabContent>
+            <TabContent type={"flex"} res={res}></TabContent>
           </div>
         </div>
       </div>

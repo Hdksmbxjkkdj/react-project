@@ -8,7 +8,6 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
 const ProductSlider = ({ type, res, item }) => {
- 
   const [slider, setslider] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
@@ -36,7 +35,7 @@ const ProductSlider = ({ type, res, item }) => {
     nav: true,
     dots: false,
     responsive: res,
-    autoplayHoverPause:true
+    autoplayHoverPause: true,
   };
   // console.log(type);
   if (type == "flex") {
@@ -44,12 +43,12 @@ const ProductSlider = ({ type, res, item }) => {
       <>
         <OwlCarousel
           loop
-          items={4}
+          // items={4}
           className="owl-carousel owl-theme"
           nav
           {...Option}
           key={Math.random()}
-          style={{direction:"ltr"}}
+          style={{ direction: "ltr" }}
         >
           {slider?.data?.map((item) => {
             return (
@@ -66,21 +65,35 @@ const ProductSlider = ({ type, res, item }) => {
   if (type == "blog") {
     return (
       <>
-        <OwlCarousel className="owl-carousel owl-theme" items={5} nav {...Option} key={Math.random()} style={{direction:"ltr"}}>
-        {blog?.data?.map((item) => {
-          return (
-            <div className="product__item-wrapper">
-              <BlogItem blog={item}></BlogItem>
-            </div>
-          );
-        })}
+        <OwlCarousel
+          className="owl-carousel owl-theme"
+          // items={5}
+          nav
+          {...Option}
+          key={Math.random()}
+          style={{ direction: "ltr" }}
+        >
+          {blog?.data?.map((item) => {
+            return (
+              <div className="product__item-wrapper">
+                <BlogItem blog={item}></BlogItem>
+              </div>
+            );
+          })}
         </OwlCarousel>
       </>
     );
   }
   return (
     <>
-      <OwlCarousel className="owl-carousel owl-theme" loop nav {...Option} key={Math.random()} style={{direction:"ltr"}}>
+      <OwlCarousel
+        className="owl-carousel owl-theme"
+        loop
+        nav
+        {...Option}
+        key={Math.random()}
+        style={{ direction: "ltr" }}
+      >
         {slider?.data?.map((item) => {
           return <ProductItem slider={item} type={"flex"}></ProductItem>;
         })}
