@@ -32,7 +32,7 @@ export const CartItem = ({items,index})=> {
       <span className="amount" style={{fontWeight:"600"}}>{(items.unitprice*items.quantity).toFixed(2)}</span>
     </td>
     <td className="product-remove">
-      <a onClick={(event) => RemoveCartItem(event, items.id, items.name, setCart, eMessage, true)}>
+      <a onClick={(event) => RemoveCartItem(event, items.id, items.name, setCart,null, eMessage, true)}>
         <i className="fa fa-times"></i>
       </a>
     </td>

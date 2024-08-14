@@ -16,9 +16,6 @@ const Cart = () => {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    cart.map(item=>{
-      console.log(item.quantity);
-    })
   }
   const { cart, setCart } = useContext(CartContext);
   return (
