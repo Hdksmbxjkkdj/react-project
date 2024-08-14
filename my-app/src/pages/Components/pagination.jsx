@@ -1,5 +1,4 @@
 const Pagination = ({ count }) => {
-  console.log(count?.start)
   return (
     <>
       <nav>

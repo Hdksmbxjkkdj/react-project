@@ -30,7 +30,6 @@ export const Products = ({ sidebars }) => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setItems(response);
       setLength(response.data.length)
-      console.log(response.data.length)
     });
   }, []);
 

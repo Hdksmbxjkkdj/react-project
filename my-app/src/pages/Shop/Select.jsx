@@ -2,11 +2,11 @@ import {Local} from '../../Utils/Local'
 import {Filter} from "../Components/Filter"
 import { useEffect } from 'react'
 export const Select =({items,setItems})=>{
-    // useEffect(()=>{
-    //     window?.$("document").ready(function(){
-    //        window?.$("select").niceSelect();
-    //       })
-    //  },[])
+    useEffect(()=>{
+        window?.$("document").ready(function(){
+           window?.$("select").niceSelect();
+          })
+     },[])
     const eMessage = 'error_message'
     const local = Local()
     let searchParam = new URLSearchParams(window.location.search);

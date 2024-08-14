@@ -47,7 +47,7 @@ export const Tab=({items,setItems,productLength})=>{
                                                 </div>
                                             </div>
                                         </div>
-                                        <Select setItems={setItems} items={items} ></Select>
+                                        <Select setItems={setItems} items={items}></Select>
                                     </div>
                             </div>
                       <div className="tab-content" id="productGridTabContent">
