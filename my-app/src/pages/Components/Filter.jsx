@@ -52,7 +52,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
-        let oldParam = searchParams.get('color');
+        let oldParam = searchParams.get('color-id');
         
         switch (type) {
 
@@ -70,9 +70,6 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
                             filterValue = [...oldParam, filterValue]
                         }
                     }
-                   
-
-
                 }
                  searchParams.set(filterItem, filterValue);
                 break;
@@ -84,6 +81,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
             
                 break;
             default:
+                console.log(oldParam);
                 if (oldParam == filterValue) {
                     searchParams.delete(filterItem)
                 } else {

@@ -26,31 +26,22 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
                      </button>
                  </h2>
                     {selected.includes(1) ?(
-                        //  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" className={searchParam?.get('parent_category')?.indexOf(item.id) > -1 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
-
-                         <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" > 
+                         <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                          <div className="accordion-body">
                                                      <div className="product__widget-content">
                                                          <div className="product__color pt-10">
                                                              <ul>
                                                                 {
-                                                                  colors?.data?.map((childItem, index) => {
-                                                                   
-                                                                    let count = false;
+                                                                  colors?.data?.map((childItem) => {
                                                                          let filterItem=false;
-                                                                         if (searchParam?.get("color-id")?.indexOf(childItem.id)>-1){
-                                                                           
-                                                                            count = true
+                                                                         if (searchParam?.get("color")?.indexOf(childItem.id)>-1){
                                                                              filterItem=true
-                                                                         if (count) {
-                                                                            window?.$(`#collapseOne`).addClass('show')
-                                                                            window?.$(`#collapseOne`).prev().find('button').removeClass('collapsed')
-                                                                        }
-                                                                    }
+                                                     
+                                                                         }
                                                                         
                                                                          return<>
                                                                          <li>
-                                                                             <a href="#" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}>
+                                                                             <a href="#" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local,'array')}>
                                                                                
                                                                            
                                                                              </a>

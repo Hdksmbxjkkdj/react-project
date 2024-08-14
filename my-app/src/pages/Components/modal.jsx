@@ -1,20 +1,34 @@
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSlidersH, faTimes,fasearch } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Config } from "../../Utils"; 
+import { faSearch, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { Config } from "../../Utils";
+import { CartContext } from "../../context/CardContext";
+import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
+import { RemoveWishList } from "../WishList/RemoveWishList";
 import { Rank } from "./Rank";
-import { Link } from "react-router-dom";
-import{AddToWishlist} from "../Home1/best-selling/product-item/AddToWishlist"
-import axios from "axios"
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
-
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
-export const Modal = ({index})=>{
-  //
+export const Modal = ({items})=>{
+  //like btn
   const[item,setItem]=useState()
   
+  const { cart } = useContext(CartContext);
+  const { row, setrow } = useContext(CartContext);
+  const [checker, setChecker] = useState([]);
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const use = JSON.parse(user);
+    axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
+      res?.data.filter((el) => {
+        el.Pid == item?.id && setChecker([...checker, item]);
+      });
+    });
+  }, [row]);
+  console.log(checker);
+
+  const [user, setUser] = useState();
+  const u = localStorage.getItem("user");
+  const use = JSON.parse(u);
   useEffect(()=>{
           axios.get(`http://localhost:313/best_selling`).then((response)=>{
              setItem(response);
@@ -22,13 +36,10 @@ export const Modal = ({index})=>{
          });
 
       },[]);
-  //
-   window?.$(document).ready(() => {
-    //  setBackgroundColor();
-})
-  //BTNCOLOR
-  const[backgroundColor,setBackgroundColor]=useState()
-  //BTNCOLOR
+    //like btn
+
+   
+ 
   //number product
   useEffect(() => {
     window
@@ -62,21 +73,47 @@ export const Modal = ({index})=>{
     },[modal])
     function handleModal()
     {
-      setModal({'id':index.id,'show':true})
+      setModal({'id':items.id,'show':true})
     }
-   
+    console.log(item,'llll')
     return (
         <>
         {/* <Quick handleModal={handleModal}></Quick> */}
 
         <div className="product__action p-absolute">
             <ul>
-              <li > 
-               {/* <Link to="#"  title="Add to Wishlist" onClick={()=>setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")} style={{backgroundColor:backgroundColor}}> */}
-                {/* <a onClick={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="#f1c40f"?"green":"#f1c40f")}} href="#" title="افزودن به علاقه مندی ها" style={{backgroundColor:backgroundColor}}><FontAwesomeIcon icon={faHeart} onclick={}></FontAwesomeIcon></a> */}
-                <a className="Add-to-Wishlist" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setBackgroundColor(backgroundColor==="red"?"white":"red")}}   style={{color:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a>
-
-              </li>
+            {!checker.includes(item) ? (
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  AddToWishlist(
+                    item.id,
+                    item?.pic,
+                    item?.text,
+                    item?.price,
+                    user,
+                    setrow
+                  );
+                }}
+                title="Add to Wishlist"
+              >
+                <i
+                  className={"fa-solid fa-heart-circle-check text-success"}
+                ></i>
+              </a>
+            </li>
+          ) : (
+            <li>
+              <a
+                href="#"
+                onClick={(event) => RemoveWishList(event,item.id,item.text,user,setrow,false)}
+                title="Remove From Wishlist"
+              >
+                <i className="fa-solid fa-heart-circle-xmark text-danger"></i>
+              </a>
+            </li>
+          )}
               <li> 
                 <a href="#" title="Quick View" onClick={handleModal}>
                 <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
@@ -93,7 +130,7 @@ export const Modal = ({index})=>{
             </ul>
         </div> 
         {/* <button onClick={handleModal}>click</button> */}
-        <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={index.id} tabindex="-1" aria-hidden="true">
+        <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={items.id} tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered product__modal" role="document">
           <div class="modal-content">
             <div class="product__modal-wrapper p-relative">
@@ -110,34 +147,34 @@ export const Modal = ({index})=>{
                       <div class="tab-content" id="modalTabContent">
                         <div class="tab-pane fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
                           <div class="product__modal-img w-img">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </div>
                         </div>
                         <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
                           <div class="product__modal-img w-img">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </div>
                         </div>
                       </div>
                       <ul class="nav nav-tabs" id="modalTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab"data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </button>
                         </li>
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={Config.shop+""+index.pic} alt=""/>
+                            <img src={Config.shop+""+items.pic} alt=""/>
                           </button>
                         </li>
                       </ul>
@@ -147,12 +184,12 @@ export const Modal = ({index})=>{
                     <div class="product__modal-content">
                       <h4>
                         <a href="product-details.html">
-                         {index.text}
+                         {items.text}
                         </a>
                       </h4>
                       <div class="product__modal-des mb-40">
                         <p>
-                          {index.des}
+                          {items.des}
                         </p>
                       </div>
                       <div class="product__stock">

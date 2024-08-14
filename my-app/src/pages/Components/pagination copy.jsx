@@ -1,5 +1,4 @@
 const Pagination = ({ count }) => {
-  console.log(count?.start)
   return (
     <>
       <nav>
@@ -7,9 +6,8 @@ const Pagination = ({ count }) => {
           {count?.paginationLength &&
             [...Array(count.paginationLength)].map((item, index) => {
               return (
-                <li >
-                  <a href="#" onClick={() => count.setStart(index * 4)} className={(index * 4 == count.start)&&'bg-warning'} >
-                    
+                <li>
+                  <a href="#" onClick={() => count.setStart(index * 4)}>
                     {index + 1}
                   </a>
                 </li>
