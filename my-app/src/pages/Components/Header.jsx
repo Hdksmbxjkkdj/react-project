@@ -67,7 +67,6 @@ const Header = () => {
     window?.$("#exampleModal").removeClass("show");
     window?.$(".modal-backdrop").removeClass("show")
   },[navigate])
-  console.log(reslut);
   return (
     <>
       <header id="header" className={(param=="register"||param=="Register"||param=="login"||param=="Login")?"d-none":""}>

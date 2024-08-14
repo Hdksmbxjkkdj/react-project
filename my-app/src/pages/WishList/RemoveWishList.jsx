@@ -2,6 +2,7 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
 export const RemoveWishList = async(event, PID,name, UID, setrow, all = false) => {
+    console.log(PID,UID,name);
     event.preventDefault();
     const url = "http://localhost:313/wishlist";
     let status = 200
@@ -10,7 +11,6 @@ export const RemoveWishList = async(event, PID,name, UID, setrow, all = false) =
     try {
         await axios.delete(`${url}/${id}`)
             await axios.get(`http://localhost:313/wishlist?Uid=${UID}`).then((res)=>{
-                console.log(res);
                 setrow(res);
                 if (res.data.status) status = res.data.status
             })

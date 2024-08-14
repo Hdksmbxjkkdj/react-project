@@ -30,6 +30,7 @@ function App() {
   const [check, setCheck] = useState([]);
   const [row, setrow] = useState();
   const [use,setUser] = useState();
+  const [loader,setLoader] = useState(true);
   useEffect(() => {
     const u = localStorage.getItem("user");
     const user = JSON.parse(u)
@@ -37,12 +38,14 @@ function App() {
       setUser(response.data[0]?.id)
       axios.get(`http://localhost:313/wishlist?Uid=${response.data[0]?.id}`).then((res)=>{
       setrow(res)
+      setLoader(false)
   })
     })
   }, [use]);
   useEffect(() => {
     axios.get("http://localhost:313/row").then((response) => {
       setCart(response.data);
+      setLoader(false)
     });
   }, []);
   useEffect(() => {
@@ -57,7 +60,7 @@ function App() {
   
   return (
     <>
-      <CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser }}>
+      <CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser,loader,setLoader }}>
       <BrowserRouter>
           <Header></Header>
           <Routes>

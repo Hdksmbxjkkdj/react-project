@@ -3,7 +3,9 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CardContext";
 import { CartItem } from "./CartItem";
+import { Loader } from "../Components/loader";
 const Cart = () => {
+  const {loader} = useContext(CartContext);
   function Total() {
     var tot = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -21,7 +23,7 @@ const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   return (
     <>
-      <section className="cart-area pt-100 pb-100">
+      {(!loader)?<section className="cart-area pt-100 pb-100">
         <div className="container">
           <div className="row">
             {cart.length > 0 ? (
@@ -113,7 +115,7 @@ const Cart = () => {
             )}
           </div>
         </div>
-      </section>
+      </section>:<Loader/>}
     </>
   );
 };
