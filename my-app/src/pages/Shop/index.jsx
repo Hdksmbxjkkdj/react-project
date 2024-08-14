@@ -70,9 +70,10 @@ export const Products = ({ sidebars }) => {
   //
 
  //pagin
+ const Limit=8;
  const[start,setStart]=useState(0)
  useEffect(() => {
-  axios.get(`http://localhost:313/best_selling?_start=${start}&_limit=8`).then((response) => {
+  axios.get(`http://localhost:313/best_selling?_start=${start}&_limit=${Limit}`).then((response) => {
     setItems(response);
     
 
@@ -103,7 +104,7 @@ paginationLength = Math.ceil(paginationLength / 8);
                 <ProductGraidWrapper></ProductGraidWrapper>
                  
                 </div>
-                <div className="product__grid-item-wrapper pt-70">
+                <div className="product__grid-item-wrapper pt-70" >
                   <Tab
                     key={Math.random()}
                     setItems={setItems}
@@ -113,7 +114,7 @@ paginationLength = Math.ceil(paginationLength / 8);
                    <div class="row">
                                     <div class="col-xxl-12">
                                         <div class="basic-pagination pt-30 pb-30">
-                                        <Pagination count={{paginationLength,setStart,start}}></Pagination>
+                                        <Pagination count={{paginationLength,setStart,start,Limit}}></Pagination>
                                         </div>
                                         </div>
                                         </div>

@@ -20,9 +20,8 @@ export const SectionHead = () =>{
             setItems(res);
         });
     }, []);
- //BTNCOLOR
- const [backgroundColor, setBackgroundColor] = useState();
- //BTNCOLOR
+   
+
  
   
     return<>
@@ -40,7 +39,7 @@ export const SectionHead = () =>{
                             <div className="col-xl-12">
                                 <OwlCarousel 
                                    className="product__slider OwlCarousel owl-theme"
-                                    items={5}
+                                     items={5}
                                     loop
                                     autoPlay
                                     // key={Math.random()}
@@ -49,7 +48,6 @@ export const SectionHead = () =>{
 
                                 >
                                     {items?.data?.map((item)=>{
-                                      
                                       return<> 
 
                                          <div className="product__item white-bg mb-30 item">
@@ -58,7 +56,7 @@ export const SectionHead = () =>{
                                             <img src={Config.shop+""+item.pic} alt="product"/>
                                             <img className="second-img" src={Config.shop+""+item.seccondpic} alt="product"/>
                                         </a>
-                                      <Modal index={item}></Modal>
+                                      <Modal items={item}></Modal>
                                     {/* <div className="product__action p-absolute">
                                         <ul>
                                             <li><a href="#" onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li>
@@ -77,7 +75,7 @@ export const SectionHead = () =>{
                                     <span className="price">{item.price}.000 تومان</span>
                                 </div>
                                 <div className="product__add-btn">
-                                     <button type="button" onFocus={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700")}}style={{ backgroundColor: backgroundColor }}>افزودن به سبد خرید</button> 
+                                     <button type="button">افزودن به سبد خرید</button> 
                                      
                                 </div> 
                                 {/* <AddToCart></AddToCart> */}
