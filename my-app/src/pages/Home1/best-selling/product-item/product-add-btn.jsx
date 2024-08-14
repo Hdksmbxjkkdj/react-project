@@ -14,7 +14,6 @@ const ProductAddbtn = (props) => {
       }
     })
   },[cart]);
-  console.log(check);
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
   //BTNCOLOR

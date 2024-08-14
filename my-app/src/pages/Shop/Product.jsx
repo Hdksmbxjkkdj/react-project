@@ -29,6 +29,7 @@ export const Product = ({
   //BTNCOLOR
   const [backgroundColor, setBackgroundColor] = useState();
   //BTNCOLOR
+  console.log(items,'lll')
   return (
     <>
       {items?.data?.map((item) => {
@@ -102,15 +103,7 @@ export const ProductList = ({ items, setItems }) => {
     comments_count[comment.product_id] = newCount;
   });
 
-  // console.log(comments_count[1]);
-    //COMMENT
-
-  //BTNCOLOR
-  const [backgroundColor, setBackgroundColor] = useState();
-  //BTNCOLOR
-  //BTNCOLOR
-  const [Color, setColor] = useState();
-  //BTNCOLOR
+ 
  
   return (
     <>
@@ -151,10 +144,7 @@ export const ProductList = ({ items, setItems }) => {
                       <span>
                         <a
                           href={"/product/" + item.id}
-                          onClick={() => {
-                            setColor(Color === "red" ? "inherit" : "red");
-                          }}
-                          style={{ Color: Color }}
+                         
                         >
                           {comments_count?.[item.id]}نظر
                         </a>
@@ -162,11 +152,7 @@ export const ProductList = ({ items, setItems }) => {
                       <span>
                         <a
                           href={"/product/" + item.id}
-                          onClick={() => {
-                            setColor(Color === "#fcb700" ? "red" : "#fcb700");
-                            
-                          }}
-                          style={{ Color: Color }}
+                         
                         >
                           نظر خود را اضافه کنید
 

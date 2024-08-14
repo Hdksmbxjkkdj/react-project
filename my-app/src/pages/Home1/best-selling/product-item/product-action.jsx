@@ -4,7 +4,7 @@ import { AddToWishlist } from "./AddToWishlist";
 import axios from "axios";
 import { CartContext } from "../../../../context/CardContext";
 import { RemoveWishList } from "../../../WishList/RemoveWishList";
-const ProductAction = ({ item }) => { 
+const ProductAction = ({ item }) => {
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
   const [checker, setChecker] = useState([]);
@@ -29,7 +29,6 @@ const ProductAction = ({ item }) => {
   const { modal, setModal } = useContext(ModalContext);
   function Set() {
     let incart = Checking();
-    console.log(incart);
     setModal({
       ...modal,
       title: item.title,

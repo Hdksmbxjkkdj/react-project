@@ -20,13 +20,11 @@ export const Modal = ({items})=>{
     const use = JSON.parse(user);
     axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
       res?.data.filter((el) => {
-        el.Pid == item?.id && setChecker([...checker, item]);
+        el.Pid == items?.id && setChecker([...checker, items]);
       });
     });
   }, [row]);
-  console.log(checker);
 
-  const [user, setUser] = useState();
   const u = localStorage.getItem("user");
   const use = JSON.parse(u);
   useEffect(()=>{
@@ -75,24 +73,23 @@ export const Modal = ({items})=>{
     {
       setModal({'id':items.id,'show':true})
     }
-    console.log(item,'llll')
     return (
         <>
         {/* <Quick handleModal={handleModal}></Quick> */}
 
         <div className="product__action p-absolute">
             <ul>
-            {!checker.includes(item) ? (
+            {!checker.includes(items) ? (
             <li>
               <a
                 href="#"
                 onClick={() => {
                   AddToWishlist(
-                    item.id,
-                    item?.pic,
-                    item?.text,
-                    item?.price,
-                    user,
+                    items.id,
+                    items?.pic,
+                    items?.text,
+                    items?.price,
+                    use.id,
                     setrow
                   );
                 }}
@@ -107,7 +104,7 @@ export const Modal = ({items})=>{
             <li>
               <a
                 href="#"
-                onClick={(event) => RemoveWishList(event,item.id,item.text,user,setrow,false)}
+                onClick={(event) => RemoveWishList(event,items.id,items.text,use.id,setrow,false)}
                 title="Remove From Wishlist"
               >
                 <i className="fa-solid fa-heart-circle-xmark text-danger"></i>

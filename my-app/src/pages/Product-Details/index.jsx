@@ -31,7 +31,8 @@ export const ProducDetails= () =>{
             setImag(res);
         });
     }, []);
-   
+   //
+  
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -72,7 +73,7 @@ export const ProducDetails= () =>{
                 </div>
             </section>
           
-            <SectionHead />    
+            <SectionHead/>    
             <BrandSlider/> 
                       
             {/* <div className="modal fade in" id="productModalId" tabindex="-1" role="dialog" aria-hidden="false">

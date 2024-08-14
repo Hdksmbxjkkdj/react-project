@@ -52,7 +52,7 @@ export const Tab=({items,setItems,productLength})=>{
                             </div>
                       <div className="tab-content" id="productGridTabContent">
                            <div className={toggleState === 1 ? "tab-pane fade" : "tab-pane fade show active"}  id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
-                                <div className="row">
+                                <div className="row"  style={{minHeight:'1000px'}}>
                                 {items?.data.length > 0 ? (
                      <Product key={Math.random()} setItems={setItems} items={items} ></Product>
                   ) : (
