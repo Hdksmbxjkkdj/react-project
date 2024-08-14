@@ -70,6 +70,9 @@ const Home1 = () => {
   },[modal])
   const [value,setValue] = useState(1);
   const {cart,setCart} = useContext(CartContext)
+  function handleSubmit(e){
+    AddToCart(e,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,null,"error",null)
+  }
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>
@@ -151,7 +154,7 @@ const Home1 = () => {
                         <span>${modal.price.toFixed(2)}</span>
                       </div>
                       <div className="product__modal-form mb-30" key={Math.random()}>
-                        {(!modal.inCart)?<form onSubmit={(event)=>AddToCart(event,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,"error",null)}>
+                        {(!modal.inCart)?<form onSubmit={(event)=>handleSubmit(event)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity mr-20 mb-25">
                               <div className="cart-plus-minus p-relative">

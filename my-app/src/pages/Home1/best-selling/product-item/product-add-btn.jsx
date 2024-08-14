@@ -2,23 +2,44 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
-import { event } from "jquery";
-const ProductAddbtn = (props) => {
+import { ButtonLoader } from "../../../Components/ButtonLoader";
+const ProductAddbtn = ({disabled,...props}) => {
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    cart.filter(el=>{
-      if(el.id==props?.item?.id)
-      {
-        setCheck([...check,props?.item])
+    cart.filter((el) => {
+      if (el.id == props?.item?.id) {
+        setCheck([...check, props?.item]);
       }
-    })
-  },[cart]);
-  //BTNCOLOR
-  const [backgroundColor, setBackgroundColor] = useState();
-  //BTNCOLOR
-  const e =()=>{
-   }
+    });
+  }, [cart]);
+  function handleAddClick(event, props) {
+    setLoading(true)
+    AddToCart(
+      event,
+      props.item?.id,
+      props.item?.pic,
+      props.item?.text,
+      props.item?.price,
+      1,
+      setCart,
+      cart,
+      setLoading
+    );
+  }
+  function handleRemoveClick(event, props) {
+    setLoading(true)
+    RemoveCartItem(
+      event,
+      props.item?.id,
+      props.item?.text,
+      setCart,
+      setLoading,
+      "error",
+      false
+    )
+  }
   const NotInCart = () => {
     return (
       <>
@@ -27,26 +48,9 @@ const ProductAddbtn = (props) => {
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
-          <button
-            //  onMouseMove={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}
-            // onMouseLeave={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}} 
-            // onFocus={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}  style={{ backgroundColor: backgroundColor }}
-            type="button"
-            onClick={(event) =>
-              AddToCart(
-                event,
-                props.item?.id,
-                props.item?.pic,
-                props.item?.text,
-                props.item?.price,
-                1,
-                setCart,
-                cart
-              )
-            }
-          >
+          {(loading)?<ButtonLoader/>:<button type="button" onClick={(event) => handleAddClick(event, props)} disabled={disabled}>
             افزودن به سبد
-          </button>
+          </button>}
         </div>
       </>
     );
@@ -59,23 +63,15 @@ const ProductAddbtn = (props) => {
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
-          <button
+          {(loading)?<ButtonLoader bg="#dc3545"/>:<button
             type="button"
             className="bg-danger"
-            style={{textDecoration:"line-throught"}}
             onClick={(event) =>
-              RemoveCartItem(
-                event,
-                props.item?.id,
-                props.item?.text,
-                setCart,
-                "error",
-                false
-              )
+              handleRemoveClick(event,props)
             }
           >
-            حذف از سبد 
-          </button>
+            حذف از سبد
+          </button>}
         </div>
       </>
     );

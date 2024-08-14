@@ -48,7 +48,7 @@ const ProductContentlg = () => {
         eorum claritatem. Investigationes demonstraverunt lectores legere me
         lius quod
       </p>
-      <ProductAddbtn type="show"></ProductAddbtn>
+      <ProductAddbtn type="show" disabled={true}></ProductAddbtn>
     </div>
   );
 };

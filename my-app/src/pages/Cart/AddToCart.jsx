@@ -1,7 +1,5 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
-import { useContext } from "react";
-import { CartContext } from "../../context/CardContext";
 
 export const AddToCart = async (
   event,
@@ -12,10 +10,10 @@ export const AddToCart = async (
   count = 1,
   setCart,
   cart,
+  setLoading,
   eMessage,
   returnPrevCount = null
 ) => {
-  const {setLoader} = useContext(CartContext);
   event.preventDefault();
   let url = `http://localhost:313/row`;
   var today = new Date();
@@ -47,7 +45,7 @@ export const AddToCart = async (
       })
       .then((response) => {
         response.data.status && (status = response.data.status);
-        setLoader(false)
+        if(setLoading!=null) setLoading(false)
       });
     if (status == 201) {
       Notif("success", `${name} با موفقیت به سبد خرید اضافه شد`);
@@ -55,6 +53,7 @@ export const AddToCart = async (
       Notif("error", "آیتم اضافه نشد !");
     }
   } catch (error) {
+    console.log(error);
     Notif("error", "خظای ناشناخته رخ داده است !");
     return;
   } finally {
