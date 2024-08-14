@@ -12,7 +12,6 @@ import { useParams } from "react-router-dom";
 import { BrandSlider } from "../Product-Details/BrandSlider";
 import { ModalContext } from "../../context/modal";
 import { Favorite } from "../Components/Like";
-import { Pagination } from "../Components/pagination";
 export const Products = ({ sidebars }) => {
   const [category, setCategory] = useState();
   useEffect(() => {
@@ -22,15 +21,10 @@ export const Products = ({ sidebars }) => {
   }, []);
   //allitems
   const [items, setItems] = useState();
-  //pagin
-  const[length,setLength]=useState()
-   //pagin
 
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setItems(response);
-      setLength(response.data.length)
-      console.log(response.data.length)
     });
   }, []);
 
@@ -69,18 +63,7 @@ export const Products = ({ sidebars }) => {
   //
   //
 
- //pagin
- const[start,setStart]=useState(0)
- useEffect(() => {
-  axios.get(`http://localhost:313/best_selling?_start=${start}&_limit=8`).then((response) => {
-    setItems(response);
-    
-
-  });
-}, [start]);
-var paginationLength = length;
-paginationLength = Math.ceil(paginationLength / 8);
- //pagin
+  //   console.log(items?.data.length,'index')
 
   return (
     <>
@@ -110,17 +93,8 @@ paginationLength = Math.ceil(paginationLength / 8);
                     items={items}
                     productLength={productComment?.length}
                   ></Tab>
-                   <div class="row">
-                                    <div class="col-xxl-12">
-                                        <div class="basic-pagination pt-30 pb-30">
-                                        <Pagination count={{paginationLength,setStart,start}}></Pagination>
-                                        </div>
-                                        </div>
-                                        </div>
                 </div>
               </div>
-           
-
             </div>
           </div>
         </section>

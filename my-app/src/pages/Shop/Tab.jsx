@@ -58,7 +58,7 @@ export const Tab=({items,setItems,productLength})=>{
                   ) : (
                     <div class="bg-gradient text-center justify-content-center p-3 Larger shadow rounded" style={{"backgroundColor":"#e0e0e0"}}>
                       <h2 class="d-flex text-center justify-content-center text-warning  bg-warning.bg-gradient">
-                        سبد خرید شما خالی است
+                            محصولی وجود ندارد
                       </h2>
                     </div>
                   )}
