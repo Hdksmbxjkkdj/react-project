@@ -68,7 +68,7 @@ const ProductAddbtn = (props) =>
             }
           >
             افزودن به سبد
-          </button>}
+          </button>
         </div>
       </>
     );
