@@ -82,7 +82,10 @@ const ProductAddbtn = (props) =>
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
-          (loading)?<ButtonLoader bg="#dc3545"/>:<button
+          {/* (loading)?
+          <ButtonLoader bg="#dc3545"/>
+          : */}
+          <button
             type="button"
             className="text-danger fw-bold"
             style={{textDecoration:"line-throught"}}
