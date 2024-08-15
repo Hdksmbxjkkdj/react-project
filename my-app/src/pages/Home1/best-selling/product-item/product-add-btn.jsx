@@ -3,7 +3,8 @@ import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { event } from "jquery";
-const ProductAddbtn = (props) => {
+const ProductAddbtn = (props) => 
+ {
   console.log(props,'productdetails')
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
@@ -81,7 +82,7 @@ const ProductAddbtn = (props) => {
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
-          {(loading)?<ButtonLoader bg="#dc3545"/>:<button
+          (loading)?<ButtonLoader bg="#dc3545"/>:<button
             type="button"
             className="text-danger fw-bold"
             style={{textDecoration:"line-throught"}}
@@ -91,7 +92,8 @@ const ProductAddbtn = (props) => {
           >
             حذف از سبد <i className="fa fa-trash"></i>
           </button>
-        </div>
+       </div>
+       
       </>
     );
   };
