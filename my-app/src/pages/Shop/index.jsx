@@ -23,17 +23,7 @@ export const Products = ({ sidebars }) => {
   //allitems
   const [items, setItems] = useState();
   //pagin
-  const[length,setLength]=useState()
-   //pagin
-
-  useEffect(() => {
-    axios.get(`http://localhost:313/best_selling`).then((response) => {
-      setItems(response);
-      setLength(response.data.length)
-    });
-  }, []);
-
-  //price
+  const [length, setLength] = useState();
   const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
   useEffect(() => {
     axios.get(`http://localhost:313/domain-price`).then((res) => {
@@ -68,19 +58,24 @@ export const Products = ({ sidebars }) => {
   //
   //
 
- //pagin
- const Limit=8;
- const[start,setStart]=useState(0)
- useEffect(() => {
-  axios.get(`http://localhost:313/best_selling?_start=${start}&_limit=${Limit}`).then((response) => {
-    setItems(response);
-    
+  //pagin
+  const Limit = 8;
+  const [start, setStart] = useState(1);
+  let params = new URLSearchParams(window.location.search).toString();
 
-  });
-}, [start]);
-var paginationLength = length;
-paginationLength = Math.ceil(paginationLength / 8);
- //pagin
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
+      )
+      .then((response) => {
+        setItems(response.data);
+        setLength(response.data.items);
+      });
+  }, [start]);
+  var paginationLength = length;
+  paginationLength = Math.ceil(paginationLength / 8);
+  //pagin
 
   return (
     <>
@@ -100,27 +95,26 @@ paginationLength = Math.ceil(paginationLength / 8);
               ></Sidebar>
               <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last m">
                 <div className="product__grid-wrapper">
-                <ProductGraidWrapper></ProductGraidWrapper>
-                 
+                  <ProductGraidWrapper></ProductGraidWrapper>
                 </div>
-                <div className="product__grid-item-wrapper pt-70" >
+                <div className="product__grid-item-wrapper pt-70">
                   <Tab
                     key={Math.random()}
                     setItems={setItems}
                     items={items}
                     productLength={productComment?.length}
                   ></Tab>
-                   <div class="row">
-                                    <div class="col-xxl-12">
-                                        <div class="basic-pagination pt-30 pb-30">
-                                        <Pagination count={{paginationLength,setStart,start,Limit}}></Pagination>
-                                        </div>
-                                        </div>
-                                        </div>
+                  <div class="row">
+                    <div class="col-xxl-12">
+                      <div class="basic-pagination pt-30 pb-30">
+                        <Pagination
+                          count={{ paginationLength, setStart, start, Limit }}
+                        ></Pagination>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-           
-
             </div>
           </div>
         </section>

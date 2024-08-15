@@ -4,8 +4,13 @@ import { faTh } from "@fortawesome/free-solid-svg-icons"
 import { faList } from "@fortawesome/free-solid-svg-icons"
 import{Select} from "./Select"
 import { useState } from "react"
+import { useEffect } from "react"
+import axios from "axios"
 import { Product, ProductList } from "./Product"
 export const Tab=({items,setItems,productLength})=>{
+    //
+    
+    //
       //tab
       const [toggleState,setToggleStata]=useState(2)
   
@@ -56,8 +61,8 @@ export const Tab=({items,setItems,productLength})=>{
                                 {items?.data.length > 0 ? (
                      <Product key={Math.random()} setItems={setItems} items={items} ></Product>
                   ) : (
-                    <div class="bg-gradient text-center justify-content-center p-3 Larger shadow rounded" style={{"backgroundColor":"#e0e0e0"}}>
-                      <h2 class="d-flex text-center justify-content-center text-warning  bg-warning.bg-gradient">
+                    <div class="text-center justify-content-center p-3 Larger rounded">
+                      <h2 class="d-flex text-center justify-content-center text-warning shadow" style={{"backgroundColor":"#e0e0e0"}}>
                             محصولی وجود ندارد
                       </h2>
                     </div>

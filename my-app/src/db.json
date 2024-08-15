@@ -174,7 +174,16 @@
       "Uid": "javad@gmail.com"
     }
   ],
-  "wishlist": [],
+  "wishlist": [
+    {
+      "id": "2javad@gmail.com",
+      "Pid": "2",
+      "pic": "product-3.jpg",
+      "name": "LG 27UD58: 347.21 پوند، Ebuyer.com",
+      "unitprice": 560,
+      "Uid": "javad@gmail.com"
+    }
+  ],
   "blog": [
     {
       "id": "1",
@@ -808,6 +817,14 @@
       "blog_id": "1",
       "date": "2024/7/13",
       "id": "Pme5oyg"
+    },
+    {
+      "id": "a3da",
+      "name": "hhghg",
+      "email": "nnnm#@hjbjhjh.ll",
+      "comment": "nmnmn",
+      "blog_id": "1",
+      "date": "2024/7/15"
     }
   ],
   "aboutus": [

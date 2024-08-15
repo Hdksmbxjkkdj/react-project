@@ -1,6 +1,6 @@
 import {Config} from '../../Utils'
 import {Local} from "../../Utils";
-import { Filter} from "../Components/Filter";
+import { Filter} from "../Components/Filter copy";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
 export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
@@ -37,7 +37,7 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
                                      <li>
                                         <a href="#"
  
-                                         onClick={() => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local,'array')}>
+                                         onClick={() => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local)}>
                                             {childItem.id}
                                          </a>
                                      </li>
