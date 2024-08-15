@@ -25,7 +25,6 @@ export const Product = ({
   closebtn,
   item,
 }) => {
- console.log(items,'page')
   return (
     <>
       {items?.data?.map((item) => {
@@ -171,7 +170,8 @@ export const ProductList = ({ items, setItems }) => {
                     </ul>
                   </div>
                   <div className="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
-                    {/* <button className="t-y-btn mr-10">افزودن به سبد خرید</button>  */}
+                    <ProductAddbtn item={item} className={"t-y-btn mr-10"}/>
+                    {/* <button className="t-y-btn mr-10" >افزودن به سبد خرید</button>  */}
                     {/* <button
                       className="t-y-btn mr-10"
                       type="button"
@@ -179,7 +179,7 @@ export const ProductList = ({ items, setItems }) => {
                     >
                       سبد خرید 
                     </button> */}
-                    <ProductAddbtn item={item}></ProductAddbtn>
+                   
                     {/* <button className="t-y-btn mr-10" onFocus={()=>{setBackgroundColor(backgroundColor==="#fcb700"?"red":"#fcb700")}}   style={{color:backgroundColor}} href="#" title="افزودن به علاقه مندی ها"></button> */}
 
                     <ul>

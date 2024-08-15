@@ -36,14 +36,7 @@ export const  CustomerComment=({comment,id,productId })=>{
                                     </div>
                                     <div class="review-ratings-single d-flex align-items-center">
                                     <span>ارزش</span>
-                                                                                                        
-                                    {/* <ul>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                        <li><a href="#"><FontAwesomeIcon icon={faStar} /></a></li>
-                                    </ul> */}
+                                   
                                     <Rank></Rank>
                                      </div>
                                 </div>

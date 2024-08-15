@@ -8,6 +8,7 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 export const ProductDetailsWrapper = ({ item,commentNumber}) => {
  
   useEffect(() => {
@@ -101,11 +102,13 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
                       <input type="text" value="1" />
                     </div>
                   </div>
-                  <div className="pro-cart-btn mb-25 me-3">
-                    <button className="t-y-btn" type="submit"  onClick={() => {setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");}}style={{ backgroundColor: backgroundColor }}>
+                 <div className="pro-cart-btn mb-25 me-3">
+                    {/* <button className="t-y-btn" type="submit" >
                     به سبد خرید اضافه کنید
-                    </button>
-                  </div>
+                    </button> */}
+                  
+                  <ProductAddbtn item={item} className={"t-y-btn"}></ProductAddbtn>
+                  </div> 
                 </div>
               </form>
             </div>

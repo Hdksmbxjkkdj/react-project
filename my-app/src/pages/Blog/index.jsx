@@ -9,7 +9,6 @@ const Blog = () => {
   const [start, setStart] = useState(0);
   const [items, setItems] = useState();
   const params = new URLSearchParams(window.location.search);
-  console.log(params,'blog')
   useEffect(() => {
     axios
       .get(`http://localhost:313/blog?_start=${start}&_limit=4&${params}`)

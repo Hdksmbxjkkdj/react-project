@@ -2,8 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
-import { ButtonLoader } from "../../../Components/ButtonLoader";
-const ProductAddbtn = ({disabled,...props}) => {
+import { event } from "jquery";
+const ProductAddbtn = (props) => {
+  console.log(props,'productdetails')
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -45,10 +46,26 @@ const ProductAddbtn = ({disabled,...props}) => {
       <>
         <div
           className={
+            props.className ? props.className :
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
-          {(loading)?<ButtonLoader/>:<button type="button" onClick={(event) => handleAddClick(event, props)} disabled={disabled}>
+          <button
+          
+            type="button"
+            onClick={(event) =>
+              AddToCart(
+                event,
+                props.item?.id,
+                props.item?.pic,
+                props.item?.text,
+                props.item?.price,
+                1,
+                setCart,
+                cart
+              )
+            }
+          >
             افزودن به سبد
           </button>}
         </div>
@@ -60,18 +77,20 @@ const ProductAddbtn = ({disabled,...props}) => {
       <>
         <div
           className={
+            props.className?props.className :
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
           {(loading)?<ButtonLoader bg="#dc3545"/>:<button
             type="button"
-            className="bg-danger"
+            className="text-danger fw-bold"
+            style={{textDecoration:"line-throught"}}
             onClick={(event) =>
               handleRemoveClick(event,props)
             }
           >
-            حذف از سبد
-          </button>}
+            حذف از سبد <i className="fa fa-trash"></i>
+          </button>
         </div>
       </>
     );

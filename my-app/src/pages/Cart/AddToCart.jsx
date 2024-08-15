@@ -14,6 +14,7 @@ export const AddToCart = async (
   eMessage,
   returnPrevCount = null
 ) => {
+  // const {setLoader} = useContext(CartContext);
   event.preventDefault();
   let url = `http://localhost:313/row`;
   var today = new Date();
@@ -45,7 +46,7 @@ export const AddToCart = async (
       })
       .then((response) => {
         response.data.status && (status = response.data.status);
-        if(setLoading!=null) setLoading(false)
+        // setLoader(false)
       });
     if (status == 201) {
       Notif("success", `${name} با موفقیت به سبد خرید اضافه شد`);
@@ -58,7 +59,7 @@ export const AddToCart = async (
     return;
   } finally {
     axios.get(url).then((res) => {
-      setCart(res.data);
+       setCart(res.data);
     });
   }
   window?.$(".spinner-container").fadeOut(300);
