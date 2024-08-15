@@ -21,9 +21,7 @@ export const Products = ({ sidebars }) => {
     });
   }, []);
   //allitems
-  const [items, setItems] = useState();
-  //pagin
-  const [length, setLength] = useState();
+ 
   const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
   useEffect(() => {
     axios.get(`http://localhost:313/domain-price`).then((res) => {
@@ -59,20 +57,24 @@ export const Products = ({ sidebars }) => {
   //
 
   //pagin
+  const [items, setItems] = useState();
+  const [length, setLength] = useState();
   const Limit = 8;
   const [start, setStart] = useState(1);
   let params = new URLSearchParams(window.location.search).toString();
-
+  console.log(params)
   useEffect(() => {
     axios
       .get(
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
+
       )
       .then((response) => {
         setItems(response.data);
         setLength(response.data.items);
       });
   }, [start]);
+
   var paginationLength = length;
   paginationLength = Math.ceil(paginationLength / 8);
   //pagin

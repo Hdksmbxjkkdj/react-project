@@ -4,6 +4,7 @@ import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { event } from "jquery";
 const ProductAddbtn = (props) => {
+  console.log(props,'productdetails')
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   useEffect(() => {
@@ -24,13 +25,12 @@ const ProductAddbtn = (props) => {
       <>
         <div
           className={
+            props.className ? props.className :
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
           <button
-            //  onMouseMove={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}
-            // onMouseLeave={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}} 
-            // onFocus={() =>{setBackgroundColor(backgroundColor === "#fcb700" ? "red" : "#fcb700");e()}}  style={{ backgroundColor: backgroundColor }}
+          
             type="button"
             onClick={(event) =>
               AddToCart(
@@ -56,12 +56,13 @@ const ProductAddbtn = (props) => {
       <>
         <div
           className={
+            props.className?props.className :
             props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
           }
         >
           <button
             type="button"
-            className="bg-danger"
+            className="text-danger fw-bold"
             style={{textDecoration:"line-throught"}}
             onClick={(event) =>
               RemoveCartItem(
@@ -74,7 +75,7 @@ const ProductAddbtn = (props) => {
               )
             }
           >
-            حذف از سبد 
+            حذف از سبد <i className="fa fa-trash"></i>
           </button>
         </div>
       </>
