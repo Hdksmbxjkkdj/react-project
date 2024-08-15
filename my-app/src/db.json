@@ -1,6 +1,10 @@
 {
   "row": [],
-  "wishlist": [],
+  "wishlist": [
+    {
+      "id": null
+    }
+  ],
   "blog": [
     {
       "id": "1",
