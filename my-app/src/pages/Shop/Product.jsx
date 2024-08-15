@@ -25,14 +25,11 @@ export const Product = ({
   closebtn,
   item,
 }) => {
- 
-  //BTNCOLOR
-  const [backgroundColor, setBackgroundColor] = useState();
-  //BTNCOLOR
-  console.log(items,'lll')
+ console.log(items,'page')
   return (
     <>
       {items?.data?.map((item) => {
+        console.log(item,)
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
