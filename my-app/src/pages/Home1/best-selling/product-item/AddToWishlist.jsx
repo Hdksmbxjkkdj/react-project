@@ -6,7 +6,7 @@ export const AddToWishlist = async (PID, pic, name, unitprice, UID,setrow) => {
   let status = 201;
   let auth = User();
   const id = PID + UID;
-  console.log('id',id);
+  
   if(auth)
   {
     try{

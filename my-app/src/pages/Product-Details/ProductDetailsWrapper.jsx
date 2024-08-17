@@ -33,13 +33,6 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
-   //BTNbackgroundColorr
-   const [backgroundColor, setBackgroundColor] = useState();
-   //BTNbackgroundColorr
-
-  //BTNCOLOR
-  const[Color,setColor]=useState()
-  //BTNCOLOR
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -107,7 +100,9 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
                     به سبد خرید اضافه کنید
                     </button> */}
                   
-                  <ProductAddbtn item={item} className={"t-y-btn"}></ProductAddbtn>
+                  <ProductAddbtn item={item?.data} className={"t-y-btn"}/>
+                  {/* <ProductAddbtn item={item?.data} className={"t-y-btn mr-10"}/> */}
+
                   </div> 
                 </div>
               </form>
@@ -115,7 +110,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
             <div className="product__details-action">
               <ul>
                 <li>
-                  <a href="#" title="افزودن به علاقه مندی ها" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setColor(Color==="red"?"white":"red")}}   style={{color:Color}}>
+                  <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
                   </a>
                 </li>

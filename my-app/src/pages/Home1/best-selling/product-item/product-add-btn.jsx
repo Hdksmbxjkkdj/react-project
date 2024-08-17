@@ -5,7 +5,6 @@ import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { event } from "jquery";
 const ProductAddbtn = (props) => 
  {
-  console.log(props,'productdetails')
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -52,7 +51,6 @@ const ProductAddbtn = (props) =>
           }
         >
           <button
-          
             type="button"
             onClick={(event) =>
               AddToCart(
@@ -100,6 +98,8 @@ const ProductAddbtn = (props) =>
       </>
     );
   };
+
+  console.log(check)
   return <>{check.includes(props?.item) ? <StillInCart /> : <NotInCart />}</>;
 };
 
