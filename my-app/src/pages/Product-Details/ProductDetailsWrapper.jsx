@@ -10,7 +10,7 @@ import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 export const ProductDetailsWrapper = ({ item,commentNumber}) => {
- 
+  console.log(commentNumber,'commentNumber')
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")

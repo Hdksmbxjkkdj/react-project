@@ -15,7 +15,6 @@ const Checkout = () => {
     }
     return tot.toFixed(2);
   }
-  console.log(item?.data);
   return (
     <>
       <section class="coupon-area pb-30">

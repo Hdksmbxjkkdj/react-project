@@ -40,13 +40,13 @@ export const ProducDetails= () =>{
             axios.get(`http://localhost:313/product_comments`).then((res) => {
 
             setInfo(res);
-            
+
         });
     }, []);
       //Number of comments
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
-  let url=`http://localhost:313/product_comments?product_id=`+ id
-
+  let url=`http://localhost:313/product_comments?id=`+ id
+//    console.log('')
    const [ProductComment, setProductComment] = useState();
    useEffect(() => {
           axios.get(url).then((res) => {
@@ -68,7 +68,7 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment  comment={info?.data?.comment} id={info?.data.id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment  comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
                     </div>
                 </div>
             </section>

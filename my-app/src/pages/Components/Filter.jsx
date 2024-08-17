@@ -81,7 +81,6 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
             
                 break;
             default:
-                console.log(oldParam);
                 if (oldParam == filterValue) {
                     searchParams.delete(filterItem)
                 } else {

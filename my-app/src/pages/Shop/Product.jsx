@@ -84,7 +84,6 @@ export const ProductList = ({ items, setItems }) => {
     });
   };
 
-  // console.log(ProductComment);
 
   var comments_count = [];
 

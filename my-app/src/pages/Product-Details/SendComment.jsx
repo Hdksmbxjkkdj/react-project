@@ -10,7 +10,6 @@ import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 //test
 export const SendComment = ({id,tab,productId}) => {
-     
     // let local = Local()
     let auth = User()
     let loginMessage = 'first_login';
@@ -28,10 +27,12 @@ export const SendComment = ({id,tab,productId}) => {
         sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
         sender_email: auth ? auth.email : '',
         comment: '',
-        product_id: id,
+        // product_id: id,
+        id:id,
         date:today,
 
     })
+    // console.log(product_id)
     const [error, setError] = useState();
 
     // useEffect(() => {
@@ -52,6 +53,8 @@ export const SendComment = ({id,tab,productId}) => {
                 
                if (response.data?.status == 201) {
                     Notif('success', message)
+                    Notif("error", "status خالی میباشد");
+                    console.log('notif')
                     // reset()
                     return
                 }
@@ -94,7 +97,7 @@ useEffect(() => {
             <div className={tab === 2 ? "tab-pane fade" :"tab-pane fade show active"} id="review" role="tabpanel" aria-labelledby="review-tab">
                 <div className="product__details-review">
                     <div className="row">
-                       <CustomerComment comment={info?.data} productId={productId}></CustomerComment>
+                       <CustomerComment comment={info?.data} id={id}></CustomerComment>
                          <div className="col-xxl-4 col-xl-4 col-lg-4">
                             <div className="review-form">
                                 <h3>بررسی شما</h3>
@@ -123,21 +126,21 @@ useEffect(() => {
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">نام و نام خانوادگی</h4>
                                         <div className="review-input">
-                                        <Input id="sender_name" label='name' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
+                                        <Input id="sender_name" label='نام و نام خانوادگی' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
                                                 autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} />
                                         </div>
                                     </div>
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">ایمیل</h4>
                                         <div className="review-input">
-                                        <Input type="email" id="sender_email" label='email' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
+                                        <Input type="email" id="sender_email" label='ایمیل' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
                                             autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} />
                                         </div>
                                     </div>
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">مرور</h4>
                                         <div className="review-input">
-                                        <Textarea id="comment" label='comment' name="comment" value={data?.comment} error={errors?.comment} placeholder='your_comment'
+                                        <Textarea id="comment" label='نظر' name="comment" value={data?.comment} error={errors?.comment} placeholder='نظر خود را بنویسید...'
                                             autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} />
                                         </div>
                                     </div>
