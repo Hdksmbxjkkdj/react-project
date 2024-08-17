@@ -42,8 +42,8 @@ export const SectionHead = () =>{
                                      items={5}
                                     loop
                                     autoPlay
-                                    // key={Math.random()}
-                                    // nav
+                                    key={Math.random()}
+                                    nav
                                     fs-1
 
                                 >
@@ -74,10 +74,7 @@ export const SectionHead = () =>{
                                     </div>
                                     <span className="price">{item.price}.000 تومان</span>
                                 </div>
-                                <div className="product__add-btn">
-                                     <button type="button">افزودن به سبد خرید</button> 
-                                     
-                                </div> 
+                               <ProductAddbtn item={item}></ProductAddbtn>
                                 {/* <AddToCart></AddToCart> */}
                                          </div>
                                       </>

@@ -9,6 +9,7 @@ import { RemoveWishList } from "../WishList/RemoveWishList";
 import { Rank } from "./Rank";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export const Modal = ({items})=>{
+  console.log(items,'op')
   //like btn
   const[item,setItem]=useState()
   
