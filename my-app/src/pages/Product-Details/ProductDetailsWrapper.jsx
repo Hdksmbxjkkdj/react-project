@@ -10,7 +10,7 @@ import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 export const ProductDetailsWrapper = ({ item,commentNumber}) => {
- 
+  console.log(commentNumber,'commentNumber')
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -33,13 +33,6 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
-   //BTNbackgroundColorr
-   const [backgroundColor, setBackgroundColor] = useState();
-   //BTNbackgroundColorr
-
-  //BTNCOLOR
-  const[Color,setColor]=useState()
-  //BTNCOLOR
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -76,7 +69,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
             </div>
             <div className="product__details-des mb-30">
               <p>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. 
+              {item?.data?.des}
               </p>
             </div>
             <div className="product__details-stock">
@@ -107,7 +100,9 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
                     به سبد خرید اضافه کنید
                     </button> */}
                   
-                  <ProductAddbtn item={item} className={"t-y-btn"}></ProductAddbtn>
+                  <ProductAddbtn item={item?.data} className={"t-y-btn"}/>
+                  {/* <ProductAddbtn item={item?.data} className={"t-y-btn mr-10"}/> */}
+
                   </div> 
                 </div>
               </form>
@@ -115,7 +110,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
             <div className="product__details-action">
               <ul>
                 <li>
-                  <a href="#" title="افزودن به علاقه مندی ها" onFocus={()=>{AddToWishlist(item?.id,item?.pic,item?.text,item?.price);setColor(Color==="red"?"white":"red")}}   style={{color:Color}}>
+                  <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
                   </a>
                 </li>

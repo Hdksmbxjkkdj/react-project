@@ -28,7 +28,6 @@ export const Product = ({
   return (
     <>
       {items?.data?.map((item) => {
-        console.log(item,)
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
@@ -85,7 +84,6 @@ export const ProductList = ({ items, setItems }) => {
     });
   };
 
-  // console.log(ProductComment);
 
   var comments_count = [];
 
