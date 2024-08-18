@@ -8,6 +8,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
 const ProductSlider = ({ type, res, item,filt }) => {
+  console.log(res);
   const [slider, setslider] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
@@ -45,7 +46,6 @@ const ProductSlider = ({ type, res, item,filt }) => {
       <>
         <OwlCarousel
           loop
-          // items={4}
           className="owl-carousel owl-theme"
           nav
           {...Option}
@@ -69,7 +69,6 @@ const ProductSlider = ({ type, res, item,filt }) => {
       <>
         <OwlCarousel
           className="owl-carousel owl-theme"
-          // items={5}
           nav
           {...Option}
           key={Math.random()}

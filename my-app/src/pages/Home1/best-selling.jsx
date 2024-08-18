@@ -11,7 +11,7 @@ const BestSelling = ({type,res,item}) => {
           <div className="section__head d-md-flex justify-content-between mb-40">
               <div className="section__title">
                 <h3>
-                  قابل فروش<span>محصولات</span>
+                محصولات<span>قابل فروش</span>
                 </h3>
               </div>
             <BestSellingHead setFilter={setFilter}></BestSellingHead>

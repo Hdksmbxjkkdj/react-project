@@ -2,10 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
-import { event } from "jquery";
-const ProductAddbtn = (props) => 
- {
-  console.log(props,'productdetails')
+import { ButtonLoader } from "../../../Components/ButtonLoader";
+const ProductAddbtn = (props) => {
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -17,7 +15,7 @@ const ProductAddbtn = (props) =>
     });
   }, [cart]);
   function handleAddClick(event, props) {
-    setLoading(true)
+    setLoading(true);
     AddToCart(
       event,
       props.item?.id,
@@ -31,7 +29,7 @@ const ProductAddbtn = (props) =>
     );
   }
   function handleRemoveClick(event, props) {
-    setLoading(true)
+    setLoading(true);
     RemoveCartItem(
       event,
       props.item?.id,
@@ -40,35 +38,28 @@ const ProductAddbtn = (props) =>
       setLoading,
       "error",
       false
-    )
+    );
   }
   const NotInCart = () => {
     return (
       <>
         <div
           className={
-            props.className ? props.className :
-            props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
+            props.className
+              ? props.className
+              : props.type == "show"
+              ? "t-y-btn t-y-btn-2 mt-2"
+              : "product__add-btn"
           }
         >
-          <button
-          
+          {(loading)?<ButtonLoader>درحال افزودن</ButtonLoader>:<button
             type="button"
             onClick={(event) =>
-              AddToCart(
-                event,
-                props.item?.id,
-                props.item?.pic,
-                props.item?.text,
-                props.item?.price,
-                1,
-                setCart,
-                cart
-              )
+              handleAddClick(event,props)
             }
           >
-            افزودن به سبد
-          </button>
+            افزودن به سبد <i className="fa fa-shopping-basket"></i>
+          </button>}
         </div>
       </>
     );
@@ -78,25 +69,21 @@ const ProductAddbtn = (props) =>
       <>
         <div
           className={
-            props.className?props.className :
-            props.type == "show" ? "t-y-btn t-y-btn-2 mt-2" : "product__add-btn"
+            props.className
+              ? props.className
+              : props.type == "show"
+              ? "t-y-btn t-y-btn-2 mt-2"
+              : "product__add-btn"
           }
         >
-          {/* (loading)?
-          <ButtonLoader bg="#dc3545"/>
-          : */}
-          <button
+          {(loading)?<ButtonLoader>درحال حذف</ButtonLoader>:<button
             type="button"
-            className="text-danger fw-bold"
-            style={{textDecoration:"line-throught"}}
-            onClick={(event) =>
-              handleRemoveClick(event,props)
-            }
+            style={{ textDecoration: "line-throught" }}
+            onClick={(event) => handleRemoveClick(event, props)}
           >
             حذف از سبد <i className="fa fa-trash"></i>
-          </button>
-       </div>
-       
+          </button>}
+        </div>
       </>
     );
   };
@@ -104,4 +91,3 @@ const ProductAddbtn = (props) =>
 };
 
 export { ProductAddbtn };
-

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Notif } from "../../Utils/Notif";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
+import { Loader } from "../Components/loader";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
 import { ModalContainer } from "./modalContainer";
@@ -50,6 +50,7 @@ const Header = () => {
   const { cart,setCart } = useContext(CartContext);
   const { searching } = ItemsSearch();
   const [reslut, setResult] = useState();
+  const [loading,setLoading] = useState(false);
   const param = window.location.pathname.split("/").pop();
   function tot()
   {
@@ -64,8 +65,8 @@ const Header = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     window?.$(".cart__mini").removeClass("cart__opened");
-    window?.$("#exampleModal").removeClass("show");
-    window?.$(".modal-backdrop").removeClass("show")
+    // window?.$("#exampleModal").removeClass("show");
+    // window?.$(".modal-backdrop").removeClass("show")
   },[navigate])
   return (
     <>
@@ -148,7 +149,7 @@ const Header = () => {
                         <div className="header__search-box">
                           <input
                             type="text"
-                            placeholder="Search For Products..."
+                            placeholder="جست و جو محصولات"
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
                           />
@@ -173,10 +174,10 @@ const Header = () => {
                                   <input
                                     type="text"
                                     onChange={(e) =>
-                                      searching(e.target.value, setResult)
+                                      searching(e.target.value, setResult,setLoading)
                                     }
                                   />
-                                  <div key={Math.random()}>
+                                  {(loading)?<Loader size={1}/>:<div key={Math.random()} className="modal-holder">
                                     {(reslut?.length >0) ?
                                       reslut.map((item) => {
                                         return (
@@ -193,10 +194,10 @@ const Header = () => {
                                                 </div>
                                                 <div className="col-md-8">
                                                   <div className="card-body">
-                                                    <p className="card-text">
+                                                    <p className="card-text" style={{textAlign:"right"}}>
                                                       {item.text}
                                                     </p>
-                                                    <p className="card-text">
+                                                    <p className="card-text" style={{textAlign:"right"}}>
                                                       <small class="text-body-secondary">
                                                         ${" "}
                                                         {item.price.toFixed(2)}
@@ -209,7 +210,7 @@ const Header = () => {
                                           </div>
                                         );
                                       }):<div className="mt-3"><p className="text-danger text-center">مورد مطابقی یافت نشد</p></div>}
-                                  </div>
+                                  </div>}
                                 </div>
                                 <div className="modal-footer">
                                   <button
@@ -223,7 +224,6 @@ const Header = () => {
                               </div>
                             </div>
                           </div>
-                          <button type="submit"><i className="fa fa-search"></i></button>
                         </div>
                       </form>
                     </div>
@@ -272,7 +272,7 @@ const Header = () => {
             </div>
             <div class="offcanvas__search mb-25">
               <form action="#">
-                <input type="text" placeholder="What are you searching for?" />
+                <input type="text" placeholder="به دنبال چه چیزی هستید ؟" />
                 <button type="submit">
                   <i class="fa fa-search"></i>
                 </button>
