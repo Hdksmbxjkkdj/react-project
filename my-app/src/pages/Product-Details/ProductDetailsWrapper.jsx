@@ -48,7 +48,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
               </div>
               <div className="product__add-review mb-15">
                 <span>
-                  <a href="#">نظر{commentNumber}</a>
+                  <a href="#">{commentNumber}نظر</a>
                 </span>
                 <span>
                   <a href="#">افزودن نظر</a>

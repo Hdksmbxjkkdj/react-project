@@ -32,6 +32,7 @@ export const SendComment = ({id,tab,productId}) => {
         date:today,
 
     })
+    console.log(data)
     // console.log(product_id)
     const [error, setError] = useState();
 
@@ -48,13 +49,19 @@ export const SendComment = ({id,tab,productId}) => {
             // clearErrors()
             
             await axios.post(url, data).then((response) => {
-            //    let message = response.data?.message;
-               let message = "Insert";
-                
-               if (response.data?.status == 201) {
+                // let message = response.data?.message;
+            //   let message = "Insert";
+                          let message = "پیام شما با موفقیت ارسال شد";
+
+                console.log(response?.status,'response.data?.status')
+            //    if (response.data?.status == 201) {
+            //    if (data!= ""&&response?.status == 201) {
+                 if (response?.status == 201) {
+                     console.log(data)
                     Notif('success', message)
-                    Notif("error", "status خالی میباشد");
-                    console.log('notif')
+                     console.log(message)
+                    // Notif("error", "status خالی میباشد");
+                   
                     // reset()
                     return
                 }
@@ -126,22 +133,22 @@ useEffect(() => {
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">نام و نام خانوادگی</h4>
                                         <div className="review-input">
-                                        <Input id="sender_name" label='نام و نام خانوادگی' name="sender_name" value={data?.sender_name} error={errors?.sender_name}
-                                                autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} />
+                                        <Input id="sender_name" name="sender_name" value={data?.sender_name} error={errors?.sender_name}
+                                                autoComplete="username" onChange={(e) => setData({...data , sender_name : e.target.value})} required />
                                         </div>
                                     </div>
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">ایمیل</h4>
                                         <div className="review-input">
-                                        <Input type="email" id="sender_email" label='ایمیل' name="sender_email" value={data?.sender_email} error={errors?.sender_email}
-                                            autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} />
+                                        <Input type="email" id="sender_email" name="sender_email" value={data?.sender_email} error={errors?.sender_email}
+                                            autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} required=""/>
                                         </div>
                                     </div>
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">مرور</h4>
                                         <div className="review-input">
-                                        <Textarea id="comment" label='نظر' name="comment" value={data?.comment} error={errors?.comment} placeholder='نظر خود را بنویسید...'
-                                            autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} />
+                                        <Textarea id="comment" name="comment" value={data?.comment} error={errors?.comment} placeholder='نظر خود را بنویسید...'
+                                            autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} required/>
                                         </div>
                                     </div>
                                     <div className="review-sub-btn">
