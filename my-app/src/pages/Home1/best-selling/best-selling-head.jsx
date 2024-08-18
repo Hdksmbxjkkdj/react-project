@@ -1,4 +1,8 @@
-const BestSellingHead = () => {
+const BestSellingHead = ({setFilter}) => {
+  function handleFilter(value)
+  {
+    setFilter(value)
+  }
   return (
     <>
         <div className="product__nav-tab mr-75">
@@ -13,6 +17,7 @@ const BestSellingHead = () => {
                 role="tab"
                 aria-controls="new"
                 aria-selected="true"
+                onClick={()=>handleFilter(500)}
               >
                 تازه
               </button>
@@ -27,6 +32,7 @@ const BestSellingHead = () => {
                 role="tab"
                 aria-controls="featured"
                 aria-selected="false"
+                onClick={()=>handleFilter(560)}
               >
                 ویژگی ها
               </button>
@@ -41,6 +47,7 @@ const BestSellingHead = () => {
                 role="tab"
                 aria-controls="hot"
                 aria-selected="false"
+                onClick={()=>handleFilter(650)}
               >
                 داغ ترین ها
               </button>
@@ -55,6 +62,7 @@ const BestSellingHead = () => {
                 role="tab"
                 aria-controls="random"
                 aria-selected="false"
+                onClick={()=>handleFilter(700)}
               >
                 رندوم
               </button>

@@ -9,10 +9,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-  useEffect(()=>{
-    const theUser = {'username':"مهمان",'id':"مهمان"}
-    localStorage.setItem("user", JSON.stringify(theUser));
-  },[])
   const [check, setCheck] = useState(false);
   function loginUser() {
     try {
@@ -45,6 +41,7 @@ const Login = () => {
               <div className="col-lg-8">
                 <div className="basic-login">
                   <h3 className="text-center mb-60">فرم ورود</h3>
+                  {(login.email==="مهمان")&& <p>ورود به عنوان مهمان</p>}
                   <div>
                     <label for="name">
                       آدرس ایمیل <span>**</span>
@@ -53,6 +50,7 @@ const Login = () => {
                       id="name"
                       type="text"
                       placeholder="آدرس ایمیل"
+                      value={login.email}
                       onChange={(e) =>
                         setLogin({ ...login, email: e.target.value })
                       }
@@ -65,6 +63,7 @@ const Login = () => {
                       id="pass"
                       type="password"
                       placeholder="وارد کردن کلمه عبور"
+                      value={login.password}
                       onChange={(e) =>
                         setLogin({ ...login, password: e.target.value })
                       }

@@ -7,7 +7,8 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
-const ProductSlider = ({ type, res, item }) => {
+const ProductSlider = ({ type, res, item,filt }) => {
+  console.log(res);
   const [slider, setslider] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
@@ -20,7 +21,9 @@ const ProductSlider = ({ type, res, item }) => {
       setblog(res);
     });
   }, []);
-
+  const dataFilter = slider?.data.filter(function(el){
+      return el.price<=filt
+  })
   const Option = {
     loop: true,
     margin: 20,
@@ -43,7 +46,6 @@ const ProductSlider = ({ type, res, item }) => {
       <>
         <OwlCarousel
           loop
-          // items={4}
           className="owl-carousel owl-theme"
           nav
           {...Option}
@@ -67,7 +69,6 @@ const ProductSlider = ({ type, res, item }) => {
       <>
         <OwlCarousel
           className="owl-carousel owl-theme"
-          // items={5}
           nav
           {...Option}
           key={Math.random()}
@@ -94,7 +95,7 @@ const ProductSlider = ({ type, res, item }) => {
         key={Math.random()}
         style={{ direction: "ltr" }}
       >
-        {slider?.data?.map((item) => {
+        {dataFilter?.map((item) => {
           return <ProductItem slider={item} type={"flex"}></ProductItem>;
         })}
       </OwlCarousel>
