@@ -1681,8 +1681,8 @@ p {
   border: 2px solid #fcb700;
   outline: none;
   padding: 0 15px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 .close-modal
 {
