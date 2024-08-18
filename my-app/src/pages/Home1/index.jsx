@@ -51,6 +51,27 @@ var res1 = {
     items: 6,
   },
 };
+var res2 = {
+  item: 4,
+  0: {
+    items: 1,
+  },
+  576: {
+    items: 2,
+  },
+  767: {
+    items: 3,
+  },
+  992: {
+    items: 4,
+  },
+  1200: {
+    items: 4,
+  },
+  1600: {
+    items: 4,
+  },
+};
 
 
 const Home1 = () => {
@@ -84,7 +105,7 @@ const Home1 = () => {
       <Adds img={filename3}></Adds>
       <FlashDeal res={res1}></FlashDeal>
       <Adds img={filename4}></Adds>
-      <OnSell res={res1}></OnSell>
+      <OnSell res={res2}></OnSell>
       <FromTheBlog res={res1}></FromTheBlog>
       <div className="modal fade quick-view-product" aria-labelledby="exampleModalXlLabel" id={modal.id} tabindex="-1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered product__modal" role="document">
@@ -158,12 +179,12 @@ const Home1 = () => {
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity mr-20 mb-25">
                               <div className="cart-plus-minus p-relative">
-                                <input type="text" value={value} onChange={(e)=>setValue(e.target.value)}/>
+                                <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} autoFocus/>
                               </div>
                             </div>
                             <div className="pro-cart-btn mb-25">
                               <button className="t-y-btn" type="submit">
-                                لیست خرید +
+                                افزودن به سبد
                               </button>
                             </div>
                           </div>

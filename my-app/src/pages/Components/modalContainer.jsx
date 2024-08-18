@@ -45,6 +45,7 @@ export const ModalContainer = () => {
                                 item?.id,
                                 item?.name,
                                 setCart,
+                                null,
                                 "error",
                                 true
                               )

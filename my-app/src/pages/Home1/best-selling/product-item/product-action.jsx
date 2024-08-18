@@ -67,7 +67,7 @@ const ProductAction = ({ item }) => {
                     setrow
                   );
                 }}
-                title="Add to Wishlist"
+                title="اضافه کردن به علاقه مندی ها"
               >
                 <i
                   className={"fa-solid fa-heart-circle-check text-success"}
@@ -79,7 +79,7 @@ const ProductAction = ({ item }) => {
               <a
                 href="#"
                 onClick={(event) => RemoveWishList(event,item.id,item.text,user,setrow,false)}
-                title="Remove From Wishlist"
+                title="حذف از علاقه مندی ها"
               >
                 <i className="fa-solid fa-heart-circle-xmark text-danger"></i>
               </a>
