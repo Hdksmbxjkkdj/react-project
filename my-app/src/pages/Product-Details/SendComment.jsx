@@ -32,7 +32,7 @@ export const SendComment = ({id,tab,productId}) => {
         date:today,
 
     })
-    console.log(data)
+    console.log(today)
     // console.log(product_id)
     const [error, setError] = useState();
 

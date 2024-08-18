@@ -109,11 +109,12 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
             </div>
             <div className="product__details-action">
               <ul>
-                <li>
+                {/* <li>
                   <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
                   </a>
-                </li>
+                </li> */}
+                {/* <AddToWishlist item={item}></AddToWishlist> */}
                 <li>
                   <a href="#"  title="مقایسه کنید">
                     <FontAwesomeIcon icon={faSliders}></FontAwesomeIcon>
