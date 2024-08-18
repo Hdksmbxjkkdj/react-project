@@ -65,6 +65,8 @@ const Header = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     window?.$(".cart__mini").removeClass("cart__opened");
+    // window?.$("#exampleModal").removeClass("show");
+    // window?.$(".modal-backdrop").removeClass("show")
   },[navigate])
   return (
     <>
@@ -144,14 +146,13 @@ const Header = () => {
                   <div className="header__info-right">
                     <div className="header__search f-right d-none d-sm-block">
                       <form action="#">
-                        <div className="header__search-box" style={{position:"relative"}}>
+                        <div className="header__search-box">
                           <input
                             type="text"
                             placeholder="جست و جو محصولات"
                             data-bs-toggle="modal"
                             data-bs-target="#exampleModal"
                           />
-                          <i className="fa fa-search" style={{position:"absolute",right:"1rem",bottom:"50%",transform:"translateY(50%)"}}></i>
                           <div
                             className="modal fade"
                             id="exampleModal"
