@@ -12,8 +12,10 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
 
     return (
         <div class="form-group">
-            <label>{props.label} {props.required && <span className="require">*</span>}</label>
+            <label>{props.label} {props.required && <span className="require"></span>}</label>
             <input
+                
+                
                 {...props}
                 type={type}
                 className={
@@ -21,6 +23,7 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
                     className
                 }
                 ref={input}
+                required=""
             />
            {
             props.error && <p  className={props.classNameError ? props.classNameError : 'text-danger'}>

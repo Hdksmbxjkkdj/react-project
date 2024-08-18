@@ -21,6 +21,9 @@ import { ProducDetails } from "./pages/Product-Details/index";
 import { Productpage } from './pages/Productpage';
 import { Products } from "./pages/Shop";
 import { WishList } from "./pages/WishList/wishlist";
+import Modal from "./Compont/Forms/Modal";
+import ModalBody from "./Compont/Forms/ModalBody";
+import { data } from "jquery";
 
 function App() {
   window?.$(window).on("load", function () {
@@ -57,45 +60,58 @@ function App() {
     }
     document.getElementsByTagName("title")[0].innerHTML = name;
   },[]);
+
+  // const [modalInfo, setModalInfo] = useState({show: false, data: null, tittle: null});
   
   return (
-    <>
-      <CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser,loader,setLoader }}>
-      <BrowserRouter>
-          <Header></Header>
-          <Routes>
-            <Route path="product/:id" element={<ProducDetails />} />
-            <Route path="/" element={<Home1 />} />
-            <Route path="/Blog" element={<Blog />} />
-            <Route path="/BlogDetaile/:id" element={<BlogDetaile />} />
-            <Route path="/About" element={<AboutUs />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="/Contact" element={<ContactUs />} />
-            <Route path="Register" element={<Register />} />
-            <Route path="Cart" element={<Cart />} />
-            <Route path="wishlist" element={<WishList />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="/products" element={<Products />} />
-            {/* <Route path="/product" element={<Productpage />} exact={true} /> */}
-            {/* <Route path="/products" element={<Products />} /> */}
-            <Route path="/product-details/:id" element={<ProducDetails />} />
-            <Route path="/product" element={<Productpage />} exact={true} />
-          </Routes>
-          {/* <div id="loading">
-            <div id="loading-center">
-              <div id="loading-center-absolute">
-                <div id="object"></div>
-              </div>
+    <><CartContext.Provider value={{ cart, setCart,check,setCheck,row,setrow,use,setUser,loader,setLoader }}>
+    <BrowserRouter>
+        <Header></Header>
+        <Routes>
+          <Route path="product/:id" element={<ProducDetails />} />
+          <Route path="/" element={<Home1 />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/BlogDetaile/:id" element={<BlogDetaile />} />
+          <Route path="/About" element={<AboutUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="/Contact" element={<ContactUs />} />
+          <Route path="Register" element={<Register />} />
+          <Route path="Cart" element={<Cart />} />
+          <Route path="wishlist" element={<WishList />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="/products" element={<Products />} />
+          {/* <Route path="/product" element={<Productpage />} exact={true} /> */}
+          {/* <Route path="/products" element={<Products />} /> */}
+          <Route path="/product-details/:id" element={<ProducDetails />} />
+          <Route path="/product" element={<Productpage />} exact={true} />
+        </Routes>
+        {/* <div id="loading">
+          <div id="loading-center">
+            <div id="loading-center-absolute">
+              <div id="object"></div>
             </div>
-          </div> */}
-          <BackToTop></BackToTop>
-          <Footer></Footer>
-          <ToastContainer />
-        </BrowserRouter>
-      </CartContext.Provider>
+          </div>
+        </div> */}
+        <BackToTop></BackToTop>
+        <Footer></Footer>
+        <ToastContainer />
+      </BrowserRouter>
+    </CartContext.Provider>
+      {/* <div className="container">
+        <div className="row">
+          <button className="btn btn-primary mt-5" onClick={() => setModalInfo({show: true, data: {name: 'ali', family: 'alavi'}, title: 'نمایش کاربر'})}>
+            نمایش مودال
+          </button>
+          <button className="btn btn-primary mt-5" onClick={() => setModalInfo({show: true, data: {name: 'احسان', family: 'خداوردی'}, title: 'نمایش محصول'})}>
+            نمایش مودال دوم
+          </button>
+        </div>
+      </div>
+      {modalInfo.show && <Modal setModalInfo={setModalInfo}>
+          <ModalBody data={modalInfo.data} />
+        </Modal>} */}
     </>
   );
 }
-
 export default App;

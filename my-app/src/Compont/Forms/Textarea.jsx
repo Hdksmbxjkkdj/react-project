@@ -11,7 +11,7 @@ export const Textarea = forwardRef(function Textarea({ className = '', isFocused
 
     return (
         <div class="form-group">
-            <label>{props.label} {props.required && <span className="require">*</span>}</label>
+            <label>{props.label} {props.required && <span className="require">÷</span>}</label>
             <textarea
                 {...props}
                 className={
