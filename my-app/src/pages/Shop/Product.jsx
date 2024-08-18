@@ -169,6 +169,9 @@ export const ProductList = ({ items, setItems }) => {
                   </div>
                   <div className="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
                     <ProductAddbtn item={item} className={"t-y-btn mr-10"}/>
+                    
+
+
                     {/* <button className="t-y-btn mr-10" >افزودن به سبد خرید</button>  */}
                     {/* <button
                       className="t-y-btn mr-10"
