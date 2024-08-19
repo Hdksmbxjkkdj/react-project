@@ -23,7 +23,7 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
                     className
                 }
                 ref={input}
-                required=""
+                required
             />
            {
             props.error && <p  className={props.classNameError ? props.classNameError : 'text-danger'}>

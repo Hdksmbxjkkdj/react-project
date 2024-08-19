@@ -1,21 +1,25 @@
 import { event } from "jquery";
 import { Config } from "../../Utils";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import {ShowProduct} from '../../Compont/ShowProduct'
+import { faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
-    
+      //showproduct
+      const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
+      //showproduct
     const handleImg = (event) => {
-        let preview = window?.$('.product__details-nav-thumb img')
+        let preview = window?.$('.product__details-thumb img')
         preview.fadeOut(100)
         
         preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
         preview.fadeIn(300)
     }
 
-    
+   
     return<>
    
-    <div className="col-xxl-5 col-xl-5 col-lg-5">
+    <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between" id="productThumbTab" role="tablist">
         {picturs?.map((g)=>{
@@ -33,7 +37,13 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                 <div className="tab-pane fade show active" id="thumbOne" role="tabpanel" aria-labelledby="thumbOne-tab">
                     <div className="product__details-nav-thumb">
                         {/* <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/> */}
-                        <img src={Config.shop+ "" +item} alt=""/>  
+                        <img src={Config.shop+ "" +item} alt=""  onClick={() => setShowproduct({show: true})}/>  
+                        {showproduct.show && <ShowProduct setShowproduct={setShowproduct} item={item}>
+          {/* <ModalBody data={modalInfo.data} /> */}
+                       </ShowProduct>}
+                    
+                       <FontAwesomeIcon icon={faSearchPlus} style={{fontSize:"25px"}} className="me-5"  onClick={() => setShowproduct({show: true})}></FontAwesomeIcon>
+                      
                     </div>
                    
                 </div>

@@ -54,6 +54,7 @@ export const ProducDetails= () =>{
                 setProductComment(res);
         });
     }, []);
+   
 //        //Number of comments
     return<>
         <main>
@@ -68,7 +69,7 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment  comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
                     </div>
                 </div>
             </section>
