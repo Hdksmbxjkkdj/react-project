@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { ModalContext } from "../../../../context/modal";
-import { AddToWishlist } from "./AddToWishlist";
 import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../../context/CardContext";
+import { ModalContext } from "../../../../context/modal";
 import { RemoveWishList } from "../../../WishList/RemoveWishList";
+import { AddToWishlist } from "./AddToWishlist";
+import { Notif } from "../../../../Utils";
 const ProductAction = ({ item }) => {
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
@@ -49,6 +50,21 @@ const ProductAction = ({ item }) => {
       setUser(res?.data[0]?.id);
     });
   }, []);
+  let compare = [];
+  function handleCompare() {
+    if (localStorage.getItem("compare")==null) {
+      localStorage.setItem("compare", []);
+    }
+    if(localStorage.getItem("compare").length>6)
+    {
+      Notif("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
+      return
+    }
+    compare = localStorage.getItem("compare").split(",");
+    compare = [...compare, item.id];
+    localStorage.setItem("compare", compare);
+    console.log(localStorage.getItem("compare").split(","));
+  }
   return (
     <>
       <div className="product__action p-absolute" key={Math.random()}>
@@ -78,7 +94,9 @@ const ProductAction = ({ item }) => {
             <li>
               <a
                 href="#"
-                onClick={(event) => RemoveWishList(event,item.id,item.text,user,setrow,false)}
+                onClick={(event) =>
+                  RemoveWishList(event, item.id, item.text, user, setrow, false)
+                }
                 title="حذف از علاقه مندی ها"
               >
                 <i className="fa-solid fa-heart-circle-xmark text-danger"></i>
@@ -92,10 +110,7 @@ const ProductAction = ({ item }) => {
           </li>
           <li>
             <a href="#" title="Compare">
-              <i
-                className="fa fa-sliders-h"
-                onClick={() => alert("هنوز این مورد وجود ندارد !")}
-              ></i>
+              <i className="fa fa-sliders-h" onClick={handleCompare}></i>
             </a>
           </li>
         </ul>

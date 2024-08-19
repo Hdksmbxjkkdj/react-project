@@ -95,7 +95,7 @@ const Header = () => {
                           <Link to="/register">ثبت نام/ورود</Link>
                       </li>
                       <li>
-                        <a style={{color:"#ccc"}} disabled={true}>مقایسه</a>
+                        <Link to="/comparison">مقایسه</Link>
                       </li>
                     </ul>
                   </div>
