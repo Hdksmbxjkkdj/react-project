@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Config } from "../../Utils";
 import axios from "axios";
 
@@ -9,35 +9,27 @@ export const Commparison = () => {
       setItems(response);
     });
   }, []);
-  if (localStorage.getItem("compare") == null || localStorage.getItem("compare")=="")
-    return (
-      <div>
-        <p className="text-danger text-center my-5">
-          هیچ محصولی جهت مقایسه وجود ندارد
-        </p>
-      </div>
-    );
-  else {
+  const local = localStorage.getItem("compare");
     function handleDelete(id)
     {
-        var u = localStorage.getItem("compare").split(",").filter(el=>el!=id)
+        var u = local.split(",").filter(el=>el!=id)
         localStorage.setItem("compare",u);
-        console.log(localStorage.getItem("compare"));
+        window.location.reload();
     }
-    let comp = localStorage.getItem("compare").split(",");
+    let comp = local.split(",");
     let rep; 
-    rep= items?.data.filter((el) => {
-      return (
-        el.id == comp[1] ||
-        el.id == comp[2] ||
-        el.id == comp[3] ||
-        el.id == comp[4]
-      );
-    });
+      rep= items?.data.filter((el) => {
+        return (
+          el.id == comp[1] ||
+          el.id == comp[2] ||
+          el.id == comp[3] ||
+          el.id == comp[4]
+        );
+      });
     return (
       <>
-        <div className="container" key={Math.random()}>
-          <table className="w-100">
+        <div className="container">
+          {(local==null||local=="")?<div><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p></div>:<table className="w-100">
             <tr>
               <th>عنوان</th>
               {rep?.map((_, index) => {
@@ -95,9 +87,8 @@ export const Commparison = () => {
                 );
               })}
             </tr>
-          </table>
+          </table>}
         </div>
       </>
     );
-  }
 };

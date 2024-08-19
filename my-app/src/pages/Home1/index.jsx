@@ -83,14 +83,21 @@ const Home1 = () => {
     seccondimg:"",
     id:"111111111",
     show:false,
-    inCart:false
   });
-  var rand = Math.random();
   useEffect(()=>{
     (modal.show) && window?.$(`#${modal.id}`).modal("show");
   },[modal])
   const [value,setValue] = useState(1);
-  const {cart,setCart} = useContext(CartContext)
+  const {cart,setCart} = useContext(CartContext);
+  const [check,setCheck] = useState([])
+  useEffect(()=>{
+    cart.map(el=>{
+      if(el.id==modal.id)
+      {
+        setCheck([...check,modal])
+      }
+    })
+  },[cart])
   function handleSubmit(e){
     AddToCart(e,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,null,"error",null)
   }
@@ -175,11 +182,14 @@ const Home1 = () => {
                         <span>${modal.price.toFixed(2)}</span>
                       </div>
                       <div className="product__modal-form mb-30" key={Math.random()}>
-                        {(!modal.inCart)?<form onSubmit={(event)=>handleSubmit(event)}>
+                        {(!check.includes(modal))?<form onSubmit={(event)=>handleSubmit(event)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity mr-20 mb-25">
                               <div className="cart-plus-minus p-relative">
-                                <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} autoFocus/>
+                              <div className="cart-plus-minus p-relative">
+                                <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?e.target.value:1)} autoFocus/></div>
+                                <div className="inc qtybutton" onClick={()=>setValue(value+1)}>+</div>
+                                <div className="dec qtybutton" onClick={()=>setValue(()=>value>1?value-1:1)}>-</div>
                               </div>
                             </div>
                             <div className="pro-cart-btn mb-25">

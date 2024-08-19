@@ -57,6 +57,7 @@ const ProductAddbtn = (props) => {
             onClick={(event) =>
               handleAddClick(event,props)
             }
+            disabled={props.disabled}
           >
             افزودن به سبد <i className="fa fa-shopping-basket"></i>
           </button>}

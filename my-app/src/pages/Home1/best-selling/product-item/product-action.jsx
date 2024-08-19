@@ -63,7 +63,7 @@ const ProductAction = ({ item }) => {
     compare = localStorage.getItem("compare").split(",");
     compare = [...compare, item.id];
     localStorage.setItem("compare", compare);
-    console.log(localStorage.getItem("compare").split(","));
+    Notif("success",`${item.title} به مقایسه اضافه شد`)
   }
   return (
     <>
@@ -86,7 +86,7 @@ const ProductAction = ({ item }) => {
                 title="اضافه کردن به علاقه مندی ها"
               >
                 <i
-                  className={"fa-solid fa-heart-circle-check text-success"}
+                  className={"far fa-heart text-success"}
                 ></i>
               </a>
             </li>
@@ -99,7 +99,7 @@ const ProductAction = ({ item }) => {
                 }
                 title="حذف از علاقه مندی ها"
               >
-                <i className="fa-solid fa-heart-circle-xmark text-danger"></i>
+                <i className="fa fa-heart text-danger"></i>
               </a>
             </li>
           )}
