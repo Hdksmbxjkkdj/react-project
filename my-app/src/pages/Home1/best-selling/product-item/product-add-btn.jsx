@@ -87,8 +87,6 @@ const ProductAddbtn = (props) => {
       </>
     );
   };
-
-  console.log(check)
   return <>{check.includes(props?.item) ? <StillInCart /> : <NotInCart />}</>;
 };
 

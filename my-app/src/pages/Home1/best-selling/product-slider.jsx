@@ -8,7 +8,6 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import axios from "axios";
 
 const ProductSlider = ({ type, res, item,filt }) => {
-  console.log(res);
   const [slider, setslider] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/best_selling").then((res) => {
@@ -40,7 +39,6 @@ const ProductSlider = ({ type, res, item,filt }) => {
     responsive: res,
     autoplayHoverPause: true,
   };
-  // console.log(type);
   if (type == "flex") {
     return (
       <>

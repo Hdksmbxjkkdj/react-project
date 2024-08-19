@@ -1,30 +1,5 @@
 {
-  "row": [
-    {
-      "id": "7",
-      "pic": "product-13.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "17/08/2024"
-    },
-    {
-      "id": "5",
-      "pic": "product-9.jpg",
-      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
-      "unitprice": 120,
-      "quantity": 1,
-      "date": "17/08/2024"
-    },
-    {
-      "id": "6",
-      "pic": "product-11.jpg",
-      "name": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
-      "unitprice": 300,
-      "quantity": "5",
-      "date": "17/08/2024"
-    }
-  ],
+  "row": [],
   "wishlist": [
     {
       "id": "8li@gmail.com",

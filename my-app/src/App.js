@@ -24,6 +24,7 @@ import { WishList } from "./pages/WishList/wishlist";
 import Modal from "./Compont/Forms/Modal";
 import ModalBody from "./Compont/Forms/ModalBody";
 import { data } from "jquery";
+import { Commparison } from "./pages/comparison/Comparison";
 
 function App() {
   window?.$(window).on("load", function () {
@@ -85,6 +86,7 @@ function App() {
           {/* <Route path="/products" element={<Products />} /> */}
           <Route path="/product-details/:id" element={<ProducDetails />} />
           <Route path="/product" element={<Productpage />} exact={true} />
+          <Route path="comparison" element={<Commparison/>}/>
         </Routes>
         {/* <div id="loading">
           <div id="loading-center">
