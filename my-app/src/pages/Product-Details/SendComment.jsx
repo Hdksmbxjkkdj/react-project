@@ -8,19 +8,34 @@ import axios from "axios";
 import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
+import { NewRank } from "../Components/NewRank";
 //test
-export const SendComment = ({id,tab,productId}) => {
+export const SendComment = ({id,tab,productId,ProductComment}) => {
+    console.log(ProductComment)
+    const [infor, setInfor] = useState();
+    useEffect(() => {
+            // axios.get(`http://localhost:313/product_comments`).then((res) => {
+            axios.get(`http://localhost:313/product_comments`).then((res) => {
+
+            setInfor(res?.data?.length);
+        
+
+        });
+    }, []);
+    //
     // let local = Local()
     let auth = User()
     let loginMessage = 'first_login';
     let eMessage = 'error_message';
     let sMessage = 'success_message';
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = dd + '/' + mm + '/' + yyyy;
-   
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // var yyyy = today.getFullYear();
+    // today = dd + '/' + mm + '/' + yyyy;
+    let today = new Date().toLocaleDateString('fa-IR');
+    // let time = new Time().toLocaleDateString('fa-IR');
+//    const[idproduct,setIdproduct]=useState(1)
 
     const [errors, setErrors] = useState();
     const [data, setData ] = useState({
@@ -30,10 +45,9 @@ export const SendComment = ({id,tab,productId}) => {
         // product_id: id,
         id:id,
         date:today,
+        infor:infor,
 
     })
-    console.log(today)
-    // console.log(product_id)
     const [error, setError] = useState();
 
     // useEffect(() => {
@@ -126,6 +140,7 @@ useEffect(() => {
                                                 <div className="review-ratings-single d-flex align-items-center">
                                                     <span>ارزش</span>
                                                       <Rank></Rank>
+                                                      <NewRank></NewRank>
                                                 </div>
                                             </div>
                                         </div>
