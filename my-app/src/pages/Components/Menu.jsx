@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-// import {Footer} from '../Components/Footer';
-import { Footer } from "../Components/Footer";
-// import {} from '../Product/index';
 export const Menu = () => {
   return (
     <>
@@ -13,7 +10,7 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link to="product">محصولات <i className="fa fa-shopping-bag"></i></Link>
+            <Link to="products">محصولات <i className="fa fa-shopping-bag"></i></Link>
           </li>
           <li>
             <Link to="/blog">

@@ -61,12 +61,8 @@ export const ModalContainer = () => {
               );
             })}
         </ul>
-        <div className="cart__sub d-flex justify-content-between align-items-center">
-          <h6>جمع</h6>
-          <span className="cart__sub-total"></span>
-        </div>
-        <Link to="/checkout" className="t-y-btn w-100 mb-10">
-          رفتن به checkout
+        <Link to="/checkout" className="t-y-btn t-y-btn-border w-100 mb-10">
+          ادامه فرآیند خرید
         </Link>
         <Link to="/cart" className="t-y-btn t-y-btn-border w-100 mb-10">
           دیدن لیست خرید

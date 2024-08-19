@@ -1,23 +1,6 @@
 {
   "row": [],
-  "wishlist": [
-    {
-      "id": "8li@gmail.com",
-      "Pid": "8",
-      "pic": "product-13.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 520,
-      "Uid": "li@gmail.com"
-    },
-    {
-      "id": "1li@gmail.com",
-      "Pid": "1",
-      "pic": "product-1.jpg",
-      "name": " آشپزخانه فوق نازک شیشه ای   ",
-      "unitprice": 500,
-      "Uid": "li@gmail.com"
-    }
-  ],
+  "wishlist": [],
   "blog": [
     {
       "id": "1",
