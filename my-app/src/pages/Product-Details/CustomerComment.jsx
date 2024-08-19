@@ -6,7 +6,10 @@ import axios from "axios";
 import {ProductList} from "../Shop/Product"
 export const  CustomerComment=({comment,id,productId })=>{
    //comments
-   let url=`http://localhost:313/product_comments?id=`+ id
+//    let url=`http://localhost:313/product_comments?id=`+id+`&_sort=date`
+let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
+
+   console.log(url)
    const [ProductComment, setProductComment] = useState();
           useEffect(() => {
 
