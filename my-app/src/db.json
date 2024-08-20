@@ -215,19 +215,16 @@
       "rate": 3,
       "gallery": [
         {
-          "name": "product-12.jpg"
+          "name": "product-1.jpg"
         },
         {
-          "name": "product-11.jpg"
+          "name": "product-1.jpg"
         },
         {
-          "name": "product-20.jpg"
+          "name": "product-1.jpg"
         },
         {
-          "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
+          "name": "product-1.jpg"
         }
       ],
       "des": "تست توضیحات محصول"
@@ -255,10 +252,8 @@
         },
         {
           "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
         }
+      
       ],
       "SKU": "Samsung C49J89: £875, Debenhams Plus ",
       "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
@@ -276,9 +271,7 @@
       "oldprice": 325,
       "rate": 4,
       "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
+       
         {
           "name": "product-11.jpg"
         },
@@ -307,9 +300,7 @@
       "oldprice": 325,
       "rate": 5,
       "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
+       
         {
           "name": "product-11.jpg"
         },
@@ -323,8 +314,7 @@
           "name": "product-12.jpg"
         }
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-9.jpg",
       "seccondpic": "product-10.jpg",
@@ -339,9 +329,7 @@
       "oldprice": 325,
       "rate": 3,
       "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
+       
         {
           "name": "product-11.jpg"
         },
@@ -355,8 +343,7 @@
           "name": "product-12.jpg"
         }
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-11.jpg",
       "seccondpic": "product-12.jpg",
@@ -370,9 +357,7 @@
       "oldprice": 325,
       "rate": 3,
       "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
+      
         {
           "name": "product-11.jpg"
         },
@@ -386,8 +371,7 @@
           "name": "product-12.jpg"
         }
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-13.jpg",
       "seccondpic": "product-14.jpg",
@@ -401,9 +385,7 @@
       "oldprice": 325,
       "rate": 5,
       "gallery": [
-        {
-          "name": "product-12.jpg"
-        },
+        
         {
           "name": "product-11.jpg"
         },
@@ -417,8 +399,7 @@
           "name": "product-12.jpg"
         }
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-13.jpg",
       "seccondpic": "product-14.jpg",
@@ -443,13 +424,10 @@
         },
         {
           "name": "product-21.jpg"
-        },
-        {
-          "name": "product-12.jpg"
         }
+       
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-sm-1.jpg",
       "seccondpic": "product-14.jpg",
@@ -472,15 +450,12 @@
         {
           "name": "product-20.jpg"
         },
-        {
-          "name": "product-21.jpg"
-        },
+       
         {
           "name": "product-12.jpg"
         }
       ],
-      "des": "اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند."
-    },
+ "des":"گر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید"    },
     {
       "pic": "product-sm-2.jpg",
       "seccondpic": "product-14.jpg",
@@ -496,9 +471,6 @@
       "gallery": [
         {
           "name": "product-12.jpg"
-        },
-        {
-          "name": "product-11.jpg"
         },
         {
           "name": "product-20.jpg"
@@ -881,116 +853,41 @@
   ],
   "product_comments": [
     {
-      "id": "49ff",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "d47e",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "2bda",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "094e",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "cf8a",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "7217",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "c09a",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "7a00",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
-      "id": "c320",
-      "user_name": "cdv",
-      "sender_email": "wer@efd.ggf",
-      "comment": "dseft",
-      "sender_phone": "846532.",
-      "date": "09/07/2024"
-    },
-    {
+      "id": "1",
+      "sender_name": "a",
       "comment": "",
-      "date": "07/08/2024",
-      "id": "cyzKeKj"
+      "date": "29:5:1403"
     },
     {
+      "id": "1",
+      "sender_name": "b",
       "comment": "",
-      "date": "07/08/2024",
-      "id": "yKsSzF-"
+      "date": "29:5:1403"
     },
     {
+      "id": "1",
+      "sender_name": "i",
       "comment": "",
-      "date": "07/08/2024",
-      "id": "d-KkAHD"
+      "date": "۱۴۰۳/۵/۲۹"
     },
     {
+      "id": "1",
       "comment": "",
-      "date": "07/08/2024",
-      "id": "tlUwPXM"
+      "date": "۱۴۰۳/۵/۲۹"
     },
     {
-      "comment": "",
-      "date": "07/08/2024",
-      "id": "-oa5EaQ"
+      "id": "2",
+      "sender_name": "a",
+      "sender_email": "a",
+      "comment": "a",
+      "date": "۱۴۰۳/۵/۲۹"
     },
     {
-      "comment": "kjhgfxzz",
-      "date": "07/08/2024",
-      "id": "CIzOSg0"
-    },
-    {
-      "comment": "kjhgfxzz",
-      "date": "07/08/2024",
-      "id": "hBWBSZa"
-    },
-    {
-      "comment": "kjhgfxzz",
-      "date": "07/08/2024",
-      "id": "qEH1bx0"
+      "id": "2",
+      "sender_name": "b",
+      "sender_email": "b",
+      "comment": "b",
+      "date": "۱۴۰۳/۵/۲۹"
     }
   ],
   "product-category": [

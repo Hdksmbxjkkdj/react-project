@@ -8,21 +8,10 @@ import axios from "axios";
 import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
-import { NewRank } from "../Components/NewRank";
+import  {RateSubmit} from './RateSubmit/RateSubmit'
 //test
-export const SendComment = ({id,tab,productId,ProductComment}) => {
-    console.log(ProductComment)
-    const [infor, setInfor] = useState();
-    useEffect(() => {
-            // axios.get(`http://localhost:313/product_comments`).then((res) => {
-            axios.get(`http://localhost:313/product_comments`).then((res) => {
-
-            setInfor(res?.data?.length);
-        
-
-        });
-    }, []);
-    //
+export const SendComment = ({id,tab,productId,commentNumber}) => {
+   
     // let local = Local()
     let auth = User()
     let loginMessage = 'first_login';
@@ -36,17 +25,18 @@ export const SendComment = ({id,tab,productId,ProductComment}) => {
     let today = new Date().toLocaleDateString('fa-IR');
     // let time = new Time().toLocaleDateString('fa-IR');
 //    const[idproduct,setIdproduct]=useState(1)
-
+  
     const [errors, setErrors] = useState();
     const [data, setData ] = useState({
+       
         sender_name: auth ? auth.username ? auth.username : auth.full_name : '',
         sender_email: auth ? auth.email : '',
         comment: '',
         // product_id: id,
         id:id,
         date:today,
-        infor:infor,
-
+       
+        
     })
     const [error, setError] = useState();
 
@@ -67,13 +57,10 @@ export const SendComment = ({id,tab,productId,ProductComment}) => {
             //   let message = "Insert";
                           let message = "پیام شما با موفقیت ارسال شد";
 
-                console.log(response?.status,'response.data?.status')
             //    if (response.data?.status == 201) {
             //    if (data!= ""&&response?.status == 201) {
                  if (response?.status == 201) {
-                     console.log(data)
                     Notif('success', message)
-                     console.log(message)
                     // Notif("error", "status خالی میباشد");
                    
                     // reset()
@@ -140,7 +127,7 @@ useEffect(() => {
                                                 <div className="review-ratings-single d-flex align-items-center">
                                                     <span>ارزش</span>
                                                       <Rank></Rank>
-                                                      <NewRank></NewRank>
+                                                      <RateSubmit></RateSubmit>
                                                 </div>
                                             </div>
                                         </div>
