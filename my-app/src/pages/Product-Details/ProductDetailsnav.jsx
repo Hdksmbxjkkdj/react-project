@@ -48,7 +48,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                     </div>
                    
                 </div>
-                <div className="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
+                {/* <div className="tab-pane fade" id="thumbTwo" role="tabpanel" aria-labelledby="thumbTwo-tab">
                     <div className="product__details-nav-thumb">
                         <img src="assets/img/shop/product/details/big/product-nav-big-2.jpg" alt="" />
                     </div>
@@ -72,7 +72,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                     <div className="product__details-nav-thumb">
                         <img src="assets/img/shop/product/details/big/product-nav-big-6.jpg" alt="" />
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>

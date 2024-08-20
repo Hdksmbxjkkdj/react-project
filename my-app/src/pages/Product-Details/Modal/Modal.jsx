@@ -143,7 +143,7 @@ useEffect(() => {
                           </div>
                           <div className="product__add-review mb-15">
                             <span>
-                              <a href="#">{commentNumber} نظر</a>
+                              <a href="#">{commentNumber==0?"نظری نیست":commentNumber+"نظر"}</a>
                             </span>
                             <span>
                               <a href="#">افزودن نظر</a>

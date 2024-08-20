@@ -9,7 +9,7 @@ import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
-export const ProductDetailsWrapper = ({ item,commentNumber}) => {
+export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -32,6 +32,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
+
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -47,7 +48,9 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
               </div>
               <div className="product__add-review mb-15">
                 <span>
-                  <a href="#">{commentNumber}نظر</a>
+                  {/* <a href="#">{{commentNumber}==0?"نظری وجود ندارد":{commentNumber}}</a> */}
+                  <a href="#">{commentNumber==0?"نظری نیست":commentNumber+"نظر"}</a> 
+
                 </span>
                 <span>
                   <a href="#">افزودن نظر</a>
@@ -73,7 +76,7 @@ export const ProductDetailsWrapper = ({ item,commentNumber}) => {
             </div>
             <div className="product__details-stock">
               <h3>
-                <span>عجله کن!</span> فقط 98 محصول در انبار باقی مانده است.
+                <span>عجله کن!</span> فقط {item?.data.number} محصول در انبار باقی مانده است.
               </h3>
               <div className="progress d-flex">
                 <div
