@@ -45,7 +45,7 @@ export const ProducDetails= () =>{
     }, []);
       //Number of comments
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
-  let url=`http://localhost:313/product_comments?id=`+ id
+  let url=`http://localhost:313/product_comments?id=`+ id+`&_sort=date`
 //    console.log('')
    const [ProductComment, setProductComment] = useState();
    useEffect(() => {
@@ -73,7 +73,7 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <SectionHead/>    
+            <SectionHead commentNumber={ProductComment?.data?.length}  />    
             <BrandSlider/> 
         </main>
     </>

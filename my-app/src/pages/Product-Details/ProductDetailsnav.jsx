@@ -15,6 +15,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
         preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
         preview.fadeIn(300)
     }
+    
 
    
     return<>
