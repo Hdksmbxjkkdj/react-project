@@ -11,7 +11,7 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
     }, []);
 
     return (
-        <div class="form-group">
+        <div class="form-group d-flex">
             <label>{props.label} {props.required && <span className="require"></span>}</label>
             <input
                 

@@ -38,7 +38,7 @@ export const SectionHead = ({ commentNumber }) => {
               <div className="section__head mb-40">
                 <div className="section__title">
                   <h3 className="text-end">
-                    پرفروش ترین<span>محصولات</span>
+                     محصولات<span>مرتبط</span>
                   </h3>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export const SectionHead = ({ commentNumber }) => {
                   );
                 })}
               </OwlCarousel>
-              <div className="col-xl-12">
+              {/* <div className="col-xl-12"> */}
                 {modal.show && (
                   <Modal
                     setModal={setModal}
@@ -149,7 +149,7 @@ export const SectionHead = ({ commentNumber }) => {
                     {/* <ModalBody data={modalInfo.data} /> */}
                   </Modal>
                 )}
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>

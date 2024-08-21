@@ -9,7 +9,6 @@ export const  CustomerComment=({comment,id,productId })=>{
 //    let url=`http://localhost:313/product_comments?id=`+id+`&_sort=date`
 let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
 
-   console.log(url)
    const [ProductComment, setProductComment] = useState();
           useEffect(() => {
 
@@ -18,15 +17,15 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                 setProductComment(res);
         });
             }, []);
-
        //comments
  
+       
 
     return<>
             <div className="col-xxl-6 col-xl-6 col-lg-6">
                 <div className="review-wrapper">
                     <h3 className="block-title">نظرات مشتریان</h3>
-                        {ProductComment?.data?.map((g)=>{
+                        {ProductComment?.data?.map((item)=>{
                            
                         return <>
                         <div className="review-item">
@@ -47,16 +46,16 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                                      </div>
                                 </div>
                                 <div className="review-text">
-                                <p>{g?.comment}</p>
+                                <p>{item?.comment}</p>
                                 </div>
                                 <div className="review-meta">
                                 <div className="review-author">
                                     <span>بررسی توسط</span>
-                                    <span>{g?.sender_name}</span>
+                                    <span>{item?.sender_name}</span>
                                 </div>
                                 <div className="review-date">
                                  <span>نوشته شده در</span>
-                                   <span>{g?.date}</span>
+                                   <span>{item?.date}</span>
                                 </div>
                             </div>
                         </div>

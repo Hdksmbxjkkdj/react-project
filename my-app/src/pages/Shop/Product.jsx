@@ -97,7 +97,7 @@ export const ProductList = ({ items, setItems }) => {
     comments_count[comment.product_id] = newCount;
   });
 
- 
+//  console.log(comments_count?.[items.id])
  
   return (
     <>
@@ -140,7 +140,9 @@ export const ProductList = ({ items, setItems }) => {
                           href={"/product/" + item.id}
                          
                         >
-                          {comments_count?.[item.id]}نظر
+                          {/* {comments_count?.[item.id]}نظر */}
+                          {(comments_count?.[item.id])== 0 ?"نظری نیست":(comments_count?.[item.id])+"نظر"}
+
                         </a>
                       </span>
                       <span>

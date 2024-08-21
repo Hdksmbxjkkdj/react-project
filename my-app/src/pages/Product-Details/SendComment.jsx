@@ -10,8 +10,12 @@ import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 import  {RateSubmit} from './RateSubmit/RateSubmit'
 //test
-export const SendComment = ({id,tab,productId,commentNumber}) => {
-   
+export const SendComment = ({id,tab,productId,commentNumber,item,info}) => {
+    console.log(info,'llllll')
+    // const [price, setPrice] = useState(0);
+    const [quality, setQuality] = useState(0);
+    //  const [value, setValue] = useState(0);
+
     // let local = Local()
     let auth = User()
     let loginMessage = 'first_login';
@@ -25,7 +29,6 @@ export const SendComment = ({id,tab,productId,commentNumber}) => {
     let today = new Date().toLocaleDateString('fa-IR');
     // let time = new Time().toLocaleDateString('fa-IR');
 //    const[idproduct,setIdproduct]=useState(1)
-  
     const [errors, setErrors] = useState();
     const [data, setData ] = useState({
        
@@ -39,12 +42,6 @@ export const SendComment = ({id,tab,productId,commentNumber}) => {
         
     })
     const [error, setError] = useState();
-
-    // useEffect(() => {
-    //     return () => {
-          
-    //     };
-    // }, []);
     let url = `http://localhost:313/product_comments`
     const submit = async (e) => {
         e.preventDefault();
@@ -52,7 +49,8 @@ export const SendComment = ({id,tab,productId,commentNumber}) => {
         if (auth) {
             // clearErrors()
             
-            await axios.post(url, data).then((response) => {
+            await axios.post(url,{data,quality}).then((response) => {
+                console.log(response)
                 // let message = response.data?.message;
             //   let message = "Insert";
                           let message = "پیام شما با موفقیت ارسال شد";
@@ -84,18 +82,20 @@ export const SendComment = ({id,tab,productId,commentNumber}) => {
 //test
 
 //CustomerCommen
-const [info, setInfo] = useState();
-useEffect(() => {
-    // axios.get(`http://localhost:313/row/${id}`).then((res) => {
-        axios.get(`http://localhost:313/product_comments`).then((res) => {
+// const [info, setInfo] = useState();
+// useEffect(() => {
+//     // axios.get(`http://localhost:313/row/${id}`).then((res) => {
+//         axios.get(`http://localhost:313/product_comments`).then((res) => {
 
-        setInfo(res);
+//         setInfo(res);
 
 
-    });
-}, []);
+//     });
+// }, []);
  
 
+console.log('quality');
+console.log(quality);
 //CustomerCommen
 
     return<>
@@ -116,19 +116,21 @@ useEffect(() => {
                                         <h4 className="review-input-title">امتیاز شما</h4>
                                         <div className="review-input">
                                             <div className="review-ratings mb-10">
-                                                <div className="review-ratings-single d-flex align-items-center">
+                                                <div className="review-ratings-single d-flex align-items-start">
                                                     <span>کیفیت</span>
-                                                    <Rank></Rank>
+                                                    {/* <Rank></Rank> */}
+                                                    <RateSubmit  sendQuality={setQuality} item={info}></RateSubmit>
                                                 </div>
-                                                <div className="review-ratings-single d-flex align-items-center">
+                                                {/* <div className="review-ratings-single d-flex align-items-center">
                                                     <span>قیمت</span>
                                                      <Rank></Rank>
-                                                </div>
-                                                <div className="review-ratings-single d-flex align-items-center">
+                                                     <RateSubmit sendPrice={setPrice}></RateSubmit>
+                                                </div> */}
+                                                {/* <div className="review-ratings-single d-flex align-items-center">
                                                     <span>ارزش</span>
                                                       <Rank></Rank>
-                                                      <RateSubmit></RateSubmit>
-                                                </div>
+                                                      <RateSubmit  sendValue={setValue}></RateSubmit>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
@@ -142,15 +144,15 @@ useEffect(() => {
                                     <div className="review-input-box d-flex align-items-start">
                                         <h4 className="review-input-title">ایمیل</h4>
                                         <div className="review-input">
-                                        <Input type="email" id="sender_email" name="sender_email" value={data?.sender_email} error={errors?.sender_email}
+                                        <Input type="email" id="sender_email"  name="sender_email" value={data?.sender_email} error={errors?.sender_email}
                                             autoComplete="useremail" onChange={(e) => setData({...data, sender_email: e.target.value})} required=""/>
                                         </div>
                                     </div>
                                     <div className="review-input-box d-flex align-items-start">
-                                        <h4 className="review-input-title">مرور</h4>
+                                        <h4 className="review-input-title">نظر</h4>
                                         <div className="review-input">
                                         <Textarea id="comment" name="comment" value={data?.comment} error={errors?.comment} placeholder='نظر خود را بنویسید...'
-                                            autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} required/>
+                                            autoComplete="username" onChange={(e) => setData({...data, comment: e.target.value})} required />
                                         </div>
                                     </div>
                                     <div className="review-sub-btn">

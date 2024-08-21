@@ -38,7 +38,6 @@ export const ProducDetails= () =>{
     useEffect(() => {
             // axios.get(`http://localhost:313/product_comments`).then((res) => {
             axios.get(`http://localhost:313/product_comments`).then((res) => {
-
             setInfo(res);
 
         });
@@ -46,7 +45,6 @@ export const ProducDetails= () =>{
       //Number of comments
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
   let url=`http://localhost:313/product_comments?id=`+ id+`&_sort=date`
-//    console.log('')
    const [ProductComment, setProductComment] = useState();
    useEffect(() => {
           axios.get(url).then((res) => {
@@ -54,7 +52,6 @@ export const ProducDetails= () =>{
                 setProductComment(res);
         });
     }, []);
-   
 //        //Number of comments
     return<>
         <main>
@@ -69,11 +66,11 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment info={info} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
                     </div>
                 </div>
             </section>
-            <SectionHead commentNumber={ProductComment?.data?.length}  />    
+            <SectionHead commentNumber={ProductComment?.data?.length} />    
             <BrandSlider/> 
         </main>
     </>
