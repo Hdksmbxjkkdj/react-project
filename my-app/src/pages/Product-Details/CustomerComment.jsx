@@ -4,7 +4,10 @@ import { Rank } from "../Components/Rank";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {ProductList} from "../Shop/Product"
-export const  CustomerComment=({comment,id,productId })=>{
+import { Rate } from "./RateSubmit/Rate";
+import { RateSubmit } from "./RateSubmit/RateSubmit";
+export const  CustomerComment=({comment,id,productId,info })=>{
+  
    //comments
 //    let url=`http://localhost:313/product_comments?id=`+id+`&_sort=date`
 let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
@@ -26,24 +29,26 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                 <div className="review-wrapper">
                     <h3 className="block-title">نظرات مشتریان</h3>
                         {ProductComment?.data?.map((item)=>{
-                           
                         return <>
                         <div className="review-item">
                             <h3 className="review-title">محصول فوق العاده</h3>
                             <div className="review-ratings mb-10">
                                 <div className="review-ratings-single d-flex align-items-center">
                                     <span>کیفیت</span>
-                                    <Rank></Rank>
+                                    {/* <Rate></Rate>
+                               */}
+                                  <Rate stars={item.rate} type="comment" className="ms-3" /> 
+                                  
                                 </div>
-                                    <div className="review-ratings-single d-flex align-items-center">
+                                    {/* <div className="review-ratings-single d-flex align-items-center">
                                         <span>قیمت</span>
                                       <Rank></Rank>
-                                    </div>
-                                    <div className="review-ratings-single d-flex align-items-center">
+                                    </div> */}
+                                    {/* <div className="review-ratings-single d-flex align-items-center">
                                     <span>ارزش</span>
                                    
                                     <Rank></Rank>
-                                     </div>
+                                     </div> */}
                                 </div>
                                 <div className="review-text">
                                 <p>{item?.comment}</p>
@@ -51,7 +56,7 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                                 <div className="review-meta">
                                 <div className="review-author">
                                     <span>بررسی توسط</span>
-                                    <span>{item?.sender_name}</span>
+                                    <span>{item?.customer_id}</span>
                                 </div>
                                 <div className="review-date">
                                  <span>نوشته شده در</span>

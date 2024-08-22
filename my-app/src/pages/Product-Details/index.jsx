@@ -39,7 +39,6 @@ export const ProducDetails= () =>{
             // axios.get(`http://localhost:313/product_comments`).then((res) => {
             axios.get(`http://localhost:313/product_comments`).then((res) => {
             setInfo(res);
-
         });
     }, []);
       //Number of comments
@@ -66,7 +65,7 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment info={info} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment item={ProductComment} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
                     </div>
                 </div>
             </section>

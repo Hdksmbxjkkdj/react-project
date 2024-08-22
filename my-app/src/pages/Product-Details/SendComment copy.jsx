@@ -18,11 +18,10 @@ export const SendComment = ({
   item,
   info,
 }) => {
-   
   // const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
   //  const [value, setValue] = useState(0);
-  console.log(quality,'l')
+
   // let local = Local()
   let auth = User();
   let loginMessage = "first_login";
@@ -36,42 +35,28 @@ export const SendComment = ({
   let today = new Date().toLocaleDateString("fa-IR");
   // let time = new Time().toLocaleDateString('fa-IR');
   //    const[idproduct,setIdproduct]=useState(1)
-  let user = localStorage.getItem("user");
-  user = JSON.parse(user);
   const [errors, setErrors] = useState();
   const [data, setData] = useState({
-  //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
-  //   sender_email: auth ? auth.email : "",
-  //   comment: "",
-  //   // product_id: id,
-  //   id: id,
-  //   date: today,
-  //   product_id: user.id,
-  //   quality
-   
+    sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
+    sender_email: auth ? auth.email : "",
+    comment: "",
+    // product_id: id,
+    id: id,
+    date: today,
+    quality,
   });
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
   const submit = async (e) => {
     e.preventDefault();
 
-    if(user!=null){
+    if (auth) {
       // clearErrors()
 
       await axios
-        .post(url, {   
-          sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
-          // sender_email: auth ? auth.email : "",
-          sender_email:user.id,
-          comment: "",
-          id: id,
-          date: today,
-          customer_id: user.id,
-          rate:quality
-
-        })
+        .post(url, data)
         .then((response) => {
-       console.log(response);
+        //   console.log(response);
           // let message = response.data?.message;
           //   let message = "Insert";
           let message = "پیام شما با موفقیت ارسال شد";
@@ -132,7 +117,7 @@ export const SendComment = ({
                   <div className="review-form">
                     <h3>بررسی شما</h3>
                     <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
-                    <form onSubmit={(event) => submit(event)}>
+                    <form action="#">
                       <div className="review-input-box mb-15 d-flex align-items-start">
                         <h4 className="review-input-title">امتیاز شما</h4>
                         <div className="review-input">
@@ -141,10 +126,10 @@ export const SendComment = ({
                               <span>کیفیت</span>
                               {/* <Rank></Rank> */}
                               <RateSubmit
-                                item={item}
-                                type="lg"
-                                setQuality={setQuality}
+                                sendQuality={setQuality}
                                 quality={quality}
+                                item={info}
+                                type="lg"
                               ></RateSubmit>
                             </div>
                             {/* <div className="review-ratings-single d-flex align-items-center">
@@ -182,12 +167,10 @@ export const SendComment = ({
                         <h4 className="review-input-title">ایمیل</h4>
                         <div className="review-input">
                           <Input
-                            readonly 
-                            value={user.id}
                             type="email"
                             id="sender_email"
                             name="sender_email"
-                            // value={data?.sender_email}
+                            value={data?.sender_email}
                             error={errors?.sender_email}
                             autoComplete="useremail"
                             onChange={(e) =>

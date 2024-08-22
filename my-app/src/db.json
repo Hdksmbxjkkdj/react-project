@@ -870,33 +870,28 @@
   ],
   "product_comments": [
     {
-      "id": "584b",
-      "data": {
-        "sender_name": "w",
-        "sender_email": "w",
-        "comment": "w",
-        "id": "1",
-        "date": "۱۴۰۳/۵/۳۱"
-      },
-      "quality": 2
+      "id": "3",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "date": "۱۴۰۳/۶/۱",
+      "customer_id": "li@gmail.com",
+      "rate": 3
     },
     {
-      "id": "0d01",
-      "data": {
-        "comment": "",
-        "id_product": "1",
-        "date": "۱۴۰۳/۵/۳۱"
-      },
-      "quality": 4
+      "id": "3",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "date": "۱۴۰۳/۶/۱",
+      "customer_id": "li@gmail.com",
+      "rate": 0
     },
     {
-      "id": "a922",
-      "data": {
-        "comment": "",
-        "id_product": "1",
-        "date": "۱۴۰۳/۵/۳۱"
-      },
-      "quality": 4
+      "id": "3",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "date": "۱۴۰۳/۶/۱",
+      "customer_id": "li@gmail.com",
+      "rate": 5
     }
   ],
   "product-category": [

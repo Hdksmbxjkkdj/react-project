@@ -1,5 +1,6 @@
-export const Rate = ({ stars, type = 'md', className = '' }) => {
 
+export const Rate = ({ stars, type = 'md', className = '' }) => {
+    //  console.log(type,'r')
     const showCount = () => {
         switch (type) {
             case 'md':
@@ -9,7 +10,7 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
                 break;
             case 'lg':
                 return <div class="review-link">
-                    <span>(<span>{stars} </span>('from') 5)</span>
+                    <span>(<span>{stars} </span> ('from') 5)</span>
                 </div>
                 break;
 

@@ -2,17 +2,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import { Children, useState ,useEffect} from "react"
 import axios from "axios"
+import { User } from "../../../Utils"
 import { Notif } from "../../../Utils"
-import { Rate } from "../../Components/Rate"
+import { Rate } from "./Rate"
 import { SendComment } from "../SendComment"
-export const RateSubmit =({data,sendValue,sendQuality,sendPrice,item})=>{
-
+export const RateSubmit =({item,setQuality,quality})=>{
+      
      const [preScore, setPreScore] = useState(0)
-     let auth 
+     let auth = User()
     let loginMessage = 'first_login';
      let eMessage = 'error_message';
      let sMessage = 'success_message';
      let url = `http://localhost:313/product_comments`
+     let user = localStorage.getItem("user");
+     user = JSON.parse(user);
 //
 //  const submit = async (rate) => {
   
@@ -46,45 +49,85 @@ export const RateSubmit =({data,sendValue,sendQuality,sendPrice,item})=>{
 //         Notif('error', loginMessage)
 
 //     };
-//
-    const applyRate = async () => {
-    //    if (auth) {
+//    
+
+    // const applyRate = async () => {
+    // //    if (auth) {
           
-            // // await axios.post(url, { product_id: item?.data?.id, rate: rate }).then((response) => {
-            // await axios.post(url,{rate: rate, data}).then((response) => {
-            //     console.log(rate)
-            //     if (response?.status == 201) {
-            //         // Notif('success', response.data.message,sMessage)
-            //         Notif('success','l')
+    //         // await axios.post(url, { product_id: item?.data?.id, rate: rate }).then((response) => {
+    //         await axios.post(url,{rate: rate, data}).then((response) => {
+    //             // console.log(rate)
+    //             if (response?.status == 201) {
+    //                 // Notif('success', response.data.message,sMessage)
+    //                 Notif('success','l')
 
-            //         console.log('bb',response)
-            //         return
-            //     } else {
-            //          Notif('error', response.data.message)
-            //         return
-            //     }
-            // }).catch((errors) => {
-            //     Notif('error', eMessage)
-            // })
+    //                 console.log('bb',response)
+    //                 return
+    //             } else {
+    //                  Notif('error', response.data.message)
+    //                 return
+    //             }
+    //         }).catch((errors) => {
+    //             Notif('error', eMessage)
+    //         })
 
 
-            return
-        }
+    //         return
+    //              }
 
         // Notif('error', loginMessage)
     // }
-   
+    const applyRate = async (rate) => {
+    //     if(user!=null){
+
+    //         await axios.post(url, { product_id: user.id, rate: rate ,quality}).then((response) => {
+    //             if (response.data.status == 201) {
+    //                 console.log(response,'k')
+    //                 Notif('success', response.data.message)
+    //                 return
+    //             } else {
+    //                 Notif('error', response.data.message)
+    //                 return
+    //             }
+    //         }).catch((errors) => {
+    //             Notif('error', eMessage)
+    //         })
+
+
+    //         return
+    //      }
+
+    //     Notif('error', loginMessage)
+    // }
+    // console.log(user.id,'kk')
+    }
     return <>
-      {
-            (item?.rates?.length > 0) ? item.rates.map((rateItem) => {
+   
+      {/* {
+            (item?.data?.length > 0) ? item?.data?.map((rateItem) => {
                 if (rateItem.customer_id == auth.id) {
+                if (rateItem.id == auth.id) {
+                   return <Rate stars={rateItem.rate} type="comment" className="mx-3" />
+                    
+                    return <Rate stars={rateItem.quality} type="comment" className="ms-3" />
+                // }
+            }) */}
+            {
+            // (item?.data?.rate?.length > 0) ? item?.rate?.map((rateItem) => {
+                (item?.data?.rate?.length > 0) ? item?.data?.map((rateItem) => {
+                if (rateItem.customer_id == user.id) {
+                // if(user.id!=null)  
+                    
                     return <Rate stars={rateItem.rate} type="comment" className="ms-3" />
-                }
+
+                 }
+                
             })
                 :
                 <>
+                
         {/* <ul> 
-           
+        
         <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(1)} onClick={()=> {sendQuality(1);sendValue(1);sendPrice(1)}}></FontAwesomeIcon></a></li>
         <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(2)} onClick={() => {sendQuality(2);sendValue(2);sendPrice(2)}}></FontAwesomeIcon></a></li>
         <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(3)} onClick={() => {sendQuality(3);sendValue(3);sendPrice(3)}}></FontAwesomeIcon></a></li>
@@ -92,12 +135,12 @@ export const RateSubmit =({data,sendValue,sendQuality,sendPrice,item})=>{
         <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(5)} onClick={() => {sendQuality(5);sendValue(5);sendPrice(5)}}></FontAwesomeIcon></a></li>
         </ul> */}
          <ul> 
-           
-        <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(1)} onClick={()=> {sendQuality(1);setPreScore(1)}}></FontAwesomeIcon></a></li>
-        <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(2)} onClick={() => sendQuality(2)}></FontAwesomeIcon></a></li>
-        <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(3)} onClick={() => sendQuality(3)}></FontAwesomeIcon></a></li>
-        <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(4)} onClick={() => sendQuality(4)}></FontAwesomeIcon></a></li>
-        <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(5)} onClick={() => sendQuality(5)}></FontAwesomeIcon></a></li>
+    
+        <li><a href="#" onMouseOver={() => setPreScore(1)}  onClick={()=> {setQuality(1);applyRate(1)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+        <li><a href="#" onMouseOver={() => setPreScore(2)}  onClick={()=> {setQuality(2);applyRate(2)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+        <li><a href="#" onMouseOver={() => setPreScore(3)}  onClick={()=> {setQuality(3);applyRate(3)}}><FontAwesomeIcon icon={faStar} ></FontAwesomeIcon></a></li>
+        <li><a href="#" onMouseOver={() => setPreScore(4)}  onClick={()=> {setQuality(4);applyRate(4)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+        <li><a href="#" onMouseOver={() => setPreScore(5)}  onClick={()=> {setQuality(5);applyRate(5)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
         </ul>
         
         <div className="mx-3 d-flex align-items-start">
