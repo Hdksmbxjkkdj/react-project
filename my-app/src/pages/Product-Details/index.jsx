@@ -43,7 +43,7 @@ export const ProducDetails= () =>{
     }, []);
       //Number of comments
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
-  let url=`http://localhost:313/product_comments?id=`+ id+`&_sort=date`
+  let url=`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id`
    const [ProductComment, setProductComment] = useState();
    useEffect(() => {
           axios.get(url).then((res) => {

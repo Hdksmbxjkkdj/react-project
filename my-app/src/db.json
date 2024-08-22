@@ -870,28 +870,49 @@
   ],
   "product_comments": [
     {
-      "id": "3",
+      "id": "6c9a",
       "sender_email": "li@gmail.com",
       "comment": "",
+      "id_product": "3",
       "date": "۱۴۰۳/۶/۱",
-      "customer_id": "li@gmail.com",
-      "rate": 3
+      "id_customer": "li@gmail.com",
+      "rate": 1
     },
     {
-      "id": "3",
+      "id": "8b56",
       "sender_email": "li@gmail.com",
       "comment": "",
+      "id_product": "3",
       "date": "۱۴۰۳/۶/۱",
-      "customer_id": "li@gmail.com",
-      "rate": 0
+      "id_customer": "li@gmail.com",
+      "rate": 4
     },
     {
-      "id": "3",
+      "id": "a45f",
       "sender_email": "li@gmail.com",
       "comment": "",
+      "id_product": "3",
       "date": "۱۴۰۳/۶/۱",
-      "customer_id": "li@gmail.com",
+      "id_customer": "li@gmail.com",
       "rate": 5
+    },
+    {
+      "id": "84cb",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
+      "id_customer": "li@gmail.com",
+      "rate": 2
+    },
+    {
+      "id": "7647",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
+      "id_customer": "li@gmail.com",
+      "rate": 3
     }
   ],
   "product-category": [

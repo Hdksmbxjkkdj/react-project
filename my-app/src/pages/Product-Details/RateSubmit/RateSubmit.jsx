@@ -6,7 +6,8 @@ import { User } from "../../../Utils"
 import { Notif } from "../../../Utils"
 import { Rate } from "./Rate"
 import { SendComment } from "../SendComment"
-export const RateSubmit =({item,setQuality,quality})=>{
+import { Rank } from "./Rank"
+export const RateSubmit =({item,setQuality,setPrice})=>{
       
      const [preScore, setPreScore] = useState(0)
      let auth = User()
@@ -115,7 +116,7 @@ export const RateSubmit =({item,setQuality,quality})=>{
             {
             // (item?.data?.rate?.length > 0) ? item?.rate?.map((rateItem) => {
                 (item?.data?.rate?.length > 0) ? item?.data?.map((rateItem) => {
-                if (rateItem.customer_id == user.id) {
+                if (rateItem.id_customer == user.id) {
                 // if(user.id!=null)  
                     
                     return <Rate stars={rateItem.rate} type="comment" className="ms-3" />
@@ -135,20 +136,15 @@ export const RateSubmit =({item,setQuality,quality})=>{
         <li><a href="#"><FontAwesomeIcon icon={faStar}  onMouseOver={() => setPreScore(5)} onClick={() => {sendQuality(5);sendValue(5);sendPrice(5)}}></FontAwesomeIcon></a></li>
         </ul> */}
          <ul> 
-    
-        <li><a href="#" onMouseOver={() => setPreScore(1)}  onClick={()=> {setQuality(1);applyRate(1)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+         <Rank setQuality={setQuality} setPrice={setPrice}></Rank>
+        {/* <li><a href="#" onMouseOver={() => setPreScore(1)}  onClick={()=> {setQuality(1);applyRate(1)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
         <li><a href="#" onMouseOver={() => setPreScore(2)}  onClick={()=> {setQuality(2);applyRate(2)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
         <li><a href="#" onMouseOver={() => setPreScore(3)}  onClick={()=> {setQuality(3);applyRate(3)}}><FontAwesomeIcon icon={faStar} ></FontAwesomeIcon></a></li>
         <li><a href="#" onMouseOver={() => setPreScore(4)}  onClick={()=> {setQuality(4);applyRate(4)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
-        <li><a href="#" onMouseOver={() => setPreScore(5)}  onClick={()=> {setQuality(5);applyRate(5)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li>
+        <li><a href="#" onMouseOver={() => setPreScore(5)}  onClick={()=> {setQuality(5);applyRate(5)}}><FontAwesomeIcon icon={faStar}></FontAwesomeIcon></a></li> */}
         </ul>
         
-        <div className="mx-3 d-flex align-items-start">
-                        <span className="mx-1" > {preScore} </span>
-                        <span> از </span>
-                        <span> 5 </span>
-
-                    </div>
+        
 
     </> 
    

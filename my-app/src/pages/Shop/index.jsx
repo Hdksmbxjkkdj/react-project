@@ -62,7 +62,6 @@ export const Products = ({ sidebars }) => {
   const Limit = 8;
   const [start, setStart] = useState(1);
   let params = new URLSearchParams(window.location.search).toString();
-  console.log(params)
   useEffect(() => {
     axios
       .get(

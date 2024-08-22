@@ -6,24 +6,9 @@ import axios from "axios";
 import {ProductList} from "../Shop/Product"
 import { Rate } from "./RateSubmit/Rate";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
-export const  CustomerComment=({comment,id,productId,info })=>{
+export const  CustomerComment=({comment,id,productId,info ,ProductComment})=>{
+   
   
-   //comments
-//    let url=`http://localhost:313/product_comments?id=`+id+`&_sort=date`
-let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
-
-   const [ProductComment, setProductComment] = useState();
-          useEffect(() => {
-
-          axios.get(url).then((res) => {
-
-                setProductComment(res);
-        });
-            }, []);
-       //comments
- 
-       
-
     return<>
             <div className="col-xxl-6 col-xl-6 col-lg-6">
                 <div className="review-wrapper">
@@ -33,7 +18,7 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                         <div className="review-item">
                             <h3 className="review-title">محصول فوق العاده</h3>
                             <div className="review-ratings mb-10">
-                                <div className="review-ratings-single d-flex align-items-center">
+                                <div className="review-ratings-single d-flex align-items-end">
                                     <span>کیفیت</span>
                                     {/* <Rate></Rate>
                                */}
@@ -56,7 +41,7 @@ let url=`http://localhost:313/product_comments?id=`+id+`&_sort=-date`
                                 <div className="review-meta">
                                 <div className="review-author">
                                     <span>بررسی توسط</span>
-                                    <span>{item?.customer_id}</span>
+                                    <span>{item?.id_customer}</span>
                                 </div>
                                 <div className="review-date">
                                  <span>نوشته شده در</span>

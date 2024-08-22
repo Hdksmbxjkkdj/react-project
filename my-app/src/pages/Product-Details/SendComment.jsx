@@ -14,15 +14,15 @@ export const SendComment = ({
   id,
   tab,
   productId,
+  ProductComment,
   commentNumber,
   item,
   info,
 }) => {
-   
-  // const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
   //  const [value, setValue] = useState(0);
-  console.log(quality,'l')
+
   // let local = Local()
   let auth = User();
   let loginMessage = "first_login";
@@ -40,38 +40,40 @@ export const SendComment = ({
   user = JSON.parse(user);
   const [errors, setErrors] = useState();
   const [data, setData] = useState({
-  //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
-  //   sender_email: auth ? auth.email : "",
-  //   comment: "",
-  //   // product_id: id,
-  //   id: id,
-  //   date: today,
-  //   product_id: user.id,
-  //   quality
-   
+    //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
+    //   sender_email: auth ? auth.email : "",
+    //   comment: "",
+    //   // product_id: id,
+    //   id: id,
+    //   date: today,
+    //   product_id: user.id,
+    //   quality
   });
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
   const submit = async (e) => {
     e.preventDefault();
 
-    if(user!=null){
+    if (user != null) {
       // clearErrors()
 
       await axios
-        .post(url, {   
-          sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
+        .post(url, {
+          sender_name: auth
+            ? auth.username
+              ? auth.username
+              : auth.full_name
+            : "",
           // sender_email: auth ? auth.email : "",
-          sender_email:user.id,
+          sender_email: user.id,
           comment: "",
-          id: id,
+          id_product: id,
           date: today,
-          customer_id: user.id,
-          rate:quality
-
+          id_customer: user.id,
+          rate: quality,
         })
         .then((response) => {
-       console.log(response);
+          console.log(response);
           // let message = response.data?.message;
           //   let message = "Insert";
           let message = "پیام شما با موفقیت ارسال شد";
@@ -127,7 +129,11 @@ export const SendComment = ({
           >
             <div className="product__details-review">
               <div className="row">
-                <CustomerComment comment={info?.data} id={id}></CustomerComment>
+                <CustomerComment
+                  comment={info?.data}
+                  id={id}
+                  ProductComment={ProductComment}
+                ></CustomerComment>
                 <div className="col-xxl-4 col-xl-4 col-lg-4">
                   <div className="review-form">
                     <h3>بررسی شما</h3>
@@ -144,14 +150,17 @@ export const SendComment = ({
                                 item={item}
                                 type="lg"
                                 setQuality={setQuality}
-                                quality={quality}
+                                setPrice={setPrice}
                               ></RateSubmit>
                             </div>
                             {/* <div className="review-ratings-single d-flex align-items-center">
-                                                    <span>قیمت</span>
-                                                     <Rank></Rank>
-                                                     <RateSubmit sendPrice={setPrice}></RateSubmit>
-                                                </div> */}
+                              <span>قیمت</span>
+                              <RateSubmit
+                                item={item}
+                                type="lg"
+                                setPrice={setPrice}
+                              ></RateSubmit>
+                            </div> */}
                             {/* <div className="review-ratings-single d-flex align-items-center">
                                                     <span>ارزش</span>
                                                       <Rank></Rank>
@@ -182,7 +191,7 @@ export const SendComment = ({
                         <h4 className="review-input-title">ایمیل</h4>
                         <div className="review-input">
                           <Input
-                            readonly 
+                            readonly
                             value={user.id}
                             type="email"
                             id="sender_email"
