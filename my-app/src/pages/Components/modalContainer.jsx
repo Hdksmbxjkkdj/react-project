@@ -51,7 +51,7 @@ export const ModalContainer = () => {
                               )
                             }
                           >
-                            <i className="fa fa-times fs-6 fw-bold"></i>
+                            <i className="fa fa-trash-alt fw-light"></i>
                           </button>
                         </div>
                       </div>

@@ -1,4 +1,3 @@
-import { SidebarItem } from "./sidebar-item";
 
 
 const Sidebar = (props) => {
@@ -24,3 +23,4 @@ const Sidebar = (props) => {
 };
 
 export { Sidebar };
+

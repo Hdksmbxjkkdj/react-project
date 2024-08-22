@@ -1,7 +1,7 @@
 const ProductContent = ({type,item})=> {
     return (
         <>
-            <div className="product__content text-rigth">
+            <div className="product__content text-center">
           <h6 className="product-name">
             <a className="product-item-link">
               {
