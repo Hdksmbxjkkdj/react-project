@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Config } from "../../Utils";
+import { Config, Notif } from "../../Utils";
 import axios from "axios";
 
 export const Commparison = () => {
@@ -10,9 +10,9 @@ export const Commparison = () => {
     });
   }, []);
   const local = localStorage.getItem("compare");
-    function handleDelete(id)
+    function handleDelete(item)
     {
-        var u = local.split(",").filter(el=>el!=id)
+        var u = local.split(",").filter(el=>el!=item.id)
         localStorage.setItem("compare",u);
         window.location.reload();
     }
@@ -29,14 +29,17 @@ export const Commparison = () => {
     return (
       <>
         <div className="container">
-          {(local==null||local=="")?<div><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p></div>:<table className="w-100">
-            <tr>
+          {(local==null||local=="")?<div><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p></div>:<table className="table table-hover w-100 text-center">
+            <thead>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <th>عنوان</th>
               {rep?.map((_, index) => {
                 return <th>{`محصول ${index + 1}`}</th>;
               })}
             </tr>
-            <tr>
+            </thead>
+            <tbody>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>تصویر</td>
               {rep?.map((item) => {
                 return (
@@ -46,47 +49,49 @@ export const Commparison = () => {
                 );
               })}
             </tr>
-            <tr>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>نام</td>
               {rep?.map((item) => {
                 return <td>{item.title}</td>;
               })}
             </tr>
-            <tr>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>درباره</td>
               {rep?.map((item) => {
                 return <td>{item.text}</td>;
               })}
             </tr>
-            <tr>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>قیمت</td>
               {rep?.map((item) => {
                 return <td>{item.price} تومان</td>;
               })}
             </tr>
-            <tr>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>امتیاز</td>
               {rep?.map((item) => {
                 return (
                   <td>
-                    {" "}
-                    <i className="fa fa-star"></i> {item.rate}
+                    {Array.from({length:item.rate},(_,i)=>{
+                      return <i className="fa fa-star text-warning"></i>
+                    })}
                   </td>
                 );
               })}
             </tr>
-            <tr>
+            <tr style={{paddingBottom:"1rem !important"}}>
               <td>حذف</td>
               {rep?.map((item) => {
                 return (
                   <td>
-                    <button onClick={() => handleDelete(item.id)}>
+                    <button onClick={() => handleDelete(item)}>
                       <i className="fa fa-times"></i>
                     </button>
                   </td>
                 );
               })}
             </tr>
+            </tbody>
           </table>}
         </div>
       </>

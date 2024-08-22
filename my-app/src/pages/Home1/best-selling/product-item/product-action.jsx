@@ -32,8 +32,8 @@ const ProductAction = ({ item }) => {
     let incart = Checking();
     setModal({
       ...modal,
-      title: item.title,
-      text: item.text,
+      title: item.text,
+      des: item.des,
       img: item.pic,
       price: item.price,
       seccondimg: item.seccondpic,

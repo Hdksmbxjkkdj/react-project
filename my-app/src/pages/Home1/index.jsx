@@ -39,7 +39,7 @@ var res1 = {
     items: 2,
   },
   767: {
-    items: 3,
+    items: 2,
   },
   992: {
     items: 4,
@@ -60,7 +60,7 @@ var res2 = {
     items: 2,
   },
   767: {
-    items: 3,
+    items: 2,
   },
   992: {
     items: 4,
@@ -77,7 +77,7 @@ var res2 = {
 const Home1 = () => {
   const [modal,setModal] = useState({
     title:"",
-    text:"",
+    des:"",
     price:0,
     img:"",
     seccondimg:"",
@@ -162,7 +162,7 @@ const Home1 = () => {
                       </h4>
                       <div className="product__modal-des mb-40">
                         <p>
-                          {modal.text}
+                          {modal.des}
                         </p>
                       </div>
                       <div className="product__stock">
@@ -184,7 +184,7 @@ const Home1 = () => {
                       <div className="product__modal-form mb-30" key={Math.random()}>
                         {(!check.includes(modal))?<form onSubmit={(event)=>handleSubmit(event)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
-                            <div className="product-quantity mr-20 mb-25">
+                            <div className="product-quantity ml-20 mb-20">
                               <div className="cart-plus-minus p-relative">
                               <div className="cart-plus-minus p-relative">
                                 <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?e.target.value:1)} autoFocus/></div>
@@ -192,7 +192,7 @@ const Home1 = () => {
                                 <div className="dec qtybutton" onClick={()=>setValue(()=>value>1?value-1:1)}>-</div>
                               </div>
                             </div>
-                            <div className="pro-cart-btn mb-25">
+                            <div className="pro-cart-btn mb-20">
                               <button className="t-y-btn" type="submit">
                                 افزودن به سبد
                               </button>

@@ -1,17 +1,13 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import {CartContext} from "../../context/CardContext";
+import {Link} from "react-router-dom";
 
 const Checkout = () => {
-  const [item, setitem] = useState();
-  useEffect(() => {
-    axios.get("http://localhost:313/row").then((res) => {
-      setitem(res);
-    });
-  }, []);
+  const {cart, setCart} = useContext(CartContext);
   function total() {
     var tot = 0;
-    for (var i = 0; i < item?.data.length; i++) {
-      tot = tot + item?.data[i].unitprice;
+    for (var i = 0; i < cart.length; i++) {
+      tot = tot + (cart[i].unitprice*cart[i].quantity);
     }
     return tot.toFixed(2);
   }
@@ -190,8 +186,7 @@ const Checkout = () => {
                     </div>
                     <div class="col-md-12">
                       <div class="checkout-form-list create-acc">
-                        <input id="cbox" type="checkbox" />
-                        <label>ایجاد حساب کاربری</label>
+                        <Link to="/register">ایجاد حساب کاربری</Link>
                       </div>
                       <div
                         id="cbox_info"
@@ -329,18 +324,19 @@ const Checkout = () => {
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="your-order mb-30 ">
+                {(cart.length>0)?<div class="your-order mb-30 ">
                   <h3>سفارش شما</h3>
                   <div class="your-order-table table-responsive">
                     <table>
                       <thead>
                         <tr>
                           <th class="product-name">محصول</th>
+                          <th class="product-name">واحد</th>
                           <th class="product-total">کل</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {item?.data?.map((item) => {
+                        {cart?.map((item) => {
                           return (
                             <tr class="cart_item">
                               <td class="product-name">
@@ -350,9 +346,14 @@ const Checkout = () => {
                                   × {item.quantity}
                                 </strong>
                               </td>
+                              <td class="product-unit">
+                                <strong class="product-quantity"> 
+                                ${item.unitprice.toFixed(2)}
+                                </strong>
+                              </td>
                               <td class="product-total">
                                 <span class="amount">
-                                  ${item.unitprice.toFixed(2)}
+                                  ${(item.unitprice*item.quantity).toFixed(2)}
                                 </span>
                               </td>
                             </tr>
@@ -362,6 +363,9 @@ const Checkout = () => {
                       <tfoot>
                         <tr class="cart-subtotal">
                           <th>جمع کل</th>
+                          <td>
+                            <span class="amount"></span>
+                          </td>
                           <td>
                             <span class="amount">${total()}</span>
                           </td>
@@ -481,7 +485,7 @@ const Checkout = () => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </div>:<div><h4 className="text-danger text-center">سبد خرید شما خالی میباشد</h4></div>}
               </div>
             </div>
           </form>
@@ -491,3 +495,4 @@ const Checkout = () => {
   );
 };
 export { Checkout };
+
