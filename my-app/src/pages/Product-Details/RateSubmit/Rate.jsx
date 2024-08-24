@@ -1,6 +1,5 @@
 
 export const Rate = ({ stars, type = 'md', className = '' }) => {
-    //  console.log(type,'r')
     const showCount = () => {
         switch (type) {
             case 'md':

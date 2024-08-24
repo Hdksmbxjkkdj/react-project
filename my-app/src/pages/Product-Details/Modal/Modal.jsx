@@ -6,7 +6,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
-import { Rank } from "../../Components/Rank";
+import { Rate } from "../RateSubmit/Rate";
 import { useEffect } from "react";
 export const Modal = ({ children, setModal, modal,commentNumber }) => {
   const handleImg = (event) => {
@@ -96,6 +96,7 @@ useEffect(() => {
                           role="tablist"
                         >
                           {modal?.data?.gallery.map((item) => {
+
                             return (
                               <>
                                 <li className="nav-item" role="presentation">
@@ -138,8 +139,9 @@ useEffect(() => {
                           <span>{modal.data.text}</span>
                         </div>
                         <div className="product__review d-sm-flex">
-                          <div className="rating rating__shop mb-15 mr-35">
-                           <Rank></Rank>
+                          <div className="rating rating__shop mb-15 ml-35">
+                          <Rate stars={modal?.data?.rate} type="comment" className="ms-3" /> 
+
                           </div>
                           <div className="product__add-review mb-15">
                             <span>

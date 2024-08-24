@@ -1,11 +1,12 @@
 import { forwardRef, useEffect, useRef } from 'react';
 
 export const Input = forwardRef(function Input({ type = 'text', className = '', isFocused = false, ...props }, ref) {
-    
-    const input = ref
+    const input = useRef()
+    // const input = ref ? ref : useRef();
 
     useEffect(() => {
         if (isFocused) {
+            console.log(isFocused)
             input.current.focus();
         }
     }, []);
@@ -26,7 +27,7 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
                 required
             />
            {
-            props.error && <p  className={props.classNameError ? props.classNameError : 'text-danger'}>
+            props.error && <p className={props.classNameError ? props.classNameError : 'text-danger'}>
                 {props.error}
             </p>
             }

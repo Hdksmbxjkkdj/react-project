@@ -7,13 +7,13 @@ import {ProductList} from "../Shop/Product"
 import { Rate } from "./RateSubmit/Rate";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
 export const  CustomerComment=({comment,id,productId,info ,ProductComment})=>{
-   
   
     return<>
             <div className="col-xxl-6 col-xl-6 col-lg-6">
                 <div className="review-wrapper">
                     <h3 className="block-title">نظرات مشتریان</h3>
                         {ProductComment?.data?.map((item)=>{
+                            console.log(item?.rate)
                         return <>
                         <div className="review-item">
                             <h3 className="review-title">محصول فوق العاده</h3>
@@ -40,8 +40,8 @@ export const  CustomerComment=({comment,id,productId,info ,ProductComment})=>{
                                 </div>
                                 <div className="review-meta">
                                 <div className="review-author">
-                                    <span>بررسی توسط</span>
-                                    <span>{item?.id_customer}</span>
+                                    <span>بررسی توسط </span>
+                                    <span>{item?.sender_name}</span>
                                 </div>
                                 <div className="review-date">
                                  <span>نوشته شده در</span>
