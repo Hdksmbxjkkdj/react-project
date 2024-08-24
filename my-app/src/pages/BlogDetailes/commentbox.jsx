@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Config } from "../../Utils/config";
 import { ReplyComment } from "./ReplyComment";
 const Comment = (props) => {
+  const [show,setShow] = useState(false);
   function reply(id) {
     document.getElementById("contacts-sub-form").classList.remove("d-none")
     document.getElementById("contacts-form").classList.add("d-none")
@@ -9,10 +11,10 @@ const Comment = (props) => {
   }
     return (
       <>
-        <li key={Math.random()}>
+        <li>
           <div className="comments-box">
             <div className="comments-avatar">
-              <img src={Config.blog + "comments/" + props?.item.pic} alt="" />
+              <img src={Config.blog + "comments/default user.png"} alt="" />
             </div>
             <div className="comments-text">
               <div className="avatar-name">
@@ -24,14 +26,21 @@ const Comment = (props) => {
                 >
                   ارسال پاسخ
                 </button>
+                <button 
+                className="showing"
+                onClick={()=>setShow(!show)}
+                >
+                  {(show)?"بستن پاسخ ها":"نمایش پاسخ ها"}
+                </button>
               </div>
               <p>{props?.item.comment}</p>
             </div>
           </div>
         </li>
-        <ReplyComment Pid={props.item.id}/>
+        {(show)&&<ReplyComment Pid={props.item.id}/>}
       </>
     );
 };
 
 export { Comment };
+
