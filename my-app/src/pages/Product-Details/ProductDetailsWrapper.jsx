@@ -9,6 +9,7 @@ import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+import { Rate } from "./RateSubmit/Rate";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -43,8 +44,10 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
               <a href="product-details.html">{item?.data.text}</a>
             </h3>
             <div className="product__review d-sm-flex">
-              <div className="rating rating__shop mb-15 mr-35">
-               <Rank></Rank>
+              <div className="rating rating__shop mb-15 ml-35">
+               {/* <Rank></Rank> */}
+               <Rate stars={item?.data?.rate} type="comment" className="ms-3" /> 
+
               </div>
               <div className="product__add-review mb-15">
                 <span>

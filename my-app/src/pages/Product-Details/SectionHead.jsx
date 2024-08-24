@@ -15,6 +15,7 @@ import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist"
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 // import {ShowProduct} from './Modal/ShowProduct'
 import Modal from "./Modal/Modal";
+import { Rate } from "./RateSubmit/Rate";
 export const SectionHead = ({ commentNumber }) => {
   const [items, setItems] = useState();
   useEffect(() => {
@@ -116,18 +117,22 @@ export const SectionHead = ({ commentNumber }) => {
                         </div>
 
                         <div className="product__content text-center">
-                          <h6 className="product-name">
+                          <h6 className="product-name "
+                          //  style={{width:"fit-content"}}
+                          >
                             <a
                               className="product-item-link"
                               href="product-details.html"
+                             
                             >
                               {item.text}
                             </a>
                           </h6>
                           <div className="rating">
-                            <Rank></Rank>
+                          <Rate stars={item?.rate} type="comment" className="ms-3"/> 
+
                           </div>
-                          <span className="price">{item.price}.000 تومان</span>
+                          <span className="price">تومان{item.price}.000 </span>
                         </div>
                         <div className="product__add-btn">
                           <button type="button">افزودن به سبد خرید</button>

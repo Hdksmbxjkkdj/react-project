@@ -36,9 +36,13 @@ export const SendComment = ({
   let today = new Date().toLocaleDateString("fa-IR");
   // let time = new Time().toLocaleDateString('fa-IR');
   //    const[idproduct,setIdproduct]=useState(1)
+  //لاگین بودن کاربر
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
+    //لاگین بودن کاربر
+
   const [errors, setErrors] = useState();
+  console.log(errors)
   const [data, setData] = useState({
     //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
     //   sender_email: auth ? auth.email : "",
@@ -49,58 +53,67 @@ export const SendComment = ({
     //   product_id: user.id,
     //   quality
   });
+ 
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
   const submit = async (e) => {
     e.preventDefault();
+    // if (user != null) {
+    //  if(data?.sender_name!=null){
+           // clearErrors()
 
-    if (user != null) {
-      // clearErrors()
-
-      await axios
-        .post(url, {
-          sender_name: auth
-            ? auth.username
-              ? auth.username
-              : auth.full_name
-            : "",
-          // sender_email: auth ? auth.email : "",
-          sender_email: user.id,
-          comment: "",
-          id_product: id,
-          date: today,
-          id_customer: user.id,
-          rate: quality,
-        })
-        .then((response) => {
-          console.log(response);
-          // let message = response.data?.message;
-          //   let message = "Insert";
-          let message = "پیام شما با موفقیت ارسال شد";
-
-          //    if (response.data?.status == 201) {
-          //    if (data!= ""&&response?.status == 201) {
-          if (response?.status == 201) {
-            Notif("success", message);
-            // Notif("error", "status خالی میباشد");
-
-            // reset()
-            return;
+           await axios
+           .post(url, {
+             sender_name: user
+               ? user?.username
+                 ? user?.username
+                 : user?.full_name
+               : "",
+             // sender_email: auth ? auth.email : "",
+             sender_email: user.id,
+             comment: "",
+             id_product: id,
+             date: today,
+             id_customer: user.id,
+             rate: quality,
+           })
+           .then((response) => {
+            console.log("response")
+            console.log(response)
+             // let message = response.data?.message;
+             //   let message = "Insert";
+             let message = "پیام شما با موفقیت ارسال شد";
+   
+             //    if (response.data?.status == 201) {
+             //    if (data!= ""&&response?.status == 201) {
+             if (response?.status == 201) {
+               Notif("success", message);
+               // Notif("error", "status خالی میباشد");
+   
+               // reset()
+               return;
+             }else {
+              Notif('error', 'خالی است')
+              
+              return
           }
-        })
-        .catch((errors) => {
-          setError(errors?.response.data?.errors);
-        });
-
-      // errors?.length > 0 && Notif('error', eMessage)
-
-      return;
-    }
+           })
+           .catch((errors) => {
+             setError(errors?.response.data?.errors);
+           });
+   
+          errors?.length > 0 && Notif('error', eMessage)
+   
+         return;
+      //  }
+      //  Notif("error", 'فیلد نام یا نظر خالی است');
+     
+ 
 
     Notif("error", loginMessage);
   };
 
-  //test
+//   //test
 
   //CustomerCommen
   // const [info, setInfo] = useState();

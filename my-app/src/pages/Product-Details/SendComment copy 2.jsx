@@ -63,12 +63,12 @@ export const SendComment = ({id,tab,productId,commentNumber,info}) => {
             await axios.post(url, data).then((response) => {
 
                 if (response.data.status == 201) {
-                    console.log('true')
+                 
                     Notif('success', response.data.message)
                     return
                 } else {
                     Notif('error', response.data.message)
-                    console.log('false')
+                   
                     return
                 }
             }).catch((errors) => {

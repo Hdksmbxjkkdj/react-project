@@ -116,6 +116,8 @@ export const RateSubmit =({item,setQuality,setPrice})=>{
             {
             // (item?.data?.rate?.length > 0) ? item?.rate?.map((rateItem) => {
                 (item?.data?.rate?.length > 0) ? item?.data?.map((rateItem) => {
+                // (item?.data?.length > 0) ? item?.data?.map((rateItem) => {
+
                 if (rateItem.id_customer == user.id) {
                 // if(user.id!=null)  
                     
