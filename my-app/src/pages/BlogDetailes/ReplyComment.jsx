@@ -19,7 +19,7 @@ export const ReplyComment = ({ Pid }) => {
           <div class="comments-box">
             <div class="comments-avatar">
               <img
-                src={Config.blog + "comments/" + item.pic}
+                src={Config.blog + "comments/default user.png"}
                 alt=""
               />
             </div>
