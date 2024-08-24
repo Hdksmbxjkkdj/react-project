@@ -688,6 +688,7 @@
       "pass": "123456"
     }
   ],
+  "forgotPass": [],
   "features": [
     {
       "icon": "fa-rocket",

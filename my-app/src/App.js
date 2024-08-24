@@ -25,6 +25,7 @@ import Modal from "./Compont/Forms/Modal";
 import ModalBody from "./Compont/Forms/ModalBody";
 import { data } from "jquery";
 import { Commparison } from "./pages/comparison/Comparison";
+import { ForgottenPass } from "./pages/Auth/ForgottenPass";
 
 function App() {
   window?.$(window).on("load", function () {
@@ -82,6 +83,7 @@ function App() {
           <Route path="wishlist" element={<WishList />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/forgottenPass" element={<ForgottenPass />} />
           {/* <Route path="/product" element={<Productpage />} exact={true} /> */}
           {/* <Route path="/products" element={<Products />} /> */}
           <Route path="/product-details/:id" element={<ProducDetails />} />

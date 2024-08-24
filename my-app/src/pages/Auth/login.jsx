@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Notif } from "../../Utils/Notif";
 
@@ -77,13 +77,9 @@ const Login = () => {
                         </label>
                       </span>
                       <span className="forgot-login f-right">
-                        <a
-                          onClick={() =>
-                            alert("متاسفانه کاری نمیتوان برای شما انجام داد")
-                          }
-                        >
+                        <Link to="/forgottenPass">
                           فراموشی رمز عبور
-                        </a>
+                        </Link>
                       </span>
                     </div>
                     <button
