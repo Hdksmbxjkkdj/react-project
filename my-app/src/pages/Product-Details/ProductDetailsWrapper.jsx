@@ -4,12 +4,13 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
-import { useEffect,useState } from "react";
+import { useContext, useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 import { Rate } from "./RateSubmit/Rate";
+import { CartContext } from "../../context/CardContext";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -33,7 +34,23 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
+//
+const changeCss=(event)=>{
+  // window?.(event.target).parent().find('.product-quantity').css("backgroundColor","red")
+   window?.$(event.target).parent().parent().find(".cart-plus-minus").css({"display":"none"})
 
+}
+
+const {cart,setCart} = useContext(CartContext);
+const [check,setCheck] = useState([]);
+useEffect(()=>{
+  cart.map(el=>{
+    if(el.id==item?.data?.id)
+      {
+        setCheck([...check,item?.data])
+      }
+  })
+},[])
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -49,7 +66,7 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
                <Rate stars={item?.data?.rate} type="comment" className="ms-3" /> 
 
               </div>
-              <div className="product__add-review mb-15">
+              <div className="product__add-review mb-15" >
                 <span>
                   {/* <a href="#">{{commentNumber}==0?"نظری وجود ندارد":{commentNumber}}</a> */}
                   <a href="#">{commentNumber==0?"نظری نیست":commentNumber+"نظر"}</a> 
@@ -95,20 +112,20 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
             <div className="product__details-quantity mb-20">
               <form action="#">
                 <div className="pro-quan-area d-lg-flex align-items-center">
-                  <div className="product-quantity mr-20 mb-25">
+                  <div className="product-quantity mr-20 mb-25 t">
                     <div className="cart-plus-minus p-relative">
                       <input type="text" value="1" />
                     </div>
                   </div>
-                 <div className="pro-cart-btn mb-25 me-3">
-                    {/* <button className="t-y-btn" type="submit" >
+                 {(check.includes(item?.data))?<p>اضافه شده</p>:<div className="pro-cart-btn mb-25 me-3">
+                    <button className="t-y-btn" type="submit" onClick={(event)=>changeCss(event)} >
                     به سبد خرید اضافه کنید
-                    </button> */}
+                    </button>
                   
-                  <ProductAddbtn item={item?.data} className={"t-y-btn"}/>
+                  {/* <ProductAddbtn item={item?.data} className={"t-y-btn"}/> */}
                   {/* <ProductAddbtn item={item?.data} className={"t-y-btn mr-10"}/> */}
 
-                  </div> 
+                  </div>} 
                 </div>
               </form>
             </div>

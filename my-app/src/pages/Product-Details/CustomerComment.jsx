@@ -13,7 +13,6 @@ export const  CustomerComment=({comment,id,productId,info ,ProductComment})=>{
                 <div className="review-wrapper">
                     <h3 className="block-title">نظرات مشتریان</h3>
                         {ProductComment?.data?.map((item)=>{
-                            console.log(item?.rate)
                         return <>
                         <div className="review-item">
                             <h3 className="review-title">محصول فوق العاده</h3>

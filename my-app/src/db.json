@@ -7,6 +7,29 @@
       "unitprice": 480,
       "quantity": 1,
       "date": "19/08/2024"
+    },
+    {
+      "id": "7",
+      "pic": "product-13.jpg",
+      "unitprice": 450,
+      "quantity": 1,
+      "date": "24/08/2024"
+    },
+    {
+      "id": "1",
+      "pic": "product-1.jpg",
+      "name": " آشپزخانه فوق نازک شیشه ای   ",
+      "unitprice": 500,
+      "quantity": 1,
+      "date": "24/08/2024"
+    },
+    {
+      "id": "5",
+      "pic": "product-9.jpg",
+      "name": "تی شرت آبی مردانه (S, M, XL, XXL)",
+      "unitprice": 120,
+      "quantity": 1,
+      "date": "24/08/2024"
     }
   ],
   "wishlist": [],
@@ -226,7 +249,7 @@
       "pic": "product-3.jpg",
       "seccondpic": "product-4.jpg",
       "text": "LG 27UD58: 347.21 پوند، Ebuyer.com",
-      "price": 700,
+      "price": 70,
       "id": "2",
       "title": "تلوزیون",
       "isAdd": false,
@@ -255,7 +278,7 @@
       "pic": "product-5.jpg",
       "seccondpic": "product-6.jpg",
       "text": "سامسونگ C49J89: 875 پوند، Debenhams ",
-      "price": 450,
+      "price": 900,
       "id": "3",
       "title": "گوشی",
       "isAdd": false,
@@ -284,7 +307,7 @@
       "pic": "product-7.jpg",
       "seccondpic": "product-8.jpg",
       "text": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "price": 480,
+      "price": 548,
       "id": "4",
       "title": "دوربین امنیتی",
       "isAdd": false,

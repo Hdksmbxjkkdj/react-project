@@ -3,8 +3,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Config } from "../../Utils";
 import { useEffect, useState } from "react"
 import axios from "axios";
-import { Rank } from "../Components/Rank";
-export const Rate = () =>{
+import { Rate } from "../Product-Details/RateSubmit/Rate";
+export const TopRate = () =>{
     const [product,setProduct]=useState()
    
     // useEffect(()=>{
@@ -16,7 +16,7 @@ export const Rate = () =>{
      const[items,setItems]=useState()
   
      useEffect(()=>{
-             axios.get(`http://localhost:313/best_selling?price_gt=500&price_lte=500`).then((response)=>{
+             axios.get(`http://localhost:313/best_selling?price_gt=100&price_lte=200`).then((response)=>{
                 setItems(response);
           
             });
@@ -36,7 +36,7 @@ export const Rate = () =>{
                                 <a href="product-details.html">{item.text}</a>
                             </h3>
                             <div class="rating">
-                                <Rank></Rank>
+                            <Rate stars={item?.rate} type="comment" className="ms-3" /> 
                             </div>
                             <div class="product__sm-price">
                                 <span class="price">{item.price}/000تومان</span>

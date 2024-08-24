@@ -56,7 +56,6 @@ const ProductAddbtn = (props) => {
             type="button"
             onClick={(event) =>
               handleAddClick(event,props)
-
             }
             disabled={props.disabled}
           >

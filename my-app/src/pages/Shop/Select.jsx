@@ -24,7 +24,7 @@ export const Select =({items,setItems})=>{
                         <option selected={searchParam?.get('Number')?.indexOf('40')>-1? true:false} onClick={()=>Filter(setItems,items.length,'Number','40',eMessage)}>40</option>
                     </select>
                 </div>
-                <div className="product__sorting product__show-position ml-20">
+                <div className="product__sorting product__show-position mr-20">
                     <select className='option'>
                             
                             <option selected={searchParam?.get('sort')?.indexOf('desc')>-1? true:false} onClick={() =>Filter(setItems,items.length,'sort','desc',eMessage)}>position</option>

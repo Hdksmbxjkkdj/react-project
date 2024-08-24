@@ -1,6 +1,6 @@
 import {Sizing} from './Sizing';
 import {Color} from './Color';
-import {Rate} from './TopRate';
+import {TopRate} from './TopRate';
 import { DomainPrice } from './DomainPrice';
 import { useState ,useEffect} from 'react';
 export const Sidebar = ({domain_price,colors,size,productLength,setItems,items}) =>{
@@ -29,7 +29,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems,items})
                         <h3 className="product__widget-title mb-25">Top Rate</h3>
                             <div className="product__sm">
                             <ul>            
-                                <Rate items={items}/> 
+                                <TopRate items={items}/> 
                             </ul>
                         </div>
                     </div>

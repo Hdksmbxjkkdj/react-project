@@ -17,6 +17,7 @@ import { Modal } from "../Components/modal";
 import { Local } from "../../Utils";
 import { useParams } from "react-router-dom";
 import { Pagination } from "../Components/pagination";
+import { Rate } from "../Product-Details/RateSubmit/Rate";
 export const Product = ({
   items,
   setItems,
@@ -49,7 +50,7 @@ export const Product = ({
                     </a>
                   </h6>
                   <div className="rating">
-                    <Rank></Rank>
+                  <Rate stars={item?.rate} type="comment" className="ms-3" /> 
                   </div>
                   <div class="product__sm-price">
                     <span className="price">{item.price}/000 تومان</span>
@@ -133,7 +134,8 @@ export const ProductList = ({ items, setItems }) => {
                     className="rating d-sm-flex d-lg-block d-xl-flex align-items-end"
                     style={{ direction: "rtl" }}
                   >
-                    <Rank></Rank>
+                    <Rate stars={item?.rate} type="comment" className="ms-3" /> 
+
                     <div className="product-review-action ml-30">
                       <span>
                         <a
