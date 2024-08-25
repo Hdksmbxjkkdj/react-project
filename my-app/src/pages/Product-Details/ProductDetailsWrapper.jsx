@@ -79,7 +79,7 @@ useEffect(()=>{
             </div>
             <div className="product__price">
               <span className="new">{item?.data.price}/000تومان</span>
-              <span className="old">{item?.data.oldprice}/000تومان</span>
+              <span className="old">{item?.data.oldprice==0?"این محصول تخفیف ندارد":item?.data.oldprice+"/000تومان"}</span>
             </div>
             <div className="product__stock">
               <span>دسترسی :</span>
