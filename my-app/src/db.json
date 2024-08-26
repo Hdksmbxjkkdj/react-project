@@ -46,6 +46,14 @@
       "unitprice": 300,
       "quantity": 1,
       "date": "26/08/2024"
+    },
+    {
+      "id": "8",
+      "pic": "product-13.jpg",
+      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "unitprice": 520,
+      "quantity": 1,
+      "date": "26/08/2024"
     }
   ],
   "wishlist": [],

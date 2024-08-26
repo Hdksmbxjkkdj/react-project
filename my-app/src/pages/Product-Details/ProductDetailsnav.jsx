@@ -22,7 +22,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
    
     <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
-        <ul className="nav nav-tabs flex-sm-column justify-content-between" id="productThumbTab" role="tablist">
+        <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap" style={{maxHeight:"30rem",overflowY:"scroll"}} id="productThumbTab" role="tablist">
         {picturs?.map((g)=>{
                 return <li className="nav-item" role="presentation">
                     <button onClick={(event) => handleImg(event)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
