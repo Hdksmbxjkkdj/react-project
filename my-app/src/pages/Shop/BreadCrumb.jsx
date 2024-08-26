@@ -9,8 +9,8 @@ export const BreadCrumb = () =>{
                         <div className="breadcrumb__wrapper">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li className="breadcrumb-item active" aria-current="page">Product Details</li>
+                                    <li className="breadcrumb-item"><Link to="/">خانه</Link></li>
+                                    <li className="breadcrumb-item active" aria-current="page">محصولات</li>
                                 </ol>
                             </nav>
                         </div>

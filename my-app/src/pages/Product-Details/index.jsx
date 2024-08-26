@@ -10,6 +10,7 @@ import {SendComment } from './SendComment';
 import { useParams } from "react-router-dom";
 import { TabContent } from "../Home1/best-selling/tab-content";
 import { Product } from "../Shop/Product";
+import { BradCrumb } from "./BeradCrumb";
 
 export const ProducDetails= () =>{
     //tab
@@ -54,6 +55,7 @@ export const ProducDetails= () =>{
 //        //Number of comments
     return<>
         <main>
+            <BradCrumb></BradCrumb>
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">

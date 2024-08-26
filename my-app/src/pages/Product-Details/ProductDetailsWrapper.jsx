@@ -8,9 +8,10 @@ import { useContext, useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
-import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+// import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 import { Rate } from "./RateSubmit/Rate";
 import { CartContext } from "../../context/CardContext";
+import{ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btncopy";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -34,13 +35,10 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
+
 //
-const changeCss=(event)=>{
-  // window?.(event.target).parent().find('.product-quantity').css("backgroundColor","red")
-   window?.$(event.target).parent().parent().find(".cart-plus-minus").css({"display":"none"})
-
-}
-
+const[show,setShow]=useState(false)
+//
 const {cart,setCart} = useContext(CartContext);
 const [check,setCheck] = useState([]);
 useEffect(()=>{
@@ -110,24 +108,24 @@ useEffect(()=>{
               </div>
             </div>
             <div className="product__details-quantity mb-20">
-              <form action="#">
+              {/* <form action="#">
                 <div className="pro-quan-area d-lg-flex align-items-center">
-                  <div className="product-quantity mr-20 mb-25 t">
+                  <div className="product-quantity mr-20 mb-25">
                     <div className="cart-plus-minus p-relative">
                       <input type="text" value="1" />
                     </div>
                   </div>
-                 {(check.includes(item?.data))?<p>اضافه شده</p>:<div className="pro-cart-btn mb-25 me-3">
-                    <button className="t-y-btn" type="submit" onClick={(event)=>changeCss(event)} >
+                <div className="pro-cart-btn mb-25 me-3"> */}
+                    {/* <button className="t-y-btn" type="submit" onClick={()=>setShow({show:true})}>
                     به سبد خرید اضافه کنید
-                    </button>
+                    </button> */}
                   
                   {/* <ProductAddbtn item={item?.data} className={"t-y-btn"}/> */}
                   {/* <ProductAddbtn item={item?.data} className={"t-y-btn mr-10"}/> */}
-
-                  </div>} 
+                    <ProductAddbtn item={item?.data} className={"t-y-btn"} type={"productDetails"}></ProductAddbtn>
+                  {/* </div> 
                 </div>
-              </form>
+              </form> */}
             </div>
             <div className="product__details-action">
               <ul>

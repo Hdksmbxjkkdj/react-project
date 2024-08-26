@@ -53,7 +53,8 @@ export const SendComment = ({
     //   product_id: user.id,
     //   quality
   });
- 
+  console.log(data)
+
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
   const submit = async (e) => {
@@ -71,15 +72,13 @@ export const SendComment = ({
                : "",
              // sender_email: auth ? auth.email : "",
              sender_email: user.id,
-             comment: "",
+             comment: data?.comment,
              id_product: id,
              date: today,
              id_customer: user.id,
              rate: quality,
            })
            .then((response) => {
-            console.log("response")
-            console.log(response)
              // let message = response.data?.message;
              //   let message = "Insert";
              let message = "پیام شما با موفقیت ارسال شد";
@@ -87,6 +86,8 @@ export const SendComment = ({
              //    if (response.data?.status == 201) {
              //    if (data!= ""&&response?.status == 201) {
              if (response?.status == 201) {
+              console.log(response?.data?.comment,response?.data?.sender_name,"response")
+
                Notif("success", message);
                // Notif("error", "status خالی میباشد");
    
@@ -188,9 +189,11 @@ export const SendComment = ({
                         </h4>
                         <div className="review-input">
                           <Input
+                          readonly
                             id="sender_name"
                             name="sender_name"
-                            value={data?.sender_name}
+                            // value={data?.sender_name}
+                            value={user.username}
                             error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>
