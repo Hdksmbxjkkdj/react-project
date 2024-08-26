@@ -8,6 +8,7 @@ import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { Rate } from "../RateSubmit/Rate";
 import { useEffect } from "react";
+import { ProductAddbtn } from "../../Home1/best-selling/product-item/product-add-btncopy";
 export const Modal = ({ children, setModal, modal,commentNumber }) => {
   const handleImg = (event) => {
     let preview = window?.$('.tab-content img')
@@ -156,20 +157,21 @@ useEffect(() => {
                           <span>{modal.data.price}/000 تومان</span>
                         </div>
                         <div className="product__modal-form mb-30">
-                          <form action="#">
+                          {/* <form action="#">
                             <div className="pro-quan-area d-lg-flex align-items-start">
                               <div className="product-quantity  mb-25">
                                 <div className="cart-plus-minus p-relative">
                                   <input type="text" value="1" />
                                 </div>
                               </div>
-                              <div className="pro-cart-btn mb-25">
-                                <button className="t-y-btn fs-6 "  style={{fontWeight:"100"}} type="submit">
+                              <div className="pro-cart-btn mb-25"> */}
+                                {/* <button className="t-y-btn fs-6 "  style={{fontWeight:"100"}} type="submit">
                                   افزودن به کارت
-                                </button>
-                              </div>
+                                </button> */}
+                                <ProductAddbtn type={'modal'} item={modal?.data} className={"t-y-btn"}></ProductAddbtn>
+                              {/* </div>
                             </div>
-                          </form>
+                          </form> */}
                         </div>
                         <div className="product__modal-links">
                         <ul>

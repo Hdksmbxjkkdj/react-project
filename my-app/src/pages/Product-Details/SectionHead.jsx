@@ -16,6 +16,7 @@ import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-bt
 // import {ShowProduct} from './Modal/ShowProduct'
 import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
+import { Link } from "react-router-dom";
 export const SectionHead = ({ commentNumber }) => {
   const [items, setItems] = useState();
   useEffect(() => {
@@ -47,6 +48,7 @@ export const SectionHead = ({ commentNumber }) => {
             <div className="row">
               <OwlCarousel
                 className="product__slider OwlCarousel owl-theme"
+               
                 items={5}
                 loop
                 autoPlay
@@ -59,7 +61,7 @@ export const SectionHead = ({ commentNumber }) => {
                     <>
                       <div className="product__item white-bg mb-30 item">
                         <div className="product__thumb p-relative">
-                          <a href="product-details.html" className="w-img">
+                          <Link to="/#" className="w-img">
                             <img
                               src={Config.shop + "" + item.pic}
                               alt="product"
@@ -69,7 +71,7 @@ export const SectionHead = ({ commentNumber }) => {
                               src={Config.shop + "" + item.seccondpic}
                               alt="product"
                             />
-                          </a>
+                          </Link>
                           {/* <Modal items={item}></Modal> */}
 
                           <div className="product__action p-absolute">

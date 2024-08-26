@@ -587,7 +587,7 @@
       "comment": "I don't know the attitude from this confusing blog , but i hope it was be useful at least for one person   ",
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
-      "id": "1"
+      "id": 1
     },
     {
       "name": "Chris Evans",
@@ -595,7 +595,7 @@
       "comment": "this one is really awful 😥 ",
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
-      "id": "2"
+      "id": 2
     },
     {
       "name": "Chris Hemsworth",
@@ -603,7 +603,7 @@
       "comment": "are you kidding me ? is it really about tomatoes ? bro come-on 😑 ",
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
-      "id": "3"
+      "id": 3
     }
   ],
   "subComments": [
@@ -614,7 +614,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 1,
-      "id": "1"
+      "id": 1
     },
     {
       "name": "Robert Downey Jr",
@@ -623,7 +623,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 2,
-      "id": "2"
+      "id": 2
     },
     {
       "name": "admin",
@@ -632,7 +632,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 2,
-      "id": "3"
+      "id": 3
     },
     {
       "name": "admin",
@@ -641,7 +641,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 1,
-      "id": "4"
+      "id": 4
     },
     {
       "name": "Tom Hiddleston",
@@ -650,7 +650,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 3,
-      "id": "5"
+      "id": 5
     },
     {
       "name": "admin",
@@ -659,7 +659,7 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۱",
       "Pid": 3,
-      "id": "6"
+      "id": 6
     }
   ],
   "aboutus": [
@@ -865,35 +865,52 @@
   ],
   "product_comments": [
     {
-      "id": "8139",
-      "sender_name": "علی",
+      "id": "6c9a",
       "sender_email": "li@gmail.com",
-      "comment": "  m m m",
-      "id_product": "8",
-      "date": "۱۴۰۳/۶/۵",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
       "id_customer": "li@gmail.com",
-      "rate": 0
+      "rate": 1
     },
     {
-      "id": "ba16",
-      "sender_name": "علی",
+      "id": "8b56",
       "sender_email": "li@gmail.com",
-      "comment": "mkjkjkjkjkjk",
-      "id_product": "8",
-      "date": "۱۴۰۳/۶/۵",
-      "id_customer": "li@gmail.com",
-      "rate": 0
-    },
-    {
-      "id": "6c9e",
-      "sender_name": "علی",
-      "sender_email": "li@gmail.com",
-      "comment": "m,m,m,m",
-      "id_product": "8",
-      "date": "۱۴۰۳/۶/۵",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
       "id_customer": "li@gmail.com",
       "rate": 4
+    },
+   
+    {
+      "id": "7647",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
+      "id_customer": "li@gmail.com",
+      "rate": 3
+    },
+    {
+      "id": "490d",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": "6cd2",
+      "sender_email": "li@gmail.com",
+      "comment": "",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱",
+      "id_customer": "li@gmail.com",
+      "rate": 0
     }
+
   ],
   "product-category": [
     {
