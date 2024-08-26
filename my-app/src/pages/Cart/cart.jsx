@@ -1,9 +1,8 @@
-import { event } from "jquery";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CardContext";
-import { CartItem } from "./CartItem";
 import { Loader } from "../Components/loader";
+import { CartItem } from "./CartItem";
 const Cart = () => {
   const {loader} = useContext(CartContext);
   function Total() {
@@ -17,7 +16,7 @@ const Cart = () => {
   function handleSubmit(e) {
     e.preventDefault();
   }
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   return (
     <>
       {(!loader)?<section className="cart-area pt-100 pb-100">
@@ -30,6 +29,7 @@ const Cart = () => {
                     <table className="table" key={Math.random()}>
                       <thead>
                         <tr>
+                          <th className="product-number">ردیف</th>
                           <th className="product-thumbnail">تصاویر</th>
                           <th className="cart-product-name">محصولات</th>
                           <th className="product-price">قیمت پایه</th>
@@ -42,7 +42,7 @@ const Cart = () => {
                         {cart?.map((items, index) => {
                           return (
                             <>
-                              <CartItem items={items} index={index} />
+                              <CartItem items={items} index={index}/>
                             </>
                           );
                         })}
@@ -70,13 +70,6 @@ const Cart = () => {
                           </button>
                         </div>
                         <div className="coupon2">
-                          <button
-                            className="t-y-btn t-y-btn-border"
-                            name="update_cart"
-                            type="submit"
-                          >
-                            بروزرسانی لیست خرید
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -94,7 +87,7 @@ const Cart = () => {
                           </li>
                         </ul>
                         <Link className="t-y-btn" to="/checkout">
-                          رفتن به check out
+                          ادامه فرآیند خرید
                         </Link>
                       </div>
                     </div>
@@ -117,3 +110,4 @@ const Cart = () => {
   );
 };
 export { Cart };
+

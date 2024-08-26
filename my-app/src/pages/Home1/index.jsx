@@ -97,7 +97,7 @@ const Home1 = () => {
         setCheck([...check,modal])
       }
     })
-  },[cart])
+  },[cart,modal])
   function handleSubmit(e){
     AddToCart(e,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,null,"error",null)
   }
@@ -186,8 +186,7 @@ const Home1 = () => {
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity ml-20 mb-20">
                               <div className="cart-plus-minus p-relative">
-                              <div className="cart-plus-minus p-relative">
-                                <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?e.target.value:1)} autoFocus/></div>
+                                <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?e.target.value:1)} autoFocus/>
                                 <div className="inc qtybutton" onClick={()=>setValue(value+1)}>+</div>
                                 <div className="dec qtybutton" onClick={()=>setValue(()=>value>1?value-1:1)}>-</div>
                               </div>
