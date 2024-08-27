@@ -230,12 +230,12 @@ const Header = () => {
                                       {reslut?.length > 0 ? (
                                         reslut.map((item) => {
                                           return (
-                                            <div className="card my-3 search-card">
+                                            <div className="my-3 search-card">
                                               <Link
                                                 to={`/product-details/${item.id}`}
                                               >
-                                                <div className="row g-0">
-                                                  <div className="col-md-2">
+                                                <div className="row g-0 align-items-center">
+                                                  <div className="col-md-4">
                                                     <img
                                                       src={`${Config.shop}${item.pic}`}
                                                       className="img-fluid rounded-circle"
@@ -244,9 +244,9 @@ const Header = () => {
                                                     />
                                                   </div>
                                                   <div className="col-md-8">
-                                                    <div className="card-body">
+                                                    <div className="search-card-body">
                                                       <p
-                                                        className="card-text"
+                                                        className="search-card-text"
                                                         style={{
                                                           textAlign: "right",
                                                         }}
@@ -254,13 +254,13 @@ const Header = () => {
                                                         {item.text}
                                                       </p>
                                                       <p
-                                                        className="card-text"
+                                                        className="search-card-text"
                                                         style={{
                                                           textAlign: "right",
                                                         }}
                                                       >
                                                         <small class="text-body-secondary">
-                                                          ${" "}
+                                                          تومان{" "}
                                                           {item.price.toFixed(
                                                             2
                                                           )}

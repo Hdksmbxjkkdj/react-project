@@ -12,6 +12,7 @@ import { FromTheBlog } from "./from-the-blog";
 import { Hero } from "./hero";
 import { OnSell } from "./on-sell";
 import { Rank } from "../Components/Rank";
+import { Rate } from "../Product-Details/RateSubmit/Rate";
 var filename1 = [
   { pic: "top/banner-top-1.jpg", name: "banner-1" },
   { pic: "top/banner-top-2.jpg", name: "banner-2" },
@@ -83,6 +84,7 @@ const Home1 = () => {
     seccondimg:"",
     id:"111111111",
     show:false,
+    stars:0
   });
   useEffect(()=>{
     (modal.show) && window?.$(`#${modal.id}`).modal("show");
@@ -175,7 +177,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__review d-sm-flex">
                         <div className="rating rating__shop mb-15 mr-35">
-                          <Rank/>
+                          <Rate stars={modal.stars}/>
                         </div>
                       </div>
                       <div className="product__price">

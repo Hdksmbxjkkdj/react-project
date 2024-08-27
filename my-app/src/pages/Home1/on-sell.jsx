@@ -9,7 +9,7 @@ const OnSell = ({res}) => {
             <div className="section__head d-md-flex justify-content-between mb-40">
               <div className="section__title">
                 <h3>
-                  قابل فروش<span>محصولات</span>
+                <span>محصولات</span> قابل فروش
                 </h3>
               </div>
             </div>

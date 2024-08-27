@@ -1,3 +1,5 @@
+import { Rate } from "../../../Product-Details/RateSubmit/Rate";
+
 const ProductContent = ({type,item})=> {
     return (
         <>
@@ -9,18 +11,7 @@ const ProductContent = ({type,item})=> {
               }
             </a>
           </h6>
-          <div className="rating">
-            <ul>
-              {Array.from({length:item?.rate},(_,i)=>(
-              <li>
-                <a href="#">
-                  <i className="fa fa-star"></i>
-                </a>
-              </li>
-              ))}
-            </ul>
-            <span>{item?.rate}</span>
-          </div>
+          <Rate stars={item?.rate}/>
           <span className="price d-block">تومان {item?.price}</span>
         </div>
         </>

@@ -37,8 +37,8 @@ const Form = () => {
   return (
     <>
       <form onSubmit={(e)=>submit(e)}>
-        <input type="email" placeholder="Enter your email here..." onChange={(e)=>setEmail(e.target.value)}/>
-        <button className="t-y-btn t-y-btn-sub" type="submit">subscribe</button>
+        <input type="email" placeholder="ایمیلتان را وارد کنید ..." onChange={(e)=>setEmail(e.target.value)}/>
+        <button className="t-y-btn t-y-btn-sub" type="submit">عضویت</button>
       </form>
     </>
   );

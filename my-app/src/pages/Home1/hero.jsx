@@ -3,6 +3,7 @@
 import {Sidebar} from './hero/sidebar';
 import {Banner} from './hero/banner';
 import {Slider} from './hero/slider';
+import { Link } from 'react-router-dom';
 
 function Hero(props) {
     return (
@@ -21,11 +22,11 @@ function Hero(props) {
                                 <div className="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
                                     <div className="banner__area">
                                         <div className="banner__item mb-20 w-img">
-                                            <a href="product-details.html"><img src={"./img/banner/top/banner-top-1.jpg"} alt=""/></a>
+                                            <Link to="/product-details/7"><img src={"./img/banner/top/banner-top-1.jpg"} alt=""/></Link>
                                         </div>
                                         {/* <Banner props={banner1}></Banner>  */}
                                         <div className="banner__item w-img">
-                                            <a href="product-details.html"><img src={"./img/banner/top/banner-top-2.jpg"} alt=""/></a>
+                                            <Link to="/product-details/4"><img src={"./img/banner/top/banner-top-2.jpg"} alt=""/></Link>
                                         </div>
                                     </div>
                                 </div>

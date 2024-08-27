@@ -6,6 +6,7 @@ import { Notif } from "../../Utils/Notif";
 import { useParams } from "react-router-dom";
 
 const PostBox = (props) => {
+  const send_btn = document.querySelector(".send-btn");
   const { id } = useParams();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -19,11 +20,12 @@ const PostBox = (props) => {
     axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
       setitem(response.data);
     });
-  }, [item]);
+  }, []);
   const submit = async (e) => {
+    e.preventDefault();
+    send_btn.classList.add("loading");
     let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
     let status = 201;
-    e.preventDefault();
     await axios
       .post("http://localhost:313/comments", {
         name: name,
@@ -34,6 +36,7 @@ const PostBox = (props) => {
       })
       .then((e) => {
         status = e.status;
+        send_btn.classList.remove("loading");
         if (e.status == 201) {
           Notif("success", "نظر شما با موفقیت ارسال شد");
         } else {
@@ -45,6 +48,7 @@ const PostBox = (props) => {
     let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
     let status = 201;
     e.preventDefault();
+    send_btn.classList.add("loading");
     await axios
       .post("http://localhost:313/subComments", {
         name: subName,
@@ -56,6 +60,7 @@ const PostBox = (props) => {
       })
       .then((e) => {
         status = e.status;
+        send_btn.classList.remove("loading");
         if (e.status == 201) {
           Notif("success", "پاسخ شما با موفقیت ارسال شد");
         } else {
@@ -64,11 +69,10 @@ const PostBox = (props) => {
       });
     document.getElementById("contacts-sub-form").classList.add("d-none");
     document.getElementById("contacts-form").classList.remove("d-none");
-    setSubName("")
-    setSubEmail("")
-    setSubComment("")
+    setSubName("");
+    setSubEmail("");
+    setSubComment("");
   };
-
   return (
     <>
       <div className="postbox__wrapper">
@@ -77,22 +81,14 @@ const PostBox = (props) => {
             <img src={Config.blog + "sidebar/" + item?.pic} alt="" />
           </div>
           <div className="postbox__content">
-            <h3 className="postbox__title postbox__title-2">
-              <a href="blog-details.html">{item?.title}</a>
-            </h3>
-            <div className="postbox__meta">
+            <h3 className="postbox__title postbox__title-2">{item?.title}</h3>
+            <div className="postbox__meta d-flex gap-3">
               <p>
                 تاریخ: <span>{item?.date} </span>
               </p>
-            </div>
-            <div className="postbox__text">
-              <p>{item?.text}</p>
-            </div>
-            <div className="postbox__text">
-              <p>{item?.text}</p>
-            </div>
-            <div className="postbox__text">
-              <p>{item?.text}</p>
+              <p>
+                بازدید: <span>{item?.view} </span> <i className="fa fa-eye"></i>
+              </p>
             </div>
             <div className="postbox__text">
               <p>{item?.text}</p>
@@ -120,7 +116,7 @@ const PostBox = (props) => {
             </div>
             <div className="post-comments-form mb-100">
               <div className="post-comments-title mb-30">
-                <h3>ارسال نظر</h3>
+                <h3>{"ارسال نظر"}</h3>
               </div>
               <form
                 id="contacts-form"
@@ -166,11 +162,11 @@ const PostBox = (props) => {
                       ></textarea>
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <button class="t-y-btn t-y-btn-grey" type="submit">
-                      ارسال نظر
-                    </button>
-                  </div>
+                  <button className="send-btn" type="submit">
+                    <i className="fa fa-paper-plane"></i>
+                    <span className="text">ارسال نظر</span>
+                    <span className="loading-animate"></span>
+                  </button>
                 </div>
               </form>
               <form
@@ -217,15 +213,16 @@ const PostBox = (props) => {
                       ></textarea>
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <button class="t-y-btn t-y-btn-grey" type="submit">
-                      ارسال پاسخ
+                    <button className="send-btn" type="submit">
+                      <i className="fa fa-paper-plane"></i>
+                      <span className="text">ارسال پاسخ</span>
+                      <span className="loading-animate"></span>
                     </button>
-                  </div>
                 </div>
               </form>
             </div>
           </div>
+          <div className="col-xxl-4">{/* some thing goes here */}</div>
         </div>
       </div>
     </>

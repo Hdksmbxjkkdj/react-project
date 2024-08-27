@@ -60,7 +60,7 @@ const ProductAddbtn = (props) => {
             }
             disabled={props.disabled}
           >
-            افزودن به سبد <i className="fa fa-shopping-basket"></i>
+             خرید <i className="fa fa-shopping-basket"></i>
           </button>}
         </div>
       </>
@@ -83,7 +83,7 @@ const ProductAddbtn = (props) => {
             style={{ textDecoration: "line-throught" }}
             onClick={(event) => handleRemoveClick(event, props)}
           >
-            حذف از سبد <i className="fa fa-trash"></i>
+            <i className="fa fa-check"></i> <i className="fa fa-shopping-basket"></i>
           </button>}
         </div>
       </>

@@ -24,12 +24,12 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
                 <div className="star-rating rating-icon">
                     {
                         [...Array(parseInt(Math.floor(stars)))].map(() => (<>
-                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star text-warning"></i>
                         </>))
                     }
                     {
                         [...Array(5 - parseInt(Math.floor(stars)))].map(() => (<>
-                            <i className="far fa-star"></i>
+                            <i className="far fa-star text-warning"></i>
                         </>))
                     }
                 </div>

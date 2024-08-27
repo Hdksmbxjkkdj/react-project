@@ -39,7 +39,7 @@ const ProductAction = ({ item }) => {
       seccondimg: item.seccondpic,
       id: item.id,
       show: true,
-      inCart: incart,
+      stars:item.rate
     });
   }
   const [user, setUser] = useState();
@@ -86,7 +86,7 @@ const ProductAction = ({ item }) => {
                 title="اضافه کردن به علاقه مندی ها"
               >
                 <i
-                  className={"far fa-heart text-success"}
+                  className={"far fa-heart"}
                 ></i>
               </a>
             </li>

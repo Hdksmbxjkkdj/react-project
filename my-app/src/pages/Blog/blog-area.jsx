@@ -12,45 +12,44 @@ const BlogArea = (props) => {
               <div className="row">
                 {props.items?.map((item) => {
                   return (
-                    <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                      <article className="postbox__item format-image mb-50 transition-3">
-                        <div className="postbox__thumb w-img">
+                    <div className="col-xxl-4 col-xl-6 col-lg-6 col-md-6">
+                      <Link to={`/blogDetaile/${item.id}`}>
+                      <div className="card__blog">
+                        <div className="card-banner">
+                          <p className={`category-tag tag-${Math.round(Math.random()*3)}`}>{item.category}</p>
+                          <img
+                            className="banner-img"
+                            src={Config.blog + "sidebar/" + item.pic}
+                            alt=""
+                          />
+                        </div>
+                        <div className="card-body">
+                          <div className="hashtag-content">
+                          {
+                            item?.hashtag.map(hashtag=>{
+                              return <span className="blog-hashtag mx-2">#{hashtag}</span>
+                            })
+                            }
+                          </div>
+                          <h4 className="blog-title">{item?.title}</h4>
+                          <p className="blog-description line__clamp-text">
+                            {item?.text}
+                          </p>
+
+                          <div className="card-profile">
                             <img
-                              src={Config.blog + "sidebar/" + item.pic}
-                              alt={item.alt}
+                              className="profile-img"
+                              src={Config.blog + "comments/default user.png"}
+                              alt=""
                             />
-                        </div>
-                        <div className="postbox__content">
-                          <h3 className="postbox__title">
-                            <a href="blog-details.html">{item.title}</a>
-                          </h3>
-                          <div className="postbox__meta">
-                            <p>
-                              تاریخ: <span>{item.date}</span>
-                            </p>
-                          </div>
-                          <div className="postbox__text">
-                            <p>{item.text} </p>
-                          </div>
-                          <div className="postbox__bottom d-flex justify-content-between align-items-center">
-                            <div className="postbox__more">
-                              <Link
-                                to={"/BlogDetaile/"+item.id}
-                                className="t-y-btn t-y-btn-grey"
-                              >
-                                بیشتر...
-                              </Link>
-                            </div>
-                            <div className="postbox__tag">
-                              <p>
-                                {" "}
-                                عنوان:{" "}
-                                <a href="blog.html">{item.category}</a>
-                              </p>
+                            <div className="card-profile-info">
+                              <h3 className="profile-name">{item.auther}</h3>
+                              <p className="profile-followers">{item.date}</p>
                             </div>
                           </div>
                         </div>
-                      </article>
+                      </div>
+                      </Link>
                     </div>
                   );
                 })}
@@ -69,4 +68,3 @@ const BlogArea = (props) => {
 };
 
 export { BlogArea };
-

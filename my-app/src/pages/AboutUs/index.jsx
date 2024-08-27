@@ -2,6 +2,7 @@ import { Config } from "../../Utils/config";
 import { Form } from "./subscript-form";
 import { ProgressWrap } from "../Components/Progress-wrap";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const AboutUs = () => {
@@ -12,39 +13,17 @@ const AboutUs = () => {
       video_title: "YouTube video player",
     },
   ];
-  const team = [
-    {
-      pic: "as1.jpg",
-      name: "John Doe",
-      job: "Web Designer",
-    },
-    {
-      pic: "as2.jpg",
-      name: "Shahnewaz Sakil",
-      job: "Business Man",
-    },
-    {
-      pic: "as3.jpg",
-      name: "Salim Rana",
-      job: "CEO Themepure",
-    },
-    {
-      pic: "as4.jpg",
-      name: "Pavilion Dyne",
-      job: "Story Teller",
-    },
-  ];
 
-  const [about,setabout]=useState();
-  useEffect(()=>{
-    axios.get("http://localhost:313/about").then((response)=>{
+  const [about, setabout] = useState();
+  useEffect(() => {
+    axios.get("http://localhost:313/about").then((response) => {
       setabout(response);
-    })
-  },[])
+    });
+  }, []);
   // console.log(about.data[0]);
   return (
     <>
-    <ProgressWrap></ProgressWrap>
+      <ProgressWrap></ProgressWrap>
       <section className="about__banner-area">
         <div className="container-fluid p-0">
           <div className="row gx-0">
@@ -84,7 +63,7 @@ const AboutUs = () => {
               <div className="col-xxl-12">
                 <div className="section__head mb-30">
                   <div className="section__title">
-                    <h3>What We Do?</h3>
+                    <h3>ما چه کاری انجام میدهیم ؟</h3>
                   </div>
                 </div>
               </div>
@@ -115,7 +94,7 @@ const AboutUs = () => {
             <div className="col-xxl-12">
               <div className="section__head video__section-head mb-30 ml-90 mr-90">
                 <div className="section__title">
-                  <h3>How We Do It?</h3>
+                  <h3>ما چگونه عمل میکنیم ؟</h3>
                 </div>
               </div>
             </div>
@@ -148,7 +127,7 @@ const AboutUs = () => {
               <div className="col-xxl-12">
                 <div className="section__head mb-30">
                   <div className="section__title">
-                    <h3>Our Team Member</h3>
+                    <h3>اعضای تیم ما</h3>
                   </div>
                 </div>
               </div>
@@ -157,17 +136,47 @@ const AboutUs = () => {
               {about?.data[0].team.map(function (items) {
                 return (
                   <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-4">
-                    <div className="team__item text-center mb-30">
-                      <div className="team__thumb w-img fix">
+                    <div className="our-team">
+                      <div className="picture">
                         <img
+                          className="img-fluid"
                           src={Config.team + "" + items.pic}
-                          alt="our team"
                         />
                       </div>
-                      <div className="team__content">
-                        <h3 style={{fontWeight : "500"}}>{items.name}</h3>
-                        <span>{items.job}</span>
+                      <div className="team-content">
+                        <h3 className="name">{items.name}</h3>
+                        <h4 className="title">{items.job}</h4>
                       </div>
+                      <ul class="social">
+                        <li>
+                          <Link
+                            to="/"
+                            className="fab fa-facebook"
+                            aria-hidden="true"
+                          ></Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/"
+                            className="fab fa-twitter"
+                            aria-hidden="true"
+                          ></Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/"
+                            className="fab fa-google-plus"
+                            aria-hidden="true"
+                          ></Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/"
+                            className="fab fa-linkedin"
+                            aria-hidden="true"
+                          ></Link>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 );
@@ -182,14 +191,14 @@ const AboutUs = () => {
             <div className="col-xl-6 col-lg-6">
               <div className="subscribe__content d-sm-flex align-items-center">
                 <div className="subscribe__icon mr-25">
-                  <img
-                    src={Config.icon + "icon_email.png"}
-                    alt="subscript"
-                  />
+                  <img src={Config.icon + "icon_email.png"} alt="subscript" />
                 </div>
                 <div className="subscribe__text">
-                  <h4>Sign up to Newsletter</h4>
-                  <p>Get email updates about our latest shop...and receive$30 Coupon For First Shopping</p>
+                  <h4>عضویت در خبرنامه</h4>
+                  <p>
+                    با عضویت در خبرنامه ما از آخرین محصولات ما باخبر شوید و با
+                    اولین خرید خود 30،000 تومان هدیه از ما دریافت کنید
+                  </p>
                 </div>
               </div>
             </div>
