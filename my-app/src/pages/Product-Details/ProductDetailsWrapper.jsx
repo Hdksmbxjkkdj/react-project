@@ -49,6 +49,7 @@ useEffect(()=>{
       }
   })
 },[])
+console.log(item?.data?.number)
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -99,8 +100,10 @@ useEffect(()=>{
               <div className="progress d-flex">
                 <div
                   className="progress-bar progress-bar-striped progress-bar-animated"
+                  style={{width:`${item?.data?.number}%`,backgroundColor:"#fcb700",transition:"width 0.5s"}}
                   role="progressbar"
                   aria-valuenow="75"
+                  // aria-valuenow={item?.data?.number}
                   aria-valuemin="0"
                   aria-valuemax="100"
                   data-width="100%"
