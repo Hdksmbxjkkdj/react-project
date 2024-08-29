@@ -92,9 +92,10 @@ useEffect(() => {
                          
                         </div>
                         <ul
-                          className="nav nav-tabs"
+                          className="nav nav-tabs d-flex flex-nowrap overflow-x-scroll overflow-y-hidden"
                           id="modalTab"
                           role="tablist"
+                          style={{maxWidth:"15rem"}}
                         >
                           {modal?.data?.gallery.map((item) => {
 
