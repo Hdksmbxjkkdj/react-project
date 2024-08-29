@@ -95,7 +95,7 @@ console.log(item?.data?.number)
             </div>
             <div className="product__details-stock">
               <h3>
-                <span>عجله کن!</span> فقط {item?.data.number} محصول در انبار باقی مانده است.
+                <span>عجله کن!</span>  {item?.data.number==0?"موجودی این محصول به پایان رسیده است":item?.data.number+"عدد محصول در انبار موجود است"}
               </h3>
               <div className="progress d-flex">
                 <div

@@ -172,7 +172,9 @@ const changeCss=(event)=>{
                   خرید شماافزودن به سبد <i className="fa fa-shopping-basket"></i>
                 </button>}
               </div>
+              
             </>
+
           );
     }
   

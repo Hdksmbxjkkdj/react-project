@@ -26,7 +26,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems,items})
                     <DomainPrice domain_price={domain_price} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected}></DomainPrice>  
                     <Sizing size={size} productLength={productLength} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected}></Sizing> 
                     <div className="product__widget-item">
-                        <h3 className="product__widget-title mb-25">Top Rate</h3>
+                        <h3 className="product__widget-title mb-25">  امتیاز بالا</h3>
                             <div className="product__sm">
                             <ul>            
                                 <TopRate items={items}/> 

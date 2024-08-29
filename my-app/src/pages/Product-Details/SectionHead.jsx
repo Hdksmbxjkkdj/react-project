@@ -17,7 +17,7 @@ import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-bt
 import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
 import { Link } from "react-router-dom";
-export const SectionHead = ({ commentNumber }) => {
+export const SectionHead = ({commentNumber,res1}) => {
   const [items, setItems] = useState();
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((res) => {
@@ -27,7 +27,24 @@ export const SectionHead = ({ commentNumber }) => {
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
   //modal
-
+//responsive
+const Option = {
+  loop: true,
+  margin: 20,
+  // autoplay: true,
+  // autoplayTimeout: 3000,
+  // smartSpeed: 500,
+  // items: 6,
+  navText: [
+    '<button><i class="fa fa-angle-left"></i></button>',
+    '<button><i class="fa fa-angle-right"></i></button>',
+  ],
+  // nav: true,
+  dots: false,
+  responsive: res1,
+  autoplayHoverPause: true,
+};
+//responsive
   return (
     <>
       <section
@@ -45,16 +62,19 @@ export const SectionHead = ({ commentNumber }) => {
                 </div>
               </div>
             </div>
-            <div className="row">
+          </div>
+             <div className="row"> 
+             <div class="col-xxl-12">
               <OwlCarousel
-                className="product__slider OwlCarousel owl-theme"
-               
+                className="product__slider OwlCarousel owl-theme owl-carousel"
+                {...Option}
                 items={5}
                 loop
                 autoPlay
                 // key={Math.random()}
                 // nav
                 fs-1
+              
               >
                 {items?.data?.map((item, index) => {
                   return (
@@ -157,9 +177,10 @@ export const SectionHead = ({ commentNumber }) => {
                   </Modal>
                 )}
               {/* </div> */}
+              </div>
             </div>
           </div>
-        </div>
+        
       </section>
     </>
   );

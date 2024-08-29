@@ -27,9 +27,9 @@ export const Select =({items,setItems})=>{
                 <div className="product__sorting product__show-position mr-20">
                     <select className='option'>
                             
-                            <option selected={searchParam?.get('sort')?.indexOf('desc')>-1? true:false} onClick={() =>Filter(setItems,items.length,'sort','desc',eMessage)}>position</option>
-                            <option selected={searchParam?.get('sort')?.indexOf('popular') > -1 ? true : false} onClick={() => Filter(setItems, items.length, 'sort', 'popular', eMessage)}>product name</option>
-                            <option selected={searchParam?.get('sort')?.indexOf('views') > -1 ? true : false} onClick={() => Filter(setItems, items.length, 'sort', 'views', eMessage)}>price</option>
+                            <option selected={searchParam?.get('sort')?.indexOf('desc')>-1? true:false} onClick={() =>Filter(setItems,items.length,'sort','desc',eMessage)}>موقعیت</option>
+                            <option selected={searchParam?.get('sort')?.indexOf('popular') > -1 ? true : false} onClick={() => Filter(setItems, items.length, 'sort', 'popular', eMessage)}>نام محصول</option>
+                            <option selected={searchParam?.get('sort')?.indexOf('views') > -1 ? true : false} onClick={() => Filter(setItems, items.length, 'sort', 'views', eMessage)}>قیمت محصول</option>
                           
                     </select>
                 </div>

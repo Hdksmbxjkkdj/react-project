@@ -13,6 +13,31 @@ import { Product } from "../Shop/Product";
 import { BradCrumb } from "./BeradCrumb";
 
 export const ProducDetails= () =>{
+    //responsive OwlCarousel
+    var res1 = {
+        item: 6,
+        0: {
+          items: 1,
+        },
+        576: {
+          items: 2,
+        },
+        767: {
+          items: 2,
+        },
+        992: {
+          items: 4,
+        },
+        1200: {
+          items: 5,
+        },
+        1600: {
+          items: 6,
+        },
+      };
+    //responsive OwlCarousel
+
+   console.log()
     //tab
     const[tab,setTab]=useState(2)
     const change =(index) => {
@@ -71,8 +96,8 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <SectionHead commentNumber={ProductComment?.data?.length} />    
-            <BrandSlider/> 
+            <SectionHead commentNumber={ProductComment?.data?.length} res1={res1}/>    
+            <BrandSlider res1={res1}/> 
         </main>
     </>
 }
