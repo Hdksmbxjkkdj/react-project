@@ -7,6 +7,7 @@ import { CartContext } from "../../../context/CardContext";
 import { AddToWishlist } from "../../Home1/best-selling/product-item/AddToWishlist";
 import { RemoveWishList } from "../../WishList/RemoveWishList";
 import { Rank } from "../RateSubmit/Rank";
+import { BtnLike } from "../Btns/BtnLike";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export const Btns = ({items})=>{
   //like btn
@@ -62,59 +63,16 @@ export const Btns = ({items})=>{
     });
   }, []);
   //number product
-    const [modal,setModal]=useState({
-        id:"1",
-        show:false
-    })
-    useEffect(()=>{
-      (modal.show) && window?.$(`#${modal.id}`).modal("show");
-    },[modal])
-    function handleModal()
-    {
-      setModal({'id':items.id,'show':true})
-    }
+    
     return (
         <>
-        {/* <Quick handleModal={handleModal}></Quick> */}
+      
 
         <div className="product__action p-absolute">
             <ul>
-            {!checker.includes(items) ? (
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  AddToWishlist(
-                    items.id,
-                    items?.pic,
-                    items?.text,
-                    items?.price,
-                    use.id,
-                    setrow
-                  );
-                }}
-                title="افزودن به علاقه مندی ها"
-              >
-                
-                
-                <i
-                  className={"fa-solid fa-heart text-success"}
-                ></i>
-              </a>
-            </li>
-          ) : (
-            <li>
-              <a
-                href="#"
-                onClick={(event) => RemoveWishList(event,items.id,items.text,use.id,setrow,false)}
-                title="حذف از علاقه مندی ها"
-              >
-                <i className="fa-solid fa-heart text-danger"></i>
-              </a>
-            </li>
-          )}
+       <BtnLike items={item}></BtnLike>
               <li> 
-                <a href="#" title="نمایش سریع" onClick={handleModal}>
+                <a href="#" title="نمایش سریع">
                 <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
                 </a> 
               </li>

@@ -8,10 +8,10 @@ import { useContext, useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
-// import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 import { Rate } from "./RateSubmit/Rate";
 import { CartContext } from "../../context/CardContext";
 import{ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btncopy";
+import{BtnLike} from "./Btns/BtnLike"
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -94,7 +94,7 @@ useEffect(()=>{
             </div>
             <div className="product__details-stock">
               <h3>
-                <span>عجله کن!</span>  {item?.data.number==0?"موجودی این محصول به پایان رسیده است":item?.data.number+"عدد محصول در انبار موجود است"}
+                <span>{item?.data.number==0?"":"عجله کن!"}</span>  {item?.data.number==0?"موجودی این محصول به پایان رسیده است":item?.data.number+"عدد محصول در انبار موجود است"}
               </h3>
               <div className="progress d-flex">
                 <div
@@ -131,6 +131,7 @@ useEffect(()=>{
             </div>
             <div className="product__details-action">
               <ul>
+                <BtnLike items={item}></BtnLike>
                 {/* <li>
                   <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
