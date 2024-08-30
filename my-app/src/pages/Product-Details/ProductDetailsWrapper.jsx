@@ -49,7 +49,6 @@ useEffect(()=>{
       }
   })
 },[])
-console.log(item?.data?.number)
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">

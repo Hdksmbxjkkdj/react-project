@@ -45,7 +45,7 @@
       "name": " آشپزخانه فوق نازک شیشه ای   ",
       "unitprice": 500,
       "quantity": 1,
-      "date": "28/08/2024"
+      "date": "29/08/2024"
     }
   ],
   "wishlist": [
@@ -923,6 +923,25 @@
       "sender_email": "li@gmail.com",
       "id_product": "9",
       "date": "۱۴۰۳/۶/۵",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": "08eb",
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "mnm",
+      "id_product": "2",
+      "date": "۱۴۰۳/۶/۸",
+      "id_customer": "li@gmail.com",
+      "rate": 4
+    },
+    {
+      "id": "044e",
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "id_product": "1",
+      "date": "۱۴۰۳/۶/۸",
       "id_customer": "li@gmail.com",
       "rate": 0
     }

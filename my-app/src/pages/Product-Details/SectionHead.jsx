@@ -17,6 +17,7 @@ import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-bt
 import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
 import { Link } from "react-router-dom";
+import { Btns } from "./Modal/Btn";
 export const SectionHead = ({commentNumber,res1}) => {
   const [items, setItems] = useState();
   useEffect(() => {
@@ -94,7 +95,7 @@ const Option = {
                           </Link>
                           {/* <Modal items={item}></Modal> */}
 
-                          <div className="product__action p-absolute">
+                          {/* <div className="product__action p-absolute">
                             <ul>
                               <li>
                                 <a
@@ -135,7 +136,8 @@ const Option = {
                                 </a>
                               </li>
                             </ul>
-                          </div>
+                          </div> */}
+                          <Btns items={items}></Btns>
                         </div>
 
                         <div className="product__content text-center">
@@ -156,9 +158,10 @@ const Option = {
                           </div>
                           <span className="price">تومان{item.price}.000 </span>
                         </div>
-                        <div className="product__add-btn">
+                        {/* <div className="product__add-btn">
                           <button type="button">افزودن به سبد خرید</button>
-                        </div>
+                        </div> */}
+                           <ProductAddbtn item={item}></ProductAddbtn>
 
                         {/* <AddToCart></AddToCart> */}
                       </div>

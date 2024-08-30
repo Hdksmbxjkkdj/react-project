@@ -9,6 +9,8 @@ import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
+import { useForm } from "@inertiajs/react";
+
 //test
 export const SendComment = ({
   id,
@@ -40,9 +42,17 @@ export const SendComment = ({
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
     //لاگین بودن کاربر
-
+//
+const {reset} = useForm({
+});
+useEffect(() => {
+  return () => {
+      reset();
+      console.log('yyyyyyyyyyyyy')
+  };
+}, []);
+//
   const [errors, setErrors] = useState();
-  console.log(errors)
   const [data, setData] = useState({
     //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
     //   sender_email: auth ? auth.email : "",
@@ -53,7 +63,6 @@ export const SendComment = ({
     //   product_id: user.id,
     //   quality
   });
-  console.log(data)
 
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
@@ -86,12 +95,12 @@ export const SendComment = ({
              //    if (response.data?.status == 201) {
              //    if (data!= ""&&response?.status == 201) {
              if (response?.status == 201) {
-              console.log(response?.data?.comment,response?.data?.sender_name,"response")
 
-               Notif("success", message);
+               
+              Notif("success", message);
                // Notif("error", "status خالی میباشد");
    
-               // reset()
+                reset()
                return;
              }else {
               Notif('error', 'خالی است')
@@ -127,6 +136,7 @@ export const SendComment = ({
   //     });
   // }, []);
   //CustomerCommen
+
 
   return (
     <>

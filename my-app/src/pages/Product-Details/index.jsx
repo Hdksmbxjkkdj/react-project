@@ -37,7 +37,6 @@ export const ProducDetails= () =>{
       };
     //responsive OwlCarousel
 
-   console.log()
     //tab
     const[tab,setTab]=useState(2)
     const change =(index) => {
