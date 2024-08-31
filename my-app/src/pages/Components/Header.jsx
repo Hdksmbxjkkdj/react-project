@@ -51,6 +51,7 @@ const Header = () => {
   const { searching } = ItemsSearch();
   const [reslut, setResult] = useState();
   const [loading, setLoading] = useState(false);
+  const [search,setSearch] = useState();
   const param = window.location.pathname.split("/").pop();
   function tot() {
     var total = 0;
@@ -65,6 +66,13 @@ const Header = () => {
   useEffect(() => {
     window?.$(".cart__mini").removeClass("cart__opened");
   }, [navigate]);
+  function isNull() {
+    if(search==="")
+    {
+      return true
+    }
+    return false
+  }
   return (
     <>
       <header
@@ -213,11 +221,13 @@ const Header = () => {
                                   <input
                                     type="text"
                                     onChange={(e) =>
-                                      searching(
+                                      {searching(
                                         e.target.value,
                                         setResult,
                                         setLoading
-                                      )
+                                      );
+                                      setSearch(e.target.value)
+                                    }
                                     }
                                   />
                                   {loading ? (
@@ -273,7 +283,7 @@ const Header = () => {
                                             </div>
                                           );
                                         })
-                                      ) : (
+                                      ) : (search) && (
                                         <div className="mt-3">
                                           <p className="text-danger text-center">
                                             مورد مطابقی یافت نشد
