@@ -76,8 +76,7 @@ export const Products = ({ sidebars }) => {
 
   var paginationLength = length;
   paginationLength = Math.ceil(paginationLength / 8);
-  //pagin
-
+  console.log(items?.length);
   return (
     <>
       <main>
@@ -104,6 +103,7 @@ export const Products = ({ sidebars }) => {
                     setItems={setItems}
                     items={items}
                     productLength={productComment?.length}
+                    t={items?.length}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">

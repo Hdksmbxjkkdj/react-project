@@ -26,9 +26,10 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+  console.log();
   return (
     <>
-      {items?.data?.map((item) => {
+      {items?.map((item) => {
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
@@ -102,7 +103,7 @@ export const ProductList = ({ items, setItems }) => {
  
   return (
     <>
-      {items?.data?.map((item) => {
+      {items?.map((item) => {
         return (
           <>
             <div className="col-xxl-12">
