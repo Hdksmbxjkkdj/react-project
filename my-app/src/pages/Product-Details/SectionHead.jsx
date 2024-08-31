@@ -18,6 +18,7 @@ import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
 import { Link } from "react-router-dom";
 import { Btns } from "./Modal/Btn";
+import { BtnLike } from "./Btns/BtnLike";
 export const SectionHead = ({commentNumber,res1}) => {
   const [items, setItems] = useState();
   useEffect(() => {
@@ -95,9 +96,9 @@ const Option = {
                           </Link>
                           {/* <Modal items={item}></Modal> */}
 
-                          {/* <div className="product__action p-absolute">
+                        <div className="product__action p-absolute">
                             <ul>
-                              <li>
+                              {/* <li>
                                 <a
                                   href="#"
                                   onClick={() =>
@@ -114,7 +115,8 @@ const Option = {
                                     icon={faHeart}
                                   ></FontAwesomeIcon>
                                 </a>
-                              </li>
+                              </li> */}
+                              <BtnLike items={items}></BtnLike>
                               <li>
                                 <a
                                   href="#"
@@ -136,8 +138,8 @@ const Option = {
                                 </a>
                               </li>
                             </ul>
-                          </div> */}
-                          <Btns items={items}></Btns>
+                          </div> 
+                          {/* <Btns items={items}></Btns> */}
                         </div>
 
                         <div className="product__content text-center">

@@ -1,5 +1,5 @@
-// import brand from '../../img/logo/logo-black.png';
-
+ import { config } from "@fortawesome/fontawesome-svg-core";
+import { Config } from "../../Utils";
 const Footer = ()=>{
     return(
         <>
@@ -19,17 +19,17 @@ const Footer = ()=>{
                                                     <div className="footer__logo">
                                                         {/* <a href="index.html"><img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/></a> */}
                                                         {/* <a href="index.html"><img src="../../img/logo/logo-black.png" alt=""/></a> */}
-                                                        <a href="index.html"><img src='{brand}' alt=""/></a>
+                                                        <a href="index.html"><img src={Config.logo + "" + "logo-white.png"} alt=""/></a>
                                                     </div>
                                                 </div>
                                                 <div className="footer__widget-content">
                                                     <div className="footer__hotline footer__hotline-4 d-flex align-items-center mb-30">
-                                                        <div className="icon mr-15">
+                                                        <div className="icon ml-15">
                                                             <i className="fa fa-headset"></i>
                                                         </div>
-                                                        <div className="text">
-                                                            <h4>پشتیبانی رایگان 24/24:</h4>
-                                                            <span>(+100) 123 456 7890</span>
+                                                        <div className="text border-none fs-6">
+                                                            <h4 className="">پشتیبانی رایگان 24/24:</h4>
+                                                            <span>1234567890</span>
                                                         </div>
                                                     </div>
                                                     <div className="footer__info footer__info-4">
@@ -165,12 +165,13 @@ const Footer = ()=>{
                         <div className="row align-items-center">
                             <div className="col-xl-6 col-lg-6">
                                 <div className="footer__copyright-text footer__copyright-text-2">
-                                    <p>کپی رایت © <a href="index.html">توپیکو.</a> همه رزرو شده است. <a href="#">تمپور.</a></p>
+                                    <p>@کپی رایت <a href="index.html" className="text-warning">توپیکو</a> همه رزرو شده است.<a href="#"  className="text-warning">تمپور.</a></p>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6">
-                                <div className="footer__payment f-right">
-                                    <a href="#" className="m-img"><img src="assets/img/icon/payment.png" alt=""/></a>
+                                <div className="footer__payment f-left">
+                                    <a href="#" className="m-img"><img src={Config.icon + "" + "payment.png"}  alt=""/></a>
+
                                 </div>
                             </div>
                         </div>

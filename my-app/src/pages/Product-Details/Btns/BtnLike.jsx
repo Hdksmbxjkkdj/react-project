@@ -7,9 +7,8 @@ import { CartContext } from "../../../context/CardContext";
 import { AddToWishlist } from "../../Home1/best-selling/product-item/AddToWishlist";
 import { RemoveWishList } from "../../WishList/RemoveWishList";
 export const BtnLike = ({items})=>{
-  console.log(items
 
-  )
+  
   //like btn
   const[item,setItem]=useState()
   
@@ -37,9 +36,8 @@ export const BtnLike = ({items})=>{
       },[]);
     //like btn
     //color btnlike
-    const[textColor,setTextColor]=useState("#A9A9A9")
+    const[textColor,setTextColor]=useState("#696969")
     const[textColors,setTextColors]=useState("red")
-    console.log(textColor,"textColor")
     //color btnlike
     return (
         <>
@@ -56,7 +54,7 @@ export const BtnLike = ({items})=>{
                     use.id,
                     setrow
                   );
-                setTextColor(textColor==="#A9A9A9"?"red":"#A9A9A9")}}
+                setTextColor(textColor==="#696969 "?"red":"#696969 ")}}
                 title="افزودن به علاقه مندی ها"
                 style={{color:textColor}}
               >
@@ -71,7 +69,7 @@ export const BtnLike = ({items})=>{
             <li>
               <a
                 href="#"
-                onClick={(event) =>{RemoveWishList(event,items.id,items.text,use.id,setrow,false);setTextColors(textColors==="red"?"#D3D3D3":"red")}}
+                onClick={(event) =>{RemoveWishList(event,items.id,items.text,use.id,setrow,false);setTextColors(textColors==="red"?"#696969":"red")}}
                 style={{color:textColors}}
 
                 title="حذف از علاقه مندی ها"

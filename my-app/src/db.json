@@ -46,6 +46,14 @@
       "unitprice": 500,
       "quantity": 1,
       "date": "29/08/2024"
+    },
+    {
+      "id": "3",
+      "pic": "product-5.jpg",
+      "name": "سامسونگ C49J89: 875 پوند، Debenhams ",
+      "unitprice": 900,
+      "quantity": 1,
+      "date": "30/08/2024"
     }
   ],
   "wishlist": [

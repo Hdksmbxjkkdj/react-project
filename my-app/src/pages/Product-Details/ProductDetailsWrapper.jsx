@@ -12,6 +12,8 @@ import { Rate } from "./RateSubmit/Rate";
 import { CartContext } from "../../context/CardContext";
 import{ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btncopy";
 import{BtnLike} from "./Btns/BtnLike"
+import { BtnShare } from "./Btns/BtnShare";
+import { BtnShareBody } from "./Btns/BtnShareBody";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -39,16 +41,23 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
 //
 const[show,setShow]=useState(false)
 //
-const {cart,setCart} = useContext(CartContext);
-const [check,setCheck] = useState([]);
-useEffect(()=>{
-  cart.map(el=>{
-    if(el.id==item?.data?.id)
-      {
-        setCheck([...check,item?.data])
-      }
-  })
-},[])
+// const {cart,setCart} = useContext(CartContext);
+// const [check,setCheck] = useState([]);
+// useEffect(()=>{
+//   cart.map(el=>{
+//     if(el.id==item?.data?.id)
+//       {
+//         setCheck([...check,item?.data])
+//       }
+//   })
+// },[])
+//btnshare
+const currentPageUrl = "tutorend.com";
+const [modal, setModal] = useState({ show: false});
+const close = () =>{
+  setModal(!modal)
+}
+//btnshare
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -144,16 +153,35 @@ useEffect(()=>{
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Print">
+                  <a href="#" title="پرینت">
                     <FontAwesomeIcon icon={faPrint}></FontAwesomeIcon>
                   </a>
                 </li>
-                <li>
-                  <a href="#" title="Print">
+                {/* <li>
+                  <a href="#" title="اشتراک گذاری">
                     <FontAwesomeIcon icon={faShareAlt}></FontAwesomeIcon>
                   </a>
+                </li> */}
+                <li>
+                <a href="#" title="اشتراک گذاری"  onClick={()=>{setModal(true);close(true)}} >
+          <FontAwesomeIcon icon={faShareAlt} >
+          </FontAwesomeIcon> 
+
+         
+
+        </a>
+      
                 </li>
+             
               </ul>
+              {modal && (
+        <BtnShareBody
+          setModal={setModal}
+          modal={modal}
+        >
+          {/* <ModalBody data={modalInfo.data} /> */}
+          </BtnShareBody>
+      )}
             </div>
           </div>
         </div>

@@ -48,7 +48,6 @@ const {reset} = useForm({
 useEffect(() => {
   return () => {
       reset();
-      console.log('yyyyyyyyyyyyy')
   };
 }, []);
 //

@@ -9,6 +9,7 @@ import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { Rate } from "../RateSubmit/Rate";
 import { useEffect } from "react";
 import { ProductAddbtn } from "../../Home1/best-selling/product-item/product-add-btncopy";
+import { BtnLike } from "../Btns/BtnLike";
 export const Modal = ({ children, setModal, modal,commentNumber }) => {
   const handleImg = (event) => {
     let preview = window?.$('.tab-content img')
@@ -92,10 +93,10 @@ useEffect(() => {
                          
                         </div>
                         <ul
-                          className="nav nav-tabs d-flex flex-nowrap overflow-x-scroll overflow-y-hidden"
+                          className="nav nav-tabs d-flex flex-nowrap max-vw-25"
                           id="modalTab"
                           role="tablist"
-                          style={{maxWidth:"15rem"}}
+                          style={{overflowX:"scroll",overflowY:"hidden"}}
                         >
                           {modal?.data?.gallery.map((item) => {
 
@@ -182,11 +183,12 @@ useEffect(() => {
   </a>
 </li> */}
 {/* <AddToWishlist item={item}></AddToWishlist> */}
-<li>
+{/* <li>
   <a href="#"  title="علاقه مندی ها">
     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
   </a>
-</li>
+</li> */}
+<BtnLike items={modal}></BtnLike>
 <li>
   <a href="#"  title="مقایسه کنید">
     <FontAwesomeIcon icon={faSliders}></FontAwesomeIcon>
