@@ -1,14 +1,6 @@
 {
   "row": [],
-  "wishlist": [
-    {
-      "id": "4undefined",
-      "Pid": "4",
-      "pic": "product-7.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 548
-    }
-  ],
+  "wishlist": [],
   "blog": [
     {
       "id": "1",
@@ -615,10 +607,10 @@
       "id": 3
     },
     {
-      "name": "kjsmdnx",
-      "email": "ksxnc@gmail.com",
-      "comment": "smndksmnxbcjsmndbc",
-      "blog_id": "3",
+      "name": "روح الله عباسی",
+      "email": "abbas@gmail.com",
+      "comment": "عالی و مفید !",
+      "blog_id": "4",
       "date": "۱۴۰۳/۶/۱۰",
       "id": 4
     }
