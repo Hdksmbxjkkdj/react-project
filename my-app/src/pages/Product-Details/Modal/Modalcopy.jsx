@@ -63,23 +63,22 @@ const close = () =>{
         }}
       >
         <div className="container d-flex justify-content-center">
-          {/* <div className="row justify-content-center align-items-center w-75"> */}
-            <div className="modal-content mt-3">
+          <div className="row justify-content-center align-items-center w-75 py-5 my-5">
+            <div className="modal-content">
               <div className="product__modal-wrapper p-relative">
                 {/* <div className="product__modal-close p-absolute">
                             <button data-bs-dismiss="modal"><i className="fal fa-times"></i></button>
                         </div> */}
 
-               
-<button
+                <button
                   className="btn btn-outline-warning"
                   onClick={() => setModal({ show: false })}
                 >
                   x
                 </button>
-                <div className="container product__modal-inner">
+
+                <div className="product__modal-inner">
                   <div className="row">
-                
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                       <div className="product__modal-box">
                         <div className="tab-content" id="modalTabContent">
@@ -233,7 +232,7 @@ const close = () =>{
                   </div>
                 </div>
               </div>
-            {/* </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -6376,3 +6376,8 @@ p.checkout-coupon input[type=text]:focus {
   color: #1369ce;
   background-color: #f7f5ec;
 }
+@media screen and (max-width: 568px) {
+  .images-product{
+    flex-wrap: wrap!important;
+  }
+  }

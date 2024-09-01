@@ -19,6 +19,7 @@ import { Rate } from "./RateSubmit/Rate";
 import { Link } from "react-router-dom";
 import { Btns } from "./Modal/Btn";
 import { BtnLike } from "./Btns/BtnLike";
+import { BtnCompare } from "./Btns/BtnCompare";
 export const SectionHead = ({commentNumber,res1}) => {
   const [items, setItems] = useState();
   useEffect(() => {
@@ -131,11 +132,12 @@ const Option = {
                                 </a>
                               </li>
                               <li>
-                                <a href="#" title="مقایسه">
+                                {/* <a href="#" title="مقایسه">
                                   <FontAwesomeIcon
                                     icon={faSlidersH}
                                   ></FontAwesomeIcon>
-                                </a>
+                                </a> */}
+                                <BtnCompare item={item}></BtnCompare>
                               </li>
                             </ul>
                           </div> 

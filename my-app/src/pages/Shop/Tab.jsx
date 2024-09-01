@@ -9,8 +9,7 @@ import axios from "axios"
 import { Product, ProductList } from "./Product"
 export const Tab=({items,setItems,productLength,t})=>{
     //
-     console.log(productLength);
-    // console.log(items);
+    console.log(items)
     //
       //tab
       const [toggleState,setToggleStata]=useState(2)

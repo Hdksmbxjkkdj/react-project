@@ -76,7 +76,8 @@ export const Products = ({ sidebars }) => {
 
   var paginationLength = length;
   paginationLength = Math.ceil(paginationLength / 8);
-  console.log(items?.length);
+  //pagin
+  console.log(items,'itemssss')
   return (
     <>
       <main>
