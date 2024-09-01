@@ -16,7 +16,10 @@ import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-bt
 // import {ShowProduct} from './Modal/ShowProduct'
 import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
-export const SectionHead = ({ commentNumber }) => {
+import { Link } from "react-router-dom";
+import { Btns } from "./Modal/Btn";
+import { BtnLike } from "./Btns/BtnLike";
+export const SectionHead = ({commentNumber,res1}) => {
   const [items, setItems] = useState();
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((res) => {
@@ -26,7 +29,24 @@ export const SectionHead = ({ commentNumber }) => {
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
   //modal
-
+//responsive
+const Option = {
+  loop: true,
+  margin: 20,
+  // autoplay: true,
+  // autoplayTimeout: 3000,
+  // smartSpeed: 500,
+  // items: 6,
+  navText: [
+    '<button><i class="fa fa-angle-left"></i></button>',
+    '<button><i class="fa fa-angle-right"></i></button>',
+  ],
+  // nav: true,
+  dots: false,
+  responsive: res1,
+  autoplayHoverPause: true,
+};
+//responsive
   return (
     <>
       <section
@@ -44,22 +64,26 @@ export const SectionHead = ({ commentNumber }) => {
                 </div>
               </div>
             </div>
-            <div className="row">
+          </div>
+             <div className="row"> 
+             <div class="col-xxl-12">
               <OwlCarousel
-                className="product__slider OwlCarousel owl-theme"
+                className="product__slider OwlCarousel owl-theme owl-carousel"
+                {...Option}
                 items={5}
                 loop
                 autoPlay
                 // key={Math.random()}
                 // nav
                 fs-1
+              
               >
                 {items?.data?.map((item, index) => {
                   return (
                     <>
                       <div className="product__item white-bg mb-30 item">
                         <div className="product__thumb p-relative">
-                          <a href="product-details.html" className="w-img">
+                          <Link to="/#" className="w-img">
                             <img
                               src={Config.shop + "" + item.pic}
                               alt="product"
@@ -69,12 +93,12 @@ export const SectionHead = ({ commentNumber }) => {
                               src={Config.shop + "" + item.seccondpic}
                               alt="product"
                             />
-                          </a>
+                          </Link>
                           {/* <Modal items={item}></Modal> */}
 
-                          <div className="product__action p-absolute">
+                        <div className="product__action p-absolute">
                             <ul>
-                              <li>
+                              {/* <li>
                                 <a
                                   href="#"
                                   onClick={() =>
@@ -91,7 +115,8 @@ export const SectionHead = ({ commentNumber }) => {
                                     icon={faHeart}
                                   ></FontAwesomeIcon>
                                 </a>
-                              </li>
+                              </li> */}
+                              <BtnLike items={items}></BtnLike>
                               <li>
                                 <a
                                   href="#"
@@ -113,7 +138,8 @@ export const SectionHead = ({ commentNumber }) => {
                                 </a>
                               </li>
                             </ul>
-                          </div>
+                          </div> 
+                          {/* <Btns items={items}></Btns> */}
                         </div>
 
                         <div className="product__content text-center">
@@ -134,9 +160,10 @@ export const SectionHead = ({ commentNumber }) => {
                           </div>
                           <span className="price">تومان{item.price}.000 </span>
                         </div>
-                        <div className="product__add-btn">
+                        {/* <div className="product__add-btn">
                           <button type="button">افزودن به سبد خرید</button>
-                        </div>
+                        </div> */}
+                           <ProductAddbtn item={item}></ProductAddbtn>
 
                         {/* <AddToCart></AddToCart> */}
                       </div>
@@ -155,9 +182,10 @@ export const SectionHead = ({ commentNumber }) => {
                   </Modal>
                 )}
               {/* </div> */}
+              </div>
             </div>
           </div>
-        </div>
+        
       </section>
     </>
   );

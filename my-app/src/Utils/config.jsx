@@ -9,6 +9,7 @@ const Config = {
     team:"/img/team/",
     brand:"/img/brand",
     sidebar:"/img/sidebar/",
+    logo:"/img/logo/"
   
 }
 

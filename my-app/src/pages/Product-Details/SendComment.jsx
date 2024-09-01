@@ -9,6 +9,8 @@ import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
+import { useForm } from "@inertiajs/react";
+
 //test
 export const SendComment = ({
   id,
@@ -40,9 +42,16 @@ export const SendComment = ({
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
     //لاگین بودن کاربر
-
+//
+const {reset} = useForm({
+});
+useEffect(() => {
+  return () => {
+      reset();
+  };
+}, []);
+//
   const [errors, setErrors] = useState();
-  console.log(errors)
   const [data, setData] = useState({
     //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
     //   sender_email: auth ? auth.email : "",
@@ -53,7 +62,7 @@ export const SendComment = ({
     //   product_id: user.id,
     //   quality
   });
- 
+
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
   const submit = async (e) => {
@@ -71,15 +80,13 @@ export const SendComment = ({
                : "",
              // sender_email: auth ? auth.email : "",
              sender_email: user.id,
-             comment: "",
+             comment: data?.comment,
              id_product: id,
              date: today,
              id_customer: user.id,
              rate: quality,
            })
            .then((response) => {
-            console.log("response")
-            console.log(response)
              // let message = response.data?.message;
              //   let message = "Insert";
              let message = "پیام شما با موفقیت ارسال شد";
@@ -87,10 +94,12 @@ export const SendComment = ({
              //    if (response.data?.status == 201) {
              //    if (data!= ""&&response?.status == 201) {
              if (response?.status == 201) {
-               Notif("success", message);
+
+               
+              Notif("success", message);
                // Notif("error", "status خالی میباشد");
    
-               // reset()
+                reset()
                return;
              }else {
               Notif('error', 'خالی است')
@@ -126,6 +135,7 @@ export const SendComment = ({
   //     });
   // }, []);
   //CustomerCommen
+
 
   return (
     <>
@@ -188,9 +198,11 @@ export const SendComment = ({
                         </h4>
                         <div className="review-input">
                           <Input
+                          readonly
                             id="sender_name"
                             name="sender_name"
-                            value={data?.sender_name}
+                            // value={data?.sender_name}
+                            value={user.username}
                             error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>

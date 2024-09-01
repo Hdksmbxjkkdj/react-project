@@ -10,8 +10,33 @@ import {SendComment } from './SendComment';
 import { useParams } from "react-router-dom";
 import { TabContent } from "../Home1/best-selling/tab-content";
 import { Product } from "../Shop/Product";
+import { BradCrumb } from "./BeradCrumb";
 
 export const ProducDetails= () =>{
+    //responsive OwlCarousel
+    var res1 = {
+        item: 6,
+        0: {
+          items: 1,
+        },
+        576: {
+          items: 2,
+        },
+        767: {
+          items: 2,
+        },
+        992: {
+          items: 4,
+        },
+        1200: {
+          items: 5,
+        },
+        1600: {
+          items: 6,
+        },
+      };
+    //responsive OwlCarousel
+
     //tab
     const[tab,setTab]=useState(2)
     const change =(index) => {
@@ -54,6 +79,7 @@ export const ProducDetails= () =>{
 //        //Number of comments
     return<>
         <main>
+            <BradCrumb></BradCrumb>
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
@@ -69,8 +95,8 @@ export const ProducDetails= () =>{
                     </div>
                 </div>
             </section>
-            <SectionHead commentNumber={ProductComment?.data?.length} />    
-            <BrandSlider/> 
+            <SectionHead commentNumber={ProductComment?.data?.length} res1={res1}/>    
+            <BrandSlider res1={res1}/> 
         </main>
     </>
 }

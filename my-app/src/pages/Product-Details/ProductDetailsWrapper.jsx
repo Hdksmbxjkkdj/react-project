@@ -8,9 +8,12 @@ import { useContext, useEffect,useState } from "react";
 import axios from "axios";
 import { Rank } from "../Components/Rank";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
-import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 import { Rate } from "./RateSubmit/Rate";
 import { CartContext } from "../../context/CardContext";
+import{ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btncopy";
+import{BtnLike} from "./Btns/BtnLike"
+import { BtnShare } from "./Btns/BtnShare";
+import { BtnShareBody } from "./Btns/BtnShareBody";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -34,23 +37,27 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
+
 //
-const changeCss=(event)=>{
-  // window?.(event.target).parent().find('.product-quantity').css("backgroundColor","red")
-   window?.$(event.target).parent().parent().find(".cart-plus-minus").css({"display":"none"})
-
+const[show,setShow]=useState(false)
+//
+// const {cart,setCart} = useContext(CartContext);
+// const [check,setCheck] = useState([]);
+// useEffect(()=>{
+//   cart.map(el=>{
+//     if(el.id==item?.data?.id)
+//       {
+//         setCheck([...check,item?.data])
+//       }
+//   })
+// },[])
+//btnshare
+const currentPageUrl = "tutorend.com";
+const [modal, setModal] = useState({ show: false});
+const close = () =>{
+  setModal(!modal)
 }
-
-const {cart,setCart} = useContext(CartContext);
-const [check,setCheck] = useState([]);
-useEffect(()=>{
-  cart.map(el=>{
-    if(el.id==item?.data?.id)
-      {
-        setCheck([...check,item?.data])
-      }
-  })
-},[])
+//btnshare
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -96,13 +103,15 @@ useEffect(()=>{
             </div>
             <div className="product__details-stock">
               <h3>
-                <span>عجله کن!</span> فقط {item?.data.number} محصول در انبار باقی مانده است.
+                <span>{item?.data.number==0?"":"عجله کن!"}</span>  {item?.data.number==0?"موجودی این محصول به پایان رسیده است":item?.data.number+"عدد محصول در انبار موجود است"}
               </h3>
               <div className="progress d-flex">
                 <div
                   className="progress-bar progress-bar-striped progress-bar-animated"
+                  style={{width:`${item?.data?.number}%`,backgroundColor:"#fcb700",transition:"width 0.5s"}}
                   role="progressbar"
                   aria-valuenow="75"
+                  // aria-valuenow={item?.data?.number}
                   aria-valuemin="0"
                   aria-valuemax="100"
                   data-width="100%"
@@ -110,27 +119,28 @@ useEffect(()=>{
               </div>
             </div>
             <div className="product__details-quantity mb-20">
-              <form action="#">
+              {/* <form action="#">
                 <div className="pro-quan-area d-lg-flex align-items-center">
-                  <div className="product-quantity mr-20 mb-25 t">
+                  <div className="product-quantity mr-20 mb-25">
                     <div className="cart-plus-minus p-relative">
                       <input type="text" value="1" />
                     </div>
                   </div>
-                 {(check.includes(item?.data))?<p>اضافه شده</p>:<div className="pro-cart-btn mb-25 me-3">
-                    <button className="t-y-btn" type="submit" onClick={(event)=>changeCss(event)} >
+                <div className="pro-cart-btn mb-25 me-3"> */}
+                    {/* <button className="t-y-btn" type="submit" onClick={()=>setShow({show:true})}>
                     به سبد خرید اضافه کنید
-                    </button>
+                    </button> */}
                   
                   {/* <ProductAddbtn item={item?.data} className={"t-y-btn"}/> */}
                   {/* <ProductAddbtn item={item?.data} className={"t-y-btn mr-10"}/> */}
-
-                  </div>} 
+                    <ProductAddbtn item={item?.data} className={"t-y-btn"} type={"productDetails"}></ProductAddbtn>
+                  {/* </div> 
                 </div>
-              </form>
+              </form> */}
             </div>
             <div className="product__details-action">
               <ul>
+                <BtnLike items={item}></BtnLike>
                 {/* <li>
                   <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
@@ -143,16 +153,35 @@ useEffect(()=>{
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="Print">
+                  <a href="#" title="پرینت">
                     <FontAwesomeIcon icon={faPrint}></FontAwesomeIcon>
                   </a>
                 </li>
-                <li>
-                  <a href="#" title="Print">
+                {/* <li>
+                  <a href="#" title="اشتراک گذاری">
                     <FontAwesomeIcon icon={faShareAlt}></FontAwesomeIcon>
                   </a>
+                </li> */}
+                <li>
+                <a href="#" title="اشتراک گذاری"  onClick={()=>{setModal(true);close(true)}} >
+          <FontAwesomeIcon icon={faShareAlt} >
+          </FontAwesomeIcon> 
+
+         
+
+        </a>
+      
                 </li>
+             
               </ul>
+              {modal && (
+        <BtnShareBody
+          setModal={setModal}
+          modal={modal}
+        >
+          {/* <ModalBody data={modalInfo.data} /> */}
+          </BtnShareBody>
+      )}
             </div>
           </div>
         </div>

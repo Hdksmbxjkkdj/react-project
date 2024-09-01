@@ -6,7 +6,6 @@ export const Input = forwardRef(function Input({ type = 'text', className = '', 
 
     useEffect(() => {
         if (isFocused) {
-            console.log(isFocused)
             input.current.focus();
         }
     }, []);
