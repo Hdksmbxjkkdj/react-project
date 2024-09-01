@@ -6381,3 +6381,9 @@ p.checkout-coupon input[type=text]:focus {
     flex-wrap: wrap!important;
   }
   }
+  @media screen and (max-width: 768px) {
+    .moodal{
+      width: 100%!important;
+      margin-top:5rem;
+    }
+    }

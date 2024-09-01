@@ -12,6 +12,7 @@ import { ProductAddbtn } from "../../Home1/best-selling/product-item/product-add
 import { BtnLike } from "../Btns/BtnLike";
 import { BtnShareBody } from "../Btns/BtnShareBody";
 import { BtnPrint } from "../Btns/BtnPrint";
+import { BtnCompare } from "../Btns/BtnCompare";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
   const handleImg = (event) => {
     let preview = window?.$(".tab-content img");
@@ -67,8 +68,8 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
         }}
       >
         <div className="container d-flex justify-content-center">
-          {/* <div className="row justify-content-center align-items-center w-75"> */}
-          <div className="modal-content mt-3 ">
+          {/* <div className="row justify-content-center align-items-center"> */}
+          <div className="modal-content w-75 moodal">
             <div className="product__modal-wrapper p-relative">
               {/* <div className="product__modal-close p-absolute">
                             <button data-bs-dismiss="modal"><i className="fal fa-times"></i></button>
@@ -208,11 +209,12 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
 </li> */}
                           <BtnLike items={modal}></BtnLike>
                           <li>
-                            <a href="#" title="مقایسه کنید">
+                            {/* <a href="#" title="مقایسه کنید">
                               <FontAwesomeIcon
                                 icon={faSliders}
                               ></FontAwesomeIcon>
-                            </a>
+                            </a> */}
+                            <BtnCompare item={modal?.data}></BtnCompare>
                           </li>
                           <li>
                             <BtnPrint></BtnPrint>

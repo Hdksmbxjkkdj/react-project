@@ -1,6 +1,90 @@
  import { config } from "@fortawesome/fontawesome-svg-core";
-import { Config } from "../../Utils";
+import { Config,Notif } from "../../Utils";
+import { useState,useEffect } from "react";
+import { Input } from "../../Compont/Forms";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 const Footer = ()=>{
+    //
+   
+  
+   
+    let eMessage = "error_message";
+    let sMessage = "success_message";
+
+  
+      //لاگین بودن کاربر
+  //
+ 
+ 
+  //
+    const [errors, setErrors] = useState();
+    console.log(errors,'errors')
+    const [data, setData] = useState({
+    
+    });
+    const {reset} = useForm({
+    });
+    useEffect(() => {
+        return () => {
+            reset();
+        };
+      }, []);
+    const [error, setError] = useState();
+    let url = `http://localhost:313/khabarname`;
+    const submit = async (e) => {
+      e.preventDefault();
+      // if (user != null) {
+      //  if(data?.sender_name!=null){
+             // clearErrors()
+  
+             await axios
+             .post(url, {
+             
+               // sender_email: auth ? auth.email : "",
+            //    sender_email: user.id,
+            email:data.sender_email,
+            //    date: today,
+               
+             })
+
+             .then((response) => {
+               // let message = response.data?.message;
+               //   let message = "Insert";
+               let message = "پیام شما با موفقیت ارسال شد";
+     
+               //    if (response.data?.status == 201) {
+               //    if (data!= ""&&response?.status == 201) {
+               if (response?.status == 201) {
+  
+                 
+                Notif("success", message);
+                 // Notif("error", "status خالی میباشد");
+     
+               reset()
+                 return;
+               }else {
+                Notif('error', 'خالی است')
+                
+                return
+            }
+             })
+             .catch((errors) => {
+               setError(errors?.response.data?.errors);
+             });
+     
+            errors?.length > 0 && Notif('error', eMessage)
+     
+           return;
+        //  }
+        //  Notif("error", 'فیلد نام یا نظر خالی است');
+       
+   
+  
+    //   Notif("error", loginMessage);
+    };
+  
+    //
     return(
         <>
         { 
@@ -147,8 +231,18 @@ const Footer = ()=>{
                                                     <p> <span>بپیوندید 40.00+ دنبال کننده</span> وهر آخر هفته کد های تخفیف دریافت کنید.</p>
                                                     <div className="footer__subscribe-form">
                                                         <form action="#">
-                                                            <input type="email" placeholder="آدرس ایمیل خود را وارد کنید ..."/>
-                                                            <button type="submit">دنبال کردن</button>
+                                                            <input type="email" placeholder="آدرس ایمیل خود را وارد کنید ..."
+                                                              id="sender_email"
+                                                              required
+                                                              // value={data?.sender_email}
+                                                             
+                                                             
+                                                              name="sender_email"
+                                                              // value={data?.sender_email}
+                                                              error={errors?.sender_email}
+                                                              onChange={(e) =>
+                                                                setData({ ...data, sender_email: e.target.value })} />
+                                                            <button type="submit"   onClick={(event) => submit(event)}>دنبال کردن</button>
                                                         </form>
                                                     </div>
                                                 </div>
