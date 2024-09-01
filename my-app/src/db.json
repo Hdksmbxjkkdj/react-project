@@ -40,14 +40,6 @@
       "date": "27/08/2024"
     },
     {
-      "id": "1",
-      "pic": "product-1.jpg",
-      "name": " آشپزخانه فوق نازک شیشه ای   ",
-      "unitprice": 500,
-      "quantity": 1,
-      "date": "29/08/2024"
-    },
-    {
       "id": "3",
       "pic": "product-5.jpg",
       "name": "سامسونگ C49J89: 875 پوند، Debenhams ",
@@ -943,6 +935,25 @@
       "id_product": "1",
       "date": "۱۴۰۳/۶/۸",
       "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": "3d58",
+      "sender_name": "محمد",
+      "sender_email": "mohammad@gmail.com",
+      "comment": "hhhhh",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱۰",
+      "id_customer": "mohammad@gmail.com",
+      "rate": 4
+    },
+    {
+      "id": "ab1b",
+      "sender_name": "محمد",
+      "sender_email": "mohammad@gmail.com",
+      "id_product": "3",
+      "date": "۱۴۰۳/۶/۱۰",
+      "id_customer": "mohammad@gmail.com",
       "rate": 0
     }
   ],

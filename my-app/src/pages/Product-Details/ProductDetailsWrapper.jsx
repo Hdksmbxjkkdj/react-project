@@ -14,6 +14,7 @@ import{ProductAddbtn} from "../Home1/best-selling/product-item/product-add-btnco
 import{BtnLike} from "./Btns/BtnLike"
 import { BtnShare } from "./Btns/BtnShare";
 import { BtnShareBody } from "./Btns/BtnShareBody";
+import { BtnCompare } from "./Btns/BtnCompare";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
   useEffect(() => {
     window
@@ -53,7 +54,7 @@ const[show,setShow]=useState(false)
 // },[])
 //btnshare
 const currentPageUrl = "tutorend.com";
-const [modal, setModal] = useState({ show: false});
+const [modal, setModal] = useState(false);
 const close = () =>{
   setModal(!modal)
 }
@@ -148,9 +149,7 @@ const close = () =>{
                 </li> */}
                 {/* <AddToWishlist item={item}></AddToWishlist> */}
                 <li>
-                  <a href="#"  title="مقایسه کنید">
-                    <FontAwesomeIcon icon={faSliders}></FontAwesomeIcon>
-                  </a>
+                 <BtnCompare item={item}></BtnCompare>
                 </li>
                 <li>
                   <a href="#" title="پرینت">
