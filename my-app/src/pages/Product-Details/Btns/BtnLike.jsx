@@ -11,19 +11,22 @@ export const BtnLike = ({items})=>{
   
   //like btn
   const[item,setItem]=useState()
+  console.log(items, 'data')
+  // console.log(items,item,'m,m,,m')
+
   
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
   const [checker, setChecker] = useState([]);
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    const use = JSON.parse(user);
-    axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
-      res?.data.filter((el) => {
-        el.Pid == items?.id && setChecker([...checker, items]);
-      });
-    });
-  }, [row]);
+  // useEffect(() => {
+  //   const user = localStorage.getItem("user");
+  //   const use = JSON.parse(user);
+  //   axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
+  //     res?.data.filter((el) => {
+  //       el.Pid == items?.id && setChecker([...checker, items]);
+  //     });
+  //   });
+  // }, [row]);
 
   const u = localStorage.getItem("user");
   const use = JSON.parse(u);

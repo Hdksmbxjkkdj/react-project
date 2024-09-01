@@ -39,12 +39,15 @@ export const BtnCompare = ({item}) => {
     }, []);
     let compare = [];
   function handleCompare() {
+    console.log('test1')
     if (localStorage.getItem("compare")==null) {
       localStorage.setItem("compare", []);
+      console.log('null')
     }
     if(localStorage.getItem("compare").length>6)
     {
       Notif("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
+      console.log("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
       return
     }
     compare = localStorage.getItem("compare").split(",");

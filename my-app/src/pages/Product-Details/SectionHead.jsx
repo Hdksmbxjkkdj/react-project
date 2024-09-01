@@ -117,7 +117,7 @@ const Option = {
                                   ></FontAwesomeIcon>
                                 </a>
                               </li> */}
-                              <BtnLike items={items}></BtnLike>
+                              <BtnLike items={item}></BtnLike>
                               <li>
                                 <a
                                   href="#"
@@ -156,11 +156,11 @@ const Option = {
                               {item.text}
                             </a>
                           </h6>
-                          <div className="rating">
+                          <div className="rating d-block">
                           <Rate stars={item?.rate} type="comment" className="ms-3"/> 
 
                           </div>
-                          <span className="price">تومان{item.price}.000 </span>
+                          <span className="price" style={{direction:"rtl"}}>{item.price}.000تومان </span>
                         </div>
                         {/* <div className="product__add-btn">
                           <button type="button">افزودن به سبد خرید</button>
