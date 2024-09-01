@@ -6,7 +6,6 @@ import { CartContext } from "../../../context/CardContext";
 import { Notif } from "../../../Utils";
 import{BtnShareBody} from "./BtnShareBody"
 export const BtnCompare = ({item}) => {
-    console.log(item,'llll')
     const { cart } = useContext(CartContext);
     const { row, setrow } = useContext(CartContext);
     const [checker, setChecker] = useState([]);
@@ -39,15 +38,12 @@ export const BtnCompare = ({item}) => {
     }, []);
     let compare = [];
   function handleCompare() {
-    console.log('test1')
     if (localStorage.getItem("compare")==null) {
       localStorage.setItem("compare", []);
-      console.log('null')
     }
     if(localStorage.getItem("compare").length>6)
     {
       Notif("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
-      console.log("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
       return
     }
     compare = localStorage.getItem("compare").split(",");

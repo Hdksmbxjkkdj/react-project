@@ -149,7 +149,7 @@ const close = () =>{
                 </li> */}
                 {/* <AddToWishlist item={item}></AddToWishlist> */}
                 <li>
-                 <BtnCompare item={item}></BtnCompare>
+                 <BtnCompare item={item?.data}></BtnCompare>
                 </li>
                 <li>
                  <BtnPrint></BtnPrint>

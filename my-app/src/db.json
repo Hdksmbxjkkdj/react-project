@@ -1035,6 +1035,16 @@
       "date": "۱۴۰۳/۶/۱۰",
       "id_customer": "mohammad@gmail.com",
       "rate": 0
+    },
+    {
+      "id": "0547",
+      "sender_name": "کاظم",
+      "sender_email": "kazem@gmail.com",
+      "comment": ",m,m,",
+      "id_product": "2",
+      "date": "۱۴۰۳/۶/۱۱",
+      "id_customer": "kazem@gmail.com",
+      "rate": 0
     }
   ],
   "product-category": [
@@ -1121,6 +1131,48 @@
     {
       "size": "xx-large",
       "id": "XXL"
+    }
+  ],
+  "khabarname": [
+    {
+      "id": "aae2",
+      "email": {
+        "sender_email": "jhjh@gann.com"
+      }
+    },
+    {
+      "id": "8d56",
+      "email": {
+        "sender_email": "jhjh@gann.com"
+      }
+    },
+    {
+      "id": "409b",
+      "email": "mxzmmmn@jkjk.com"
+    },
+    {
+      "id": "a859",
+      "email": "nn"
+    },
+    {
+      "id": "ed6b",
+      "email": "nn"
+    },
+    {
+      "id": "f121",
+      "email": "q@gfgfgf.com"
+    },
+    {
+      "id": "518a",
+      "email": "q@gfgfgf.com"
+    },
+    {
+      "id": "2059",
+      "email": "q@gfgfgf.com"
+    },
+    {
+      "id": "d10a",
+      "email": "q@gfgfgf.com"
     }
   ]
 }
