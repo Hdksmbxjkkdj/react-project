@@ -1,7 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect,useState } from "react";
@@ -15,7 +12,10 @@ import{BtnLike} from "./Btns/BtnLike"
 import { BtnShare } from "./Btns/BtnShare";
 import { BtnShareBody } from "./Btns/BtnShareBody";
 import { BtnCompare } from "./Btns/BtnCompare";
+import { BtnPrint } from "./Btns/BtnPrint";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
+  // console.log(item?.data,'product-details')
+
   useEffect(() => {
     window
       ?.$(".cart-plus-minus")
@@ -38,7 +38,6 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
       $button.parent().find("input").val(newVal);
     });
   }, []);
-
 //
 const[show,setShow]=useState(false)
 //
@@ -141,7 +140,8 @@ const close = () =>{
             </div>
             <div className="product__details-action">
               <ul>
-                <BtnLike items={item}></BtnLike>
+                <BtnLike items={item?.data}></BtnLike>
+
                 {/* <li>
                   <a href="#" title="افزودن به علاقه مندی ها">
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
@@ -152,9 +152,7 @@ const close = () =>{
                  <BtnCompare item={item}></BtnCompare>
                 </li>
                 <li>
-                  <a href="#" title="پرینت">
-                    <FontAwesomeIcon icon={faPrint}></FontAwesomeIcon>
-                  </a>
+                 <BtnPrint></BtnPrint>
                 </li>
                 {/* <li>
                   <a href="#" title="اشتراک گذاری">
