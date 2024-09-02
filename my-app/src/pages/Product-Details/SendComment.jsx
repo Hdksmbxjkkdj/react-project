@@ -20,7 +20,9 @@ export const SendComment = ({
   commentNumber,
   item,
   info,
+  items
 }) => {
+
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
   //  const [value, setValue] = useState(0);
@@ -141,7 +143,7 @@ useEffect(() => {
     <>
       <div className="col-xxl-12">
         <div className="tab-content" id="prodductDesTaContent">
-          <TapContent tab={tab}></TapContent>
+          <TapContent items={items} tab={tab}></TapContent>
           <div
             className={
               tab === 2 ? "tab-pane fade" : "tab-pane fade show active"

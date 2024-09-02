@@ -11,7 +11,6 @@ export const BtnLike = ({items})=>{
   
   //like btn
   const[item,setItem]=useState()
-  // console.log(items,item,'m,m,,m')
 
   
   const { cart } = useContext(CartContext);

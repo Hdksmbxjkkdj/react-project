@@ -14,7 +14,6 @@ import { BtnShareBody } from "./Btns/BtnShareBody";
 import { BtnCompare } from "./Btns/BtnCompare";
 import { BtnPrint } from "./Btns/BtnPrint";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
-  // console.log(item?.data,'product-details')
 
   useEffect(() => {
     window

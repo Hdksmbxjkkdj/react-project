@@ -13,6 +13,7 @@ import { BrandSlider } from "../Product-Details/BrandSlider";
 import { ModalContext } from "../../context/modal";
 import { Favorite } from "../Components/Like";
 import { Pagination } from "../Components/pagination";
+import { faTableCellsLarge } from "@fortawesome/free-solid-svg-icons";
 export const Products = ({ sidebars }) => {
   const [category, setCategory] = useState();
   useEffect(() => {
@@ -77,7 +78,7 @@ export const Products = ({ sidebars }) => {
   var paginationLength = length;
   paginationLength = Math.ceil(paginationLength / 8);
   //pagin
-  console.log(items,'itemssss')
+ 
   return (
     <>
       <main>
@@ -104,7 +105,7 @@ export const Products = ({ sidebars }) => {
                     setItems={setItems}
                     items={items}
                     productLength={productComment?.length}
-                    t={items?.length}
+                    length={length}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">

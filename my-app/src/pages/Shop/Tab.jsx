@@ -7,9 +7,8 @@ import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import { Product, ProductList } from "./Product"
-export const Tab=({items,setItems,productLength,t})=>{
+export const Tab=({items,setItems,productLength,length})=>{
     //
-    console.log(items)
     //
       //tab
       const [toggleState,setToggleStata]=useState(2)
@@ -58,9 +57,9 @@ export const Tab=({items,setItems,productLength,t})=>{
                       <div className="tab-content" id="productGridTabContent">
                            <div className={toggleState === 1 ? "tab-pane fade" : "tab-pane fade show active"}  id="FourCol" role="tabpanel" aria-labelledby="FourCol-tab">
                                 <div className="row"  style={{minHeight:'680px'}}>
-                                    {console.log(items)}
+                                    
                                 {
-                               t> 0 ? (
+                               length> 0 ? (
                      <Product key={Math.random()} setItems={setItems} items={items} ></Product>
                   ) : (
                     <div class="text-center justify-content-center p-3 Larger rounded">
