@@ -6,7 +6,6 @@ import { CartContext } from "../../../context/CardContext";
 import { Notif } from "../../../Utils";
 import{BtnShareBody} from "./BtnShareBody"
 export const BtnCompare = ({item}) => {
-  console.log(item,'lllllll')
     const { cart } = useContext(CartContext);
     const { row, setrow } = useContext(CartContext);
     const [checker, setChecker] = useState([]);

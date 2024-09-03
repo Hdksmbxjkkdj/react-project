@@ -2,38 +2,31 @@
 import { Config,Notif } from "../../Utils";
 import { useState,useEffect } from "react";
 import { Input } from "../../Compont/Forms";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+import * as yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 const Footer = ()=>{
-    //
-   
-  
-   
     let eMessage = "error_message";
     let sMessage = "success_message";
+    //new
+  const schema=yup.object().shape({
+    email:yup.string().email("آدرس ایمیل نا معتبر است").required('فیلد ایمیل نباید خالی باشد')
+   })
 
+   const {register,handleSubmit,reset,formState:{errors}}=useForm({resolver:yupResolver(schema)})
+
+ 
+ //new
+ 
+ 
   
-      //لاگین بودن کاربر
-  //
- 
- 
-  //
-    const [errors, setErrors] = useState();
-    console.log(errors,'errors')
-    const [data, setData] = useState({
-    
-    });
-    const {reset} = useForm({
-    });
-    useEffect(() => {
-        return () => {
-            reset();
-        };
-      }, []);
     const [error, setError] = useState();
+    const [data, setData] = useState({
+    });
     let url = `http://localhost:313/khabarname`;
-    const submit = async (e) => {
-      e.preventDefault();
+    const onFormSubmit = async (data) => {
       // if (user != null) {
       //  if(data?.sender_name!=null){
              // clearErrors()
@@ -43,12 +36,14 @@ const Footer = ()=>{
              
                // sender_email: auth ? auth.email : "",
             //    sender_email: user.id,
-            email:data.sender_email,
+            email:data?.email,
             //    date: today,
+
                
              })
 
              .then((response) => {
+               console.log(response)
                // let message = response.data?.message;
                //   let message = "Insert";
                let message = "پیام شما با موفقیت ارسال شد";
@@ -70,10 +65,10 @@ const Footer = ()=>{
             }
              })
              .catch((errors) => {
-               setError(errors?.response.data?.errors);
+            //    setError(errors?.response.data?.errors);
              });
      
-            errors?.length > 0 && Notif('error', eMessage)
+            // error?.length > 0 && Notif('error', eMessage)
      
            return;
         //  }
@@ -230,19 +225,21 @@ const Footer = ()=>{
                                                 <div className="footer__subscribe">
                                                     <p> <span>بپیوندید 40.00+ دنبال کننده</span> وهر آخر هفته کد های تخفیف دریافت کنید.</p>
                                                     <div className="footer__subscribe-form">
-                                                        <form action="#">
-                                                            <input type="email" placeholder="آدرس ایمیل خود را وارد کنید ..."
+                                                        <form onSubmit={handleSubmit(onFormSubmit)}>
+                                                            <input placeholder="آدرس ایمیل خود را وارد کنید ..."
                                                               id="sender_email"
-                                                              required
+                                                            //   type="email"
                                                               // value={data?.sender_email}
-                                                             
-                                                             
                                                               name="sender_email"
                                                               // value={data?.sender_email}
-                                                              error={errors?.sender_email}
-                                                              onChange={(e) =>
-                                                                setData({ ...data, sender_email: e.target.value })} />
-                                                            <button type="submit"   onClick={(event) => submit(event)}>دنبال کردن</button>
+                                                            //   error={errors?.sender_email}
+                                                            //   onChange={(e) =>
+                                                            //     setData({ ...data, sender_email: e.target.value })} 
+                                                                {...register("email")}
+
+                                                                />
+                                                                {errors?.email && (<p className="text-danger">{errors.email?.message}</p>)}
+                                                            <button type="submit">دنبال کردن</button>
                                                         </form>
                                                     </div>
                                                 </div>

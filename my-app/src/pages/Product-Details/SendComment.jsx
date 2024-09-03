@@ -9,8 +9,12 @@ import { TapContent } from "./TapContent";
 import { CustomerComment } from "./CustomerComment";
 import { Rank } from "../Components/Rank";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
-import { useForm } from "@inertiajs/react";
-
+import { useForm } from "react-hook-form";
+import * as yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
+// import { schema } from "@hookform/resolvers/yup/src/__tests__/__fixtures__/data.js";
+// import { schema } from "@hookform/resolvers/computed-types/src/__tests__/__fixtures__/data.js";
+// import { schema } from "@hookform/resolvers/arktype/src/__tests__/__fixtures__/data.js";
 //test
 export const SendComment = ({
   id,
@@ -22,7 +26,15 @@ export const SendComment = ({
   info,
   items
 }) => {
+//new
+  const schema=yup.object().shape({
+   comment:yup.string().min(10,"تعداد کاراکتر ها نباید کمتر از 10 باشد").required("لطفا نظر خود را بنویسید"),
+  })
 
+  const {register,reset,handleSubmit,formState:{errors}}=useForm({resolver:yupResolver(schema)})
+
+
+//new
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
   //  const [value, setValue] = useState(0);
@@ -45,15 +57,14 @@ export const SendComment = ({
   user = JSON.parse(user);
     //لاگین بودن کاربر
 //
-const {reset} = useForm({
-});
-useEffect(() => {
-  return () => {
-      reset();
-  };
-}, []);
+// const {reset} = useForm({
+// });
+// useEffect(() => {
+//   return () => {
+//       reset();
+//   };
+// }, []);
 //
-  const [errors, setErrors] = useState();
   const [data, setData] = useState({
     //   sender_name: auth ? (auth.username ? auth.username : auth.full_name) : "",
     //   sender_email: auth ? auth.email : "",
@@ -63,16 +74,18 @@ useEffect(() => {
     //   date: today,
     //   product_id: user.id,
     //   quality
+    
   });
 
+  //  const onFormSubmit=(e)=>{
+  // }
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
-  const submit = async (e) => {
-    e.preventDefault();
+  const onFormSubmit = async (data) => {
+    //  preventDefault();
     // if (user != null) {
     //  if(data?.sender_name!=null){
            // clearErrors()
-
            await axios
            .post(url, {
              sender_name: user
@@ -110,10 +123,10 @@ useEffect(() => {
           }
            })
            .catch((errors) => {
-             setError(errors?.response.data?.errors);
+            //  setError(error?.response.data?.error);
            });
    
-          errors?.length > 0 && Notif('error', eMessage)
+          error?.length > 0 && Notif('error', eMessage)
    
          return;
       //  }
@@ -163,7 +176,11 @@ useEffect(() => {
                   <div className="review-form">
                     <h3>بررسی شما</h3>
                     <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
-                    <form onSubmit={(event) => submit(event)}>
+                    {/* <form onSubmit={(event) => submit(event)}> */}
+                    {/* <form onSubmit={handleSubmit(onFormSubmit)}> */}
+                     <form onSubmit={handleSubmit(onFormSubmit)}> 
+
+
                       <div className="review-input-box mb-15 d-flex align-items-start">
                         <h4 className="review-input-title">امتیاز شما</h4>
                         <div className="review-input">
@@ -199,13 +216,13 @@ useEffect(() => {
                           نام و نام خانوادگی
                         </h4>
                         <div className="review-input">
-                          <Input
+                          <input
                           readonly
                             id="sender_name"
                             name="sender_name"
                             // value={data?.sender_name}
                             value={user.username}
-                            error={errors?.sender_name}
+                            // error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>
                               setData({ ...data, sender_name: e.target.value })
@@ -217,44 +234,46 @@ useEffect(() => {
                       <div className="review-input-box d-flex align-items-start">
                         <h4 className="review-input-title">ایمیل</h4>
                         <div className="review-input">
-                          <Input
+                          <input
                             readonly
                             value={user.id}
                             type="email"
                             id="sender_email"
                             name="sender_email"
                             // value={data?.sender_email}
-                            error={errors?.sender_email}
+                            // error={errors?.sender_email}
                             autoComplete="useremail"
                             onChange={(e) =>
                               setData({ ...data, sender_email: e.target.value })
                             }
-                            required=""
                           />
                         </div>
                       </div>
                       <div className="review-input-box d-flex align-items-start">
                         <h4 className="review-input-title">نظر</h4>
                         <div className="review-input">
-                          <Textarea
+                          <textarea
                             id="comment"
-                            name="comment"
-                            value={data?.comment}
-                            error={errors?.comment}
+                            // name="comment"
+                            // value={data?.comment}
+                            // error={errors?.comment}
                             placeholder="نظر خود را بنویسید..."
                             autoComplete="username"
+                            type="text"
                             onChange={(e) =>
                               setData({ ...data, comment: e.target.value })
                             }
-                            required
-                          />
+                            {...register("comment")}
+
+                            />
+                            {errors?.comment && (<p className="text-danger text-end mb-3">{errors.comment?.message}</p>)}
                         </div>
                       </div>
                       <div className="review-sub-btn">
                         <button
                           type="submit"
                           className="t-y-btn t-y-btn-grey"
-                          onClick={(event) => submit(event)}
+                          // onClick={(event) => submit(event)}
                         >
                           ارسال بررسی
                         </button>
