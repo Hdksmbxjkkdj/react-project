@@ -3,10 +3,10 @@ import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
 const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue) => {
-  
     // let url = '/' + local + '/products/filter' + query
      let url='http://localhost:313/best_selling?'+ query
    
+   console.log(url)
         //  let url='http://localhost:313/best_selling?'+ query
 
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
@@ -27,7 +27,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
           
         })
         
-        
+         
 
 
         if (status != null) {

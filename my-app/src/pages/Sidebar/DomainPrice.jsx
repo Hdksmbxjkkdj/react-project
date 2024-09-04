@@ -13,18 +13,18 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
         window?.$("#slider-range").slider({
              range: true,
               min: 0,
-              max: 500,
-              values: [75, 500],
+              max: 900,
+              values: [75,900],
              slide: function (event, ui) {
-                 window?.$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                 window?.$("#amount").val("ت" + ui.values[0] + " - ت" + ui.values[1]);
                
             }, 
             stop: function (event, ui) {// نمیرود.اurlگر این قطعه نباشد ماکسیمم و مینیمم به 
                 rangeIsChanged(ui)
             }
         });
-              window?.$("#amount").val("$" +window?.$("#slider-range").slider("values", 0) +
-             " - $" + window?.$("#slider-range").slider("values", 1));
+              window?.$("#amount").val("تومان" +window?.$("#slider-range").slider("values", 0) +
+             " - تومان" + window?.$("#slider-range").slider("values", 1));
     },[])
    
     //css

@@ -12,12 +12,13 @@ import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-bt
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
 import { ModalContext } from "../../context/modal";
 import { ProductAction } from "../Home1/best-selling/product-item/product-action";
-import { Modal } from "../Components/modal";
-
+import { BtnLike } from "../Product-Details/Btns/BtnLike";
+import { BtnCompare } from "../Product-Details/Btns/BtnCompare";
 import { Local } from "../../Utils";
 import { useParams } from "react-router-dom";
 import { Pagination } from "../Components/pagination";
 import { Rate } from "../Product-Details/RateSubmit/Rate";
+import {Modal} from "../Product-Details/Modal/Modal"
 export const Product = ({
   items,
   setItems,
@@ -26,6 +27,11 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+  console.log(items?.data)
+
+  //modal
+  const [modal, setModal] = useState({ show: false, data: null, tittle: null });
+  //modal
   return (
     <>
       {items?.data?.map((item) => {
@@ -37,9 +43,55 @@ export const Product = ({
                   <a href={"/product/" + item.id} className="w-img">
                     <img src={Config.shop + "" + item.pic} alt="product" />
                   </a>
+                  <div className="product__action p-absolute">
+                            <ul>
+                              {/* <li>
+                                <a
+                                  href="#"
+                                  onClick={() =>
+                                    AddToWishlist(
+                                      item?.id,
+                                      item?.pic,
+                                      item?.text,
+                                      item?.price
+                                    )
+                                  }
+                                  title="افزودن به علاقه مندی ها"
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faHeart}
+                                  ></FontAwesomeIcon>
+                                </a>
+                              </li> */}
+                              <BtnLike items={item}></BtnLike>
+                              <li>
+                                <a
+                                  href="#"
+                                  title="نمایش سریع"
+                                  onClick={() =>
+                                    setModal({ show: true, data: item })
+                                  }
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faSearch}
+                                  ></FontAwesomeIcon>
+                                </a>
+                              </li>
+                              <li>
+                                {/* <a href="#" title="مقایسه">
+                                  <FontAwesomeIcon
+                                    icon={faSlidersH}
+                                  ></FontAwesomeIcon>
+                                </a> */}
+                                <BtnCompare item={item}></BtnCompare>
+                              </li>
+                            </ul>
+                          </div> 
+                 
+                  {/* <Modal items={item}></Modal> */}
+                </div> 
+              
 
-                  <Modal items={item}></Modal>
-                </div>
                 <div className="product__content text-center">
                   <h6 className="product-name">
                     <a
@@ -61,6 +113,16 @@ export const Product = ({
                              </div>  */}
                 <ProductAddbtn item={item}></ProductAddbtn>
               </div>
+              {modal.show &&
+                   (
+                  <Modal
+                    setModal={setModal}
+                    modal={modal}
+                    // commentNumber={commentNumber}
+                  >
+                    {/* <ModalBody data={modalInfo.data} /> */}
+                  </Modal>
+                )}
               {/* {showmodal&&<ModalContent closebtn={closebtn}>
          
                          </ModalContent>} */}

@@ -2635,7 +2635,8 @@ p {
   outline: none;
   background: none;
   margin-right: 10px;
-  width: 100px;
+  /* width: 100px; */
+  width: fit-content;
   margin-bottom: 15px;
 }
 .product__offer {
@@ -2852,7 +2853,7 @@ p {
   font-size: 0;
   text-align: center;
   line-height: 20px;
-  box-shadow: 0 0 0 1px #e6e6e6, inset 0 0 0 2px #fff;
+  box-shadow: 0 0 0 1px #e6e6e6, inset 0 0 0 1px #fff;
   background: #000;
 }
 .product__color ul li a img {
@@ -5775,7 +5776,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 /* filter test */
 .product__color ul li a:focus {
-  box-shadow: 0 0 0 1px #222, inset 0 0 0 2px #fff;
+  box-shadow: 0 0 0 2px #222, inset 0 0 0 2px #fff;
 }
 /* filter test */
 .Add-to-Wishlist .rr:focus{
