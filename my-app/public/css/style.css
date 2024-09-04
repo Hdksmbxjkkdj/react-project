@@ -1185,6 +1185,7 @@ p {
   flex-wrap: nowrap;
   justify-content: start !important;
   gap: 1rem;
+  overflow-x: auto;
 }
 .product__modal-box .nav-tabs .nav-item{
   flex-basis: 25%;
@@ -6017,7 +6018,8 @@ p.checkout-coupon input[type=text]:focus {
 	background-color: #fff;
 	border:none;
 	border-radius: 10px;
-	width: 190px;
+	max-width: 23
+  0px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
 }
@@ -6124,6 +6126,7 @@ p.checkout-coupon input[type=text]:focus {
 	font-size: 8px;
 	font-weight: bold;
 	color: grey;
+  text-decoration: line-through;
 }
 
 .creme{

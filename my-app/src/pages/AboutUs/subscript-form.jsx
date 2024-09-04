@@ -8,8 +8,7 @@ const Form = () => {
   {
     e.preventDefault();
     let status =201;
-    console.log(email);
-    if(email==""||email==null||email==undefined)
+    if(email===""||email===null||email===undefined)
     {
       Notif('error',"باید ایمیلتان را وارد کنید !")
       return
@@ -17,12 +16,12 @@ const Form = () => {
     try
     {
       axios.post("http://localhost:313/aboutus",{email:email}).then((res)=>{
+        setEmail("");
         status=res.status;
       })
       if(status==201)
       {
         Notif('success',"ایمیلتان با موفقیت ثبت گردید :)");
-        setEmail("");
     }
     else
     {
@@ -37,7 +36,7 @@ const Form = () => {
   return (
     <>
       <form onSubmit={(e)=>submit(e)}>
-        <input type="email" placeholder="ایمیلتان را وارد کنید ..." onChange={(e)=>setEmail(e.target.value)}/>
+        <input type="email" placeholder="ایمیلتان را وارد کنید ..." value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <button className="t-y-btn t-y-btn-sub" type="submit">عضویت</button>
       </form>
     </>

@@ -28,7 +28,8 @@ const ProductAction = ({ item }) => {
     return check;
   }
   const { modal, setModal } = useContext(ModalContext);
-  function Set() {
+  function Set(e) {
+    e.preventDefault()
     let incart = Checking();
     setModal({
       ...modal,
@@ -51,7 +52,8 @@ const ProductAction = ({ item }) => {
     });
   }, []);
   let compare = [];
-  function handleCompare() {
+  function handleCompare(e) {
+    e.preventDefault();
     if (localStorage.getItem("compare")==null) {
       localStorage.setItem("compare", []);
     }
@@ -61,6 +63,11 @@ const ProductAction = ({ item }) => {
       return
     }
     compare = localStorage.getItem("compare").split(",");
+    if(compare.includes(item.id))
+    {
+      Notif("warning",'این محصول در لیست مقایسه قبلا اضافه شده')
+      return
+    }
     compare = [...compare, item.id];
     localStorage.setItem("compare", compare);
     Notif("success",`${item.title} به مقایسه اضافه شد`)
@@ -73,8 +80,9 @@ const ProductAction = ({ item }) => {
             <li>
               <a
                 href="#"
-                onClick={() => {
+                onClick={(event) => {
                   AddToWishlist(
+                    event,
                     item.id,
                     item?.pic,
                     item?.text,
@@ -104,13 +112,13 @@ const ProductAction = ({ item }) => {
             </li>
           )}
           <li>
-            <a href="#" title="Quick View" onClick={Set}>
+            <a href="#" title="Quick View" onClick={(e)=>Set(e)}>
               <i className="fa fa-search"></i>
             </a>
           </li>
           <li>
             <a href="#" title="Compare">
-              <i className="fa fa-sliders-h" onClick={handleCompare}></i>
+              <i className="fa fa-sliders-h" onClick={(e)=>handleCompare(e)}></i>
             </a>
           </li>
         </ul>

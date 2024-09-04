@@ -35,12 +35,18 @@ var res1 = {
   item: 6,
   0: {
     items: 1,
+    center: true,
+    autoWidth:true,
   },
   576: {
     items: 2,
+    center: true,
+    autoWidth:true
   },
   767: {
     items: 2,
+    center: true,
+    autoWidth:true
   },
   992: {
     items: 4,
@@ -101,7 +107,7 @@ const Home1 = () => {
     })
   },[cart,modal])
   function handleSubmit(e){
-    AddToCart(e,modal.id,modal.img,modal.text,modal.price,value,setCart,cart,null,"error",null)
+    AddToCart(e,modal.id,modal.img,modal.title,modal.price,value,setCart,cart,null,"error",null)
   }
   return (
     <>
@@ -145,6 +151,26 @@ const Home1 = () => {
                         <li className="nav-item" role="presentation">
                           <button className="nav-link active" id="nav1-tab" data-bs-toggle="tab"data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1" aria-selected="true">
                             <img src={`${Config.shop}${modal.img}`} alt=""/>
+                          </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
+                          </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
+                          </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
+                          </button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
+                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
                           </button>
                         </li>
                         <li className="nav-item" role="presentation">

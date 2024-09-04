@@ -97,7 +97,7 @@ function App() {
             </div>
           </div>
         </div> */}
-        <BackToTop></BackToTop>
+        {/* <BackToTop></BackToTop>6 */}
         <Footer></Footer>
         <ToastContainer />
       </BrowserRouter>

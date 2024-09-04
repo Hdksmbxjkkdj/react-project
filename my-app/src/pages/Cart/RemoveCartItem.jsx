@@ -14,7 +14,7 @@ export const RemoveCartItem = async(event, id, name, setCart,setLoading, eMessag
             if(setLoading!=null) setLoading(false)
         })
         if (status == 200) {
-            Notif('success', `${name} با موفقیت  از علاقه مندی ها پاک شد`)
+            Notif('success', `${name} با موفقیت  از سبد خرید پاک شد`)
         } else {
             Notif('error', "در این جا یک خطا وجود دارد  !")
         }
