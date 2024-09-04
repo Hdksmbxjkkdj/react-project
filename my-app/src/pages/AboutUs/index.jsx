@@ -4,6 +4,7 @@ import { ProgressWrap } from "../Components/Progress-wrap";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, EmailShareButton, EmailIcon } from "react-share";
 
 const AboutUs = () => {
   const video = [
@@ -20,6 +21,8 @@ const AboutUs = () => {
       setabout(response);
     });
   }, []);
+
+  const currentPageUrl = "tutorend.com";
   // console.log(about.data[0]);
   return (
     <>
@@ -149,32 +152,38 @@ const AboutUs = () => {
                       </div>
                       <ul class="social">
                         <li>
-                          <Link
-                            to="/"
-                            className="fab fa-facebook"
-                            aria-hidden="true"
-                          ></Link>
+                          <FacebookShareButton
+                            url={currentPageUrl}
+                            quote="pleace share this post"
+                            hashtag="#code"
+                            className="sub-social"
+                          >
+                            <i className="fab fa-facebook"></i>
+                          </FacebookShareButton>
                         </li>
                         <li>
-                          <Link
-                            to="/"
-                            className="fab fa-twitter"
-                            aria-hidden="true"
-                          ></Link>
+                          <TwitterShareButton
+                            url={currentPageUrl}
+                            className="sub-social"
+                          >
+                            <i className="fab fa-twitter"></i>
+                          </TwitterShareButton>
                         </li>
                         <li>
-                          <Link
-                            to="/"
-                            className="fab fa-google-plus"
-                            aria-hidden="true"
-                          ></Link>
+                          <EmailShareButton
+                            url={currentPageUrl}
+                            className="sub-social"
+                          >
+                            <i class="fas fa-mail-bulk fa-sm  "></i>
+                          </EmailShareButton>
                         </li>
                         <li>
-                          <Link
-                            to="/"
-                            className="fab fa-linkedin"
-                            aria-hidden="true"
-                          ></Link>
+                          <LinkedinShareButton
+                            url={currentPageUrl}
+                            className="sub-social"
+                          >
+                            <i className="fab fa-linkedin"></i>
+                          </LinkedinShareButton>
                         </li>
                       </ul>
                     </div>

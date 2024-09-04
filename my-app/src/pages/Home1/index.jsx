@@ -158,26 +158,6 @@ const Home1 = () => {
                             <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
                           </button>
                         </li>
-                        <li className="nav-item" role="presentation">
-                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
-                          </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
-                          </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
-                          </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                          <button className="nav-link" id="nav2-tab" data-bs-toggle="tab" data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2" aria-selected="false">
-                            <img src={`${Config.shop}${modal.seccondimg}`} alt=""/>
-                          </button>
-                        </li>
                       </ul>
                     </div>
                   </div>

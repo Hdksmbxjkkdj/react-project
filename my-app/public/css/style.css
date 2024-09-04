@@ -6366,18 +6366,18 @@ p.checkout-coupon input[type=text]:focus {
   display: inline-block;
 }
 
-.our-team .social li a {
+.our-team .social li .sub-social {
   display: block;
-  padding: 10px;
-  font-size: 17px;
-  color: white;
+  padding: 10px !important;
+  font-size: 17px !important;
+  color: white !important;
   transition: all 0.3s ease 0s;
   text-decoration: none;
 }
 
-.our-team .social li a:hover {
-  color: #1369ce;
-  background-color: #f7f5ec;
+.our-team .social li .sub-social:hover {
+  color: #1369ce !important;
+  background-color: #f7f5ec !important;
 }
 @media screen and (max-width: 568px) {
   .images-product{
