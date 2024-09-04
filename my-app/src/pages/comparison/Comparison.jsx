@@ -16,9 +16,10 @@ export const Commparison = () => {
         localStorage.setItem("compare",u);
         window.location.reload();
     }
-    let comp = local.split(",");
+    let comp = local?.split(",");
     let rep; 
       rep= items?.data.filter((el) => {
+        if(comp!==undefined)
         return (
           el.id == comp[1] ||
           el.id == comp[2] ||

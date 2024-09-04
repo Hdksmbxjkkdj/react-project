@@ -5,6 +5,7 @@ import { Loader } from "../Components/loader";
 import { CartItem } from "./CartItem";
 const Cart = () => {
   const {loader} = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   function Total() {
     var tot = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -16,7 +17,6 @@ const Cart = () => {
   function handleSubmit(e) {
     e.preventDefault();
   }
-  const { cart } = useContext(CartContext);
   return (
     <>
       {(!loader)?<section className="cart-area pt-100 pb-100">

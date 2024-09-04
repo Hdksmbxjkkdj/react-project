@@ -21,7 +21,6 @@ const Register = () => {
       {
         axios.post("http://localhost:313/register",{username:register.username,id:register.emailAddres,pass:register.passowrd}).then((e)=>{
         status=e.status;
-        console.log(status);
         if(status==201)
         {
           Notif('success',"ثبت نام با موفقیت انجام شد ، لطفا وارد شوید");
