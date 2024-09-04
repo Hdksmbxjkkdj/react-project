@@ -7,7 +7,7 @@ import { CartContext } from "../../../context/CardContext";
 import { AddToWishlist } from "../../Home1/best-selling/product-item/AddToWishlist";
 import { RemoveWishList } from "../../WishList/RemoveWishList";
 export const BtnLike = ({items})=>{
-
+  console.log(items)
   
   //like btn
   const[item,setItem]=useState()
@@ -16,15 +16,15 @@ export const BtnLike = ({items})=>{
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
   const [checker, setChecker] = useState([]);
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-  //   const use = JSON.parse(user);
-  //   axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
-  //     res?.data.filter((el) => {
-  //       el.Pid == items?.id && setChecker([...checker, items]);
-  //     });
-  //   });
-  // }, [row]);
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const use = JSON.parse(user);
+    axios.get(`http://localhost:313/wishlist?Uid=${use?.id}`).then((res) => {
+      res?.data.filter((el) => {
+        el.Pid == items?.id && setChecker([...checker, items]);
+      });
+    });
+  }, [row]);
 
   const u = localStorage.getItem("user");
   const use = JSON.parse(u);
@@ -55,7 +55,7 @@ export const BtnLike = ({items})=>{
                     use.id,
                     setrow
                   );
-                setTextColor(textColor==="#696969 "?"red":"#696969 ")}}
+                setTextColor(textColor==="#696969"?"red":"#696969 ")}}
                 title="افزودن به علاقه مندی ها"
                 style={{color:textColor}}
               >

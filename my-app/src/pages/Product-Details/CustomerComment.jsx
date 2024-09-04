@@ -20,7 +20,8 @@ export const CustomerComment = ({
   return (
     <>
       <div className="col-xxl-6 col-xl-6 col-lg-6">
-        <div className="review-wrapper">
+        
+        <div className="review-wrapper" style={{maxHeight:"40rem",overflowY:"auto"}}>
           <h3 className="block-title">نظرات مشتریان</h3>
           {ProductComment?.data?.length == 0 ? (
             <div className="text-center justify-content-center p-3 Larger rounded mt-5">

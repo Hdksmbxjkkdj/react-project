@@ -104,7 +104,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                         className="nav nav-tabs d-flex flex-nowrap max-vw-25"
                         id="modalTab"
                         role="tablist"
-                        style={{ overflowX: "scroll", overflowY: "hidden" }}
+                        style={{ overflowX: "auto", overflowY: "hidden" }}
                       >
                         {modal?.data?.gallery.map((item) => {
                           return (
@@ -207,7 +207,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
   </a>
 </li> */}
-                          <BtnLike items={modal}></BtnLike>
+                          <BtnLike items={modal?.data}></BtnLike>
                           <li>
                             {/* <a href="#" title="مقایسه کنید">
                               <FontAwesomeIcon

@@ -58,7 +58,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
                                                                  </>
                                                                         
                                                                     })
-                         
+                                                                      
                                                                  }
                                                                                                           
                                                              </ul>
