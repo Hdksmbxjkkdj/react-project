@@ -1,9 +1,8 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
-import { RemoveWishList } from "./RemoveWishList"
+import { RemoveWishList } from "./RemoveWishList";
 const WishList = () => {
   const {row, setrow} = useContext(CartContext);
   const u = localStorage.getItem("user");
@@ -37,7 +36,7 @@ const WishList = () => {
                                   <p>{index+1}-</p>
                               </td>
                               <td class="product-thumbnail">
-                                <Link to={"/product-details"+item.id}>
+                                <Link to={"/product-details"+item.Pid}>
                                   <img
                                     src={Config.shop + "" + item.pic}
                                     alt=""
@@ -45,7 +44,7 @@ const WishList = () => {
                                 </Link>
                               </td>
                               <td class="product-name">
-                                <Link to={"/product-details/:"+item.id}
+                                <Link to={"/product-details/"+item.Pid}
                                   style={{ fontWeight: "600" }}
                                 >
                                   {item.name}

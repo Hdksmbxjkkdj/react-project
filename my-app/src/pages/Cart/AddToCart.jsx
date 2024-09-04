@@ -28,11 +28,6 @@ export const AddToCart = async (
     return false;
   }
   let status = 201;
-  window
-    ?.$(event.target)
-    .parent()
-    .find(".spinner-container")
-    .css("display", "flex");
   let message;
   try {
     await axios
@@ -46,7 +41,6 @@ export const AddToCart = async (
       })
       .then((response) => {
         response.data.status && (status = response.data.status);
-        // setLoader(false)
       });
     if (status == 201) {
       Notif("success", `${name} با موفقیت به سبد خرید اضافه شد`);
@@ -54,7 +48,6 @@ export const AddToCart = async (
       Notif("error", "آیتم اضافه نشد !");
     }
   } catch (error) {
-    console.log(error);
     Notif("error", "خظای ناشناخته رخ داده است !");
     return;
   } finally {
@@ -62,5 +55,4 @@ export const AddToCart = async (
        setCart(res.data);
     });
   }
-  window?.$(".spinner-container").fadeOut(300);
 };

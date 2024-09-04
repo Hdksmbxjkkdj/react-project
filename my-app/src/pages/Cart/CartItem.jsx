@@ -63,13 +63,13 @@ const QuantityRanger = (event) => {
         </span>
       </td>
       <td className="product-thumbnail">
-        <Link to={"/product-details/:" + items.id}>
+        <Link to={"/product-details/" + items.id}>
           <img src={Config.shop + "" + items.pic} alt="" />
         </Link>
       </td>
       <td className="product-name">
         <Link
-          to={"/product-details/:" + items.id}
+          to={"/product-details/" + items.id}
           style={{ fontWeight: "600" }}
         >
           {items.name}

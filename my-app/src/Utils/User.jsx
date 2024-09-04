@@ -3,12 +3,13 @@
 const User = () => {
     // let check = usePage().props.user
 
-    // if (check == undefined || check == '') {
-    //     return false;
-    // }
-
+    let user = localStorage.getItem("user")
+    if (user == undefined || user == '') {
+        return false;
+    }
+    user = JSON.parse(user)
     // return check;
-    return true;
+    return user;
 }
 
 export { User };
