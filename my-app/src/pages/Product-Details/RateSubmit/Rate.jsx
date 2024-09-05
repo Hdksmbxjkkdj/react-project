@@ -4,12 +4,12 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
         switch (type) {
             case 'md':
                 return <div className="review-link">
-                    <span class="rating-number"><span>{stars} </span> 'from' 5</span>
+                    <span class="rating-number"><span>{stars} </span> 'از' 5</span>
                 </div>
                 break;
             case 'lg':
                 return <div class="review-link">
-                    <span>(<span>{stars} </span> ('from') 5)</span>
+                    <span>(<span>{stars} </span> ('از') 5)</span>
                 </div>
                 break;
 

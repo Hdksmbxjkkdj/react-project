@@ -2280,6 +2280,7 @@ p {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   overflow: hidden;
+  direction: rtl;
 }
 .product__item.product__item-2 {
   border: 2px solid #ebebeb;
