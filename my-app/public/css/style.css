@@ -3237,8 +3237,8 @@ p {
 }
 .product__details-review .review-ratings-single span {
   color: #222;
-  width: 20%;
-  line-height: 1;
+  width: 10%;
+  /* line-height: 1; */
 }
 @media (max-width: 575px) {
   .product__details-review .review-ratings-single span {

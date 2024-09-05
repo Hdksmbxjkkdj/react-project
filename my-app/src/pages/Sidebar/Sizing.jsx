@@ -11,7 +11,6 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
         SideOffcanvasToggle('.filter-toggle','product__widget')
      
     })
-    console.log('size',size);
     return <>
        <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion2">

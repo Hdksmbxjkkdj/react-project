@@ -12,13 +12,13 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
         let amount = window?.$('#amount')
         window?.$("#slider-range").slider({
              range: true,
-              min: 0,
+              min: 75,
               max: 900,
-              values: [75,900],
+            //   values: [200,900],
             // range: true,
-            // min: parseInt(amount.attr('iniMin')),
-            // max: parseInt(amount.attr('iniMax')),
-            // values: [amount.attr('min'), amount.attr('max')],
+            // min: parseInt(amount.attr('min')),
+            // max: parseInt(amount.attr('max')),
+            values: [amount.attr('min'), amount.attr('max')],
              slide: function (event, ui) {
                  window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"تومان");
                
@@ -68,12 +68,12 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                                        <div>
                                            <form action="#" style={{direction:"rtl"}}>
                                                <input type="text" id="amount" readonly 
-                                                   iniMin={domain_price?.min}
-                                                   iniMax={domain_price?.max}
+                                                //    iniMin={domain_price?.min}
+                                                //    iniMax={domain_price?.max}
                                                 //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
-                                                 //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
+                                                    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'):75}
 
-                                                   max={searchParam?.get('price_lte') ? searchParam.get('price_lte') : domain_price?.max}
+                                                   max={searchParam?.get('price_lte') ? searchParam.get('price_lte') :900}
                                                />
                                            </form>
 

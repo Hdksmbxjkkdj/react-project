@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Input, Textarea } from "../../Compont/Forms";
 import { Notif, User } from "../../Utils";
+import { useForm } from "react-hook-form";
+import * as yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 export const ContactForm = () => {
   let auth = User();
   let loginMessage = "ابتدا وارد سایت شوید";
@@ -111,7 +114,7 @@ export const ContactForm = () => {
                     name="comment"
                     value={data?.comment}
                     error={errors?.comment}
-                    placeholder="your_comment"
+                    placeholder="نظر شما..."
                     autoComplete="username"
                     onChange={(e) =>
                       setData({ ...data, comment: e.target.value })
