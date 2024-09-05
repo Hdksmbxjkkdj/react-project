@@ -77,7 +77,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
             case 'domain':
             searchParams.set(filterItem, filterValue);//
             //   searchParams=(filterValue)
-              // searchParams.set(secondFilterItem, secendFilterValue);
+              searchParams.set(secondFilterItem, secendFilterValue);
             
                 break;
             default:

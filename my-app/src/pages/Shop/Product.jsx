@@ -27,7 +27,31 @@ export const Product = ({
   closebtn,
   item,
 }) => {
-  console.log(items?.data)
+  //comments
+  let url = `http://localhost:313/product_comments`;
+  const [ProductComment, setProductComment] = useState();
+
+  useEffect(() => {
+    fetch();
+  }, []);
+  const fetch = async () => {
+    await axios.get(url).then((res) => {
+      setProductComment(res.data);
+    });
+  };
+
+
+  var comments_count = [];
+
+  ProductComment?.map((comment, item) => {
+    let newCount;
+    if (comments_count[comment.product_id]) {
+      newCount = parseInt(comments_count[comment.product_id]) + 1;
+    } else {
+      newCount = 1;
+    }
+    comments_count[comment.product_id] = newCount;
+  });
 
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
@@ -35,6 +59,7 @@ export const Product = ({
   return (
     <>
       {items?.data?.map((item) => {
+        console.log((comments_count?.[item.id]))
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
@@ -77,6 +102,7 @@ export const Product = ({
                                   ></FontAwesomeIcon>
                                 </a>
                               </li>
+                            
                               <li>
                                 {/* <a href="#" title="مقایسه">
                                   <FontAwesomeIcon
@@ -85,10 +111,24 @@ export const Product = ({
                                 </a> */}
                                 <BtnCompare item={item}></BtnCompare>
                               </li>
+                              
                             </ul>
+                            
                           </div> 
+                          
                  
                   {/* <Modal items={item}></Modal> */}
+                  {modal.show &&
+                   (
+                  <Modal
+                    setModal={setModal}
+                    modal={modal}
+                    // commentNumber={commentNumber}
+                    commentNumber={(comments_count?.[item.id])}
+                  >
+                    {/* <ModalBody data={modalInfo.data} /> */}
+                  </Modal>
+                )}
                 </div> 
               
 
@@ -113,16 +153,7 @@ export const Product = ({
                              </div>  */}
                 <ProductAddbtn item={item}></ProductAddbtn>
               </div>
-              {modal.show &&
-                   (
-                  <Modal
-                    setModal={setModal}
-                    modal={modal}
-                    // commentNumber={commentNumber}
-                  >
-                    {/* <ModalBody data={modalInfo.data} /> */}
-                  </Modal>
-                )}
+             
               {/* {showmodal&&<ModalContent closebtn={closebtn}>
          
                          </ModalContent>} */}

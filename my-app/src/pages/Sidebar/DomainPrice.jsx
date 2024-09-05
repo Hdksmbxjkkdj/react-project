@@ -15,8 +15,12 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
               min: 0,
               max: 900,
               values: [75,900],
+            // range: true,
+            // min: parseInt(amount.attr('iniMin')),
+            // max: parseInt(amount.attr('iniMax')),
+            // values: [amount.attr('min'), amount.attr('max')],
              slide: function (event, ui) {
-                 window?.$("#amount").val("ت" + ui.values[0] + " - ت" + ui.values[1]);
+                 window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"تومان");
                
             }, 
             stop: function (event, ui) {// نمیرود.اurlگر این قطعه نباشد ماکسیمم و مینیمم به 
@@ -32,12 +36,14 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
     useEffect(()=>{
+        // priceRangeSlider(rangeIsChanged);
+
         SideOffcanvasToggle('.filter-toggle','product__widget')
      
     }
     )
     const rangeIsChanged=(ui)=>{//فقط مربوط به رنج قیمت است
-        Filter(setItems, productLength, 'price', ui.values[0], eMessage, local, 'domain', 'max', ui.values[1])
+        Filter(setItems, productLength, 'price_gt', ui.values[0], eMessage, local, 'domain', 'price_lte', ui.values[1])
          
 
     } 
@@ -60,12 +66,14 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                              <div className="product__widget-content">
                                    <div className="product__price-slider">
                                        <div>
-                                           <form action="#">
+                                           <form action="#" style={{direction:"rtl"}}>
                                                <input type="text" id="amount" readonly 
                                                    iniMin={domain_price?.min}
                                                    iniMax={domain_price?.max}
-                                                   min={searchParam?.get('min') ? searchParam.get('min'): domain_price?.min}
-                                                   max={searchParam?.get('max') ? searchParam.get('max') : domain_price?.max}
+                                                //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
+                                                 //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
+
+                                                   max={searchParam?.get('price_lte') ? searchParam.get('price_lte') : domain_price?.max}
                                                />
                                            </form>
 

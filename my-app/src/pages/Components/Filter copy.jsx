@@ -3,10 +3,11 @@ import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
 const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue) => {
-  
+      console.log(query,'query')
     // let url = '/' + local + '/products/filter' + query
      let url='http://localhost:313/best_selling?'+ query
-   
+    //  let url=`http://localhost:313/best_selling?price_gt=100&price_lte=200`
+
         //  let url='http://localhost:313/best_selling?'+ query
 
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
@@ -78,7 +79,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
             case 'domain':
             searchParams.set(filterItem, filterValue);//
             //   searchParams=(filterValue)
-              // searchParams.set(secondFilterItem, secendFilterValue);
+              searchParams.set(secondFilterItem, secendFilterValue);
             
                 break;
             default:
