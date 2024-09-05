@@ -79,7 +79,7 @@ const ProductAction = ({ item }) => {
           {!checker.includes(item) ? (
             <li>
               <a
-                href="#"
+                href=""
                 onClick={(event) => {
                   AddToWishlist(
                     event,
@@ -101,7 +101,7 @@ const ProductAction = ({ item }) => {
           ) : (
             <li>
               <a
-                href="#"
+                href=""
                 onClick={(event) =>
                   RemoveWishList(event, item.id, item.text, user, setrow, false)
                 }
@@ -112,13 +112,13 @@ const ProductAction = ({ item }) => {
             </li>
           )}
           <li>
-            <a href="#" title="Quick View" onClick={(e)=>Set(e)}>
+            <a href="" title="Quick View" onClick={(e)=>Set(e)}>
               <i className="fa fa-search"></i>
             </a>
           </li>
           <li>
-            <a href="#" title="Compare">
-              <i className="fa fa-sliders-h" onClick={(e)=>handleCompare(e)}></i>
+            <a href="" title="Compare">
+              <i className={"fa fa-sliders-h"} onClick={(e)=>handleCompare(e)}></i>
             </a>
           </li>
         </ul>

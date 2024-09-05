@@ -18,7 +18,7 @@ const ProductThumb = ({item}) => {
 const ProductThumbflex = ({item})=> {
   return (
     <>
-      <div className="product__thumb p-relative">
+      <div className="product__thumb product__thumb-sale p-relative">
         <Link to={"/product-details/"+item.id} className="w-img">
           <img src={Config.shop+""+item.pic} alt="product" />
           <img className="second-img" src={Config.shop+""+item.seccondpic} />

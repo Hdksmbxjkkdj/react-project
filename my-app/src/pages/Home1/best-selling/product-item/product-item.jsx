@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const ProductItem = ({ type, slider }) => {
   return (
     <>
-      <div className="product__item white-bg" key={Math.random()}>
+      <div className="product__item white-bg text-center" key={Math.random()}>
         <ProductThumb item={slider}></ProductThumb>
         <ProductContent item={slider}></ProductContent>
         <ProductAddbtn item={slider}></ProductAddbtn>

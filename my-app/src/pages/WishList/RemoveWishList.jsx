@@ -2,7 +2,6 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
 export const RemoveWishList = async(event, PID,name, UID, setrow, all = false) => {
-    console.log(PID,UID,name);
     event.preventDefault();
     const url = "http://localhost:313/wishlist";
     let status = 200

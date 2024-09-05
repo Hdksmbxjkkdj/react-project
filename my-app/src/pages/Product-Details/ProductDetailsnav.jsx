@@ -5,12 +5,12 @@ import {ShowProduct} from '../../Compont/ShowProduct'
 import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
+    const [active,setActive] = useState()
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
       //showproduct
-    const handleImg = (event,i) => {
-        // window?.$(".remove-border").remove("border","2px solid red")
-        // window?.$(".border-img-"+i).css("border","2px solid red")
+    const handleImg = (event,item) => {
+        setActive(item?.name);
         let preview = window?.$('.product__details-thumb img')
         preview.fadeOut(100)
    
@@ -28,8 +28,8 @@ const[border,setborder]=useState()
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
         {picturs?.map((item,index)=>{
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => handleImg(event,index)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-                        <img src={Config.shop+ "" + item?.name} alt="" className={"remove-border border-img-"+index}/>  
+                    <button onClick={(event) => handleImg(event,item)} className={(active==item?.name)?"nav-link active bg-warning":"nav-link active "} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                        <img src={Config.shop+ "" + item?.name} alt=""/>  
                     </button>
                 </li>
             }
