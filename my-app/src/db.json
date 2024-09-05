@@ -1,14 +1,5 @@
 {
-  "row": [
-    {
-      "id": "7",
-      "pic": "product-13.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "04/09/2024"
-    }
-  ],
+  "row": [],
   "wishlist": [
     {
       "id": "2kazem@gmail.com",
@@ -274,7 +265,7 @@
     {
       "pic": "product-1.jpg",
       "seccondpic": "product-2.jpg",
-      "text": " آشپزخانه فوق نازک شیشه ای   ",
+      "text": " هندزفری و تلوزیون  ",
       "price": 500,
       "id": "1",
       "title": "ترازو",
@@ -316,7 +307,7 @@
     {
       "pic": "product-3.jpg",
       "seccondpic": "product-4.jpg",
-      "text": "LG 27UD58: 347.21 پوند، Ebuyer.com",
+      "text": "گوشی و تلوزیون",
       "price": 70,
       "id": "2",
       "title": "تلوزیون",
@@ -346,7 +337,7 @@
     {
       "pic": "product-5.jpg",
       "seccondpic": "product-6.jpg",
-      "text": "سامسونگ C49J89: 875 پوند، Debenhams ",
+      "text": "گوشی سامسونگ",
       "price": 900,
       "id": "3",
       "title": "گوشی",
@@ -376,7 +367,7 @@
     {
       "pic": "product-7.jpg",
       "seccondpic": "product-8.jpg",
-      "text": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "text": "صندلی و تی شرت",
       "price": 548,
       "id": "4",
       "title": "دوربین امنیتی",
@@ -437,7 +428,7 @@
     {
       "pic": "product-11.jpg",
       "seccondpic": "product-12.jpg",
-      "text": "پردازنده سامسونگ A20 Pro Ultra 4/64 گیگابایت",
+      "text": "گوشی سامسونگ",
       "price": 300,
       "id": "6",
       "title": "پردازنده",
@@ -466,7 +457,7 @@
     {
       "pic": "product-13.jpg",
       "seccondpic": "product-14.jpg",
-      "text": "سیستم دوربین امنیتی خانه چشمک زدن 01",
+      "text": "ساعت مچی",
       "price": 450,
       "id": "7",
       "title": "دوربین",
@@ -1100,6 +1091,26 @@
       "date": "۱۴۰۳/۶/۱۲",
       "id_customer": "mahan@gmail.com",
       "rate": 0
+    },
+    {
+      "sender_name": "محمد جواد",
+      "sender_email": "javad@gmail.com",
+      "comment": "nothing in my mind ",
+      "id_product": "7",
+      "date": "۱۴۰۳/۶/۱۵",
+      "id_customer": "javad@gmail.com",
+      "rate": 3,
+      "id": "hyXe6UC"
+    },
+    {
+      "sender_name": "محمد جواد",
+      "sender_email": "javad@gmail.com",
+      "comment": "hello hello hello",
+      "id_product": "7",
+      "date": "۱۴۰۳/۶/۱۵",
+      "id_customer": "javad@gmail.com",
+      "rate": 1,
+      "id": "duN4taX"
     }
   ],
   "product-category": [

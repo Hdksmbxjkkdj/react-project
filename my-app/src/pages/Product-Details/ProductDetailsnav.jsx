@@ -5,10 +5,12 @@ import {ShowProduct} from '../../Compont/ShowProduct'
 import { faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
+    const [active,setActive] = useState()
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
       //showproduct
-    const handleImg = (event) => {
+    const handleImg = (event,item) => {
+        setActive(item?.name);
         let preview = window?.$('.product__details-thumb img')
         preview.fadeOut(100)
         
@@ -25,7 +27,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
         {picturs?.map((item)=>{
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => handleImg(event)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button onClick={(event) => handleImg(event,item)} className={(active==item?.name)?"nav-link active bg-warning":"nav-link active "} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
                         <img src={Config.shop+ "" + item?.name} alt=""/>  
                     </button>
                 </li>
