@@ -2,31 +2,34 @@ import { event } from "jquery";
 import { Config } from "../../Utils";
 import { useEffect, useState } from "react";
 import {ShowProduct} from '../../Compont/ShowProduct'
-import { faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
       //showproduct
-    const handleImg = (event) => {
+    const handleImg = (event,i) => {
+        // window?.$(".remove-border").remove("border","2px solid red")
+        // window?.$(".border-img-"+i).css("border","2px solid red")
         let preview = window?.$('.product__details-thumb img')
         preview.fadeOut(100)
-        
+   
         preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
         preview.fadeIn(300)
     }
     
-
+//
+const[border,setborder]=useState()
    
     return<>
    
     <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
-        {picturs?.map((item)=>{
+        {picturs?.map((item,index)=>{
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => handleImg(event)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-                        <img src={Config.shop+ "" + item?.name} alt=""/>  
+                    <button onClick={(event) => handleImg(event,index)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                        <img src={Config.shop+ "" + item?.name} alt="" className={"remove-border border-img-"+index}/>  
                     </button>
                 </li>
             }

@@ -50,6 +50,7 @@ export const CustomerComment = ({
                           type="comment"
                           className="ms-3"
                         />
+                        
                       </div>
                       {/* <div className="review-ratings-single d-flex align-items-center">
                                         <span>قیمت</span>

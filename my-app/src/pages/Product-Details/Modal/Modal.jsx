@@ -13,6 +13,7 @@ import { BtnLike } from "../Btns/BtnLike";
 import { BtnShareBody } from "../Btns/BtnShareBody";
 import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
+import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
   const handleImg = (event) => {
     let preview = window?.$(".tab-content img");
@@ -166,7 +167,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                             </a>
                           </span>
                           <span>
-                            <a href="#">افزودن نظر</a>
+                            <Link to={`/product/${modal?.data?.id}`}>افزودن نظر</Link>
                           </span>
                         </div>
                       </div>

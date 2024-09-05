@@ -7,7 +7,6 @@ import { CartContext } from "../../../context/CardContext";
 import { AddToWishlist } from "../../Home1/best-selling/product-item/AddToWishlist";
 import { RemoveWishList } from "../../WishList/RemoveWishList";
 export const BtnLike = ({items})=>{
-  console.log(items)
   
   //like btn
   const[item,setItem]=useState()

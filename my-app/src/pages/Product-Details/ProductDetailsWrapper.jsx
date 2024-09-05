@@ -69,7 +69,7 @@ const close = () =>{
             <div className="product__review d-sm-flex">
               <div className="rating rating__shop mb-15 ml-35">
                {/* <Rank></Rank> */}
-               <Rate stars={item?.data?.rate} type="comment" className="ms-3" /> 
+               <Rate stars={item?.data?.rate} type="lg" className="ms-3" /> 
 
               </div>
               <div className="product__add-review mb-15" >

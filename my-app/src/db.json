@@ -1100,6 +1100,16 @@
       "date": "۱۴۰۳/۶/۱۲",
       "id_customer": "mahan@gmail.com",
       "rate": 0
+    },
+    {
+      "id": "a09e",
+      "sender_name": "ماهان",
+      "sender_email": "mahan@gmail.com",
+      "comment": "  m,nmn.,n,.,nmnn",
+      "id_product": "1",
+      "date": "۱۴۰۳/۶/۱۵",
+      "id_customer": "mahan@gmail.com",
+      "rate": 4
     }
   ],
   "product-category": [
@@ -1209,7 +1219,23 @@
       "comment": "lets import our skills every day",
       "sender_phone": "09932768941",
       "date": "04/09/2024",
-      "id": 1
+      "id": "1"
+    },
+    {
+      "id": "8469",
+      "user_name": "ماهان",
+      "sender_email": "mahan@gmail.com",
+      "comment": "jkjkjkj",
+      "sender_phone": "kjkjkjk",
+      "date": "05/09/2024"
+    },
+    {
+      "id": "44e2",
+      "user_name": "ماهان",
+      "sender_email": "mahan@gmail.com",
+      "comment": "وئوئ",
+      "sender_phone": "ننئئ",
+      "date": "05/09/2024"
     }
   ]
 }

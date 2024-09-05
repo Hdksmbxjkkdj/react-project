@@ -45,12 +45,12 @@ export const Product = ({
 
   ProductComment?.map((comment, item) => {
     let newCount;
-    if (comments_count[comment.product_id]) {
-      newCount = parseInt(comments_count[comment.product_id]) + 1;
+    if (comments_count[comment.id_product]) {
+      newCount = parseInt(comments_count[comment.id_product]) + 1;
     } else {
       newCount = 1;
     }
-    comments_count[comment.product_id] = newCount;
+    comments_count[comment.id_product] = newCount;
   });
 
   //modal
@@ -59,7 +59,7 @@ export const Product = ({
   return (
     <>
       {items?.data?.map((item) => {
-        console.log((comments_count?.[item.id]))
+        console.log(comments_count?.[item.id],"oooooo")
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">
@@ -113,12 +113,9 @@ export const Product = ({
                               </li>
                               
                             </ul>
-                            
+                         
                           </div> 
-                          
-                 
-                  {/* <Modal items={item}></Modal> */}
-                  {modal.show &&
+                          {modal.show &&
                    (
                   <Modal
                     setModal={setModal}
@@ -128,10 +125,13 @@ export const Product = ({
                   >
                     {/* <ModalBody data={modalInfo.data} /> */}
                   </Modal>
-                )}
+                )} 
+                 
+                  {/* <Modal items={item}></Modal> */}
+                
                 </div> 
               
-
+             
                 <div className="product__content text-center">
                   <h6 className="product-name">
                     <a
@@ -183,12 +183,12 @@ export const ProductList = ({ items, setItems }) => {
 
   ProductComment?.map((comment, item) => {
     let newCount;
-    if (comments_count[comment.product_id]) {
-      newCount = parseInt(comments_count[comment.product_id]) + 1;
+    if (comments_count[comment.id_product]) {
+      newCount = parseInt(comments_count[comment.id_product]) + 1;
     } else {
       newCount = 1;
     }
-    comments_count[comment.product_id] = newCount;
+    comments_count[comment.id_product] = newCount;
   });
 
 //  console.log(comments_count?.[items.id])
@@ -196,6 +196,7 @@ export const ProductList = ({ items, setItems }) => {
   return (
     <>
       {items?.data?.map((item) => {
+        
         return (
           <>
             <div className="col-xxl-12">
