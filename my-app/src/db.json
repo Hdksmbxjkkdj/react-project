@@ -934,8 +934,7 @@
       "id_customer": "li@gmail.com",
       "rate": 4
     },
-  
-   {
+    {
       "id": "8c9a",
       "sender_name": "ماهان",
       "sender_email": "mahan@gmail.com",
@@ -1190,7 +1189,6 @@
     }
   ],
   "khabarname": [
-  
     {
       "id": "81c7",
       "email": "alli@gmail.com"
@@ -1198,6 +1196,10 @@
     {
       "id": "8557",
       "email": "sd@kkcn.jjvf"
+    },
+    {
+      "email": "ali@gmail.com",
+      "id": "FFD9oPY"
     }
   ],
   "ContactUs": [

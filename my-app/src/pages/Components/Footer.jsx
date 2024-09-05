@@ -1,12 +1,11 @@
- import { config } from "@fortawesome/fontawesome-svg-core";
-import { Config,Notif } from "../../Utils";
-import { useState,useEffect } from "react";
-import { Input } from "../../Compont/Forms";
+ import { useState } from "react";
+import { Config, Notif } from "../../Utils";
+import {Link} from "react-router-dom"
 // import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import * as yup from 'yup';
-import { yupResolver } from "@hookform/resolvers/yup";
 const Footer = ()=>{
     let eMessage = "error_message";
     let sMessage = "success_message";
@@ -96,9 +95,9 @@ const Footer = ()=>{
                                             <div className="footer__widget">
                                                 <div className="footer__widget-title mb-45">
                                                     <div className="footer__logo">
-                                                        {/* <a href="index.html"><img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/></a> */}
-                                                        {/* <a href="index.html"><img src="../../img/logo/logo-black.png" alt=""/></a> */}
-                                                        <a href="index.html"><img src={Config.logo + "" + "logo-white.png"} alt=""/></a>
+                                                        {/* <Link to="index.html"><img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/></Link> */}
+                                                        {/* <Link to="index.html"><img src="../../img/logo/logo-black.png" alt=""/></Link> */}
+                                                        <Link to="index.html"><img src={Config.logo + "" + "logo-white.png"} alt=""/></Link>
                                                     </div>
                                                 </div>
                                                 <div className="footer__widget-content">
@@ -115,13 +114,13 @@ const Footer = ()=>{
                                                         <ul>
                                                             <li>
                                                                 <span>آدرس:  
-                                                                        <a target="_blank" href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">آمریکا ، نیویورک ، منهتن ، خیابان والز استریت ، پلاک 68</a>
+                                                                        <Link target="_blank" to="https://maps.app.goo.gl/UucCBf6pxScN5qS77">قم ، میدان رسالت ، خیابان بسیج ، بسیج 1 ، پلاک  **</Link>
                                                                     </span>
                                                             </li>
-                                                            <li><span>ایمیل: <a href="/cdn-cgi/l/email-protection#e881868e87a89c808d8a9d8d9b8391c68b8785"><span className="__cf_email__" data-cfemail="e28b8c848da2968a8780978791899bcc818d8f">[info@gmail.com]</span></a>
+                                                            <li><span>ایمیل: <Link to="/cdn-cgi/l/email-protection#e881868e87a89c808d8a9d8d9b8391c68b8785"><span className="__cf_email__" data-cfemail="e28b8c848da2968a8780978791899bcc818d8f">[info@gmail.com]</span></Link>
                                                                 </span>
                                                             </li>
-                                                            <li><span>فکس: <a href="tel:123-456-7890">(+100) 123 456 7890</a> - <a href="tel:-100-123-456-7891">(+100) 123 456 7891</a> </span></li>
+                                                            <li><span>فکس: <Link to="tel:123-456-7890">(+100) 123 456 7890</Link> - <Link to="tel:-100-123-456-7891">(+100) 123 456 7891</Link> </span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -137,12 +136,12 @@ const Footer = ()=>{
                                                         <div className="footer__widget-content">
                                                             <div className="footer__link footer__link-4">
                                                                 <ul>
-                                                                    <li><a href="#"> سرویس مشتریان </a></li>
-                                                                    <li><a href="#">F.A.Q.’s</a></li>
-                                                                    <li><a href="#">ثبت سفارشات</a></li>
-                                                                    <li><a href="#"> ارتباط</a></li>
-                                                                    <li><a href="#">رویداد ها</a></li>
-                                                                    <li><a href="#">محبوب</a></li>
+                                                                    <li><Link to="#"> سرویس مشتریان </Link></li>
+                                                                    <li><Link to="#">F.A.Q.’s</Link></li>
+                                                                    <li><Link to="#">ثبت سفارشات</Link></li>
+                                                                    <li><Link to="/contact"> ارتباط</Link></li>
+                                                                    <li><Link to="#">رویداد ها</Link></li>
+                                                                    <li><Link to="#">محبوب</Link></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -156,12 +155,12 @@ const Footer = ()=>{
                                                         <div className="footer__widget-content">
                                                             <div className="footer__link footer__link-4">
                                                                 <ul>
-                                                                    <li><a href="#">نقشه ها</a></li>
-                                                                    <li><a href="#">شرایط خصوصی</a></li>
-                                                                    <li><a href="#">حساب شما</a></li>
-                                                                    <li><a href="#">جستجو پیشرفته</a></li>
-                                                                    <li><a href="#">شرایط و وضعیت</a></li>
-                                                                    <li><a href="#"> ارتباط با ما</a></li>
+                                                                    <li><Link to="#">نقشه ها</Link></li>
+                                                                    <li><Link to="#">شرایط خصوصی</Link></li>
+                                                                    <li><Link to="/profile">حساب شما</Link></li>
+                                                                    <li><Link to="#">جستجو پیشرفته</Link></li>
+                                                                    <li><Link to="#">شرایط و وضعیت</Link></li>
+                                                                    <li><Link to="/contact"> ارتباط با ما</Link></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -184,12 +183,12 @@ const Footer = ()=>{
                                                     <div className="footer__widget-content">
                                                         <div className="footer__link footer__link-4">
                                                             <ul>
-                                                                <li><a href="#"> درباره ما </a></li>
-                                                                <li><a href="#">اطلاعات تکمیلی</a></li>
-                                                                <li><a href="#">شرایط خصوصی</a></li>
-                                                                <li><a href="#">تخفیف</a></li>
-                                                                <li><a href="#">سرویس مشتریان</a></li>
-                                                                <li><a href="#">شرایط و وضعیت</a></li>
+                                                                <li><Link to="/about"> درباره ما </Link></li>
+                                                                <li><Link to="#">اطلاعات تکمیلی</Link></li>
+                                                                <li><Link to="#">شرایط خصوصی</Link></li>
+                                                                <li><Link to="#">تخفیف</Link></li>
+                                                                <li><Link to="#">سرویس مشتریان</Link></li>
+                                                                <li><Link to="#">شرایط و وضعیت</Link></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -203,12 +202,12 @@ const Footer = ()=>{
                                                     <div className="footer__widget-content">
                                                         <div className="footer__link footer__link-4">
                                                             <ul>
-                                                                <li><a href="#">شرایط استفاده</a></li>
-                                                                <li><a href="#">روش های پرداخت</a></li>
-                                                                <li><a href="#">راهنمای ارسال</a></li>
-                                                                <li><a href="#">موقیتی که ما ارسال میکنیم</a></li>
-                                                                <li><a href="#">زمان دریافت محصول</a></li>
-                                                                <li><a href="#">سریع السیر</a></li>
+                                                                <li><Link to="#">شرایط استفاده</Link></li>
+                                                                <li><Link to="#">روش های پرداخت</Link></li>
+                                                                <li><Link to="#">راهنمای ارسال</Link></li>
+                                                                <li><Link to="#">موقیتی که ما ارسال میکنیم</Link></li>
+                                                                <li><Link to="#">زمان دریافت محصول</Link></li>
+                                                                <li><Link to="#">سریع السیر</Link></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -256,12 +255,12 @@ const Footer = ()=>{
                         <div className="row align-items-center">
                             <div className="col-xl-6 col-lg-6">
                                 <div className="footer__copyright-text footer__copyright-text-2">
-                                    <p>@کپی رایت <a href="index.html" className="text-warning">توپیکو</a> همه رزرو شده است.<a href="#"  className="text-warning">تمپور.</a></p>
+                                    <p>@کپی رایت <Link to="index.html" className="text-warning">توپیکو</Link> همه رزرو شده است.<Link to="#"  className="text-warning">تمپور.</Link></p>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6">
                                 <div className="footer__payment f-left">
-                                    <a href="#" className="m-img"><img src={Config.icon + "" + "payment.png"}  alt=""/></a>
+                                    <Link to="#" className="m-img"><img src={Config.icon + "" + "payment.png"}  alt=""/></Link>
 
                                 </div>
                             </div>
