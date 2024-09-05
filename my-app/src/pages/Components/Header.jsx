@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { Loader } from "../Components/loader";
@@ -102,19 +102,19 @@ const Header = () => {
                     <ul>
                       {user && (
                         <li>
-                          <Link to="/profile">پروفایل</Link>
+                          <NavLink to="/profile">پروفایل</NavLink>
                         </li>
                       )}
                       {user && (
                         <li>
-                          <Link to="wishlist">علاقه مندی ها</Link>
+                          <NavLink to="wishlist">علاقه مندی ها</NavLink>
                         </li>
                       )}
                       <li>
-                        <Link to="/register">ثبت نام/ورود</Link>
+                        <NavLink to="/register">ثبت نام/ورود</NavLink>
                       </li>
                       <li>
-                        <Link to="/comparison">مقایسه</Link>
+                        <NavLink to="/comparison">مقایسه</NavLink>
                       </li>
                     </ul>
                   </div>

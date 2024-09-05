@@ -15,7 +15,6 @@ const Blog = () => {
       .get(`http://localhost:313/blog?_start=${start}&_limit=${Limit}&${params}`)
       .then((response) => {
         setItems(response);
-      
       });
   }, [start]);
   const [category, setcategory] = useState();
@@ -35,7 +34,7 @@ const Blog = () => {
   return (
     <>
       <BlogArea items={items?.data}>
-        <Sidebar>
+        <Sidebar setItems={setItems}>
           <SidebarItem
             items={category?.data}
             setItems={setItems}
