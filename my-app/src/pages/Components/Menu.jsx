@@ -1,43 +1,32 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const Menu = () => {
   return (
     <>
       <nav>
         <ul>
           <li>
-            <Link to="/">
+            <NavLink to="/">
               خانه <i className="fa fa-home"></i>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="products">محصولات <i className="fa fa-shopping-bag"></i></Link>
+            <NavLink to="products">محصولات <i className="fa fa-shopping-bag"></i></NavLink>
           </li>
           <li>
-            <Link to="/blog">
+            <NavLink to="/blog">
               وبلاگ <i className="fa fa-blog"></i>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="About">
+            <NavLink to="About">
               درباره ما <i className="fa fa-eject"></i>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="Contact">
+            <NavLink to="Contact">
               ارتباط با ما <i className="fa fa-globe"></i>
-            </Link>
+            </NavLink>
           </li>
-          {/* <li>
-                    <Link href="about">صفحات <i className="fa fa-angle-down"></i></Link>
-                    <ul className="submenu">
-                        <li><Link to="Login">ورود</Link></li>
-                        <li><Link to="Register">ثبت نام</Link></li>
-                        <li><Link to="Cart">لیست خرید</Link></li>
-                        <li><Link to="wishlist">علاقه مندی ها</Link></li>
-                        <li><Link to="checkout">Checkout</Link></li>
-                        <li><Link to="error">404 ارور</Link></li>
-                    </ul>
-                </li> */}
         </ul>
       </nav>
     </>

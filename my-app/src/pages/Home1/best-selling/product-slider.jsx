@@ -100,5 +100,4 @@ const ProductSlider = ({ type, res, item,filt }) => {
     </>
   );
 };
-
 export { ProductSlider };

@@ -8,18 +8,19 @@ const Sidebar = () => {
   return (
     <>
       <div className="cat__menu-wrapper h-100">
-        {/* <div className="cat-toggle">
+        <div className="cat-toggle">
           <button type="button" className="cat-toggle-btn" onClick={toggling}>
-            <i className="fa fa-bars"></i> خرید براساس دپارتمان
+            <i className="fa fa-bars"></i> خرید براساس دسته بندی
           </button>
           <div className="cat__menu">
             <nav id="mobile-menu">
               <ul>
                 <li>
                   <Link to="products">
-                    همه محصولات<i className="fa fa-angle-up"></i>
+                    همه محصولات
+                    {/* <i className="fa fa-angle-up"></i> */}
                   </Link>
-                  <ul className="mega-menu">
+                  {/* <ul className="mega-menu">
                     <li>
                       <Link to="products">صفحات فروشگاهی</Link>
                       <ul className="mega-item">
@@ -114,7 +115,7 @@ const Sidebar = () => {
                         </li>
                       </ul>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
                 <li>
                   <Link to="products">
@@ -176,8 +177,8 @@ const Sidebar = () => {
               </ul>
             </nav>
           </div>
-        </div> */}
-        <Banner src={"banner-sm-1.jpg"} alt={""} index={1}/>
+        </div>
+        {/* <Banner src={"banner-sm-1.jpg"} alt={""} index={1}/> */}
       </div>
     </>
   );

@@ -9,11 +9,15 @@ function Hero(props) {
             <section className="slider__area pt-50 pb-50">
                 <div className="container">
                     <div className="row">
-                        {/* <div className="col-xl-2 custom-col-2 d-none d-xl-block">
-                            <Sidebar></Sidebar>
-                        </div> */}
-                        {/* <div className="col-xl-10 custom-col-10 col-lg-12">
-                            <div className="row"> */}
+                        <div className="col-xl-2 custom-col-2 d-none d-xl-block">
+                            {/* <Sidebar></Sidebar> */}
+                            <Banner src={"banner-1.jpg"} alt={""} index={5}/>
+                            <Banner src={"banner-2.jpg"} alt={""} index={3}/>
+                            <Banner src={"banner-3.jpg"} alt={""} index={3}/>
+                            <Banner src={"banner-4.jpg"} alt={""} index={3}/>
+                        </div>
+                        <div className="col-xl-10 custom-col-10 col-lg-12">
+                            <div className="row">
                                 <div className="col-xl-9 custom-col-9 col-lg-8">
                                     <Slider></Slider>
                                 </div>
@@ -30,8 +34,8 @@ function Hero(props) {
                                         </div> */}
                                     </div>
                                 </div>
-                            {/* </div>
-                        </div> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
