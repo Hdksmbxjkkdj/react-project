@@ -1,6 +1,5 @@
 
 export const Rate = ({ stars, type = 'md', className = '' }) => {
-    console.log(stars,"llllll")
     const showCount = () => {
         switch (type) {
             case 'md':
@@ -21,7 +20,7 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
 
     if (stars) {
         return <>
-            <div className={"product-rating d-flex " + className}>
+            <div className={"product-rating " + className}>
                 <div className="star-rating rating-icon">
                     {
                         [...Array(parseInt(Math.floor(stars)))].map(() => (<>

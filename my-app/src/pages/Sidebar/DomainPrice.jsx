@@ -20,15 +20,15 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
             // max: parseInt(amount.attr('max')),
             values: [amount.attr('min'), amount.attr('max')],
              slide: function (event, ui) {
-                 window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"تومان");
+                 window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"ت");
                
             }, 
             stop: function (event, ui) {// نمیرود.اurlگر این قطعه نباشد ماکسیمم و مینیمم به 
                 rangeIsChanged(ui)
             }
         });
-              window?.$("#amount").val("تومان" +window?.$("#slider-range").slider("values", 0) +
-             " - تومان" + window?.$("#slider-range").slider("values", 1));
+              window?.$("#amount").val(window?.$("#slider-range").slider("values", 0)+"/000"+"ت-" +
+              +window?.$("#slider-range").slider("values", 1)+"/000"+"ت");
     },[])
    
     //css

@@ -67,7 +67,8 @@ const close = () =>{
               <a href="product-details.html">{item?.data.text}</a>
             </h3>
             <div className="product__review d-sm-flex">
-              <div className="rating rating__shop mb-15 ml-35">
+              <div className="
+              ">
                {/* <Rank></Rank> */}
                <Rate stars={item?.data?.rate} type="lg" className="ms-3" /> 
 

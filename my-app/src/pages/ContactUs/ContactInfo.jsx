@@ -5,6 +5,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";
 import { faBaseballBall } from "@fortawesome/free-solid-svg-icons";
+import { SocialMedia } from "./SocialMedia";
 
 export const ContactInfo = () =>{
     const ContactInfo = [
@@ -50,23 +51,7 @@ export const ContactInfo = () =>{
                                     </li>
                                 </ul>
                             </div>
-                            <div className="contact__social">
-                                <span>اشتراک اجتماعی:</span>
-                                <ul>
-                                    <li>
-                                        <a href="#"> <FontAwesomeIcon icon={faBaseballBall} /></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i className="fab fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i className="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                         <SocialMedia></SocialMedia>
                         </div>
                     </div>
     

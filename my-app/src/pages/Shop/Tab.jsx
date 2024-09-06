@@ -8,8 +8,7 @@ import { useEffect } from "react"
 import axios from "axios"
 import { Product, ProductList } from "./Product"
 export const Tab=({items,setItems,productLength,length})=>{
-    //
-    //
+   console.log(length,"length",items)
       //tab
       const [toggleState,setToggleStata]=useState(2)
   
@@ -46,7 +45,7 @@ export const Tab=({items,setItems,productLength,length})=>{
                                                 </div>
                                                 <div className="product__result pl-60">
                                                     {/* <p>Showing 1-20 of 29 relults</p> */}
-                                                    <p className="me-4">نتیجه نمایش 9 محصول از 9</p>
+                                                    <p className="me-4">نتیجه نمایش {items?.data?.length} محصول از {length}</p>
 
                                                 </div>
                                             </div>

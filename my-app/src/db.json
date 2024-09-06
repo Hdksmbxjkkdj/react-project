@@ -1098,19 +1098,28 @@
       "comment": "nothing in my mind ",
       "id_product": "7",
       "date": "۱۴۰۳/۶/۱۵",
-      "id_customer": "javad@gmail.com",
-      "rate": 3,
-      "id": "hyXe6UC"
+      "id_customer": "mahan@gmail.com",
+      "rate": 4
     },
     {
-      "sender_name": "محمد جواد",
-      "sender_email": "javad@gmail.com",
-      "comment": "hello hello hello",
-      "id_product": "7",
+      "id": "2cee",
+      "sender_name": "ماهان",
+      "sender_email": "mahan@gmail.com",
+      "comment": "jkjkjkjkjkjkjk",
+      "id_product": "2",
       "date": "۱۴۰۳/۶/۱۵",
-      "id_customer": "javad@gmail.com",
-      "rate": 1,
-      "id": "duN4taX"
+      "id_customer": "mahan@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": "edb6",
+      "sender_name": "ماهان",
+      "sender_email": "mahan@gmail.com",
+      "comment": ",mm,m,m,m,m,m,m",
+      "id_product": "1",
+      "date": "۱۴۰۳/۶/۱۵",
+      "id_customer": "mahan@gmail.com",
+      "rate": 5
     }
   ],
   "product-category": [
@@ -1237,6 +1246,13 @@
       "comment": "وئوئ",
       "sender_phone": "ننئئ",
       "date": "05/09/2024"
+    },
+    {
+      "id": "8505",
+      "name": ", ,mc,xm ,m cm",
+      "sender_email": "mkk@lkkd.com",
+      "phone": "12345678944",
+      "comment": ",c,,c,,m,m,m,m,cm"
     }
   ]
 }
