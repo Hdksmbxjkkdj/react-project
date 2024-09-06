@@ -47,6 +47,11 @@ export const BtnCompare = ({item}) => {
       return
     }
     compare = localStorage.getItem("compare").split(",");
+    if(compare.includes(item.id))
+      {
+        Notif("warning",'این محصول در لیست مقایسه قبلا اضافه شده')
+        return
+      }
     compare = [...compare, item.id];
     localStorage.setItem("compare", compare);
     Notif("success",`${item.title} به مقایسه اضافه شد`)

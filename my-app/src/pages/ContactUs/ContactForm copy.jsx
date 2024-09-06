@@ -50,12 +50,7 @@ export const ContactForm = () => {
 
  //new
   const schema=yup.object().shape({
-    name:yup.string().required("لطفا نام خود را بنویسید"),
-    email:yup.string().email().required("فرمت ایمیل صحیح نیست"),
-
     comment:yup.string().min(10,"تعداد کاراکتر ها نباید کمتر از 10 باشد").required("لطفا نظر خود را بنویسید"),
-    phone:yup.string("فرمت وارد شده ,صحیح نمیباشد").min(11,"تعداد اعداد وارد شده نباید کترا ز 11 باشد").max(11).required("شماره همراه وارد شده صحیح نمی باشد"),
-  //  phone:yup.("فرمت وارد شده ,صحیح نمیباشد")
    })
  
    const {register,reset,handleSubmit,formState:{errors}}=useForm({resolver:yupResolver(schema)})
@@ -83,7 +78,7 @@ export const ContactForm = () => {
    //  const onFormSubmit=(e)=>{
    // }
    const [error, setError] = useState();
-   let url =  `http://localhost:313/ContactUs`;
+   let url = `http://localhost:313/product_comments`;
    const onFormSubmit = async (data) => {
      //  preventDefault();
      // if (user != null) {
@@ -91,22 +86,20 @@ export const ContactForm = () => {
             // clearErrors()
             await axios
             .post(url, {
-              // sender_name: user
-              //   ? user?.username
-              //     ? user?.username
-              //     : user?.full_name
-              //   : "",
-              name:data?.name,
+              sender_name: user
+                ? user?.username
+                  ? user?.username
+                  : user?.full_name
+                : "",
               // sender_email: auth ? auth.email : "",
-              sender_email:data?.email,
-              phone:data?.phone,
+              sender_email: user.id,
               comment: data?.comment,
-              // id_product: id,
-              // id_customer: user.id,
-              // rate: quality,
+              id_product: id,
+              date: today,
+              id_customer: user.id,
+              rate: quality,
             })
             .then((response) => {
-              console.log(response)
               // let message = response.data?.message;
               //   let message = "Insert";
               let message = "پیام شما با موفقیت ارسال شد";
@@ -155,7 +148,7 @@ export const ContactForm = () => {
               <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                 <div className="contact__input">
                   <span>نام</span>
-                  <input
+                  <Input
                     type="text"
                     id="user_name"
                     name="user_name"
@@ -165,16 +158,14 @@ export const ContactForm = () => {
                     onChange={(e) =>
                       setData({ ...data, user_name: e.target.value })
                     }
-                    {...register("name")}
-                    />
-                    {errors?.name && (<p className="text-danger text-end mb-3">{errors.name?.message}</p>)}
+                  />
                 </div>
               </div>
               <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                 <div className="contact__input">
                   <span>ایمیل</span>
-                  <input
-                    // type="email"
+                  <Input
+                    type="email"
                     id="sender_email"
                     name="sender_email"
                     value={data?.sender_email}
@@ -183,15 +174,14 @@ export const ContactForm = () => {
                     onChange={(e) =>
                       setData({ ...data, sender_email: e.target.value })
                     }
-                    {...register("email")}
-                    />
-                    {errors?.email && (<p className="text-danger text-end mb-3">{errors.email?.message}</p>)}
+                  />
                 </div>
               </div>
               <div className="col-xxl-12">
                 <div className="contact__input">
                   <span>شماره تماس</span>
                   <input
+                    type="phone"
                     id="sender_phone"
                     name="sender_phone"
                     value={data?.sender_phone}
@@ -208,7 +198,7 @@ export const ContactForm = () => {
               </div>
               <div className="col-xxl-12">
                 <div className="contact__input">
-                  {/* <span>چه چیزی در ذهن شماست؟</span> */}
+                  <span>چه چیزی در ذهن شماست؟</span>
                   {/* <Textarea
                     id="comment"
                     name="comment"

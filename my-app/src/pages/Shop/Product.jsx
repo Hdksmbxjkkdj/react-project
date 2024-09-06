@@ -56,10 +56,11 @@ export const Product = ({
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
   //modal
+
   return (
     <>
       {items?.data?.map((item) => {
-        console.log(comments_count?.[item.id],"oooooo")
+
         return (
           <>
             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y">

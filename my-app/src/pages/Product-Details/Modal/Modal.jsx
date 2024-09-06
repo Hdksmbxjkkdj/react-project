@@ -15,7 +15,11 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
-  const handleImg = (event) => {
+  const handleImg = (event,i) => {
+    console.log(".shows-"+i) 
+    window?.$(".delete").removeAttr('style')
+    window?.$(".shows-"+i).css({border:"2px solid #ffc107"})
+
     let preview = window?.$(".tab-content img");
     preview.fadeOut(100);
 
@@ -107,12 +111,12 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                         role="tablist"
                         style={{ overflowX: "auto", overflowY: "hidden" }}
                       >
-                        {modal?.data?.gallery.map((item) => {
+                        {modal?.data?.gallery.map((item,i) => {
                           return (
                             <>
                               <li className="nav-item" role="presentation">
                                 <button
-                                  onClick={(event) => handleImg(event)}
+                                  onClick={(event) => handleImg(event,i)}
                                   className="nav-link active"
                                   id="nav1-tab"
                                   data-bs-toggle="tab"
@@ -122,7 +126,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                                   aria-controls="nav1"
                                   aria-selected="true"
                                 >
-                                  <img src={Config.shop + "" + item.name} />
+                                  <img src={Config.shop + "" + item.name} className={"delete shows-"+i}/>
                                 </button>
                               </li>
                             </>
