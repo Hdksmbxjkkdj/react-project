@@ -80,7 +80,7 @@ const changeCss=(event)=>{
           <>
              <form action="#">
                 <div className="pro-quan-area d-lg-flex align-items-center">
-                  <div className="product-quantity mr-20 mb-25">
+                  <div className="product-quantity  mb-25">
                     <div className="cart-plus-minus p-relative">
                       <input type="text" value="1" />
                     </div>

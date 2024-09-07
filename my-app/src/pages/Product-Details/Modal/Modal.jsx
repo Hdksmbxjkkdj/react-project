@@ -15,17 +15,17 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
+  console.log(modal,"modal")
   const handleImg = (event,i) => {
-    console.log(".shows-"+i) 
     window?.$(".delete").removeAttr('style')
-    window?.$(".shows-"+i).css({border:"2px solid #ffc107"})
+    window?.$(".show-"+i).css({border:"2px solid #ffc107"})
 
     let preview = window?.$(".tab-content img");
     preview.fadeOut(100);
 
     preview.attr(
       "src",
-      window?.$(event.target).parent().find("img").attr("src")
+      window?.$(event.target).parent().parent().parent().find(".product__modal-img").attr("src")
     );
     preview.fadeIn(300);
   };
@@ -92,7 +92,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                     <div className="product__modal-box">
                       <div className="tab-content" id="modalTabContent">
                         <div
-                          className="tab-pane fade show active"
+                          className="tab-pane fade show active oo"
                           id="nav1"
                           role="tabpanel"
                           aria-labelledby="nav1-tab"
@@ -112,13 +112,14 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                         style={{ overflowX: "auto", overflowY: "hidden" }}
                       >
                         {modal?.data?.gallery.map((item,i) => {
+                          console.log(modal?.data?.gallery,item.name)
                           return (
                             <>
                               <li className="nav-item" role="presentation">
                                 <button
                                   onClick={(event) => handleImg(event,i)}
                                   className="nav-link active"
-                                  id="nav1-tab"
+                                  // id="nav1-tab"
                                   data-bs-toggle="tab"
                                   data-bs-target="#nav1"
                                   type="button"
@@ -126,7 +127,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                                   aria-controls="nav1"
                                   aria-selected="true"
                                 >
-                                  <img src={Config.shop + "" + item.name} className={"delete shows-"+i}/>
+                                  <img src={Config.shop + "" + item.name} className={"delete show-"+i}/>
                                 </button>
                               </li>
                             </>

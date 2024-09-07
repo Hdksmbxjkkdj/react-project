@@ -116,23 +116,21 @@ export const Product = ({
                             </ul>
                          
                           </div> 
-                          {modal.show &&
-                   (
+                         
+                  
+                {modal.show && (
                   <Modal
                     setModal={setModal}
                     modal={modal}
-                    // commentNumber={commentNumber}
                     commentNumber={(comments_count?.[item.id])}
                   >
                     {/* <ModalBody data={modalInfo.data} /> */}
                   </Modal>
-                )} 
-                 
+                )}
                   {/* <Modal items={item}></Modal> */}
                 
                 </div> 
               
-             
                 <div className="product__content text-center">
                   <h6 className="product-name">
                     <a
@@ -153,13 +151,17 @@ export const Product = ({
                                 <button type="button">Add to Cart</button>
                              </div>  */}
                 <ProductAddbtn item={item}></ProductAddbtn>
+                
               </div>
              
               {/* {showmodal&&<ModalContent closebtn={closebtn}>
          
                          </ModalContent>} */}
+                         
             </div>
+            
           </>
+          
         );
       })}
     </>
