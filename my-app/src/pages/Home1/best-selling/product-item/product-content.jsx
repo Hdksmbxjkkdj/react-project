@@ -11,7 +11,7 @@ const ProductContent = ({type,item})=> {
               }
             </a>
           </h6>
-          <Rate stars={item?.rate} type="comment"/>
+          <Rate stars={item?.rate} type="comment" className={(type!="flex")&&"justify-content-center"}/>
           <span className="price d-block">تومان {item?.price}</span>
         </div>
         </>
