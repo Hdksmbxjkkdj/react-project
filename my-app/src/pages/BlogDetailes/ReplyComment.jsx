@@ -9,7 +9,6 @@ export const ReplyComment = ({ Pid }) => {
       .get(`http://localhost:313/subComments?Pid=${Pid}`)
       .then((response) => {
         setReply(response);
-        console.log(response.data);
       });
   }, [reply]);
   return (
