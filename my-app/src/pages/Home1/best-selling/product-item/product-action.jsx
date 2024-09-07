@@ -40,7 +40,8 @@ const ProductAction = ({ item }) => {
       seccondimg: item.seccondpic,
       id: item.id,
       show: true,
-      stars:item.rate
+      stars:item.rate,
+      count:item.number
     });
   }
   const [user, setUser] = useState();

@@ -13,6 +13,7 @@ import { Hero } from "./hero";
 import { OnSell } from "./on-sell";
 import { Rank } from "../Components/Rank";
 import { Rate } from "../Product-Details/RateSubmit/Rate";
+import { NotExist } from "../Components/NotExist";
 var filename1 = [
   { pic: "top/banner-top-1.jpg", name: "banner-1" },
   { pic: "top/banner-top-2.jpg", name: "banner-2" },
@@ -90,7 +91,8 @@ const Home1 = () => {
     seccondimg:"",
     id:"111111111",
     show:false,
-    stars:0
+    stars:0,
+    count:0
   });
   useEffect(()=>{
     (modal.show) && window?.$(`#${modal.id}`).modal("show");
@@ -175,7 +177,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__stock">
                         <span>وضعیت :</span>
-                        <span>موجود</span>
+                        <span>{(modal.count!=0)?modal.count:"ناموجود"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>عنوان:</span>
@@ -189,7 +191,7 @@ const Home1 = () => {
                       <div className="product__price">
                         <span>${modal.price.toFixed(2)}</span>
                       </div>
-                      <div className="product__modal-form mb-30" key={Math.random()}>
+                      {(modal?.count==0)?<NotExist/>:<div className="product__modal-form mb-30" key={Math.random()}>
                         {(!check.includes(modal))?<form onSubmit={(event)=>handleSubmit(event)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
                             <div className="product-quantity ml-20 mb-20">
@@ -210,7 +212,7 @@ const Home1 = () => {
                             افزوده شده به  سبد خرید
                           </button>
                           </div>}
-                      </div>
+                      </div>}
                     </div>
                   </div>
                 </div>

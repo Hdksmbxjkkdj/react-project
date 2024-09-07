@@ -1,4 +1,5 @@
 import { Config } from "../../../../Utils";
+import { NotExist } from "../../../Components/NotExist";
 import { ProducDetailsImg } from "../../../Product-Details/ProductDetailsnav";
 import { Rate } from "../../../Product-Details/RateSubmit/Rate";
 import { ProductAction } from "./product-action";
@@ -13,7 +14,7 @@ const ProductItem = ({ type, slider }) => {
       <div className="product__item white-bg text-center" key={Math.random()}>
         <ProductThumb item={slider}></ProductThumb>
         <ProductContent item={slider}></ProductContent>
-        <ProductAddbtn item={slider}></ProductAddbtn>
+        {(slider?.number!=0)?<ProductAddbtn item={slider}></ProductAddbtn>:<span className="not-exist">ناموجود</span>}
       </div>
       {/* <div className="card" key={Math.random()}>
         <Link to={"/product-details/" + slider?.id}>
