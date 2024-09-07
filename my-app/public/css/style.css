@@ -6391,3 +6391,7 @@ p.checkout-coupon input[type=text]:focus {
       margin-top:5rem;
     }
     }
+    .main-menu .active,
+    .header__action .active {
+      color: #fcb700;
+    }
