@@ -6,12 +6,19 @@ import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@forta
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
     const [active,setActive] = useState()
+    console.log(active)
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
       //showproduct
     const handleImg = (event,i) => {
-       
+        // window?.$(".show-0").removeAttr('style')
+        // window?.$(".delete").parent().parent().find(".u").removeAttr('style')
+
+        window?.$("#u").css({border:"2px solid #ffc107"}).attr('style')
+        // window?.$(".show-0").removeAttr('style')
         window?.$(".delete").removeAttr('style')
+        
+
         window?.$(".show-"+i).css({border:"2px solid #ffc107"})
 
         let preview = window?.$('.product__details-thumb img')
@@ -28,11 +35,24 @@ export const ProducDetailsImg = ({item,picturs}) =>{
     <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
+        <li className="nav-item" role="presentation">
+                    <button  className="nav-link active"  onClick={(event) => handleImg(event)} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+         <img src={Config.shop+ "" + item} alt="" className="delete" id="u" style={{border:"2px solid #ffc107"}}/>
+       
+                          
+                    </button>
+                    
+                </li>
         {picturs?.map((item,i)=>{
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => handleImg(event,i)} className="nav-link active" id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-                        <img src={Config.shop+ "" + item?.name} alt=""  className={"delete show-"+i}/>  
+                    <button onClick={(event) => {handleImg(event,i);setActive(item)}} className="nav-link"  data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    {/* <img src={Config.shop+ "" + item?.name} alt="" style={{border:"1px solid red"}} className={"delete show-"+0}/>   */}
+       
+         <img src={Config.shop+ "" + item?.name} alt=""  className={"delete show-"+i}/>
+         
+                          
                     </button>
+                    
                 </li>
             }
         )}
@@ -44,11 +64,10 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                     <div className="product__details-nav-thumb">
                         {/* <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/> */}
                         <img src={Config.shop+ "" +item} alt=""  onClick={() => setShowproduct({show: true})}/>  
-                        {showproduct.show && <ShowProduct setShowproduct={setShowproduct} item={item}>
-          {/* <ModalBody data={modalInfo.data} /> */}
-                       </ShowProduct>}
-                    
-                       <FontAwesomeIcon icon={faSearchPlus} style={{fontSize:"25px"}} className="me-5"  onClick={() => setShowproduct({show: true})}></FontAwesomeIcon>
+                       
+                        {showproduct.show && <ShowProduct setShowproduct={setShowproduct} item={active?.name} >
+                        </ShowProduct>}
+                       <FontAwesomeIcon icon={faSearchPlus} style={{fontSize:"25px",cursor:"pointer"}} className="me-5"  onClick={() => setShowproduct({show: true,data:item})}></FontAwesomeIcon>
                       
                     </div>
                    

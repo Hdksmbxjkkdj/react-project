@@ -9,7 +9,7 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
                 break;
             case 'lg':
                 return <div class="review-link">
-                    <span>(<span>{stars} "از" </span> 5)</span>
+                    <span>(<span>{stars} از</span> 5)</span>
                 </div>
                 break;
 

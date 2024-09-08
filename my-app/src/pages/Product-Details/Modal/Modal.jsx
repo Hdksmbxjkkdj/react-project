@@ -15,7 +15,6 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
-  console.log(modal,"modal")
   const handleImg = (event,i) => {
     window?.$(".delete").removeAttr('style')
     window?.$(".show-"+i).css({border:"2px solid #ffc107"})
@@ -69,8 +68,12 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
           top: 0,
           left: 0,
           backgroundColor: "rgba(0, 0, 0, 0.5)",
+          
           zIndex: "1000",
         }}
+        onClick={() =>
+          setModal({ show:false})
+      }
       >
         <div className="container d-flex justify-content-center">
           {/* <div className="row justify-content-center align-items-center"> */}
