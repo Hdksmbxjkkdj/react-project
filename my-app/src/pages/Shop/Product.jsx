@@ -56,7 +56,6 @@ export const Product = ({
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
   //modal
-
   return (
     <>
       {items?.data?.map((item) => {

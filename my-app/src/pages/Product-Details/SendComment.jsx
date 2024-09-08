@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Input, Textarea } from "../../Compont/Forms";
-import { Notif, User } from "../../Utils";
+import { Notif } from "../../Utils";
 // import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -29,6 +29,8 @@ export const SendComment = ({
 //new
   const schema=yup.object().shape({
    comment:yup.string().min(10,"تعداد کاراکتر ها نباید کمتر از 10 باشد").required("لطفا نظر خود را بنویسید"),
+   name:yup.string().required("لطفا نام خود را بنویسید"),
+    email:yup.string().email("فرمت ایمیل صحیح نیست").required("این فیلد الزامی است"),
   })
 
   const {register,reset,handleSubmit,formState:{errors}}=useForm({resolver:yupResolver(schema)})
@@ -40,8 +42,8 @@ export const SendComment = ({
   //  const [value, setValue] = useState(0);
 
   // let local = Local()
-  let auth = User();
-  let loginMessage = "first_login";
+  // let auth = User();
+  let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
   let sMessage = "success_message";
   // var today = new Date();
@@ -83,7 +85,7 @@ export const SendComment = ({
   let url = `http://localhost:313/product_comments`;
   const onFormSubmit = async (data) => {
     //  preventDefault();
-    // if (user != null) {
+     if (user != null) {
     //  if(data?.sender_name!=null){
            // clearErrors()
            await axios
@@ -94,7 +96,7 @@ export const SendComment = ({
                  : user?.full_name
                : "",
              // sender_email: auth ? auth.email : "",
-             sender_email: user.id,
+             sender_email: user?.id,
              comment: data?.comment,
              id_product: id,
              date: today,
@@ -126,15 +128,19 @@ export const SendComment = ({
             //  setError(error?.response.data?.error);
            });
    
-          error?.length > 0 && Notif('error', eMessage)
+          // error?.length > 0 && Notif('error', eMessage)
+         
+
+          
    
-         return;
+         return
+
+         ;}
       //  }
       //  Notif("error", 'فیلد نام یا نظر خالی است');
-     
- 
-
+    // Notif("error", loginMessage);
     Notif("error", loginMessage);
+
   };
 
 //   //test
@@ -221,14 +227,16 @@ export const SendComment = ({
                             id="sender_name"
                             name="sender_name"
                             // value={data?.sender_name}
-                            value={user.username}
+                            value={user?.username}
                             // error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>
                               setData({ ...data, sender_name: e.target.value })
                             }
-                            required
-                          />
+                            
+                            {...register("name")}
+                            />
+                            {errors?.name && (<p className="text-danger text-end mb-3">{errors.name?.message}</p>)}
                         </div>
                       </div>
                       <div className="review-input-box d-flex align-items-start">
@@ -236,7 +244,7 @@ export const SendComment = ({
                         <div className="review-input">
                           <input
                             readonly
-                            value={user.id}
+                            value={user?.id}
                             type="email"
                             id="sender_email"
                             name="sender_email"
@@ -246,7 +254,9 @@ export const SendComment = ({
                             onChange={(e) =>
                               setData({ ...data, sender_email: e.target.value })
                             }
-                          />
+                            {...register("email")}
+                            />
+                            {errors?.email && (<p className="text-danger text-end mb-3">{errors.email?.message}</p>)}
                         </div>
                       </div>
                       <div className="review-input-box d-flex align-items-start">
