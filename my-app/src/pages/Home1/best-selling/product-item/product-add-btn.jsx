@@ -25,7 +25,8 @@ const ProductAddbtn = (props) => {
       1,
       setCart,
       cart,
-      setLoading
+      setLoading,
+      props.item?.number
     );
   }
   function handleRemoveClick(event, props) {

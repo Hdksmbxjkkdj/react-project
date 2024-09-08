@@ -109,7 +109,7 @@ const Home1 = () => {
     })
   },[cart,modal])
   function handleSubmit(e){
-    AddToCart(e,modal.id,modal.img,modal.title,modal.price,value,setCart,cart,null,"error",null)
+    AddToCart(e,modal.id,modal.img,modal.title,modal.price,value,setCart,cart,null,modal.count,"error",null)
   }
   return (
     <>
@@ -177,7 +177,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__stock">
                         <span>وضعیت :</span>
-                        <span>{(modal.count!=0)?modal.count:"ناموجود"}</span>
+                        <span>{(modal.count!=0)?` موجود (${modal.count}) عدد`:"ناموجود"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>عنوان:</span>

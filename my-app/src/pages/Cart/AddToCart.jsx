@@ -11,6 +11,7 @@ export const AddToCart = async (
   setCart,
   cart,
   setLoading,
+  number,
   eMessage,
   returnPrevCount = null
 ) => {
@@ -23,6 +24,12 @@ export const AddToCart = async (
   var yyyy = today.getFullYear();
   today = dd + "/" + mm + "/" + yyyy;
   let quantity = count;
+  if(number==0)
+  {
+    Notif("error","این محصول در انبار موجود نیست !")
+    setLoading(false)
+    return false
+  }
   if (quantity < 1) {
     Notif("warning", "تعداد نمیتواند کمتر از 1 باشد");
     return false;
