@@ -201,7 +201,7 @@ const Home1 = () => {
                                 <div className="dec qtybutton" onClick={()=>setValue(()=>value>1?value-1:1)}>-</div>
                               </div>
                             </div>
-                            <div className="pro-cart-btn mb-20">
+                            <div className="pro-cart-btn">
                               <button className="t-y-btn" type="submit">
                                 افزودن به سبد
                               </button>

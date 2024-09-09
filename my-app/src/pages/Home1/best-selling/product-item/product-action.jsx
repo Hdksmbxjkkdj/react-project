@@ -29,6 +29,7 @@ const ProductAction = ({ item }) => {
   }
   const { modal, setModal } = useContext(ModalContext);
   function Set(e) {
+    console.log("hi");
     e.preventDefault()
     let incart = Checking();
     setModal({
@@ -41,7 +42,8 @@ const ProductAction = ({ item }) => {
       id: item.id,
       show: true,
       stars:item.rate,
-      count:item.number
+      count:item.number,
+      gallery:item.gallery
     });
   }
   const [user, setUser] = useState();
@@ -80,7 +82,7 @@ const ProductAction = ({ item }) => {
           {!checker.includes(item) ? (
             <li>
               <a
-                href=""
+                type="button"
                 onClick={(event) => {
                   AddToWishlist(
                     event,
@@ -102,7 +104,7 @@ const ProductAction = ({ item }) => {
           ) : (
             <li>
               <a
-                href=""
+                type="button"
                 onClick={(event) =>
                   RemoveWishList(event, item.id, item.text, user, setrow, false)
                 }
@@ -113,12 +115,12 @@ const ProductAction = ({ item }) => {
             </li>
           )}
           <li>
-            <a href="" title="Quick View" onClick={(e)=>Set(e)}>
+            <a type="button" title="Quick View" onClick={(e)=>Set(e)}>
               <i className="fa fa-search"></i>
             </a>
           </li>
           <li>
-            <a href="" title="Compare">
+            <a type="button" title="Compare">
               <i className={"fa fa-sliders-h"} onClick={(e)=>handleCompare(e)}></i>
             </a>
           </li>

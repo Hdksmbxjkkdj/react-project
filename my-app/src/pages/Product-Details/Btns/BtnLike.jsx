@@ -45,8 +45,9 @@ export const BtnLike = ({items})=>{
             <li>
               <a
                 href="#"
-                onClick={() =>{ 
+                onClick={(e) =>{ 
                   AddToWishlist(
+                    e,
                     items.id,
                     items?.pic,
                     items?.text,
@@ -56,12 +57,12 @@ export const BtnLike = ({items})=>{
                   );
                 setTextColor(textColor==="#696969"?"red":"#696969 ")}}
                 title="افزودن به علاقه مندی ها"
-                style={{color:textColor}}
+                // style={{color:textColor}}
               >
                 
                 
                 <i
-                  className={"fa-solid fa-heart"}
+                  className={"far fa-heart"}
                 ></i>
               </a>
             </li>

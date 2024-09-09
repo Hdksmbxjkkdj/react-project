@@ -8,7 +8,6 @@ import { useEffect } from "react"
 import axios from "axios"
 import { Product, ProductList } from "./Product"
 export const Tab=({items,setItems,productLength,length})=>{
-   console.log(length,"length",items)
       //tab
       const [toggleState,setToggleStata]=useState(2)
   
