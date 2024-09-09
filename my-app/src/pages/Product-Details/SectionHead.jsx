@@ -60,7 +60,7 @@ const Option = {
               <div className="section__head mb-40">
                 <div className="section__title">
                   <h3 className="text-end">
-                     محصولات<span>مرتبط</span>
+                     محصولات مرتبط<span></span>
                   </h3>
                 </div>
               </div>

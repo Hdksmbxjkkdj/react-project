@@ -87,7 +87,7 @@ export const ProducDetails= () =>{
                        <ProductDetailsWrapper item={img} commentNumber={ProductComment?.data?.length} /> 
                     </div>
                     <div className="row">
-                        <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} /> 
+                        <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} commentNumber={ProductComment?.data?.length}/> 
                     </div>
                     
                     <div className="row">

@@ -17,21 +17,19 @@ export const CustomerComment = ({
    info,
   ProductComment,
 }) => {
-const [infor, setInfor] = useState();
-  const [more, setMore] = useState();
+  console.log(ProductComment?.data)
 
-   useEffect(() => {
-    axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=0&_end=4`).then((res) => {
-      setInfor(res);
-  });
-}, []);
+//   const [info, setInfo] = useState();
+//   const [m, setM] = useState();
 
-const moreComment =(event)=>{
-  axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=10`).then((res) => {
-          setMore(res);
-          window?.$("#p").css({display:"inline"})
-          event.target.remove()
-      });
+//    useEffect(() => {
+//     axios.get(`http://localhost:313/product_comments?_start=1&_end=6`).then((res) => {
+//       setInfo(res);
+//   });
+// }, []);
+  const  less=(e)=>{
+    (e.target()).parent().find("#show").removeAttr("style")
+   
 }
   return (
     <>
@@ -50,10 +48,9 @@ const moreComment =(event)=>{
                 اولین نظر را شما بنویسید
               </h5>
             </div>
-          ) : ( 
-          <div >
-             {infor?.data?.map((item) => {
-              
+          ) : ( (ProductComment?.data?.length <= 5) ?<div id="show" style={{display:"none"}}>
+             {ProductComment?.data?.map((item) => {
+
               return <> <div className="review-item">
                 <h3 className="review-title">محصول فوق العاده</h3>
                 <div className="review-ratings mb-10">
@@ -92,10 +89,11 @@ const moreComment =(event)=>{
                   </div>
                 </div>
                 <span id="dost ">....</span>
-                {/* <button onClick={()=>less()} id="more" className="bg-danger">نظرات  بیشتر</button> */}
 
               </div>
                 
+              
+              
 
                 </>
                 
@@ -103,66 +101,67 @@ const moreComment =(event)=>{
             })}
 
           </div>
-        )}
-               <div style={{display:"none"}} id="p">
-                      {more?.data?.map((item) => {
-              return <> <div className="review-item">
-                <h3 className="review-title">محصول فوق العاده</h3>
-                <div className="review-ratings mb-10">
-                  <div className="review-ratings-single d-flex align-items-end">
-                    <span>کیفیت</span>
-                    {/* <Rate></Rate>
-                     */}
-                    <Rate
-                      stars={item.rate}
-                      type="comment"
-                      className="ms-3"
-                    />
-                    
-                  </div>
-                  {/* <div className="review-ratings-single d-flex align-items-center">
-                                    <span>قیمت</span>
-                                  <Rank></Rank>
+           :(<div >
+            {ProductComment?.data?.map((item) => {
+
+             return <> <div className="review-item bg-danger">
+               <h3 className="review-title">محصول فوق العاده</h3>
+               <div className="review-ratings mb-10">
+                 <div className="review-ratings-single d-flex align-items-end">
+                   <span>کیفیت</span>
+                   {/* <Rate></Rate>
+                    */}
+                   <Rate
+                     stars={item.rate}
+                     type="comment"
+                     className="ms-3"
+                   />
+                   
+                 </div>
+                 {/* <div className="review-ratings-single d-flex align-items-center">
+                                   <span>قیمت</span>
+                                 <Rank></Rank>
+                               </div> */}
+                 {/* <div className="review-ratings-single d-flex align-items-center">
+                               <span>ارزش</span>
+                              
+                               <Rank></Rank>
                                 </div> */}
-                  {/* <div className="review-ratings-single d-flex align-items-center">
-                                <span>ارزش</span>
-                               
-                                <Rank></Rank>
-                                 </div> */}
-                </div>
-                <div className="review-text">
-                  <p>{item?.comment}</p>
-                </div>
-                <div className="review-meta">
-                  <div className="review-author">
-                    <span>بررسی توسط </span>
-                    <span>{item?.sender_name}</span>
-                  </div>
-                  <div className="review-date">
-                    <span>نوشته شده در</span>
-                    <span>{item?.date}</span>
-                  </div>
-                </div>
-                <span id="dost ">....</span>
-                {/* <button onClick={()=>less()} id="more" className="bg-danger">نظرات  بیشتر</button> */}
-
-              </div>
-                
-
-                </>
-                
-             
-            })}
-            </div>
-         <div className="d-flex justify-content-end">
-              <button onClick={(e)=>moreComment(e)} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
-  
-              </div>
-           
-           
+               </div>
+               <div className="review-text">
+                 <p>{item?.comment}</p>
+               </div>
+               <div className="review-meta">
+                 <div className="review-author">
+                   <span>بررسی توسط </span>
+                   <span>{item?.sender_name}</span>
+                 </div>
+                 <div className="review-date">
+                   <span>نوشته شده در</span>
+                   <span>{item?.date}</span>
+                 </div>
+               </div>
+               <span id="dost ">....</span>
+             </div>
                
+             
+             
+
+               </>
+               
+            
+           })}
+                       <button onClick={(e)=>less(e)} id="more">نظرات  بیشتر</button>
+
+         </div>))}
+
+           
+
+          
 
         </div>
+        {/* <button onClick={()=>less()} id="less" type="less"></button> */}
+        <button  id="more" className="bg-warning">نظرات بیشتر</button>
       </div>
     
 

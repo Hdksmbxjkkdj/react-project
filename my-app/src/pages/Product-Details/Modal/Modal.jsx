@@ -152,7 +152,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                       </div>
                       <div className="product__stock">
                         <span>دسترسی :</span>
-                        <span>در انبار</span>
+                        <span>{item?.data.number==0?"نا موجود":"در انبار"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>SKU:{modal.data.SKU}</span>
