@@ -6,19 +6,24 @@ import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@forta
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs}) =>{
     const [active,setActive] = useState()
-    console.log(active)
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
       //showproduct
     const handleImg = (event,i) => {
+
         // window?.$(".show-0").removeAttr('style')
         // window?.$(".delete").parent().parent().find(".u").removeAttr('style')
 
-        window?.$("#u").css({border:"2px solid #ffc107"}).attr('style')
-        // window?.$(".show-0").removeAttr('style')
-        window?.$(".delete").removeAttr('style')
+        // window?.$(".nav-link active").find("#u").css({border:"2px solid #ffc107"})
         
+        // window?.$(".delete").removeAttr('style')
+        // window?.$(event.target).find('#id').css({border:"2px solid #ffc107"})
 
+
+        // window?.$(".show-"+i).css({border:"2px solid #ffc107"})
+        // handleBorder(event,i);
+        
+        window?.$(".delete").removeAttr('style')
         window?.$(".show-"+i).css({border:"2px solid #ffc107"})
 
         let preview = window?.$('.product__details-thumb img')
@@ -28,27 +33,26 @@ export const ProducDetailsImg = ({item,picturs}) =>{
         preview.fadeIn(300)
     }
     
-
-   
     return<>
    
     <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
         <li className="nav-item" role="presentation">
-                    <button  className="nav-link active"  onClick={(event) => handleImg(event)} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
-         <img src={Config.shop+ "" + item} alt="" className="delete" id="u" style={{border:"2px solid #ffc107"}}/>
+                    <button  className="nav-link active"  onClick={(event) => handleImg(event,0)} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+         <img src={Config.shop+ "" + item} alt="" className={"delete show-0"} id="u" style={{border:"2px solid #ffc107"}}/>
        
                           
                     </button>
                     
                 </li>
         {picturs?.map((item,i)=>{
+            let index = i+1;
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => {handleImg(event,i);setActive(item)}} className="nav-link"  data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button onClick={(event) => {handleImg(event,index);setActive(item)}} className="nav-link"  data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
                     {/* <img src={Config.shop+ "" + item?.name} alt="" style={{border:"1px solid red"}} className={"delete show-"+0}/>   */}
        
-         <img src={Config.shop+ "" + item?.name} alt=""  className={"delete show-"+i}/>
+         <img src={Config.shop+ "" + item?.name} alt=""  className={"delete show-"+index}/>
          
                           
                     </button>

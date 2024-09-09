@@ -362,7 +362,7 @@ p {
   bottom: -1px;
   right: 0;
   height: 2px;
-  width: 159px;
+  width: 170px;
   background: #fcb700;
 }
 .section__head-2::after {
@@ -6505,4 +6505,7 @@ p.checkout-coupon input[type="text"]:focus {
 
 .tip-icon-alert i::before {
   background: #ff6f00;
+}
+#more{
+  display: none;
 }
