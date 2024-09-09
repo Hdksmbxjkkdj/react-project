@@ -1,17 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Input, Textarea } from "../../Compont/Forms";
 import { Notif, User } from "../../Utils";
 // import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { TapContent } from "./TapContent";
-import { CustomerComment } from "./CustomerComment";
-import { Rank } from "../Components/Rank";
-import { RateSubmit } from "./RateSubmit/RateSubmit";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from 'yup';
-import { yupResolver } from "@hookform/resolvers/yup";
+import { CustomerComment } from "./CustomerComment";
+import { RateSubmit } from "./RateSubmit/RateSubmit";
+import { TapContent } from "./TapContent";
 // import { schema } from "@hookform/resolvers/yup/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/computed-types/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/arktype/src/__tests__/__fixtures__/data.js";
@@ -94,11 +90,11 @@ export const SendComment = ({
                  : user?.full_name
                : "",
              // sender_email: auth ? auth.email : "",
-             sender_email: user.id,
+             sender_email: user?.id,
              comment: data?.comment,
              id_product: id,
              date: today,
-             id_customer: user.id,
+             id_customer: user?.id,
              rate: quality,
            })
            .then((response) => {
@@ -221,7 +217,7 @@ export const SendComment = ({
                             id="sender_name"
                             name="sender_name"
                             // value={data?.sender_name}
-                            value={user.username}
+                            value={user?.username}
                             // error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>
@@ -236,7 +232,7 @@ export const SendComment = ({
                         <div className="review-input">
                           <input
                             readonly
-                            value={user.id}
+                            value={user?.id}
                             type="email"
                             id="sender_email"
                             name="sender_email"

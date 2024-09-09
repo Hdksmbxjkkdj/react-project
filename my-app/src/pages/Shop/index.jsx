@@ -1,19 +1,11 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Pagination } from "../Components/pagination";
+import { BrandSlider } from "../Product-Details/BrandSlider";
+import { Sidebar } from "../Sidebar";
 import { BreadCrumb } from "./BreadCrumb";
 import { ProductGraidWrapper } from "./ProductGraidWrapper";
 import { Tab } from "./Tab";
-import { Config } from "../../Utils";
-import { useContext } from "react";
-import { Product } from "./Product";
-import { SidebarData } from "../Sidebar/SidebarData";
-import { Sidebar } from "../Sidebar";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { BrandSlider } from "../Product-Details/BrandSlider";
-import { ModalContext } from "../../context/modal";
-import { Favorite } from "../Components/Like";
-import { Pagination } from "../Components/pagination";
-import { faTableCellsLarge } from "@fortawesome/free-solid-svg-icons";
 export const Products = ({ sidebars }) => {
   const [category, setCategory] = useState();
   useEffect(() => {
@@ -62,16 +54,17 @@ export const Products = ({ sidebars }) => {
   const [length, setLength] = useState();
   const Limit = 8;
   const [start, setStart] = useState(1);
-  let params = new URLSearchParams(window.location.search).toString();
+  let params = new URLSearchParams(window.location.search);
+  // params =(params.get("text"))? "text_like="+params.get("text"):"";
   useEffect(() => {
     axios
       .get(
-        `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
-
+        `http://localhost:313/best_selling?_start=${start}&_limit=${Limit}&${params}`
       )
       .then((response) => {
+        console.log(response);
         setItems(response.data);
-        setLength(response.data.items);
+        setLength(response.data.length);
       });
   }, [start]);
 

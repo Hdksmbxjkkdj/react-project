@@ -6,16 +6,19 @@ import { Loader } from "../Components/loader";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
 import { ModalContainer } from "./modalContainer";
+import { AddToCart } from "../Cart/AddToCart";
+import { BtnLike } from "../Product-Details/Btns/BtnLike";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 
 const Header = () => {
   window?.$("document").ready(function () {
     window?.$(window).on("scroll", function () {
       var scroll = window?.$(window).scrollTop();
       if (scroll < 100) {
-        window?.$(".header-sticky").removeClass("sticky");
+        window?.$("#header-sticky").removeClass("sticky");
         window?.$("#header__transparent").removeClass("transparent-sticky");
       } else {
-        window?.$(".header-sticky").addClass("sticky");
+        window?.$("#header-sticky").addClass("sticky");
         window?.$("#header__transparent").addClass("transparent-sticky");
       }
     });
@@ -47,32 +50,26 @@ const Header = () => {
       window?.$(".body-overlay").removeClass("opened");
     });
   });
-  const { cart } = useContext(CartContext);
+  const { cart,setCart } = useContext(CartContext);
   const { searching } = ItemsSearch();
   const [reslut, setResult] = useState();
   const [loading, setLoading] = useState(false);
-  const [search,setSearch] = useState();
+  const [search, setSearch] = useState();
   const param = window.location.pathname.split("/").pop();
-  function tot() {
-    var total = 0;
-    cart.forEach((element) => {
-      total += element.unitprice;
-      return total;
-    });
-  }
   const user = localStorage.getItem("user");
   const use = JSON.parse(user);
   const navigate = useNavigate();
   useEffect(() => {
     window?.$(".cart__mini").removeClass("cart__opened");
   }, [navigate]);
-  function isNull() {
-    if(search==="")
-    {
-      return true
-    }
-    return false
-  }
+      document.getElementById("exampleModal")?.addEventListener("shown.bs.modal",function(){
+        document.getElementById("search-input").focus();
+      })
+      function LogOut()
+      {
+        localStorage.removeItem("user")
+        navigate("/login")
+      }
   return (
     <>
       <header
@@ -110,9 +107,9 @@ const Header = () => {
                           <NavLink to="wishlist">علاقه مندی ها</NavLink>
                         </li>
                       )}
-                      <li>
+                      {user?<li onClick={LogOut} style={{cursor:"pointer"}}>خروج</li>:<li>
                         <NavLink to="/register">ثبت نام/ورود</NavLink>
-                      </li>
+                      </li>}
                       <li>
                         <NavLink to="/comparison">مقایسه</NavLink>
                       </li>
@@ -127,7 +124,7 @@ const Header = () => {
               <div className="row align-items-center">
                 <div className="col-xl-4 col-lg-3 col-sm-8 col-12">
                   <div className="header__info-left d-flex justify-content-center justify-content-sm-between align-items-center">
-                  <div
+                    <div
                       className="cart__mini-wrapper d-flex f-right p-relative"
                       key={Math.random()}
                     >
@@ -160,7 +157,7 @@ const Header = () => {
                         <img src={"./img/logo/logo-black.png"} alt="logo" />
                       </Link>
                     </div>
-                    
+
                     <div className="header__hotline align-items-center d-flex d-lg-none d-xl-flex">
                       <div className="header__hotline-icon">
                         <i className="fa fa-headset"></i>
@@ -183,9 +180,9 @@ const Header = () => {
                           style={{ position: "relative" }}
                         >
                           <input
-                            type="text"
                             placeholder="جست و جو محصولات"
                             data-bs-toggle="modal"
+                            type="text"
                             data-bs-target="#exampleModal"
                             className="d-none d-lg-block"
                           />
@@ -220,15 +217,15 @@ const Header = () => {
                                 <div className="modal-body">
                                   <input
                                     type="text"
-                                    onChange={(e) =>
-                                      {searching(
+                                    id="search-input"
+                                    onChange={(e) => {
+                                      searching(
                                         e.target.value,
                                         setResult,
                                         setLoading
                                       );
-                                      setSearch(e.target.value)
-                                    }
-                                    }
+                                      setSearch(e.target.value);
+                                    }}
                                   />
                                   {loading ? (
                                     <Loader size={1} />
@@ -237,59 +234,70 @@ const Header = () => {
                                       key={Math.random()}
                                       className="modal-holder"
                                     >
-                                      {reslut?.length > 0 ? (
-                                        reslut.map((item) => {
-                                          return (
-                                            <div className="my-3 search-card">
-                                              <Link
-                                                to={`/product-details/${item.id}`}
-                                              >
-                                                <div className="row g-0 align-items-center">
-                                                  <div className="col-md-4">
-                                                    <img
-                                                      src={`${Config.shop}${item.pic}`}
-                                                      className="img-fluid rounded-circle"
-                                                      alt={item.name}
-                                                      style={{ width: "10rem" }}
-                                                    />
-                                                  </div>
-                                                  <div className="col-md-8">
-                                                    <div className="search-card-body">
-                                                      <p
-                                                        className="search-card-text"
+                                      <div className="d-flex justify-content-between my-3">
+                                      <p className="text-primary fs-11 mr-15" style={{textAlign:"right"}}>تعداد یافت شده : <span>{reslut?.length}</span></p>
+                                      {(reslut?.length && search!=="")?<Link to={`/products?text_like=${search}`}>مشاهده همه</Link>:null}
+                                      </div>
+                                      {reslut?.length > 0
+                                        ? reslut.map((item) => {
+                                            return (
+                                              <div className="my-3 search-card">
+                                                <Link
+                                                  to={`/product-details/${item.id}`}
+                                                >
+                                                  <div className="row g-0 align-items-center">
+                                                    <div className="col-md-4">
+                                                      <img
+                                                        src={`${Config.shop}${item.pic}`}
+                                                        className="img-fluid rounded-circle"
+                                                        alt={item.name}
                                                         style={{
-                                                          textAlign: "right",
+                                                          width: "10rem",
                                                         }}
-                                                      >
-                                                        {item.text}
-                                                      </p>
-                                                      <p
-                                                        className="search-card-text"
-                                                        style={{
-                                                          textAlign: "right",
-                                                        }}
-                                                      >
-                                                        <small class="text-body-secondary">
-                                                          تومان{" "}
-                                                          {item.price.toFixed(
-                                                            2
-                                                          )}
-                                                        </small>
-                                                      </p>
+                                                      />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                      <div className="search-card-body">
+                                                        <p
+                                                          className="search-card-text"
+                                                          style={{
+                                                            textAlign: "right",
+                                                          }}
+                                                        >
+                                                          {item.text}
+                                                        </p>
+                                                        <p
+                                                          className="search-card-text"
+                                                          style={{
+                                                            textAlign: "right",
+                                                          }}
+                                                        >
+                                                          <small class="text-body-secondary">
+                                                            تومان{" "}
+                                                            {item.price.toFixed(
+                                                              2
+                                                            )}
+                                                          </small>
+                                                        </p>
+                                                      </div>
+                                                    </div>
+                                                    <div className="col-md-2 d-flex flex-column gap-2 justify-content-center">
+                                                      {(item.number!=0)?<ProductAddbtn item={item} className={"search-add-btn"}/>:<span>ناموجود</span>}
+                                                      {/* <button className="btn btn-info"><i className="fa fa-heart text-light"></i></button> */}
+                                                      <BtnLike items={item}/>
                                                     </div>
                                                   </div>
-                                                </div>
-                                              </Link>
+                                                </Link>
+                                              </div>
+                                            );
+                                          })
+                                        : search && (
+                                            <div className="mt-3">
+                                              <p className="text-danger text-center">
+                                                مورد مطابقی یافت نشد
+                                              </p>
                                             </div>
-                                          );
-                                        })
-                                      ) : (search) && (
-                                        <div className="mt-3">
-                                          <p className="text-danger text-center">
-                                            مورد مطابقی یافت نشد
-                                          </p>
-                                        </div>
-                                      )}
+                                          )}
                                     </div>
                                   )}
                                 </div>
@@ -352,22 +360,57 @@ const Header = () => {
             </div>
             <div class="offcanvas__search mb-25">
               <form>
-                <input type="text" placeholder="به دنبال چه چیزی هستید ؟" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
-                <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <input
+                  type="text"
+                  placeholder="به دنبال چه چیزی هستید ؟"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                />
+                <button
+                  type="submit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
                   <i class="fa fa-search"></i>
                 </button>
               </form>
             </div>
             <div class="mobile-menu fix">
-            <nav>
-            <ul style={{display:"flex",flexDirection:"column",gap:"1rem"}}>
-                <li><Link to="/">خانه <i className="fa fa-home"></i></Link></li>
-                <li><Link to="product">ویژگی ها <i className="fa fa-shopping-bag"></i></Link></li>
-                <li><Link to="/blog">وبلاگ <i className="fa fa-blog"></i></Link></li>
-                <li><Link to="About">درباره ما <i className='fa fa-eject'></i></Link></li>
-                <li><Link to="Contact">ارتباط با ما <i className='fa fa-globe'></i></Link></li>
-            </ul>
-        </nav>
+              <nav>
+                <ul
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1rem",
+                  }}
+                >
+                  <li>
+                    <Link to="/">
+                      خانه <i className="fa fa-home"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="product">
+                      ویژگی ها <i className="fa fa-shopping-bag"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">
+                      وبلاگ <i className="fa fa-blog"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="About">
+                      درباره ما <i className="fa fa-eject"></i>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="Contact">
+                      ارتباط با ما <i className="fa fa-globe"></i>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
             </div>
             <div class="offcanvas__action"></div>
           </div>
@@ -379,3 +422,4 @@ const Header = () => {
 };
 
 export { Header };
+

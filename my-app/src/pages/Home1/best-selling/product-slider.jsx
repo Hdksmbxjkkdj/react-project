@@ -1,11 +1,10 @@
-import { ProductItem } from "./product-item/product-item";
-import { useEffect, useState } from "react";
-import { ProductItemflex } from "./product-item/product-item";
-import { BlogItem } from "./product-item/blog-item";
-import OwlCarousel from "react-owl-carousel";
+import axios from "axios";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import OwlCarousel from "react-owl-carousel";
+import { BlogItem } from "./product-item/blog-item";
+import { ProductItem, ProductItemflex } from "./product-item/product-item";
 
 const ProductSlider = ({ type, res, item,filt }) => {
   const [slider, setslider] = useState();
@@ -26,8 +25,8 @@ const ProductSlider = ({ type, res, item,filt }) => {
   const Option = {
     loop: true,
     margin: 20,
-    autoplay: true,
-    autoplayTimeout: 3000,
+    autoplay: false,
+    // autoplayTimeout: 3000,
     smartSpeed: 500,
     // items: 6,
     navText: [
@@ -47,12 +46,11 @@ const ProductSlider = ({ type, res, item,filt }) => {
           className="owl-carousel owl-theme"
           nav
           {...Option}
-          key={Math.random()}
           style={{ direction: "ltr" }}
         >
           {slider?.data?.map((item) => {
             return (
-              <div className="product__item-wrapper">
+              <div className="product__item-wrapper" key={Math.random()}>
                 <ProductItemflex slider={item}></ProductItemflex>
                 <ProductItemflex slider={item}></ProductItemflex>
               </div>

@@ -1,14 +1,5 @@
 {
-  "row": [
-    {
-      "id": "2",
-      "pic": "product-3.jpg",
-      "name": "گوشی و تلوزیون",
-      "unitprice": 70,
-      "quantity": 1,
-      "date": "07/09/2024"
-    }
-  ],
+  "row": [],
   "wishlist": [
     {
       "id": "2kazem@gmail.com",
@@ -1032,6 +1023,22 @@
       "date": "۱۴۰۳/۶/۱۵",
       "id_customer": "mahan@gmail.com",
       "rate": 5
+    },
+    {
+      "sender_name": "",
+      "comment": "skcndsxmn ",
+      "id_product": "2",
+      "date": "۱۴۰۳/۶/۱۸",
+      "rate": 0,
+      "id": "ca0gDht"
+    },
+    {
+      "sender_name": "",
+      "comment": "skcndsxmn ",
+      "id_product": "2",
+      "date": "۱۴۰۳/۶/۱۸",
+      "rate": 0,
+      "id": "NP3Agen"
     }
   ],
   "product-category": [
