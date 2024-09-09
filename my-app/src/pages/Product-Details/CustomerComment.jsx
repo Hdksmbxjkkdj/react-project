@@ -26,12 +26,11 @@ const [infor, setInfor] = useState();
   });
 }, []);
 
-const s =(event)=>{
+const moreComment =(event)=>{
   axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=10`).then((res) => {
           setMore(res);
           window?.$("#p").css({display:"inline"})
-
-
+          event.target.remove()
       });
 }
   return (
@@ -155,12 +154,11 @@ const s =(event)=>{
              
             })}
             </div>
-            {
-              ProductComment?.data?.length ==10?"": <div className="d-flex justify-content-end">
-              <button onClick={(e)=>s(e)} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
+         <div className="d-flex justify-content-end">
+              <button onClick={(e)=>moreComment(e)} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
   
               </div>
-            }
+           
            
                
 

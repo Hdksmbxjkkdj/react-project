@@ -4,6 +4,7 @@ import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { ButtonLoader } from "../../../Components/ButtonLoader";
 const ProductAddbtn = (props) => {
+  console.log(props?.item?.number)
  
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
@@ -41,7 +42,15 @@ const ProductAddbtn = (props) => {
       false
     );
   }
-  const NotInCart = () => {
+  if(props?.item?.number==0){
+   return<>
+   <button type="button" className=" w-25 btn btn-warning d-flex justify-content-center align-items-center rounded-pill">
+  
+    <h5 className="">ناموجود</h5>
+    </button>
+   </>
+  }
+  else{ const NotInCart = () => {
     //css number
     useEffect(() => {
       window
@@ -203,6 +212,7 @@ const changeCss=(event)=>{
     );
   };
   return <>{check.includes(props?.item) ? <StillInCart /> : <NotInCart />}</>;
-};
+};}
+ 
 
 export { ProductAddbtn };

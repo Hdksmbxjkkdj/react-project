@@ -90,7 +90,7 @@ const close = () =>{
             </div>
             <div className="product__stock">
               <span>دسترسی :</span>
-              <span>در انبار</span>
+              <span>{item?.data.number==0?"نا موجود":"در انبار"}</span>
             </div>
             <div className="product__stock sku mb-30">
               <span>برند:</span>
@@ -101,7 +101,7 @@ const close = () =>{
               {item?.data?.des}
               </p>
             </div>
-            <div className="product__details-stock">
+            {item?.data.number==0?"": <div className="product__details-stock">
               <h3>
                 <span>{item?.data.number==0?"":"عجله کن!"}</span>  {item?.data.number==0?"موجودی این محصول به پایان رسیده است":item?.data.number+"عدد محصول در انبار موجود است"}
               </h3>
@@ -117,7 +117,8 @@ const close = () =>{
                   data-width="100%"
                 ></div>
               </div>
-            </div>
+            </div>}
+           
             <div className="product__details-quantity mb-20">
               {/* <form action="#">
                 <div className="pro-quan-area d-lg-flex align-items-center">
