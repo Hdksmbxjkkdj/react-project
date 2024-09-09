@@ -6,17 +6,20 @@ import { Sidebar } from "./sidebar";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarItem1 } from "./sidebar-item-1";
 const Blog = () => {
-  const [start, setStart] = useState(0);
+  const [page, setPage] = useState(0);
   const [items, setItems] = useState();
+  const [isLoading,setIsLoading] = useState(false)
   const Limit = 6;
   const params = new URLSearchParams(window.location.search);
   useEffect(() => {
+    setIsLoading(true)
     axios
-      .get(`http://localhost:313/blog?_start=${start}&_limit=${Limit}&${params}`)
+      .get(`http://localhost:313/blog?${params}&_page=${page}&_limit=${Limit}`)
       .then((response) => {
         setItems(response);
+        setIsLoading(false)
       });
-  }, [start]);
+  }, [page]);
   const [category, setcategory] = useState();
   useEffect(() => {
     axios.get("http://localhost:313/blog-category").then((response) => {
@@ -33,16 +36,16 @@ const Blog = () => {
   paginationLength = Math.ceil(paginationLength / Limit);
   return (
     <>
-      <BlogArea items={items?.data}>
+      <BlogArea items={items?.data} isLoading={isLoading}>
         <Sidebar setItems={setItems}>
           <SidebarItem
             items={category?.data}
             setItems={setItems}
-            start={start}
+            start={page}
           ></SidebarItem>
           <SidebarItem1 items={items?.data}></SidebarItem1>
         </Sidebar>
-        <Pagination count={{ paginationLength, setStart,Limit }}/>
+        <Pagination count={{ paginationLength, setPage,Limit,page }}/>
       </BlogArea>
     </>
   );

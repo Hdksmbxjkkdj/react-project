@@ -52,6 +52,7 @@ const ProductAddbtn = (props) => {
               ? "t-y-btn t-y-btn-2 mt-2"
               : "product__add-btn"
           }
+          title="اضافه کردن به لیست خرید"
         >
           {(loading)?<ButtonLoader>درحال افزودن</ButtonLoader>:<button
             type="button"
@@ -78,6 +79,7 @@ const ProductAddbtn = (props) => {
               ? "t-y-btn t-y-btn-2 mt-2"
               : "product__add-btn"
           }
+          title="برداشتن از لیست خرید"
         >
           {(loading)?<ButtonLoader>درحال حذف</ButtonLoader>:<button
             type="button"

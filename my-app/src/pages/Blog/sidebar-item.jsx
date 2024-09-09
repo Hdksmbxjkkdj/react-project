@@ -1,15 +1,15 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
 
-async function setFilter(item, setItems) {
+export async function setFilter(item, setItems, t) {
   const searchParams = new URLSearchParams(window.location.search);
-  const oldParam = searchParams.get("category");
-  if (oldParam == item) searchParams.delete("category");
-  else searchParams.set("category", item);
-  var query = "?"+ searchParams.toString();
+  const oldParam = searchParams.get(t+"_like");
+  if (oldParam == item) searchParams.set(t,"");
+  else searchParams.set(t, item);
+  var query = "?" + t + "_like=" + searchParams.get(t);
   var newRelativePathQuery = window.location.pathname + query;
   window.history.pushState(null, "", newRelativePathQuery);
-  var url = "http://localhost:313/blog" + query;
+  var url = "http://localhost:313/blog" + query+"&_page=1&_limit=6";
   console.log(url);
   let status = null;
   try {
@@ -27,8 +27,7 @@ async function setFilter(item, setItems) {
 
 const SidebarItem = ({ items, setItems }) => {
   const params = new URLSearchParams(window.location.search);
-  const data = params.get("category");
-  console.log(data);
+  const data = params.get("category_like");
   return (
     items?.length > 0 && (
       <>
@@ -40,10 +39,12 @@ const SidebarItem = ({ items, setItems }) => {
                 return (
                   <li
                     key={item.id}
-                    onClick={() => setFilter(item.category, setItems)}
+                    onClick={() =>
+                      setFilter(item.category, setItems, "category")
+                    }
                   >
                     <a
-                      href="#"
+                      type="button"
                       className={
                         data == item.category && "text-danger fw-bold fs-5"
                       }
