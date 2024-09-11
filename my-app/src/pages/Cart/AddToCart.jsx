@@ -15,8 +15,7 @@ export const AddToCart = async (
   eMessage,
   returnPrevCount = null
 ) => {
-  // const {setLoader} = useContext(CartContext);
-  event.preventDefault();
+  event.preventDefault()
   let url = `http://localhost:313/row`;
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
@@ -34,6 +33,7 @@ export const AddToCart = async (
     Notif("warning", "تعداد نمیتواند کمتر از 1 باشد");
     return false;
   }
+  if(count>number) count = number
   let status = 201;
   let message;
   try {
@@ -45,6 +45,8 @@ export const AddToCart = async (
         unitprice: unitprice,
         quantity: count,
         date: today,
+        number: number,
+        total:count*unitprice
       })
       .then((response) => {
         response.data.status && (status = response.data.status);

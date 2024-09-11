@@ -5,11 +5,11 @@ const ProductContent = ({type,item})=> {
         <>
             <div className="product__content">
           <h6 className="product-name">
-            <a className="product-item-link">
+            <span className="product-item-link">
               {
                 item?.text
               }
-            </a>
+            </span>
           </h6>
           <Rate stars={item?.rate} type="comment" className={(type!="flex")&&"justify-content-center"}/>
           <span className="price d-block">تومان {item?.price}</span>

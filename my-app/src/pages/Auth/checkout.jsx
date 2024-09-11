@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {CartContext} from "../../context/CardContext";
 import {Link} from "react-router-dom";
 
 const Checkout = () => {
-  const {cart, setCart} = useContext(CartContext);
+  const {cart, setCart,address,setAddress} = useContext(CartContext);
+  const [add,setAdd] = useState(address[0].address)
   function total() {
     var tot = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -133,7 +134,7 @@ const Checkout = () => {
                         <label>
                           آدرس <span class="required">*</span>
                         </label>
-                        <input type="text" placeholder="Street address" />
+                        <input type="text" placeholder="Street address" value={add} onChange={(e)=>setAdd(e.target.value)}/>
                       </div>
                     </div>
                     <div class="col-md-12">

@@ -242,11 +242,9 @@ const Header = () => {
                                         ? reslut.map((item) => {
                                             return (
                                               <div className="my-3 search-card">
-                                                <Link
-                                                  to={`/product-details/${item.id}`}
-                                                >
                                                   <div className="row g-0 align-items-center">
                                                     <div className="col-md-4">
+                                                      <Link to={`/product-details/${item.id}`} style={{width:"fit-content"}}>
                                                       <img
                                                         src={`${Config.shop}${item.pic}`}
                                                         className="img-fluid rounded-circle"
@@ -255,9 +253,11 @@ const Header = () => {
                                                           width: "10rem",
                                                         }}
                                                       />
+                                                      </Link>
                                                     </div>
                                                     <div className="col-md-6">
                                                       <div className="search-card-body">
+                                                        <Link to={`/product-details/${item.id}`} style={{width:"fit-content"}}>
                                                         <p
                                                           className="search-card-text"
                                                           style={{
@@ -279,6 +279,7 @@ const Header = () => {
                                                             )}
                                                           </small>
                                                         </p>
+                                                        </Link>
                                                       </div>
                                                     </div>
                                                     <div className="col-md-2 d-flex flex-column gap-2 justify-content-center">
@@ -287,7 +288,6 @@ const Header = () => {
                                                       <BtnLike items={item}/>
                                                     </div>
                                                   </div>
-                                                </Link>
                                               </div>
                                             );
                                           })

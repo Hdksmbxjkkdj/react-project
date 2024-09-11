@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
 import { Config } from "../../Utils/config";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "../Cart/RemoveCartItem";
 
 export const ModalContainer = () => {
   const { cart, setCart } = useContext(CartContext);
+  const [tot,setTot] = useState(0);
+  useEffect(()=>{
+    var x=0;
+    cart.map(item=>{
+      x+=item.total
+    })
+    setTot(x)
+  },[cart])
   return (
     <>
       <div>
@@ -20,7 +28,8 @@ export const ModalContainer = () => {
                 <>
                   <li key={Math.random()}>
                     <div className="cart__item d-flex justify-content-between align-items-center">
-                      <div className="cart__inner d-flex">
+                      <div className="cart__inner d-flex justify-content-between w-100">
+                        <div className=" d-flex">
                         <div className="cart__thumb">
                           <Link to={`product-details/${item?.id}`}>
                             <img src={Config.shop + "" + item?.pic} alt="" />
@@ -37,7 +46,8 @@ export const ModalContainer = () => {
                             <span>{item?.unitprice}$</span>
                           </div>
                         </div>
-                        <div className="mx-2">
+                        </div>
+                        <div>
                           <button
                             onClick={(event) =>
                               RemoveCartItem(
@@ -51,7 +61,7 @@ export const ModalContainer = () => {
                               )
                             }
                           >
-                            <i className="fa fa-trash-alt fw-light"></i>
+                            <i className="fa fa-trash-alt fw-light text-danger"></i>
                           </button>
                         </div>
                       </div>
@@ -61,6 +71,10 @@ export const ModalContainer = () => {
               );
             })}
         </ul>
+        <div className="d-flex justify-content-between mt-2 px-2">
+          <p>قیمت نهایی : </p>
+          <p>{tot} تومان</p>
+        </div>
         <Link to="/checkout" className="t-y-btn t-y-btn-border w-100 mb-10">
           ادامه فرآیند خرید
         </Link>

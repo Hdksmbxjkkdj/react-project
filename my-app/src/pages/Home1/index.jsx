@@ -111,6 +111,7 @@ const Home1 = () => {
   function handleSubmit(e){
     AddToCart(e,modal.id,modal.img,modal.title,modal.price,value,setCart,cart,null,modal.count,"error",null)
   }
+  console.log(typeof value);
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>
@@ -194,9 +195,9 @@ const Home1 = () => {
                       {(modal?.count==0)?<NotExist/>:<div className="product__modal-form mb-30" key={Math.random()}>
                         {(!check.includes(modal))?<form onSubmit={(event)=>handleSubmit(event)}>
                           <div className="pro-quan-area d-lg-flex align-items-center">
-                            <div className="product-quantity ml-20 mb-20">
+                            <div className="product-quantity ml-20">
                               <div className="cart-plus-minus p-relative">
-                                <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?e.target.value:1)} autoFocus/>
+                                <input type="text" value={value} onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} autoFocus/>
                                 <div className="inc qtybutton" onClick={()=>setValue(value+1)}>+</div>
                                 <div className="dec qtybutton" onClick={()=>setValue(()=>value>1?value-1:1)}>-</div>
                               </div>
