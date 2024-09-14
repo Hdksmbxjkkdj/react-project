@@ -6531,3 +6531,8 @@ p.checkout-coupon input[type="text"]:focus {
 #more{
   display: none;
 }
+@media only screen and (max-width: 768px) {
+  .pro-cart-btn{
+    margin-right: 0 !important
+  }
+}
