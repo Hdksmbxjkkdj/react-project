@@ -13,6 +13,7 @@ import { BtnShare } from "./Btns/BtnShare";
 import { BtnShareBody } from "./Btns/BtnShareBody";
 import { BtnCompare } from "./Btns/BtnCompare";
 import { BtnPrint } from "./Btns/BtnPrint";
+import { Link } from "react-router-dom";
 export const ProductDetailsWrapper = ({item,commentNumber}) => {
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export const ProductDetailsWrapper = ({item,commentNumber}) => {
         var newVal = parseFloat(oldValue) + 1;
       } else {
         // Don't allow decrementing below zero
-        if (oldValue > 0) {
+        if (oldValue > 1) {
           var newVal = parseFloat(oldValue) - 1;
         } else {
           newVal = 0;
@@ -64,7 +65,7 @@ const close = () =>{
           <div className="product__details">
             <h3 className="product__details-title">
               {/* <a href="product-details.html">Smart Mobile Phone 7/7plus/8/8plus/X/Xr W 32 to 128GB</a> */}
-              <a href="product-details.html">{item?.data.text}</a>
+              <Link to={"/product-details/"+item?.data.id}>{item?.data.text}</Link>
             </h3>
             <div className="product__review d-sm-flex">
               <div className="

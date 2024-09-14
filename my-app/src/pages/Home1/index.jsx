@@ -111,7 +111,6 @@ const Home1 = () => {
   function handleSubmit(e){
     AddToCart(e,modal.id,modal.img,modal.title,modal.price,value,setCart,cart,null,modal.count,"error",null)
   }
-  console.log(typeof value);
   return (
     <>
       <ModalContext.Provider value={{modal,setModal}}>

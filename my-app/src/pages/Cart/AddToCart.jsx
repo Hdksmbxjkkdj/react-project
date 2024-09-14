@@ -49,6 +49,7 @@ export const AddToCart = async (
         total:count*unitprice
       })
       .then((response) => {
+        setLoading(false)
         response.data.status && (status = response.data.status);
       });
     if (status == 201) {

@@ -4,8 +4,6 @@ import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { ButtonLoader } from "../../../Components/ButtonLoader";
 const ProductAddbtn = (props) => {
-  console.log(props?.item?.number)
- 
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,7 +25,8 @@ const ProductAddbtn = (props) => {
       1,
       setCart,
       cart,
-      setLoading
+      setLoading,
+      props.item?.number
     );
   }
   function handleRemoveClick(event, props) {
@@ -44,7 +43,7 @@ const ProductAddbtn = (props) => {
   }
   if(props?.item?.number==0){
    return<>
-   <button type="button" className=" w-25 btn btn-warning d-flex justify-content-center align-items-center rounded-pill">
+   <button type="button" className=" w-25 btn btn-warning d-flex justify-content-center align-items-center rounded-pill" style={{cursor:"not-allowed"}}>
   
     <h5 className="">ناموجود</h5>
     </button>

@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 
 const Checkout = () => {
   const {cart, setCart,address,setAddress} = useContext(CartContext);
-  const [add,setAdd] = useState(address[0].address)
   function total() {
     var tot = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -134,7 +133,11 @@ const Checkout = () => {
                         <label>
                           آدرس <span class="required">*</span>
                         </label>
-                        <input type="text" placeholder="Street address" value={add} onChange={(e)=>setAdd(e.target.value)}/>
+                        <select name="" id="" className="form-control" style={{display:"block"}}>
+                          {address?.map(item=>{
+                            return <option value={item?.address}>{item?.address}</option>
+                          })}
+                        </select>
                       </div>
                     </div>
                     <div class="col-md-12">

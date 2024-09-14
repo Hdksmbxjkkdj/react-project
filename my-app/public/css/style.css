@@ -6544,3 +6544,11 @@ p.checkout-coupon input[type="text"]:focus {
 #more{
   display: none;
 }
+
+.edit span {
+  cursor: pointer;
+}
+
+.edit span:hover {
+  font-size: larger;
+}

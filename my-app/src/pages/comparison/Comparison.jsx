@@ -1,20 +1,24 @@
-import { useEffect, useMemo, useState } from "react";
-import { Config, Notif } from "../../Utils";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { Config, Notif } from "../../Utils";
+import {Rate} from "../Product-Details/RateSubmit/Rate"
+import { Link } from "react-router-dom";
 
 export const Commparison = () => {
+  const local = localStorage.getItem("compare");
   const [items, setItems] = useState();
+  const [compare,setComapre] = useState(local)
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setItems(response);
     });
-  }, []);
-  const local = localStorage.getItem("compare");
+  }, [compare]);
     function handleDelete(item)
     {
         var u = local.split(",").filter(el=>el!=item.id)
         localStorage.setItem("compare",u);
-        window.location.reload();
+        setComapre(localStorage.getItem("compare"));
+        Notif("success",`${item.title} با موفقیت از لیست مقایسه  پاک  شد`)
     }
     let comp = local?.split(",");
     let rep; 
@@ -30,7 +34,7 @@ export const Commparison = () => {
     return (
       <>
         <div className="container">
-          {(local==null||local=="")?<div><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p></div>:<table className="table table-hover w-100 text-center">
+          {(local==null||local=="")?<div className="text-center"><img src="./img/images/cart-empty.png" alt="" /><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p><Link to="/" className="btn btn-primary text-light my-3 p-4">بازگشت به صفحه اصلی</Link></div>:<table className="table table-hover w-100 text-center">
             <thead>
             <tr style={{paddingBottom:"1rem !important"}}>
               <th>عنوان</th>
@@ -73,9 +77,7 @@ export const Commparison = () => {
               {rep?.map((item) => {
                 return (
                   <td>
-                    {Array.from({length:item.rate},(_,i)=>{
-                      return <i className="fa fa-star text-warning"></i>
-                    })}
+                    <Rate stars={item.rate} className="text-warning" type="comment"/>
                   </td>
                 );
               })}

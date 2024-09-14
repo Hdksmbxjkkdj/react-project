@@ -29,7 +29,6 @@ export const CartItem = ({ items, index }) => {
         `http://localhost:313/row/${items?.id}`,
         newItems
       )
-      console.log(res.data,...cart);
       // setCart([...cart,newItems])
       if (res.status) status = res.status;
       if (status == 200) {
