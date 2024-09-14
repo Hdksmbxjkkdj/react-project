@@ -15,6 +15,8 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
+  const [active,setActive] = useState()
+
   const handleImg = (event,i) => {
     window?.$(".delete").removeAttr('style')
     window?.$(".show-"+i).css({border:"2px solid #ffc107"})
@@ -115,7 +117,6 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                         style={{ overflowX: "auto", overflowY: "hidden" }}
                       >
                         {modal?.data?.gallery.map((item,i) => {
-                          console.log(modal?.data?.gallery,item.name)
                           return (
                             <>
                               <li className="nav-item" role="presentation">
@@ -152,7 +153,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                       </div>
                       <div className="product__stock">
                         <span>دسترسی :</span>
-                        <span>{item?.data.number==0?"نا موجود":"در انبار"}</span>
+                        <span>{modal?.data?.number==0?"نا موجود":"در انبار"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>SKU:{modal.data.SKU}</span>
