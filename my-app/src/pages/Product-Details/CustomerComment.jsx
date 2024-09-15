@@ -16,23 +16,27 @@ export const CustomerComment = ({
   productId,
    info,
   ProductComment,
+  commentNumber
 }) => {
+  console.log(ProductComment,"ProductComment")
 const [infor, setInfor] = useState();
   const [more, setMore] = useState();
+  const [start, seStart] = useState(0);
 
    useEffect(() => {
-    axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=0&_end=4`).then((res) => {
+    axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=${start}&_end=${start + 5}`).then((res) => {
       setInfor(res);
   });
 }, []);
 
 const moreComment =(event)=>{
-  axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=10`).then((res) => {
+  axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
           setMore(res);
           window?.$("#p").css({display:"inline"})
           event.target.remove()
       });
 }
+
   return (
     <>
       <div className="col-xxl-6 col-xl-6 col-lg-6">

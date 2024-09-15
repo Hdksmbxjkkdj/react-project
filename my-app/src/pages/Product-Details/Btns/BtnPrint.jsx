@@ -10,10 +10,10 @@ export const BtnPrint = () => {
     // }
   return (
     <>
-      <a href="#" title="پرینت">
+      <a href="javascript:void(0)" title="پرینت"           onClick={handlePrint}
+      >
         <FontAwesomeIcon
           icon={faPrint}
-          onClick={handlePrint}
         ></FontAwesomeIcon>
       </a>
     </>

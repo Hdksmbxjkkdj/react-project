@@ -7,6 +7,29 @@ import { BreadCrumb } from "./BreadCrumb";
 import { ProductGraidWrapper } from "./ProductGraidWrapper";
 import { Tab } from "./Tab";
 export const Products = ({ sidebars }) => {
+      //responsive OwlCarousel
+      var res1 = {
+        item: 6,
+        0: {
+          items: 1,
+        },
+        576: {
+          items: 2,
+        },
+        767: {
+          items: 2,
+        },
+        992: {
+          items: 4,
+        },
+        1200: {
+          items: 5,
+        },
+        1600: {
+          items: 6,
+        },
+      };
+    //responsive OwlCarousel
   const [category, setCategory] = useState();
   useEffect(() => {
     axios.get(`http://localhost:313/product-category`).then((res) => {
@@ -114,7 +137,7 @@ export const Products = ({ sidebars }) => {
             </div>
           </div>
         </section>
-        <BrandSlider></BrandSlider>
+        <BrandSlider  res1={res1}></BrandSlider>
 
         {/* <Favorite item={items}></Favorite> */}
       </main>

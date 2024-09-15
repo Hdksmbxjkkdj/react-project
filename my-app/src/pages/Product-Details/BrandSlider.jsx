@@ -16,7 +16,7 @@ export const BrandSlider = ({res1}) =>{
           '<button><i class="fa fa-angle-left"></i></button>',
           '<button><i class="fa fa-angle-right"></i></button>',
         ],
-        nav: true,
+        // nav: true,
         dots: false,
         responsive: res1,
         autoplayHoverPause: true,

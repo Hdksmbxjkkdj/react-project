@@ -57,6 +57,14 @@ const close = () =>{
   setModal(!modal)
 }
 //btnshare
+
+//scroll 
+const comment=()=>{
+    window?.$('#review-tab').click()
+
+    window.scrollTo({top: document.getElementById('productDesTab').offsetTop - 100, behavior: 'smooth'})
+}
+//scroll
   return (
     <>
       <div className="col-xxl-7 col-xl-7 col-lg-7">
@@ -80,7 +88,7 @@ const close = () =>{
 
                 </span>
                 <span>
-                  <a href="#">افزودن نظر</a>
+                  <a href="javascript:void(0)" onClick={()=>comment()}>افزودن نظر</a>
                 </span>
               </div>
             </div>
@@ -139,7 +147,7 @@ const close = () =>{
                 </div>
               </form> */}
             </div>
-            <div className="product__details-action">
+            <div className="product__details-action" style={{position:"relative"}}>
               <ul>
                 <BtnLike items={item?.data}></BtnLike>
 
@@ -160,26 +168,15 @@ const close = () =>{
                     <FontAwesomeIcon icon={faShareAlt}></FontAwesomeIcon>
                   </a>
                 </li> */}
-                <li>
-                <a href="#" title="اشتراک گذاری"  onClick={()=>{setModal(true);close(true)}} >
-          <FontAwesomeIcon icon={faShareAlt} >
-          </FontAwesomeIcon> 
-
-         
-
-        </a>
-      
-                </li>
-             
+               <BtnShareBody></BtnShareBody>
               </ul>
-              {modal && (
+              {/* {modal && (
         <BtnShareBody
           setModal={setModal}
           modal={modal}
         >
-          {/* <ModalBody data={modalInfo.data} /> */}
           </BtnShareBody>
-      )}
+      )} */}
             </div>
           </div>
         </div>

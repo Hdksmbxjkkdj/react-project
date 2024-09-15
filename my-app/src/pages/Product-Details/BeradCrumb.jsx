@@ -10,6 +10,7 @@ export const BradCrumb=()=>{
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><Link to="/">خانه</Link></li>
+                                    <li class="breadcrumb-item" style={{marginLeft:"-0.5rem"}}><Link to="/products">محصولات</Link></li>
                                     <li class="breadcrumb-item active" aria-current="page">جزئیات محصول</li>
                                 </ol>
                             </nav>
