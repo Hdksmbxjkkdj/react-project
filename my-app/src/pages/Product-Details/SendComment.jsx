@@ -176,8 +176,9 @@ export const SendComment = ({
                   comment={info?.data}
                   id={id}
                   ProductComment={ProductComment}
+                  commentNumber={commentNumber}
                 ></CustomerComment>
-                <div className="col-xxl-4 col-xl-4 col-lg-4">
+                <div className="col-xxl-4 col-xl-4 col-lg-4" id="send">
                   <div className="review-form">
                     <h3>بررسی شما</h3>
                     <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>

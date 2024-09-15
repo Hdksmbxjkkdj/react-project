@@ -20,20 +20,20 @@ export const SocialMedia = () =>{
                             <div className="contact__social">
                                 <span>اشتراک اجتماعی:</span>
                                 <ul>
-                                    <li>
+                                    {/* <li>
                                         <a href="#"> <FontAwesomeIcon icon={faBaseballBall} /></a>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         {/* <a href="#"><i className="fab fa-twitter"></i></a> */}
                                         <TwitterShareButton
                 utl={currentPageUrl} 
                 >
-                <TwitterIcon className="rounded-circle"  style={{width:"3rem",height:"3rem"}}></TwitterIcon>
+                <TwitterIcon className="rounded-circle"  style={{width:"2rem",height:"2rem"}}></TwitterIcon>
                 </TwitterShareButton>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a href="#"><i className="fab fa-instagram"></i></a>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         {/* <a href="#"><i className="fab fa-facebook-f"></i></a> */}
                                         
@@ -42,7 +42,7 @@ export const SocialMedia = () =>{
                   quote="pleace share this post"
                   hashtag="#code"
                 >
-                  <FacebookIcon className="rounded-circle" style={{width:"3rem",height:"3rem"}}></FacebookIcon>
+                  <FacebookIcon className="rounded-circle" style={{width:"2rem",height:"2rem"}}></FacebookIcon>
                 </FacebookShareButton>
                                     </li>
                                 </ul>

@@ -47,6 +47,7 @@ export const Product = ({
   return (
     <>
       {items?.map((item) => {
+
         return (
           <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y" key={Math.random()}>
             <div className="product__item white-bg mb-30 k">
@@ -71,18 +72,20 @@ export const Product = ({
                       <BtnCompare item={item}></BtnCompare>
                     </li>
                   </ul>
+                
                 </div>
-
-                {modal.show && (
-                  <Modal
-                    setModal={setModal}
-                    modal={modal}
-                    commentNumber={comments_count?.[item.id]}
-                  >
-                  </Modal>
-                )}
+              
               </div>
+              {modal.show && (
+          <Modal
+            setModal={setModal}
+            modal={modal}
+            commentNumber={comments_count?.[item.id]}
+          >
+          </Modal>
+        )}
 
+                
               <div className="product__content text-center">
                 <h6 className="product-name">
                   <a className="product-item-link" href="product-details.html">
@@ -107,12 +110,12 @@ export const Product = ({
                          </ModalContent>} */}
           </div>
         );
+       
       })}
     </>
   );
 };
 export const ProductList = ({ items, setItems }) => {
-  console.log(items);
   //comments
   let url = `http://localhost:313/product_comments`;
   const [ProductComment, setProductComment] = useState();

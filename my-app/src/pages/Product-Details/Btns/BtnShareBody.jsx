@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCopy, faShareAlt } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
+import * as tf from "@tensorflow/tfjs";
+import { Copy } from "../../Components/Copy";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -7,15 +10,55 @@ import {
   TwitterIcon,
 } from "react-share";
 import { useState } from "react";
-export const BtnShareBody = ({ setModal,modal }) => {
- 
-    const currentPageUrl = "tutorend.com";
+import { speed } from "jquery";
+import { Notif } from "../../../Utils";
+export const BtnShareBody = ({ props, setModal, modal }) => {
+  const [m, setM] = useState(false);
+  const location = useLocation();
+  // const currentUrl = `${window.location.protocol}//${window.location.host}${location.pathname}${location.search}${location.hash}`;
+  //  const Copy=(e=null)=>{
+  //   if(e==null){e=currentUrl}
+  //    navigator.clipboard.writeText(e);
+  //  }
+  {
+    /* <Copy></Copy> */
+  }
+  let message = "پیوند کپی شد";
+  const close = () => {
+    setM(!m);
+  };
+  const style = (e) => {
+    let preview = window?.$(".n");
+    preview.fadeOut(100);
+
+    preview.attr("className", window?.$(e.target).attr("className"));
+    preview.fadeIn(300);
+    Notif("success", message);
+  };
+  const copy = Copy();
+  const currentUrl = `${window.location.protocol}//${window.location.host}${location.pathname}${location.search}${location.hash}`;
+
   return (
+
     <>
-    
-                <div className="container pe-0">
-                    <div className="row flex-nowrap mt-4 ">
-                        {/* <div>
+      <li>
+                <a href="javascript:void(0)" title="اشتراک گذاری" onClick={close}>
+          <FontAwesomeIcon icon={faShareAlt} >
+          </FontAwesomeIcon> 
+
+         
+
+        </a>
+      
+                </li>
+             
+      {m && (
+        <div
+          className="container pe-0 rounded shadow w-25"
+          style={{ position: "absolute", top: "0", right: "15rem" }}
+        >
+          <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center">
+            {/* <div>
                         <button
                   className="btn btn-outline-black"
                   onClick={() => setModal({ show: false })}
@@ -23,33 +66,53 @@ export const BtnShareBody = ({ setModal,modal }) => {
                   x
                   </button>
                         </div> */}
-                  <div 
-                  className=" ps-0"
-                  style={{width:"fit-content"}}                  
-                  >
-                  <FacebookShareButton
-                  url={currentPageUrl}
-                  quote="pleace share this post"
-                  hashtag="#code"
-                >
-                  <FacebookIcon className="rounded-circle" style={{width:"3rem",height:"3rem"}}></FacebookIcon>
-                </FacebookShareButton>
-                  </div>
-                 <div style={{width:"fit-content"}}>
-                 <TwitterShareButton
-                utl={currentPageUrl} 
-                >
-                <TwitterIcon className="rounded-circle"  style={{width:"3rem",height:"3rem"}}></TwitterIcon>
-                </TwitterShareButton>
-                 </div>
-               
-                
-               
-                </div>
-                </div>
-               
-
-     
+            <div
+              className="ps-0 d-flex align-items-center"
+              style={{ width: "fit-content" }}
+            >
+              <button className="btn" onClick={close}>
+                x
+              </button>
+            </div>
+            <div className="ps-0" style={{ width: "fit-content" }}>
+              <FacebookShareButton
+                url={currentUrl}
+                quote="pleace share this post"
+                hashtag="#code"
+              >
+                <FacebookIcon
+                  className="rounded-circle"
+                  style={{ width: "2rem", height: "2rem" }}
+                ></FacebookIcon>
+              </FacebookShareButton>
+            </div>
+            <div className="ps-0" style={{ width: "fit-content" }}>
+              <TwitterShareButton url={currentUrl}>
+                <TwitterIcon
+                  className="rounded-circle"
+                  style={{ width: "2rem", height: "2rem" }}
+                ></TwitterIcon>
+              </TwitterShareButton>
+            </div>
+            <div className="ps-0" style={{ width: "fit-content" }}>
+              <FontAwesomeIcon
+                className="n"
+                onClick={(e) => {
+                  copy();
+                  style(e);
+                }}
+                icon={faCopy}
+                style={{
+                  width: "1.75rem",
+                  height: "1.75rem",
+                  color: "blue",
+                  cursor: "pointer",
+                }}
+              ></FontAwesomeIcon>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
