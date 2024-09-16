@@ -57,7 +57,6 @@ export const ProducDetails= () =>{
         });
     }, []);
    //
-  
    
     const [info, setInfo] = useState();
     useEffect(() => {
@@ -83,7 +82,7 @@ export const ProducDetails= () =>{
             <section className="product__area box-plr-75 pb-70">
                 <div className="container-fluid">
                     <div className="row">
-                        <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} />  
+                        <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} img={img?.data}/>  
                        <ProductDetailsWrapper item={img} commentNumber={ProductComment?.data?.length} /> 
                     </div>
                     <div className="row">

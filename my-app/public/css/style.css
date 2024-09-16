@@ -6558,3 +6558,20 @@ p.checkout-coupon input[type="text"]:focus {
   font-size: larger;
 }
 
+
+.my-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.my-button:hover {
+  opacity: 0.8;
+}
+
+.loading {
+  opacity: 0.5;
+  cursor: wait;
+}

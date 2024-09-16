@@ -77,7 +77,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
           setModal({ show:false})
       }
       >
-        <div className="container d-flex justify-content-center">
+        <div className="container d-flex justify-content-center" style={{direction:"rtl!important"}}>
           {/* <div className="row justify-content-center align-items-center"> */}
           <div className="modal-content w-75 moodal">
             <div className="product__modal-wrapper p-relative">

@@ -25,19 +25,24 @@ export const SendComment = ({
   info,
   items,
 }) => {
-  //
-  const run=()=>{
-    let preview=window?.$('#run').css({opacity:"1"})
-    setTimeout( MyMessage , 2000 );
-   }
-   
-   const MyMessage=()=>{
-   window?.$("#run").css({opacity:"0"})
-  
-   }
-   
-  //
-  //
+//
+const run=()=>{
+  let preview=window?.$('#run').css({opacity:"1"})
+  setTimeout( MyMessage , 2000 );
+
+
+  // preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
+  // preview.fadeIn(300)
+ }
+ 
+ const MyMessage=()=>{
+ window?.$("#run").css({opacity:"0"})
+
+ }
+ 
+//
+
+
 
   //new
   const [price, setPrice] = useState(0);
@@ -74,12 +79,20 @@ export const SendComment = ({
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
 
-  // function t (event){
-    
-  //   event.target.preventDefault()
+  // function t (event)
+  // {
+  //   event.preventDefault()
+  //   if (user == null) {
+  //     Notif("error", loginMessage);
+  //     return;
+  //   }
+  //   // run()
+  //   console.log('ppppp')
   //   handleSubmit(onFormSubmit)
   // }
+  
   const onFormSubmit = async (data) => {
+    
     await axios
       .post(url, {
         sender_name: user
@@ -135,7 +148,9 @@ export const SendComment = ({
                     <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
                     {/* <form onSubmit={(event) => submit(event)}> */}
                     {/* <form onSubmit={handleSubmit(onFormSubmit)}> */}
-                    <form onSubmit={handleSubmit(onFormSubmit)} onClick={()=>run()}>
+                    {/* <form onSubmit={(event) => t(event)} onClick={() => run()}> */}
+                    <form onSubmit={(event) => submit(event)}>
+
                       <div className="review-input-box mb-15 d-flex align-items-start">
                         <h4 className="review-input-title">امتیاز شما</h4>
                         <div className="review-input">
@@ -242,11 +257,12 @@ export const SendComment = ({
                         <button
                           type="submit"
                           className="t-y-btn t-y-btn-grey"
-                          // onClick={(event) => submit(event)}
+                         
                         >
-                          <span>                          ارسال بررسی
+                            <span>                          ارسال بررسی
                             </span>
                         <span className="spinner-border spinner-border-sm" id="run" style={{marginRight:" 0.5rem",opacity:"0"}} aria-hidden="true"></span>
+                      
                         </button>
                       </div>
                     </form>

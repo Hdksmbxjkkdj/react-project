@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {ShowProduct} from '../../Compont/ShowProduct'
 import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export const ProducDetailsImg = ({item,picturs}) =>{
+export const ProducDetailsImg = ({item,picturs,img}) =>{
     const [active,setActive] = useState()
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
@@ -32,14 +32,15 @@ export const ProducDetailsImg = ({item,picturs}) =>{
         preview.attr('src', window?.$(event.target).parent().find('img').attr('src'))
         preview.fadeIn(300)
     }
-    
+    // console.log({"name":item})
+
     return<>
    
     <div className="col-xxl-5 col-xl-5 col-lg-5 test">
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
         <li className="nav-item" role="presentation">
-                    <button  className="nav-link active"  onClick={(event) => handleImg(event,0)} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button  className="nav-link active"  onClick={(event) => {setActive(item);handleImg(event,0)}} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
          <img src={Config.shop+ "" + item} alt="" className={"delete show-0"} id="u" style={{border:"2px solid #ffc107"}}/>
        
                           
@@ -48,8 +49,9 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                 </li>
         {picturs?.map((item,i)=>{
             let index = i+1;
+            // console.log(item?.name)
                 return <li className="nav-item" role="presentation">
-                    <button onClick={(event) => {handleImg(event,index);setActive(item)}} className="nav-link"  data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button onClick={(event) => {handleImg(event,index);setActive(item?.name)}} className="nav-link"  data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
                     {/* <img src={Config.shop+ "" + item?.name} alt="" style={{border:"1px solid red"}} className={"delete show-"+0}/>   */}
        
          <img src={Config.shop+ "" + item?.name} alt=""  className={"delete show-"+index}/>
@@ -69,7 +71,7 @@ export const ProducDetailsImg = ({item,picturs}) =>{
                         {/* <img src="assets/img/shop/product/details/big/product-nav-big-1.jpg" alt=""/> */}
                         <img src={Config.shop+ "" +item} alt=""  onClick={() => setShowproduct({show: true})}/>  
                        
-                        {showproduct.show && <ShowProduct setShowproduct={setShowproduct} item={active?.name} >
+                        {showproduct.show && <ShowProduct setShowproduct={setShowproduct} item={active} >
                         </ShowProduct>}
                        <FontAwesomeIcon icon={faSearchPlus} style={{fontSize:"25px",cursor:"pointer"}} className="me-5"  onClick={() => setShowproduct({show: true,data:item})}></FontAwesomeIcon>
                       

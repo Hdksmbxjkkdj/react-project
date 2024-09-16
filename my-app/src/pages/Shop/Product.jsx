@@ -76,15 +76,7 @@ export const Product = ({
                 </div>
               
               </div>
-              {modal.show && (
-          <Modal
-            setModal={setModal}
-            modal={modal}
-            commentNumber={comments_count?.[item.id]}
-          >
-          </Modal>
-        )}
-
+     
                 
               <div className="product__content text-center">
                 <h6 className="product-name">
@@ -112,6 +104,15 @@ export const Product = ({
         );
        
       })}
+               {modal.show && (
+          <Modal
+            setModal={setModal}
+            modal={modal}
+            // commentNumber={comments_count?.[item.id]}
+          >
+          </Modal>
+        )}
+
     </>
   );
 };

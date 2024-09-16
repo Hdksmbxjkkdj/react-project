@@ -80,21 +80,24 @@ const Option = {
               
               >
                 {items?.data?.map((item, index) => {
+                  
                   return (
                     <>
                       <div className="product__item white-bg mb-30 item">
                         <div className="product__thumb p-relative">
-                          <Link to="/#" className="w-img">
+                          <a href={"/product/" + item.id} className="w-img">
                             <img
                               src={Config.shop + "" + item.pic}
                               alt="product"
+                            
                             />
                             <img
                               className="second-img"
                               src={Config.shop + "" + item.seccondpic}
                               alt="product"
+                             
                             />
-                          </Link>
+                          </a>
                           {/* <Modal items={item}></Modal> */}
 
                         <div className="product__action p-absolute">
@@ -150,7 +153,7 @@ const Option = {
                           >
                             <a
                               className="product-item-link"
-                              href="product-details.html"
+                              href={"/product/" + item.id}
                              
                             >
                               {item.text}
@@ -165,7 +168,8 @@ const Option = {
                         {/* <div className="product__add-btn">
                           <button type="button">افزودن به سبد خرید</button>
                         </div> */}
-                           <ProductAddbtn item={item}></ProductAddbtn>
+                       
+                           {item.number!=0?<ProductAddbtn item={item}></ProductAddbtn>:<div className="d-flex justify-content-center position-absolute w-25" style={{top:"1rem",right:"0"}}><p className="bg-danger text-white rounded w-100 text-center">ناموجود</p></div>}
 
                         {/* <AddToCart></AddToCart> */}
                       </div>

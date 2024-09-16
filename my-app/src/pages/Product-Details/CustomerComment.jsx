@@ -18,19 +18,25 @@ export const CustomerComment = ({
   ProductComment,
   commentNumber
 }) => {
-  console.log(ProductComment,"ProductComment")
 const [infor, setInfor] = useState();
   const [more, setMore] = useState();
-  const [start, seStart] = useState(0);
+  const [start, setStart] = useState(0);
+
 
    useEffect(() => {
     axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=${start}&_end=${start + 5}`).then((res) => {
-      setInfor(res);
-  });
-}, []);
+      setInfor(res);})
 
+
+
+}, []);
 const moreComment =(event)=>{
-  axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
+         setStart(start+5)
+ console.log(start)
+
+  // axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
+      axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
+
           setMore(res);
           window?.$("#p").css({display:"inline"})
           event.target.remove()
@@ -159,7 +165,7 @@ const moreComment =(event)=>{
             })}
             </div>
          <div className="d-flex justify-content-end">
-              <button onClick={(e)=>moreComment(e)} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
+              <button onClick={(e)=>{moreComment(e)}} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
   
               </div>
            
