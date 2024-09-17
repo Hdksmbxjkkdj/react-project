@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Notif } from "../../Utils";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "./RemoveCartItem";
 
-export const CartItem = ({ items, index }) => {
+export const CartItem = ({ items, index,Total}) => {
   const { cart, setCart } = useContext(CartContext);
   const eMessage = "error";
   const [value, setValue] = useState(items?.quantity);
@@ -29,7 +29,6 @@ export const CartItem = ({ items, index }) => {
         `http://localhost:313/row/${items?.id}`,
         newItems
       )
-      // setCart([...cart,newItems])
       if (res.status) status = res.status;
       if (status == 200) {
         Notif("success", `${items.name} با موفقیت به روزرسانی شد`);
@@ -40,7 +39,6 @@ export const CartItem = ({ items, index }) => {
       Notif("error", error);
     }
   };
-
   const QuantityRanger = (event) => {
     var $button = window?.$(event.target);
 

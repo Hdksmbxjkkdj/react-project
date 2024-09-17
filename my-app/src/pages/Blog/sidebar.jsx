@@ -11,6 +11,7 @@ const Sidebar = (props) => {
     //   setSearch("");
     // });
     setFilter(search,props.setItems,"title")
+    setSearch("")
   }
   return (
     <>

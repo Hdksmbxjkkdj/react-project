@@ -52,7 +52,7 @@ export const BtnLike = ({items})=>{
                     items?.pic,
                     items?.text,
                     items?.price,
-                    use.id,
+                    use?.id,
                     setrow
                   );
                 setTextColor(textColor==="#696969"?"red":"#696969 ")}}

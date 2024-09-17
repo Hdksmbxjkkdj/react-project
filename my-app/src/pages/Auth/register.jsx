@@ -70,6 +70,9 @@ const Register = () => {
                     <Link to="/login" class="t-y-btn t-y-btn-grey w-100">
                       ورود
                     </Link>
+                    <Link to="/" class="t-y-btn t-y-btn-grey w-100 mt-3">
+                      بازگشت به صفحه اصلی
+                    </Link>
                   </div>
                 </div>
               </div>

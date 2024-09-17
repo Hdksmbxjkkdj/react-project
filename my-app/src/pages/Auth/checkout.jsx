@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import {CartContext} from "../../context/CardContext";
-import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CardContext";
 
 const Checkout = () => {
   const {cart, setCart,address,setAddress} = useContext(CartContext);
@@ -11,6 +11,7 @@ const Checkout = () => {
     }
     return tot.toFixed(2);
   }
+  const navigate = useNavigate()
   return (
     <>
       <section class="coupon-area pb-30">
@@ -486,6 +487,9 @@ const Checkout = () => {
                     <div class="order-button-payment mt-20">
                       <button type="submit" class="t-y-btn t-y-btn-grey">
                       ثبت سفارش
+                      </button>
+                      <button type="button" class="t-y-btn t-y-btn-grey mt-10" onClick={()=>navigate("/cart")}>
+                      بازگشت به سبد خرید
                       </button>
                     </div>
                   </div>

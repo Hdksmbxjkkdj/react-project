@@ -8,9 +8,8 @@ const Cart = () => {
   const { loader } = useContext(CartContext);
   const { cart } = useContext(CartContext);
   const [val, setVal] = useState("");
-  const [tot, setTot] = useState([]);
-  const x = [...cart]
- 
+  const x = [...cart];
+
   function Total() {
     var tot = 0;
     for (var i = 0; i < cart.length; i++) {
@@ -19,13 +18,6 @@ const Cart = () => {
     var totally = Math.round(tot) - 1;
     return totally.toFixed(2);
   }
-  useEffect(() => {
-    var i=0;
-    x.map(item=>{
-      i+=item.total
-    })
-    setTot(i)
-  }, [cart]);
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -62,7 +54,11 @@ const Cart = () => {
                           {cart?.map((items, index) => {
                             return (
                               <>
-                                <CartItem items={items} index={index} />
+                                <CartItem
+                                  items={items}
+                                  index={index}
+                                  Total={Total}
+                                />
                               </>
                             );
                           })}
@@ -103,13 +99,16 @@ const Cart = () => {
                             <li>
                               کل <span>{Total()}</span>
                             </li>
-                            <li>
-                              کل <span>{tot}</span>
-                            </li>
                           </ul>
-                          <Link className="t-y-btn" to="/checkout">
-                            ادامه فرآیند خرید
-                          </Link>
+                          {localStorage.getItem("user") ? (
+                            <Link className="t-y-btn" to="/checkout">
+                              ادامه فرآیند خرید
+                            </Link>
+                          ) : (
+                            <Link to="/login" className="t-y-btn">
+                              ادامه فرآیند خرید
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
