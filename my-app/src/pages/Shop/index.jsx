@@ -82,14 +82,17 @@ export const Products = ({ sidebars }) => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:313/best_selling?_start=${start}&_limit=${Limit}&${params}`
+        // `http://localhost:313/best_selling?${params}&_page=${start}&_limit=${Limit}`
+         `http://localhost:313/best_selling?${params}&_page=${start}&_limit=${Limit}`
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setItems(response.data);
+        // console.log(response.data,'response.data')
         setLength(response.data.length);
       });
   }, [start]);
+  // console.log(items?.data?.length,"lllll")
 
   var paginationLength = length;
   paginationLength = Math.ceil(paginationLength / 8);

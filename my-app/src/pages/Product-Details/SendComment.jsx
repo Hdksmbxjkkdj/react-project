@@ -11,6 +11,7 @@ import * as yup from "yup";
 import { CustomerComment } from "./CustomerComment";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
 import { TapContent } from "./TapContent";
+import { ButtonLoader } from "../Components/ButtonLoader";
 // import { schema } from "@hookform/resolvers/yup/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/computed-types/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/arktype/src/__tests__/__fixtures__/data.js";
@@ -25,16 +26,11 @@ export const SendComment = ({
   info,
   items,
 }) => {
+  const send_btn = document.querySelector(".send-btn");
+  const[load,setLoad]=useState(false)
+
   //
-  const run=()=>{
-    let preview=window?.$('#run').css({opacity:"1"})
-    setTimeout( MyMessage , 2000 );
-   }
-   
-   const MyMessage=()=>{
-   window?.$("#run").css({opacity:"0"})
-  
-   }
+ 
    
   //
   //
@@ -50,6 +46,7 @@ export const SendComment = ({
 
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
+ 
   const schema = yup.object().shape({
     comment: yup
       .string()
@@ -80,6 +77,8 @@ export const SendComment = ({
   //   handleSubmit(onFormSubmit)
   // }
   const onFormSubmit = async (data) => {
+    setLoad(true)
+    send_btn.classList.add("loading");
     await axios
       .post(url, {
         sender_name: user
@@ -95,6 +94,8 @@ export const SendComment = ({
         rate: quality,
       })
       .then((response) => {
+        setLoad(false)
+        send_btn.classList.remove("loading");
         let message = "پیام شما با موفقیت ارسال شد";
         if (response?.status == 201) {
           Notif("success", message);
@@ -108,6 +109,25 @@ export const SendComment = ({
       })
       .catch((errors) => {});
   };
+
+  // const run=()=>{
+  //   alert(load)
+
+  //   if(load)
+  //     {
+
+  //       let preview=window?.$('#run').css({opacity:"1"})
+  //     }
+  //     else
+  //     {
+  //       setTimeout( MyMessage , 2000 );
+  //     }
+  //  }
+   
+  //  const MyMessage=()=>{
+  //  window?.$("#run").css({opacity:"0"})
+  
+  //  }
   return (
     <>
       <div className="col-xxl-12">
@@ -135,7 +155,7 @@ export const SendComment = ({
                     <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
                     {/* <form onSubmit={(event) => submit(event)}> */}
                     {/* <form onSubmit={handleSubmit(onFormSubmit)}> */}
-                    <form onSubmit={handleSubmit(onFormSubmit)} onClick={()=>run()}>
+                    <form onSubmit={handleSubmit(onFormSubmit)} >
                       <div className="review-input-box mb-15 d-flex align-items-start">
                         <h4 className="review-input-title">امتیاز شما</h4>
                         <div className="review-input">
@@ -239,7 +259,7 @@ export const SendComment = ({
                         </div>
                       </div>
                       <div className="review-sub-btn">
-                        <button
+                        {/* {(load)?<ButtonLoader bg={"#000"}>در حال ارسال</ButtonLoader>:<button
                           type="submit"
                           className="t-y-btn t-y-btn-grey"
                           // onClick={(event) => submit(event)}
@@ -247,7 +267,12 @@ export const SendComment = ({
                           <span>                          ارسال بررسی
                             </span>
                         <span className="spinner-border spinner-border-sm" id="run" style={{marginRight:" 0.5rem",opacity:"0"}} aria-hidden="true"></span>
-                        </button>
+                        </button>} */}
+                        <button className="send-btn" type="submit">
+                    <i className="fa fa-paper-plane"></i>
+                    <span className="text">ارسال نظر</span>
+                    <span className="loading-animate"></span>
+                  </button>
                       </div>
                     </form>
                   </div>

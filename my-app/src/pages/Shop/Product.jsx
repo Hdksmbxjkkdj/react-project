@@ -46,8 +46,8 @@ export const Product = ({
   //modal
   return (
     <>
-      {items?.map((item) => {
-
+      {items?.data?.map((item) => {
+      
         return (
           <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y" key={Math.random()}>
             <div className="product__item white-bg mb-30 k">
@@ -146,7 +146,9 @@ export const ProductList = ({ items, setItems }) => {
 
   return (
     <>
-      {items?.map((item) => {
+      {
+      items?.data?.map((item) => {
+        console.log(item,'item')
         return (
           <>
             <div className="col-xxl-12">
