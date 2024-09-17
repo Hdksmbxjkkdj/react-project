@@ -10,7 +10,6 @@ export async function setFilter(item, setItems, t) {
   var newRelativePathQuery = window.location.pathname + query;
   window.history.pushState(null, "", newRelativePathQuery);
   var url = "http://localhost:313/blog" + query+"&_page=1&_limit=6";
-  console.log(url);
   let status = null;
   try {
     await axios.get(url).then((response) => {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Config } from "../../Utils/config";
 import { Comment } from "./commentbox";
 import axios from "axios";
@@ -16,11 +16,20 @@ const PostBox = (props) => {
   const [subEmail, setSubEmail] = useState();
   const [subComment, setSubComment] = useState();
   const [PID, setPID] = useState();
+  const [rep, setRep] = useState(false);
   useEffect(() => {
     axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
       setitem(response.data);
     });
   }, []);
+  function reply(e, id) {
+    document.getElementById("contacts-sub-form").classList.toggle("d-none");
+    document.getElementById("contacts-form").classList.toggle("d-none");
+    if (!props.rep) {
+      document.getElementById("sub-name").focus();
+      props.setPID(id);
+    }
+  }
   const submit = async (e) => {
     e.preventDefault();
     send_btn.classList.add("loading");
@@ -99,18 +108,21 @@ const PostBox = (props) => {
           <div className="col-xxl-8">
             <div className="postbox__comments">
               <div className="postbox__comment-title mb-30">
-                <h3>نظرات ({props?.item && props?.item.length})</h3>
+                <h3>نظرات ({props?.comment && props?.comment.length})</h3>
               </div>
               <div className="latest-comments mb-30">
                 <ul>
-                  {props?.item &&
-                    props?.item.map((item) => {
+                  {props?.comment &&
+                    props?.comment.map((item) => {
                       return (
                         <>
-                          <Comment item={item} setPID={setPID}></Comment>
+                          <Comment item={item} setPID={setPID} rep={rep} setRep={setRep} reply={reply}></Comment>
                         </>
                       );
                     })}
+                    <li>
+                    {(props.comment?.length>=props.limit)?<button className="btn btn-primary" onClick={()=>props.setLimit((props.limit)+5)}>موارد بیشتر</button>:<button className="btn btn-primary" onClick={()=>props.setLimit(5)}>موارد کمتر</button>}
+                    </li>
                 </ul>
               </div>
             </div>
@@ -213,11 +225,14 @@ const PostBox = (props) => {
                       ></textarea>
                     </div>
                   </div>
+                    <div className="d-flex align-items-center gap-3">
                     <button className="send-btn" type="submit">
                       <i className="fa fa-paper-plane"></i>
                       <span className="text">ارسال پاسخ</span>
                       <span className="loading-animate"></span>
                     </button>
+                    <button className="t-y-btn t-y-btn-grey" onClick={(e)=>reply(e, props.item.id)}> بستن پاسخ</button>
+                    </div>
                 </div>
               </form>
             </div>

@@ -3,15 +3,6 @@ import { Config } from "../../Utils/config";
 import { ReplyComment } from "./ReplyComment";
 const Comment = (props) => {
   const [show, setShow] = useState(false);
-  const [rep, setRep] = useState(false);
-  function reply(e, id) {
-    document.getElementById("contacts-sub-form").classList.toggle("d-none");
-    document.getElementById("contacts-form").classList.toggle("d-none");
-    if (!rep) {
-      document.getElementById("sub-name").focus();
-      props.setPID(id);
-    }
-  }
   return (
     <>
       <li>
@@ -26,11 +17,10 @@ const Comment = (props) => {
               <button
                 className="reply"
                 onClick={(e) => {
-                  reply(e, props.item.id);
-                  setRep(!rep);
+                  props.reply(e, props.item.id);
                 }}
               >
-                {rep ? "بستن پاسخ" : "ارسال پاسخ"}
+              ارسال پاسخ
               </button>
               <button className="showing" onClick={() => setShow(!show)}>
                 {show ? "بستن پاسخ ها" : "نمایش پاسخ ها"}

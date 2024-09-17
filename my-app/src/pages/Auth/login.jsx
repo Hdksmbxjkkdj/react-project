@@ -95,6 +95,9 @@ const Login = () => {
                     <Link to="/register" className="t-y-btn t-y-btn-grey w-100">
                       ثبت نام
                     </Link>
+                    <Link to="/" className="t-y-btn t-y-btn-grey w-100 mt-3">
+                      بازگشت به صفحه اصلی
+                    </Link>
                   </div>
                 </div>
               </div>

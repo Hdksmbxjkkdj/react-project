@@ -3880,12 +3880,12 @@ html .ui-button.ui-state-disabled:active {
   font-size: 16px;
 }
 
-.table-content table td.product-subtotal::before {
-  content: "$";
+.table-content table td.product-subtotal::after {
+  content: "تومان";
 }
 
-.table-content table td.product-price::before {
-  content: "$";
+.table-content table td.product-price::after {
+  content: "تومان";
 }
 
 .table-content table td .cart-plus-minus {
@@ -3955,8 +3955,8 @@ html .ui-button.ui-state-disabled:active {
 .cart-page-total ul > li > span {
   float: left;
 }
-.cart-page-total ul > li > span::before {
-  content: "$";
+.cart-page-total ul > li > span::after {
+  content: "تومان";
 }
 
 .cart-page-total li:last-child {
