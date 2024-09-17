@@ -32,7 +32,6 @@ const [infor, setInfor] = useState();
 }, []);
 const moreComment =(event)=>{
          setStart(start+5)
- console.log(start)
 
   // axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
       axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {

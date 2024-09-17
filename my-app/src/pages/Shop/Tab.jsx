@@ -12,6 +12,8 @@ export const Tab=({items,setItems,productLength,length})=>{
       const [toggleState,setToggleStata]=useState(2)
   
       //tab
+    
+
     const toggleTab =(index) =>{
         setToggleStata(index)
 }
