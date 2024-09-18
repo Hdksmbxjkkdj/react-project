@@ -11,7 +11,12 @@ const BlogArea = (props) => {
             <div className="col-xxl-2 col-xl-3 col-lg-3">{props.children}</div>
             <div className="col-xxl-10 col-xl-9 col-lg-9 order-first order-lg-last">
               {props.isLoading && <Loader />}
-              {props?.items?.length===0 && <div className="alert text-center mt-80"><p className="text-danger">مورد مطابقی یافت نشد !</p></div>}
+              {props?.items?.length === 0 && (
+                <div className="alert text-center mt-80">
+                  <img src="./img/images/empty-blog.png" width={200} alt="blog" />
+                  <p className="text-danger">مورد مطابقی یافت نشد !</p>
+                </div>
+              )}
               <div className="row">
                 {props?.items?.map((item) => {
                   return (

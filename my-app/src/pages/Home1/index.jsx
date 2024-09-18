@@ -177,7 +177,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__stock">
                         <span>وضعیت :</span>
-                        <span>{(modal.count!=0)?` موجود (${modal.count}) عدد`:"ناموجود"}</span>
+                        <span>{(modal.count!=0)?"موجود در انبار":"ناموجود"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>عنوان:</span>
@@ -189,7 +189,7 @@ const Home1 = () => {
                         </div>
                       </div>
                       <div className="product__price">
-                        <span>${modal.price.toFixed(2)}</span>
+                        <span>{modal.price.toFixed(2)} تومان</span>
                       </div>
                       {(modal?.count==0)?<NotExist/>:<div className="product__modal-form mb-30" key={Math.random()}>
                         {(!check.includes(modal))?<form onSubmit={(event)=>handleSubmit(event)}>

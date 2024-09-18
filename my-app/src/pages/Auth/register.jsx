@@ -43,7 +43,7 @@ const Register = () => {
   return (
     <>
       <main>
-        <section class="login-area pb-100">
+        <section class="login-area pb-100 mt-60">
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8">

@@ -121,7 +121,7 @@ const PostBox = (props) => {
                       );
                     })}
                     <li>
-                    {(props.comment?.length>=props.limit)?<button className="btn btn-primary" onClick={()=>props.setLimit((props.limit)+5)}>موارد بیشتر</button>:<button className="btn btn-primary" onClick={()=>props.setLimit(5)}>موارد کمتر</button>}
+                    {(props.comment?.length>=props.limit)&&<button className="btn shadow-sm" onClick={()=>props.setLimit((props.limit)+5)}>...موارد بیشتر</button>}
                     </li>
                 </ul>
               </div>

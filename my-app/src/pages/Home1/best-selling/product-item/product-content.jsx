@@ -12,7 +12,7 @@ const ProductContent = ({type,item})=> {
             </span>
           </h6>
           <Rate stars={item?.rate} type="comment" className={(type!="flex")&&"justify-content-center"}/>
-          <span className="price d-block">تومان {item?.price}</span>
+          <span className="price d-block">تومان {item?.price.toFixed(2)}</span>
         </div>
         </>
     )
