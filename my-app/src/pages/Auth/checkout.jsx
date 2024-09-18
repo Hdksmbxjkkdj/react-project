@@ -88,14 +88,14 @@ const Checkout = () => {
             <div class="row">
               <div class="col-lg-6">
                 <div class="checkbox-form">
-                  <h3>جزییات صورتحصاب</h3>
+                  <h3>جزییات صورتحساب</h3>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="country-select">
                         <label>
                           کشور <span class="required">*</span>
                         </label>
-                        <select>
+                        <select className="d-block">
                           <option value="volvo">بنگلادش</option>
                           <option value="saab">الجزایر</option>
                           <option value="mercedes">افغانستان</option>
@@ -143,24 +143,16 @@ const Checkout = () => {
                     </div>
                     <div class="col-md-12">
                       <div class="checkout-form-list">
-                        <input
-                          type="text"
-                          placeholder="Apartment, suite, unit etc. (optional)"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="checkout-form-list">
                         <label>
                           شهر <span class="required">*</span>
                         </label>
-                        <input type="text" placeholder="Town / City" />
+                        <input type="text" placeholder="شهرک / شهر" />
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="checkout-form-list">
                         <label>
-                          ایالت <span class="required">*</span>
+                          استان <span class="required">*</span>
                         </label>
                         <input type="text" placeholder="" />
                       </div>
@@ -170,7 +162,7 @@ const Checkout = () => {
                         <label>
                           کد پستی <span class="required">*</span>
                         </label>
-                        <input type="text" placeholder="Postcode / Zip" />
+                        <input type="text" placeholder="کد پستی" />
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -186,7 +178,7 @@ const Checkout = () => {
                         <label>
                           شماره همراه <span class="required">*</span>
                         </label>
-                        <input type="text" placeholder="Postcode / Zip" />
+                        <input type="text" placeholder="شماره تلفن همراه" />
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -353,12 +345,12 @@ const Checkout = () => {
                               </td>
                               <td class="product-unit">
                                 <strong class="product-quantity"> 
-                                ${item.unitprice.toFixed(2)}
+                                {item.unitprice.toFixed(2)} تومان
                                 </strong>
                               </td>
                               <td class="product-total">
                                 <span class="amount">
-                                  ${(item.unitprice*item.quantity).toFixed(2)}
+                                  {(item.unitprice*item.quantity).toFixed(2)} تومان
                                 </span>
                               </td>
                             </tr>
@@ -372,7 +364,7 @@ const Checkout = () => {
                             <span class="amount"></span>
                           </td>
                           <td>
-                            <span class="amount">${total()}</span>
+                            <span class="amount">{total()} تومان</span>
                           </td>
                         </tr>
                         <tr class="shipping">
@@ -382,22 +374,14 @@ const Checkout = () => {
                               <li>
                                 <input type="radio" name="shipping" />
                                 <label>
-                                  نرخ ثابت: <span class="amount">$7.00</span>
+                                  نرخ ثابت: <span class="amount">7.00 تومان</span>
                                 </label>
                               </li>
                               <li>
                                 <input type="radio" name="shipping" />
-                                <label>ارسال رایگان:</label>
+                                <label>ارسال رایگان: 0 تومان</label>
                               </li>
                             </ul>
-                          </td>
-                        </tr>
-                        <tr class="order-total">
-                          <th>هزینه سفارش</th>
-                          <td>
-                            <strong>
-                              <span class="amount">$215.00</span>
-                            </strong>
                           </td>
                         </tr>
                       </tfoot>
@@ -493,7 +477,7 @@ const Checkout = () => {
                       </button>
                     </div>
                   </div>
-                </div>:<div><h4 className="text-danger text-center">سبد خرید شما خالی میباشد</h4></div>}
+                </div>:<div className="text-center"><img src="./img/images/cart-empty.png" className="my-3" width={200} alt="empty"></img><h4 className="text-danger text-center">سبد خرید شما خالی میباشد</h4><Link className="btn btn-primary p-3 mt-3 text-light" to="/">بازگشت به صفحه اصلی</Link></div>}
               </div>
             </div>
           </form>

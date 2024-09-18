@@ -11,11 +11,13 @@ const Blog = () => {
   const [isLoading,setIsLoading] = useState(false)
   const Limit = 6;
   const params = new URLSearchParams(window.location.search);
+  let resp;
   useEffect(() => {
     setIsLoading(true)
     axios
       .get(`http://localhost:313/blog?${params}&_page=${page}&_limit=${Limit}`)
       .then((response) => {
+        resp = response;
         setItems(response);
         setIsLoading(false)
       });
@@ -37,7 +39,7 @@ const Blog = () => {
   return (
     <>
       <BlogArea items={items?.data} isLoading={isLoading}>
-        <Sidebar setItems={setItems}>
+        <Sidebar setItems={setItems} resp={resp}>
           <SidebarItem
             items={category?.data}
             setItems={setItems}

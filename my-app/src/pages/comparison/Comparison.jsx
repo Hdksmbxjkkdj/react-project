@@ -34,7 +34,7 @@ export const Commparison = () => {
     return (
       <>
         <div className="container">
-          {(local==null||local=="")?<div className="text-center"><img src="./img/images/cart-empty.png" alt="" /><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p><Link to="/" className="btn btn-primary text-light my-3 p-4">بازگشت به صفحه اصلی</Link></div>:<table className="table table-hover w-100 text-center">
+          {(local==null||local=="")?<div className="text-center"><img src="./img/images/compare.png" width={200} alt="compare" /><p className="text-center my-5 text-danger">هیچ محصولی جهت مقایسه وجود ندارد</p><Link to="/" className="btn btn-primary text-light my-3 p-4">بازگشت به صفحه اصلی</Link></div>:<table className="table table-hover w-100 text-center">
             <thead>
             <tr style={{paddingBottom:"1rem !important"}}>
               <th>عنوان</th>

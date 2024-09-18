@@ -36,7 +36,6 @@ const BlogDetaile = (props) => {
   return (
     <>
       <section className="blog__area box-plr-75 pb-70">
-            <BradCrumb/>
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last">

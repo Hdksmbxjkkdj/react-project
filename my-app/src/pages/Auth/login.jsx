@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <>
       <main>
-        <section className="login-area pb-100">
+        <section className="login-area pb-100 mt-60">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">

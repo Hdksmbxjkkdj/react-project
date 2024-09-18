@@ -4272,6 +4272,7 @@ p.checkout-coupon input[type="text"]:focus {
   background: none;
   border: 0;
   width: 100%;
+  overflow-x: auto;
 }
 
 .your-order-table table th,
@@ -4751,14 +4752,10 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .comments-avatar {
-  max-width: 3.5rem;
-  max-height: 3.5rem;
   float: right;
   margin-left: 20px;
 }
 .comments-avatar img {
-  width: 100%;
-  height: 100%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;

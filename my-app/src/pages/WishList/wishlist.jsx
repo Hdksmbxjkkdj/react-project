@@ -71,10 +71,12 @@ const WishList = () => {
                   </table>
                 </div>
             </div>:<div className="col-12">
-              <div className="mt-5">
-                <h4 className="text-danger text-center">
+              <div className="mt-5 text-center">
+                <img src="./img/images/empty-wishlist.png" width={200} alt="" />
+                <h4 className="text-danger text-center my-3">
                   لیست علاقه مندی های شما خالی می باشد !
                 </h4>
+                <Link className="btn btn-primary p-3 text-light" to="/">بازگشت به صفحه اصلی</Link>
               </div>
             </div>
               }

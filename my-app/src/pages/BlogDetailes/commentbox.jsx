@@ -8,7 +8,7 @@ const Comment = (props) => {
       <li>
         <div className="comments-box">
           <div className="comments-avatar">
-            <img src={Config.blog + "comments/default user.png"} alt="" />
+            <img src={Config.blog + "comments/default user.png"} width={30} style={{opacity:".6"}} alt="" />
           </div>
           <div className="comments-text">
             <div className="avatar-name">
