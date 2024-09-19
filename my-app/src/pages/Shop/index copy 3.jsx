@@ -7,6 +7,7 @@ import { BreadCrumb } from "./BreadCrumb";
 import { ProductGraidWrapper } from "./ProductGraidWrapper";
 import { Tab } from "./Tab";
 export const Products = ({ sidebars }) => {
+  //responsive OwlCarousel
   var res1 = {
     item: 6,
     0: {
@@ -30,39 +31,20 @@ export const Products = ({ sidebars }) => {
   };
   //responsive OwlCarousel
 
-  const [data, setData] = useState([]);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState();
+  const [page, setPage] = useState(1);
   const [start, setStart] = useState(1);
   const Limit = 8;
   const [length, setLength] = useState();
 
   let params = new URLSearchParams(window.location.search);
-
+  const [category, setCategory] = useState();
   useEffect(() => {
-    getData(start);
-  }, []);
-
-  const getData = (start) => {
-    
-    axios
-      .get(
-        `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
-      )
-      .then((response) => {
-        setData(response.data);
-        console.log(response.data);
-        setItems(response.data.data)
-      });
-  };
-
-  const paginationLength = data?.pages
-
-  useEffect(() => {
-    axios.get(`http://localhost:313/best_selling`).then((response) => {
-      setLength(response);
+    axios.get(`http://localhost:313/product-category`).then((res) => {
+      setCategory(res);
     });
   }, []);
-
+  //allitems
 
   const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
   useEffect(() => {
@@ -94,6 +76,41 @@ export const Products = ({ sidebars }) => {
       setProductComment(response);
     });
   }, []);
+  //allcomment
+  //
+  //
+  //pagin
+
+  // params =(params.get("text"))? "text_like="+params.get("text"):"";
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:313/best_selling?${params}&_page=${start}&_limit=${Limit}`
+        //  `http://localhost:313/best_selling?${params}&_page=${start}&_per_page=${Limit}`
+      )
+      .then((response) => {
+        setItems(response.data);
+        // console.log(response.data,'response.data')
+        // setLength(response.data.length);
+        console.log(length, "index", items);
+      });
+    // console.log(page,"page")
+  }, [start]);
+  // console.log(items?.data?.length,"lllll")
+
+  //pagin
+  //
+  useEffect(() => {
+    axios.get(`http://localhost:313/best_selling`).then((response) => {
+      // setStart(response.data.length);
+      // setPage(response.data.length);
+      setLength(response);
+    });
+  }, [start]);
+  var paginationLength = length?.data.length;
+  paginationLength = Math.ceil(paginationLength / Limit);
+  //
+  console.log(length?.data.length, "  length?.data.length");
   return (
     <>
       <main>
@@ -121,14 +138,13 @@ export const Products = ({ sidebars }) => {
                     items={items}
                     productLength={productComment?.length}
                     length={length}
-                    all={data?.page}
+                    all={page}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">
                       <div class="basic-pagination pt-30 pb-30">
                         <Pagination
-                          count={{ paginationLength, Limit }}
-                          getData={(start) => getData(start)}
+                          count={{ paginationLength, setPage, setStart, Limit }}
                         ></Pagination>
                       </div>
                     </div>

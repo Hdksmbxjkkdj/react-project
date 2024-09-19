@@ -1,16 +1,15 @@
-const Pagination = ({ count }) => {
+const Pagination = ({ count, getData }) => {
   return (
     <>
-      <nav className="mx-5">
+      <nav>
         <ul>
           {count?.paginationLength &&
             [...Array(count.paginationLength)].map((item, index) => {
-              console.log(item)
+              console.log((index) * count.Limit)
               return (
-                <li >
-                  <a type="button" onClick={() => count.setPage(index+1)} className={(index+1 === count.page)&&'bg-warning'} >
+                <li>
+                  <a href="javascript:void(0)" onClick={() => getData(index+1)}>
                     {index + 1}
-                    
                   </a>
                 </li>
               );

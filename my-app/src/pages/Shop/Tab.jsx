@@ -16,7 +16,8 @@ export const Tab=({items,setItems,productLength,length,all})=>{
     const toggleTab =(index) =>{
         setToggleStata(index)
 }
-    return<>
+console.log(items);
+    return items?.length > 0 && <>
        <div className="product__filter mb-50">
                                     <div className="row align-items-center">
                                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -58,7 +59,9 @@ export const Tab=({items,setItems,productLength,length,all})=>{
                                 <div className="row"  style={{minHeight:'680px'}}>
                                     
                                 {
-                               length> 0 ? (
+                            //    length> 0 ? (
+                                items?.length> 0 ? (
+
                      <Product key={Math.random()} setItems={setItems} items={items} ></Product>
                   ) : (
                     <div class="text-center justify-content-center p-3 Larger rounded">
