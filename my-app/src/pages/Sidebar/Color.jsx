@@ -35,7 +35,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
                                                              <ul>
                                                                 {
                                                                   colors?.data?.map((childItem, index) => {
-                                                                   
+                                                                
                                                                     let count = false;
                                                                          let filterItem=false;
                                                                          if (searchParam?.get("color-id")?.indexOf(childItem.id)>-1){
@@ -50,7 +50,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
                                                                         
                                                                          return<>
                                                                          <li>
-                                                                             <a href="#" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}>
+                                                                             <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}>
                                                                                
                                                                            
                                                                              </a>

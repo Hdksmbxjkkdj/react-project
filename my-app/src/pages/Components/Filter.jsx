@@ -19,7 +19,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
             
           
             // setItems(response.data.items)
-            setItems(response)
+            setItems(response.data)
           
             if (response.data.status) status = response.data.status
             message = response.data.message

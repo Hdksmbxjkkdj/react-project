@@ -7,13 +7,12 @@ import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import { Product, ProductList } from "./Product"
-export const Tab=({items,setItems,productLength,length})=>{
+export const Tab=({items,setItems,productLength,length,all})=>{
+  
       //tab
       const [toggleState,setToggleStata]=useState(2)
   
       //tab
-    
-
     const toggleTab =(index) =>{
         setToggleStata(index)
 }
@@ -46,7 +45,7 @@ export const Tab=({items,setItems,productLength,length})=>{
                                                 </div>
                                                 <div className="product__result pl-60">
                                                     {/* <p>Showing 1-20 of 29 relults</p> */}
-                                                    <p className="me-4">نتیجه نمایش {items?.data?.length} محصول از {length}</p>
+                                                    <p className="me-4">نتیجه نمایش {items?.length}محصول از {all} </p>
 
                                                 </div>
                                             </div>
@@ -74,7 +73,7 @@ export const Tab=({items,setItems,productLength,length})=>{
                            
                             <div className={toggleState === 2 ? "tab-pane fade" : "tab-pane fade show active"} id="list" role="tabpanel" aria-labelledby="list-tab">
                                 <div className="row">
-                                    <ProductList key={Math.random()} setItems={setItems} items={items}productLength={productLength}></ProductList>
+                                    <ProductList key={Math.random()} setItems={setItems} items={items} productLength={productLength}></ProductList>
                                 </div>
                             </div>
                         </div>

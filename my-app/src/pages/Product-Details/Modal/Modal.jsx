@@ -15,6 +15,7 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
+ 
   const [active,setActive] = useState()
 
   const handleImg = (event,i) => {
@@ -61,7 +62,13 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
     setModals(!modals);
   };
   //btnshare
+//scroll 
+const comment=()=>{
+  window?.$('#review-tab').click()
 
+  window.scrollTo({top: document.getElementById('productDesTab').offsetTop - 100, behavior: 'smooth'})
+}
+//scroll
   return (
     <>
       <div
@@ -146,7 +153,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                       style={{ direction: "rtl" }}
                     >
                       <h4>
-                        <a href="#">{modal.data.title}</a>
+                        <a href="javascript:void(0)">{modal.data.title}</a>
                       </h4>
                       <div className="product__modal-des mb-40">
                         <p>{modal.data.des}</p>
@@ -176,7 +183,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                             </a>
                           </span>
                           <span>
-                            <Link to={`/product/${modal?.data?.id}`}>افزودن نظر</Link>
+                            <Link to={`/product/${modal?.data?.id}`}  onClick={()=>comment()}>افزودن نظر</Link>
                           </span>
                         </div>
                       </div>
@@ -231,7 +238,7 @@ export const Modal = ({ children, setModal, modal, commentNumber }) => {
                           </li>
                           <li>
                             <a
-                              href="#"
+                             href="javascript:void(0)"
                               title="اشتراک گذاری"
                               onClick={() => {
                                 setModals(true);

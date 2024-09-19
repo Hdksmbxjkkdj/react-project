@@ -17,6 +17,7 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+  // console.log(items,"ppp")
   //comments
   let url = `http://localhost:313/product_comments`;
   const [ProductComment, setProductComment] = useState();
@@ -44,11 +45,14 @@ export const Product = ({
   //modal
   const [modal, setModal] = useState({ show: false, data: null, tittle: null });
   //modal
+
   return (
     <>
-      {items?.data?.map((item) => {
-      
+    
+      {
+      items?.map((item) => {
         return (
+          
           <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y" key={Math.random()}>
             <div className="product__item white-bg mb-30 k">
               <div className="product__thumb p-relative">
@@ -80,7 +84,7 @@ export const Product = ({
                 
               <div className="product__content text-center">
                 <h6 className="product-name">
-                  <a className="product-item-link" href="product-details.html">
+                  <a className="product-item-link" href={"/product/" + item.id}>
                     {item.text}
                   </a>
                 </h6>
@@ -108,7 +112,7 @@ export const Product = ({
           <Modal
             setModal={setModal}
             modal={modal}
-            // commentNumber={comments_count?.[item.id]}
+           commentNumber={comments_count?.[item?.id]}
           >
           </Modal>
         )}
@@ -142,13 +146,11 @@ export const ProductList = ({ items, setItems }) => {
     comments_count[comment.id_product] = newCount;
   });
 
-  //  console.log(comments_count?.[items.id])
-
   return (
     <>
       {
-      items?.data?.map((item) => {
-        console.log(item,'item')
+      items?.map((item) => {
+
         return (
           <>
             <div className="col-xxl-12">
@@ -167,7 +169,7 @@ export const ProductList = ({ items, setItems }) => {
                   <h6 className="product-name">
                     <a
                       className="product-item-link"
-                      href="product-details.html"
+                      href={"/product/" + item.id}
                     >
                       {item.text}
                     </a>
@@ -181,7 +183,6 @@ export const ProductList = ({ items, setItems }) => {
                     <div className="product-review-action ml-30">
                       <span>
                         <a href={"/product/" + item.id}>
-                          {/* {comments_count?.[item.id]}نظر */}
                           {comments_count?.[item.id] == 0
                             ? "نظری نیست"
                             : comments_count?.[item.id] + "نظر"}

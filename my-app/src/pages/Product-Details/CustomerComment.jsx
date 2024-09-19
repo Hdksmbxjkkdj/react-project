@@ -19,9 +19,9 @@ export const CustomerComment = ({
   commentNumber
 }) => {
 const [infor, setInfor] = useState();
-  const [more, setMore] = useState();
+  const [more, setMore] = useState(5);
   const [start, setStart] = useState(0);
-
+  const[t,setT]=useState()
 
    useEffect(() => {
     axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=${start}&_end=${start + 5}`).then((res) => {
@@ -31,19 +31,23 @@ const [infor, setInfor] = useState();
 
 }, []);
 const moreComment =(event)=>{
-         setStart(start+5)
+ 
 
   // axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
-      axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=4&_end=${commentNumber}`).then((res) => {
-
-          setMore(res);
+      axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=5&_end=${more+5}`).then((res) => {
+    //  axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_start=${more}&_limit=${more+5}`).then((res) => {
+      setMore(more+5)
+   
+          setT(res);
           window?.$("#p").css({display:"inline"})
-          event.target.remove()
+         
+        
       });
 }
 
   return (
     <>
+   
       <div className="col-xxl-6 col-xl-6 col-lg-6">
         
         <div className="review-wrapper">
@@ -114,8 +118,10 @@ const moreComment =(event)=>{
           </div>
         )}
                <div style={{display:"none"}} id="p">
-                      {more?.data?.map((item) => {
-              return <> <div className="review-item">
+                      {t?.data?.map((item) => {
+              return <> 
+              <p>{item?.length}</p>
+              <div className="review-item">
                 <h3 className="review-title">محصول فوق العاده</h3>
                 <div className="review-ratings mb-10">
                   <div className="review-ratings-single d-flex align-items-end">
@@ -164,7 +170,7 @@ const moreComment =(event)=>{
             })}
             </div>
          <div className="d-flex justify-content-end">
-              <button onClick={(e)=>{moreComment(e)}} className="btn btn-outline-warning mt-5 btn-lg">همه نظرات</button>
+              <button onClick={(e)=>{moreComment(e)}} className="btn btn-outline-warning mt-5 btn-lg">نظرات بیشتر</button>
   
               </div>
            

@@ -22,7 +22,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems,items})
     return<>
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
-                     {/* <Color colors={colors} productLength={productLength} setItems={setItems} handelClick={handelClick} selected={selected} setSelected={setSelected}></Color> */}
+                     <Color colors={colors} productLength={productLength} setItems={setItems} handelClick={handelClick} selected={selected} setSelected={setSelected}></Color>
                     <DomainPrice domain_price={domain_price} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected}></DomainPrice>  
                     <Sizing size={size} productLength={productLength} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected}></Sizing> 
                     <div className="product__widget-item">

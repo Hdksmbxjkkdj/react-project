@@ -69,13 +69,16 @@ const Option = {
              <div className="row"> 
              <div class="col-xxl-12">
               <OwlCarousel
-                className="product__slider OwlCarousel owl-theme owl-carousel"
+                className="product__slider OwlCarousel owl-theme owl-carousel sectionHead"
                 {...Option}
                 items={5}
                 loop
-                autoPlay
+                autoplay
+                autoplayTimeout={2000}
+                
+              
                 // key={Math.random()}
-                // nav
+                //  nav
                 fs-1
               
               >

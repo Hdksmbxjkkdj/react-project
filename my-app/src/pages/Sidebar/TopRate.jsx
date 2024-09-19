@@ -33,7 +33,7 @@ export const TopRate = () =>{
                         </div>
                         <div class="product__sm-content">
                             <h3 class="product__sm-title">
-                                <a href="product-details.html">{item.text}</a>
+                                <a  href={"/product/"+item.id}>{item.text}</a>
                             </h3>
                             <div class="rating">
                             <Rate stars={item?.rate} type="comment" className="ms-3" /> 
