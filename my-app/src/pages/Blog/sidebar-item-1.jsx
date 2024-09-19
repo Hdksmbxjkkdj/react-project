@@ -5,7 +5,7 @@ const SidebarItem1 = (props) => {
   return (
     <>
       <div className="sidebar__widget-item mb-35">
-        <h3 className="sidebar__widget-title mb-30">Recent</h3>
+        <h3 className="sidebar__widget-title mb-30">{props?.title}</h3>
         <div className="sidebar__post rc__post">
           <ul>
             {props.items?.map((item) => {

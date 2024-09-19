@@ -9,6 +9,7 @@ const Cart = () => {
   const { cart } = useContext(CartContext);
   const [val, setVal] = useState("");
   const x = [...cart];
+  const [T,setT] = useState(0)
 
   function Total() {
     var tot = 0;
@@ -57,7 +58,8 @@ const Cart = () => {
                                 <CartItem
                                   items={items}
                                   index={index}
-                                  Total={Total}
+                                  T={T}
+                                  setT={setT}
                                 />
                               </>
                             );
@@ -99,16 +101,13 @@ const Cart = () => {
                             <li>
                               کل <span>{Total()}</span>
                             </li>
+                            <li>
+                              کل <span>{T}</span>
+                            </li>
                           </ul>
-                          {localStorage.getItem("user") ? (
                             <Link className="t-y-btn" to="/checkout">
-                              ادامه فرآیند خرید
+                              تکمیل فرآیند خرید
                             </Link>
-                          ) : (
-                            <Link to="/login" className="t-y-btn">
-                              ادامه فرآیند خرید
-                            </Link>
-                          )}
                         </div>
                       </div>
                     </div>

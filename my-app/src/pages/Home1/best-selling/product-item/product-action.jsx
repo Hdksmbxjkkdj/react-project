@@ -29,7 +29,6 @@ const ProductAction = ({ item }) => {
   }
   const { modal, setModal } = useContext(ModalContext);
   function Set(e) {
-    console.log("hi");
     e.preventDefault()
     let incart = Checking();
     setModal({
@@ -68,8 +67,10 @@ const ProductAction = ({ item }) => {
     compare = localStorage.getItem("compare").split(",");
     if(compare.includes(item.id))
     {
-      Notif("warning",'این محصول در لیست مقایسه قبلا اضافه شده')
-      return
+      var u = localStorage.getItem("compare").split(",").filter(el=>el!=item.id)
+        localStorage.setItem("compare",u);
+        Notif("success",`${item.title} با موفقیت از لیست مقایسه  پاک  شد`)
+        return
     }
     compare = [...compare, item.id];
     localStorage.setItem("compare", compare);
@@ -121,7 +122,7 @@ const ProductAction = ({ item }) => {
           </li>
           <li>
             <a type="button" title="Compare">
-              <i className={"fa fa-sliders-h"} onClick={(e)=>handleCompare(e)}></i>
+              <i className={(false)?"fa fa-check":"fa fa-sliders-h"} onClick={(e)=>handleCompare(e)}></i>
             </a>
           </li>
         </ul>

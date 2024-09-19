@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CardContext";
 
 const Checkout = () => {
+  const navigate = useNavigate()
+  useEffect(()=>{
+    if(!localStorage.getItem("user"))
+    {
+      navigate("/login",{replace:true})
+    }
+  },[])
   const {cart, setCart,address,setAddress} = useContext(CartContext);
   function total() {
     var tot = 0;
@@ -11,7 +18,6 @@ const Checkout = () => {
     }
     return tot.toFixed(2);
   }
-  const navigate = useNavigate()
   return (
     <>
       <section class="coupon-area pb-30">
@@ -130,7 +136,7 @@ const Checkout = () => {
                       </div>
                     </div>
                     <div class="col-md-12">
-                      <div class="checkout-form-list">
+                      {address.length ? <div class="checkout-form-list">
                         <label>
                           آدرس <span class="required">*</span>
                         </label>
@@ -139,7 +145,7 @@ const Checkout = () => {
                             return <option value={item?.address}>{item?.address}</option>
                           })}
                         </select>
-                      </div>
+                      </div>:null}
                     </div>
                     <div class="col-md-12">
                       <div class="checkout-form-list">

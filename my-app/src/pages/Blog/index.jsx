@@ -44,8 +44,9 @@ const Blog = () => {
             items={category?.data}
             setItems={setItems}
             start={page}
+            setLength={setLength}
           ></SidebarItem>
-          <SidebarItem1 items={items?.data}></SidebarItem1>
+          <SidebarItem1 title="موارد اخیر" items={items?.data}></SidebarItem1>
         </Sidebar>
         <Pagination count={{ paginationLength, setPage,Limit,page }}/>
       </BlogArea>

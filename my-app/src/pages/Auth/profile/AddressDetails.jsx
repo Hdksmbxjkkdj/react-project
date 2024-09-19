@@ -6,7 +6,6 @@ import { CartContext } from "../../../context/CardContext";
 
 export const AddressDetails = () => {
   const { address, setAddress } = useContext(CartContext);
-  const [newAddress, setNewAddress] = useState();
   let user ="";
   if (localStorage.getItem("user")) {
     user = localStorage.getItem("user");

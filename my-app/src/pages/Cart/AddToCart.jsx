@@ -26,7 +26,7 @@ export const AddToCart = async (
   if(number==0)
   {
     Notif("error","این محصول در انبار موجود نیست !")
-    setLoading(false)
+    if(setLoading!==null)setLoading(false)
     return false
   }
   if (quantity < 1) {
@@ -49,7 +49,7 @@ export const AddToCart = async (
         total:count*unitprice
       })
       .then((response) => {
-        setLoading(false)
+        if(setLoading!==null)setLoading(false)
         response.data.status && (status = response.data.status);
       });
     if (status == 201) {

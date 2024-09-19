@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
+import {Notif} from "../../Utils/Notif"
 
 export const ReplyComment = ({ Pid }) => {
   const [reply, setReply] = useState();
@@ -20,6 +21,8 @@ export const ReplyComment = ({ Pid }) => {
               <img
                 src={Config.blog + "comments/default user.png"}
                 alt=""
+                width={30}
+                style={{opacity:".4"}}
               />
             </div>
             <div class="comments-text">
