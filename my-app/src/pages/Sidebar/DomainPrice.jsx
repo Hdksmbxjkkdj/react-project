@@ -43,7 +43,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
     }
     )
     const rangeIsChanged=(ui)=>{//فقط مربوط به رنج قیمت است
-        Filter(setItems, productLength, 'price_gt', ui.values[0], eMessage, local, 'domain', 'price_lte', ui.values[1])
+        Filter(setItems, productLength, 'price_gte', ui.values[0], eMessage, local, 'domain', 'price_lte', ui.values[1])
          
 
     } 
