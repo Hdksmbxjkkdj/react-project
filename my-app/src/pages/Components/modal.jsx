@@ -180,7 +180,7 @@ export const Modal = ({items})=>{
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="product__modal-content">
                       <h4>
-                        <a href="product-details.html">
+                        <a  href={"/product/"+item.id}>
                          {items.text}
                         </a>
                       </h4>

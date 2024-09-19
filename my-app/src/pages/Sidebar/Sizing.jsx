@@ -1,6 +1,6 @@
 import {Config} from '../../Utils'
 import {Local} from "../../Utils";
-import { Filter} from "../Components/Filter copy";
+import { Filter} from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
 export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
@@ -28,14 +28,15 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
                                  <ul>
                                  {
                                      size?.data?.map((childItem) => {
+                                        console.log(childItem,'size')
+                                    
                                      let filterItem=false;
                                      if (searchParam?.get("size")?.indexOf(childItem.id)>-1){
-                                        
                                          filterItem=true
                                      }
                                      return<>
                                      <li>
-                                        <a href="#"
+                                        <a href="javascript:void(0)"
  
                                          onClick={() => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local)}>
                                             {childItem.id}

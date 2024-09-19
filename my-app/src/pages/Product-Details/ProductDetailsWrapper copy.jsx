@@ -64,7 +64,7 @@ const close = () =>{
           <div className="product__details">
             <h3 className="product__details-title">
               {/* <a href="product-details.html">Smart Mobile Phone 7/7plus/8/8plus/X/Xr W 32 to 128GB</a> */}
-              <a href="product-details.html">{item?.data.text}</a>
+              <a  href={"/product/"+item.id}>{item?.data.text}</a>
             </h3>
             <div className="product__review d-sm-flex">
               <div className="

@@ -46,7 +46,7 @@ export const SendComment = ({
 
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
-
+ 
   const schema = yup.object().shape({
     comment: yup
       .string()

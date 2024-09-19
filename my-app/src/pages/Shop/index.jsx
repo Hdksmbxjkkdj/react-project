@@ -71,33 +71,49 @@ export const Products = ({ sidebars }) => {
   //allcomment
   //
   //
-
   //pagin
+  const [page, setPage] = useState(1);
+
   const [items, setItems] = useState();
   const [length, setLength] = useState();
   const Limit = 8;
-  const [start, setStart] = useState(1);
+  // const [start, setStart] = useState(1);
   let params = new URLSearchParams(window.location.search);
   // params =(params.get("text"))? "text_like="+params.get("text"):"";
   useEffect(() => {
     axios
       .get(
         // `http://localhost:313/best_selling?${params}&_page=${start}&_limit=${Limit}`
-         `http://localhost:313/best_selling?${params}&_page=${start}&_limit=${Limit}`
+         `http://localhost:313/best_selling?${params}&_page=${page}&_limit=${Limit}`
       )
       .then((response) => {
-        // console.log(response);
+      
         setItems(response.data);
         // console.log(response.data,'response.data')
         setLength(response.data.length);
       });
-  }, [start]);
+      // console.log(page,"page")
+  }, [page]);
   // console.log(items?.data?.length,"lllll")
 
-  var paginationLength = length;
-  paginationLength = Math.ceil(paginationLength / 8);
-  //pagin
  
+  //pagin
+ //
+ useEffect(() => {
+  axios
+    .get(
+     
+       `http://localhost:313/best_selling`
+    )
+    .then((response) => {
+
+      setPage(response.data.length);
+    });
+}, [page]);
+var paginationLength = page;
+paginationLength = Math.ceil(paginationLength / 8);
+ //
+
   return (
     <>
       <main>
@@ -125,13 +141,15 @@ export const Products = ({ sidebars }) => {
                     items={items}
                     productLength={productComment?.length}
                     length={length}
+                    all={page}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">
                       <div class="basic-pagination pt-30 pb-30">
                         <Pagination
-                          count={{ paginationLength, setStart, start, Limit }}
+                          count={{ paginationLength, setPage, page, Limit }}
                         ></Pagination>
+
                       </div>
                     </div>
                   </div>
