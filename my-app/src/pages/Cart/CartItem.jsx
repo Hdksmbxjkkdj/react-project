@@ -6,7 +6,7 @@ import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "./RemoveCartItem";
 
-export const CartItem = ({ items, index,Total}) => {
+export const CartItem = ({ items, index, T, setT}) => {
   const { cart, setCart } = useContext(CartContext);
   const eMessage = "error";
   const [value, setValue] = useState(items?.quantity);
@@ -60,7 +60,8 @@ export const CartItem = ({ items, index,Total}) => {
     return newVal;
   };
   return (
-    <tr>
+    <>
+      <tr>
       <td className="product-number">
         <span className="amount" style={{ fontWeight: "600" }}>
           {index + 1}
@@ -121,5 +122,6 @@ export const CartItem = ({ items, index,Total}) => {
         </a>
       </td>
     </tr>
+    </>
   );
 };

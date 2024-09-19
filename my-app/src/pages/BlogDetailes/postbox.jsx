@@ -4,6 +4,7 @@ import { Comment } from "./commentbox";
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
 import { useParams } from "react-router-dom";
+import { SidebarItem1 } from "../Blog/sidebar-item-1";
 
 const PostBox = (props) => {
   const send_btn = document.querySelector(".send-btn");
@@ -17,21 +18,30 @@ const PostBox = (props) => {
   const [subComment, setSubComment] = useState();
   const [PID, setPID] = useState();
   const [rep, setRep] = useState(false);
+  const [blog,setBlog] = useState()
   useEffect(() => {
     axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
-      setitem(response.data);
-    });
+      setitem(response.data)
+    })
+    axios.get(`http://localhost:313/blog?view_gte=2000`).then((response) => {
+      setBlog(response.data)
+    })
   }, []);
   function reply(e, id) {
     document.getElementById("contacts-sub-form").classList.toggle("d-none");
     document.getElementById("contacts-form").classList.toggle("d-none");
     if (!props.rep) {
       document.getElementById("sub-name").focus();
-      props.setPID(id);
+      setPID(id);
     }
   }
   const submit = async (e) => {
     e.preventDefault();
+    if(!localStorage.getItem("user"))
+    {
+      Notif("error","ابتدا وارد سایت شوید")
+      return
+    }
     send_btn.classList.add("loading");
     let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
     let status = 201;
@@ -54,9 +64,14 @@ const PostBox = (props) => {
       });
   };
   const subSubmit = async (e) => {
+    e.preventDefault();
+    if(!localStorage.getItem("user"))
+    {
+      Notif("error","ابتدا وارد سایت شوید")
+      return
+    }
     let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
     let status = 201;
-    e.preventDefault();
     send_btn.classList.add("loading");
     await axios
       .post("http://localhost:313/subComments", {
@@ -96,7 +111,7 @@ const PostBox = (props) => {
                 تاریخ: <span>{item?.date} </span>
               </p>
               <p>
-                بازدید: <span>{item?.view} </span> <i className="fa fa-eye"></i>
+                بازدید: <span>{Number(item?.view).toLocaleString()} </span> <i className="fa fa-eye"></i>
               </p>
             </div>
             <div className="postbox__text">
@@ -121,7 +136,7 @@ const PostBox = (props) => {
                       );
                     })}
                     <li>
-                    {(props.comment?.length>=props.limit)&&<button className="btn shadow-sm" onClick={()=>props.setLimit((props.limit)+5)}>...موارد بیشتر</button>}
+                    {(props.comment?.length>=props.limit)&&<button className="btn shadow-sm" onClick={()=>props.setLimit((props.limit)+5)}>موارد بیشتر ...</button>}
                     </li>
                 </ul>
               </div>
@@ -231,13 +246,15 @@ const PostBox = (props) => {
                       <span className="text">ارسال پاسخ</span>
                       <span className="loading-animate"></span>
                     </button>
-                    <button className="t-y-btn t-y-btn-grey" onClick={(e)=>reply(e, props.item.id)}> بستن پاسخ</button>
+                    {/* <button className="t-y-btn t-y-btn-grey" onClick={(e)=>reply(e, props.item.id)}> بستن پاسخ</button> */}
                     </div>
                 </div>
               </form>
             </div>
           </div>
-          <div className="col-xxl-4">{/* some thing goes here */}</div>
+          <div className="col-xxl-4">
+            <SidebarItem1 items={blog} title="محبوب ترین ها"/>
+          </div>
         </div>
       </div>
     </>

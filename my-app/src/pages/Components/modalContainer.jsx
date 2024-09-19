@@ -39,11 +39,11 @@ export const ModalContainer = () => {
                           <h6>
                             <Link to={`product-details/${item?.id}`}>
                               {" "}
-                              {item?.name}
+                              {`x ${item?.quantity} ${item?.name}`}
                             </Link>
                           </h6>
                           <div className="cart__price">
-                            <span>{item?.unitprice}$</span>
+                            <span>{item?.unitprice} تومان</span>
                           </div>
                         </div>
                         </div>
@@ -76,7 +76,7 @@ export const ModalContainer = () => {
           <p>{tot} تومان</p>
         </div>
         <Link to="/checkout" className="t-y-btn t-y-btn-border w-100 mb-10">
-          ادامه فرآیند خرید
+          تکمیل فرآیند خرید
         </Link>
         <Link to="/cart" className="t-y-btn t-y-btn-border w-100 mb-10">
           دیدن لیست خرید

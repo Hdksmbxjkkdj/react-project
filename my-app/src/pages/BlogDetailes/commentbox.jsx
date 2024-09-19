@@ -8,7 +8,7 @@ const Comment = (props) => {
       <li>
         <div className="comments-box">
           <div className="comments-avatar">
-            <img src={Config.blog + "comments/default user.png"} width={30} style={{opacity:".6"}} alt="" />
+            <img src={Config.blog + "comments/default user.png"} width={30} style={{opacity:".4"}} alt="" />
           </div>
           <div className="comments-text">
             <div className="avatar-name">
@@ -17,7 +17,7 @@ const Comment = (props) => {
               <button
                 className="reply"
                 onClick={(e) => {
-                  props.reply(e, props.item.id);
+                  props.reply(e, props?.item?.id);
                 }}
               >
               ارسال پاسخ

@@ -162,9 +162,6 @@ export const ContactForm = () => {
                     value={data?.user_name}
                     error={errors?.user_name}
                     utoComplete="username"
-                    onChange={(e) =>
-                      setData({ ...data, user_name: e.target.value })
-                    }
                     {...register("name")}
                     />
                     {errors?.name && (<p className="text-danger text-end mb-3">{errors.name?.message}</p>)}
@@ -180,9 +177,6 @@ export const ContactForm = () => {
                     value={data?.sender_email}
                     error={errors?.sender_email}
                     autoComplete="useremail"
-                    onChange={(e) =>
-                      setData({ ...data, sender_email: e.target.value })
-                    }
                     {...register("email")}
                     />
                     {errors?.email && (<p className="text-danger text-end mb-3">{errors.email?.message}</p>)}
@@ -197,9 +191,6 @@ export const ContactForm = () => {
                     value={data?.sender_phone}
                     error={errors?.sender_phone}
                     autoComplete="userphone"
-                    onChange={(e) =>
-                      setData({ ...data, sender_phone: e.target.value })
-                    }
                     {...register("phone")}
                   />
                   {errors?.phone && (<p className="text-danger text-end mb-3">{errors.phone?.message}</p>)}
@@ -228,9 +219,6 @@ export const ContactForm = () => {
                             placeholder="نظر خود را بنویسید..."
                             autoComplete="username"
                             type="text"
-                            onChange={(e) =>
-                              setData({ ...data, comment: e.target.value })
-                            }
                             {...register("comment")}
 
                             />

@@ -1,5 +1,4 @@
 const Pagination = ({ count }) => {
-  console.log(count?.paginationLength);
   return (
     <>
       <nav className="mx-5">
