@@ -3,9 +3,7 @@ const Pagination = ({ count, getData }) => {
     <>
       <nav>
         <ul>
-          {count?.paginationLength &&
-            [...Array(count.paginationLength)].map((item, index) => {
-              console.log((index) * count.Limit)
+          {count?.paginationLength>0 ?( [...Array(count.paginationLength)].map((item, index) => {
               return (
                 <li>
                   <a href="javascript:void(0)" onClick={() => getData(index+1)}>
@@ -13,7 +11,16 @@ const Pagination = ({ count, getData }) => {
                   </a>
                 </li>
               );
-            })}
+            })):(
+              <div class="text-center justify-content-center p-3 Larger rounded">
+                <h2 class="d-flex text-center justify-content-center text-warning shadow" style={{"backgroundColor":"#e0e0e0"}}>
+                      محصولی وجود ندارد
+                </h2>
+              </div>
+            )
+            
+           
+            }
         </ul>
       </nav>
     </>

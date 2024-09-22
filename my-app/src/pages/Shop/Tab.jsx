@@ -7,7 +7,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import { Product, ProductList } from "./Product"
-export const Tab=({items,setItems,productLength,length,all})=>{
+export const Tab=({items,setItems,productLength,length,all,count})=>{
   
       //tab
       const [toggleState,setToggleStata]=useState(2)
@@ -16,8 +16,9 @@ export const Tab=({items,setItems,productLength,length,all})=>{
     const toggleTab =(index) =>{
         setToggleStata(index)
 }
-console.log(items);
     return items?.length > 0 && <>
+      
+
        <div className="product__filter mb-50">
                                     <div className="row align-items-center">
                                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -46,7 +47,7 @@ console.log(items);
                                                 </div>
                                                 <div className="product__result pl-60">
                                                     {/* <p>Showing 1-20 of 29 relults</p> */}
-                                                    <p className="me-4">نتیجه نمایش {items?.length}محصول از {all} </p>
+                                                    <p className="me-4">نتیجه نمایش {items?.length}محصول از {length?.data?.length} </p>
 
                                                 </div>
                                             </div>

@@ -12,7 +12,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
         let amount = window?.$('#amount')
         window?.$("#slider-range").slider({
              range: true,
-              min: 75,
+              min: 60,
               max: 900,
             //   values: [200,900],
             // range: true,
@@ -43,7 +43,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
     }
     )
     const rangeIsChanged=(ui)=>{//فقط مربوط به رنج قیمت است
-        Filter(setItems, productLength, 'price_gte', ui.values[0], eMessage, local, 'domain', 'price_lte', ui.values[1])
+        Filter(setItems, productLength, 'price_gte', ui.values[0], eMessage, local, 'domain','price_lte', ui.values[1])
          
 
     } 
@@ -66,12 +66,12 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                              <div className="product__widget-content">
                                    <div className="product__price-slider">
                                        <div>
-                                           <form action="#" style={{direction:"rtl"}}>
+                                           <form  style={{direction:"rtl"}}>
                                                <input type="text" id="amount" readonly 
                                                 //    iniMin={domain_price?.min}
                                                 //    iniMax={domain_price?.max}
                                                 //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
-                                                    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'):75}
+                                                    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'):60}
 
                                                    max={searchParam?.get('price_lte') ? searchParam.get('price_lte') :900}
                                                />

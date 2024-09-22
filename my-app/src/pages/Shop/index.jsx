@@ -50,7 +50,6 @@ export const Products = ({ sidebars }) => {
       )
       .then((response) => {
         setData(response.data);
-        console.log(response.data);
         setItems(response.data.data)
       });
   };
@@ -109,6 +108,7 @@ export const Products = ({ sidebars }) => {
                 productLength={items?.length}
                 setItems={setItems}
                 items={items}
+                count={{ paginationLength, Limit,start }}
               ></Sidebar>
               <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last m">
                 <div className="product__grid-wrapper">
@@ -122,12 +122,13 @@ export const Products = ({ sidebars }) => {
                     productLength={productComment?.length}
                     length={length}
                     all={data?.page}
+                    count={{Limit,start }}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">
                       <div class="basic-pagination pt-30 pb-30">
                         <Pagination
-                          count={{ paginationLength, Limit }}
+                          count={{ paginationLength, Limit,start }}
                           getData={(start) => getData(start)}
                         ></Pagination>
                       </div>

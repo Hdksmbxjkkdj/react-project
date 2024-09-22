@@ -1,16 +1,16 @@
 import axios from "axios";
 import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
+
 import { useParams } from "react-router-dom";
 const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue) => {
     // let url = '/' + local + '/products/filter' + query
-     let url='http://localhost:313/best_selling?'+ query
-   
+     let url='http://localhost:313/best_selling'+ query
+    //   let url=`http://localhost:313/best_selling?_page=${counts.start}&_per_page=${counts.Limit}`+query
         //  let url='http://localhost:313/best_selling?'+ query
 
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
-    
-
+ 
     let status = null
     try {
         let message;
@@ -47,7 +47,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
 
 
 export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
-  
+     console.log(counts,"filter")
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
@@ -89,7 +89,6 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
         }
         // var query = '?' + searchParams.toString();
           var query =  searchParams.toString();
-
       
         var newRelativePathQuery = window.location.pathname+"?" + query;
 

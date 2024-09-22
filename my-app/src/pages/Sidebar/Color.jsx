@@ -6,9 +6,8 @@ import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
+export const Color = ({colors,productLength, setItems,handelClick,selected,counts}) =>{
   
-
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
@@ -50,8 +49,9 @@ export const Color = ({colors,productLength, setItems,handelClick,selected}) =>{
                                                                         
                                                                          return<>
                                                                          <li>
-                                                                             <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}>
-                                                                               
+                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local,counts)}>
+                                                                                                                                                                    {/* <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}> */}
+
                                                                            
                                                                              </a>
                                                                         </li>
