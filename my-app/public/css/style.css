@@ -2960,8 +2960,8 @@ p {
 }
 .product__widget-item .accordion-button::after {
   background-image: none;
-  border-top: 1px solid #222;
-  border-left: 1px solid #222;
+  /* border-top: 1px solid #222;
+  border-left: 1px solid #222; */
   content: "";
   display: block;
   height: 8px;
@@ -2980,11 +2980,10 @@ p {
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
-.product__widget-item .accordion-button:focus:after
+/* .product__widget-item .accordion-button:focus:after
  {
-  background-color:red!important;
   transform: rotate(50deg);
- }
+ } */
  
 
 .product__widget-item .accordion-button.collapsed:after {

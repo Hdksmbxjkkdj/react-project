@@ -3,7 +3,7 @@ import {Local} from "../../Utils";
 import { Filter} from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
-export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
+export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon})=> {
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
@@ -16,8 +16,10 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected})=> {
             <div className="accordion" id="productWidgetAccordion2">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" onClick={()=>handelClick(3)}>
+                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
                            سایز
+                           <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,3);changeIcon(event)}}></i> 
+
                         </button>
                     </h2>
                     {selected.includes(3) ?(

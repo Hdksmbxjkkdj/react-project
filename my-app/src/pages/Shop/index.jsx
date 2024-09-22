@@ -43,7 +43,6 @@ export const Products = ({ sidebars }) => {
   }, []);
 
   const getData = (start) => {
-    
     axios
       .get(
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
@@ -93,6 +92,8 @@ export const Products = ({ sidebars }) => {
       setProductComment(response);
     });
   }, []);
+  // console.log("index")
+  // console.log(items)
   return (
     <>
       <main>
