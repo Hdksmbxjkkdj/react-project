@@ -17,8 +17,11 @@ export const Profile = () => {
   },[])
 	const [tab,setTab] = useState(0);
   return (
-    <div className="d-flex align-items-start my-5">
+    <div className="row my-5">
+      <div className="col-xl-2 col-lg-3 col-md-4">
       <SideBar tab={tab} setTab={setTab}/>
+      </div>
+      <div className="col">
       <div className="content w-100">
         <div className="header d-flex item-center bg-white width-100 border-bottom padding-12-30">
           <div className="header__right d-flex flex-grow-1 item-center">
@@ -40,6 +43,7 @@ export const Profile = () => {
 			<ProfileDetail/>
 		  </ProfileDetails>
         </div>
+      </div>
       </div>
     </div>
   );

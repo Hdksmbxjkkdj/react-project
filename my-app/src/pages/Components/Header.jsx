@@ -415,6 +415,11 @@ const Header = () => {
                       ارتباط با ما <i className="fa fa-globe"></i>
                     </Link>
                   </li>
+                  <li>
+                    <Link to="profile">
+                     پروفایل <i className="fa fa-user"></i>
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </div>

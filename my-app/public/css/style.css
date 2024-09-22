@@ -355,6 +355,7 @@ p {
   padding-bottom: 6px;
   border-bottom: 1px solid #ebebeb;
   position: relative;
+  display: none;
 }
 .section__head::after {
   position: absolute;
@@ -4567,6 +4568,7 @@ p.checkout-coupon input[type="text"]:focus {
 .blog__thumb img {
   height: 12rem;
   width: 100%;
+  object-fit: cover;
 }
 .blog__content {
   padding: 23px 20px;
@@ -6514,7 +6516,7 @@ p.checkout-coupon input[type="text"]:focus {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: -17px;
+  bottom: -15px;
   transform: rotateX(60deg);
 }
 
@@ -6582,4 +6584,17 @@ p.checkout-coupon input[type="text"]:focus {
 .loading {
   opacity: 0.5;
   cursor: wait;
+}
+
+@media only screen and (max-width:400px) {
+  .content.w-100,
+  .content.w-100 .main-content,
+  .content.w-100 .main-content .table__box li  
+  .content.w-100 .main-content .user-info {
+    padding: .2rem !important;
+  }
+  .content.w-100 .main-content .table__box .w-75 {
+    width: 100% !important;
+    overflow-x: auto;
+  }
 }
