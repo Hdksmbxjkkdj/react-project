@@ -1,24 +1,14 @@
 {
   "row": [
     {
-      "id": "6",
-      "pic": "product-11.jpg",
-      "name": "گوشی سامسونگ",
-      "unitprice": 300,
-      "quantity": 1,
-      "date": "19/09/2024",
-      "number": 16,
-      "total": 300
-    },
-    {
       "id": "5",
       "pic": "product-9.jpg",
       "name": "تی شرت آبی مردانه (S, M, XL, XXL) با رنگ های مختلف",
       "unitprice": 120,
-      "quantity": 1,
-      "date": "19/09/2024",
+      "quantity": 6,
+      "date": "22/09/2024",
       "number": 33,
-      "total": 120
+      "total": 720
     }
   ],
   "wishlist": [

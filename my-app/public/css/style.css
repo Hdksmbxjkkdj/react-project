@@ -4319,6 +4319,7 @@ p.checkout-coupon input[type="text"]:focus {
 .your-order-table table .shipping ul li input {
   position: relative;
   top: 2px;
+  left: 0 !important;
 }
 
 .your-order-table table .shipping ul li label {

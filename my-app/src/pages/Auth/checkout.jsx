@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CardContext";
 
 const Checkout = () => {
+  const [shipping,setShipping] = useState(0);
   const navigate = useNavigate()
   useEffect(()=>{
     if(!localStorage.getItem("user"))
@@ -16,7 +17,7 @@ const Checkout = () => {
     for (var i = 0; i < cart.length; i++) {
       tot = tot + (cart[i].unitprice*cart[i].quantity);
     }
-    return tot.toFixed(2);
+    return (tot+shipping).toFixed(2);
   }
   return (
     <>
@@ -378,14 +379,14 @@ const Checkout = () => {
                           <td>
                             <ul>
                               <li>
-                                <input type="radio" name="shipping" />
-                                <label>
+                                <input id="count" type="radio" name="shipping" onChange={()=>setShipping(7.00)}/>
+                                <label for="count">
                                   نرخ ثابت: <span class="amount">7.00 تومان</span>
                                 </label>
                               </li>
                               <li>
-                                <input type="radio" name="shipping" />
-                                <label>ارسال رایگان: 0 تومان</label>
+                                <input id="free" type="radio" name="shipping" onChange={()=>setShipping(0.00)}/>
+                                <label for="free">ارسال رایگان: 0 تومان</label>
                               </li>
                             </ul>
                           </td>
