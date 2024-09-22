@@ -3,7 +3,7 @@ import {Local} from "../../Utils";
 import { Filter} from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
-export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon})=> {
+export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count})=> {
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
@@ -30,17 +30,17 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                  <ul>
                                  {
                                      size?.data?.map((childItem) => {
-                                        console.log(childItem,'size')
                                     
                                      let filterItem=false;
                                      if (searchParam?.get("size")?.indexOf(childItem.id)>-1){
                                          filterItem=true
                                      }
                                      return<>
+
                                      <li>
                                         <a href="javascript:void(0)"
  
-                                         onClick={() => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local)}>
+                                         onClick={(count) => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local,count)}>
                                             {childItem.id}
                                          </a>
                                      </li>

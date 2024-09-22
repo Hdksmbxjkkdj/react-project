@@ -3,12 +3,12 @@ import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
 
 import { useParams } from "react-router-dom";
-const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue,counts) => {
+const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue,count) => {
     // let url = '/' + local + '/products/filter' + query
-
-    let url=`http://localhost:313/best_selling?_page=${counts?.start}&_per_page=${counts?.Limit}`+query
-        //  let url='http://localhost:313/best_selling?'+ query
-
+    // console.log(count?.start,"count?.start")
+    // let url=`http://localhost:313/best_selling?_page=${count?.start}&_per_page=${count?.Limit}`+query
+         let url='http://localhost:313/best_selling?'+ query
+    
     //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
     // console.log(url)
     let status = null
@@ -21,7 +21,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
           
             // setItems(response.data.items)
             // setItems(response.data)
-            setItems(response)
+            setItems(response.data)
           
             if (response.data.status) status = response.data.status
             message = response.data.message
@@ -48,8 +48,8 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
  
 
 
-export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null,counts) => {
-    //  console.log(counts,"filter")
+export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null,count) => {
+    console.log(count,"filter")
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
@@ -103,7 +103,7 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
     }
 }
 
-export const removeFilter = (setItems, eMessage, local,counts) => {
+export const removeFilter = (setItems, eMessage, local,count) => {
     try {
         window?.history.pushState(null, '', window.location.href.split('?')[0] + '?');
         getResultFilter('', setItems, eMessage, local)

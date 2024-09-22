@@ -28,8 +28,7 @@ export const Product = ({
       setProductComment(res.data);
     });
   };
-  console.log("pro")
-  console.log(items)
+  
 
   var comments_count = [];
 

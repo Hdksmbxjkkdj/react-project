@@ -1,9 +1,12 @@
 const Pagination = ({ count, getData }) => {
-  return (
+  console.log( count?.paginationLength)
+  // return count?.paginationLength> 0&& (
+    return count?.paginationLength> 0&& (
+
     <>
       <nav>
         <ul>
-          {count?.paginationLength>0 ?( [...Array(count.paginationLength)].map((item, index) => {
+          {/* {count?.paginationLength>0 ?( [...Array(count.paginationLength)].map((item, index) => {
               return (
                 <li>
                   <a href="javascript:void(0)" onClick={() => getData(index+1)}>
@@ -19,6 +22,20 @@ const Pagination = ({ count, getData }) => {
               </div>
             )
             
+           
+            } */}
+
+             {
+             ( [...Array(count.paginationLength)].map((item, index) => {
+              return (
+                <li>
+                  <a href="javascript:void(0)" onClick={() => getData(index+1)}>
+                    {index + 1}
+                    {/* {count.paginationLength} */}
+                  </a>
+                </li>
+              );
+            }))
            
             }
         </ul>
