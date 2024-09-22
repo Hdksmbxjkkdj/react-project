@@ -246,7 +246,7 @@ const PostBox = (props) => {
                       <span className="text">ارسال پاسخ</span>
                       <span className="loading-animate"></span>
                     </button>
-                    {/* <button className="t-y-btn t-y-btn-grey" onClick={(e)=>reply(e, props.item.id)}> بستن پاسخ</button> */}
+                    <button className="t-y-btn t-y-btn-grey" type="button" onClick={(e)=>reply(e,item.id)}> بستن پاسخ</button>
                     </div>
                 </div>
               </form>

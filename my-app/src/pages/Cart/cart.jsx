@@ -8,8 +8,6 @@ const Cart = () => {
   const { loader } = useContext(CartContext);
   const { cart } = useContext(CartContext);
   const [val, setVal] = useState("");
-  const x = [...cart];
-  const [T,setT] = useState(0)
 
   function Total() {
     var tot = 0;
@@ -58,8 +56,6 @@ const Cart = () => {
                                 <CartItem
                                   items={items}
                                   index={index}
-                                  T={T}
-                                  setT={setT}
                                 />
                               </>
                             );
@@ -100,9 +96,6 @@ const Cart = () => {
                           <ul className="mb-20">
                             <li>
                               کل <span>{Total()}</span>
-                            </li>
-                            <li>
-                              کل <span>{T}</span>
                             </li>
                           </ul>
                             <Link className="t-y-btn" to="/checkout">

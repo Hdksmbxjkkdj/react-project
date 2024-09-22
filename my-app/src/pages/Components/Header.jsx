@@ -3,15 +3,18 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { Loader } from "../Components/loader";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+import { BtnLike } from "../Product-Details/Btns/BtnLike";
 import { Menu } from "./Menu";
 import { ItemsSearch } from "./Search";
 import { ModalContainer } from "./modalContainer";
-import { AddToCart } from "../Cart/AddToCart";
-import { BtnLike } from "../Product-Details/Btns/BtnLike";
-import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 
 const Header = () => {
   window?.$("document").ready(function () {
+    if(localStorage.getItem("modal")==="true")
+    {
+      window?.$(".cart__mini").addClass("cart__opened");
+    }
     window?.$(window).on("scroll", function () {
       var scroll = window?.$(window).scrollTop();
       if (scroll < 100) {
@@ -26,10 +29,12 @@ const Header = () => {
     window?.$(".cart__toggle").on("click", function () {
       window?.$(".cart__mini").addClass("cart__opened");
       if (cartToggleStatus === false) {
+        localStorage.setItem("modal",true)
         window?.$(".cart__toggle").addClass("cart__toggle-open");
 
         cartToggleStatus = true;
       } else if (cartToggleStatus === true) {
+        localStorage.setItem("modal",false)
         window?.$(".cart__toggle").removeClass("cart__toggle-open");
         window?.$(".cart__mini").removeClass("cart__opened");
 
@@ -37,6 +42,7 @@ const Header = () => {
       }
     });
     window?.$(".cart__close-btn").on("click", function () {
+      localStorage.setItem("modal",false)
       window?.$(".cart__mini").removeClass("cart__opened");
       window?.$(".cart__toggle").removeClass("cart__toggle-open");
       cartToggleStatus = false;
