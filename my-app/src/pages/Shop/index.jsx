@@ -50,9 +50,10 @@ export const Products = ({ sidebars }) => {
       .then((response) => {
         setData(response.data);
         setItems(response.data.data)
+       
       });
   };
-
+console.log(data,"data")
   const paginationLength = data?.pages
 
   useEffect(() => {
