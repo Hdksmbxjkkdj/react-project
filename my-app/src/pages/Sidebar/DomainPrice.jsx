@@ -5,7 +5,7 @@ import { Filter,removeFilter } from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
-export const DomainPrice =({setItems,productLength,domain_price,handelClick,selected})=>{
+export const DomainPrice =({setItems,productLength,domain_price,handelClick,selected,changeIcon})=>{
 
     useEffect(() => {
         
@@ -57,6 +57,8 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
                      <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" onClick={()=>handelClick(2)}>
                           قیمت
+                          <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,2)}}></i> 
+
                         </button>
                     </h2>
                     {/* {selected.includes(2) ?( */}

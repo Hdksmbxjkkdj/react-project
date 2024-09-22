@@ -5,9 +5,11 @@ import { Filter,removeFilter } from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-export const Color = ({colors,productLength, setItems,handelClick,selected,counts}) =>{
-  
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShareAlt, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
+import { event } from "jquery";
+export const Color = ({colors,productLength, setItems,handelClick,selected,counts,setSelected,changeIcon}) =>{
+    console.log(selected)
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
@@ -15,14 +17,21 @@ export const Color = ({colors,productLength, setItems,handelClick,selected,count
     //     SideOffcanvasToggle('.filter-toggle','product__widget')
      
     // })
+
     return <>
     <div className="product__widget-item mb-15">
          <div className="accordion" id="productWidgetAccordion4">
              <div className="accordion-item">
                  <h2 className="accordion-header" id="headingfive">
-                     <button className="accordion-button product__widget-title:" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive" onClick={()=>handelClick(1)}>
+
+                     <button  className="accordion-button product__widget-title:" style={{content:selected}} type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" id="color" aria-expanded="true" aria-controls="collapsefive">
+                     {/* <FontAwesomeIcon icon={selected} style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,1);setSelected(selected==="faWindowMinimize"?"faWindowMaximize":"faWindowMinimize")}}></FontAwesomeIcon> */}
+               <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,1);changeIcon(event)}}></i> 
+
                         رنگ
+
                      </button>
+
                  </h2>
                     {selected.includes(1) ?(
                         //  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" className={searchParam?.get('parent_category')?.indexOf(item.id) > -1 ? "accordion-collapse collapse show" : "accordion-collapse collapse"}>
@@ -46,10 +55,9 @@ export const Color = ({colors,productLength, setItems,handelClick,selected,count
                                                                             window?.$(`#collapseOne`).prev().find('button').removeClass('collapsed')
                                                                         }
                                                                     }
-                                                                        
                                                                          return<>
                                                                          <li>
-                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local,counts)}>
+                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local,null,null,null,counts)}>
                                                                                                                                                                     {/* <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}> */}
 
                                                                            
