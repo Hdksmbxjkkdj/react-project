@@ -6,7 +6,7 @@ import { Config } from "../../Utils/config";
 import { CartContext } from "../../context/CardContext";
 import { RemoveCartItem } from "./RemoveCartItem";
 
-export const CartItem = ({ items, index, T, setT}) => {
+export const CartItem = ({ items, index}) => {
   const { cart, setCart } = useContext(CartContext);
   const eMessage = "error";
   const [value, setValue] = useState(items?.quantity);
@@ -29,6 +29,14 @@ export const CartItem = ({ items, index, T, setT}) => {
         `http://localhost:313/row/${items?.id}`,
         newItems
       )
+      const newcart = cart.map(el=>{
+        if(el.id===res.data.id)
+        {
+          el=res.data
+        }
+        return el
+      })
+      setCart(newcart)
       if (res.status) status = res.status;
       if (status == 200) {
         Notif("success", `${items.name} با موفقیت به روزرسانی شد`);
@@ -79,7 +87,7 @@ export const CartItem = ({ items, index, T, setT}) => {
       </td>
       <td className="product-price">
         <span className="amount" style={{ fontWeight: "600" }}>
-          {items.unitprice.toFixed(2)}
+          {items?.unitprice?.toFixed(2)}
         </span>
       </td>
       <td className="product-quantity">

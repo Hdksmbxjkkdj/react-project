@@ -1,34 +1,24 @@
 {
   "row": [
     {
-      "id": "7",
-      "pic": "product-13.jpg",
-      "name": "ساعت مچی",
-      "unitprice": 450,
-      "quantity": 3,
-      "date": "19/09/2024",
-      "number": 21,
-      "total": 1350
-    },
-    {
       "id": "6",
       "pic": "product-11.jpg",
       "name": "گوشی سامسونگ",
       "unitprice": 300,
-      "quantity": 2,
+      "quantity": 1,
       "date": "19/09/2024",
       "number": 16,
-      "total": 600
+      "total": 300
     },
     {
       "id": "5",
       "pic": "product-9.jpg",
       "name": "تی شرت آبی مردانه (S, M, XL, XXL) با رنگ های مختلف",
       "unitprice": 120,
-      "quantity": 4,
+      "quantity": 1,
       "date": "19/09/2024",
       "number": 33,
-      "total": 480
+      "total": 120
     }
   ],
   "wishlist": [
@@ -647,6 +637,14 @@
       "blog_id": "1",
       "date": "۱۴۰۳/۶/۲۹",
       "id": 1
+    },
+    {
+      "name": "هاتف",
+      "email": "hatef@gmail.com",
+      "comment": "لورم ایپسوم",
+      "blog_id": "1",
+      "date": "۱۴۰۳/۶/۲۹",
+      "id": 2
     }
   ],
   "subComments": [
@@ -658,6 +656,15 @@
       "date": "۱۴۰۳/۶/۲۹",
       "Pid": 1,
       "id": 1
+    },
+    {
+      "name": "هانی",
+      "email": "hani@gmail.com",
+      "comment": "لورم ایپسوم",
+      "blog_id": "1",
+      "date": "۱۴۰۳/۶/۲۹",
+      "Pid": 1,
+      "id": 2
     }
   ],
   "aboutus": [
