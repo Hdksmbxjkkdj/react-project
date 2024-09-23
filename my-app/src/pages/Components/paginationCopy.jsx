@@ -1,5 +1,6 @@
 const Pagination = ({ count, getData }) => {
-  console.log( count?.paginationLength)
+  console.log(getData,"getData")
+  // console.log( count?.paginationLength," count?.paginationLength")
   // return count?.paginationLength> 0&& (
     return count?.paginationLength> 0&& (
 
@@ -29,7 +30,7 @@ const Pagination = ({ count, getData }) => {
              ( [...Array(count.paginationLength)].map((item, index) => {
               return (
                 <li>
-                  <a href="javascript:void(0)" onClick={() => getData(index+1)}>
+                  <a href="javascript:void(0)" onClick={() => {getData(index+1)}}>
                     {index + 1}
                     {/* {count.paginationLength} */}
                   </a>

@@ -43,18 +43,21 @@ export const Products = ({ sidebars }) => {
   }, []);
 
   const getData = (start) => {
+    
     axios
       .get(
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
       )
       .then((response) => {
         setData(response.data);
+        
         setItems(response.data.data)
        
       });
   };
-console.log(data,"data")
   const paginationLength = data?.pages
+// console.log(data,"data",start)
+  
 
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
@@ -93,8 +96,7 @@ console.log(data,"data")
       setProductComment(response);
     });
   }, []);
-  // console.log("index")
-  // console.log(items)
+ 
   return (
     <>
       <main>
@@ -111,6 +113,7 @@ console.log(data,"data")
                 setItems={setItems}
                 items={items}
                 count={{ paginationLength, Limit,start }}
+                getData={(start) => getData(start)}
               ></Sidebar>
               <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last m">
                 <div className="product__grid-wrapper">
@@ -130,7 +133,7 @@ console.log(data,"data")
                     <div class="col-xxl-12">
                       <div class="basic-pagination pt-30 pb-30">
                         <Pagination
-                          count={{ paginationLength, Limit,start }}
+                          count={{ paginationLength, Limit,start, setItems}}
                           getData={(start) => getData(start)}
                         ></Pagination>
                       </div>

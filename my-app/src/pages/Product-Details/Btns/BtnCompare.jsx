@@ -58,10 +58,11 @@ export const BtnCompare = ({item}) => {
   }
   return (
     <>
+    <li onClick={handleCompare}>
                <a href="#" title="Compare">
-              <i className="fa fa-sliders-h" onClick={handleCompare}></i>
+              <i className="fa fa-sliders-h" ></i>
             </a>
-     
+            </li>
     </>
        
   );

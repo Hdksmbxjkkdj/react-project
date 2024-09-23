@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import {Local} from "../../Utils";
-import { Filter,removeFilter } from "../Components/Filter";
+import { Filter,removeFilter } from "../Components/FilterPrice";
 // import{Local,lang} from "../../Utils"
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
@@ -55,7 +55,7 @@ export const DomainPrice =({setItems,productLength,domain_price,handelClick,sele
             <div className="accordion" id="productWidgetAccordion1">
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" onClick={()=>handelClick(2)}>
+                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                           قیمت
                           <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,2)}}></i> 
 

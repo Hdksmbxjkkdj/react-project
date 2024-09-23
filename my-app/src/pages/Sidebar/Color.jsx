@@ -8,7 +8,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { event } from "jquery";
-export const Color = ({colors,productLength, setItems,handelClick,selected,counts,setSelected,changeIcon}) =>{
+export const Color = ({colors,productLength, setItems,handelClick,selected,counts,setSelected,changeIcon,getData}) =>{
     console.log(selected)
     const eMessage="errore_message"
     const local=Local()
@@ -50,14 +50,15 @@ export const Color = ({colors,productLength, setItems,handelClick,selected,count
                                                                            
                                                                             count = true
                                                                              filterItem=true
-                                                                         if (count) {
-                                                                            window?.$(`#collapseOne`).addClass('show')
-                                                                            window?.$(`#collapseOne`).prev().find('button').removeClass('collapsed')
-                                                                        }
+                                                                        //  if (count) {
+                                                                        //     window?.$(`#collapseOne`).addClass('show')
+                                                                        //     window?.$(`#collapseOne`).prev().find('button').removeClass('collapsed')
+                                                                        // }
                                                                     }
+                                                                   
                                                                          return<>
                                                                          <li>
-                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local,counts)}>
+                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => {getData(index+1);Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}}>
                                                                                                                                                                     {/* <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}> */}
 
                                                                            

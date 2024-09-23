@@ -10,12 +10,14 @@ export const BtnPrint = () => {
     // }
   return (
     <>
-      <a href="javascript:void(0)" title="پرینت"           onClick={handlePrint}
+    <li  onClick={handlePrint} >
+      <a href="javascript:void(0)" title="پرینت"
       >
         <FontAwesomeIcon
           icon={faPrint}
         ></FontAwesomeIcon>
       </a>
+      </li>
     </>
   );
 };

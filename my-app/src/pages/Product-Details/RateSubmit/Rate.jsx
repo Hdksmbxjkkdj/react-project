@@ -32,9 +32,11 @@ export const Rate = ({ stars, type = 'md', className = '' }) => {
                             <i className="far fa-star text-warning"></i>
                         </>))
                     }
+                    
                 </div>
 
                 {showCount()}
+            
 
             </div>
         </>

@@ -3,7 +3,7 @@ import {Color} from './Color';
 import {TopRate} from './TopRate';
 import { DomainPrice } from './DomainPrice';
 import { useState ,useEffect} from 'react';
-export const Sidebar = ({domain_price,colors,size,productLength,setItems,items,count}) =>{
+export const Sidebar = ({domain_price,colors,size,productLength,setItems,items,count,getData}) =>{
    //تغییر شکل icon
    const changeIcon =(event)=>{
     //    console.log(window?.$(event.target).hasClass("fas fa-angle-down"))
@@ -40,9 +40,9 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems,items,c
     return<>
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
-                     <Color colors={colors} productLength={productLength} setItems={setItems} handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon}></Color>
+                     <Color colors={colors} productLength={productLength} setItems={setItems} handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon} getData={getData}></Color>
                     <DomainPrice domain_price={domain_price} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon}></DomainPrice>  
-                    <Sizing size={size} productLength={productLength} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon}></Sizing> 
+                    <Sizing size={size} productLength={productLength} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon} getData={getData}></Sizing> 
                     <div className="product__widget-item">
                         <h3 className="product__widget-title mb-25">  امتیاز بالا</h3>
                             <div className="product__sm">

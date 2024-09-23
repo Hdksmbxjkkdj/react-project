@@ -1,9 +1,9 @@
 import {Config} from '../../Utils'
 import {Local} from "../../Utils";
-import { Filter} from "../Components/Filter";
+import { Filter} from "../Components/FilterSizing";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect } from 'react';
-export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count})=> {
+export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count, getData})=> {
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
@@ -29,18 +29,18 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                  <div className="product__size pt-10">
                                  <ul>
                                  {
-                                     size?.data?.map((childItem) => {
-                                    
+                                     size?.data?.map((childItem,index) => {
                                      let filterItem=false;
-                                     if (searchParam?.get("size")?.indexOf(childItem.id)>-1){
+                                     if (searchParam?.get("Size-Id")?.indexOf(childItem.id)>-1){
+                                        count = true
                                          filterItem=true
                                      }
                                      return<>
 
-                                     <li>
+                                     <li onClick={() => {getData(index+1);Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
                                         <a href="javascript:void(0)"
  
-                                         onClick={(count) => Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local,count)}>
+                                         >
                                             {childItem.id}
                                          </a>
                                      </li>

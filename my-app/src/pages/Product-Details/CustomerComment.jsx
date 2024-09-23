@@ -169,11 +169,13 @@ const moreComment =(event)=>{
              
             })}
             </div>
+            {ProductComment?.data?.length > 0 &&
          <div className="d-flex justify-content-end">
               <button onClick={(e)=>{moreComment(e)}} className="btn btn-outline-warning mt-5 btn-lg">نظرات بیشتر</button>
   
               </div>
-           
+}
+
            
                
 

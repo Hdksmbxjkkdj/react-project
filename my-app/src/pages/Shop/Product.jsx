@@ -17,6 +17,9 @@ export const Product = ({
   closebtn,
   item,
 }) => {
+  // console.log(  setItems
+  // )
+
   //comments
   let url = `http://localhost:313/product_comments`;
   const [ProductComment, setProductComment] = useState();

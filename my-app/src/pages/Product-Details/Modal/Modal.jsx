@@ -225,17 +225,17 @@ const comment=()=>{
   </a>
 </li> */}
                           <BtnLike items={modal?.data}></BtnLike>
-                          <li>
+                         
                             {/* <a href="#" title="مقایسه کنید">
                               <FontAwesomeIcon
                                 icon={faSliders}
                               ></FontAwesomeIcon>
                             </a> */}
                             <BtnCompare item={modal?.data}></BtnCompare>
-                          </li>
-                          <li>
+                         
+                         
                             <BtnPrint></BtnPrint>
-                          </li>
+                          
                           <li>
                             <a
                              href="javascript:void(0)"

@@ -158,12 +158,12 @@ const comment=()=>{
                   </a>
                 </li> */}
                 {/* <AddToWishlist item={item}></AddToWishlist> */}
-                <li>
+              
                  <BtnCompare item={item?.data}></BtnCompare>
-                </li>
-                <li>
+               
+               
                  <BtnPrint></BtnPrint>
-                </li>
+                
                 {/* <li>
                   <a href="#" title="اشتراک گذاری">
                     <FontAwesomeIcon icon={faShareAlt}></FontAwesomeIcon>
