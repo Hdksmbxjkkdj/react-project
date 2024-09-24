@@ -37,7 +37,7 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                      }
                                      return<>
 
-                                     <li onClick={() => {getData(index+1);Filter(setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
+                                     <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
                                         <a href="javascript:void(0)"
  
                                          >

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Config } from "../../Utils";
-import { Pagination } from "../Components/pagination";
+import { Pagination } from "../Components/paginationCopy";
 import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
 import { BtnCompare } from "../Product-Details/Btns/BtnCompare";
 import { BtnLike } from "../Product-Details/Btns/BtnLike";
@@ -101,7 +101,9 @@ export const Product = ({
               {/* <div className="product__add-btn">
                                 <button type="button">Add to Cart</button>
                              </div>  */}
-              <ProductAddbtn item={item}></ProductAddbtn>
+              {/* <ProductAddbtn item={item}></ProductAddbtn> */}
+              {item.number!=0?<ProductAddbtn item={item}></ProductAddbtn>:<div className="d-flex justify-content-center position-absolute w-25" style={{top:"1rem",right:"0"}}><p className="bg-danger text-white rounded w-100 text-center">ناموجود</p></div>}
+
             </div>
 
             {/* {showmodal&&<ModalContent closebtn={closebtn}>
@@ -154,6 +156,7 @@ export const ProductList = ({ items, setItems }) => {
       {
       items?.map((item) => {
 
+
         return (
           <>
             <div className="col-xxl-12">
@@ -186,9 +189,10 @@ export const ProductList = ({ items, setItems }) => {
                     <div className="product-review-action ml-30">
                       <span>
                         <a href={"/product/" + item.id}>
-                          {comments_count?.[item.id] == 0
-                            ? "نظری نیست"
-                            : comments_count?.[item.id] + "نظر"}
+                          {
+                          comments_count?.[item.id] > 0
+                            ?  comments_count?.[item.id] + "نظر"
+                            :"نظری نیست"}
                         </a>
                       </span>
                       <span>
@@ -212,7 +216,8 @@ export const ProductList = ({ items, setItems }) => {
                     </ul>
                   </div>
                   <div className="product__action product__action-list d-sm-flex d-lg-block d-xl-flex align-items-center">
-                    <ProductAddbtn item={item} className={"t-y-btn mr-10"} />
+                    {/* <ProductAddbtn item={item} className={"t-y-btn mr-10"} /> */}
+                    {item.number!=0?<ProductAddbtn item={item} className={"t-y-btn mr-10"}></ProductAddbtn>:<div className="d-flex justify-content-center position-absolute w-25 h-100" style={{top:"0.5rem",right:"5rem"}}><p className="bg-danger text-white rounded w-100 text-center">ناموجود</p></div>}
 
                     {/* <button className="t-y-btn mr-10" >افزودن به سبد خرید</button>  */}
                     {/* <button
@@ -242,7 +247,7 @@ export const ProductList = ({ items, setItems }) => {
           </>
         );
       })}
-      <Pagination></Pagination>
+      {/* <Pagination key={Math.random()}></Pagination> */}
     </>
   );
 };

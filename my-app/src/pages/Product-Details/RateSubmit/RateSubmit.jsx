@@ -7,8 +7,7 @@ import { Notif } from "../../../Utils"
 import { Rate } from "./Rate"
 import { SendComment } from "../SendComment"
 import { Rank } from "./Rank"
-export const RateSubmit =({item,setQuality,setPrice})=>{
-      
+export const RateSubmit =({item,setQuality,setPrice,resetStar})=>{
      const [preScore, setPreScore] = useState(0)
      let auth = User()
     let loginMessage = 'first_login';
@@ -120,7 +119,6 @@ export const RateSubmit =({item,setQuality,setPrice})=>{
 
                 if (rateItem.id_customer == user.id) {
                 // if(user.id!=null)  
-                    
                     return <Rate stars={rateItem.rate} type="comment" className="ms-3" />
 
                  }

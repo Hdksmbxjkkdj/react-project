@@ -12,6 +12,7 @@ import { CustomerComment } from "./CustomerComment";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
 import { TapContent } from "./TapContent";
 import { ButtonLoader } from "../Components/ButtonLoader";
+import { cleanData } from "jquery";
 // import { schema } from "@hookform/resolvers/yup/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/computed-types/src/__tests__/__fixtures__/data.js";
 // import { schema } from "@hookform/resolvers/arktype/src/__tests__/__fixtures__/data.js";
@@ -38,6 +39,10 @@ export const SendComment = ({
   //new
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
+  const[resetStar,setresetStar]=useState(false)
+  
+   
+ 
   let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
   let sMessage = "success_message";
@@ -67,7 +72,6 @@ export const SendComment = ({
   } = useForm({ resolver: yupResolver(schema) });
 
   const [data, setData] = useState({});
-
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
 
@@ -77,6 +81,8 @@ export const SendComment = ({
   //   handleSubmit(onFormSubmit)
   // }
   const onFormSubmit = async (data) => {
+    setresetStar(!resetStar)
+    console.log(resetStar)
     setLoad(true)
     send_btn.classList.add("loading");
     await axios
@@ -94,6 +100,7 @@ export const SendComment = ({
         rate: quality,
       })
       .then((response) => {
+        console.log(response)
         setLoad(false)
         send_btn.classList.remove("loading");
         let message = "پیام شما با موفقیت ارسال شد";
@@ -163,12 +170,16 @@ export const SendComment = ({
                             <div className="review-ratings-single d-flex align-items-start">
                               <span>کیفیت</span>
                               {/* <Rank></Rank> */}
+                              {/* {resetStar&&   */}
                               <RateSubmit
                                 item={item}
                                 type="lg"
                                 setQuality={setQuality}
                                 setPrice={setPrice}
+                                resetStar={resetStar}
                               ></RateSubmit>
+                              {/* } */}
+                            
                             </div>
                             {/* <div className="review-ratings-single d-flex align-items-center">
                               <span>قیمت</span>

@@ -1,6 +1,6 @@
 const Pagination = ({ count, getData }) => {
-  console.log(getData,"getData")
-  // console.log( count?.paginationLength," count?.paginationLength")
+  // console.log(getData,"getData")
+  // console.log( count?.paginationLength," paginationLength")
   // return count?.paginationLength> 0&& (
     return count?.paginationLength> 0&& (
 

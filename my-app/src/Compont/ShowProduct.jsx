@@ -1,6 +1,5 @@
 import { Config } from "../Utils";
 export const ShowProduct = ({ children, setShowproduct,item })=>{
-  // console.log(item,'wwwwww')
 
     return (
         <>

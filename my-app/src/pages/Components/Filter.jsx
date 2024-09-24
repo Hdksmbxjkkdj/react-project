@@ -3,7 +3,7 @@ import { Notif } from "../../Utils";
 import { useEffect,useState } from "react";
 
 import { useParams } from "react-router-dom";
-const getResultFilter = async (query,setItems, eMessage, local, secendFilterValue) => {
+const getResultFilter = async (getData, query,setItems, eMessage, local, secendFilterValue) => {
     // let url = '/' + local + '/products/filter' + query
     // console.log(count?.start,"count?.start")
     // let url=`http://localhost:313/best_selling?_page=${count?.start}&_per_page=${count?.Limit}`+query
@@ -14,19 +14,19 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
     let status = null
     try {
         let message;
-
-        await axios.get(url).then((response) => {
-            // console.log("filter");
-            // console.log(response);
+        getData(1)
+        // await axios.get(url).then((response) => {
+        //     // console.log("filter");
+        //     // console.log(response);
           
-            // setItems(response.data.items)
-            // setItems(response.data)
-            setItems(response.data)
+        //     // setItems(response.data.items)
+        //     // setItems(response.data)
+        //     setItems(response.data)
           
-            if (response.data.status) status = response.data.status
-            message = response.data.message
+        //     if (response.data.status) status = response.data.status
+        //     message = response.data.message
           
-        })
+        // })
         
          
 
@@ -48,7 +48,7 @@ const getResultFilter = async (query,setItems, eMessage, local, secendFilterValu
  
 
 
-export const Filter = (setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
+export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
    
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
@@ -103,18 +103,18 @@ export const Filter = (setItems, length, filterItem, filterValue, eMessage, loca
 
         // var newRelativePathQuery = window.location.pathname +'?'+query;
         window?.history.pushState(null, '', newRelativePathQuery);
-        getResultFilter( query,setItems, eMessage, local,secendFilterValue);
+        getResultFilter(getData, query,setItems, eMessage, local,secendFilterValue);
 
     } else {
         Notif('error', 'your browser is oldest, please update it')
     }
 }
 
-export const removeFilter = (setItems, eMessage, local) => {
+export const removeFilter = (getData, setItems, eMessage, local) => {
   
     try {
         window?.history.pushState(null, '', window.location.href.split('?')[0] + '?');
-        getResultFilter('', setItems, eMessage, local)
+        getResultFilter(getData,'', setItems, eMessage, local)
     } catch (error) {
         Notif('error', 'your browser is oldest, please update it')
     }

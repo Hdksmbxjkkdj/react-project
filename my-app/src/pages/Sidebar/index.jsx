@@ -41,7 +41,7 @@ export const Sidebar = ({domain_price,colors,size,productLength,setItems,items,c
                 <div className="col-xxl-2 col-xl-3 col-lg-4">
                 <div className="product__widget">
                      <Color colors={colors} productLength={productLength} setItems={setItems} handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon} getData={getData}></Color>
-                    <DomainPrice domain_price={domain_price} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon}></DomainPrice>  
+                    <DomainPrice domain_price={domain_price} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon}  getData={getData}></DomainPrice>  
                     <Sizing size={size} productLength={productLength} setItems={setItems}  handelClick={handelClick} selected={selected} setSelected={setSelected} count={count} changeIcon={changeIcon} getData={getData}></Sizing> 
                     <div className="product__widget-item">
                         <h3 className="product__widget-title mb-25">  امتیاز بالا</h3>

@@ -5,6 +5,7 @@ import {ShowProduct} from '../../Compont/ShowProduct'
 import { faBorderAll, faSearch, faSearchPlus, faSlidersH, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({item,picturs,img}) =>{
+
     const [active,setActive] = useState()
       //showproduct
       const[showproduct,setShowproduct]=useState({show: false, data: null, tittle: null})
@@ -40,7 +41,7 @@ export const ProducDetailsImg = ({item,picturs,img}) =>{
     <div className="product__details-nav d-sm-flex align-items-start">
         <ul className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product" style={{maxHeight:"30rem",overflowY:"auto"}} id="productThumbTab" role="tablist">
         <li className="nav-item" role="presentation">
-                    <button  className="nav-link active"  onClick={(event) => {setActive(item);handleImg(event,0)}} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
+                    <button  className="nav-link active" onClick={(event) => {handleImg(event,0);setActive(item)}} id="thumbOne-tab" data-bs-toggle="tab" data-bs-target="#thumbOne" type="button" role="tab" aria-controls="thumbOne" aria-selected="true">
          <img src={Config.shop+ "" + item} alt="" className={"delete show-0"} id="u" style={{border:"2px solid #ffc107"}}/>
        
                           

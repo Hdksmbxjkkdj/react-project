@@ -44,7 +44,7 @@ export const BtnLike = ({items})=>{
             {!checker.includes(items) ? (
             <li>
               <a
-                href="#"
+                href="javascript:void(0)"
                 onClick={(e) =>{ 
                   AddToWishlist(
                     e,

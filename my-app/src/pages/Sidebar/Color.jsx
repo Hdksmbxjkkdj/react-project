@@ -58,7 +58,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected,count
                                                                    
                                                                          return<>
                                                                          <li>
-                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => {getData(index+1);Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}}>
+                                                                              <a href="javascript:void(0)" className={childItem.color}  onClick={() => {Filter(getData,setItems,productLength,'color-id',childItem.id,eMessage,local)}}>
                                                                                                                                                                     {/* <a href="javascript:void(0)" className={childItem.color}  onClick={() => Filter(setItems,productLength,'color-id',childItem.id,eMessage,local)}> */}
 
                                                                            

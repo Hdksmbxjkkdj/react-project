@@ -33,38 +33,38 @@ export const Products = ({ sidebars }) => {
   const [data, setData] = useState([]);
   const [items, setItems] = useState([]);
   const [start, setStart] = useState(1);
+  const [paginationLength, setPaginationLength] = useState();
   const Limit = 8;
   const [length, setLength] = useState();
 
-  let params = new URLSearchParams(window.location.search);
-
+  // let paginationLength;
   useEffect(() => {
     getData(start);
   }, []);
 
-  const getData = (start) => {
-    
-    axios
+  const getData = async (start) => {
+    let params = new URLSearchParams(window.location.search);
+    console.log("params", params);
+    await axios
       .get(
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
       )
       .then((response) => {
         setData(response.data);
-        
-        setItems(response.data.data)
-       
+
+        setItems(response.data.data);
+        // console.log(response.data)
+        // paginationLength = response.data?.pages
+        setPaginationLength(response.data.pages);
       });
   };
-  const paginationLength = data?.pages
-// console.log(data,"data",start)
-  
-
+  // console.log(data,"data",start)
+  console.log(paginationLength);
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setLength(response);
     });
   }, []);
-
 
   const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
   useEffect(() => {
@@ -96,7 +96,7 @@ export const Products = ({ sidebars }) => {
       setProductComment(response);
     });
   }, []);
- 
+
   return (
     <>
       <main>
@@ -112,7 +112,7 @@ export const Products = ({ sidebars }) => {
                 productLength={items?.length}
                 setItems={setItems}
                 items={items}
-                count={{ paginationLength, Limit,start }}
+                count={{ paginationLength, Limit, start }}
                 getData={(start) => getData(start)}
               ></Sidebar>
               <div className="col-xxl-10 col-xl-9 col-lg-8 order-first order-lg-last m">
@@ -127,13 +127,14 @@ export const Products = ({ sidebars }) => {
                     productLength={productComment?.length}
                     length={length}
                     all={data?.page}
-                    count={{Limit,start }}
+                    count={{ Limit, start }}
                   ></Tab>
                   <div class="row">
                     <div class="col-xxl-12">
                       <div class="basic-pagination pt-30 pb-30">
                         <Pagination
-                          count={{ paginationLength, Limit,start, setItems}}
+                          key={Math.random()}
+                          count={{ paginationLength, Limit, start, setItems }}
                           getData={(start) => getData(start)}
                         ></Pagination>
                       </div>
