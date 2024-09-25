@@ -55,9 +55,12 @@ const PostBox = (props) => {
       })
       .then((e) => {
         status = e.status;
-        send_btn.classList.remove("loading");
+        setTimeout(function(){
+          send_btn.classList.remove("loading");
+        },1500)
         if (e.status == 201) {
           Notif("success", "نظر شما با موفقیت ارسال شد");
+          props.setComment([...props?.comment,e.data])
         } else {
           Notif("error", "در اینجا یک خطا وجود دارد !");
         }
@@ -84,7 +87,9 @@ const PostBox = (props) => {
       })
       .then((e) => {
         status = e.status;
-        send_btn.classList.remove("loading");
+        setTimeout(function(){
+          send_btn.classList.remove("loading");
+        },1500)
         if (e.status == 201) {
           Notif("success", "پاسخ شما با موفقیت ارسال شد");
         } else {

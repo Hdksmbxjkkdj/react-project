@@ -3,6 +3,7 @@ import { Config } from "../../Utils/config";
 import { ReplyComment } from "./ReplyComment";
 const Comment = (props) => {
   const [show, setShow] = useState(false);
+  const [reply, setReply] = useState();
   return (
     <>
       <li>
@@ -30,7 +31,7 @@ const Comment = (props) => {
           </div>
         </div>
       </li>
-      {show && <ReplyComment Pid={props.item.id} />}
+      {(show) && <ReplyComment Pid={props.item.id} reply={reply} setReply={setReply} />}
     </>
   );
 };
