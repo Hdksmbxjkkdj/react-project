@@ -7,6 +7,7 @@ const ProductAddbtn = (props) => {
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [value,setValue] = useState(1)
   useEffect(() => {
     cart.filter((el) => {
       if (el.id == props?.item?.id) {
@@ -15,6 +16,7 @@ const ProductAddbtn = (props) => {
     });
   }, [cart]);
   function handleAddClick(event, props) {
+    console.log(props)
     setLoading(true);
     AddToCart(
       event,
@@ -22,7 +24,7 @@ const ProductAddbtn = (props) => {
       props.item?.pic,
       props.item?.text,
       props.item?.price,
-      1,
+      value,
       setCart,
       cart,
       setLoading,
@@ -70,8 +72,11 @@ const ProductAddbtn = (props) => {
             newVal = 0;
           }
         }
+        setValue(newVal)
+ 
         $button.parent().find("input").val(newVal);
       });
+
     }, []);
     //css number
     //حذف div تعداد محصولات
@@ -90,7 +95,7 @@ const changeCss=(event)=>{
                 <div className="pro-quan-area d-lg-flex align-items-center">
                   <div className="product-quantity  mb-25">
                     <div className="cart-plus-minus p-relative">
-                      <input type="text" value="1" />
+                      <input type="text" value={value} />
                     </div>
                   </div>
                 <div className="pro-cart-btn mb-25 me-3">

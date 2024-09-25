@@ -36,6 +36,9 @@ export const ProducDetails= () =>{
         },
       };
     //responsive OwlCarousel
+    // const [information, setInformation] = useState();
+    // const [start, setStart] = useState(0);
+
 
     //tab
     const[tab,setTab]=useState(2)
@@ -66,6 +69,7 @@ export const ProducDetails= () =>{
         });
     }, []);
       //Number of comments
+      
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
   let url=`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id`
    const [ProductComment, setProductComment] = useState();
@@ -76,6 +80,21 @@ export const ProducDetails= () =>{
         });
     }, []);
 //        //Number of comments
+
+
+//
+// useEffect(() => {
+//   getData()
+// } , []);
+//   const getData = async () => {
+
+//   let params = new URLSearchParams(window.location.search);
+//    console.log(params)
+//  await
+//   axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id&_start=${start}&_end=${start + 5}&${params}`).then((res) => {
+//     setInformation(res);})
+//   }
+//
     return<>
         <main>
             <BradCrumb></BradCrumb>
@@ -90,7 +109,7 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment items={img} item={ProductComment} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id} /> }
+                   {<SendComment items={img} item={ProductComment} lengthComment={info?.data?.length} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id}/> }
                     </div>
                 </div>
             </section>
