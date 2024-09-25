@@ -5,7 +5,7 @@ import { Notif } from "../../Utils";
 // import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { CustomerComment } from "./CustomerComment";
@@ -23,35 +23,53 @@ export const SendComment = ({
   productId,
   ProductComment,
   commentNumber,
+  lengthComment,
   item,
   info,
   items,
 }) => {
+    const [information, setInformation] = useState();
+    const [start, setStart] = useState(0);
   const send_btn = document.querySelector(".send-btn");
   const[load,setLoad]=useState(false)
-
   //
  
    
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = async () => {
+  let params = new URLSearchParams(window.location.search);
+
+  axios
+    .get(
+      `http://localhost:313/product_comments?id_product=` +
+        id +
+        `&_sort=-id&_start=${start}&_end=${start + 5}&${params}`
+    )
+    .then((res) => {
+      setInformation(res);
+    });
+}
   //
   //
 
   //new
+  // const[ids,setIds]=useState(commentNumber ? commentNumber : 'no comment!')
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
   const[resetStar,setresetStar]=useState(false)
-  
-   
- 
   let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
   let sMessage = "success_message";
-
   let today = new Date().toLocaleDateString("fa-IR");
 
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
-
+  // const u =()=>{
+  //   setIds(ids+1)
+  // }
+  // console.log(ids,"button")
   const schema = yup.object().shape({
     comment: yup
       .string()
@@ -81,10 +99,14 @@ export const SendComment = ({
   //   handleSubmit(onFormSubmit)
   // }
   const onFormSubmit = async (data) => {
-    setresetStar(!resetStar)
-    console.log(resetStar)
+   
+   
     setLoad(true)
     send_btn.classList.add("loading");
+    // setIds(ids+1)
+    // setIds(ids+1)
+    getData()
+    // console.log(commentNumber + 1);
     await axios
       .post(url, {
         sender_name: user
@@ -98,14 +120,18 @@ export const SendComment = ({
         date: today,
         id_customer: user?.id,
         rate: quality,
+        id:lengthComment + 1
       })
       .then((response) => {
-        console.log(response)
         setLoad(false)
         send_btn.classList.remove("loading");
         let message = "پیام شما با موفقیت ارسال شد";
+        setInformation([...information,response.data])
         if (response?.status == 201) {
+        
+
           Notif("success", message);
+          // setIds(ids+1)
           reset();
           return;
         } else {
@@ -115,6 +141,7 @@ export const SendComment = ({
         }
       })
       .catch((errors) => {});
+
   };
 
   // const run=()=>{
@@ -151,6 +178,8 @@ export const SendComment = ({
             <div className="product__details-review">
               <div className="row">
                 <CustomerComment
+                getData={getData}
+                  information={information}
                   comment={info?.data}
                   id={id}
                   ProductComment={ProductComment}

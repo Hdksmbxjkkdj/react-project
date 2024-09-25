@@ -50,7 +50,7 @@ function App() {
       });
   }, [use]);
   useEffect(() => {
-    axios.get("http://localhost:313/row").then((response) => {
+    axios.get("http://localhost:313/row?_sort=-id").then((response) => {
       setCart(response.data);
       setLoader(false);
     });
