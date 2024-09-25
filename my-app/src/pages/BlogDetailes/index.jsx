@@ -23,7 +23,7 @@ const BlogDetaile = (props) => {
   ];
   const [comment,setComment] = useState();
   useEffect(()=>{
-    axios.get(`http://localhost:313/comments?blog_id=${id}&_page=1&_limit=${limit}`).then((res)=>{
+    axios.get(`http://localhost:313/comments?blog_id=${id}&_sort=-id&_page=1&_limit=${limit}`).then((res)=>{
       setComment(res?.data);
     })
   },[limit])

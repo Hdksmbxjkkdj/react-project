@@ -1,17 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Config } from "../../Utils/config";
-import {Notif} from "../../Utils/Notif"
 
-export const ReplyComment = ({ Pid }) => {
-  const [reply, setReply] = useState();
+export const ReplyComment = ({ Pid,reply,setReply }) => {
   useEffect(() => {
     axios
       .get(`http://localhost:313/subComments?Pid=${Pid}`)
       .then((response) => {
         setReply(response);
       });
-  }, [reply]);
+  }, []);
   return (
     <>
       {reply?.data.map((item) => {

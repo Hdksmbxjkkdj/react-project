@@ -1,8 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CardContext";
+import axios from "axios";
 
 const Checkout = () => {
+  const u = localStorage.getItem("user");
+  const user = JSON.parse(u);
+  const {order,setOrder} = useContext(CartContext)
   const [shipping,setShipping] = useState(0);
   const navigate = useNavigate()
   useEffect(()=>{
@@ -18,6 +22,19 @@ const Checkout = () => {
       tot = tot + (cart[i].unitprice*cart[i].quantity);
     }
     return (tot+shipping).toFixed(2);
+  }
+  let date = new Date();
+  date = Intl.DateTimeFormat('fa-IR').format(date)
+  function SubmitOrder(e) {
+    e.preventDefault();
+    axios.post(`http://localhost:313/order`,{code:Math.ceil(Math.random()*100000000),Uid:user.id,date:date,price:total(),unorder:0,stage:"ثبت سفارش",shipping:shipping}).then((response)=>{
+      console.log(response.data);
+      setOrder([...order,response.data])
+      cart.map(item=>{
+        axios.delete(`http://localhost:313/row/${item.id}`)
+      })
+        setCart([])
+      })
   }
   return (
     <>
@@ -476,7 +493,7 @@ const Checkout = () => {
                       </div>
                     </div>
                     <div class="order-button-payment mt-20">
-                      <button type="submit" class="t-y-btn t-y-btn-grey">
+                      <button type="button" onClick={(e)=>SubmitOrder(e)} class="t-y-btn t-y-btn-grey">
                       ثبت سفارش
                       </button>
                       <button type="button" class="t-y-btn t-y-btn-grey mt-10" onClick={()=>navigate("/cart")}>

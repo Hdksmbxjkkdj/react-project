@@ -33,6 +33,7 @@ function App() {
   const [use, setUser] = useState();
   const [loader, setLoader] = useState(true);
   const [address, setAddress] = useState([]);
+  const [order,setOrder] = useState()
   const u = localStorage.getItem("user");
   const user = JSON.parse(u);
   useEffect(() => {
@@ -73,7 +74,11 @@ function App() {
         setAddress(data);
       });
   }, []);
-  // const [modalInfo, setModalInfo] = useState({show: false, data: null, tittle: null});
+  useEffect(()=>{
+    axios.get(`http://localhost:313/order?Uid=${user?.id}`).then((response)=>{
+      setOrder(response.data)
+    })
+  },[])
 
   return (
     <>
@@ -91,6 +96,8 @@ function App() {
           setLoader,
           address,
           setAddress,
+          order,
+          setOrder
         }}
       >
         <BrowserRouter>
