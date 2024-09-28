@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const  ProductDetailsDesTab= ({tab,setTab,change,commentNumber}) =>{
+export const  ProductDetailsDesTab= ({tab,setTab,change,count}) =>{
 
 return<>
 <div className="col-xxl-12">
@@ -14,7 +14,7 @@ return<>
         <li className="nav-item" role="presentation">
             <button className={tab === 2 ? "nav-link" :"nav-link active"} id="review-tab" data-bs-toggle="tab" data-bs-target="#review"
              type="button" role="tab" aria-controls="review"
-              aria-selected="false" onClick={() => change(1)}>نظرات({commentNumber}) </button>
+              aria-selected="false" onClick={() => change(1)}>نظرات({count}) </button>
         </li>
     </ul>
 </div>

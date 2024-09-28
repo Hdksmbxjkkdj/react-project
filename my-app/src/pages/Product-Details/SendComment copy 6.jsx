@@ -24,16 +24,12 @@ export const SendComment = ({
   ProductComment,
   setProductComment,
   commentNumber,
-  setLengthComment,
   lengthComment,
   item,
   info,
   setInfo,
   items,
-  setCount,
-  count
 }) => {
-
     const [information, setInformation] = useState();
     // const [start, setStart] = useState(0);
     const [more, setMore] = useState(5);
@@ -45,8 +41,7 @@ export const SendComment = ({
  
   //  let limit=5
   useEffect(() => {
-    // getData();
-    moreComment()
+    getData();
     axios
     .get(
       `http://localhost:313/product_comments?id_product=${id}&_sort=-id&_page=1&_limit=${more}`
@@ -54,7 +49,7 @@ export const SendComment = ({
     .then((res) => {
       // setMore(more + 5);
       setT(res?.data);
-      window?.$("#p").css({ display: "inline" });
+      // window?.$("#p").css({ display: "inline" });
       // console.log(t,"l")
     });
   }, [more]);
@@ -126,8 +121,7 @@ const moreComment = (event) => {
   //   handleSubmit(onFormSubmit)
   // }
   const onFormSubmit = async (data) => {
-  setLengthComment(lengthComment+1)
-     
+   
     // setInfo(info?.data?.length+1)
     setLoad(true)
     send_btn.classList.add("loading");
@@ -148,15 +142,14 @@ const moreComment = (event) => {
         date: today,
         id_customer: user?.id,
         rate: quality,
-        id:lengthComment
+        id:lengthComment + 1
       })
       .then((response) => {
         setLoad(false)
-        console.log(response.data,"response")
+        // console.log(response.data,"response")
         send_btn.classList.remove("loading");
         let message = "پیام شما با موفقیت ارسال شد";
 
-        
         // setProductComment([...ProductComment?.data?.length+response?.data?.length])
         // ProductComment?.data?.length+1
        
@@ -167,15 +160,13 @@ const moreComment = (event) => {
         // setProductComment([response?.data?.length])
         // setInfo(response.data.length)
         if (response?.status == 201) {
-           setCount(count+1)
-          console.log(count)
-          //  setProductComment((ProductComment.data.length)+1)
-          // setInformation([...information,response.data])
-           console.log(quality,"quality"
-            
-           )
-          setT([...t,response.data])
          
+          //  setProductComment((ProductComment.data.length)+1)
+          console.log(ProductComment?.data?.length,"ol")
+          // setInformation([...information,response.data])
+        
+          setT([...t,response.data])
+          setProductComment(ProductComment?.data?.length + 1)
           Notif("success", message);
          
           // setIds(ids+1)
@@ -233,7 +224,6 @@ const moreComment = (event) => {
                   commentNumber={commentNumber}
                   moreComment={(event)=>moreComment(event)}
                   t={t}
-                  count={count}
                 ></CustomerComment>
                 <div className="col-xxl-4 col-xl-4 col-lg-4" id="send">
                   <div className="review-form">

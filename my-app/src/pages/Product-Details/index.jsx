@@ -62,21 +62,25 @@ export const ProducDetails= () =>{
    //
    
     const [info, setInfo] = useState();
+    const[lengthComment,setLengthComment]=useState()
     useEffect(() => {
             // axios.get(`http://localhost:313/product_comments`).then((res) => {
             axios.get(`http://localhost:313/product_comments`).then((res) => {
             setInfo(res);
+            setLengthComment(res?.data?.length)
         });
     }, []);
       //Number of comments
-      
+      const [ProductComment, setProductComment] = useState();
+      const [count, setCount] = useState();
+
 //    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
   let url=`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id`
-   const [ProductComment, setProductComment] = useState();
+  
    useEffect(() => {
           axios.get(url).then((res) => {
-
                 setProductComment(res);
+                setCount(res?.data?.length)
         });
     }, []);
 //        //Number of comments
@@ -102,14 +106,14 @@ export const ProducDetails= () =>{
                 <div className="container-fluid">
                     <div className="row">
                         <ProducDetailsImg item={img?.data?.pic} picturs={img?.data?.gallery} img={img?.data}/>  
-                       <ProductDetailsWrapper item={img} commentNumber={ProductComment?.data?.length} /> 
+                       <ProductDetailsWrapper item={img} count={count} /> 
                     </div>
                     <div className="row">
-                        <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} commentNumber={ProductComment?.data?.length}/> 
+                        <ProductDetailsDesTab tab={tab} setTab={setTab} change={change} count={count}/> 
                     </div>
                     
                     <div className="row">
-                   {<SendComment items={img} item={ProductComment} lengthComment={info?.data?.length} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id}/> }
+                   {<SendComment setCount={setCount} count={count}  items={img} item={ProductComment} setProductComment={setProductComment} setInfo={setInfo} lengthComment={lengthComment} setLengthComment={setLengthComment} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id}/> }
                     </div>
                 </div>
             </section>

@@ -25,7 +25,8 @@ export const Rank =({setQuality})=>{
                   size={25} 
                   style={{margin:"1px"}}
                    className={ClassN(index)}
-                   onClick={() => {SetRate(index+1)
+                   onClick={() => {
+                    SetRate(index+1)
                     SetAnimate(index+1)
                     setQuality(index+1)
                     

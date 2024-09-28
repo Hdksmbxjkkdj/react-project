@@ -14,7 +14,7 @@ import { BtnShareBody } from "./Btns/BtnShareBody";
 import { BtnCompare } from "./Btns/BtnCompare";
 import { BtnPrint } from "./Btns/BtnPrint";
 import { Link } from "react-router-dom";
-export const ProductDetailsWrapper = ({item,commentNumber}) => {
+export const ProductDetailsWrapper = ({item,count}) => {
 
   useEffect(() => {
     window
@@ -84,8 +84,8 @@ const comment=()=>{
               </div>
               <div className="product__add-review mb-15" >
                 <span>
-                  {/* <a href="#">{{commentNumber}==0?"نظری وجود ندارد":{commentNumber}}</a> */}
-                  <a href="#">{commentNumber==0?"نظری نیست":commentNumber+"نظر"}</a> 
+                  {/* <a href="#">{{count}==0?"نظری وجود ندارد":{count}}</a> */}
+                  <a href="#">{count==0?"نظری نیست":count+"نظر"}</a> 
 
                 </span>
                 <span>

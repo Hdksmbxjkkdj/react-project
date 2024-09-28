@@ -20,12 +20,10 @@ export const CustomerComment = ({
   getData,
   information,
   moreComment,
-  t,
-  count
-
+  t
 }) => {
-  // console.log( moreComment," moreComment")
-  // console.log(ProductComment?.data?.length,"aaaaaaaa")
+  console.log( moreComment," moreComment")
+  console.log(ProductComment?.data?.length,"aaaaaaaa")
    // const [more, setMore] = useState(5);
   // const [start, setStart] = useState(0);
   // const [t, setT] = useState();
@@ -66,7 +64,7 @@ export const CustomerComment = ({
       <div className="col-xxl-6 col-xl-6 col-lg-6">
         <div className="review-wrapper">
           <h3 className="block-title">نظرات مشتریان</h3>
-          {count == 0 ? (
+          {ProductComment?.data?.length == 0 ? (
             <div className="text-center justify-content-center p-3 Larger rounded mt-5">
               <FontAwesomeIcon
                 icon={faComments}
@@ -79,7 +77,7 @@ export const CustomerComment = ({
             </div>
           ) : (
             <div>
-              {t?.map((item) => {
+              {information?.map((item) => {
 
                 return (
                   <>
@@ -176,7 +174,7 @@ export const CustomerComment = ({
               );
             })}
           </div>
-          {count > 4&& (
+          {ProductComment?.data?.length > 4&& (
             <div className="d-flex justify-content-end">
               <button
                 onClick={(e) => {
@@ -187,7 +185,7 @@ export const CustomerComment = ({
                 نظرات بیشتر
               </button>
             </div>
-           )} 
+          )}
         </div>
       </div>
     </>
