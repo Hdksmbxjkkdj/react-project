@@ -19,6 +19,16 @@
       "date": "28/09/2024",
       "number": 37,
       "total": 580
+    },
+    {
+      "id": "3",
+      "pic": "product-5.jpg",
+      "name": "گوشی سامسونگ",
+      "unitprice": 100,
+      "quantity": 1,
+      "date": "29/09/2024",
+      "number": 65,
+      "total": 100
     }
   ],
   "wishlist": [
