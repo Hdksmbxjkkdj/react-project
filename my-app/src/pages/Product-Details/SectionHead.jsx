@@ -126,7 +126,7 @@ const Option = {
                               <BtnLike items={item}></BtnLike>
                               <li>
                                 <a
-                                  href="#"
+                                    href="javascript:void(0)"
                                   title="نمایش سریع"
                                   onClick={() =>
                                     setModal({ show: true, data: item })

@@ -103,7 +103,7 @@ export const CustomerComment = ({
                                 </div> */}
                         {/* <div className="review-ratings-single d-flex align-items-center">
                                 <span>ارزش</span>
-                               
+                                
                                 <Rank></Rank>
                                  </div> */}
                       </div>
@@ -128,7 +128,7 @@ export const CustomerComment = ({
               })}
             </div>
           )}
-          <div style={{ display: "none" }} id="p">
+          {/* <div style={{ display: "none" }} id="p">
             {t?.data?.map((item) => {
               return (
                 <>
@@ -138,23 +138,14 @@ export const CustomerComment = ({
                     <div className="review-ratings mb-10">
                       <div className="review-ratings-single d-flex align-items-end">
                         <span>کیفیت</span>
-                        {/* <Rate></Rate>
-                         */}
+                         
                         <Rate
                           stars={item.rate}
                           type="comment"
                           className="ms-3"
                         />
                       </div>
-                      {/* <div className="review-ratings-single d-flex align-items-center">
-                                    <span>قیمت</span>
-                                  <Rank></Rank>
-                                </div> */}
-                      {/* <div className="review-ratings-single d-flex align-items-center">
-                                <span>ارزش</span>
-                               
-                                <Rank></Rank>
-                                 </div> */}
+                    
                     </div>
                     <div className="review-text">
                       <p>{item?.comment}</p>
@@ -170,13 +161,12 @@ export const CustomerComment = ({
                       </div>
                     </div>
                     <span id="dost ">....</span>
-                    {/* <button onClick={()=>less()} id="more" className="bg-danger">نظرات  بیشتر</button> */}
                   </div>
                 </>
               );
             })}
-          </div>
-          {count > 4&& (
+          </div> */}
+          {count > 4 && (
             <div className="d-flex justify-content-end">
               <button
                 onClick={(e) => {

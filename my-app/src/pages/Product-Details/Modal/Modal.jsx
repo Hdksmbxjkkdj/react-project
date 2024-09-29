@@ -15,21 +15,28 @@ import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
 export const Modal = ({ children, setModal, modal, commentNumber }) => {
- 
   const [active,setActive] = useState()
 
   const handleImg = (event,i) => {
     window?.$(".delete").removeAttr('style')
     window?.$(".show-"+i).css({border:"2px solid #ffc107"})
 
-    let preview = window?.$(".tab-content img");
+    // let preview = window?.$(".tab-content img");
+     let preview = window?.$(".product__modal-img img");
+
+  
     preview.fadeOut(100);
 
     preview.attr(
       "src",
-      window?.$(event.target).parent().parent().parent().find(".product__modal-img").attr("src")
+      // window?.$(event.target).parent().parent().parent().find(".product__modal-img img").attr("src")
+        window?.$(event.target).parent().find("img").attr("src")
+        
     );
     preview.fadeIn(300);
+    console.log(         window?.$(event.target).parent().find("img").attr("src")
+
+  )
   };
   //num
   useEffect(() => {
@@ -80,9 +87,9 @@ const comment=()=>{
           
           zIndex: "1000",
         }}
-        onClick={() =>
-          setModal({ show:false})
-      }
+      //   onClick={() =>
+      //     setModal({ show:false})
+      // }
       >
         <div className="container d-flex justify-content-center" style={{direction:"rtl!important"}}>
           {/* <div className="row justify-content-center align-items-center"> */}
@@ -113,6 +120,7 @@ const comment=()=>{
                             <img
                               src={Config.shop + "" + modal.data.pic}
                               alt=""
+                              className="sali"
                             />
                           </div>
                         </div>
@@ -176,7 +184,7 @@ const comment=()=>{
                         </div>
                         <div className="product__add-review mb-15">
                           <span>
-                            <a href="#">
+                            <a  href="javascript:void(0)">
                               {commentNumber == 0
                                 ? "نظری نیست"
                                 : commentNumber + "نظر"}

@@ -7,7 +7,7 @@ import { Notif } from "../../../Utils"
 import { Rate } from "./Rate"
 import { SendComment } from "../SendComment"
 import { Rank } from "./Rank"
-export const RateSubmit =({item,setQuality,setPrice,resetStar})=>{
+export const RateSubmit =({item,setQuality,setPrice})=>{
      const [preScore, setPreScore] = useState(0)
      let auth = User()
     let loginMessage = 'first_login';

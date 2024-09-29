@@ -46,7 +46,7 @@ export const SendComment = ({
   //  let limit=5
   useEffect(() => {
     // getData();
-    moreComment()
+    // moreComment()
     axios
     .get(
       `http://localhost:313/product_comments?id_product=${id}&_sort=-id&_page=1&_limit=${more}`
@@ -54,6 +54,7 @@ export const SendComment = ({
     .then((res) => {
       // setMore(more + 5);
       setT(res?.data);
+      console.log('fetching');
       window?.$("#p").css({ display: "inline" });
       // console.log(t,"l")
     });
@@ -85,7 +86,7 @@ const moreComment = (event) => {
   // const[ids,setIds]=useState(commentNumber ? commentNumber : 'no comment!')
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
-  const[resetStar,setresetStar]=useState(false)
+  // const[resetStar,setresetStar]=useState(false)
   let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
   let sMessage = "success_message";
@@ -168,14 +169,13 @@ const moreComment = (event) => {
         // setInfo(response.data.length)
         if (response?.status == 201) {
            setCount(count+1)
-          console.log(count)
           //  setProductComment((ProductComment.data.length)+1)
           // setInformation([...information,response.data])
-           console.log(quality,"quality"
+          //  console.log(quality,"quality"
             
-           )
-          setT([...t,response.data])
-         
+          //  )
+          setT([response.data, ...t])
+          console.log(t);
           Notif("success", message);
          
           // setIds(ids+1)
@@ -255,7 +255,7 @@ const moreComment = (event) => {
                                 type="lg"
                                 setQuality={setQuality}
                                 setPrice={setPrice}
-                                resetStar={resetStar}
+                                // resetStar={resetStar}
                               ></RateSubmit>
                               {/* } */}
                             
