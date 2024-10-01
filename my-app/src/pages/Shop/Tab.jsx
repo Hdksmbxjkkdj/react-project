@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { Product, ProductList } from "./Product";
-export const Tab = ({ items, setItems, productLength, length, all, count }) => {
+export const Tab = ({ items, setItems, productLength, length, all, count,getData }) => {
   //tab
   const [toggleState, setToggleStata] = useState(2);
 
@@ -79,7 +79,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count }) => {
               </div>
             </div>
           </div>
-          <Select setItems={setItems} items={items}></Select>
+          <Select setItems={setItems} items={items} getData={getData}></Select>
         </div>
       </div>
       <div className="tab-content" id="productGridTabContent">

@@ -58,7 +58,6 @@ export const SendComment = ({
       setT(res?.data);
      
       window?.$("#p").css({ display: "inline" });
-      // console.log(t,"l")
     });
   }, [more]);
   const getData = async () => {
@@ -88,22 +87,14 @@ const moreComment = (event) => {
   // const[ids,setIds]=useState(commentNumber ? commentNumber : 'no comment!')
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
-//  const[Rate,SetRate]=useState()
 
-  console.log("setQuality")
-  console.log(quality)
-  // const[resetStar,setresetStar]=useState(false)
   let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
   let sMessage = "success_message";
   let today = new Date().toLocaleDateString("fa-IR");
-
   let user = localStorage.getItem("user");
   user = JSON.parse(user);
-  // const u =()=>{
-  //   setIds(ids+1)
-  // }
-  // console.log(ids,"button")
+  
   const schema = yup.object().shape({
     comment: yup
       .string()
@@ -126,30 +117,34 @@ const moreComment = (event) => {
   const [data, setData] = useState({});
   const [error, setError] = useState();
   let url = `http://localhost:313/product_comments`;
-
-  // function t (event){
-    
-  //   event.target.preventDefault()
-  //   handleSubmit(onFormSubmit)
-  // }
+//star
   const ClassN =(index)=>{
     let TempClass
   
     index < (Hover || Rate) ? TempClass= "actives" : TempClass=""
     return TempClass
-
 }
+const [loadingg,setLoadingg]=useState(false)
+
+//star
+//loading
+
+// const loadd=()=>{
+//   //  window?.$("#load").css({backgroundColor:"red"})
+   
+//   //  setLoadingg(!loadingg);
+
+//   // document.getElementById("#load").style.backgroundColor="red"
+// }
+//loading
   const onFormSubmit = async (data,ClassN) => {
   setLengthComment(lengthComment+1)
-
-    // setInfo(info?.data?.length+1)
+  window?.$(".loading").css({display:"inline-block"})
+    
     setLoad(true)
     // review-item.classList.add("loading")
     send_btn.classList.add("loading");
-    // setIds(ids+1)
-    // setIds(ids+1)
-    // getData()
-    // console.log(commentNumber + 1);
+     
     await axios
       .post(url, {
         sender_name: user
@@ -171,23 +166,14 @@ const moreComment = (event) => {
         send_btn.classList.remove("loading");
         
         let message = "پیام شما با موفقیت ارسال شد";
-       
-        
-        // setProductComment([...ProductComment?.data?.length+response?.data?.length])
-        // ProductComment?.data?.length+1
-        // setProductComment([response?.data?.length])
-        // setInfo(response.data.length)
         if (response?.status == 201) {
            setCount(count+1)
-          
-          //  setProductComment((ProductComment.data.length)+1)
-          // setInformation([...information,response.data])            
-          //  )
           setT([response.data, ...t])
            SetHover(0)//حذف ستاره های امتیاز 
            SetRate(0)//حذف امتیاز ستاره ها
            setPreScore(0)
           // setQuality()
+          window?.$(".loading").css({display:"none"})
           Notif("success", message);
 
           reset();
@@ -202,24 +188,6 @@ const moreComment = (event) => {
 
   };
 
-  // const run=()=>{
-  //   alert(load)
-
-  //   if(load)
-  //     {
-
-  //       let preview=window?.$('#run').css({opacity:"1"})
-  //     }
-  //     else
-  //     {
-  //       setTimeout( MyMessage , 2000 );
-  //     }
-  //  }
-   
-  //  const MyMessage=()=>{
-  //  window?.$("#run").css({opacity:"0"})
-  
-  //  }
   return (
     <>
       <div className="col-xxl-12">

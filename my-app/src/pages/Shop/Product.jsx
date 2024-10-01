@@ -17,8 +17,7 @@ export const Product = ({
   closebtn,
   item,
 }) => {
-  // console.log(  setItems
-  // )
+
 
   //comments
   let url = `http://localhost:313/product_comments`;
@@ -28,7 +27,7 @@ export const Product = ({
   }, []);
   const fetch = async () => {
     await axios.get(url).then((res) => {
-      setProductComment(res.data);
+      setProductComment(res?.data);
     });
   };
   
@@ -41,8 +40,10 @@ export const Product = ({
       newCount = parseInt(comments_count[comment.id_product]) + 1;
     } else {
       newCount = 1;
+
     }
     comments_count[comment.id_product] = newCount;
+
   });
 
   //modal
@@ -67,7 +68,7 @@ export const Product = ({
                     <BtnLike items={item}></BtnLike>
                     <li>
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         title="نمایش سریع"
                         onClick={() => setModal({ show: true, data: item })}
                       >
@@ -234,7 +235,7 @@ export const ProductList = ({ items, setItems }) => {
                       {/* <li><a  onClick={()=>AddToWishlist(item?.id,item?.pic,item?.text,item?.price)} href="#" title="افزودن به علاقه مندی ها"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></a></li> */}
 
                       <li className="me-3">
-                        <a href="#" title="مقایسه کنید">
+                        <a href="javascript:void(0)" title="مقایسه کنید">
                           <FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon>
                         </a>
                       </li>

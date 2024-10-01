@@ -917,8 +917,126 @@
     }
   ],
   "product_comments": [
-
-   
+    {
+      "id": 0,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "1111111111111111",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 1
+    },
+    {
+      "id": 1,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "nnnnnnnnnnnnnnnnnnnnnn",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 2,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "m,,,,,,,,,,,,,,,,,,,,,,",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 3,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "nnnnnnnnnnnnnnnnnnnn",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 4,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "m,,,,,,,,,,,,,,,,,,,,,,",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 5,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "m.m.m.m.m.mmmmmmmmmm",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 6,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "mvvvvvvvvvvvvvvvvvvvv",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 7,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "jxnzzzzzzzzzz",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 8,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "mxxxxxxxxxxxxxxxx",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 0
+    },
+    {
+      "id": 9,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "xjjzjkkcjcj",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 4
+    },
+    {
+      "id": 10,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "kzxxxxxxxxxxxxxxxxx",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 4
+    },
+    {
+      "id": 11,
+      "sender_name": "علی",
+      "sender_email": "li@gmail.com",
+      "comment": "111111111111111111111",
+      "id_product": "2",
+      "date": "۱۴۰۳/۷/۱۰",
+      "id_customer": "li@gmail.com",
+      "rate": 5
+    }
   ],
   "product-category": [
     {
@@ -1098,5 +1216,4 @@
       "id": "1"
     }
   ]
- 
 }
