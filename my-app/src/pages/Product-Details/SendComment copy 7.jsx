@@ -33,10 +33,8 @@ export const SendComment = ({
   setCount,
   count
 }) => {
-  const[Rate,SetRate]=useState()
-  const[Hover,SetHover]=useState()
-  const [preScore, setPreScore] = useState(0)
-  const [information, setInformation] = useState();
+
+    const [information, setInformation] = useState();
     // const [start, setStart] = useState(0);
     const [more, setMore] = useState(5);
     const [t, setT] = useState();
@@ -56,7 +54,7 @@ export const SendComment = ({
     .then((res) => {
       // setMore(more + 5);
       setT(res?.data);
-     
+      console.log('fetching');
       window?.$("#p").css({ display: "inline" });
       // console.log(t,"l")
     });
@@ -88,10 +86,7 @@ const moreComment = (event) => {
   // const[ids,setIds]=useState(commentNumber ? commentNumber : 'no comment!')
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
-//  const[Rate,SetRate]=useState()
 
-  console.log("setQuality")
-  console.log(quality)
   // const[resetStar,setresetStar]=useState(false)
   let loginMessage = "ابتدا باید وارد سایت شوید";
   let eMessage = "error_message";
@@ -132,16 +127,9 @@ const moreComment = (event) => {
   //   event.target.preventDefault()
   //   handleSubmit(onFormSubmit)
   // }
-  const ClassN =(index)=>{
-    let TempClass
-  
-    index < (Hover || Rate) ? TempClass= "actives" : TempClass=""
-    return TempClass
-
-}
-  const onFormSubmit = async (data,ClassN) => {
+  const onFormSubmit = async (data) => {
   setLengthComment(lengthComment+1)
-
+     
     // setInfo(info?.data?.length+1)
     setLoad(true)
     // review-item.classList.add("loading")
@@ -175,21 +163,27 @@ const moreComment = (event) => {
         
         // setProductComment([...ProductComment?.data?.length+response?.data?.length])
         // ProductComment?.data?.length+1
+       
+        // console.log(ProductComment,"ProductCommentProductComment")
+
+      
+
         // setProductComment([response?.data?.length])
         // setInfo(response.data.length)
         if (response?.status == 201) {
            setCount(count+1)
-          
+           
           //  setProductComment((ProductComment.data.length)+1)
-          // setInformation([...information,response.data])            
+          // setInformation([...information,response.data])
+          //  console.log(quality,"quality"
+            
           //  )
           setT([response.data, ...t])
-           SetHover(0)//حذف ستاره های امتیاز 
-           SetRate(0)//حذف امتیاز ستاره ها
-           setPreScore(0)
-          // setQuality()
+          setQuality(0)
+           console.log(quality,setQuality,"setQuality")
           Notif("success", message);
-
+         
+          // setIds(ids+1)
           reset();
           return;
         } else {
@@ -264,17 +258,9 @@ const moreComment = (event) => {
                               <RateSubmit
                                 item={item}
                                 type="lg"
-                                 Rate={Rate}
-                                SetRate={SetRate}
-                                quality={quality}
                                 setQuality={setQuality}
                                 setPrice={setPrice}
-                                setPreScore={setPreScore}
-                                preScore={preScore}
-                                ClassN={(index)=>ClassN(index)}
-                                Hover={Hover}
-                                SetHover={SetHover}
-                              
+                                // resetStar={resetStar}
                               ></RateSubmit>
                               {/* } */}
                             

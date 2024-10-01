@@ -3,6 +3,8 @@ import { CartContext } from "../../../../context/CardContext";
 import { AddToCart } from "../../../Cart/AddToCart";
 import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { ButtonLoader } from "../../../Components/ButtonLoader";
+import { event } from "jquery";
+import { Notif } from "../../../../Utils";
 const ProductAddbtn = (props) => {
   const { cart, setCart } = useContext(CartContext);
   const [check, setCheck] = useState([]);
@@ -76,8 +78,15 @@ const ProductAddbtn = (props) => {
  
         $button.parent().find("input").val(newVal);
       });
-
+      
+   
     }, []);
+  //  const p=(v)=>{
+  //    console.log(
+  //   "lllllllllllllllllllllll",Number(v.target.value)
+  //    )
+  //  }
+    
     //css number
     //حذف div تعداد محصولات
 const changeCss=(event)=>{
@@ -95,7 +104,11 @@ const changeCss=(event)=>{
                 <div className="pro-quan-area d-lg-flex align-items-center">
                   <div className="product-quantity  mb-25">
                     <div className="cart-plus-minus p-relative">
-                      <input type="text" value={value} />
+                      {/* <input type="text" value={value} onKeyUp={(value)=>p(value)} /> */}
+
+                       {/* <input type="text" value={value<=(props.item?.number)?value:value&Notif("error","این تعداد محصول وجود ندارد")} onKeyUp={()=>p()} /> */}
+
+                      <input type="text" value={value<=(props.item?.number)?value:1&Notif("error","این تعداد محصول وجود ندارد")}  onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} />
                     </div>
                   </div>
                 <div className="pro-cart-btn mb-25 me-3">

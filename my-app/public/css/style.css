@@ -5886,7 +5886,9 @@ p.checkout-coupon input[type="text"]:focus {
 .actives {
   color: yellow;
 }
-
+.activess {
+  color: #666;
+}
 .breadcrumb-item + .breadcrumb-item::before {
   float: right;
 }

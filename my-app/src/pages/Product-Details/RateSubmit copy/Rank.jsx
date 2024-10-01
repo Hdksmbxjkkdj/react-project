@@ -1,33 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import { Children, useState } from "react"
-export const Rank =({setQuality,ClassN,Hover,SetHover,Rate,SetRate,setPreScore,preScore})=>{
-    
+export const Rank =({setQuality})=>{
     //ratesubmite
+    const [preScore, setPreScore] = useState(0)
     //ratesubmite
-    // const[Rate,SetRate]=useState()
-    // const[Hover,SetHover]=useState()
+    const[Rate,SetRate]=useState()
+    const[Hover,SetHover]=useState()
     const[Animate,SetAnimate]=useState()
-   
-    // const t =(e)=>{
-    //     e.target.removeC
-    // }
+    const ClassN =(index)=>{
+        let TempClass
+        // Animate === index +1 ? (TempClass= "active animate" ): (TempClass= "active animate" )
+        index < (Hover || Rate) ? TempClass= "actives" : TempClass=""
+        return TempClass
+
+    }
     return<>
-        <ul className="d-flex changss"> 
+        <ul className="d-flex"> 
             {[...Array(5)].map((item,index)=>{
                 return<>
                 <FontAwesomeIcon icon={faStar}
                  key={index}
                   size={25} 
-                //   style={{margin:"1px",color:changColor}}
-                style={{margin:"1px"}}
-
-                 className={ClassN(index)}
+                  style={{margin:"1px"}}
+                   className={ClassN(index)}
                    onClick={() => {
-                   
                     SetRate(index+1)
                     SetAnimate(index+1)
                     setQuality(index+1)
+                    
+                  
                    }}
                    onMouseOver={()=>{SetHover(index+1)
                     setPreScore(index+1)

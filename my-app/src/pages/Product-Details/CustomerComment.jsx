@@ -84,7 +84,7 @@ export const CustomerComment = ({
                 return (
                   <>
                     {/* {" "} */}
-                    <div className="review-item">
+                    <div className="review-item ">
                       <h3 className="review-title">محصول فوق العاده</h3>
                       <div className="review-ratings mb-10">
                         <div className="review-ratings-single d-flex align-items-end">
