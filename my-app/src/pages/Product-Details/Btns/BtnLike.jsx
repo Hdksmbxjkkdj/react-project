@@ -69,7 +69,7 @@ export const BtnLike = ({items})=>{
           ) : (
             <li>
               <a
-                href="#"
+                href="javascript:void(0)"
                 onClick={(event) =>{RemoveWishList(event,items.id,items.text,use.id,setrow,false);setTextColors(textColors==="red"?"#696969":"red")}}
                 style={{color:textColors}}
 

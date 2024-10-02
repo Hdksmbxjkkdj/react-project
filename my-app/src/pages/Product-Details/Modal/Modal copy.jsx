@@ -14,7 +14,8 @@ import { BtnShareBody } from "../Btns/BtnShareBody";
 import { BtnPrint } from "../Btns/BtnPrint";
 import { BtnCompare } from "../Btns/BtnCompare";
 import { Link } from "react-router-dom";
-export const Modal = (props) => {
+export const Modal = ({  setModal, modal, commentNumber ,direction}) => {
+  console.log(commentNumber,"ppopop")
   const [active,setActive] = useState()
 
   const handleImg = (event,i) => {
@@ -29,6 +30,7 @@ export const Modal = (props) => {
 
     preview.attr(
       "src",
+      // window?.$(event.target).parent().parent().parent().find(".product__modal-img img").attr("src")
         window?.$(event.target).parent().find("img").attr("src")
         
     );
@@ -73,7 +75,7 @@ const comment=()=>{
   window.scrollTo({top: document.getElementById('productDesTab').offsetTop - 100, behavior: 'smooth'})
 }
 //scroll
- switch(props.type){
+ switch(type){
   case"direction":
   return (
     <>
@@ -86,17 +88,21 @@ const comment=()=>{
           
           zIndex: "1000",
         }}
-    
+      //   onClick={() =>
+      //     setModal({ show:false})
+      // }
       >
         <div className="container d-flex justify-content-center">
           {/* <div className="row justify-content-center align-items-center"> */}
           <div className="modal-content w-75 moodal">
             <div className="product__modal-wrapper p-relative">
-             
+              {/* <div className="product__modal-close p-absolute">
+                            <button data-bs-dismiss="modal"><i className="fal fa-times"></i></button>
+                        </div> */}
 
               <button
                 className="btn btn-outline-warning"
-                onClick={() => props.setModal({ show: false })}
+                onClick={() => setModal({ show: false })}
               >
                 x
               </button>
@@ -108,23 +114,23 @@ const comment=()=>{
                       style={{ direction: "rtl" }}
                     >
                       <h4>
-                        <a href="javascript:void(0)">{props.modal.data.title}</a>
+                        <a href="javascript:void(0)">{modal.data.title}</a>
                       </h4>
                       <div className="product__modal-des mb-40">
-                        <p>{props.modal.data.des}</p>
+                        <p>{modal.data.des}</p>
                       </div>
                       <div className="product__stock">
                         <span>دسترسی :</span>
-                        <span>{props.modal?.data?.number==0?"نا موجود":"در انبار"}</span>
+                        <span>{modal?.data?.number==0?"نا موجود":"در انبار"}</span>
                       </div>
                       <div className="product__stock sku mb-30">
-                        <span>SKU:{props.modal.data.SKU}</span>
-                        <span>{props.modal.data.text}</span>
+                        <span>SKU:{modal.data.SKU}</span>
+                        <span>{modal.data.text}</span>
                       </div>
                       <div className="product__review d-sm-flex">
                         <div className="rating rating__shop mb-15 ml-35">
                           <Rate
-                            stars={props.modal?.data?.rate}
+                            stars={modal?.data?.rate}
                             type="comment"
                             className="ms-3"
                           />
@@ -132,18 +138,18 @@ const comment=()=>{
                         <div className="product__add-review mb-15">
                           <span>
                             <a  href="javascript:void(0)">
-                              {props.commentNumber == 0
+                              {commentNumber == 0
                                 ? "نظری نیست"
-                                : props.commentNumber + "نظر"}
+                                : commentNumber + "نظر"}
                             </a>
                           </span>
                           <span>
-                            <Link to={`/product/${props.modal?.data?.id}`}  onClick={()=>comment()}>افزودن نظر</Link>
+                            <Link to={`/product/${modal?.data?.id}`}  onClick={()=>comment()}>افزودن نظر</Link>
                           </span>
                         </div>
                       </div>
                       <div className="product__price">
-                        <span>{props.modal.data.price}/000 تومان</span>
+                        <span>{modal.data.price}/000 تومان</span>
                       </div>
                       <div className="product__modal-form mb-30">
                         {/* <form action="#">
@@ -159,7 +165,7 @@ const comment=()=>{
                                 </button> */}
                         <ProductAddbtn
                           type={"modal"}
-                          item={props.modal?.data}
+                          item={modal?.data}
                           className={"t-y-btn"}
                         ></ProductAddbtn>
                         {/* </div>
@@ -179,21 +185,38 @@ const comment=()=>{
     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
   </a>
 </li> */}
-                          <BtnLike items={props.modal?.data}></BtnLike>
+                          <BtnLike items={modal?.data}></BtnLike>
                          
                             {/* <a href="#" title="مقایسه کنید">
                               <FontAwesomeIcon
                                 icon={faSliders}
                               ></FontAwesomeIcon>
                             </a> */}
-                            <BtnCompare item={props.modal?.data}></BtnCompare>
+                            <BtnCompare item={modal?.data}></BtnCompare>
                          
                          
                             <BtnPrint></BtnPrint>
                             <BtnShareBody type={"typeModal"}></BtnShareBody>
-                       
+                          {/* <li>
+                            <a
+                             href="javascript:void(0)"
+                              title="اشتراک گذاری"
+                              onClick={() => {
+                                setModals(true);
+                                close(true);
+                              }}
+                            >
+                              <FontAwesomeIcon
+                                icon={faShareAlt}
+                              ></FontAwesomeIcon>
+                            </a>
+                          </li> */}
                         </ul>
-                       
+                        {/* {modals && (
+                          <BtnShareBody setModal={setModals} modal={modals}>
+                           
+                          </BtnShareBody>
+                        )} */}
                       </div>
                     </div>
                   </div>
@@ -208,7 +231,7 @@ const comment=()=>{
                         >
                           <div className="product__modal-img w-img">
                             <img
-                              src={Config.shop + "" + props.modal.data.pic}
+                              src={Config.shop + "" + modal.data.pic}
                               alt=""
                               className="sali"
                             />
@@ -219,9 +242,9 @@ const comment=()=>{
                         className="nav nav-tabs d-flex flex-nowrap max-vw-25"
                         id="modalTab"
                         role="tablist"
-                        style={{ overflowX: "auto", overflowY: "hidden",direction:"ltr" }}
+                        style={{ overflowX: "auto", overflowY: "hidden" }}
                       >
-                        {props.modal?.data?.gallery.map((item,i) => {
+                        {modal?.data?.gallery.map((item,i) => {
                           return (
                             <>
                               <li className="nav-item" role="presentation">
@@ -267,23 +290,26 @@ const comment=()=>{
             
             zIndex: "1000",
           }}
-      
+        //   onClick={() =>
+        //     setModal({ show:false})
+        // }
         >
-          <div className="container d-flex justify-content-center ">
+          <div className="container d-flex justify-content-center">
             {/* <div className="row justify-content-center align-items-center"> */}
             <div className="modal-content w-75 moodal">
               <div className="product__modal-wrapper p-relative">
-               
+                {/* <div className="product__modal-close p-absolute">
+                              <button data-bs-dismiss="modal"><i className="fal fa-times"></i></button>
+                          </div> */}
   
                 <button
-                  className="btn btn-outline-warning position-absolute"
-                  style={{left:"2rem"}}
-                  onClick={() => props.setModal({ show: false })}
+                  className="btn btn-outline-warning"
+                  onClick={() => setModal({ show: false })}
                 >
                   x
                 </button>
                 <div className="container product__modal-inner">
-                  <div className="row" style={{direction:"rtl!important",textAlign:"right"}}>
+                  <div className="row" style={{direction:"rtl!important"}}>
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                       <div className="product__modal-box">
                         <div className="tab-content" id="modalTabContent">
@@ -295,7 +321,7 @@ const comment=()=>{
                           >
                             <div className="product__modal-img w-img">
                               <img
-                                src={Config.shop + "" + props.modal.data.pic}
+                                src={Config.shop + "" + modal.data.pic}
                                 alt=""
                                 className="sali"
                               />
@@ -306,9 +332,9 @@ const comment=()=>{
                           className="nav nav-tabs d-flex flex-nowrap max-vw-25"
                           id="modalTab"
                           role="tablist"
-                          style={{ overflowX: "auto", overflowY: "hidden",direction:"ltr" }}
+                          style={{ overflowX: "auto", overflowY: "hidden" }}
                         >
-                          {props.modal?.data?.gallery.map((item,i) => {
+                          {modal?.data?.gallery.map((item,i) => {
                             return (
                               <>
                                 <li className="nav-item" role="presentation">
@@ -338,23 +364,23 @@ const comment=()=>{
                         style={{ direction: "rtl" }}
                       >
                         <h4>
-                          <a href="javascript:void(0)">{props.modal.data.title}</a>
+                          <a href="javascript:void(0)">{modal.data.title}</a>
                         </h4>
                         <div className="product__modal-des mb-40">
-                          <p>{props.modal.data.des}</p>
+                          <p>{modal.data.des}</p>
                         </div>
                         <div className="product__stock">
                           <span>دسترسی :</span>
-                          <span>{props.modal?.data?.number==0?"نا موجود":"در انبار"}</span>
+                          <span>{modal?.data?.number==0?"نا موجود":"در انبار"}</span>
                         </div>
                         <div className="product__stock sku mb-30">
-                          <span>SKU:{props.modal.data.SKU}</span>
-                          <span>{props.modal.data.text}</span>
+                          <span>SKU:{modal.data.SKU}</span>
+                          <span>{modal.data.text}</span>
                         </div>
                         <div className="product__review d-sm-flex">
                           <div className="rating rating__shop mb-15 ml-35">
                             <Rate
-                              stars={props.modal?.data?.rate}
+                              stars={modal?.data?.rate}
                               type="comment"
                               className="ms-3"
                             />
@@ -362,18 +388,18 @@ const comment=()=>{
                           <div className="product__add-review mb-15">
                             <span>
                               <a  href="javascript:void(0)">
-                                {props.commentNumber >0
-                                  ? props.commentNumber + "نظر"
-                                  :"نظری نیست" }
+                                {commentNumber == 0
+                                  ? "نظری نیست"
+                                  : commentNumber + "نظر"}
                               </a>
                             </span>
                             <span>
-                              <Link to={`/product/${props.modal?.data?.id}`}  onClick={()=>comment()}>افزودن نظر</Link>
+                              <Link to={`/product/${modal?.data?.id}`}  onClick={()=>comment()}>افزودن نظر</Link>
                             </span>
                           </div>
                         </div>
                         <div className="product__price">
-                          <span>{props.modal.data.price}/000 تومان</span>
+                          <span>{modal.data.price}/000 تومان</span>
                         </div>
                         <div className="product__modal-form mb-30">
                           {/* <form action="#">
@@ -389,7 +415,7 @@ const comment=()=>{
                                   </button> */}
                           <ProductAddbtn
                             type={"modal"}
-                            item={props.modal?.data}
+                            item={modal?.data}
                             className={"t-y-btn"}
                           ></ProductAddbtn>
                           {/* </div>
@@ -409,21 +435,38 @@ const comment=()=>{
       <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
     </a>
   </li> */}
-                            <BtnLike items={props.modal?.data}></BtnLike>
+                            <BtnLike items={modal?.data}></BtnLike>
                            
                               {/* <a href="#" title="مقایسه کنید">
                                 <FontAwesomeIcon
                                   icon={faSliders}
                                 ></FontAwesomeIcon>
                               </a> */}
-                              <BtnCompare item={props.modal?.data}></BtnCompare>
+                              <BtnCompare item={modal?.data}></BtnCompare>
                            
                            
                               <BtnPrint></BtnPrint>
                               <BtnShareBody type={"typeModal"}></BtnShareBody>
-                          
+                            {/* <li>
+                              <a
+                               href="javascript:void(0)"
+                                title="اشتراک گذاری"
+                                onClick={() => {
+                                  setModals(true);
+                                  close(true);
+                                }}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faShareAlt}
+                                ></FontAwesomeIcon>
+                              </a>
+                            </li> */}
                           </ul>
-                        
+                          {/* {modals && (
+                            <BtnShareBody setModal={setModals} modal={modals}>
+                             
+                            </BtnShareBody>
+                          )} */}
                         </div>
                       </div>
                     </div>

@@ -183,6 +183,7 @@ const Option = {
               {/* <div className="col-xl-12"> */}
                 {modal.show && (
                   <Modal
+                    type={"direction"}
                     setModal={setModal}
                     modal={modal}
                     commentNumber={commentNumber}

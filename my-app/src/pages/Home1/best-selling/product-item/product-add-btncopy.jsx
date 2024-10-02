@@ -13,12 +13,13 @@ const ProductAddbtn = (props) => {
   useEffect(() => {
     cart.filter((el) => {
       if (el.id == props?.item?.id) {
+        
         setCheck([...check, props?.item]);
       }
     });
   }, [cart]);
   function handleAddClick(event, props) {
-    console.log(props)
+    // console.log(props)
     setLoading(true);
     AddToCart(
       event,
@@ -144,7 +145,8 @@ const changeCss=(event)=>{
                             <div className="pro-quan-area d-lg-flex align-items-start">
                               <div className="product-quantity  mb-25">
                                 <div className="cart-plus-minus p-relative">
-                                  <input type="text" value="1" />
+                                <input type="text" value={value<=(props.item?.number)?value:"1"&Notif("error","این تعداد محصول وجود ندارد")}  onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} />
+
                                 </div>
                               </div>
                               <div className="pro-cart-btn mb-25">

@@ -39,10 +39,7 @@ export const Product = ({
     if (comments_count[comment.id_product]) {
       newCount = parseInt(comments_count[comment.id_product]) + 1;
     } else {
-      // newCount = 1;     
-       newCount = 1;
-
-
+      newCount = 1;
 
     }
     comments_count[comment.id_product] = newCount;
@@ -57,8 +54,10 @@ export const Product = ({
     
       {
       items?.map((item) => {
-         console.log(comments_count?.[item?.id])
+      
+
         return (
+          
           <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y" key={Math.random()}>
             <div className="product__item white-bg mb-30 k">
               <div className="product__thumb p-relative">
@@ -76,7 +75,8 @@ export const Product = ({
                       >
                         <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
                       </a>
-                     
+                      
+             
                     </li>
                     {modal.show && (
           <Modal
@@ -85,7 +85,7 @@ export const Product = ({
            commentNumber={comments_count?.[item?.id]}
           >
           </Modal>
-        )}           
+        )}
                     <li>
                       <BtnCompare item={item}></BtnCompare>
                     </li>
@@ -105,17 +105,18 @@ export const Product = ({
                 <div className="rating">
                   <Rate stars={item?.rate} type="comment" className="ms-3" />
                 </div>
-               <div class="product__sm-price">
-                  <span  className="price">{item.price}/000 تومان</span>
+                <div class="product__sm-price">
+                  <span className="price">{item.price}/000 تومان</span>
                 </div>
               </div>
-            
-              
+              {/* <div className="product__add-btn">
+                                <button type="button">Add to Cart</button>
+                             </div>  */}
+              {/* <ProductAddbtn item={item}></ProductAddbtn> */}
               {item.number!=0?<ProductAddbtn item={item}></ProductAddbtn>:<div className="d-flex justify-content-center position-absolute w-25" style={{top:"1rem",right:"0"}}><p className="bg-danger text-white rounded w-100 text-center">ناموجود</p></div>}
-           
-
-            </div>
             
+            </div>
+
           </div>
         );
        

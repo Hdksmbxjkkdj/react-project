@@ -72,12 +72,12 @@ export const Btns = ({items})=>{
             <ul>
        <BtnLike items={item}></BtnLike>
               <li> 
-                <a href="#" title="نمایش سریع">
+                <a href="javascript:void(0)" title="نمایش سریع">
                 <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
                 </a> 
               </li>
               <li>
-                <a href="#" title="مقایسه">
+                <a href="javascript:void(0)" title="مقایسه">
                   {/* <i className="fa fa-sliders-h" onClick={()=>alert("هنوز این مورد وجود ندارد !")}></i> */}
                   {/* <FontAwesomeIcon icon={faSlidersH} onClick={()=>alert("هنوز این مورد وجود ندارد !")}></FontAwesomeIcon> */}
                  <FontAwesomeIcon icon={faSlidersH}></FontAwesomeIcon>
