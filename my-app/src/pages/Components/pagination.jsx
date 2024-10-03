@@ -1,14 +1,14 @@
 const Pagination = ({ count }) => {
+  console.log(count.page);
   return (
     <>
       <nav className="mx-5">
         <ul>
           {count?.paginationLength &&
             [...Array(count.paginationLength)].map((item, index) => {
-              console.log(item)
               return (
                 <li >
-                  <a type="button" onClick={() => count.setPage(index+1)} className={(index+1 === count.page)&&'bg-warning'} >
+                  <a type="button" onClick={() => count.setPage(index+1)} className={(index+1 === count.page)?'bg-warning':''} >
                     {index + 1}
                     
                   </a>

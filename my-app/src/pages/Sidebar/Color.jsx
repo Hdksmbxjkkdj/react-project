@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareAlt, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { event } from "jquery";
 export const Color = ({colors,productLength, setItems,handelClick,selected,counts,setSelected,changeIcon,getData}) =>{
-    console.log(selected)
+    // console.log(selected)
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)

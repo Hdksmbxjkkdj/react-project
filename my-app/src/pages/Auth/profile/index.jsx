@@ -6,6 +6,7 @@ import { OrderDetails } from "./OrderDetails";
 import { AddressDetails } from "./AddressDetails";
 import { ProfileDetail } from "./ProfileDetail";
 import { useNavigate } from "react-router-dom";
+import { WishlistDetailes } from "./WishlistDetailes";
 
 export const Profile = () => {
   const navigate = useNavigate()
@@ -42,6 +43,7 @@ export const Profile = () => {
           <ProfileDetails className={(tab!=3)?"d-none":""}>
 			<ProfileDetail/>
 		  </ProfileDetails>
+      <WishlistDetailes className={(tab!=4)?"d-none":""}/>
         </div>
       </div>
       </div>

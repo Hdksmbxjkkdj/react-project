@@ -6,7 +6,7 @@ import { Sidebar } from "./sidebar";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarItem1 } from "./sidebar-item-1";
 const Blog = () => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [items, setItems] = useState();
   const [isLoading,setIsLoading] = useState(false)
   const Limit = 6;

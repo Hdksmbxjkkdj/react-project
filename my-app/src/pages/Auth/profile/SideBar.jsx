@@ -32,7 +32,7 @@ export const SideBar = ({tab,setTab})=>{
         <li onClick={()=>setTab(1)} className={(tab==1)?"item-li d-flex align-items-center is-active":"item-li d-flex align-items-center"}><i className="fa fa-shopping-basket"></i><a href="#">سفارش ها</a></li>
         <li onClick={()=>setTab(2)} className={(tab==2)?"item-li d-flex align-items-center is-active":"item-li d-flex align-items-center"}><i className="fa fa-home"></i><a href="#">آدرس ها</a></li>
         <li onClick={()=>setTab(3)} className={(tab==3)?"item-li d-flex align-items-center is-active":"item-li d-flex align-items-center"}><i className="fa fa-user"></i><a href="#">پروفایل</a></li>
-        <li className="item-li d-flex align-items-center"><i className="fa fa-heart"></i><Link to="/wishlist">علاقه مندی ها</Link></li>
+        <li onClick={()=>setTab(4)} className={(tab==4)?"item-li d-flex align-items-center is-active":"item-li d-flex align-items-center"}><i className="fa fa-heart"></i><a href="#">علاقه مندی ها</a></li>
         <li onClick={LogOut} className={"item-li d-flex align-items-center"}><i className="fa fa-door-closed"></i><a href="#">خروج</a></li>
     </ul>
 

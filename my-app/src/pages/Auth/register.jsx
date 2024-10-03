@@ -3,6 +3,7 @@ import {Notif} from "../../Utils/Notif";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
+  const navigate = useNavigate()
   const [register,setregister] = useState({
     username:"",
     emailAddres:"",
@@ -23,7 +24,13 @@ const Register = () => {
         status=e.status;
         if(status==201)
         {
-          Notif('success',"ثبت نام با موفقیت انجام شد ، لطفا وارد شوید");
+          // Notif('success',"ثبت نام با موفقیت انجام شد");
+          Notif("success",`${e?.data.username} عزیز خوش آمدید`);
+            const theUser = {'username':e?.data.username,'id':e?.data.id}
+            localStorage.setItem("user", JSON.stringify(theUser));
+            setTimeout(() => {
+              navigate("/");
+            }, 1000);
         }
         else
         {

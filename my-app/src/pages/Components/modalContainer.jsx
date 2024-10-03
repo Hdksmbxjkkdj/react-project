@@ -43,7 +43,7 @@ export const ModalContainer = () => {
                             </Link>
                           </h6>
                           <div className="cart__price">
-                            <span>{item?.unitprice} تومان</span>
+                            <span>{Number(item?.unitprice).toLocaleString()}تومان</span>
                           </div>
                         </div>
                         </div>
@@ -73,7 +73,7 @@ export const ModalContainer = () => {
         </ul>
         <div className="d-flex justify-content-between mt-2 px-2">
           <p>قیمت نهایی : </p>
-          <p>{tot} تومان</p>
+          <p>{Number(tot).toLocaleString()} تومان</p>
         </div>
         <Link to="/checkout" className="t-y-btn t-y-btn-border w-100 mb-10">
           تکمیل فرآیند خرید

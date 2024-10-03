@@ -177,7 +177,7 @@ const Home1 = () => {
                       </div>
                       <div className="product__stock">
                         <span>وضعیت :</span>
-                        <span>{(modal.count!=0)?"موجود در انبار":"ناموجود"}</span>
+                        <span>{modal.count} عدد موجود در انبار</span>
                       </div>
                       <div className="product__stock sku mb-30">
                         <span>عنوان:</span>
