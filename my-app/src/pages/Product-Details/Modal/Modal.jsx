@@ -33,7 +33,6 @@ export const Modal = (props) => {
         
     );
     preview.fadeIn(300);
-    // console.log(window?.$(event.target).parent().find("img").attr("src"))
   };
   //num
   // useEffect(() => {

@@ -13,9 +13,9 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
     return (
         <>
             <div className="col-xxl-5 col-xl-5 col-lg-5 test">
-                <div className="product__details-nav d-sm-flex align-items-start">
+                <div className="product__details-nav d-sm-flex align-items-start response-gallery-parent">
                     <ul
-                        className="nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product"
+                        className="response-gallery nav nav-tabs flex-sm-column justify-content-between d-flex flex-nowrap images-product"
                         style={{ maxHeight: "30rem", overflowY: "auto" }}
                         id="productThumbTab"
                         role="tablist"

@@ -95,7 +95,7 @@ const changeCss=(event)=>{
    window?.$(event.target).parent().parent().find(".cart-plus-minus").css({"display":"none"})
 
 }
-
+console.log(props?.item?.number,"item")
 //حذف div تعداد محصولات
     switch (props.type){
       case 'productDetails': 
@@ -109,7 +109,7 @@ const changeCss=(event)=>{
 
                        {/* <input type="text" value={value<=(props.item?.number)?value:value&Notif("error","این تعداد محصول وجود ندارد")} onKeyUp={()=>p()} /> */}
 
-                      <input type="text" value={value<=(props.item?.number)?value:1&Notif("error","این تعداد محصول وجود ندارد")}  onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} />
+                      <input type="text" value={value <=(props?.item?.number)?value:""&Notif("error","این تعداد محصول وجود ندارد")}  onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} />
                     </div>
                   </div>
                 <div className="pro-cart-btn mb-25 me-3">
