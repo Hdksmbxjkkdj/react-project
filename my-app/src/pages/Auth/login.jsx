@@ -19,7 +19,6 @@ const Login = () => {
             Notif("error", "نام کاربری یا ایمیل تعریف نشده !");
             return;
           } else {
-            console.log(e?.data[0]);
             Notif("success",`${e?.data[0].username} عزیز خوش آمدید`);
             const theUser = {'username':e?.data[0].username,'id':e?.data[0].id}
             localStorage.setItem("user", JSON.stringify(theUser));

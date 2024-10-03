@@ -66,6 +66,7 @@ const Header = () => {
   const use = JSON.parse(user);
   const navigate = useNavigate();
   useEffect(() => {
+    localStorage.setItem("modal",false)
     window?.$(".cart__mini").removeClass("cart__opened");
   }, [navigate]);
       document.getElementById("exampleModal")?.addEventListener("shown.bs.modal",function(){

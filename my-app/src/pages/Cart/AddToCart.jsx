@@ -33,7 +33,10 @@ export const AddToCart = async (
     Notif("warning", "تعداد نمیتواند کمتر از 1 باشد");
     return false;
   }
-  if(count>number) count = number
+  if(count>number) {
+    Notif("error",`از این محصول فقط ${number} عدد موجود است`)
+    return false;
+  }
   let status = 201;
   let message;
   try {
