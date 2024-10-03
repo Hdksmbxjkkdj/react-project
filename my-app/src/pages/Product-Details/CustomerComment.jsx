@@ -24,8 +24,8 @@ export const CustomerComment = ({
   count
 
 }) => {
-  // console.log( moreComment," moreComment")
-  // console.log(ProductComment?.data?.length,"aaaaaaaa")
+ 
+ 
    // const [more, setMore] = useState(5);
   // const [start, setStart] = useState(0);
   // const [t, setT] = useState();

@@ -57,7 +57,6 @@ export const Product = ({
     
       {
       items?.map((item) => {
-         console.log(comments_count?.[item?.id])
         return (
           <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 home" id="#y" key={Math.random()}>
             <div className="product__item white-bg mb-30 k">

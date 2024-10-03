@@ -93,7 +93,7 @@ export const ProducDetails= () =>{
 //   const getData = async () => {
 
 //   let params = new URLSearchParams(window.location.search);
-//    console.log(params)
+
 //  await
 //   axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id&_start=${start}&_end=${start + 5}&${params}`).then((res) => {
 //     setInformation(res);})
