@@ -5,7 +5,6 @@ import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
 const getResultFilter = async (getData, query,setItems, eMessage, local, secendFilterValue) => {
     // let url = '/' + local + '/products/filter' + query
-    // console.log(count?.start,"count?.start")
     // let url=`http://localhost:313/best_selling?_page=${count?.start}&_per_page=${count?.Limit}`+query
          let url='http://localhost:313/best_selling?'+ query
     
@@ -50,7 +49,6 @@ export const Filter = (getData,setItems, length, filterItem, filterValue, eMessa
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
         let oldParam = searchParams.get('color-id');
-        console.log(type,filterItem,oldParam)
         switch (type) {
 
             case 'array':

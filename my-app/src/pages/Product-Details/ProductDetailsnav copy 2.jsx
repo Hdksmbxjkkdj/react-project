@@ -8,49 +8,10 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
         show: false,
         data: null,
         tittle: null,
-        id: null
     });
-    const[c,setC]=useState(0)
-    const[g,setG]=useState
-    ()
-    console.log(c,"ll")
-    const btns=(c, type = 'inc')=>{
-        if (type == 'inc') {
-            if (c < picturs?.length - 1) {
-                c += 1
-            }else{
-                c = 0
-            }
-        }else{
-            if (c > 0) {
-                c -= 1
-            }else{
-                c = picturs?.length - 1
-            }
-        }
-        
-        // setC(c)
-        setModalStatus({data:window?.$(".show-"+(c)).attr("src"), show: true, id: c})
-    
-    //    case"c-1": 
-    //    setC(c-1)
-    //    setModalStatus({data:window?.$(".show-"+(c)).attr("src")})
-      
-    } 
-    // const btnss=(c)=>{
-    //     console.log(c)
-    //     setC(c-1)
-    //     setModalStatus({data:window?.$(".show-"+(c)).attr("src")})
-   
-    // } 
+
     return (
         <>
-        {/* <div >
-            <button onClick={()=>btns(c+1)}>اضافه</button>
-
-            <img src={modalStatus?.data}></img>
-            <button onClick={()=>btnss(c-1)}>حذف</button>
-        </div> */}
             <div className="col-xxl-5 col-xl-5 col-lg-5 test">
                 <div className="product__details-nav d-sm-flex align-items-start response-gallery-parent">
                     <ul
@@ -86,7 +47,7 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                             let index = i + 1;
 
                             return (
-                                <li className="nav-item dere" role="presentation">
+                                <li className="nav-item" role="presentation">
                                     <button
                                         onClick={(event) => {
                                             handleImg(event, index);
@@ -127,7 +88,6 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                                             setModalStatus({
                                                 show: true,
                                                 data: window?.$(event.target).attr("src"),
-                                                id: window?.$(event.target).attr("data-index")
                                             })
                                         }
                                     />
@@ -137,12 +97,6 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                                             key={Math.random()}
                                             setModalStatus={setModalStatus}
                                             modalStatus={modalStatus}
-                                        //    src={modalStatus?.data}
-                                            //  g={g}
-                                            picturs={picturs}
-                                            // setC={setC}
-                                            // c={c}
-                                            btns={btns}
                                         ></ShowProduct>
                                     )}
 
@@ -171,7 +125,6 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
 const handleImg = (event, i) => {
     window?.$(".delete").removeAttr("style");
     window?.$(".show-" + i).css({ border: "2px solid #ffc107" });
-    window?.$(".show-" + i).attr('data-index', i);
 
     let preview = window?.$(".product__details-thumb img");
     preview.fadeOut(100);
