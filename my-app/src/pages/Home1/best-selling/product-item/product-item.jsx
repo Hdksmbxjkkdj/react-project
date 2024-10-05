@@ -1,13 +1,7 @@
-import { Config } from "../../../../Utils";
-import { NotExist } from "../../../Components/NotExist";
 import { ProducDetailsImg } from "../../../Product-Details/ProductDetailsnav";
-import { Rate } from "../../../Product-Details/RateSubmit/Rate";
-import { ProductAction } from "./product-action";
 import { ProductAddbtn } from "./product-add-btn";
 import { ProductContent } from "./product-content";
-import { ProductThumb } from "./product-thumb";
-import { ProductThumbflex } from "./product-thumb";
-import { Link } from "react-router-dom";
+import { ProductThumb, ProductThumbflex } from "./product-thumb";
 const ProductItem = ({ type, slider }) => {
   return (
     <>
@@ -40,3 +34,4 @@ const ProducDetailsImgs = ({ type, slider }) => {
   );
 };
 export { ProducDetailsImgs, ProductItem, ProductItemflex };
+

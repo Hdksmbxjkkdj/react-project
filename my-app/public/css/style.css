@@ -6048,7 +6048,7 @@ p.checkout-coupon input[type="text"]:focus {
   position: absolute;
   left: 60px;
 }
-.loading-animate {
+.send-btn .loading-animate {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -6063,7 +6063,7 @@ p.checkout-coupon input[type="text"]:focus {
   opacity: 0;
   transition: all 0.25s ease;
 }
-.loading-animate:after {
+.send-btn .loading-animate:after {
   content: "";
   width: 44px;
   height: 44px;
@@ -6073,7 +6073,7 @@ p.checkout-coupon input[type="text"]:focus {
   animation: loading infinite 0.8s ease 0.05s;
   position: absolute;
 }
-.loading-animate:before {
+.send-btn .loading-animate:before {
   content: "";
   width: 44px;
   height: 44px;
