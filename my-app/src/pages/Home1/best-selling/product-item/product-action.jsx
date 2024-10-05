@@ -9,6 +9,7 @@ const ProductAction = ({ item }) => {
   const { cart } = useContext(CartContext);
   const { row, setrow } = useContext(CartContext);
   const [checker, setChecker] = useState([]);
+  const [check, setCheck] = useState([]);
   useEffect(() => {
     const user = localStorage.getItem("user");
     const use = JSON.parse(user);
@@ -59,42 +60,46 @@ const ProductAction = ({ item }) => {
     if (localStorage.getItem("compare")==null) {
       localStorage.setItem("compare", []);
     }
-    if(localStorage.getItem("compare").length>6)
-    {
-      Notif("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
-      return
-    }
     compare = localStorage.getItem("compare").split(",");
     if(compare.includes(item.id))
     {
       var u = localStorage.getItem("compare").split(",").filter(el=>el!=item.id)
         localStorage.setItem("compare",u);
+        setCheck(u)
         Notif("success",`${item.title} با موفقیت از لیست مقایسه  پاک  شد`)
         return
     }
+    if(localStorage.getItem("compare").length>6)
+    {
+      Notif("warning","تعداد محصولات نمیتواند بیش تر از 4 تا باشد")
+      return
+    }
     compare = [...compare, item.id];
     localStorage.setItem("compare", compare);
+    setCheck(compare)
     Notif("success",`${item.title} به مقایسه اضافه شد`)
   }
+  useEffect(()=>{
+    setCheck(localStorage.getItem("compare").split(","))
+  },[])
   return (
     <>
       <div className="product__action p-absolute" key={Math.random()}>
         <ul>
           {!checker.includes(item) ? (
-            <li>
+            <li onClick={(event) => {
+              AddToWishlist(
+                event,
+                item.id,
+                item?.pic,
+                item?.text,
+                item?.price,
+                user,
+                setrow
+              );
+            }}>
               <a
                 type="button"
-                onClick={(event) => {
-                  AddToWishlist(
-                    event,
-                    item.id,
-                    item?.pic,
-                    item?.text,
-                    item?.price,
-                    user,
-                    setrow
-                  );
-                }}
                 title="اضافه کردن به علاقه مندی ها"
               >
                 <i
@@ -103,12 +108,12 @@ const ProductAction = ({ item }) => {
               </a>
             </li>
           ) : (
-            <li>
+            <li onClick={(event) =>
+              RemoveWishList(event, item.id, item.text, user, setrow, false)
+            }>
               <a
                 type="button"
-                onClick={(event) =>
-                  RemoveWishList(event, item.id, item.text, user, setrow, false)
-                }
+                
                 title="حذف از علاقه مندی ها"
               >
                 <i className="fa fa-heart text-danger"></i>
@@ -120,9 +125,9 @@ const ProductAction = ({ item }) => {
               <i className="fa fa-search"></i>
             </a>
           </li>
-          <li>
+          <li onClick={(e)=>handleCompare(e)} key={Math.random()}>
             <a type="button" title="Compare">
-              <i className={(false)?"fa fa-check":"fa fa-sliders-h"} onClick={(e)=>handleCompare(e)}></i>
+              <i className={(check.includes(item?.id))?"fa fa-check":"fa fa-sliders-h"}></i>
             </a>
           </li>
         </ul>
