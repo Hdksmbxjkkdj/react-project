@@ -733,6 +733,15 @@
       "date": "۱۴۰۳/۷/۱۲",
       "Pid": "_HoyJS6",
       "id": "RBa8q6Z"
+    },
+    {
+      "id": "d232",
+      "name": "ali",
+      "email": "alavi@jkjd.com",
+      "comment": "jkszxkjxkjxkjksj",
+      "blog_id": "1",
+      "date": "۱۴۰۳/۷/۱۴",
+      "Pid": "DeSYnVF"
     }
   ],
   "aboutus": [
@@ -743,6 +752,10 @@
     {
       "id": "e267",
       "email": "jkhgfd@uy.lk"
+    },
+    {
+      "id": "c82c",
+      "email": "ali@hghg.com"
     }
   ],
   "register": [
@@ -1375,6 +1388,13 @@
       "phone": "09967215683",
       "comment": "من نظری درباره این موضوع ندارم",
       "id": "dUf_OwX"
+    },
+    {
+      "id": "ee24",
+      "name": "aaaa",
+      "sender_email": "al@gmail.com",
+      "phone": "09120000000",
+      "comment": "ffhhhhhhhhhhhhhhhhhh"
     }
   ],
   "address": [
