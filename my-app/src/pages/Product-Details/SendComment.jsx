@@ -217,7 +217,7 @@ const [loadingg,setLoadingg]=useState(false)
                 <div className="col-xxl-4 col-xl-4 col-lg-4" id="send">
                   <div className="review-form">
                     <h3>بررسی شما</h3>
-                    <p>سیب های سلطنتی گالا ارگانیک تایید شده استرالیا</p>
+                    <p>{items?.data?.text}</p>
                     {/* <form onSubmit={(event) => submit(event)}> */}
                     {/* <form onSubmit={handleSubmit(onFormSubmit)}> */}
                     <form onSubmit={handleSubmit(onFormSubmit)} >

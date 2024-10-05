@@ -55,7 +55,7 @@ export const BtnShareBody = (props) => {
         {m && (
          
           <div
-            className="container pe-0 rounded shadow w-25"
+            className="container pe-0 rounded shadow w-25 h"
             style={{ position: "absolute", bottom: "0.5rem", left: "0"}}
           >
             <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center">
@@ -126,7 +126,7 @@ export const BtnShareBody = (props) => {
           {m && (
            
             <div
-              className="container pe-0 rounded shadow w-25"
+              className="container pe-0 rounded shadow w-25 social-media"
               style={{ position: "absolute", top: "0", left: "0" }}
             >
               <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center">
