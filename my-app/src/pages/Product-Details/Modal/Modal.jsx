@@ -77,7 +77,7 @@ const comment=()=>{
   return (
     <>
       <div
-        className="position-fixed w-100 h-100 d-flex align-items-center"
+        className="position-fixed w-100 h-100 d-flex align-items-center modal-type"
         style={{
           top: 0,
           left: 0,

@@ -6641,4 +6641,20 @@ p.checkout-coupon input[type="text"]:focus {
     flex-wrap: nowrap !important;
     
   }
+  .social-media{
+    top:3.5rem  !important;
+    left:3px !important;
+    width:50% !important
+    
+  }
+  .moodal{
+    max-height: 500px;
+    overflow: auto;
+  }
+  /* .modal-type{
+    direction:rtl !important;
+  } */
+   .h{
+     top:1rem
+   }
 }
