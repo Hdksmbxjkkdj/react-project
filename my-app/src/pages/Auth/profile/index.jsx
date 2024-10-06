@@ -24,12 +24,6 @@ export const Profile = () => {
       </div>
       <div className="col">
       <div className="content w-100">
-        <div className="header d-flex item-center bg-white width-100 border-bottom padding-12-30">
-          <div className="header__right d-flex flex-grow-1 item-center">
-            <i className="fa fa-bars"></i>
-            <a className="header__logo" href="https://netcopy.ir"></a>
-          </div>
-        </div>
         <div className="main-content font-size-13">
           <ProfileDetails className={(tab!=0)?"d-none":""}>
 			<DashboardDetails/>

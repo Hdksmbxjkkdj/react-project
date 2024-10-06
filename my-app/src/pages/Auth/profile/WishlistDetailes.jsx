@@ -31,10 +31,10 @@ export const WishlistDetailes = ({className})=> {
                         return <>
                             <tr>
                               <td class="product-thumbnail">
-                                  <p>{index+1}-</p>
+                                  <p>{index+1}</p>
                               </td>
                               <td class="product-thumbnail">
-                                <Link to={"/product-details"+item.Pid}>
+                                <Link to={"/product-details/"+item.Pid}>
                                   <img
                                     src={Config.shop + "" + item.pic}
                                     alt=""
