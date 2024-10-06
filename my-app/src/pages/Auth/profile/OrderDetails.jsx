@@ -11,9 +11,9 @@ export const OrderDetails = () => {
           <th>کد سفارش</th>
           <th>تاریخ ثبت سفارش</th>
           <th>مبلغ کل تومان</th>
-          <th>تعداد مرجوعی</th>
           <th>مرحله سفارش</th>
           <th>هزینه ارسال</th>
+          <th>مشاهده جزییات</th>
         </tr>
         {
           order?.map((item,index)=> {
@@ -22,9 +22,9 @@ export const OrderDetails = () => {
               <td>{item.code}</td>
               <td>{item.date}</td>
               <td>{item.price} تومان</td>
-              <td>{item.unorder} عدد</td>
               <td>{item.stage}</td>
               <td>{item.shipping} تومان</td>
+              <td><button className="btn btn-primary m-3"><i className="fa fa-eye"></i></button></td>
             </tr>
           })
         }

@@ -14,8 +14,7 @@ const Cart = () => {
     for (var i = 0; i < cart.length; i++) {
       tot += cart[i].quantity * cart[i].unitprice;
     }
-    var totally = Math.round(tot) - 1;
-    return totally.toFixed(2);
+    return tot.toFixed(2);
   }
   function handleSubmit(e) {
     e.preventDefault();

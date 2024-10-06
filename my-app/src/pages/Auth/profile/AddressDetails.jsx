@@ -14,6 +14,7 @@ export const AddressDetails = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onFormSubmit = async (data) => {
@@ -29,6 +30,7 @@ export const AddressDetails = () => {
           if (res.status) status = res.status;
           if (status === 201) {
             Notif("success", "آدرس شما با موفقیت ثبت شد");
+            reset()
           } else {
             Notif("خطایی رخ داده است !");
           }

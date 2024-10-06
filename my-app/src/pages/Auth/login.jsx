@@ -16,7 +16,7 @@ const Login = () => {
         .get(`http://localhost:313/register?id=${login.email}`)
         .then((e) => {
           if (e.data[0] == undefined || e?.data[0].pass != login.password) {
-            Notif("error", "نام کاربری یا ایمیل تعریف نشده !");
+            Notif("error", " ایمیل یا کلمه عبور تعریف نشده !");
             return;
           } else {
             Notif("success",`${e?.data[0].username} عزیز خوش آمدید`);
