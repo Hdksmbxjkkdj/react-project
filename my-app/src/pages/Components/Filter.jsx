@@ -4,11 +4,8 @@ import { useEffect,useState } from "react";
 
 import { useParams } from "react-router-dom";
 const getResultFilter = async (getData, query,setItems, eMessage, local, secendFilterValue) => {
-    // let url = '/' + local + '/products/filter' + query
-    // let url=`http://localhost:313/best_selling?_page=${count?.start}&_per_page=${count?.Limit}`+query
          let url='http://localhost:313/best_selling?'+ query
     
-    //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
     let status = null
     try {
         let message;
@@ -45,6 +42,7 @@ const getResultFilter = async (getData, query,setItems, eMessage, local, secendF
 
 
 export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
+    console.log(setItems,"setItems")
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
@@ -104,7 +102,7 @@ export const Filter = (getData,setItems, length, filterItem, filterValue, eMessa
 }
 
 export const removeFilter = (getData, setItems, eMessage, local) => {
-  
+    console.log("258",setItems)
     try {
         window?.history.pushState(null, '', window.location.href.split('?')[0] + '?');
         getResultFilter(getData,'', setItems, eMessage, local)

@@ -44,17 +44,15 @@ export const Products = ({ sidebars }) => {
 
   const getData = async (start) => {
     let params = new URLSearchParams(window.location.search);
-    console.log("params", params);
     await axios
       .get(
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
       )
       .then((response) => {
-        console.log(response);
+       
         setData(response.data);
        
         setItems(response.data.data);
-        // paginationLength = response.data?.pages
         setPaginationLength(response.data.pages);
       });
   };
