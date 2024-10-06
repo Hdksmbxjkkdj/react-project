@@ -1,10 +1,10 @@
-import { useEffect, useReducer, useState } from "react";
-import { Config } from "../../Utils/config";
-import { Comment } from "./commentbox";
 import axios from "axios";
-import { Notif } from "../../Utils/Notif";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Notif } from "../../Utils/Notif";
+import { Config } from "../../Utils/config";
 import { SidebarItem1 } from "../Blog/sidebar-item-1";
+import { Comment } from "./commentbox";
 
 const PostBox = (props) => {
   const send_btn = document.querySelector(".send-btn");
@@ -13,94 +13,80 @@ const PostBox = (props) => {
   const [email, setEmail] = useState();
   const [comment, setCommnet] = useState();
   const [item, setitem] = useState();
-  const [subName, setSubName] = useState();
-  const [subEmail, setSubEmail] = useState();
-  const [subComment, setSubComment] = useState();
   const [PID, setPID] = useState();
-  const [rep, setRep] = useState(false);
-  const [blog,setBlog] = useState()
+  const [blog, setBlog] = useState();
   useEffect(() => {
     axios.get(`http://localhost:313/blog/${props.id}`).then((response) => {
-      setitem(response.data)
-    })
+      setitem(response.data);
+    });
     axios.get(`http://localhost:313/blog?view_gte=2000`).then((response) => {
-      setBlog(response.data)
-    })
+      setBlog(response.data);
+    });
   }, []);
-  function reply(e, id) {
-    document.getElementById("contacts-sub-form").classList.toggle("d-none");
-    document.getElementById("contacts-form").classList.toggle("d-none");
+  function Freply(e, item) {
+    const name = document.getElementById("name");
+    const pos =
+      document.getElementsByClassName("post-comments-form")[0].offsetTop;
     if (!props.rep) {
-      document.getElementById("sub-name").focus();
-      setPID(id);
+      name.focus();
+      console.log();
+      window.scroll({ top: pos - 20, behavior: "smooth" });
+      setPID(item);
     }
   }
   const submit = async (e) => {
     e.preventDefault();
-    if(!localStorage.getItem("user"))
-    {
-      Notif("error","ابتدا وارد سایت شوید")
-      return
+    if (!localStorage.getItem("user")) {
+      Notif("error", "ابتدا وارد سایت شوید");
+      return;
     }
     send_btn.classList.add("loading");
     let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
     let status = 201;
-    await axios
-      .post("http://localhost:313/comments", {
-        name: name,
-        email: email,
-        comment: comment,
-        blog_id: id,
-        date: d,
-      })
-      .then((e) => {
-        status = e.status;
-        setTimeout(function(){
-          send_btn.classList.remove("loading");
-        },1500)
-        if (e.status == 201) {
-          Notif("success", "نظر شما با موفقیت ارسال شد");
-          props.setComment([...props?.comment,e.data])
-        } else {
-          Notif("error", "در اینجا یک خطا وجود دارد !");
-        }
-      });
-  };
-  const subSubmit = async (e) => {
-    e.preventDefault();
-    if(!localStorage.getItem("user"))
-    {
-      Notif("error","ابتدا وارد سایت شوید")
-      return
+    if (PID) {
+      await axios
+        .post("http://localhost:313/subComments", {
+          name: name,
+          email: email,
+          comment: comment,
+          blog_id: id,
+          date: d,
+          Pid: PID.id,
+        })
+        .then((e) => {
+          status = e.status;
+          setTimeout(function () {
+            send_btn.classList.remove("loading");
+          }, 1500);
+          if (e.status == 201) {
+            Notif("success", "پاسخ شما با موفقیت ارسال شد");
+            setPID("")
+          } else {
+            Notif("error", "در اینجا یک خطا وجود دارد !");
+          }
+        });
+    } else {
+      await axios
+        .post("http://localhost:313/comments", {
+          name: name,
+          email: email,
+          comment: comment,
+          blog_id: id,
+          date: d,
+        })
+        .then((e) => {
+          status = e.status;
+          setTimeout(function () {
+            send_btn.classList.remove("loading");
+          }, 1500);
+          if (e.status == 201) {
+            Notif("success", "نظر شما با موفقیت ارسال شد");
+            props.setComment([...props?.comment, e.data]);
+          } else {
+            Notif("error", "در اینجا یک خطا وجود دارد !");
+          }
+        });
     }
-    let d = new Intl.DateTimeFormat("fa-IR").format(Date.now());
-    let status = 201;
-    send_btn.classList.add("loading");
-    await axios
-      .post("http://localhost:313/subComments", {
-        name: subName,
-        email: subEmail,
-        comment: subComment,
-        blog_id: id,
-        date: d,
-        Pid: PID,
-      })
-      .then((e) => {
-        status = e.status;
-        setTimeout(function(){
-          send_btn.classList.remove("loading");
-        },1500)
-        if (e.status == 201) {
-          Notif("success", "پاسخ شما با موفقیت ارسال شد");
-        } else {
-          Notif("error", "در اینجا یک خطا وجود دارد !");
-        }
-      });
-    document.getElementById("contacts-sub-form").classList.add("d-none");
-    document.getElementById("contacts-form").classList.remove("d-none");
-    setSubName("");
-    setSubEmail("");
-    setSubComment("");
   };
   return (
     <>
@@ -116,7 +102,8 @@ const PostBox = (props) => {
                 تاریخ: <span>{item?.date} </span>
               </p>
               <p>
-                بازدید: <span>{Number(item?.view).toLocaleString()} </span> <i className="fa fa-eye"></i>
+                بازدید: <span>{Number(item?.view).toLocaleString()} </span>{" "}
+                <i className="fa fa-eye"></i>
               </p>
             </div>
             <div className="postbox__text">
@@ -136,13 +123,24 @@ const PostBox = (props) => {
                     props?.comment.map((item) => {
                       return (
                         <>
-                          <Comment item={item} setPID={setPID} rep={rep} setRep={setRep} reply={reply}></Comment>
+                          <Comment
+                            item={item}
+                            setPID={setPID}
+                            Freply={Freply}
+                          ></Comment>
                         </>
                       );
                     })}
-                    <li>
-                    {(props.comment?.length>=props.limit)&&<button className="btn shadow-sm" onClick={()=>props.setLimit((props.limit)+5)}>موارد بیشتر ...</button>}
-                    </li>
+                  <li>
+                    {props.comment?.length >= props.limit && (
+                      <button
+                        className="btn shadow-sm"
+                        onClick={() => props.setLimit(props.limit + 5)}
+                      >
+                        موارد بیشتر ...
+                      </button>
+                    )}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -152,13 +150,13 @@ const PostBox = (props) => {
               </div>
               <form
                 id="contacts-form"
-                class="conatct-post-form"
+                className="conatct-post-form"
                 name="contact-form"
                 onSubmit={(event) => submit(event)}
               >
-                <div class="row">
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="contact-icon p-relative contacts-name">
+                <div className="row">
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-icon p-relative contacts-name">
                       <input
                         id="name"
                         name="name"
@@ -169,8 +167,8 @@ const PostBox = (props) => {
                       />
                     </div>
                   </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="contact-icon p-relative contacts-name">
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-icon p-relative contacts-name">
                       <input
                         id="email"
                         name="email"
@@ -181,8 +179,24 @@ const PostBox = (props) => {
                       />
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <div class="contact-icon p-relative contacts-message">
+                  {PID && (
+                    <div className="col-xl-12 mb-3">
+                      <div className="d-flex justify-content-between">
+                        <p style={{ textAlign: "right" }}>
+                          در پاسخ به : <span className="">{PID.name}</span>
+                        </p>{" "}
+                        <button
+                          type="button"
+                          className="btn btn-warning text-light"
+                          onClick={()=>setPID("")}
+                        >
+                          لغو پاسخ
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  <div className="col-xl-12">
+                    <div className="contact-icon p-relative contacts-message">
                       <textarea
                         name="comment"
                         id="comment"
@@ -201,15 +215,15 @@ const PostBox = (props) => {
                   </button>
                 </div>
               </form>
-              <form
+              {/* <form
                 id="contacts-sub-form"
-                class="conatct-post-form d-none"
+                className="conatct-post-form d-none"
                 name="contact-sub-form"
                 onSubmit={(e) => subSubmit(e)}
               >
-                <div class="row">
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="contact-icon p-relative contacts-name">
+                <div className="row">
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-icon p-relative contacts-name">
                       <input
                         id="sub-name"
                         name="sub-name"
@@ -220,8 +234,8 @@ const PostBox = (props) => {
                       />
                     </div>
                   </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="contact-icon p-relative contacts-name">
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-icon p-relative contacts-name">
                       <input
                         id="sub-email"
                         name="sub-email"
@@ -232,8 +246,8 @@ const PostBox = (props) => {
                       />
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <div class="contact-icon p-relative contacts-message">
+                  <div className="col-xl-12">
+                    <div className="contact-icon p-relative contacts-message">
                       <textarea
                         name="sub-comment"
                         id="sub-comment"
@@ -246,19 +260,18 @@ const PostBox = (props) => {
                     </div>
                   </div>
                     <div className="d-flex align-items-center gap-3">
-                    <button className="send-btn" type="submit">
+                    <button className="send-btn loading" type="submit">
                       <i className="fa fa-paper-plane"></i>
                       <span className="text">ارسال پاسخ</span>
                       <span className="loading-animate"></span>
                     </button>
-                    <button className="t-y-btn t-y-btn-grey" type="button" onClick={(e)=>reply(e,item.id)}> بستن پاسخ</button>
                     </div>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
           <div className="col-xxl-4">
-            <SidebarItem1 items={blog} title="محبوب ترین ها"/>
+            <SidebarItem1 items={blog} title="محبوب ترین ها" />
           </div>
         </div>
       </div>
@@ -267,3 +280,4 @@ const PostBox = (props) => {
 };
 
 export { PostBox };
+

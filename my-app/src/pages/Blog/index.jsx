@@ -11,13 +11,11 @@ const Blog = () => {
   const [isLoading,setIsLoading] = useState(false)
   const Limit = 6;
   const params = new URLSearchParams(window.location.search);
-  let resp;
   useEffect(() => {
     setIsLoading(true)
     axios
       .get(`http://localhost:313/blog?${params}&_page=${page}&_limit=${Limit}`)
       .then((response) => {
-        resp = response;
         setItems(response);
         setIsLoading(false)
       });
@@ -39,16 +37,16 @@ const Blog = () => {
   return (
     <>
       <BlogArea items={items?.data} isLoading={isLoading}>
-        <Sidebar setItems={setItems} resp={resp}>
+        <Sidebar setItems={setItems}>
           <SidebarItem
             items={category?.data}
             setItems={setItems}
             start={page}
             setLength={setLength}
           ></SidebarItem>
-          <SidebarItem1 title="موارد اخیر" items={items?.data}></SidebarItem1>
+          <SidebarItem1 title="موارد اخیر" items={length?.data}></SidebarItem1>
         </Sidebar>
-        <Pagination count={{ paginationLength, setPage,Limit,page }}/>
+        {(items?.data.length>=6)&&<Pagination count={{ paginationLength, setPage,Limit,page }}/>}
       </BlogArea>
     </>
   );

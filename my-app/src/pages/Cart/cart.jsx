@@ -70,7 +70,7 @@ const Cart = () => {
                               id="coupon_code"
                               className="input-text"
                               name="coupon_code"
-                              placeholder="Coupon code"
+                              placeholder="کد تخفیف"
                               type="text"
                               value={val}
                               onChange={(e) => setVal(e.target.value)}

@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Config } from "../../Utils/config";
 
-export const ReplyComment = ({ Pid,reply,setReply }) => {
+export const ReplyComment = ({ Pid }) => {
+  const [reply,setReply] = useState()
   useEffect(() => {
     axios
       .get(`http://localhost:313/subComments?Pid=${Pid}`)

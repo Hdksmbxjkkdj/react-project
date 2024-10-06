@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Notif } from "../../Utils/Notif";
 
-export async function setFilter(item, setItems, t) {
+export async function setFilter(item, setItems, t,setLength) {
   const searchParams = new URLSearchParams(window.location.search);
   const oldParam = searchParams.get(t + "_like");
   if (oldParam == item) searchParams.set(t, "");
@@ -14,13 +14,14 @@ export async function setFilter(item, setItems, t) {
   try {
     await axios.get(url).then((response) => {
       setItems(response);
+      setLength(response)
       if (response.status) status = response.status;
       if (status == null) {
         Notif("error", "status خالی میباشد");
       }
     });
   } catch (error) {
-    Notif("error", "ارور یافت شد");
+    console.log("error", "ارور یافت شد");
   }
 }
 
@@ -32,15 +33,14 @@ async function removeAllFilters({setItems}) {
   window.history.pushState(
     null,
     "",
-    window.location.href.split("?")[0] + "?"
+    window.location.href.split("?")[0]
   );
-  const url = window.location.href
   await axios.get("http://localhost:313/blog?_page=1&_limit=6").then((response) => {
     setItems(response);
   });
 }
 
-const SidebarItem = ({ items, setItems }) => {
+const SidebarItem = ({ items, setItems,setLength }) => {
   const params = new URLSearchParams(window.location.search);
   const data = params.get("category_like");
   return (
@@ -61,7 +61,7 @@ const SidebarItem = ({ items, setItems }) => {
                   <li
                     key={item.id}
                     onClick={() =>
-                      setFilter(item.category, setItems, "category")
+                      setFilter(item.category, setItems, "category",setLength)
                     }
                   >
                     <a

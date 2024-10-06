@@ -22,6 +22,7 @@ import { Productpage } from "./pages/Productpage";
 import { Products } from "./pages/Shop";
 import { WishList } from "./pages/WishList/wishlist";
 import { Commparison } from "./pages/comparison/Comparison";
+import { ScrollToTop } from "./pages/Components/ScrollToTop";
 
 function App() {
   window?.$(window).on("load", function () {
@@ -102,6 +103,7 @@ function App() {
       >
         <BrowserRouter>
           <Header></Header>
+          <ScrollToTop/>
           <Routes>
             <Route path="product/:id" element={<ProducDetails />} />
             <Route path="/" element={<Home1 />} />

@@ -97,7 +97,7 @@ const Footer = ()=>{
                                                     <div className="footer__logo">
                                                         {/* <Link to="index.html"><img src="assets/img/shop/product/cart/cart-mini-1.jpg" alt=""/></Link> */}
                                                         {/* <Link to="index.html"><img src="../../img/logo/logo-black.png" alt=""/></Link> */}
-                                                        <Link to="index.html"><img src={Config.logo + "" + "logo-white.png"} alt=""/></Link>
+                                                        <Link to="/"><img src={Config.logo + "" + "logo-white.png"} alt=""/></Link>
                                                     </div>
                                                 </div>
                                                 <div className="footer__widget-content">

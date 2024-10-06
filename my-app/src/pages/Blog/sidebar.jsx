@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { setFilter } from "./sidebar-item";
 
@@ -6,13 +5,11 @@ const Sidebar = (props) => {
   const [search, setSearch] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
-    // axios.get(`http://localhost:313/blog?title_like=${search}`).then((res) => {
-    //   props.setItems(res);
-    //   setSearch("");
-    // });
     setFilter(search,props.setItems,"title")
     setSearch("")
   }
+  var searchParams = new URLSearchParams(window.location.search)
+  searchParams = searchParams.get("title_like")
   return (
     <>
       <div className="sidebar__widget">
@@ -21,7 +18,7 @@ const Sidebar = (props) => {
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                placeholder="Search posts here"
+                placeholder="عبارت مورد نظرتان را جستجو کنید ..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -30,6 +27,7 @@ const Sidebar = (props) => {
               </button>
             </form>
           </div>
+            {(searchParams)&&<p className="mt-2"> جست و جو بر اساس عبارت <span className="text-info fw-bold fs-5">{`${searchParams}`}</span></p>}
         </div>
         {props.children[0]}
         {props.children[1]}
@@ -40,3 +38,4 @@ const Sidebar = (props) => {
 };
 
 export { Sidebar };
+
