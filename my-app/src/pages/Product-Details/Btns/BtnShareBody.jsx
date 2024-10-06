@@ -15,11 +15,7 @@ import { Notif } from "../../../Utils";
 export const BtnShareBody = (props) => {
   const [m, setM] = useState(false);
   const location = useLocation();
-  // const currentUrl = `${window.location.protocol}//${window.location.host}${location.pathname}${location.search}${location.hash}`;
-  //  const Copy=(e=null)=>{
-  //   if(e==null){e=currentUrl}
-  //    navigator.clipboard.writeText(e);
-  //  }
+ 
   {
     /* <Copy></Copy> */
   }
@@ -40,20 +36,14 @@ export const BtnShareBody = (props) => {
    switch(props.type){
     case"typeModal":
     return (
-
       <>
         <li>
-                  <a href="javascript:void(0)" title="اشتراک گذاری" onClick={close}>
+            <a href="javascript:void(0)" title="اشتراک گذاری" onClick={close}>
             <FontAwesomeIcon icon={faShareAlt} >
             </FontAwesomeIcon> 
-  
-           
-  
           </a>
-        
                   </li>
         {m && (
-         
           <div
             className="container pe-0 rounded shadow w-25 h"
             style={{ position: "absolute", bottom: "0.5rem", left: "0"}}
@@ -127,7 +117,7 @@ export const BtnShareBody = (props) => {
            
             <div
               className="container pe-0 rounded shadow w-25 social-media"
-              style={{ position: "absolute", top: "0", left: "0" }}
+              style={{ position: "absolute", top: "0", right: "15rem" }}
             >
               <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center">
               

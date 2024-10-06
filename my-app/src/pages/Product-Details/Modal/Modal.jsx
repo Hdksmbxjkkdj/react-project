@@ -21,7 +21,6 @@ export const Modal = (props) => {
     window?.$(".delete").removeAttr('style')
     window?.$(".show-"+i).css({border:"2px solid #ffc107"})
 
-    // let preview = window?.$(".tab-content img");
      let preview = window?.$(".product__modal-img img");
 
   
@@ -34,32 +33,7 @@ export const Modal = (props) => {
     );
     preview.fadeIn(300);
   };
-  //num
-  // useEffect(() => {
-  //   window
-  //     ?.$(".cart-plus-minus")
-  //     .append(
-  //       '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
-  //     );
-  //   window?.$(".qtybutton").on("click", function () {
-  //     var $button = window?.$(this);
-  //     var oldValue = $button.parent().find("input").val();
-  //     if ($button.text() == "+") {
-  //       var newVal = parseFloat(oldValue) + 1;
-  //     } else {
-  //       // Don't allow decrementing below zero
-  //       if (oldValue > 0) {
-  //         var newVal = parseFloat(oldValue) - 1;
-  //       } else {
-  //         newVal = 0;
-  //       }
-  //     }
-  //     $button.parent().find("input").val(newVal);
-  //   });
-  // }, []);
-  //num
-  //btnshare
-  // const currentPageUrl = "tutorend.com";
+ 
   const [modals, setModals] = useState(false);
   const close = () => {
     setModals(!modals);
@@ -145,46 +119,19 @@ const comment=()=>{
                         <span>{props.modal.data.price}/000 تومان</span>
                       </div>
                       <div className="product__modal-form mb-30">
-                        {/* <form action="#">
-                            <div className="pro-quan-area d-lg-flex align-items-start">
-                              <div className="product-quantity  mb-25">
-                                <div className="cart-plus-minus p-relative">
-                                  <input type="text" value="1" />
-                                </div>
-                              </div>
-                              <div className="pro-cart-btn mb-25"> */}
-                        {/* <button className="t-y-btn fs-6 "  style={{fontWeight:"100"}} type="submit">
-                                  افزودن به کارت
-                                </button> */}
+                        
                         <ProductAddbtn
                           type={"modal"}
                           item={props.modal?.data}
                           className={"t-y-btn"}
                         ></ProductAddbtn>
-                        {/* </div>
-                            </div>
-                          </form> */}
+                       
                       </div>
                       <div className="product__modal-links">
                         <ul>
-                          {/* <li>
-  <a href="#" title="افزودن به علاقه مندی ها">
-    <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-  </a>
-</li> */}
-                          {/* <AddToWishlist item={item}></AddToWishlist> */}
-                          {/* <li>
-  <a href="#"  title="علاقه مندی ها">
-    <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-  </a>
-</li> */}
+
                           <BtnLike items={props.modal?.data}></BtnLike>
-                         
-                            {/* <a href="#" title="مقایسه کنید">
-                              <FontAwesomeIcon
-                                icon={faSliders}
-                              ></FontAwesomeIcon>
-                            </a> */}
+                       
                             <BtnCompare item={props.modal?.data}></BtnCompare>
                          
                          

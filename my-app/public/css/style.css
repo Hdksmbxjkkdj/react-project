@@ -6621,11 +6621,24 @@ p.checkout-coupon input[type="text"]:focus {
   top:15rem;
   display:none
 }
+.loading-map {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid black;
+  border-bottom-color: turquoise;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  bottom:10%;
+  left:50%;
+  
+}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
-  100% {transform: rotate(360deg);}
+  100% {transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 575px) {

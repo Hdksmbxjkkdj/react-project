@@ -2,7 +2,8 @@ import {Config} from '../../Utils'
 import {Local} from "../../Utils";
 import { Filter} from "../Components/FilterSizing";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
+import { Test } from '../Shop/Test';
 export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count, getData})=> {
     const eMessage="errore_message"
     const local=Local()
@@ -11,12 +12,13 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
         SideOffcanvasToggle('.filter-toggle','product__widget')
      
     })
+   
     return <>
        <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion2">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
+                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse"  onClick={(event)=>{handelClick(event,3)}} data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
                            سایز
                            <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,3);changeIcon(event)}}></i> 
 
@@ -37,7 +39,9 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                      }
                                      return<>
 
-                                     <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
+                                    <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
+
+                                     {/* <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local);setModal({show:!modal.show,data:childItem.id})}}> */}
                                         <a href="javascript:void(0)"
  
                                          >
@@ -49,12 +53,15 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                      })
                      
                                      }
+                                      
                                                                                                       
                                      </ul>
                                  </div>
                              </div>
                          </div>
+                       
                           </div>
+                  
                     ): null}
 
 
@@ -64,7 +71,15 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                 </div>
             </div>
         </div>
-        
+        {/* {modal.show && (
+                            <Test
+                              
+                                setModal={setModal}
+                                modal={modal}
+                        
+            
+                            ></Test>
+                        )} */}
         <div className="product__widget-item mb-45">
             <div className="banner__item mb-20 w-img">
                 <a href="product-details.html">

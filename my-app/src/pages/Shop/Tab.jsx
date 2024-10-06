@@ -7,7 +7,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { Product, ProductList } from "./Product";
+import {Test} from "./Test"
 export const Tab = ({ items, setItems, productLength, length, all, count,getData }) => {
+  console.log(setItems,"ta")
   //tab
   const [toggleState, setToggleStata] = useState(2);
 
@@ -43,12 +45,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
                       ></FontAwesomeIcon>
                     </button>
                   </li>
-                  {/* <li className="nav-item" role="presentation">
-                                                            <button className={toggleState ===2 ? "nav-link" : "nav-link active"} id="FiveCol-tab" data-bs-toggle="tab" 
-                                                            data-bs-target="#FiveCol" type="button" role="tab" aria-controls="FiveCol" aria-selected="false" onClick={() => toggleTab(2)}>
-                                                            <FontAwesomeIcon icon={faTh} className="fal fa-th"></FontAwesomeIcon>
-                                                              </button>
-                                                        </li> */}
+                
                   <li className="nav-item" role="presentation">
                     <button
                       className={
@@ -73,13 +70,19 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
               </div>
               <div className="product__result pl-60">
                 {/* <p>Showing 1-20 of 29 relults</p> */}
+                
                 <p className="me-4">
                   نتیجه نمایش {items?.length}محصول از {length?.data?.length}{" "}
                 </p>
               </div>
+              
+
+             
             </div>
+           
           </div>
-          <Select setItems={setItems} items={items} getData={getData}></Select>
+          <Test getData={getData} setItems={setItems}></Test>
+          {/* <Select setItems={setItems} items={items} getData={getData}></Select> */}
         </div>
       </div>
       <div className="tab-content" id="productGridTabContent">
@@ -91,6 +94,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
           role="tabpanel"
           aria-labelledby="FourCol-tab"
         >
+          
           <div className="row" style={{ minHeight: "680px" }}>
             {
               //    length> 0 ? (
