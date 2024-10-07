@@ -124,11 +124,11 @@ export const Test = ({setItems,getData,productLength}) => {
   return <>
 
 
-    <div
+    {/* <div
       className="container pe-0 rounded w-50 " id="socialMedia"
  
-    >
-      <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center">
+    > */}
+      {/* <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center"> */}
 {/* 
         <div
           className="ps-0 d-flex align-items-center"
@@ -147,7 +147,7 @@ export const Test = ({setItems,getData,productLength}) => {
                           >
                     x
                   </button>
-                  {/* {item.persianName}: */}
+                 
                   {item.value }
                 </li>
               </>
@@ -155,8 +155,8 @@ export const Test = ({setItems,getData,productLength}) => {
           }
         </ul>
 
-      </div>
-    </div>
+      {/* </div>
+    </div> */}
 
 
 
