@@ -151,7 +151,7 @@ const Header = () => {
                         {cart.length > 0 ? (
                           <ModalContainer />
                         ) : (
-                          <div className="text-center"><img src="./img/images/cart-empty.png" className="w-50" alt="" />
+                          <div className="text-center"><img src="/img/images/cart-empty.png" className="w-50" alt="" />
                             <p className="text-danger">
                               سبد خرید شما خالی می باشد
                             </p>

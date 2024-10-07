@@ -61,6 +61,9 @@ const PostBox = (props) => {
           if (e.status == 201) {
             Notif("success", "پاسخ شما با موفقیت ارسال شد");
             setPID("")
+            setName("")
+            setEmail("")
+            setCommnet("")
           } else {
             Notif("error", "در اینجا یک خطا وجود دارد !");
           }
@@ -162,6 +165,7 @@ const PostBox = (props) => {
                         name="name"
                         type="text"
                         placeholder="نام"
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                       />
@@ -174,6 +178,7 @@ const PostBox = (props) => {
                         name="email"
                         type="email"
                         placeholder="ایمیل"
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                       />
@@ -203,6 +208,7 @@ const PostBox = (props) => {
                         cols="30"
                         rows="10"
                         placeholder="نظر"
+                        value={comment}
                         onChange={(e) => setCommnet(e.target.value)}
                         required
                       ></textarea>
@@ -215,59 +221,6 @@ const PostBox = (props) => {
                   </button>
                 </div>
               </form>
-              {/* <form
-                id="contacts-sub-form"
-                className="conatct-post-form d-none"
-                name="contact-sub-form"
-                onSubmit={(e) => subSubmit(e)}
-              >
-                <div className="row">
-                  <div className="col-xl-6 col-lg-6 col-md-6">
-                    <div className="contact-icon p-relative contacts-name">
-                      <input
-                        id="sub-name"
-                        name="sub-name"
-                        type="text"
-                        placeholder="نام"
-                        onChange={(e) => setSubName(e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="col-xl-6 col-lg-6 col-md-6">
-                    <div className="contact-icon p-relative contacts-name">
-                      <input
-                        id="sub-email"
-                        name="sub-email"
-                        type="email"
-                        placeholder="ایمیل"
-                        onChange={(e) => setSubEmail(e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="col-xl-12">
-                    <div className="contact-icon p-relative contacts-message">
-                      <textarea
-                        name="sub-comment"
-                        id="sub-comment"
-                        cols="30"
-                        rows="10"
-                        placeholder="نظر"
-                        onChange={(e) => setSubComment(e.target.value)}
-                        required
-                      ></textarea>
-                    </div>
-                  </div>
-                    <div className="d-flex align-items-center gap-3">
-                    <button className="send-btn loading" type="submit">
-                      <i className="fa fa-paper-plane"></i>
-                      <span className="text">ارسال پاسخ</span>
-                      <span className="loading-animate"></span>
-                    </button>
-                    </div>
-                </div>
-              </form> */}
             </div>
           </div>
           <div className="col-xxl-4">
