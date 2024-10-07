@@ -61,6 +61,9 @@ const PostBox = (props) => {
           if (e.status == 201) {
             Notif("success", "پاسخ شما با موفقیت ارسال شد");
             setPID("")
+            setName("")
+            setEmail("")
+            setCommnet("")
           } else {
             Notif("error", "در اینجا یک خطا وجود دارد !");
           }
@@ -162,6 +165,7 @@ const PostBox = (props) => {
                         name="name"
                         type="text"
                         placeholder="نام"
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                       />
@@ -174,6 +178,7 @@ const PostBox = (props) => {
                         name="email"
                         type="email"
                         placeholder="ایمیل"
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                       />
@@ -203,6 +208,7 @@ const PostBox = (props) => {
                         cols="30"
                         rows="10"
                         placeholder="نظر"
+                        value={comment}
                         onChange={(e) => setCommnet(e.target.value)}
                         required
                       ></textarea>

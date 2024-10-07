@@ -37,17 +37,6 @@ const Checkout = () => {
   }
   let date = new Date();
   date = Intl.DateTimeFormat("fa-IR").format(date);
-  // function SubmitOrder(e) {
-  //   e.preventDefault();
-  //   axios.post(`http://localhost:313/order`,{code:Math.ceil(Math.random()*100000000),Uid:user.id,date:date,price:total(),stage:"ثبت سفارش",shipping:shipping,address:address}).then((response)=>{
-  //     console.log(response.data);
-  //     setOrder([...order,response.data])
-  //     cart.map(item=>{
-  //       axios.delete(`http://localhost:313/row/${item.id}`)
-  //     })
-  //       setCart([])
-  //     })
-  // }
   const options = {
     family: {
       required: "نام خانوادگی نمیتواند خالی بماند",
@@ -79,7 +68,8 @@ const Checkout = () => {
       date: date,
       price: total(),
       stage: "ثبت سفارش",
-      shipping: shipping
+      shipping: shipping,
+      cart:cart
     };
     axios
       .post(`http://localhost:313/order`, data)
