@@ -56,6 +56,7 @@ export const Products = ({ sidebars }) => {
         setPaginationLength(response.data.pages);
       });
   };
+  console.log(data,"data")
   useEffect(() => {
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setLength(response);
@@ -125,6 +126,7 @@ export const Products = ({ sidebars }) => {
                     all={data?.page}
                     count={{ Limit, start }}
                     getData={(start) => getData(start)}
+                    data={data}
 
                   ></Tab>
                   <div class="row">

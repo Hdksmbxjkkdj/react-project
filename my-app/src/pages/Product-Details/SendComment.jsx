@@ -96,6 +96,7 @@ const moreComment = (event) => {
   user = JSON.parse(user);
   
   const schema = yup.object().shape({
+   
     comment: yup
       .string()
       .min(10, "تعداد کاراکتر ها نباید کمتر از 10 باشد")
@@ -138,6 +139,12 @@ const [loadingg,setLoadingg]=useState(false)
 // }
 //loading
   const onFormSubmit = async (data,ClassN) => {
+    console.log(user,"llllllllllllllll")
+    if (user==null){
+      Notif("error", "ابتدا وارد سایت شوید")
+      return
+    }
+       
   setLengthComment(lengthComment+1)
   window?.$(".loading").css({display:"inline-block"})
     
@@ -282,7 +289,7 @@ const [loadingg,setLoadingg]=useState(false)
                             {...register("name")}
                           />
                           {errors?.name && (
-                            <p className="text-danger text-end mb-3">
+                            <p className="text-danger text-end mb-5">
                               {errors.name?.message}
                             </p>
                           )}
@@ -305,7 +312,7 @@ const [loadingg,setLoadingg]=useState(false)
                             {...register("email")}
                           />
                           {errors?.email && (
-                            <p className="text-danger text-end mb-3">
+                            <p className="text-danger text-end mb-5">
                               {errors.email?.message}
                             </p>
                           )}
@@ -328,7 +335,7 @@ const [loadingg,setLoadingg]=useState(false)
                             {...register("comment")}
                           />
                           {errors?.comment && (
-                            <p className="text-danger text-end mb-3">
+                            <p className="text-danger text-end mb-5">
                               {errors.comment?.message}
                             </p>
                           )}
