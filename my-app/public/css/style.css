@@ -2139,7 +2139,7 @@ p {
   padding: 0 !important;
 }
 
-.single-slider a{
+.single-slider a {
   height: 100% !important;
   margin-bottom: 0 !important;
 }
@@ -2150,8 +2150,7 @@ p {
   border-radius: 10px;
 }
 
-.owl-dots
-{
+.owl-dots {
   position: absolute;
   right: 50%;
 }
@@ -2460,12 +2459,11 @@ p {
   display: inline-block;
 }
 
-.product__content .product-item-link
-{
+.product__content .product-item-link {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  padding: 0 .5rem !important;
+  padding: 0 0.5rem !important;
 }
 .product__content span.new {
   color: #fcb700;
@@ -2956,9 +2954,6 @@ p {
   height: 2px;
   width: 50px;
   background: #fcb700;
-
-
-
 }
 .product__widget-item .accordion-button::after {
   background-image: none;
@@ -2986,17 +2981,14 @@ p {
  {
   transform: rotate(50deg);
  } */
- 
 
 .product__widget-item .accordion-button.collapsed:after {
-
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .product__widget-item .accordion-button:not(.collapsed) {
   background: #ffffff;
-  
 }
 .product__widget-item .accordion-item {
   border: none;
@@ -5234,10 +5226,6 @@ p.checkout-coupon input[type="text"]:focus {
     margin-left: 0;
   }
 }
-.video__content iframe {
-  width: 100%;
-  height: 500px;
-}
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .video__text {
     padding-right: 50px;
@@ -6455,11 +6443,10 @@ p.checkout-coupon input[type="text"]:focus {
   color: #fcb700;
 }
 
-.not-exist
-{
-  padding: .5rem 1rem;
+.not-exist {
+  padding: 0.5rem 1rem;
   background-color: #ff6f00;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #fff;
   position: absolute;
   top: 0;
@@ -6469,10 +6456,10 @@ p.checkout-coupon input[type="text"]:focus {
 .new-message-box {
   margin: 15px 0;
   padding-left: 10px;
-  margin-bottom: 25px!important;
+  margin-bottom: 25px !important;
 }
 
-.new-message-box p{
+.new-message-box p {
   font-size: 1.15em;
   font-weight: 600;
 }
@@ -6493,7 +6480,7 @@ p.checkout-coupon input[type="text"]:focus {
 .info-tab i::before {
   width: 24px;
   height: 24px;
-  box-shadow: inset 12px 0 13px rgba(0,0,0,0.5);
+  box-shadow: inset 12px 0 13px rgba(0, 0, 0, 0.5);
 }
 
 .info-tab i::after {
@@ -6505,7 +6492,8 @@ p.checkout-coupon input[type="text"]:focus {
   bottom: -18px;
 }
 
-.info-tab i::before, .info-tab i::after {
+.info-tab i::before,
+.info-tab i::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -6514,7 +6502,13 @@ p.checkout-coupon input[type="text"]:focus {
   transform: rotateX(60deg);
 }
 
-.note-box, .warning-box, .tip-box-success, .tip-box-danger, .tip-box-warning, .tip-box-info, .tip-box-alert {
+.note-box,
+.warning-box,
+.tip-box-success,
+.tip-box-danger,
+.tip-box-warning,
+.tip-box-info,
+.tip-box-alert {
   padding: 12px 8px 3px 26px;
 }
 .new-message-box-alert {
@@ -6529,7 +6523,7 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .tip-icon-alert {
-  background: #ff6f00; 
+  background: #ff6f00;
 }
 
 .tip-icon-alert::before {
@@ -6545,12 +6539,12 @@ p.checkout-coupon input[type="text"]:focus {
 .tip-icon-alert i::before {
   background: #ff6f00;
 }
-#more{
+#more {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  .pro-cart-btn{
-    margin-right: 0 !important
+  .pro-cart-btn {
+    margin-right: 0 !important;
   }
 }
 
@@ -6561,7 +6555,6 @@ p.checkout-coupon input[type="text"]:focus {
 .edit span:hover {
   font-size: larger;
 }
-
 
 .my-button {
   padding: 10px 20px;
@@ -6580,12 +6573,17 @@ p.checkout-coupon input[type="text"]:focus {
   cursor: wait;
 }
 
-@media only screen and (max-width:400px) {
+@media only screen and (max-width: 400px) {
   .content.w-100,
   .content.w-100 .main-content,
-  .content.w-100 .main-content .table__box li  
-  .content.w-100 .main-content .user-info {
-    padding: .2rem !important;
+  .content.w-100
+    .main-content
+    .table__box
+    li
+    .content.w-100
+    .main-content
+    .user-info {
+    padding: 0.2rem !important;
   }
   .content.w-100 .main-content .table__box .w-75 {
     width: 100% !important;
@@ -6609,8 +6607,8 @@ p.checkout-coupon input[type="text"]:focus {
   border-bottom-color: turquoise;
   animation: rotation 1s linear infinite;
   position: absolute;
-  top:15rem;
-  display:none
+  top: 15rem;
+  display: none;
 }
 .loading-map {
   width: 30px;
@@ -6620,20 +6618,20 @@ p.checkout-coupon input[type="text"]:focus {
   border-bottom-color: turquoise;
   animation: rotation 1s linear infinite;
   position: absolute;
-  bottom:10%;
-  left:50%;
-  
+  bottom: 10%;
+  left: 50%;
 }
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
-  100% {transform: rotate(360deg);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 @media (max-width: 575px) {
-  .response-gallery-parent{
+  .response-gallery-parent {
     display: flex;
     flex-wrap: wrap;
   }
@@ -6643,24 +6641,22 @@ p.checkout-coupon input[type="text"]:focus {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap !important;
-    
   }
-  .social-media{
-    top:3.5rem  !important;
-    left:3px !important;
-    width:50% !important
-    
+  .social-media {
+    top: 3.5rem !important;
+    left: 3px !important;
+    width: 50% !important;
   }
-  .moodal{
+  .moodal {
     max-height: 500px;
     overflow: auto;
   }
   /* .modal-type{
     direction:rtl !important;
   } */
-   .h{
-     top:1rem
-   }
+  .h {
+    top: 1rem;
+  }
 }
 
 .my-modal-overlay {
@@ -6689,11 +6685,11 @@ p.checkout-coupon input[type="text"]:focus {
   animation-name: my-modal;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
-  animation-timing-function:ease;
+  animation-timing-function: ease;
   animation-iteration-count: 1;
 }
 
-.my-modal-overlay .my-modal div{
+.my-modal-overlay .my-modal div {
   width: 100%;
   overflow-x: auto;
 }
@@ -6721,4 +6717,20 @@ p.checkout-coupon input[type="text"]:focus {
   border: 1px solid #e6e6e6;
   padding: 0 15px;
   margin-bottom: 15px;
+}
+.h_iframe-aparat_embed_frame {
+  /* height: fit-content; */
+  position: relative;
+}
+.h_iframe-aparat_embed_frame .ratio {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.h_iframe-aparat_embed_frame iframe {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 72rem;
 }

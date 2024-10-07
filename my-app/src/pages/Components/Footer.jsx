@@ -114,7 +114,7 @@ const Footer = ()=>{
                                                         <ul>
                                                             <li>
                                                                 <span>آدرس:  
-                                                                        <Link target="_blank" to="https://maps.app.goo.gl/UucCBf6pxScN5qS77">قم ، میدان رسالت ، خیابان بسیج ، بسیج 1 ، پلاک  **</Link>
+                                                                        <Link target="_blank" to="https://maps.app.goo.gl/3msbwFwCej3oiY6MA">قم ، میدان رسالت ، خیابان بسیج ، بسیج 1 ، پلاک  **</Link>
                                                                     </span>
                                                             </li>
                                                             <li><span>ایمیل: <Link to="/cdn-cgi/l/email-protection#e881868e87a89c808d8a9d8d9b8391c68b8785"><span className="__cf_email__" data-cfemail="e28b8c848da2968a8780978791899bcc818d8f">[info@gmail.com]</span></Link>

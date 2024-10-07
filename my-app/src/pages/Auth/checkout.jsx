@@ -19,8 +19,8 @@ const Checkout = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: user.username,
-      email: user.id,
+      name: user?.username,
+      email: user?.id,
     },
   });
   useEffect(() => {

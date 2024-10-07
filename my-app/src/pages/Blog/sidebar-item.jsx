@@ -14,7 +14,6 @@ export async function setFilter(item, setItems, t,setLength) {
   try {
     await axios.get(url).then((response) => {
       setItems(response);
-      setLength(response)
       if (response.status) status = response.status;
       if (status == null) {
         Notif("error", "status خالی میباشد");

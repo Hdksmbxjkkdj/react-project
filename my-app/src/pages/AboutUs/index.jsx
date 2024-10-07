@@ -9,7 +9,7 @@ import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, EmailShar
 const AboutUs = () => {
   const video = [
     {
-      src: "https://www.youtube.com/embed/ZuzZXT3A1aQ",
+      src: "https://www.aparat.com/v/agw14q3",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit tellus et nisi ultrices, eu feugiat sapien com modo. Praesent vitae ipsum et risus tempus tincidunt in tincidunt justo. Nunc consectetur non sapien id faucibus. Curabitur id nibh eu felis pellentesque pellentesque quis vel nulla. Vivamus a lacinia sem. Integer in enim sapien. Aenean vitae hendrerit nisi, ut suscipit justo. Duis hendrerit scelerisque dui. Donec ornare massa vitae neque lobor tis rutrum.",
       video_title: "YouTube video player",
     },
@@ -105,12 +105,13 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="video__content">
-                <iframe
+                {/* <iframe
                   src={about?.data[0].video[0].src}
                   title={about?.data[0].video[0].video_title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
-                ></iframe>
+                ></iframe> */}
+                <div className="h_iframe-aparat_embed_frame"><iframe src="https://www.aparat.com/video/video/embed/videohash/agw14q3/vt/frame?titleShow=true&startTime=0" allow="autoplay" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
               </div>
             </div>
           </div>
