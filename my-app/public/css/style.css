@@ -3327,16 +3327,7 @@ p {
     width: 65%;
   }
 }
-.product__details-review .review-input input,
-.product__details-review .review-input textarea {
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  padding: 0 15px;
-  margin-bottom: 30px;
-}
+
 .product__details-review .review-input textarea {
   line-height: 1.1;
   padding: 15px;
@@ -6719,4 +6710,15 @@ p.checkout-coupon input[type="text"]:focus {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.product__details-review .review-input input,
+.product__details-review .review-input textarea 
+{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  padding: 0 15px;
+  margin-bottom: 15px;
 }

@@ -4,15 +4,33 @@ import { Filter} from "../Components/FilterSizing";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect,useState } from 'react';
 import { Test } from '../Shop/Test';
+import { cleanData } from 'jquery';
 export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count, getData})=> {
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)
     useEffect(()=>{
         SideOffcanvasToggle('.filter-toggle','product__widget')
-     
+      
     })
+    // const changeCss=(e,childItem)=>{
+    //     console.log(childItem,"childItem.id")
+    //     if (searchParam?.get("Size-Id")?.indexOf(childItem)>-1){
+    //        window?.$(e.target).css({backgroundColor:"red"})
+    //      }
+    //     else {
+    //         window?.$(e.target).css({backgroundColor:"#fcb700"})
+    //       }
+    // }
+       
    
+    //   if(window?.$(e.target).hasClass("changeCss"))
+    //     window?.$(e.target).removeClass()
+    // else if(window?.$(e.target).hasClass("fas fa-angle-up"))
+    //     window?.$(e.target).removeClass().addClass("fas fa-angle-down")
+    // }
+    // const[bg,setBg]=useState("white")
+
     return <>
        <div className="product__widget-item mb-15">
             <div className="accordion" id="productWidgetAccordion2">
@@ -34,12 +52,20 @@ export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIc
                                      size?.data?.map((childItem,index) => {
                                      let filterItem=false;
                                      if (searchParam?.get("Size-Id")?.indexOf(childItem.id)>-1){
+                                         
+
+
+
+                                     
+                                      
                                         count = true
                                          filterItem=true
+                                         
                                      }
                                      return<>
 
-                                    <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local)}}>
+                                    {/* <li onClick={(e) => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local);setBg((bg=="white"?"#fcb700":"white"))}} style={{backgroundColor:bg}} id="size"> */}
+                                    <li  onClick={(e) => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local)}} >
 
                                      {/* <li onClick={() => {Filter(getData,setItems,productLength,'Size-Id',childItem.id,eMessage,local);setModal({show:!modal.show,data:childItem.id})}}> */}
                                         <a href="javascript:void(0)"

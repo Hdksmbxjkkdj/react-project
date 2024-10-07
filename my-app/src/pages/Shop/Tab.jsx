@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Product, ProductList } from "./Product";
 import {Test} from "./Test"
-export const Tab = ({ items, setItems, productLength, length, all, count,getData }) => {
+export const Tab = ({ items, setItems, productLength, length, all, count,getData,data }) => {
   console.log(setItems,"ta")
   //tab
   const [toggleState, setToggleStata] = useState(2);
@@ -81,7 +81,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
             </div>
            
           </div>
-          <Test getData={getData} setItems={setItems}></Test>
+          <Test getData={getData} setItems={setItems} productLength={productLength}></Test>
           {/* <Select setItems={setItems} items={items} getData={getData}></Select> */}
         </div>
       </div>

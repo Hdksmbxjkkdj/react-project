@@ -35,18 +35,12 @@ const getResultFilter = async (getData, query,setItems, eMessage, local, secendF
  }
    
 }
-
-
-
- 
-
-
 export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
     console.log(setItems,"setItems")
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
         var searchParams = new URLSearchParams(window.location.search)
-        let oldParam = searchParams.get('color-id');
+        let oldParam = searchParams.get(filterItem);
         switch (type) {
 
             case 'array':
@@ -102,7 +96,7 @@ export const Filter = (getData,setItems, length, filterItem, filterValue, eMessa
 }
 
 export const removeFilter = (getData, setItems, eMessage, local) => {
-    console.log("258",setItems)
+    
     try {
         window?.history.pushState(null, '', window.location.href.split('?')[0] + '?');
         getResultFilter(getData,'', setItems, eMessage, local)

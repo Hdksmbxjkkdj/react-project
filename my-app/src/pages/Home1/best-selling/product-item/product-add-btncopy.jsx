@@ -82,20 +82,12 @@ const ProductAddbtn = (props) => {
       
    
     }, []);
-  //  const p=(v)=>{
-  //    console.log(
-  //   "lllllllllllllllllllllll",Number(v.target.value)
-  //    )
-  //  }
-    
-    //css number
+ 
     //حذف div تعداد محصولات
 const changeCss=(event)=>{
-  // window?.(event.target).parent().find('.product-quantity').css("backgroundColor","red")
    window?.$(event.target).parent().parent().find(".cart-plus-minus").css({"display":"none"})
 
 }
-console.log(props?.item?.number,"item")
 //حذف div تعداد محصولات
     switch (props.type){
       case 'productDetails': 
@@ -105,10 +97,6 @@ console.log(props?.item?.number,"item")
                 <div className="pro-quan-area d-lg-flex align-items-center">
                   <div className="product-quantity  mb-25">
                     <div className="cart-plus-minus p-relative">
-                      {/* <input type="text" value={value} onKeyUp={(value)=>p(value)} /> */}
-
-                       {/* <input type="text" value={value<=(props.item?.number)?value:value&Notif("error","این تعداد محصول وجود ندارد")} onKeyUp={()=>p()} /> */}
-
                       <input type="text" value={value <=(props?.item?.number)?value:""&Notif("error","این تعداد محصول وجود ندارد")}  onChange={(e)=>setValue(()=>e.target.value>1?Number(e.target.value):1)} />
                     </div>
                   </div>
@@ -222,7 +210,8 @@ console.log(props?.item?.number,"item")
           {(loading)?<ButtonLoader>درحال حذف</ButtonLoader>:<button
             type="button"
             style={{ textDecoration: "line-throught" }}
-            onClick={(event) => handleRemoveClick(event, props)}
+            // onClick={(event) => handleRemoveClick(event, props)}
+            
           >
             حذف از سبد <i className="fa fa-trash"></i>
           </button>}
