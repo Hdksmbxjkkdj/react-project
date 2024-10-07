@@ -11,25 +11,24 @@ const Login = () => {
   });
   const [check, setCheck] = useState(false);
   function loginUser() {
-    try {
-      axios
-        .get(`http://localhost:313/register?id=${login.email}`)
-        .then((e) => {
-          if (e.data[0] == undefined || e?.data[0].pass != login.password) {
-            Notif("error", " ایمیل یا کلمه عبور تعریف نشده !");
-            return;
-          } else {
-            Notif("success",`${e?.data[0].username} عزیز خوش آمدید`);
-            const theUser = {'username':e?.data[0].username,'id':e?.data[0].id}
-            localStorage.setItem("user", JSON.stringify(theUser));
-            setTimeout(() => {
-              navigate("/");
-            }, 1000);
-          }
-        });
-    } catch (error) {
-      Notif("در اینجا یک خطا وجود دارد !");
-    }
+    axios
+      .get(`http://localhost:313/register?id=${login.email}`)
+      .then((e) => {
+        if (e.data[0] == undefined || e?.data[0].pass != login.password) {
+          Notif("error", " ایمیل یا کلمه عبور تعریف نشده !");
+          return;
+        } else {
+          Notif("success", `${e?.data[0].username} عزیز خوش آمدید`);
+          const theUser = { username: e?.data[0].username, id: e?.data[0].id };
+          localStorage.setItem("user", JSON.stringify(theUser));
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        }
+      })
+      .catch((err) => {
+        Notif("error", err.message);
+      });
   }
   return (
     <>
@@ -40,7 +39,7 @@ const Login = () => {
               <div className="col-lg-8">
                 <div className="basic-login">
                   <h3 className="text-center mb-60">فرم ورود</h3>
-                  {(login.email==="مهمان")&& <p>ورود به عنوان مهمان</p>}
+                  {login.email === "مهمان" && <p>ورود به عنوان مهمان</p>}
                   <div>
                     <label for="name">
                       آدرس ایمیل <span>**</span>
@@ -76,9 +75,7 @@ const Login = () => {
                         </label>
                       </span>
                       <span className="forgot-login f-right">
-                        <Link to="/forgottenPass">
-                          فراموشی رمز عبور
-                        </Link>
+                        <Link to="/forgottenPass">فراموشی رمز عبور</Link>
                       </span>
                     </div>
                     <button
@@ -108,4 +105,3 @@ const Login = () => {
   );
 };
 export { Login };
-

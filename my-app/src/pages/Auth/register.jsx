@@ -1,52 +1,49 @@
-import React,{ useState } from "react";
-import {Notif} from "../../Utils/Notif";
+import React, { useState } from "react";
+import { Notif } from "../../Utils/Notif";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
-  const navigate = useNavigate()
-  const [register,setregister] = useState({
-    username:"",
-    emailAddres:"",
-    passowrd:""
+  const navigate = useNavigate();
+  const [register, setregister] = useState({
+    username: "",
+    emailAddres: "",
+    passowrd: "",
   });
 
   function Registering() {
-    let status=201;
-    if(register.username=="" || register.emailAddres=="" || register.emailAddres=="")
-    {
-      Notif('error',"لطفا اطلاعات خود را تکمیل کنید");
-      return
-    }
-    else {
-      try
-      {
-        axios.post("http://localhost:313/register",{username:register.username,id:register.emailAddres,pass:register.passowrd}).then((e)=>{
-        status=e.status;
-        if(status==201)
-        {
-          // Notif('success',"ثبت نام با موفقیت انجام شد");
-          Notif("success",`${e?.data.username} عزیز خوش آمدید`);
-            const theUser = {'username':e?.data.username,'id':e?.data.id}
+    let status = 201;
+    if (
+      register.username == "" ||
+      register.emailAddres == "" ||
+      register.emailAddres == ""
+    ) {
+      Notif("error", "لطفا اطلاعات خود را تکمیل کنید");
+      return;
+    } else {
+      axios
+        .post("http://localhost:313/register", {
+          username: register.username,
+          id: register.emailAddres,
+          pass: register.passowrd,
+        })
+        .then((e) => {
+          status = e.status;
+          if (status == 201) {
+            Notif("success", `${e?.data.username} عزیز خوش آمدید`);
+            const theUser = { username: e?.data.username, id: e?.data.id };
             localStorage.setItem("user", JSON.stringify(theUser));
             setTimeout(() => {
               navigate("/");
             }, 1000);
-        }
-        else
-        {
-          Notif('error',"در اینجا یک مشکل وجود دارد !")
-          return
-        }
-      })
-      }
-      catch(error)
-      {
-        Notif('error',"در این جا یک مشکل وحود دارد !")
-        return
-      }
+          } else {
+            Notif("error", "در اینجا یک مشکل وجود دارد !");
+          }
+        })
+        .catch((err) => {
+          Notif("error", err.message);
+        });
     }
   }
-console.log(register);
   return (
     <>
       <main>
@@ -60,17 +57,47 @@ console.log(register);
                     <label for="name">
                       نام کاربری <span>**</span>
                     </label>
-                    <input id="name" type="text" placeholder="نام کاربری خود را وارد کنید" onChange={(e)=>setregister({...register,username:e.target.value})} />
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="نام کاربری خود را وارد کنید"
+                      onChange={(e) =>
+                        setregister({ ...register, username: e.target.value })
+                      }
+                    />
                     <label for="email-id">
                       آدرس ایمیل <span>**</span>
                     </label>
-                    <input id="email-id" type="email" placeholder="آدرس ایمیل" onChange={(e)=>setregister({...register,emailAddres:e.target.value})}/>
+                    <input
+                      id="email-id"
+                      type="email"
+                      placeholder="آدرس ایمیل"
+                      onChange={(e) =>
+                        setregister({
+                          ...register,
+                          emailAddres: e.target.value,
+                        })
+                      }
+                    />
                     <label for="pass">
                       رمز عبور <span>**</span>
                     </label>
-                    <input id="pass" type="password" placeholder="کلمه عبورتان را وارد کنید" onChange={(e)=>setregister({...register,passowrd:e.target.value})}/>
+                    <input
+                      id="pass"
+                      type="password"
+                      placeholder="کلمه عبورتان را وارد کنید"
+                      onChange={(e) =>
+                        setregister({ ...register, passowrd: e.target.value })
+                      }
+                    />
                     <div class="mt-10"></div>
-                    <button class="t-y-btn w-100" type="button" onClick={Registering}>ثبت نام</button>
+                    <button
+                      class="t-y-btn w-100"
+                      type="button"
+                      onClick={Registering}
+                    >
+                      ثبت نام
+                    </button>
                     <div class="or-divide">
                       <span>یا</span>
                     </div>
@@ -90,4 +117,4 @@ console.log(register);
     </>
   );
 };
-export {Register}
+export { Register };
