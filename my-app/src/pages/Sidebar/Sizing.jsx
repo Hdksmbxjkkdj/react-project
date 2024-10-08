@@ -1,11 +1,13 @@
 import {Config} from '../../Utils'
 import {Local} from "../../Utils";
-import { Filter} from "../Components/FilterSizing";
+import { Filter} from "../Components/Filter";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useEffect,useState } from 'react';
 import { Test } from '../Shop/Test';
 import { cleanData } from 'jquery';
 export const Sizing= ({size,productLength,setItems,handelClick,selected,changeIcon,count, getData})=> {
+    // console.log(productLength,"k")
+
     const eMessage="errore_message"
     const local=Local()
     let searchParam=new URLSearchParams(window.location.search)

@@ -9,7 +9,8 @@ import axios from "axios";
 import { Product, ProductList } from "./Product";
 import {Test} from "./Test"
 export const Tab = ({ items, setItems, productLength, length, all, count,getData,data }) => {
-  console.log(setItems,"ta")
+  // console.log(productLength,"test")
+
   //tab
   const [toggleState, setToggleStata] = useState(2);
 
@@ -72,7 +73,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
                 {/* <p>Showing 1-20 of 29 relults</p> */}
                 
                 <p className="me-4">
-                  نتیجه نمایش {items?.length}محصول از {length?.data?.length}{" "}
+                  نتیجه نمایش {items?.length}محصول از {productLength}{" "}
                 </p>
               </div>
               

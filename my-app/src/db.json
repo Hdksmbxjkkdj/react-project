@@ -39,14 +39,6 @@
       "Uid": "kazem@gmail.com"
     },
     {
-      "id": "1mahan@gmail.com",
-      "Pid": "1",
-      "pic": "product-1.jpg",
-      "name": " هندزفری و تلوزیون  ",
-      "unitprice": 500,
-      "Uid": "mahan@gmail.com"
-    },
-    {
       "id": "5mohammad@gmail.com",
       "Pid": "5",
       "pic": "product-9.jpg",
@@ -101,22 +93,6 @@
       "name": "ساعت مچی",
       "unitprice": 450,
       "Uid": "javad@gmail.com"
-    },
-    {
-      "id": "2mahan@gmail.com",
-      "Pid": "2",
-      "pic": "product-3.jpg",
-      "name": "گوشی و تلوزیون",
-      "unitprice": 79,
-      "Uid": "mahan@gmail.com"
-    },
-    {
-      "id": "3mahan@gmail.com",
-      "Pid": "3",
-      "pic": "product-5.jpg",
-      "name": "گوشی سامسونگ",
-      "unitprice": 100,
-      "Uid": "mahan@gmail.com"
     }
   ],
   "blog": [

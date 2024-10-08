@@ -5,16 +5,13 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import { Rate } from "../Product-Details/RateSubmit/Rate";
 import { Filter } from "../Components/Filter";
-import { Local } from "../../Utils";
 export const Test = ({setItems,getData,productLength}) => {
-  const eMessage="errore_message"
-  const local=Local()
-  // console.log(productLength,"test")
   var searchParams = new URLSearchParams(window.location.search)
   const [result, setResult] = useState([]); 
 
   const yuy = (e) => {
-    window?.$(e.target).parent().parent().removeClass()
+    window?.$(e.target).remove()
+    console.log("jj")
   }
 
   useEffect(() => {
@@ -77,10 +74,8 @@ export const Test = ({setItems,getData,productLength}) => {
           break;
       }
 
-      result.push({persianName: persianField, fieldName: field[0], value: persianValue,fieldValue:field[1]})
-    
+      result.push({persianName: persianField, fieldName: field[0], value: persianValue})
 
-console.log(result)
       // switch (item) {
       //   case "color-id=1":
       //     result.push(" رنگ :مشکی")
@@ -125,7 +120,6 @@ console.log(result)
       })
     setResult(result);
   }
-  console.log(result?.length,"length")
 
   return <>
 
@@ -142,22 +136,16 @@ console.log(result)
         >
 
         </div> */}
-
         <ul className="d-flex">
           {
             result?.map((item) => {
-             if (item.value==null)return
+              console.log(item)
               return <>
-
-               <li className="d-flex justify-content-center align-items-center shadow py-1 px-3 rounded-pill border border-4"
-                onClick={() => { Filter(getData,setItems, productLength, item.fieldName, item.fieldValue,eMessage,local)}}
-  
-                >
+                <li className="d-flex justify-content-center align-items-center shadow py-1 px-3 rounded-pill border border-4"  
+                  onClick={() => { Filter(getData,setItems, productLength, item.fieldName, item.value )}}>
                   <button className="btn rounded-circle text-danger"
-                    //  onClick={(e)=>yuy(e)}     
-                    >
+                     onClick={(e)=>yuy(e)}     >
                     x
-                  
                   </button>
                  
                   {item.persianName}={item.value }
