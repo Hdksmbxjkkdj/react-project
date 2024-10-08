@@ -19,7 +19,7 @@ export const Modal = (props) => {
 
   const handleImg = (event,i) => {
     window?.$(".delete").removeAttr('style')
-    window?.$(".show-"+i).css({border:"2px solid #ffc107"})
+    window?.$(".show-"+i).css({border:"1px solid #ffc107"})
 
      let preview = window?.$(".product__modal-img img");
 

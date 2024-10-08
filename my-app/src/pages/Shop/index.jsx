@@ -58,11 +58,12 @@ export const Products = ({ sidebars }) => {
   };
   // console.log(data,"data")
   useEffect(() => {
+    let param = new URLSearchParams(window.location.search);
     axios.get(`http://localhost:313/best_selling`).then((response) => {
       setLength(response);
     });
   }, []);
-
+   console.log(length)
   const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
   useEffect(() => {
     axios.get(`http://localhost:313/domain-price`).then((res) => {

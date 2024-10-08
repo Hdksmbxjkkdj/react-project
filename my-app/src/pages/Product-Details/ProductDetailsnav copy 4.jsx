@@ -4,31 +4,18 @@ import { ShowProduct } from "../../Compont/ShowProduct";
 import { faSearchPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({ item, picturs, img }) => {
-   
     const [modalStatus, setModalStatus] = useState({
         show: false,
         data: null,
         tittle: null,
         id: null
     });
-    const[go,setGo]=useState(null)
-    const handleImg = (event, i) => {
-        console.log(i)
-        setModalStatus({id:i})
-        console.log(modalStatus.id,"go")
-        // console.log(setModalStatus.id,"pp")
-            window?.$(".delete").removeAttr("style");
-            window?.$(".show-" + i).css({ border: "1px solid #ffc107" });
-            window?.$(".show-" + i).attr('data-index', i);
-        
-            let preview = window?.$(".product__details-thumb img");
-            preview.fadeOut(100);
-        
-            preview.attr("src", window?.$(event.target).parent().find("img").attr("src"));
-            preview.fadeIn(300);
-        };
+    // const[c,setC]=useState(0)
+    // const[g,setG]=useState
+    // ()
+  
     const btns=(c, type = 'inc')=>{
-       
+        console.log(c,"c")
         if (type == 'inc') {
             if (c < picturs?.length - 1) {
                 c += 1
@@ -42,10 +29,29 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                 c = picturs?.length - 1
             }
         }
+        
+        // setC(c)
         setModalStatus({data:window?.$(".show-"+(c)).attr("src"), show: true, id: c})
+    
+    //    case"c-1": 
+    //    setC(c-1)
+    //    setModalStatus({data:window?.$(".show-"+(c)).attr("src")})
+      
     } 
+    // const btnss=(c)=>{
+   
+    //     setC(c-1)
+    //     setModalStatus({data:window?.$(".show-"+(c)).attr("src")})
+   
+    // } 
     return (
         <>
+        {/* <div >
+            <button onClick={()=>btns(c+1)}>اضافه</button>
+
+            <img src={modalStatus?.data}></img>
+            <button onClick={()=>btnss(c-1)}>حذف</button>
+        </div> */}
             <div className="col-xxl-5 col-xl-5 col-lg-5 test">
                 <div className="product__details-nav d-sm-flex align-items-start response-gallery-parent">
                     <ul
@@ -73,7 +79,7 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                                     alt=""
                                     className={"delete show-0"}
                                     id="u"
-                                    style={{ border: "1px solid #ffc107" }}
+                                    style={{ border: "2px solid #ffc107" }}
                                 />
                             </button>
                         </li>
@@ -159,4 +165,16 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
 };
 
 //showproduct
+const handleImg = (event, i) => {
+  
 
+    window?.$(".delete").removeAttr("style");
+    window?.$(".show-" + i).css({ border: "1px solid #ffc107" });
+    window?.$(".show-" + i).attr('data-index', i);
+
+    let preview = window?.$(".product__details-thumb img");
+    preview.fadeOut(100);
+
+    preview.attr("src", window?.$(event.target).parent().find("img").attr("src"));
+    preview.fadeIn(300);
+};

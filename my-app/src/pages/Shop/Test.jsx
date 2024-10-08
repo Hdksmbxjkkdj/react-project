@@ -9,7 +9,6 @@ import { Local } from "../../Utils";
 export const Test = ({setItems,getData,productLength}) => {
   const eMessage="errore_message"
   const local=Local()
-  // console.log(productLength,"test")
   var searchParams = new URLSearchParams(window.location.search)
   const [result, setResult] = useState([]); 
 
@@ -41,7 +40,9 @@ export const Test = ({setItems,getData,productLength}) => {
         case 'Size-Id':
           persianField = 'ابعاد'
           break;
-      
+          case 'price_lte':
+            persianField = 'کمتر از'
+            break;
         default:
           break;
       }
@@ -80,7 +81,6 @@ export const Test = ({setItems,getData,productLength}) => {
       result.push({persianName: persianField, fieldName: field[0], value: persianValue,fieldValue:field[1]})
     
 
-console.log(result)
       // switch (item) {
       //   case "color-id=1":
       //     result.push(" رنگ :مشکی")
@@ -125,23 +125,13 @@ console.log(result)
       })
     setResult(result);
   }
-  console.log(result?.length,"length")
 
   return <>
 
 
-    {/* <div
-      className="container pe-0 rounded w-50 " id="socialMedia"
- 
-    > */}
-      {/* <div className="row flex-nowrap my-1 me-1 justify-content-center align-items-center"> */}
-{/* 
-        <div
-          className="ps-0 d-flex align-items-center"
-          style={{ width: "fit-content" }}
-        >
+   
+      <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
 
-        </div> */}
 
         <ul className="d-flex">
           {
@@ -167,8 +157,8 @@ console.log(result)
           }
         </ul>
 
-      {/* </div>
-    </div> */}
+      </div>
+   
 
 
 

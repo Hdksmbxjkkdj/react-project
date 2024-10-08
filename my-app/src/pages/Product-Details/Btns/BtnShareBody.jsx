@@ -37,8 +37,8 @@ export const BtnShareBody = (props) => {
     case"typeModal":
     return (
       <>
-        <li>
-            <a href="javascript:void(0)" title="اشتراک گذاری" onClick={close}>
+        <li  onClick={close}>
+            <a href="javascript:void(0)" title="اشتراک گذاری">
             <FontAwesomeIcon icon={faShareAlt} >
             </FontAwesomeIcon> 
           </a>
@@ -103,8 +103,8 @@ export const BtnShareBody = (props) => {
       return (
 
         <>
-          <li>
-                    <a href="javascript:void(0)" title="اشتراک گذاری" onClick={close}>
+          <li  onClick={close}>
+                    <a href="javascript:void(0)" title="اشتراک گذاری">
               <FontAwesomeIcon icon={faShareAlt} >
               </FontAwesomeIcon> 
     

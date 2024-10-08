@@ -8,7 +8,7 @@ export const Map = () =>{
       }, [])
     
      const map =()=>{
-        window?.$("#map").addClass("loading-map").fadeOut(1000);
+        window?.$("#map").addClass("loading-map").fadeOut(2000);
       
      }
    

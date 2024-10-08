@@ -42,20 +42,20 @@ export const BtnLike = ({items})=>{
     return (
         <>
             {!checker.includes(items) ? (
-            <li>
+            <li   onClick={(e) =>{ 
+              AddToWishlist(
+                e,
+                items.id,
+                items?.pic,
+                items?.text,
+                items?.price,
+                use?.id,
+                setrow
+              );
+            setTextColor(textColor==="#696969"?"red":"#696969 ")}}>
               <a
                 href="javascript:void(0)"
-                onClick={(e) =>{ 
-                  AddToWishlist(
-                    e,
-                    items.id,
-                    items?.pic,
-                    items?.text,
-                    items?.price,
-                    use?.id,
-                    setrow
-                  );
-                setTextColor(textColor==="#696969"?"red":"#696969 ")}}
+              
                 title="افزودن به علاقه مندی ها"
                 // style={{color:textColor}}
               >
@@ -67,10 +67,10 @@ export const BtnLike = ({items})=>{
               </a>
             </li>
           ) : (
-            <li>
+            <li                 onClick={(event) =>{RemoveWishList(event,items.id,items.text,use.id,setrow,false);setTextColors(textColors==="red"?"#696969":"red")}}
+>
               <a
                 href="javascript:void(0)"
-                onClick={(event) =>{RemoveWishList(event,items.id,items.text,use.id,setrow,false);setTextColors(textColors==="red"?"#696969":"red")}}
                 style={{color:textColors}}
 
                 title="حذف از علاقه مندی ها"

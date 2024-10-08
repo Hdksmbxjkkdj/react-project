@@ -55,9 +55,9 @@ export const DomainPrice =({getData,setItems,productLength,domain_price,handelCl
             <div className="accordion" id="productWidgetAccordion1">
                 <div className="accordion-item">
                      <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse" onClick={(event)=>{handelClick(event,2)}} data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <button className="accordion-button product__widget-title" type="button" data-bs-toggle="collapse"  data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                           قیمت
-                          <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}} onClick={(event)=>{handelClick(event,2);changeIcon(event)}}></i> 
+                          <i className="fas fa-angle-down" style={{position:"absolute",left:"1rem"}}></i> 
 
                         </button>
                     </h2>

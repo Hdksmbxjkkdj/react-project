@@ -36,7 +36,6 @@ const getResultFilter = async (getData, query,setItems, eMessage, local, secendF
    
 }
 export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str', secondFilterItem = null, secendFilterValue = null) => {
-    console.log(filterItem,"filterItem",type)
 
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {

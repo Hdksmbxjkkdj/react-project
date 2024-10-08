@@ -12,7 +12,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faSlidersH } from "@fortawesome/free-solid-svg-icons";
 import { AddToWishlist } from "../Home1/best-selling/product-item/AddToWishlist";
-import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn";
+import { ProductAddbtn } from "../Home1/best-selling/product-item/product-add-btn copy2";
 // import {ShowProduct} from './Modal/ShowProduct'
 import Modal from "./Modal/Modal";
 import { Rate } from "./RateSubmit/Rate";
