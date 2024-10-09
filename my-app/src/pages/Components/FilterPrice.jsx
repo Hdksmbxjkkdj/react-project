@@ -8,13 +8,8 @@ import { useParams } from "react-router-dom";
     // let url = '/' + local + '/products/filter' + query
 
      let url='http://localhost:313/best_selling?'+ query
-     console.log(url,"url",query)
-    //  let url=`http://localhost:313/best_selling?price_gt=100&price_lte=200`
-
-        //  let url='http://localhost:313/best_selling?'+ query
-
-    //  let url=`http://localhost:313/best_selling?price=${secendFilterValue}`
     
+   
 
     let status = null
     try {

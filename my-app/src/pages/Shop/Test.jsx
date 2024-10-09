@@ -12,9 +12,9 @@ export const Test = ({setItems,getData,productLength}) => {
   var searchParams = new URLSearchParams(window.location.search)
   const [result, setResult] = useState([]); 
 
-  const yuy = (e) => {
-    window?.$(e.target).parent().parent().removeClass()
-  }
+  // const yuy = (e) => {
+  //   window?.$(e.target).parent().parent().removeClass()
+  // }
 
   useEffect(() => {
 
@@ -143,7 +143,7 @@ export const Test = ({setItems,getData,productLength}) => {
                 onClick={() => { Filter(getData,setItems, productLength, item.fieldName, item.fieldValue,eMessage,local)}}
   
                 >
-                  <button className="btn rounded-circle text-danger"
+                  <button className="ps-2 pe-3 text-danger"
                     //  onClick={(e)=>yuy(e)}     
                     >
                     x

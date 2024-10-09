@@ -5,11 +5,19 @@ import { Filter,removeFilter } from "../Components/FilterPrice";
 import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
-export const DomainPrice =({getData,setItems,productLength,domain_price,handelClick,selected,changeIcon})=>{
+export const DomainPrice =({getData,setItems,productLength,selected,changeIcon})=>{
 
     useEffect(() => {
-        
+        var searchParamss = new URLSearchParams(window.location.search)
+        const[money,setMoney]=useState()
+        setMoney(searchParamss?.get('price_lte'))
+        console.log(money)
+        // var query = searchParams.toString();
+        // var t = query.split("?")
+       
         let amount = window?.$('#amount')
+        console.log( amount.attr('val'),"kk")
+      
         window?.$("#slider-range").slider({
              range: true,
               min: 60,
@@ -18,6 +26,7 @@ export const DomainPrice =({getData,setItems,productLength,domain_price,handelCl
             // range: true,
             // min: parseInt(amount.attr('min')),
             // max: parseInt(amount.attr('max')),
+            // values: [amount.attr('min'), amount.attr('max')],
             values: [amount.attr('min'), amount.attr('max')],
              slide: function (event, ui) {
                  window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"ت");
@@ -74,7 +83,6 @@ export const DomainPrice =({getData,setItems,productLength,domain_price,handelCl
                                                 //    iniMax={domain_price?.max}
                                                 //    min={searchParam?.get('price_gt') ? searchParam.get('price_gt'): domain_price?.min}
                                                     min={searchParam?.get('price_gt') ? searchParam.get('price_gt'):60}
-
                                                    max={searchParam?.get('price_lte') ? searchParam.get('price_lte') :900}
                                                />
                                            </form>

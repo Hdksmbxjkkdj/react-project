@@ -54,22 +54,25 @@ export const Products = ({ sidebars }) => {
        
         setItems(response.data.data);
         setPaginationLength(response.data.pages);
+        // console.log(response.data.data)
       });
   };
   // console.log(data,"data")
   useEffect(() => {
     let param = new URLSearchParams(window.location.search);
-    axios.get(`http://localhost:313/best_selling`).then((response) => {
-      setLength(response);
+    axios.get(`http://localhost:313/best_selling?${param}`).then((response) => {
+      setLength(response?.data
+        
+      );
+      // console.log(length)
     });
   }, []);
-   console.log(length)
-  const [price, setPrice] = useState(); //برای پایگاه داده اصلی است
-  useEffect(() => {
-    axios.get(`http://localhost:313/domain-price`).then((res) => {
-      setPrice(res);
-    });
-  }, []);
+  // const [price, setPrice] = useState(); 
+  // useEffect(() => {
+  //   axios.get(`http://localhost:313/domain-price`).then((res) => {
+  //     setPrice(res);
+  //   });
+  // }, []);
   //colors
   const [colors, setColors] = useState();
   useEffect(() => {
@@ -104,7 +107,7 @@ export const Products = ({ sidebars }) => {
           <div className="container-fluid">
             <div className="row">
               <Sidebar
-                domain_price={price}
+                // domain_price={price}
                 colors={colors}
                 size={size}
                 productLength={items?.length}

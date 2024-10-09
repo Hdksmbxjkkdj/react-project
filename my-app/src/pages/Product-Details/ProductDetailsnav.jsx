@@ -4,22 +4,19 @@ import { ShowProduct } from "../../Compont/ShowProduct";
 import { faSearchPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const ProducDetailsImg = ({ item, picturs, img }) => {
-   
     const [modalStatus, setModalStatus] = useState({
         show: false,
         data: null,
         tittle: null,
-        id: null
+        id: 0
     });
-    const[go,setGo]=useState(null)
+    // const[go,setGo]=useState(null)
     const handleImg = (event, i) => {
-        console.log(i)
-        setModalStatus({id:i})
-        console.log(modalStatus.id,"go")
-        // console.log(setModalStatus.id,"pp")
+       
+        setModalStatus({id:i})//اضافه شده جهت اینکه از عکس فعلی با زدن دکمه عقب ,جلو جابه جا شودیعنی از عکس اول شروع نکن
+      
             window?.$(".delete").removeAttr("style");
             window?.$(".show-" + i).css({ border: "1px solid #ffc107" });
-            window?.$(".show-" + i).attr('data-index', i);
         
             let preview = window?.$(".product__details-thumb img");
             preview.fadeOut(100);
@@ -27,10 +24,11 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
             preview.attr("src", window?.$(event.target).parent().find("img").attr("src"));
             preview.fadeIn(300);
         };
+
     const btns=(c, type = 'inc')=>{
        
         if (type == 'inc') {
-            if (c < picturs?.length - 1) {
+            if (c < picturs?.length) {
                 c += 1
             }else{
                 c = 0
@@ -39,11 +37,12 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
             if (c > 0) {
                 c -= 1
             }else{
-                c = picturs?.length - 1
+                c = picturs?.length
             }
         }
         setModalStatus({data:window?.$(".show-"+(c)).attr("src"), show: true, id: c})
     } 
+
     return (
         <>
             <div className="col-xxl-5 col-xl-5 col-lg-5 test">
@@ -117,11 +116,13 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                                         src={Config.shop + "" + item}
                                         alt=""
                                         onClick={(event) =>
-                                            setModalStatus({
-                                                show: true,
-                                                data: window?.$(event.target).attr("src"),
-                                                id: window?.$(event.target).attr("data-index")
-                                            })
+                                            {
+                                                setModalStatus({
+                                                    ...modalStatus,//اضافه شده جهت اینکه از عکس فعلی با زدن دکمه عقب ,جلو جابه جا شودیعنی از عکس اول شروع نکن
+                                                    show: true,
+                                                    data: window?.$(event.target).attr("src"),
+                                                })
+                                            }
                                         }
                                     />
 
@@ -141,11 +142,15 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
                                         icon={faSearchPlus}
                                         style={{ fontSize: "25px", cursor: "pointer" }}
                                         className="me-5"
-                                        onClick={(event) =>
+                                        onClick={(event) => {
+
                                             setModalStatus({
+                                                ...modalStatus,//اضافه شده جهت اینکه از عکس فعلی با زدن دکمه عقب ,جلو جابه جا شودیعنی از عکس اول شروع نکن
                                                 show: true,
                                                 data: window?.$(event.target).parent().parent().find(".preview").attr("src"),
                                             })
+
+                                        }
                                         }
                                     ></FontAwesomeIcon>
                                 </div>

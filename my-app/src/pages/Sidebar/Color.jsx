@@ -75,15 +75,7 @@ export const Color = ({colors,productLength, setItems,handelClick,selected,count
                          </div>
                      </div>
                     ): null}
-                     {/* {modal.show && (
-                                        <Test
-                                          
-                                            setModal={setModal}
-                                            modal={modal}
-                                    
-                        
-                                        ></Test>
-                                    )} */}
+                
             </div>
             </div>
         </div>
