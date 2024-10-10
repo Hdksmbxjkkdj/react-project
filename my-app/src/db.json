@@ -1,46 +1,5 @@
 {
-  "row": [
-    {
-      "id": "8",
-      "pic": "product-13.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 520,
-      "quantity": 1,
-      "date": "08/10/2024",
-      "number": 56,
-      "total": 520
-    },
-    {
-      "id": "7",
-      "pic": "product-13.jpg",
-      "name": "ساعت مچی",
-      "unitprice": 450,
-      "quantity": 1,
-      "date": "08/10/2024",
-      "number": 21,
-      "total": 450
-    },
-    {
-      "id": "10",
-      "pic": "product-sm-2.jpg",
-      "name": "سیستم دوربین امنیتی خانه چشمک زدن 01",
-      "unitprice": 580,
-      "quantity": 1,
-      "date": "09/10/2024",
-      "number": 37,
-      "total": 580
-    },
-    {
-      "id": "5",
-      "pic": "product-9.jpg",
-      "name": "تی شرت آبی مردانه (S, M, XL, XXL) با رنگ های مختلف",
-      "unitprice": 120,
-      "quantity": 1,
-      "date": "09/10/2024",
-      "number": 33,
-      "total": 120
-    }
-  ],
+  "row": [],
   "wishlist": [
     {
       "id": "2kazem@gmail.com",
@@ -1357,13 +1316,6 @@
     }
   ],
   "product-color": [],
-  "domain-price": [
-    {
-      "min": "1000",
-      "max": "5000",
-      "id": "c6fc"
-    }
-  ],
   "colors": [
     {
       "color": "black",

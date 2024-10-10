@@ -72,7 +72,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
                 {/* <p>Showing 1-20 of 29 relults</p> */}
                 
                 <p className="me-4">
-                  نتیجه نمایش {items?.length}محصول از {productLength}{" "}
+                  نتیجه نمایش {items?.length}محصول از {data?.items}
                 </p>
               </div>
               

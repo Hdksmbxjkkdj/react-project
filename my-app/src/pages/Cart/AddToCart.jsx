@@ -26,9 +26,9 @@ export const AddToCart = (
   if (number == 0) {
     Notif("error", "این محصول در انبار موجود نیست !");
     if (setLoading !== null)
-      setTimeout(() => {
+      // setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      // }, 2000);
     return false;
   }
   if (quantity < 1) {

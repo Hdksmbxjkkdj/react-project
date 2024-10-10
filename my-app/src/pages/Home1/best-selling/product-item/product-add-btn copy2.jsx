@@ -5,6 +5,7 @@ import { RemoveCartItem } from "../../../Cart/RemoveCartItem";
 import { ButtonLoader } from "../../../Components/ButtonLoader";
 const ProductAddbtn = (props) => {
   const { cart, setCart } = useContext(CartContext);
+
   const [check, setCheck] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -14,7 +15,11 @@ const ProductAddbtn = (props) => {
       }
     });
   }, [cart]);
+  const ids=cart.map(el=>{
+    return el.id
+  })
   function handleAddClick(event, props) {
+    console.log(props);
     setLoading(true);
     AddToCart(
       event,
@@ -88,7 +93,7 @@ const ProductAddbtn = (props) => {
       </>
     );
   };
-  return <>{check.includes(props?.item) ? <StillInCart /> : <NotInCart />}</>;
+  return <>{ids.includes(props?.item.id) ? <StillInCart /> : <NotInCart />}</>;
 };
 
 export { ProductAddbtn };
