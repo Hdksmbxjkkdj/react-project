@@ -29,7 +29,6 @@ const PostBox = (props) => {
       document.getElementsByClassName("post-comments-form")[0].offsetTop;
     if (!props.rep) {
       name.focus();
-      console.log();
       window.scroll({ top: pos - 20, behavior: "smooth" });
       setPID(item);
     }
@@ -130,6 +129,7 @@ const PostBox = (props) => {
                             item={item}
                             setPID={setPID}
                             Freply={Freply}
+                            key={Math.random()}
                           ></Comment>
                         </>
                       );
