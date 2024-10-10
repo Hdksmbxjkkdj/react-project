@@ -32,6 +32,7 @@ export const RemoveCartItem = async (
     }
   } catch (error) {
     Notif("error", eMessage);
+    setLoading(false)
   }
 
   window?.$(".spinner-container").fadeOut(300);

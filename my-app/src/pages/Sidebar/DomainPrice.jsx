@@ -9,9 +9,9 @@ export const DomainPrice =({getData,setItems,productLength,selected,changeIcon})
 
     useEffect(() => {
         var searchParamss = new URLSearchParams(window.location.search)
-        const[money,setMoney]=useState()
-        setMoney(searchParamss?.get('price_lte'))
-        console.log(money)
+        // const[money,setMoney]=useState()
+        // setMoney(searchParamss.get('price_lte'))
+        // console.log(money)
         // var query = searchParams.toString();
         // var t = query.split("?")
        
