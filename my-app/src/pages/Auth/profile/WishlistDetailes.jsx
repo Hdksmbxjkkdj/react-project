@@ -9,20 +9,20 @@ export const WishlistDetailes = ({className})=> {
     let use = localStorage.getItem("user");
     use = JSON.parse(use);
     return <div className={`table__box ${className}`}>
-        <section class="cart-area pb-100">
-          <div class="container">
-            <div class="row">
+        <section className="cart-area pb-100">
+          <div className="container">
+            <div classname="row">
               {
                 (row?.data.length>0)?<div class="col-12">
-                <div class="table-content table-responsive">
-                  <table class="table">
+                <div className="table-content table-responsive">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th className="product-thumbnail">ردیف</th>
-                        <th class="product-thumbnail">تصویر</th>
-                        <th class="cart-product-name">محصول</th>
-                        <th class="product-price">قیمت واحد</th>
-                        <th class="product-remove">حذف</th>
+                        <th classname="product-thumbnail">تصویر</th>
+                        <th classname="cart-product-name">محصول</th>
+                        <th classname="product-price">قیمت واحد</th>
+                        <th classname="product-remove">حذف</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -30,10 +30,10 @@ export const WishlistDetailes = ({className})=> {
                       row?.data.map((item,index) => {
                         return <>
                             <tr>
-                              <td class="product-thumbnail">
+                              <td className="product-thumbnail">
                                   <p>{index+1}</p>
                               </td>
-                              <td class="product-thumbnail">
+                              <td className="product-thumbnail">
                                 <Link to={"/product-details/"+item.Pid}>
                                   <img
                                     src={Config.shop + "" + item.pic}
@@ -41,25 +41,25 @@ export const WishlistDetailes = ({className})=> {
                                   />
                                 </Link>
                               </td>
-                              <td class="product-name">
+                              <td className="product-name">
                                 <Link to={"/product-details/"+item.Pid}
                                   style={{ fontWeight: "600" }}
                                 >
                                   {item.name}
                                 </Link>
                               </td>
-                              <td class="product-price">
+                              <td className="product-price">
                                 <span
-                                  class="amount"
+                                  className="amount"
                                   style={{ fontWeight: "600" }}
                                 >
                                   {item.unitprice?.toFixed(2)}
                                 </span>
                               </td>
                               
-                              <td class="product-remove" key={Math.random()}>
+                              <td className="product-remove" key={Math.random()}>
                                 <a href="#" onClick={(event)=> RemoveWishList(event,item.Pid,item.name, use.id,setrow,false)}>
-                                  <i class="fa fa-times"></i>
+                                  <i className="fa fa-times"></i>
                                 </a>
                               </td>
                             </tr>

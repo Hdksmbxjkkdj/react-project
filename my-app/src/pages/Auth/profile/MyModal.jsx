@@ -10,8 +10,9 @@ export const MyModal = ({order,setModal}) => {
           <i className="fa fa-times" onClick={()=>setModal(false)}></i>
         </button>
       </div>
-      <div>
-        <table>
+      <div className="table-content table-responsive">
+        <table className="table">
+          <thead>
           <tr>
             <th className="py-2">ردیف</th>
             <th className="py-2">تصویر</th>
@@ -21,6 +22,8 @@ export const MyModal = ({order,setModal}) => {
             <th className="py-2">قیمت کل</th>
             <th className="py-2"> تاریخ</th>
           </tr>
+          </thead>
+          <tbody>
           {order?.cart?.map((item, index) => {
             return (
               <tr>
@@ -36,10 +39,11 @@ export const MyModal = ({order,setModal}) => {
               </tr>
             );
           })}
+          </tbody>
         </table>
         <div className="mt-2">
           <p>{`به نام : ${order?.name} ${order?.family}`}</p>
-          <p>{`به آدرس : ${order?.address}`}</p>
+          <p>{`به آدرس : ${order?.new_address?order?.new_address:order?.address}`}</p>
           <p>{`پیام شما : ${order?.text}`}</p>
           <p>{`به کد پستی : ${order?.zip_code}`}</p>
         </div>

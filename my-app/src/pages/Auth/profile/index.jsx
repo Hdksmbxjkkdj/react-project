@@ -18,7 +18,8 @@ export const Profile = () => {
   },[])
 	const [tab,setTab] = useState(0);
   return (
-    <div className="row my-5">
+    <div className="container-fluid">
+      <div className="row my-5">
       <div className="col-xl-2 col-lg-3 col-md-4">
       <SideBar tab={tab} setTab={setTab}/>
       </div>
@@ -41,6 +42,7 @@ export const Profile = () => {
         </div>
       </div>
       </div>
+    </div>
     </div>
   );
 };

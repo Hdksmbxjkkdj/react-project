@@ -3,7 +3,6 @@ import { Config } from "../../Utils/config";
 import { ReplyComment } from "./ReplyComment";
 import axios from "axios";
 const Comment = (props) => {
-  console.log(props);
   const [show, setShow] = useState(false);
   const [rep, setRep] = useState(false);
   useEffect(() => {
@@ -37,15 +36,15 @@ const Comment = (props) => {
               >
                 ارسال پاسخ
               </button>
-              <button className="showing" onClick={() => setShow(!show)}>
+              {(rep?.data?.length>0)?<button className="showing" onClick={() => setShow(!show)}>
                 {show ? "بستن پاسخ ها" : "نمایش پاسخ ها"}
-              </button>
+              </button>:null}
             </div>
             <p>{props?.item.comment}</p>
           </div>
         </div>
       </li>
-      {show && <ReplyComment Pid={props.item.id} />}
+      {show && <ReplyComment Pid={props.item.id} rep={rep} key={Math.random()}/>}
     </>
   );
 };
