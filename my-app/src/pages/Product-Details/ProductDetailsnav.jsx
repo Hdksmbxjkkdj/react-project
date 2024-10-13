@@ -10,7 +10,6 @@ export const ProducDetailsImg = ({ item, picturs, img }) => {
         tittle: null,
         id: 0
     });
-    // const[go,setGo]=useState(null)
     const handleImg = (event, i) => {
        
         setModalStatus({id:i})//اضافه شده جهت اینکه از عکس فعلی با زدن دکمه عقب ,جلو جابه جا شودیعنی از عکس اول شروع نکن

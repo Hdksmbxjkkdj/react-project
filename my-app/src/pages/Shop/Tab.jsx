@@ -105,18 +105,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
                   setItems={setItems}
                   items={items}
                 ></Product>
-              {/*
-               ) : (
-                <div class="text-center justify-content-center p-3 Larger rounded">
-                  <h2
-                    class="d-flex text-center justify-content-center text-warning shadow"
-                    style={{ backgroundColor: "#e0e0e0" }}
-                  >
-                    محصولی وجود ندارد
-                  </h2>
-                </div>
-              )
-            } */}
+           
           </div>
         </div>
 
@@ -191,7 +180,7 @@ export const Tab = ({ items, setItems, productLength, length, all, count,getData
                 </ul>
               </div>
               <div className="product__result pl-60">
-                {/* <p>Showing 1-20 of 29 relults</p> */}
+            
                 
                 <p className="me-4">
                   نتیجه نمایش {items?.length}محصول از {productLength}{" "}

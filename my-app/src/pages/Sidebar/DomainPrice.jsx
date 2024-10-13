@@ -6,17 +6,22 @@ import {SideOffcanvasToggle} from '../../Utils/SideOffcanvasToggle'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 export const DomainPrice =({getData,setItems,productLength,selected,changeIcon})=>{
+    // var searchParamss =(new URLSearchParams(window.location.search)) 
+    // var query =  searchParamss.toString();
 
+    // const[ui,setUi]=useState(900)
+    //  console.log(ui,"ui")
     useEffect(() => {
-        var searchParamss = new URLSearchParams(window.location.search)
-        // const[money,setMoney]=useState()
-        // setMoney(searchParamss.get('price_lte'))
-        // console.log(money)
-        // var query = searchParams.toString();
+        //  setUi(900)
+        // setMoney(new URLSearchParams(window.location.search))
+        // let oldParam = searchParamss.get('price_lte');
+        // var newRelativePathQuery = window.location.pathname+"?" 
+        // setMoney(oldParam)
+        // console.log(searchParamss,oldParam,newRelativePathQuery,query)
+        // var q  uery = searchParams.toString();
         // var t = query.split("?")
        
         let amount = window?.$('#amount')
-        console.log( amount.attr('val'),"kk")
       
         window?.$("#slider-range").slider({
              range: true,
@@ -29,11 +34,16 @@ export const DomainPrice =({getData,setItems,productLength,selected,changeIcon})
             // values: [amount.attr('min'), amount.attr('max')],
             values: [amount.attr('min'), amount.attr('max')],
              slide: function (event, ui) {
+               
                  window?.$("#amount").val( ui.values[0]+"/000"+" " +"تا" +" "+ui.values[1]+"/000"+"ت");
+              
                
             }, 
             stop: function (event, ui) {// نمیرود.اurlگر این قطعه نباشد ماکسیمم و مینیمم به 
+                // console.log(ui.value)
                 rangeIsChanged(ui)
+                // setUi(ui.value)
+
             }
         });
               window?.$("#amount").val(window?.$("#slider-range").slider("values", 0)+"/000"+"ت-" +

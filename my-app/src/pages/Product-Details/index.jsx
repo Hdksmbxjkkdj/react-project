@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {BrandSlider} from "./BrandSlider";
-import { ModalContent } from './ModalContent';
 import { ProductDetailsDesTab } from './ProductDetailsDesTab';
 import { ProductDetailsWrapper } from './ProductDetailsWrapper';
 import {ProducDetailsImg} from './ProductDetailsnav';
 import { SectionHead } from './SectionHead';
 import {SendComment } from './SendComment';
 import { useParams } from "react-router-dom";
-import { TabContent } from "../Home1/best-selling/tab-content";
 import { Product } from "../Shop/Product";
 import { BradCrumb } from "./BeradCrumb";
 
@@ -36,10 +34,6 @@ export const ProducDetails= () =>{
         },
       };
     //responsive OwlCarousel
-    // const [information, setInformation] = useState();
-    // const [start, setStart] = useState(0);
-
-
     //tab
     const[tab,setTab]=useState(2)
     const change =(index) => {
@@ -64,7 +58,6 @@ export const ProducDetails= () =>{
     const [info, setInfo] = useState();
     const[lengthComment,setLengthComment]=useState()
     useEffect(() => {
-            // axios.get(`http://localhost:313/product_comments`).then((res) => {
             axios.get(`http://localhost:313/product_comments`).then((res) => {
             setInfo(res);
             setLengthComment(res?.data?.length)
@@ -74,7 +67,6 @@ export const ProducDetails= () =>{
       const [ProductComment, setProductComment] = useState();
       const [count, setCount] = useState();
 
-//    let url=`http://localhost:313/product_comments?product_id=`+ img?.data?.id
   let url=`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id`
   
    useEffect(() => {
@@ -86,19 +78,7 @@ export const ProducDetails= () =>{
 //        //Number of comments
 
 
-//
-// useEffect(() => {
-//   getData()
-// } , []);
-//   const getData = async () => {
 
-//   let params = new URLSearchParams(window.location.search);
-
-//  await
-//   axios.get(`http://localhost:313/product_comments?id_product=`+ id+`&_sort=-id&_start=${start}&_end=${start + 5}&${params}`).then((res) => {
-//     setInformation(res);})
-//   }
-//
     return<>
         <main>
             <BradCrumb></BradCrumb>
@@ -113,7 +93,7 @@ export const ProducDetails= () =>{
                     </div>
                     
                     <div className="row">
-                   {<SendComment setCount={setCount} count={count}  items={img} item={ProductComment} setProductComment={setProductComment} setInfo={setInfo} lengthComment={lengthComment} setLengthComment={setLengthComment} commentNumber={ProductComment?.data?.length}  ProductComment={ProductComment} comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} productId={img?.data?.id}/> }
+                   {<SendComment setCount={setCount} count={count}  items={img} item={ProductComment} lengthComment={lengthComment} setLengthComment={setLengthComment}  comment={info?.data?.comment} id={id} tab={tab} setTab={setTab} change={change} /> }
                     </div>
                 </div>
             </section>

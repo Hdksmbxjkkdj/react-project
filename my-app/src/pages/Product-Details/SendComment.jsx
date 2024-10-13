@@ -1,8 +1,5 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faStar } from "@fortawesome/free-solid-svg-icons";
-// import { Input, Textarea } from "../../Compont/Forms";
+
 import { Notif } from "../../Utils";
-// import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useState,useEffect } from "react";
@@ -11,24 +8,14 @@ import * as yup from "yup";
 import { CustomerComment } from "./CustomerComment";
 import { RateSubmit } from "./RateSubmit/RateSubmit";
 import { TapContent } from "./TapContent";
-// import { ButtonLoader } from "../Components/ButtonLoader";
-// import { cleanData } from "jquery";
-// import { schema } from "@hookform/resolvers/yup/src/__tests__/__fixtures__/data.js";
-// import { schema } from "@hookform/resolvers/computed-types/src/__tests__/__fixtures__/data.js";
-// import { schema } from "@hookform/resolvers/arktype/src/__tests__/__fixtures__/data.js";
+
 //test
 export const SendComment = ({
   id,
   tab,
-  productId,
-  ProductComment,
-  setProductComment,
-  commentNumber,
   setLengthComment,
   lengthComment,
   item,
-  info,
-  setInfo,
   items,
   setCount,
   count
@@ -37,7 +24,6 @@ export const SendComment = ({
   const[Hover,SetHover]=useState()
   const [preScore, setPreScore] = useState(0)
   const [information, setInformation] = useState();
-    // const [start, setStart] = useState(0);
     const [more, setMore] = useState(5);
     const [t, setT] = useState();
 
@@ -47,8 +33,7 @@ export const SendComment = ({
 
   //  let limit=5
   useEffect(() => {
-    // getData();
-    // moreComment()
+   
     axios
     .get(
       `http://localhost:313/product_comments?id_product=${id}&_sort=-id&_page=1&_limit=${more}`
@@ -61,30 +46,15 @@ export const SendComment = ({
     });
   }, [more]);
   const getData = async () => {
-//   // let params = new URLSearchParams(window.location.search);
 
-//   axios
-//     .get(
-//       `http://localhost:313/product_comments?id_product=` +
-//         id +
-//         // `&_sort=-id&_start=${start}&_end=${start + 5}&${params}`
-//                 `&_sort=-id&_start=${start}&_limit=${limit}`
-
-//     )
-//     .then((res) => {
-//       setInformation(res?.data);
-    // });
      
   }
 const moreComment = (event) => {
         setMore(more + 5);
 
-// };
-  //
-  //
+
   }
   //new
-  // const[ids,setIds]=useState(commentNumber ? commentNumber : 'no comment!')
   const [price, setPrice] = useState(0);
   const [quality, setQuality] = useState(0);
 
@@ -130,13 +100,7 @@ const [loadingg,setLoadingg]=useState(false)
 //star
 //loading
 
-// const loadd=()=>{
-//   //  window?.$("#load").css({backgroundColor:"red"})
-   
-//   //  setLoadingg(!loadingg);
 
-//   // document.getElementById("#load").style.backgroundColor="red"
-// }
 //loading
   const onFormSubmit = async (data,ClassN) => {
     console.log(user,"llllllllllllllll")
@@ -149,7 +113,7 @@ const [loadingg,setLoadingg]=useState(false)
   window?.$(".loading").css({display:"inline-block"})
     
     setLoad(true)
-    // review-item.classList.add("loading")
+   
     send_btn.classList.add("loading");
      
     await axios
@@ -211,12 +175,12 @@ const [loadingg,setLoadingg]=useState(false)
             <div className="product__details-review">
               <div className="row">
                 <CustomerComment
-                getData={getData}
-                  information={information}
-                  comment={info?.data}
-                  id={id}
-                  ProductComment={ProductComment}
-                  commentNumber={commentNumber}
+                // getData={getData}
+                  // information={information}
+                  // comment={info?.data}
+                  // id={id}
+                  // ProductComment={ProductComment}
+                  // commentNumber={commentNumber}
                   moreComment={(event)=>moreComment(event)}
                   t={t}
                   count={count}
@@ -225,8 +189,7 @@ const [loadingg,setLoadingg]=useState(false)
                   <div className="review-form">
                     <h3>بررسی شما</h3>
                     <p>{items?.data?.text}</p>
-                    {/* <form onSubmit={(event) => submit(event)}> */}
-                    {/* <form onSubmit={handleSubmit(onFormSubmit)}> */}
+                  
                     <form onSubmit={handleSubmit(onFormSubmit)} >
                       <div className="review-input-box mb-15 d-flex align-items-start">
                         <h4 className="review-input-title">امتیاز شما</h4>
@@ -234,8 +197,7 @@ const [loadingg,setLoadingg]=useState(false)
                           <div className="review-ratings mb-10">
                             <div className="review-ratings-single d-flex align-items-start">
                               <span>کیفیت</span>
-                              {/* <Rank></Rank> */}
-                              {/* {resetStar&&   */}
+                            
                               <RateSubmit
                                 item={item}
                                 type="lg"
@@ -254,19 +216,7 @@ const [loadingg,setLoadingg]=useState(false)
                               {/* } */}
                             
                             </div>
-                            {/* <div className="review-ratings-single d-flex align-items-center">
-                              <span>قیمت</span>
-                              <RateSubmit
-                                item={item}
-                                type="lg"
-                                setPrice={setPrice}
-                              ></RateSubmit>
-                            </div> */}
-                            {/* <div className="review-ratings-single d-flex align-items-center">
-                                                    <span>ارزش</span>
-                                                      <Rank></Rank>
-                                                      <RateSubmit  sendValue={setValue}></RateSubmit>
-                                                </div> */}
+                          
                           </div>
                         </div>
                       </div>
@@ -279,9 +229,7 @@ const [loadingg,setLoadingg]=useState(false)
                             readonly
                             id="sender_name"
                             name="sender_name"
-                            // value={data?.sender_name}
                             value={user?.username}
-                            // error={errors?.sender_name}
                             autoComplete="username"
                             onChange={(e) =>
                               setData({ ...data, sender_name: e.target.value })
@@ -303,8 +251,7 @@ const [loadingg,setLoadingg]=useState(false)
                             value={user?.id}
                             id="sender_email"
                             name="sender_email"
-                            // value={data?.sender_email}
-                            // error={errors?.sender_email}
+                           
                             autoComplete="useremail"
                             onChange={(e) =>
                               setData({ ...data, sender_email: e.target.value })
@@ -323,9 +270,7 @@ const [loadingg,setLoadingg]=useState(false)
                         <div className="review-input">
                           <textarea
                             id="comment"
-                            // name="comment"
-                            // value={data?.comment}
-                            // error={errors?.comment}
+                            
                             placeholder="نظر خود را بنویسید..."
                             autoComplete="username"
                             type="text"
@@ -342,15 +287,7 @@ const [loadingg,setLoadingg]=useState(false)
                         </div>
                       </div>
                       <div className="review-sub-btn">
-                        {/* {(load)?<ButtonLoader bg={"#000"}>در حال ارسال</ButtonLoader>:<button
-                          type="submit"
-                          className="t-y-btn t-y-btn-grey"
-                          // onClick={(event) => submit(event)}
-                        >
-                          <span>                          ارسال بررسی
-                            </span>
-                        <span className="spinner-border spinner-border-sm" id="run" style={{marginRight:" 0.5rem",opacity:"0"}} aria-hidden="true"></span>
-                        </button>} */}
+                     
                         <button className="send-btn" type="submit">
                     <i className="fa fa-paper-plane"></i>
                     <span className="text">ارسال نظر</span>

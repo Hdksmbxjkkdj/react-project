@@ -46,7 +46,7 @@ import { useParams } from "react-router-dom";
  
 
 
-export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str') => {
+export const Filter = (getData,setItems, length, filterItem, filterValue, eMessage, local ,type = 'str',setUi) => {
   
     if (filterItem == null || filterItem == undefined) return
     if ('URLSearchParams' in window) {
@@ -78,12 +78,16 @@ export const Filter = (getData,setItems, length, filterItem, filterValue, eMessa
             searchParams.set(filterItem, filterValue);//
             //   searchParams=(filterValue)
             //   searchParams.set(secondFilterItem, secendFilterValue);
-            
+            //  setUi(900,"90000000000000000")
                 break;
             default:
                 if (oldParam == filterValue) {
                     searchParams.delete(filterItem)
+                   
+
                 } else {
+                   
+
                     searchParams.set(filterItem, filterValue);
                 }
                 break;

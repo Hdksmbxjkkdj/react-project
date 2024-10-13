@@ -35,7 +35,6 @@ export const Products = ({ sidebars }) => {
   const [start, setStart] = useState(1);
   const [paginationLength, setPaginationLength] = useState();
   const Limit = 8;
-  // const [length, setLength] = useState();
 
   useEffect(() => {
     getData(start);
@@ -48,30 +47,14 @@ export const Products = ({ sidebars }) => {
         `http://localhost:313/best_selling?_page=${start}&_per_page=${Limit}&${params}`
       )
       .then((response) => {
-       
+
         setData(response.data);
         setItems(response.data.data);
         setPaginationLength(response.data.pages);
-     
+
       });
   };
 
-  // useEffect(() => {
-   
-  //   axios.get(`http://localhost:313/best_selling`).then((response) => {
-  //     setLength(response?.data
-        
-  //     );
-     
-  //   });
-  // }, []);
-  // const [price, setPrice] = useState(); 
-  // useEffect(() => {
-  //   axios.get(`http://localhost:313/domain-price`).then((res) => {
-  //     setPrice(res);
-  //   });
-  // }, []);
-  //colors
   const [colors, setColors] = useState();
   useEffect(() => {
     axios.get(`http://localhost:313/colors`).then((res) => {
@@ -104,9 +87,7 @@ export const Products = ({ sidebars }) => {
         <section className="product__area box-plr-75 pb-70">
           <div className="container-fluid">
             <div className="row">
-              <Sidebar
-                // domain_price={price}
-                colors={colors}
+              <Sidebar colors={colors}
                 size={size}
                 productLength={items?.length}
                 setItems={setItems}
@@ -124,8 +105,8 @@ export const Products = ({ sidebars }) => {
                     setItems={setItems}
                     items={items}
                     productLength={items?.length}
-                 
-                    // length={length}
+
+
                     all={data?.page}
                     count={{ Limit, start }}
                     getData={(start) => getData(start)}

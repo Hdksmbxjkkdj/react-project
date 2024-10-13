@@ -356,7 +356,7 @@ p {
   padding-bottom: 6px;
   border-bottom: 1px solid #ebebeb;
   position: relative;
-  display: none;
+  /* display: none; */
 }
 .section__head::after {
   position: absolute;

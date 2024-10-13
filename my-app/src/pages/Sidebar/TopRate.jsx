@@ -4,46 +4,39 @@ import { Config } from "../../Utils";
 import { useEffect, useState } from "react"
 import axios from "axios";
 import { Rate } from "../Product-Details/RateSubmit/Rate";
-export const TopRate = () =>{
-    const [product,setProduct]=useState()
-   
-    // useEffect(()=>{
-    //     axios.get(`http://localhost:313/FoodProducts`).then((res)=>{
-    //         setProduct(res);
-    //     });
-    // },[]);
-    //  allitems
-     const[items,setItems]=useState()
-  
-     useEffect(()=>{
-             axios.get(`http://localhost:313/best_selling?price_gt=100&price_lte=200`).then((response)=>{
-                setItems(response);
-          
-            });
-            },[]);
-    return<>    
-                            
-        {items?.data.map((item,i)=>{
-            
+export const TopRate = () => {
+
+    const [items, setItems] = useState()
+
+    useEffect(() => {
+        axios.get(`http://localhost:313/best_selling?price_gt=100&price_lte=200`).then((response) => {
+            setItems(response);
+
+        });
+    }, []);
+    return <>
+
+        {items?.data.map((item, i) => {
+
             return <li class="product__sm-item d-flex align-items-center">
-                        <div class="product__sm-thumb mr-20">
-                            <a href={"/product/"+item.id}>
-                                    <img src={Config.sidebar +""+item.pic} alt=""/>
-                                </a>
-                        </div>
-                        <div class="product__sm-content">
-                            <h3 class="product__sm-title">
-                                <a  href={"/product/"+item.id}>{item.text}</a>
-                            </h3>
-                            <div class="rating">
-                            <Rate stars={item?.rate} type="comment" className="ms-3" /> 
-                            </div>
-                            <div class="product__sm-price">
-                                <span class="price">{item.price}/000تومان</span>
-                            </div>
-                        </div>
-                    </li>
-            })
-        } 
+                <div class="product__sm-thumb mr-20">
+                    <a href={"/product/" + item.id}>
+                        <img src={Config.sidebar + "" + item.pic} alt="" />
+                    </a>
+                </div>
+                <div class="product__sm-content">
+                    <h3 class="product__sm-title">
+                        <a href={"/product/" + item.id}>{item.text}</a>
+                    </h3>
+                    <div class="rating">
+                        <Rate stars={item?.rate} type="comment" className="ms-3" />
+                    </div>
+                    <div class="product__sm-price">
+                        <span class="price">{item.price}/000تومان</span>
+                    </div>
+                </div>
+            </li>
+        })
+        }
     </>
 }
